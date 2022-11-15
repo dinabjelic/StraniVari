@@ -27,7 +27,7 @@ namespace StraniVari.Services.Interfaces
         /// </summary>
         /// <param name="updateSchoolRequest"></param>
         /// <returns></returns>
-        Task UpdateSchoolAsync(int id,SchoolUpsertRequest updateSchoolRequest);
+        Task UpdateSchoolAsync(int id, SchoolUpsertRequest updateSchoolRequest);
         /// <summary>
         /// Deletes choosen school
         /// </summary>

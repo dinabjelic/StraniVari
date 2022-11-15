@@ -13,5 +13,6 @@ namespace StraniVari.Database
         {
         }
         public DbSet<School> Schools { get; set; }
+        public DbSet<Event> Events { get; set; }
     }
 }

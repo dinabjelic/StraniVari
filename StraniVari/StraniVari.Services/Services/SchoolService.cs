@@ -18,10 +18,12 @@ namespace StraniVari.Services.Services
 
         public async Task AddSchoolAsync(SchoolUpsertRequest addSchoolRequest)
         {
-            var newSchool = new School();
-            newSchool.Name = addSchoolRequest.Name;
-            newSchool.Address = addSchoolRequest.Address;
-            newSchool.City = addSchoolRequest.City;
+            var newSchool = new School
+            {
+                Name = addSchoolRequest.Name,
+                Address = addSchoolRequest.Address,
+                City = addSchoolRequest.City
+            };
 
 
             await _context.Schools.AddAsync(newSchool);

@@ -20,27 +20,27 @@ namespace StraniVari.API.Controllers
         }
 
        [HttpGet("school-details")]
-       public async Task<IActionResult> GetSchoolDetailsAsync(int id)
+       public async Task<IActionResult> GetSchoolDetails(int id)
        {
             return Ok(await _schoolService.GetSchoolDetailsAsync(id));
        }
 
        [HttpDelete]
-       public async Task<IActionResult> DeleteSchoolAsync(int id)
+       public async Task<IActionResult> DeleteSchool(int id)
        {
             await _schoolService.DeleteSchoolAsync(id);
             return Ok("You successed");
        }
 
        [HttpPost]
-       public async Task<IActionResult> AddSchoolAsync(SchoolUpsertRequest addSchoolRequest)
+       public async Task<IActionResult> AddSchool(SchoolUpsertRequest addSchoolRequest)
        {
             await _schoolService.AddSchoolAsync(addSchoolRequest);
             return Ok("You successed");
        }
 
        [HttpPut("{id}")]
-       public async Task<IActionResult> UpdateSchoolAsync(int id, [FromBody] SchoolUpsertRequest updateSchoolRequest)
+       public async Task<IActionResult> UpdateSchool(int id, [FromBody] SchoolUpsertRequest updateSchoolRequest)
        {
             await _schoolService.UpdateSchoolAsync(id,updateSchoolRequest);
             return Ok("You successed");

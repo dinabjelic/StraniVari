@@ -9,6 +9,7 @@ namespace StraniVari.API.StartupExtensions
         {
             services.AddScoped<ITokenService, TokenService>();
             services.AddScoped<ISchoolService, SchoolService>();
+            services.AddScoped<IEventService, EventService>();
 
             return services;
         }
