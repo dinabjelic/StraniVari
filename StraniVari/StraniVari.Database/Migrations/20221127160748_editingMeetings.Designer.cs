@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using StraniVari.Database;
 
@@ -11,9 +12,10 @@ using StraniVari.Database;
 namespace StraniVari.Database.Migrations
 {
     [DbContext(typeof(StraniVariDbContext))]
-    partial class StraniVariDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221127160748_editingMeetings")]
+    partial class editingMeetings
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -185,30 +187,6 @@ namespace StraniVari.Database.Migrations
                     b.ToTable("Events");
                 });
 
-            modelBuilder.Entity("StraniVari.Core.Entities.Game", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Rules")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Games");
-                });
-
             modelBuilder.Entity("StraniVari.Core.Entities.Material", b =>
                 {
                     b.Property<int>("Id")
@@ -248,57 +226,15 @@ namespace StraniVari.Database.Migrations
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("DayOfWeek")
-                        .HasColumnType("int");
-
                     b.Property<DateTime>("MeetingDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("MeetingPlace")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("MeetingTheme")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("VolunteeringYear")
+                    b.Property<int>("WeekDays")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
                     b.ToTable("Meetings");
-                });
-
-            modelBuilder.Entity("StraniVari.Core.Entities.PlanAndProgramme", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("Activity")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("ActivityDateTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("DayOfWeek")
-                        .HasColumnType("int");
-
-                    b.Property<int>("StraniVariThemeId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("StraniVariThemeId");
-
-                    b.ToTable("PlanAndProgramme");
                 });
 
             modelBuilder.Entity("StraniVari.Core.Entities.School", b =>
@@ -590,17 +526,6 @@ namespace StraniVari.Database.Migrations
                         .IsRequired();
 
                     b.Navigation("Schools");
-                });
-
-            modelBuilder.Entity("StraniVari.Core.Entities.PlanAndProgramme", b =>
-                {
-                    b.HasOne("StraniVari.Core.Entities.StraniVariTheme", "StraniVariTheme")
-                        .WithMany()
-                        .HasForeignKey("StraniVariThemeId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("StraniVariTheme");
                 });
 
             modelBuilder.Entity("StraniVari.Core.Entities.SchoolMaterial", b =>

@@ -1,11 +1,4 @@
-﻿using StraniVari.Core.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace StraniVari.Core.Responses
+﻿namespace StraniVari.Core.Responses
 {
     public class GetEventDetailsResponse
     {

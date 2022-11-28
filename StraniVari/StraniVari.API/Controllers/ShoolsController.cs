@@ -29,21 +29,21 @@ namespace StraniVari.API.Controllers
        public async Task<IActionResult> DeleteSchool(int id)
        {
             await _schoolService.DeleteSchoolAsync(id);
-            return Ok("You successed");
+            return Ok("You succeeded");
        }
 
        [HttpPost]
        public async Task<IActionResult> AddSchool(SchoolUpsertRequest addSchoolRequest)
        {
             await _schoolService.AddSchoolAsync(addSchoolRequest);
-            return Ok("You successed");
+            return Ok("You succeeded");
        }
 
        [HttpPut("{id}")]
        public async Task<IActionResult> UpdateSchool(int id, [FromBody] SchoolUpsertRequest updateSchoolRequest)
        {
             await _schoolService.UpdateSchoolAsync(id,updateSchoolRequest);
-            return Ok("You successed");
+            return Ok("You succeeded");
        }
     }
 }

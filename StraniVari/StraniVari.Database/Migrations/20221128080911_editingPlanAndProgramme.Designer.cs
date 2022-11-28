@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using StraniVari.Database;
 
@@ -11,9 +12,10 @@ using StraniVari.Database;
 namespace StraniVari.Database.Migrations
 {
     [DbContext(typeof(StraniVariDbContext))]
-    partial class StraniVariDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221128080911_editingPlanAndProgramme")]
+    partial class editingPlanAndProgramme
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -248,9 +250,6 @@ namespace StraniVari.Database.Migrations
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("DayOfWeek")
-                        .HasColumnType("int");
-
                     b.Property<DateTime>("MeetingDate")
                         .HasColumnType("datetime2");
 
@@ -263,6 +262,9 @@ namespace StraniVari.Database.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("VolunteeringYear")
+                        .HasColumnType("int");
+
+                    b.Property<int>("WeekDays")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -282,16 +284,16 @@ namespace StraniVari.Database.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("ActivityDateTime")
+                    b.Property<DateTime>("ActivityDate")
                         .HasColumnType("datetime2");
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("DayOfWeek")
+                    b.Property<int>("StraniVariThemeId")
                         .HasColumnType("int");
 
-                    b.Property<int>("StraniVariThemeId")
+                    b.Property<int>("WeekDays")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
