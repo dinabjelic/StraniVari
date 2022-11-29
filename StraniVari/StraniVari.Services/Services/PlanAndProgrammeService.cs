@@ -28,9 +28,11 @@ namespace StraniVari.Services.Services
             await _straniVariDbContext.SaveChangesAsync();
         }
 
-        public async Task<List<GetPlanAndProgrameResposnse>> PlanAndProgrammeListAsync(DayOfWeek dayOfWeek)
+        public async Task<List<GetPlanAndProgrameResposnse>> PlanAndProgrammeListAsync(DayOfWeek? dayOfWeek, string? StraniVariTheme)
         {
-            var planAndProgrameList = await _straniVariDbContext.PlanAndProgramme.Where(x => x.DayOfWeek == dayOfWeek)
+            var planAndProgrameList = await _straniVariDbContext.PlanAndProgramme
+                .Where(x => x.DayOfWeek == dayOfWeek || dayOfWeek== null
+                || x.StraniVariTheme.Theme == StraniVariTheme)
                 .Select(x => new GetPlanAndProgrameResposnse
                 {
                     Activity = x.Activity,

@@ -35,9 +35,9 @@ namespace StraniVari.API.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> MeetingList(DayOfWeek meetingDay)
+        public async Task<IActionResult> MeetingList(DayOfWeek? meetingDay, int? volunteeringYear)
         {
-            return Ok(await _meetingService.MeetingListAsync(meetingDay));
+            return Ok(await _meetingService.MeetingListAsync(meetingDay, volunteeringYear));
         }
     }
 }

@@ -21,9 +21,16 @@ namespace StraniVari.API.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> PlanAndProgrammeList(DayOfWeek dayOfWeek)
+        public async Task<IActionResult> PlanAndProgrammeList(DayOfWeek? dayOfWeek, string? StraniVariTheme)
         {
-            return Ok(await _planAndProgrammeService.PlanAndProgrammeListAsync(dayOfWeek));
+            return Ok(await _planAndProgrammeService.PlanAndProgrammeListAsync(dayOfWeek, StraniVariTheme));
+        }
+
+        [HttpPut]
+        public async Task<IActionResult> UpdatePlanAndProgramme(int id, UpSertPlanAndProgrammeRequest updatePlanAndProgrammeRequest)
+        {
+            await _planAndProgrammeService.UpdatePlanAndProgrammeAsync(id, updatePlanAndProgrammeRequest);
+            return Ok("You succeeded");
         }
     }
 }
