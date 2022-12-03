@@ -2,13 +2,12 @@
 {
     public class SchoolMaterial:BaseEntity
     {
-        public int SchoolId { get; set; }
-        public School Schools { get; set; }
+        public EventSchool EventSchool { get; set; }
+        public int EventSchoolId { get; set; }
 
+        public Material Material { get; set; }
         public int MaterialId { get; set; }
-        public Material Materials { get; set; }
 
         public int Quantity { get; set; }
-        public int VolunteeringYear { get; set; }
     }
 }

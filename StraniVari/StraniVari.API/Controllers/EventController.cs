@@ -19,6 +19,12 @@ namespace StraniVari.API.Controllers
             return Ok(await _eventService.GetEventDetailsAsync());
         }
 
+        [HttpGet("event-details")]
+        public async Task<IActionResult> GetEventDetailsById(int id)
+        {
+            return Ok(await _eventService.GetEventDetailsByIdAsync(id));
+        }
+
         [HttpPost]
         public async Task<IActionResult> AddEvent(EventUpsertRequest addEventRequest)
         {

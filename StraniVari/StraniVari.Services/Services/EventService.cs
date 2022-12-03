@@ -19,10 +19,10 @@ namespace StraniVari.Services.Services
         {
             var newEvent = new Event
             {
-                SchoolId = addEventRequest.SchoolId,
-                NumberOfChildren = addEventRequest.NumberOfChildren,
                 StartDate = addEventRequest.StartDate,
-                EndDate = addEventRequest.EndDate
+                EndDate = addEventRequest.EndDate, 
+                StraniVariTheme = addEventRequest.StraniVariTheme, 
+                Name = addEventRequest.Name
             };
 
             await _straniVariDbContext.Events.AddAsync(newEvent);
@@ -48,9 +48,25 @@ namespace StraniVari.Services.Services
                 .Select(x => new GetEventDetailsResponse
                 {
                     Id = x.Id,
-                    Name = x.Schools.Name,
-                    NumberOfChildren = x.NumberOfChildren,
-                    StartDateYear = x.StartDate.Year
+                    StartDate = x.StartDate, 
+                    EndDate =x.EndDate, 
+                    Name= x.Name, 
+                    StraniVariTheme = x.StraniVariTheme
+                }).ToListAsync();
+
+            return eventDetails;
+        }
+
+        public async Task<List<GetEventDetailsByIdResponse>> GetEventDetailsByIdAsync(int id)
+        {
+            var eventDetails = await _straniVariDbContext.Events
+                .Where(x=>x.Id == id)
+                .Select(x => new GetEventDetailsByIdResponse
+                {
+                    StartDate = x.StartDate,
+                    EndDate = x.EndDate,
+                    Name = x.Name,
+                    StraniVariTheme = x.StraniVariTheme
                 }).ToListAsync();
 
             return eventDetails;
@@ -70,10 +86,10 @@ namespace StraniVari.Services.Services
                 throw new ArgumentException("Invalid id");
             }
 
-            eventFound.NumberOfChildren = addEventRequest.NumberOfChildren;
             eventFound.StartDate = addEventRequest.StartDate;
             eventFound.EndDate = addEventRequest.EndDate;
-            eventFound.SchoolId = addEventRequest.SchoolId;
+            eventFound.Name = addEventRequest.Name;
+            eventFound.StraniVariTheme = addEventRequest.StraniVariTheme;
 
             _straniVariDbContext.Events.Update(eventFound);
             await _straniVariDbContext.SaveChangesAsync();
