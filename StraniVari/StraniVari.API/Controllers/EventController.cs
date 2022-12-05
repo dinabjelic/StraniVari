@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using StraniVari.Core.Requests;
 using StraniVari.Services.Interfaces;
 
@@ -13,6 +14,7 @@ namespace StraniVari.API.Controllers
             _eventService = eventService;
         }
 
+        [Authorize(Roles = "Administrator")]
         [HttpGet]
         public async Task<IActionResult> GetEventDetails()
         {

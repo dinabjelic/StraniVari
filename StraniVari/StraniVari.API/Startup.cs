@@ -22,6 +22,7 @@ namespace StraniVari.API
             services.AddApplicationServices(_configuration);
             services.AddIdentiyServices(_configuration);
             services.AddDbContextService(_configuration);
+            services.AddSwaggerService();
 
             //services.AddDbContext<StraniVariDbContext>(options =>
             //   options.UseSqlServer(_configuration.GetConnectionString("DefaultConnection")));

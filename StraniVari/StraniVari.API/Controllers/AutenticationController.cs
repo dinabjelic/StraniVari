@@ -1,12 +1,11 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 using StraniVari.Core.Entities;
 using StraniVari.Core.Requests;
 using StraniVari.Core.Responses;
 using StraniVari.Services.Interfaces;
-using System.Threading.Tasks;
 
 namespace StraniVari.API.Controllers
 {
@@ -20,7 +19,8 @@ namespace StraniVari.API.Controllers
         public AutenticationController(UserManager<User> userManager,
             SignInManager<User> signInManager,
             ITokenService token,
-            IPasswordHasher<User> passwordHasher)
+            IPasswordHasher<User> passwordHasher
+            )
         {
             _token = token;
             _signInManager = signInManager;
@@ -28,16 +28,17 @@ namespace StraniVari.API.Controllers
             _passwordHasher = passwordHasher;
         }
 
-
+        [AllowAnonymous]
         [HttpPost("login")]
-        public async Task<ActionResult<GetUserRequest>> Login(RequestLoginDto loginModel)
+        public async Task<ActionResult<GetUserResponse>> Login(RequestLoginDto loginModel)
         {
-
-            var _user = await _userManager.Users.SingleOrDefaultAsync(x => x.UserName == loginModel.Username);
+            var _user = await _userManager.Users.
+                SingleOrDefaultAsync(x => x.UserName == loginModel.Username);
             if (_user == null)
             {
                 return Unauthorized("Something went wrong, try again!");
             }
+            var userRoles = await _userManager.GetRolesAsync(_user);
 
             var result = await _signInManager
             .CheckPasswordSignInAsync(_user, loginModel.Password, false);
@@ -47,16 +48,17 @@ namespace StraniVari.API.Controllers
 
             User user = new User
             {
-                Id = _user.Id
+                Id = _user.Id, 
             };
 
-            return new GetUserRequest
+            return new GetUserResponse
             {
                 Username = _user.UserName,
                 Token = _token.CreateToken(user)
             };
         }
-
+        
+        [AllowAnonymous]
         [HttpGet]
         public async Task<string> GetPassword()
         {

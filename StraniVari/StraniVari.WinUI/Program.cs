@@ -1,4 +1,5 @@
 ﻿using StraniVari.WinUI.Event;
+using StraniVari.WinUI.Login;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace StraniVari.WinUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmEvents());
+            Application.Run(new frmLogin());
         }
     }
 }

@@ -14,10 +14,8 @@ namespace StraniVari.WinUI.Event
 
         private async void btnShowEvents_Click(object sender, EventArgs e)
         {
-            //var result = "https://localhost:7241/api/Event".GetJsonAsync<dynamic>().Result;
-
-            var result = await _apiService.GetRoute<dynamic>();
-            dgvEvents.DataSource =result;
+            var result = await _apiService.Get<dynamic>();
+            dgvEvents.DataSource = result;
         }
     }
 }
