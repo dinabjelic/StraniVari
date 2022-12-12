@@ -1,6 +1,6 @@
 ﻿using StraniVari.Core.Requests;
 using StraniVari.Core.Responses;
-using StraniVari.WinUI.Event;
+using StraniVari.WinUI.EventDetails;
 using StraniVari.WinUI.Service;
 
 namespace StraniVari.WinUI.Login
@@ -32,7 +32,7 @@ namespace StraniVari.WinUI.Login
             {
                 var result = await _apiService.Login<GetUserResponse>(requestLoginDto);
                 ApiService.Token = result.Token;
-                frmEvents frm = new frmEvents();
+                frmAllEvents frm = new frmAllEvents();
                 frm.Show();
                 this.Hide();
             }

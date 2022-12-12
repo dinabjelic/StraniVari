@@ -1,18 +1,20 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using StraniVari.Core.Requests;
 using StraniVari.Services.Interfaces;
 
 namespace StraniVari.API.Controllers
 {
-    public class ShoolsController : BaseApiController
+    public class SchoolsController : BaseApiController
     {
         private readonly ISchoolService _schoolService;
 
-        public ShoolsController(ISchoolService schoolService)
+        public SchoolsController(ISchoolService schoolService)
         {
             _schoolService = schoolService;
         }
 
+        [AllowAnonymous]
         [HttpGet]
         public async Task<IActionResult> GetSchoolList()
         {

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using StraniVari.Core.Requests;
+using StraniVari.Core.Responses;
 using StraniVari.Services.Interfaces;
 
 namespace StraniVari.API.Controllers
@@ -16,7 +17,7 @@ namespace StraniVari.API.Controllers
         public async Task<IActionResult> AddSchoolToEvent(EventSchoolInsertRequest addEventSchoolUpSertRequest)
         {
             await _eventSchoolService.AddSchoolToEventAsync(addEventSchoolUpSertRequest);
-            return Ok("You succeeded");
+            return Ok(new ResponseResult { Message = "You succeeded" });
         }
 
         [HttpGet]
@@ -25,7 +26,7 @@ namespace StraniVari.API.Controllers
             return Ok(await _eventSchoolService.SchoolsForEventListAsync(id));
         }
 
-        [HttpGet("School-Event details")]
+        [HttpGet("School-Event-details")]
         public async Task<IActionResult> EventSchoolDetails(int id)
         {
             return Ok(await _eventSchoolService.EventSchoolDetailsAsync(id));

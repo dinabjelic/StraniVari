@@ -65,7 +65,7 @@ namespace StraniVari.Services.Services
                .Select(x => new GetSchoolDetailsResponse
                {
                    Id=x.Id,
-                   Name= x.Name,
+                   Name= x.Name + ", " + x.Address +", "+ x.City,
                    Address = x.Address,
                    City = x.City
 

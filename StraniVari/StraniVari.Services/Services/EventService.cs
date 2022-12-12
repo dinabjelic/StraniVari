@@ -63,6 +63,7 @@ namespace StraniVari.Services.Services
                 .Where(x=>x.Id == id)
                 .Select(x => new GetEventDetailsByIdResponse
                 {
+                    //Id = x.Id,
                     StartDate = x.StartDate,
                     EndDate = x.EndDate,
                     Name = x.Name,

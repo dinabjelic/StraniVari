@@ -28,7 +28,7 @@ namespace StraniVari.Services.Interfaces
         /// <param name="id"></param>
         /// <param name="addEventRequest"></param>
         /// <returns></returns>
-        Task UpdateEventAsync(int id, EventUpsertRequest addEventRequest);
+        Task UpdateEventAsync(int id,EventUpsertRequest addEventRequest);
         /// <summary>
         /// deleting event
         /// </summary>
