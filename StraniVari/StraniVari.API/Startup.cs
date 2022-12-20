@@ -1,6 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using StraniVari.API.StartupExtensions;
-using StraniVari.Database;
+﻿using StraniVari.API.StartupExtensions;
 
 namespace StraniVari.API
 {

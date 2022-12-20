@@ -40,11 +40,23 @@ namespace StraniVari.Services.Services
             await _straniVariDbContext.SaveChangesAsync();
         }
 
+        public async Task<List<GetGamesResponse>> GameListWithDetailsAsync()
+        {
+            var gameList = await _straniVariDbContext.Games.Select(x => new GetGamesResponse
+            {
+                Id = x.Id,
+                Name = "Name: "+ x.Name+ ", Rules: " + x.Rules + "\n",
+                //Rules = x.Rules
+            }).ToListAsync();
+
+            return gameList;
+        }
+
         public async Task<List<GetGamesResponse>> GameListAsync()
         {
             var gameList = await _straniVariDbContext.Games.Select(x => new GetGamesResponse
             {
-                Name = x.Name,
+                Id = x.Id,
                 Rules = x.Rules
             }).ToListAsync();
 

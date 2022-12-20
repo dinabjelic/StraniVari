@@ -28,5 +28,10 @@ namespace StraniVari.Services.Interfaces
         /// </summary>
         /// <returns></returns>
         Task<List<GetGamesResponse>> GameListAsync();
+        /// <summary>
+        /// getting names and rules in one
+        /// </summary>
+        /// <returns></returns>
+        Task<List<GetGamesResponse>> GameListWithDetailsAsync();
     }
 }

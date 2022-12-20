@@ -1,24 +1,53 @@
 ﻿using StraniVari.Core.Requests;
+using StraniVari.Core.Responses;
+using StraniVari.WinUI.Service;
 
 namespace StraniVari.WinUI.SchoolDetails
 {
     public partial class frmEditSchoolsDetails : Form
     {
-        public frmEditSchoolsDetails()
+        ApiService _apiServiceEventSchool = new ApiService("EventSchool");
+        public GetSchoolsForEventResponse _selectedSchool { get; }
+        public EventUpsertRequest _selectedEvent { get; }
+
+        public frmEditSchoolsDetails(GetSchoolsForEventResponse selectedSchool = null, EventUpsertRequest selectedEvent=null) 
         {
             InitializeComponent();
+            _selectedEvent = selectedEvent;
+            _selectedSchool = selectedSchool;
         }
 
-        public frmEditSchoolsDetails(EventSchoolUpdateRequest selectedElement)
+        private async void frmEditSchoolsDetails_Load(object sender, EventArgs e)
         {
-            SelectedElement = selectedElement;
+            txtName.Text = _selectedEvent.Name;
+            txtTheme.Text = _selectedEvent.StraniVariTheme;
+            txtStartDate.Text = _selectedEvent.StartDate.ToString("D");
+            txtEndDate.Text = _selectedEvent.EndDate.ToString("D");
+
+            txtNumberOfChildren.Text = _selectedSchool.NumberOfChildren.ToString();
+            txtSchoolAddress.Text = _selectedSchool.SchoolAddress;
+            txtSchoolCity.Text = _selectedSchool.SchoolCity;
+            txtSchoolName.Text = _selectedSchool.SchoolName;
         }
 
-        public EventSchoolUpdateRequest SelectedElement { get; }
-
-        private void frmEditSchoolsDetails_Load(object sender, EventArgs e)
+        private async void btnEditSchoolDetails_Click(object sender, EventArgs e)
         {
+            var editedDetails = new EventSchoolUpdateRequest
+            {
+                EventSchoolId = _selectedSchool.SchoolEventId,
+                NumberOfChildren = Int32.Parse(txtNumberOfChildren.Text)
+            };
 
+            if(editedDetails != null)
+            {
+                await _apiServiceEventSchool.Update<ResponseResult>(editedDetails);
+                MessageBox.Show("Details successfully updated.", "Infomation", MessageBoxButtons.OK);
+            }
+            this.DialogResult = DialogResult.OK;
+            Close();
+
+            var principalForm = Application.OpenForms.OfType<frmSchoolsEventDetails>().FirstOrDefault();
+            principalForm.frmSchoolsEventDetails_Load(sender,e);
         }
     }
 }

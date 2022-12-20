@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using StraniVari.Core.Requests;
+using StraniVari.Core.Responses;
 using StraniVari.Services.Interfaces;
 
 namespace StraniVari.API.Controllers
@@ -17,21 +18,27 @@ namespace StraniVari.API.Controllers
         public async Task<IActionResult> AddGame(UpSertGameRequest addGameRequest)
         {
             await _gameService.AddGameAsync(addGameRequest);
-            return Ok("You succeeded");
+            return Ok(new ResponseResult { Message = "You succeeded" });
         }
 
         [HttpPut]
         public async Task<IActionResult> UpdateGame(int id, [FromBody]UpSertGameRequest updateGameRequest)
         {
             await _gameService.UpdateGameAsync(id,updateGameRequest);
-            return Ok("You succeeded");
+            return Ok(new ResponseResult { Message = "You succeeded" });
         }
-        
+
         [HttpDelete]
         public async Task<IActionResult> DeleteGame(int id)
         {
             await _gameService.DeleteGameAsync(id);
-            return Ok("You succeeded");
+            return Ok(new ResponseResult { Message = "You succeeded" });
+        }
+
+        [HttpGet("with-details")]
+        public async Task<IActionResult> GameListWithDetails()
+        {
+            return Ok(await _gameService.GameListWithDetailsAsync());
         }
 
         [HttpGet]
@@ -39,5 +46,6 @@ namespace StraniVari.API.Controllers
         {
             return Ok(await _gameService.GameListAsync());
         }
+
     }
 }

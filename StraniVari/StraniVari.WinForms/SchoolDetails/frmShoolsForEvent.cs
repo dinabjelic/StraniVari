@@ -25,11 +25,11 @@ namespace StraniVari.WinUI.SchoolDetails
 
         private async Task LoadEventDetails()
         {
-            var eventDetails = await _apiServiceEvent.GetById<List<GetEventDetailsByIdResponse>>(_selectedEvent.Id);
-            txtName.Text = eventDetails[0].Name;
-            txtTheme.Text = eventDetails[0].StraniVariTheme;
-            txtStartDate.Text = eventDetails[0].StartDate.ToString("D");
-            txtEndDate.Text = eventDetails[0].EndDate.ToString("D");
+            //var eventDetails = await _apiServiceEvent.GetById<List<GetEventDetailsByIdResponse>>(_selectedEvent.Id);
+            txtName.Text = _selectedEvent.Name;
+            txtTheme.Text = _selectedEvent.StraniVariTheme;
+            txtStartDate.Text = _selectedEvent.StartDate.ToString("D");
+            txtEndDate.Text = _selectedEvent.EndDate.ToString("D");
         }
         private async Task LoadTextBoxValues()
         {

@@ -1,8 +1,11 @@
 ﻿using Newtonsoft.Json;
 using StraniVari.Core.Requests;
 using StraniVari.Core.Responses;
+using StraniVari.WinUI.Games;
+using StraniVari.WinUI.Material;
 using StraniVari.WinUI.SchoolDetails;
 using StraniVari.WinUI.Service;
+using StraniVari.WinUI.Volunteers;
 
 namespace StraniVari.WinUI.EventDetails
 {
@@ -57,6 +60,30 @@ namespace StraniVari.WinUI.EventDetails
                     eventSchools.ShowDialog();
                 }
             }
+        }
+
+        private void btnMaterials_Click(object sender, EventArgs e)
+        {
+            frmAllMaterial frmAllMaterial = new frmAllMaterial();
+            frmAllMaterial.Show();
+        }
+
+        private void btnVolunteers_Click(object sender, EventArgs e)
+        {
+            frmAllVolunteers frmAllVolunteers = new frmAllVolunteers();
+            frmAllVolunteers.Show();
+        }
+
+        private void btnSchools_Click(object sender, EventArgs e)
+        {
+            frmAllSchools frmAllSchools = new frmAllSchools();
+            frmAllSchools.Show();
+        }
+
+        private void btnGames_Click(object sender, EventArgs e)
+        {
+            frmAllGames frmAllGames = new frmAllGames();
+            frmAllGames.Show();
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using StraniVari.Core.Requests;
+using StraniVari.Core.Responses;
 using StraniVari.Services.Interfaces;
 
 namespace StraniVari.API.Controllers
@@ -28,21 +29,21 @@ namespace StraniVari.API.Controllers
         public async Task<IActionResult> AddVolunteer(VolunteerUpSertRequest addVolunteerRequest)
         {
             await _volunteerService.AddVolunteerAsync(addVolunteerRequest);
-            return Ok("You succeeded");
+            return Ok(new ResponseResult { Message = "You succeeded" });
         }
 
         [HttpPut]
         public async Task<IActionResult> UpdateVolunteer(int id, [FromBody]VolunteerUpSertRequest updateVolunteerRequest)
         {
             await _volunteerService.UpdateVolunteerAsync(id, updateVolunteerRequest);
-            return Ok("You succeeded");
+            return Ok(new ResponseResult { Message = "You succeeded" });
         }
-        
+
         [HttpDelete]
         public async Task<IActionResult> DeleteVolunteer(int id)
         {
             await _volunteerService.DeleteVolunteerAsync(id);
-            return Ok("You succeeded");
+            return Ok(new ResponseResult { Message = "You succeeded" });
         }
     }
 }

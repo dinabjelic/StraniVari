@@ -51,7 +51,7 @@ namespace StraniVari.Services.Services
                 .Select(x => new GetVolunteerDetailsResposne
                 {
                     Id = x.Id,
-                    FirstName = x.FirstName,
+                    FirstName = x.FirstName + " " + x.LastName + " " + x.Address + " " + x.City,
                     LastName = x.LastName,
                     Address = x.Address,
                     City = x.City,
@@ -91,12 +91,14 @@ namespace StraniVari.Services.Services
         {
             var volunteerList = await _straniVariDbContext.Volunteers.Select(x => new GetVolunteerDetailsResposne
             {
+                Id = x.Id,
+                //FirstName = x.FirstName + " " + x.LastName + " " + x.Address + " " + x.City,
                 FirstName = x.FirstName,
                 LastName = x.LastName,
                 Address = x.Address,
                 City = x.City,
                 DateOfBirth = x.DateOfBirth,
-                StartDateOfVolunteering = x.StartDateOfVolunteering
+                StartDateOfVolunteering = x.StartDateOfVolunteering, 
             }).ToListAsync();
 
             return volunteerList;

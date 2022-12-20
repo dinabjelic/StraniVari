@@ -1,7 +1,8 @@
-﻿using Newtonsoft.Json;
-using StraniVari.Core.Requests;
+﻿using StraniVari.Core.Requests;
 using StraniVari.Core.Responses;
+using StraniVari.WinUI.Material;
 using StraniVari.WinUI.Service;
+using StraniVari.WinUI.Volunteers;
 
 namespace StraniVari.WinUI.SchoolDetails
 {
@@ -17,33 +18,48 @@ namespace StraniVari.WinUI.SchoolDetails
             _selectedEvent = selectedEvent;
         }
 
-        private async void frmSchoolsEventDetails_Load(object sender, EventArgs e)
+        public async void frmSchoolsEventDetails_Load(object sender, EventArgs e)
         {
+            dgvSchoolsEventDetails.AutoGenerateColumns = false;
             var result = await _apiService.GetById<List<GetSchoolsForEventResponse>>(_selectedEvent.Id);
             dgvSchoolsEventDetails.DataSource = result;
-            //this.DialogResult = DialogResult.OK;
-            await LoadTextBoxValues();
+            await LoadEventDetails();
         }
 
-        private async Task LoadTextBoxValues()
+        private async Task LoadEventDetails()
         {
-            var eventDetails = await _apiServiceEvent.GetById<List<GetEventDetailsByIdResponse>>(_selectedEvent.Id);
-            txtName.Text = eventDetails[0].Name;
-            txtTheme.Text = eventDetails[0].StraniVariTheme;
-            txtStartDate.Text = eventDetails[0].StartDate.ToString("D");
-            txtEndDate.Text = eventDetails[0].EndDate.ToString("D");
+            txtName.Text = _selectedEvent.Name;
+            txtTheme.Text = _selectedEvent.StraniVariTheme;
+            txtStartDate.Text = _selectedEvent.StartDate.ToString("D");
+            txtEndDate.Text = _selectedEvent.EndDate.ToString("D");
         }
 
-        private void dgvSchoolsEventDetails_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        private async void dgvSchoolsEventDetails_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            var selectedElement = JsonConvert.DeserializeObject<EventSchoolUpdateRequest>(dgvSchoolsEventDetails.SelectedRows[0].DataBoundItem.ToString());
-
-            if (selectedElement != null)
+            var selectedSchool = dgvSchoolsEventDetails.SelectedRows[0].DataBoundItem as GetSchoolsForEventResponse;
+            Text = e.ColumnIndex.ToString();
+            if (selectedSchool != null)
             {
-                if (e.ColumnIndex == 4)
+                if (e.ColumnIndex == 5)
                 {
-                    frmEditSchoolsDetails frmEditSchoolsDetails = new frmEditSchoolsDetails(selectedElement);
+                    frmEditSchoolsDetails frmEditSchoolsDetails = new frmEditSchoolsDetails(selectedSchool, _selectedEvent);
                     frmEditSchoolsDetails.Show();
+                }
+                else if(e.ColumnIndex ==6)
+                {
+                    MessageBox.Show("You are about to delete this item!");
+                    await _apiService.Delete<ResponseResult>(selectedSchool.SchoolEventId);
+                    frmSchoolsEventDetails_Load(sender, e);
+                }
+                else if(e.ColumnIndex == 7)
+                {
+                    frmAddMaterialToSchool frmAddMaterialToSchool = new frmAddMaterialToSchool(selectedSchool, _selectedEvent);
+                    frmAddMaterialToSchool.Show();
+                }
+                else if(e.ColumnIndex == 8)
+                {
+                    frmAddVolunteersToSchool frmAddVolunteersToSchool = new frmAddVolunteersToSchool(selectedSchool, _selectedEvent);
+                    frmAddVolunteersToSchool.Show();
                 }
             }
         }

@@ -36,14 +36,14 @@ namespace StraniVari.API.Controllers
         public async Task<IActionResult> UpdateSchoolForEvent(EventSchoolUpdateRequest eventSchoolUpdateRequest)
         {
             await _eventSchoolService.UpdateSchoolForEventAsync(eventSchoolUpdateRequest);
-            return Ok("You succeeded");
+            return Ok(new ResponseResult { Message = "You succeeded" });
         }
 
         [HttpDelete]
         public async Task<IActionResult> DeleteSchoolForEvent(int id)
         {
             await _eventSchoolService.DeleteSchoolForEventAsync(id);
-            return Ok("You succeeded");
+            return Ok(new ResponseResult { Message = "You succeeded" });
         }
     }
 }

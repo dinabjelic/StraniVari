@@ -44,6 +44,7 @@ namespace StraniVari.Services.Services
         {
             var materialList = await _straniVariDbContext.Materials.Select(x => new GetMaterialDetailsResponse
             {
+                Id= x.Id,
                 Name = x.Name
             }).ToListAsync();
 

@@ -40,13 +40,14 @@ namespace StraniVari.WinUI.EventDetails
             }
             else
             {
-                await _apiService.Update<ResponseResult>(selectedEvent.Id, straniVariEvent);
+                await _apiService.Update<ResponseResult>(straniVariEvent, selectedEvent.Id);
                 MessageBox.Show("Event successfully updated.", "Infomation", MessageBoxButtons.OK);
             }
 
 
             this.DialogResult = DialogResult.OK;
             Close();
+            InitializeComponent();
         }
 
         private void frmNewEvent_Load(object sender, EventArgs e)

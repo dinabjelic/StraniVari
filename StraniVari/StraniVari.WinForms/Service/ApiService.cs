@@ -79,7 +79,7 @@ namespace StraniVari.WinUI.Service
                 throw;
             }
         }
-        public async Task<T> Update<T>(object id, object request)
+        public async Task<T> Update<T>(object request, object id = null)
         {
             try
             {
