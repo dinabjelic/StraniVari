@@ -3,6 +3,8 @@ using StraniVari.Core.Requests;
 using StraniVari.Core.Responses;
 using StraniVari.WinUI.Games;
 using StraniVari.WinUI.Material;
+using StraniVari.WinUI.Notifications;
+using StraniVari.WinUI.PlanAndProgramme;
 using StraniVari.WinUI.SchoolDetails;
 using StraniVari.WinUI.Service;
 using StraniVari.WinUI.Volunteers;
@@ -48,16 +50,34 @@ namespace StraniVari.WinUI.EventDetails
                         frmAllEvents_Load(sender, e);
                     }
                 }
-                else if(e.ColumnIndex == 6)
+                else if (e.ColumnIndex == 6)
                 {
-                    MessageBox.Show("You are about to delete this item!");
-                    await _apiService.Delete<ResponseResult>(selectedEvent.Id);
-                    frmAllEvents_Load(sender, e);
+                    var confirmation = MessageBox.Show("You are about to delete this item!", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                    if (confirmation == DialogResult.No)
+                    {
+                        frmAllEvents_Load(sender, e);
+                    }
+                    else
+                    {
+                       await _apiService.Delete<ResponseResult>(selectedEvent.Id);
+                       frmAllEvents_Load(sender, e);
+                    }
                 }
                 else if(e.ColumnIndex == 7)
                 {
                     var eventSchools = new frmShoolsForEvent(selectedEvent);
                     eventSchools.ShowDialog();
+                }
+                else if(e.ColumnIndex == 8)
+                {
+                    frmAllNotifications frmAllNotifications = new frmAllNotifications(selectedEvent);
+                    frmAllNotifications.ShowDialog();
+                }
+                else if(e.ColumnIndex == 9)
+                {
+                    frmAllPlanAndProgramme frmAllPlanAndProgramme = new frmAllPlanAndProgramme(selectedEvent);
+                    frmAllPlanAndProgramme.ShowDialog();
                 }
             }
         }
@@ -65,25 +85,25 @@ namespace StraniVari.WinUI.EventDetails
         private void btnMaterials_Click(object sender, EventArgs e)
         {
             frmAllMaterial frmAllMaterial = new frmAllMaterial();
-            frmAllMaterial.Show();
+            frmAllMaterial.ShowDialog();
         }
 
         private void btnVolunteers_Click(object sender, EventArgs e)
         {
             frmAllVolunteers frmAllVolunteers = new frmAllVolunteers();
-            frmAllVolunteers.Show();
+            frmAllVolunteers.ShowDialog();
         }
 
         private void btnSchools_Click(object sender, EventArgs e)
         {
             frmAllSchools frmAllSchools = new frmAllSchools();
-            frmAllSchools.Show();
+            frmAllSchools.ShowDialog();
         }
 
         private void btnGames_Click(object sender, EventArgs e)
         {
             frmAllGames frmAllGames = new frmAllGames();
-            frmAllGames.Show();
+            frmAllGames.ShowDialog();
         }
     }
 }

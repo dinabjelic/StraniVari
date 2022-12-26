@@ -28,13 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAddEditMaterial));
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.txtMaterialName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.err = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.err)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
@@ -85,6 +88,10 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "Material";
             // 
+            // err
+            // 
+            this.err.ContainerControl = this;
+            // 
             // frmAddEditMaterial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -99,6 +106,7 @@
             this.Text = "frmMaterial";
             this.Load += new System.EventHandler(this.frmAddEditMaterial_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.err)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -111,5 +119,6 @@
         private Button btnSave;
         private TextBox txtMaterialName;
         private Label label1;
+        private ErrorProvider err;
     }
 }

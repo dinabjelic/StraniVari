@@ -43,6 +43,7 @@ namespace StraniVari.WinUI.Volunteers
 
         private async void btnAddVolunteersToSchool_Click(object sender, EventArgs e)
         {
+            var volunteersForSchool = await _apiServiceVolunteersSchool.GetById<List<GetVolunteersForSchoolResponse>>(_selectedSchool.SchoolEventId);
             var volunteers = new InsertVolunteerToSchoolRequest
             {
                 EventSchoolId = _selectedSchool.SchoolEventId,
@@ -50,15 +51,37 @@ namespace StraniVari.WinUI.Volunteers
                 .Select(x => x.Id).ToArray()
             };
 
-            if (volunteers != null)
+
+            bool added = false;
+            foreach(var item in volunteersForSchool)
             {
-                MessageBox.Show("Selected volunteers will be added to school.", "Infomation", MessageBoxButtons.OK);
+                foreach(var i in volunteers.Volunteers)
+                {
+                    if (item.VolunteerId == i)
+                    {
+                        added = true;
+                        break;
+                    }
+                }
+            }
+
+            if (!added) {
                 await _apiServiceVolunteersSchool.Insert<ResponseResult>(volunteers);
                 MessageBox.Show("Volunteers successfully added.", "Infomation", MessageBoxButtons.OK);
             }
+            else
+            {
+                MessageBox.Show("You cannot add duplicate volunteer to the same school.", "Infomation", MessageBoxButtons.OK);
+                Close();
+            }
 
             frmVolunteerDetails frmVolunteerDetails = new frmVolunteerDetails(_selectedSchool, _selectedEvent);
-            frmVolunteerDetails.Show();
+            frmVolunteerDetails.ShowDialog();
+        }
+
+        private void lbxVolunteers_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            label5.Text = lbxVolunteers.SelectedItems.Count.ToString();
         }
     }
 }

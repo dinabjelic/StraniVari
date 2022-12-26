@@ -47,6 +47,7 @@ namespace StraniVari.Services.Services
                 .Where(x => x.EventSchoolId == id)
                 .Select(x => new GetMaterialsForSchoolRequest
                 {
+                    MaterialId = x.MaterialId,
                     SchoolMaterialId = x.Id, 
                     MaterialName = x.Material.Name,
                     Quantity = x.Quantity

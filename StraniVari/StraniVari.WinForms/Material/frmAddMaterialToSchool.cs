@@ -43,6 +43,7 @@ namespace StraniVari.WinUI.Material
 
         private async void btnAddMaterialToSchool_Click(object sender, EventArgs e)
         {
+            var materialForSchool =await _apiServiceMaterial.GetById<List<GetMaterialsForSchoolRequest>>(SelectedElement.SchoolEventId);
             var materials = new InsertMaterialToSchoolRequest
             {
                 EventSchoolId = SelectedElement.SchoolEventId,
@@ -51,15 +52,37 @@ namespace StraniVari.WinUI.Material
                 .ToArray()
             };
 
-            if (materials != null)
+            bool added = false;
+            foreach(var item in materialForSchool)
             {
-                MessageBox.Show("Selected material will be added to school.", "Infomation", MessageBoxButtons.OK);
+                foreach(var i in materials.Materials)
+                {
+                    if(item.MaterialId == i)
+                    {
+                        added = true;
+                        break;
+                    }
+                }
+            }
+
+            if (!added)
+            {
                 await _apiServiceMaterial.Insert<ResponseResult>(materials);
                 MessageBox.Show("Material successfully added.", "Infomation", MessageBoxButtons.OK);
             }
+            else
+            {
+                MessageBox.Show("You cannot add duplicate material to the same school.", "Infomation", MessageBoxButtons.OK);
+                Close();
+            }
 
             frmMaterialDetails frmMaterialDetails = new frmMaterialDetails(SelectedEvent, SelectedElement);
-            frmMaterialDetails.Show();
+            frmMaterialDetails.ShowDialog();
+        }
+
+        private void lbxMaterial_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            label5.Text = lbxMaterial.SelectedItems.Count.ToString();
         }
     }
 }

@@ -69,7 +69,9 @@ namespace StraniVari.Services.Services
                 .Where(x=>x.EventId == id)
                 .Select(x => new GetSchoolsForEventResponse
                 {
+                    EventId = x.EventId,
                     SchoolEventId = x.Id,
+                    SchoolId = x.SchoolId,
                     //EventName = x.Event.Name,
                     NumberOfChildren = x.NumberOfChildren,
                     //StartDate = x.Event.StartDate,

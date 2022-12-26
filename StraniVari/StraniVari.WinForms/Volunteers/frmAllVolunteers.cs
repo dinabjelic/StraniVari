@@ -21,18 +21,26 @@ namespace StraniVari.WinUI.Volunteers
         private async void dgvVolunteers_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             var selectedVolunteer = dgvVolunteers.SelectedRows[0].DataBoundItem as GetVolunteerDetailsResposne;
-            if(selectedVolunteer != null)
+            if (selectedVolunteer != null)
             {
-                if(e.ColumnIndex== 5)
+                if (e.ColumnIndex == 5)
                 {
                     frmAddEditVolunteer frmAddEditVolunteer = new frmAddEditVolunteer(selectedVolunteer);
-                    frmAddEditVolunteer.Show();
+                    frmAddEditVolunteer.ShowDialog();
                 }
-                else if(e.ColumnIndex == 6)
+                else if (e.ColumnIndex == 6)
                 {
-                    MessageBox.Show("You are about to delete this item!");
-                    await _apiService.Delete<ResponseResult>(selectedVolunteer.Id);
-                    frmAllVolunteers_Load(sender, e);
+                    var confirmation = MessageBox.Show("You are about to delete this item!", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                    if (confirmation == DialogResult.No)
+                    {
+                        frmAllVolunteers_Load(sender, e);
+                    }
+                    else
+                    {
+                        await _apiService.Delete<ResponseResult>(selectedVolunteer.Id);
+                        frmAllVolunteers_Load(sender, e);
+                    }
                 }
             }
         }
@@ -40,7 +48,7 @@ namespace StraniVari.WinUI.Volunteers
         private void btnAddVolunteer_Click(object sender, EventArgs e)
         {
             frmAddEditVolunteer frmAddEditVolunteer = new frmAddEditVolunteer();
-            frmAddEditVolunteer.Show();
+            frmAddEditVolunteer.ShowDialog();
         }
     }
 }

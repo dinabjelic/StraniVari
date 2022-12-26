@@ -38,6 +38,8 @@
             this.btnAddSchoolToEvent = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lbxSchools
@@ -51,6 +53,7 @@
             this.lbxSchools.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.lbxSchools.Size = new System.Drawing.Size(349, 144);
             this.lbxSchools.TabIndex = 2;
+            this.lbxSchools.SelectedIndexChanged += new System.EventHandler(this.lbxSchools_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -140,11 +143,33 @@
             this.label4.Size = new System.Drawing.Size(1, 219);
             this.label4.TabIndex = 7;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label5.Location = new System.Drawing.Point(666, 53);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(17, 20);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "0";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label6.Location = new System.Drawing.Point(554, 53);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(113, 20);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "Selected items: ";
+            // 
             // frmShoolsForEvent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(728, 339);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnAddSchoolToEvent);
@@ -177,5 +202,7 @@
         private Button btnAddSchoolToEvent;
         private Label label3;
         private Label label4;
+        private Label label5;
+        private Label label6;
     }
 }

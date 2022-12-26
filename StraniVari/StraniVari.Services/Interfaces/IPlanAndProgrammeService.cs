@@ -23,6 +23,6 @@ namespace StraniVari.Services.Interfaces
         /// </summary>
         /// <param name="dayOfWeek"></param>
         /// <returns></returns>
-        Task<List<GetPlanAndProgrameResposnse>> PlanAndProgrammeListAsync(DayOfWeek? dayOfWeek);
+        Task<List<GetPlanAndProgrameResposnse>> PlanAndProgrammeListAsync(DayOfWeek? dayOfWeek, int id);
     }
 }

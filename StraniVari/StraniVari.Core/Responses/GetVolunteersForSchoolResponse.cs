@@ -2,6 +2,7 @@
 {
     public class GetVolunteersForSchoolResponse
     {
+        public int VolunteerId { get; set; }
         public int SchoolVolunteerId { get; set; }
         //public string SchoolName { get; set; }
         //public string SchoolAddress { get; set; }

@@ -40,16 +40,24 @@ namespace StraniVari.WinUI.Volunteers
 
             if (selectedVolunteer != null)
             {
-                if(e.ColumnIndex == 6)
+                if (e.ColumnIndex == 6)
                 {
                     frmEditVolunteerDetails frmEditVolunteerDetails = new frmEditVolunteerDetails(selectedVolunteer, _selectedEvent, _selectedSchool);
-                    frmEditVolunteerDetails.Show();
+                    frmEditVolunteerDetails.ShowDialog();
                 }
-                else if(e.ColumnIndex == 7)
+                else if (e.ColumnIndex == 7)
                 {
-                    MessageBox.Show("You are about to delete this item!");
-                    await _apiService.Delete<ResponseResult>(selectedVolunteer.SchoolVolunteerId);
-                    frmVolunteerDetails_Load(sender, e);
+                    var confirmation = MessageBox.Show("You are about to delete this item!", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                    if (confirmation == DialogResult.No)
+                    {
+                        frmVolunteerDetails_Load(sender, e);
+                    }
+                    else
+                    {
+                        await _apiService.Delete<ResponseResult>(selectedVolunteer.SchoolVolunteerId);
+                        frmVolunteerDetails_Load(sender, e);
+                    }
                 }
             }
         }

@@ -39,6 +39,8 @@
             this.txtTheme = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtSchool = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnAddMaterialToSchool
@@ -74,6 +76,7 @@
             this.lbxMaterial.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.lbxMaterial.Size = new System.Drawing.Size(349, 144);
             this.lbxMaterial.TabIndex = 14;
+            this.lbxMaterial.SelectedIndexChanged += new System.EventHandler(this.lbxMaterial_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -151,11 +154,33 @@
             this.txtSchool.Size = new System.Drawing.Size(248, 19);
             this.txtSchool.TabIndex = 24;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label6.Location = new System.Drawing.Point(548, 65);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(113, 20);
+            this.label6.TabIndex = 39;
+            this.label6.Text = "Selected items: ";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label5.Location = new System.Drawing.Point(660, 65);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(17, 20);
+            this.label5.TabIndex = 38;
+            this.label5.Text = "0";
+            // 
             // frmAddMaterialToSchool
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(741, 349);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.txtSchool);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -187,5 +212,7 @@
         private TextBox txtTheme;
         private Label label1;
         private TextBox txtSchool;
+        private Label label6;
+        private Label label5;
     }
 }

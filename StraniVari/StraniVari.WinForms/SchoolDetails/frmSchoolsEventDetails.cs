@@ -43,23 +43,31 @@ namespace StraniVari.WinUI.SchoolDetails
                 if (e.ColumnIndex == 5)
                 {
                     frmEditSchoolsDetails frmEditSchoolsDetails = new frmEditSchoolsDetails(selectedSchool, _selectedEvent);
-                    frmEditSchoolsDetails.Show();
+                    frmEditSchoolsDetails.ShowDialog();
                 }
                 else if(e.ColumnIndex ==6)
                 {
-                    MessageBox.Show("You are about to delete this item!");
-                    await _apiService.Delete<ResponseResult>(selectedSchool.SchoolEventId);
-                    frmSchoolsEventDetails_Load(sender, e);
+                    var confirmation = MessageBox.Show("You are about to delete this item!", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                    if (confirmation == DialogResult.No)
+                    {
+                        frmSchoolsEventDetails_Load(sender, e);
+                    }
+                    else
+                    {
+                        await _apiService.Delete<ResponseResult>(selectedSchool.SchoolEventId);
+                        frmSchoolsEventDetails_Load(sender, e);
+                    }
                 }
                 else if(e.ColumnIndex == 7)
                 {
                     frmAddMaterialToSchool frmAddMaterialToSchool = new frmAddMaterialToSchool(selectedSchool, _selectedEvent);
-                    frmAddMaterialToSchool.Show();
+                    frmAddMaterialToSchool.ShowDialog();
                 }
                 else if(e.ColumnIndex == 8)
                 {
                     frmAddVolunteersToSchool frmAddVolunteersToSchool = new frmAddVolunteersToSchool(selectedSchool, _selectedEvent);
-                    frmAddVolunteersToSchool.Show();
+                    frmAddVolunteersToSchool.ShowDialog();
                 }
             }
         }

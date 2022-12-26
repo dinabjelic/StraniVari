@@ -13,6 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\StraniVari.Common\StraniVari.Common.csproj" />
     <ProjectReference Include="..\StraniVari.Core\StraniVari.Core.csproj" />
     <ProjectReference Include="..\StraniVari.Database\StraniVari.Database.csproj" />
   </ItemGroup>
@@ -45,10 +46,6 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Notifications\" />
   </ItemGroup>
 
 </Project>

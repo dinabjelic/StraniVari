@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using StraniVari.Core.Requests;
+using StraniVari.Core.Responses;
 using StraniVari.Services.Interfaces;
 
 namespace StraniVari.API.Controllers
@@ -17,21 +18,21 @@ namespace StraniVari.API.Controllers
         public async Task<IActionResult> AddNotification(UpSertMeetingRequest addNotificationRequest)
         {
             await _meetingService.AddNotificationAsync(addNotificationRequest);
-            return Ok("You succeeded");
+            return Ok(new ResponseResult { Message = "You succeeded" });
         }
 
         [HttpPut]
         public async Task<IActionResult> UpdateNotification(int id, UpSertMeetingRequest updateNotificationRequest)
         {
             await _meetingService.UpdateNotificationAsync(id, updateNotificationRequest);
-            return Ok("You succeeded");
+            return Ok(new ResponseResult { Message = "You succeeded" });
         }
 
         [HttpDelete]
         public async Task<IActionResult> DeleteNotification(int id)
         {
             await _meetingService.DeleteNotificationAsync(id);
-            return Ok("You succeeded");
+            return Ok(new ResponseResult { Message = "You succeeded" });
         }
 
         [HttpGet]

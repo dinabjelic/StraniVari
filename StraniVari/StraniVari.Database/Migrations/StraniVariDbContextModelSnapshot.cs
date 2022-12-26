@@ -277,7 +277,7 @@ namespace StraniVari.Database.Migrations
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("DayOfWeek")
+                    b.Property<int?>("DayOfWeek")
                         .HasColumnType("int");
 
                     b.Property<int>("EventId")
@@ -316,7 +316,7 @@ namespace StraniVari.Database.Migrations
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("DayOfWeek")
+                    b.Property<int?>("DayOfWeek")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("EndDate")

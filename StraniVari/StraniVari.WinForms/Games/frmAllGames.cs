@@ -30,29 +30,38 @@ namespace StraniVari.WinUI.Games
         private void btnAddGame_Click(object sender, EventArgs e)
         {
             frmAddEditGame frmAddEditGame = new frmAddEditGame();
-            frmAddEditGame.Show();
+            frmAddEditGame.ShowDialog();
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
             var selectedItem = listBox1.SelectedItem as GetGamesResponse;
             var nameUncompleted = selectedItem.Name.Split(',')[0];
-            var name = nameUncompleted.Substring(nameUncompleted.IndexOf("Name: ") + "Name: ".Length); 
+            var name = nameUncompleted.Substring(nameUncompleted.IndexOf("Name: ") + "Name: ".Length);
             var rule = selectedItem.Name.Substring(selectedItem.Name.IndexOf(",Rules: ") + ",Rules: ".Length);
 
             if (selectedItem != null)
             {
                 frmAddEditGame frmAddEditGame = new frmAddEditGame(name, rule, selectedItem);
-                frmAddEditGame.Show();
+                frmAddEditGame.ShowDialog();
             }
         }
 
         private async void btnDelete_Click(object sender, EventArgs e)
         {
             var selectedItem = listBox1.SelectedItem as GetGamesResponse;
-            MessageBox.Show("You are about to delete this item!");
-            await _apiServiceDelete.Delete<ResponseResult>(selectedItem.Id);
-            frmAllGames_Load(sender, e);
+
+            var confirmation = MessageBox.Show("You are about to delete this item!", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (confirmation == DialogResult.No)
+            {
+                frmAllGames_Load(sender, e);
+            }
+            else
+            {
+                await _apiServiceDelete.Delete<ResponseResult>(selectedItem.Id);
+                frmAllGames_Load(sender, e);
+            }
         }
     }
 }

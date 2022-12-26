@@ -15,7 +15,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StraniVari.Database", "Stra
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{2D71A06B-BDA6-4A42-A53C-05834ADE8283}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StraniVari.WinUI", "StraniVari.WinForms\StraniVari.WinUI.csproj", "{097718CB-E4DD-48AE-926D-F05287627F1E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StraniVari.WinUI", "StraniVari.WinForms\StraniVari.WinUI.csproj", "{097718CB-E4DD-48AE-926D-F05287627F1E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

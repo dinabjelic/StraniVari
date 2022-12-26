@@ -18,6 +18,7 @@ namespace StraniVari.WinUI.Games
             Rule = rule;
             SelectedItem = selectedItem;
         }
+
         private async void btnSave_Click(object sender, EventArgs e)
         {
             var game = new UpSertGameRequest

@@ -1,4 +1,5 @@
-﻿using StraniVari.Core.Entities;
+﻿using StraniVari.Common.Constants;
+using StraniVari.Core.Entities;
 using StraniVari.Core.Requests;
 using StraniVari.Core.Responses;
 using StraniVari.WinUI.Service;
@@ -10,12 +11,7 @@ namespace StraniVari.WinUI.EventDetails
         ApiService _apiService = new ApiService("Event");
         private EventUpsertRequest selectedEvent;
         EventUpsertRequest request = new EventUpsertRequest();
-
-        //public frmNewEvent()
-        //{
-        //    InitializeComponent();
-        //}
-
+       
         public frmNewEvent(EventUpsertRequest selectedEvent=null)
         {
             InitializeComponent();
@@ -24,30 +20,30 @@ namespace StraniVari.WinUI.EventDetails
 
         private async void btnAddNewEvent_Click(object sender, EventArgs e)
         {
-
-            var straniVariEvent = new EventUpsertRequest
+            if (ValidateEntry())
             {
-                Name = txtEventName.Text,
-                StraniVariTheme = txtStraniVariTheme.Text,
-                StartDate = dtpStarDate.Value,
-                EndDate = dtpEndDate.Value
-            };
+                var straniVariEvent = new EventUpsertRequest
+                {
+                    Name = txtEventName.Text,
+                    StraniVariTheme = txtStraniVariTheme.Text,
+                    StartDate = dtpStarDate.Value,
+                    EndDate = dtpEndDate.Value
+                };
 
-            if (selectedEvent == null)
-            {
-                await _apiService.Insert<ResponseResult>(straniVariEvent);
-                MessageBox.Show("Event successfully added.", "Infomation", MessageBoxButtons.OK);
-            }
-            else
-            {
-                await _apiService.Update<ResponseResult>(straniVariEvent, selectedEvent.Id);
-                MessageBox.Show("Event successfully updated.", "Infomation", MessageBoxButtons.OK);
-            }
-
+                if (selectedEvent == null)
+                {
+                    await _apiService.Insert<ResponseResult>(straniVariEvent);
+                    MessageBox.Show("Event successfully added.", "Infomation", MessageBoxButtons.OK);
+                }
+                else
+                {
+                    await _apiService.Update<ResponseResult>(straniVariEvent, selectedEvent.Id);
+                    MessageBox.Show("Event successfully updated.", "Infomation", MessageBoxButtons.OK);
+                }
 
             this.DialogResult = DialogResult.OK;
             Close();
-            InitializeComponent();
+            }
         }
 
         private void frmNewEvent_Load(object sender, EventArgs e)
@@ -60,13 +56,23 @@ namespace StraniVari.WinUI.EventDetails
                 dtpEndDate.Value = selectedEvent.EndDate;
 
             }
-            //else
-            //{
-            //    selectedEvent.Name = txtEventName.Text;
-            //    selectedEvent.StraniVariTheme = txtStraniVariTheme.Text;
-            //    selectedEvent.StartDate = dtpStarDate.Value;
-            //    selectedEvent.EndDate = dtpEndDate.Value;
-            //}
+        }
+
+        private bool ValidateEntry()
+        {
+            return ValidateControl(txtEventName, Constants.RequiredValue) &&
+                   ValidateControl(txtStraniVariTheme, Constants.RequiredValue);
+        }
+
+        private bool ValidateControl(Control control, string message)
+        {
+            if (string.IsNullOrWhiteSpace(control.Text))
+            {
+                err.SetError(control, message);
+                return false;
+            }
+            err.Clear();
+            return true;
         }
     }
 }

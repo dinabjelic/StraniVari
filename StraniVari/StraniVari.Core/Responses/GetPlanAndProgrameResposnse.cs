@@ -2,6 +2,7 @@
 {
     public class GetPlanAndProgrameResposnse
     {
+        public int Id { get; set; }
         public DayOfWeek? DayOfWeek { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }

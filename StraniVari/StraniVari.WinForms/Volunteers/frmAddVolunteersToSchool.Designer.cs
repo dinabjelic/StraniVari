@@ -39,6 +39,8 @@
             this.btnAddVolunteersToSchool = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.lbxVolunteers = new System.Windows.Forms.ListBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtSchool
@@ -150,12 +152,35 @@
             this.lbxVolunteers.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.lbxVolunteers.Size = new System.Drawing.Size(349, 144);
             this.lbxVolunteers.TabIndex = 25;
+            this.lbxVolunteers.SelectedIndexChanged += new System.EventHandler(this.lbxVolunteers_SelectedIndexChanged);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label6.Location = new System.Drawing.Point(549, 82);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(113, 20);
+            this.label6.TabIndex = 37;
+            this.label6.Text = "Selected items: ";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label5.Location = new System.Drawing.Point(661, 82);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(17, 20);
+            this.label5.TabIndex = 36;
+            this.label5.Text = "0";
             // 
             // frmAddVolunteersToSchool
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(753, 348);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.txtSchool);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -188,5 +213,7 @@
         private Button btnAddVolunteersToSchool;
         private Label label2;
         private ListBox lbxVolunteers;
+        private Label label6;
+        private Label label5;
     }
 }

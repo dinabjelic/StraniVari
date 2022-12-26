@@ -41,13 +41,22 @@ namespace StraniVari.WinUI.Material
                 if (e.ColumnIndex == 3)
                 {
                     frmEditMaterialDetails frmEditMaterialDetails = new frmEditMaterialDetails(selectedMaterial, SelectedEvent, SelectedElement);
-                    frmEditMaterialDetails.Show();
+                    frmEditMaterialDetails.ShowDialog();
                 }
                 else if (e.ColumnIndex == 4)
                 {
-                    MessageBox.Show("You are about to delete this item!");
-                    await _apiService.Delete<ResponseResult>(selectedMaterial.SchoolMaterialId);
-                    frmMaterialDetails_Load(sender, e);
+
+                    var confirmation = MessageBox.Show("You are about to delete this item!", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                    if (confirmation == DialogResult.No)
+                    {
+                        frmMaterialDetails_Load(sender, e);
+                    }
+                    else
+                    {
+                        await _apiService.Delete<ResponseResult>(selectedMaterial.SchoolMaterialId);
+                        frmMaterialDetails_Load(sender, e);
+                    }
                 }
             }
            

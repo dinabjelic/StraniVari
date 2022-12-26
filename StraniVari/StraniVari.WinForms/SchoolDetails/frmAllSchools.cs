@@ -26,13 +26,21 @@ namespace StraniVari.WinUI.SchoolDetails
                 if(e.ColumnIndex == 4)
                 {
                     frmAddEditSchool frmAddEditSchool = new frmAddEditSchool(selectedSchool);
-                    frmAddEditSchool.Show();
+                    frmAddEditSchool.ShowDialog();
                 }
                 else if(e.ColumnIndex == 5)
                 {
-                    MessageBox.Show("You are about to delete this item!");
-                    await _apiService.Delete<ResponseResult>(selectedSchool.Id);
-                    frmAllSchools_Load(sender, e);
+                    var confirmation = MessageBox.Show("You are about to delete this item!", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                    if (confirmation == DialogResult.No)
+                    {
+                        frmAllSchools_Load(sender, e);
+                    }
+                    else
+                    {
+                        await _apiService.Delete<ResponseResult>(selectedSchool.Id);
+                        frmAllSchools_Load(sender, e);
+                    }
                 }
             }
         }
@@ -40,7 +48,7 @@ namespace StraniVari.WinUI.SchoolDetails
         private void btnAddSchool_Click(object sender, EventArgs e)
         {
             frmAddEditSchool frmAddEditSchool = new frmAddEditSchool();
-            frmAddEditSchool.Show();
+            frmAddEditSchool.ShowDialog();
         }
     }
 }

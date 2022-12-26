@@ -15,7 +15,7 @@ namespace StraniVari.WinUI.Material
         private void btnAddMaterial_Click(object sender, EventArgs e)
         {
             frmAddEditMaterial frmAddEditMaterial = new frmAddEditMaterial();
-            frmAddEditMaterial.Show();
+            frmAddEditMaterial.ShowDialog();
         }
 
         public async void frmAllMaterial_Load(object sender, EventArgs e)
@@ -33,13 +33,22 @@ namespace StraniVari.WinUI.Material
                 if (e.ColumnIndex == 2)
                 {
                     frmAddEditMaterial frmAddEditMaterial = new frmAddEditMaterial(selectedMaterial);
-                    frmAddEditMaterial.Show();
+                    frmAddEditMaterial.ShowDialog();
                 }
                 else if(e.ColumnIndex ==3)
                 {
-                    MessageBox.Show("You are about to delete this item!");
-                    await _apiService.Delete<ResponseResult>(selectedMaterial.Id);
-                    frmAllMaterial_Load(sender, e);
+
+                    var confirmation = MessageBox.Show("You are about to delete this item!", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                    if (confirmation == DialogResult.No)
+                    {
+                        frmAllMaterial_Load(sender, e);
+                    }
+                    else
+                    {
+                        await _apiService.Delete<ResponseResult>(selectedMaterial.Id);
+                        frmAllMaterial_Load(sender, e);
+                    }
                 }
             }
         }

@@ -53,7 +53,7 @@
             this.groupBox1.Controls.Add(this.dgvVolunteers);
             this.groupBox1.Location = new System.Drawing.Point(276, 110);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(812, 269);
+            this.groupBox1.Size = new System.Drawing.Size(946, 269);
             this.groupBox1.TabIndex = 33;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "EVENT DETAILS";
@@ -80,7 +80,7 @@
             this.dgvVolunteers.RowHeadersWidth = 51;
             this.dgvVolunteers.RowTemplate.Height = 29;
             this.dgvVolunteers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvVolunteers.Size = new System.Drawing.Size(806, 243);
+            this.dgvVolunteers.Size = new System.Drawing.Size(940, 243);
             this.dgvVolunteers.TabIndex = 0;
             this.dgvVolunteers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMaterialForSchool_CellContentClick);
             // 
@@ -224,7 +224,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1110, 450);
+            this.ClientSize = new System.Drawing.Size(1240, 450);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.txtSchool);
             this.Controls.Add(this.label4);

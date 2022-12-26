@@ -52,6 +52,7 @@ namespace StraniVari.Services.Services
                 .Where(x => x.DayOfWeek == meetingDay || meetingDay== null) 
                 .Select(x => new GetMeetingsResponse
                 {
+                    Id = x.Id,
                     Address = x.Address,
                     City = x.City,
                     MeetingDate = x.MeetingDate,

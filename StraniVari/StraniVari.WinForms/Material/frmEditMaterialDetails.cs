@@ -1,4 +1,5 @@
-﻿using StraniVari.Core.Requests;
+﻿using StraniVari.Common.Constants;
+using StraniVari.Core.Requests;
 using StraniVari.Core.Responses;
 using StraniVari.WinUI.Service;
 
@@ -32,22 +33,41 @@ namespace StraniVari.WinUI.Material
 
         private async void btnEditSchoolDetails_Click(object sender, EventArgs e)
         {
-            var editedDetails = new UpdateMaterialToSchoolRequest
+            if (ValidateEntry())
             {
-                SchoolMaterialId = SelectedMaterial.SchoolMaterialId,
-                Quantity = Int32.Parse(txtQuantity.Text)
-            };
+                var editedDetails = new UpdateMaterialToSchoolRequest
+                {
+                    SchoolMaterialId = SelectedMaterial.SchoolMaterialId,
+                    Quantity = Int32.Parse(txtQuantity.Text)
+                };
 
-            if (editedDetails != null)
-            {
-                await _apiServiceSchoolMaterials.Update<ResponseResult>(editedDetails);
-                MessageBox.Show("Details successfully updated.", "Infomation", MessageBoxButtons.OK);
+                if (editedDetails != null)
+                {
+                    await _apiServiceSchoolMaterials.Update<ResponseResult>(editedDetails);
+                    MessageBox.Show("Details successfully updated.", "Infomation", MessageBoxButtons.OK);
+                }
+                this.DialogResult = DialogResult.OK;
+                Close();
+
+                var principalForm = Application.OpenForms.OfType<frmMaterialDetails>().FirstOrDefault();
+                principalForm.frmMaterialDetails_Load(sender, e);
             }
-            this.DialogResult = DialogResult.OK;
-            Close();
+        }
 
-            var principalForm = Application.OpenForms.OfType<frmMaterialDetails>().FirstOrDefault();
-            principalForm.frmMaterialDetails_Load(sender, e);
+        private bool ValidateEntry()
+        {
+            return ValidateControl(txtQuantity, Constants.RequiredValue);
+        }
+
+        private bool ValidateControl(Control control, string message)
+        {
+            if (string.IsNullOrWhiteSpace(control.Text))
+            {
+                err.SetError(control, message);
+                return false;
+            }
+            err.Clear();
+            return true;
         }
     }
 }

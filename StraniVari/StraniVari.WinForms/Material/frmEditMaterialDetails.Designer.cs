@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnEditSchoolDetails = new System.Windows.Forms.Button();
             this.txtQuantity = new System.Windows.Forms.TextBox();
             this.txtMaterailName = new System.Windows.Forms.TextBox();
@@ -39,6 +40,8 @@
             this.txtTheme = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtSchool = new System.Windows.Forms.TextBox();
+            this.err = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.err)).BeginInit();
             this.SuspendLayout();
             // 
             // btnEditSchoolDetails
@@ -146,6 +149,10 @@
             this.txtSchool.Size = new System.Drawing.Size(217, 19);
             this.txtSchool.TabIndex = 37;
             // 
+            // err
+            // 
+            this.err.ContainerControl = this;
+            // 
             // frmEditMaterialDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -165,6 +172,7 @@
             this.Name = "frmEditMaterialDetails";
             this.Text = "frmEditMaterialDetails";
             this.Load += new System.EventHandler(this.frmEditMaterialDetails_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.err)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -183,5 +191,6 @@
         private TextBox txtTheme;
         private TextBox txtName;
         private TextBox txtSchool;
+        private ErrorProvider err;
     }
 }
