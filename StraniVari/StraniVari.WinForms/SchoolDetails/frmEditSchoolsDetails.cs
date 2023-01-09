@@ -17,7 +17,7 @@ namespace StraniVari.WinUI.SchoolDetails
             _selectedSchool = selectedSchool;
         }
 
-        private async void frmEditSchoolsDetails_Load(object sender, EventArgs e)
+        private void frmEditSchoolsDetails_Load(object sender, EventArgs e)
         {
             txtName.Text = _selectedEvent.Name;
             txtTheme.Text = _selectedEvent.StraniVariTheme;

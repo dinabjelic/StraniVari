@@ -41,6 +41,7 @@
             this.txtSchool = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.btnView = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnAddMaterialToSchool
@@ -59,7 +60,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(345, 65);
+            this.label2.Location = new System.Drawing.Point(337, 65);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(187, 20);
             this.label2.TabIndex = 15;
@@ -71,10 +72,10 @@
             this.lbxMaterial.Font = new System.Drawing.Font("Yu Gothic UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbxMaterial.FormattingEnabled = true;
             this.lbxMaterial.ItemHeight = 20;
-            this.lbxMaterial.Location = new System.Drawing.Point(345, 93);
+            this.lbxMaterial.Location = new System.Drawing.Point(337, 93);
             this.lbxMaterial.Name = "lbxMaterial";
             this.lbxMaterial.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.lbxMaterial.Size = new System.Drawing.Size(349, 144);
+            this.lbxMaterial.Size = new System.Drawing.Size(357, 144);
             this.lbxMaterial.TabIndex = 14;
             this.lbxMaterial.SelectedIndexChanged += new System.EventHandler(this.lbxMaterial_SelectedIndexChanged);
             // 
@@ -174,11 +175,24 @@
             this.label5.TabIndex = 38;
             this.label5.Text = "0";
             // 
+            // btnView
+            // 
+            this.btnView.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnView.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnView.Location = new System.Drawing.Point(337, 251);
+            this.btnView.Name = "btnView";
+            this.btnView.Size = new System.Drawing.Size(193, 29);
+            this.btnView.TabIndex = 40;
+            this.btnView.Text = "View added material";
+            this.btnView.UseVisualStyleBackColor = true;
+            this.btnView.Click += new System.EventHandler(this.btnView_Click);
+            // 
             // frmAddMaterialToSchool
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(741, 349);
+            this.Controls.Add(this.btnView);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtSchool);
@@ -214,5 +228,6 @@
         private TextBox txtSchool;
         private Label label6;
         private Label label5;
+        private Button btnView;
     }
 }

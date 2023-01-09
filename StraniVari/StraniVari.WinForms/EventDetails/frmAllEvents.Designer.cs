@@ -45,6 +45,7 @@
             this.btnVolunteers = new System.Windows.Forms.Button();
             this.btnSchools = new System.Windows.Forms.Button();
             this.btnGames = new System.Windows.Forms.Button();
+            this.btnReport = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEvents)).BeginInit();
             this.SuspendLayout();
@@ -246,11 +247,21 @@
             this.btnGames.UseVisualStyleBackColor = true;
             this.btnGames.Click += new System.EventHandler(this.btnGames_Click);
             // 
+            // btnReport
+            // 
+            this.btnReport.Location = new System.Drawing.Point(1142, 12);
+            this.btnReport.Name = "btnReport";
+            this.btnReport.Size = new System.Drawing.Size(94, 29);
+            this.btnReport.TabIndex = 8;
+            this.btnReport.Text = "Report";
+            this.btnReport.UseVisualStyleBackColor = true;
+            // 
             // frmAllEvents
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1259, 447);
+            this.Controls.Add(this.btnReport);
             this.Controls.Add(this.btnGames);
             this.Controls.Add(this.btnSchools);
             this.Controls.Add(this.btnVolunteers);
@@ -285,5 +296,6 @@
         private DataGridViewButtonColumn btnAddSchool;
         private DataGridViewButtonColumn btnNotification;
         private DataGridViewButtonColumn dataGridViewButtonColumn1;
+        private Button btnReport;
     }
 }

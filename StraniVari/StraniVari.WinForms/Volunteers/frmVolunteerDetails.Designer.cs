@@ -44,6 +44,7 @@
             this.txtStartDate = new System.Windows.Forms.TextBox();
             this.txtTheme = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
+            this.btnReport = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVolunteers)).BeginInit();
             this.SuspendLayout();
@@ -220,11 +221,23 @@
             this.txtName.Size = new System.Drawing.Size(225, 19);
             this.txtName.TabIndex = 27;
             // 
+            // btnReport
+            // 
+            this.btnReport.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReport.Location = new System.Drawing.Point(1125, 75);
+            this.btnReport.Name = "btnReport";
+            this.btnReport.Size = new System.Drawing.Size(94, 29);
+            this.btnReport.TabIndex = 34;
+            this.btnReport.Text = "Report";
+            this.btnReport.UseVisualStyleBackColor = true;
+            this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
+            // 
             // frmVolunteerDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1240, 450);
+            this.Controls.Add(this.btnReport);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.txtSchool);
             this.Controls.Add(this.label4);
@@ -260,5 +273,6 @@
         private DataGridViewTextBoxColumn VolunteerCity;
         private DataGridViewButtonColumn btnEdit;
         private DataGridViewButtonColumn btnDelete;
+        private Button btnReport;
     }
 }

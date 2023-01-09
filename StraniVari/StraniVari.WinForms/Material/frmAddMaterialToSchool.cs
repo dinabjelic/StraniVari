@@ -84,5 +84,11 @@ namespace StraniVari.WinUI.Material
         {
             label5.Text = lbxMaterial.SelectedItems.Count.ToString();
         }
+
+        private void btnView_Click(object sender, EventArgs e)
+        {
+            frmMaterialDetails frmMaterialDetails = new frmMaterialDetails(SelectedEvent, SelectedElement);
+            frmMaterialDetails.ShowDialog();
+        }
     }
 }

@@ -83,5 +83,11 @@ namespace StraniVari.WinUI.Volunteers
         {
             label5.Text = lbxVolunteers.SelectedItems.Count.ToString();
         }
+
+        private void btnView_Click(object sender, EventArgs e)
+        {
+            frmVolunteerDetails frmVolunteerDetails = new frmVolunteerDetails(_selectedSchool, _selectedEvent);
+            frmVolunteerDetails.ShowDialog();
+        }
     }
 }

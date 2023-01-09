@@ -16,5 +16,6 @@
         public string LastName { get; set; }
         public string VolunteerAddress { get; set; }
         public string VolunteerCity { get; set; }
+        public DateTime VolunteerBirthDate { get; set; }
     }
 }

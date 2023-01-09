@@ -162,7 +162,7 @@
             // btnAddSchool
             // 
             this.btnAddSchool.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddSchool.Location = new System.Drawing.Point(792, 35);
+            this.btnAddSchool.Location = new System.Drawing.Point(795, 48);
             this.btnAddSchool.Name = "btnAddSchool";
             this.btnAddSchool.Size = new System.Drawing.Size(110, 29);
             this.btnAddSchool.TabIndex = 22;

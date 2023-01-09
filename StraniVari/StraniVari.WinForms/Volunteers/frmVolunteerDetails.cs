@@ -1,5 +1,6 @@
 ﻿using StraniVari.Core.Requests;
 using StraniVari.Core.Responses;
+using StraniVari.WinUI.Reports;
 using StraniVari.WinUI.Service;
 
 namespace StraniVari.WinUI.Volunteers
@@ -60,6 +61,12 @@ namespace StraniVari.WinUI.Volunteers
                     }
                 }
             }
+        }
+
+        private async void btnReport_Click(object sender, EventArgs e)
+        {
+            frmReports frmReports = new frmReports(_selectedEvent, _selectedSchool);
+            frmReports.ShowDialog();
         }
     }
 }

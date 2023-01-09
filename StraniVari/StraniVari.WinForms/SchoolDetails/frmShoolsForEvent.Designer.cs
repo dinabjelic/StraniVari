@@ -40,6 +40,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.btnView = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbxSchools
@@ -48,10 +49,10 @@
             this.lbxSchools.Font = new System.Drawing.Font("Yu Gothic UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbxSchools.FormattingEnabled = true;
             this.lbxSchools.ItemHeight = 20;
-            this.lbxSchools.Location = new System.Drawing.Point(354, 81);
+            this.lbxSchools.Location = new System.Drawing.Point(346, 81);
             this.lbxSchools.Name = "lbxSchools";
             this.lbxSchools.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.lbxSchools.Size = new System.Drawing.Size(349, 144);
+            this.lbxSchools.Size = new System.Drawing.Size(357, 144);
             this.lbxSchools.TabIndex = 2;
             this.lbxSchools.SelectedIndexChanged += new System.EventHandler(this.lbxSchools_SelectedIndexChanged);
             // 
@@ -67,7 +68,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(354, 53);
+            this.label2.Location = new System.Drawing.Point(346, 53);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(174, 20);
             this.label2.TabIndex = 4;
@@ -163,11 +164,24 @@
             this.label6.TabIndex = 9;
             this.label6.Text = "Selected items: ";
             // 
+            // btnView
+            // 
+            this.btnView.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnView.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnView.Location = new System.Drawing.Point(346, 239);
+            this.btnView.Name = "btnView";
+            this.btnView.Size = new System.Drawing.Size(193, 29);
+            this.btnView.TabIndex = 10;
+            this.btnView.Text = "View added schools";
+            this.btnView.UseVisualStyleBackColor = true;
+            this.btnView.Click += new System.EventHandler(this.btnView_Click);
+            // 
             // frmShoolsForEvent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(728, 339);
+            this.Controls.Add(this.btnView);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -204,5 +218,6 @@
         private Label label4;
         private Label label5;
         private Label label6;
+        private Button btnView;
     }
 }

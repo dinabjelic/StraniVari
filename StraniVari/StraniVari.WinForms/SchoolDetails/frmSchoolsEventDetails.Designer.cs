@@ -30,11 +30,6 @@
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvSchoolsEventDetails = new System.Windows.Forms.DataGridView();
-            this.txtName = new System.Windows.Forms.TextBox();
-            this.txtTheme = new System.Windows.Forms.TextBox();
-            this.txtStartDate = new System.Windows.Forms.TextBox();
-            this.txtEndDate = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SchoolName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SchoolAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,6 +39,11 @@
             this.btnDelete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnAddMaterial = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnAddVolunteers = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.txtTheme = new System.Windows.Forms.TextBox();
+            this.txtStartDate = new System.Windows.Forms.TextBox();
+            this.txtEndDate = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSchoolsEventDetails)).BeginInit();
             this.SuspendLayout();
@@ -84,55 +84,6 @@
             this.dgvSchoolsEventDetails.Size = new System.Drawing.Size(1100, 243);
             this.dgvSchoolsEventDetails.TabIndex = 0;
             this.dgvSchoolsEventDetails.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSchoolsEventDetails_CellContentClick_1);
-            // 
-            // txtName
-            // 
-            this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtName.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtName.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.txtName.Location = new System.Drawing.Point(70, 149);
-            this.txtName.Name = "txtName";
-            this.txtName.ReadOnly = true;
-            this.txtName.Size = new System.Drawing.Size(225, 19);
-            this.txtName.TabIndex = 2;
-            // 
-            // txtTheme
-            // 
-            this.txtTheme.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTheme.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtTheme.Location = new System.Drawing.Point(70, 184);
-            this.txtTheme.Name = "txtTheme";
-            this.txtTheme.ReadOnly = true;
-            this.txtTheme.Size = new System.Drawing.Size(225, 19);
-            this.txtTheme.TabIndex = 3;
-            // 
-            // txtStartDate
-            // 
-            this.txtStartDate.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtStartDate.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtStartDate.Location = new System.Drawing.Point(70, 276);
-            this.txtStartDate.Name = "txtStartDate";
-            this.txtStartDate.ReadOnly = true;
-            this.txtStartDate.Size = new System.Drawing.Size(225, 19);
-            this.txtStartDate.TabIndex = 4;
-            // 
-            // txtEndDate
-            // 
-            this.txtEndDate.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtEndDate.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtEndDate.Location = new System.Drawing.Point(70, 229);
-            this.txtEndDate.Name = "txtEndDate";
-            this.txtEndDate.ReadOnly = true;
-            this.txtEndDate.Size = new System.Drawing.Size(225, 19);
-            this.txtEndDate.TabIndex = 5;
-            // 
-            // label4
-            // 
-            this.label4.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label4.Location = new System.Drawing.Point(301, 44);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(1, 408);
-            this.label4.TabIndex = 8;
             // 
             // Id
             // 
@@ -225,6 +176,55 @@
             this.btnAddVolunteers.ToolTipText = "Add Volunteers";
             this.btnAddVolunteers.UseColumnTextForButtonValue = true;
             this.btnAddVolunteers.Width = 125;
+            // 
+            // txtName
+            // 
+            this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtName.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtName.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.txtName.Location = new System.Drawing.Point(70, 149);
+            this.txtName.Name = "txtName";
+            this.txtName.ReadOnly = true;
+            this.txtName.Size = new System.Drawing.Size(225, 19);
+            this.txtName.TabIndex = 2;
+            // 
+            // txtTheme
+            // 
+            this.txtTheme.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTheme.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtTheme.Location = new System.Drawing.Point(70, 184);
+            this.txtTheme.Name = "txtTheme";
+            this.txtTheme.ReadOnly = true;
+            this.txtTheme.Size = new System.Drawing.Size(225, 19);
+            this.txtTheme.TabIndex = 3;
+            // 
+            // txtStartDate
+            // 
+            this.txtStartDate.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtStartDate.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtStartDate.Location = new System.Drawing.Point(70, 276);
+            this.txtStartDate.Name = "txtStartDate";
+            this.txtStartDate.ReadOnly = true;
+            this.txtStartDate.Size = new System.Drawing.Size(225, 19);
+            this.txtStartDate.TabIndex = 4;
+            // 
+            // txtEndDate
+            // 
+            this.txtEndDate.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtEndDate.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtEndDate.Location = new System.Drawing.Point(70, 229);
+            this.txtEndDate.Name = "txtEndDate";
+            this.txtEndDate.ReadOnly = true;
+            this.txtEndDate.Size = new System.Drawing.Size(225, 19);
+            this.txtEndDate.TabIndex = 5;
+            // 
+            // label4
+            // 
+            this.label4.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label4.Location = new System.Drawing.Point(301, 44);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(1, 408);
+            this.label4.TabIndex = 8;
             // 
             // frmSchoolsEventDetails
             // 

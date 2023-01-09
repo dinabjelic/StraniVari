@@ -71,5 +71,10 @@ namespace StraniVari.WinUI.SchoolDetails
                 }
             }
         }
+
+        private void btnReport_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -85,5 +85,11 @@ namespace StraniVari.WinUI.SchoolDetails
         {
             label5.Text = lbxSchools.SelectedItems.Count.ToString();
         }
+
+        private void btnView_Click(object sender, EventArgs e)
+        {
+            frmSchoolsEventDetails frmSchoolsEventDetails = new frmSchoolsEventDetails(_selectedEvent);
+            frmSchoolsEventDetails.ShowDialog();
+        }
     }
 }

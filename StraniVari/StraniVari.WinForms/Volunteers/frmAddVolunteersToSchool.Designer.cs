@@ -41,6 +41,7 @@
             this.lbxVolunteers = new System.Windows.Forms.ListBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.btnView = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtSchool
@@ -135,7 +136,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(343, 82);
+            this.label2.Location = new System.Drawing.Point(335, 82);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(200, 20);
             this.label2.TabIndex = 26;
@@ -147,10 +148,10 @@
             this.lbxVolunteers.Font = new System.Drawing.Font("Yu Gothic UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbxVolunteers.FormattingEnabled = true;
             this.lbxVolunteers.ItemHeight = 20;
-            this.lbxVolunteers.Location = new System.Drawing.Point(343, 110);
+            this.lbxVolunteers.Location = new System.Drawing.Point(335, 110);
             this.lbxVolunteers.Name = "lbxVolunteers";
             this.lbxVolunteers.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.lbxVolunteers.Size = new System.Drawing.Size(349, 144);
+            this.lbxVolunteers.Size = new System.Drawing.Size(357, 144);
             this.lbxVolunteers.TabIndex = 25;
             this.lbxVolunteers.SelectedIndexChanged += new System.EventHandler(this.lbxVolunteers_SelectedIndexChanged);
             // 
@@ -174,11 +175,24 @@
             this.label5.TabIndex = 36;
             this.label5.Text = "0";
             // 
+            // btnView
+            // 
+            this.btnView.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnView.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnView.Location = new System.Drawing.Point(335, 268);
+            this.btnView.Name = "btnView";
+            this.btnView.Size = new System.Drawing.Size(193, 29);
+            this.btnView.TabIndex = 38;
+            this.btnView.Text = "View added volunteers";
+            this.btnView.UseVisualStyleBackColor = true;
+            this.btnView.Click += new System.EventHandler(this.btnView_Click);
+            // 
             // frmAddVolunteersToSchool
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(753, 348);
+            this.Controls.Add(this.btnView);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtSchool);
@@ -215,5 +229,6 @@
         private ListBox lbxVolunteers;
         private Label label6;
         private Label label5;
+        private Button btnView;
     }
 }

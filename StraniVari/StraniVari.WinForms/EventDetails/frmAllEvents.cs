@@ -5,6 +5,7 @@ using StraniVari.WinUI.Games;
 using StraniVari.WinUI.Material;
 using StraniVari.WinUI.Notifications;
 using StraniVari.WinUI.PlanAndProgramme;
+using StraniVari.WinUI.Reports;
 using StraniVari.WinUI.SchoolDetails;
 using StraniVari.WinUI.Service;
 using StraniVari.WinUI.Volunteers;
@@ -105,5 +106,11 @@ namespace StraniVari.WinUI.EventDetails
             frmAllGames frmAllGames = new frmAllGames();
             frmAllGames.ShowDialog();
         }
+
+        //private void btnReport_Click(object sender, EventArgs e)
+        //{
+        //    frmReports frmReports = new frmReports();
+        //    frmReports.ShowDialog();
+        //}
     }
 }

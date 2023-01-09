@@ -55,6 +55,7 @@ namespace StraniVari.Services.Services
                     VolunteerCity = x.Volunteer.City,
                     FirstName = x.Volunteer.FirstName,
                     LastName = x.Volunteer.LastName,
+                    VolunteerBirthDate = x.Volunteer.DateOfBirth,
                     //EventName = x.EventSchool.Event.Name,
                     //EndDate = x.EventSchool.Event.EndDate,
                     //StartDate = x.EventSchool.Event.StartDate,
