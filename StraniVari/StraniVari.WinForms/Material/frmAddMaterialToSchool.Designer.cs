@@ -42,6 +42,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.btnView = new System.Windows.Forms.Button();
+            this.btnRecommend = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnAddMaterialToSchool
@@ -187,11 +188,23 @@
             this.btnView.UseVisualStyleBackColor = true;
             this.btnView.Click += new System.EventHandler(this.btnView_Click);
             // 
+            // btnRecommend
+            // 
+            this.btnRecommend.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRecommend.Location = new System.Drawing.Point(419, 295);
+            this.btnRecommend.Name = "btnRecommend";
+            this.btnRecommend.Size = new System.Drawing.Size(193, 29);
+            this.btnRecommend.TabIndex = 41;
+            this.btnRecommend.Text = "See recommended";
+            this.btnRecommend.UseVisualStyleBackColor = true;
+            this.btnRecommend.Click += new System.EventHandler(this.btnRecommend_Click);
+            // 
             // frmAddMaterialToSchool
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(741, 349);
+            this.Controls.Add(this.btnRecommend);
             this.Controls.Add(this.btnView);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -229,5 +242,6 @@
         private Label label6;
         private Label label5;
         private Button btnView;
+        private Button btnRecommend;
     }
 }

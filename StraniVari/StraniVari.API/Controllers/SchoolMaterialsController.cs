@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using StraniVari.Core.Entities;
 using StraniVari.Core.Requests;
 using StraniVari.Core.Responses;
 using StraniVari.Services.Interfaces;
@@ -38,6 +39,12 @@ namespace StraniVari.API.Controllers
         {
             await _materialSchoolService.DeleteMaterialForSchoolAsync(id);
             return Ok(new ResponseResult { Message = "You succeeded" });
+        }
+
+        [HttpGet("{eventSchoolId}/recommend")]
+        public List<SchoolMaterial> RecommendSystem(int eventSchoolId)
+        {
+            return _materialSchoolService.Recommend(eventSchoolId);
         }
 
     }

@@ -1,5 +1,8 @@
-﻿using StraniVari.Core.Requests;
+﻿using Newtonsoft.Json;
+using StraniVari.Core.Entities;
+using StraniVari.Core.Requests;
 using StraniVari.Core.Responses;
+using StraniVari.WinUI.RecommendationSystem;
 using StraniVari.WinUI.Service;
 
 namespace StraniVari.WinUI.Material
@@ -89,6 +92,27 @@ namespace StraniVari.WinUI.Material
         {
             frmMaterialDetails frmMaterialDetails = new frmMaterialDetails(SelectedEvent, SelectedElement);
             frmMaterialDetails.ShowDialog();
+        }
+
+        private async void btnRecommend_Click(object sender, EventArgs e)
+        {
+            //if (materials.Materials.Count() == 1)
+            //{
+            //var choosenMaterial = materials.Materials.First();
+
+                var materialForSchool = await _apiServiceMaterial.GetById<List<GetMaterialsForSchoolRequest>>(SelectedElement.SchoolEventId);
+
+                HttpClient clint = new HttpClient();
+                clint.BaseAddress = new Uri("https://localhost:7241");
+                HttpResponseMessage response = clint.GetAsync($"/api/SchoolMaterials/{SelectedElement.SchoolEventId}/recommend").Result;
+                var resultArray = await response.Content.ReadAsStringAsync();
+                var materialList = JsonConvert.DeserializeObject<List<SchoolMaterial>>(resultArray);
+                if (materialList.Count() > 0)
+                {
+                    frmRecommendationSystem frmRecommendationSystem = new frmRecommendationSystem(materialList, SelectedElement, materialForSchool);
+                    frmRecommendationSystem.ShowDialog();
+                }
+            //}
         }
     }
 }

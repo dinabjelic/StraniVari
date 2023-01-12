@@ -1,5 +1,4 @@
 ﻿using Flurl.Http;
-using System.Threading.Tasks;
 
 namespace StraniVari.WinUI.Service
 {

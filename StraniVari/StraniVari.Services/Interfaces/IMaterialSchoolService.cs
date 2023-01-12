@@ -1,4 +1,5 @@
-﻿using StraniVari.Core.Requests;
+﻿using StraniVari.Core.Entities;
+using StraniVari.Core.Requests;
 using StraniVari.Core.Responses;
 
 namespace StraniVari.Services.Interfaces
@@ -29,5 +30,11 @@ namespace StraniVari.Services.Interfaces
         /// <param name="id"></param>
         /// <returns></returns>
         Task DeleteMaterialForSchoolAsync(int id);
+        /// <summary>
+        /// recomending materials for school
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        List<SchoolMaterial> Recommend(int eventSchoolId);
     }
 }
