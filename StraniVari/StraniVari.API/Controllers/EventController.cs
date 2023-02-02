@@ -17,7 +17,7 @@ namespace StraniVari.API.Controllers
         }
 
         //[Authorize(Roles = "Administrator")]
-        [AllowAnonymous]
+        //[AllowAnonymous]
         [HttpGet]
         public async Task<IActionResult> GetEventDetails()
         {
