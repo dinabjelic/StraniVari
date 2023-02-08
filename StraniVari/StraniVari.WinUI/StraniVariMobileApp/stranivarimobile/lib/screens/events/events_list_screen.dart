@@ -1,8 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:stranivarimobile/main.dart';
 import 'package:stranivarimobile/providers/event_provider.dart';
 import 'package:flutter/src/material/data_table.dart';
+import 'package:stranivarimobile/helpers/token.dart';
+
 
 class EventListScreen extends StatefulWidget {
   static const String routeName = '/events';
@@ -16,10 +19,7 @@ class _EventListScreenState extends State<EventListScreen> {
   EventProvider? _eventProvider = null;
   dynamic data = {};
 
-  @override
   void initState() {
-    //instanciranje elementara radimo u initState metodi
-    //TODO Implement initState
     super.initState();
     _eventProvider = context.read<EventProvider>();
     loadData();
@@ -34,6 +34,7 @@ class _EventListScreenState extends State<EventListScreen> {
 
   @override
   Widget build(BuildContext context) {
+  final GetUserResponse finalData = ModalRoute.of(context)!.settings.arguments as GetUserResponse;
     print("called build $data");
     return Scaffold(
         body: SafeArea(
@@ -50,7 +51,10 @@ class _EventListScreenState extends State<EventListScreen> {
               DataColumn(label: Text("Name")),
               DataColumn(label: Text("StraniVariTheme")),
               DataColumn(label: Text("StartDate")),
-              DataColumn(label: Text("EndDate"))
+              DataColumn(label: Text("EndDate")), 
+              DataColumn(label: Text("Action")),
+              DataColumn(label: Text("Action")), 
+              DataColumn(label: Text("Action")), 
             ],
             rows: _buildEventsList(),
           ),
@@ -64,9 +68,12 @@ class _EventListScreenState extends State<EventListScreen> {
       return [
         DataRow(cells: [
           DataCell(Text("Loading...")),
-          DataCell(Text("")),
-          DataCell(Text("")),
-          DataCell(Text(""))
+          DataCell(Text("Loading...")),
+          DataCell(Text("Loading...")),
+          DataCell(Text("Loading...")),
+          DataCell(Text("Loading...")),
+          DataCell(Text("Loading...")),
+          DataCell(Text("Loading...")),
         ])
       ];
     }
@@ -78,14 +85,52 @@ class _EventListScreenState extends State<EventListScreen> {
                 DataCell(Text(x["straniVariTheme"] ?? "")),
                 DataCell(Text(x["startDate"] ?? "")),
                 DataCell(Text(x["endDate"] ?? "")),
+                DataCell(TextButton(
+                  child: 
+                    Text("Schools", 
+                    style: TextStyle(color: Colors.black)), 
+                    onPressed:(){
+                    }, 
+                )), 
+                 DataCell(TextButton(
+                  child: 
+                    Text("Notifications", 
+                    style: TextStyle(color: Colors.black)), 
+                    onPressed:(){
+                    }, 
+                )), 
+                 DataCell(TextButton(
+                  child: 
+                    Text("Plan and Programme", 
+                    style: TextStyle(color: Colors.black)), 
+                    onPressed:(){
+                    }, 
+                ))
               ],
             ))
         .toList()
         .cast<DataRow>();
-
     return list;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Widget build(BuildContext context) {
 //     print("called build $data");
