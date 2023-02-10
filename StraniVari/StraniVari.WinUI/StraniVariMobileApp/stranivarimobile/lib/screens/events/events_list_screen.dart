@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:stranivarimobile/main.dart';
@@ -10,6 +11,8 @@ import 'package:stranivarimobile/helpers/token.dart';
 class EventListScreen extends StatefulWidget {
   static const String routeName = '/events';
   const EventListScreen({super.key});
+  static const String eventSchoolrouteName = '/eventSchools';
+
 
   @override
   State<EventListScreen> createState() => _EventListScreenState();
@@ -35,7 +38,6 @@ class _EventListScreenState extends State<EventListScreen> {
   @override
   Widget build(BuildContext context) {
   final GetUserResponse finalData = ModalRoute.of(context)!.settings.arguments as GetUserResponse;
-    print("called build $data");
     return Scaffold(
         body: SafeArea(
             child: SingleChildScrollView(
@@ -48,6 +50,7 @@ class _EventListScreenState extends State<EventListScreen> {
             columnSpacing: 12,
             horizontalMargin: 12,
             columns: [
+              DataColumn(label: Text("Id")),
               DataColumn(label: Text("Name")),
               DataColumn(label: Text("StraniVariTheme")),
               DataColumn(label: Text("StartDate")),
@@ -74,6 +77,7 @@ class _EventListScreenState extends State<EventListScreen> {
           DataCell(Text("Loading...")),
           DataCell(Text("Loading...")),
           DataCell(Text("Loading...")),
+          DataCell(Text("Loading...")),
         ])
       ];
     }
@@ -81,6 +85,7 @@ class _EventListScreenState extends State<EventListScreen> {
     List<DataRow> list = data
         .map((x) => DataRow(
               cells: [
+                DataCell(Text(x["id"]?.toString() ?? "0")),
                 DataCell(Text(x["name"] ?? "")),
                 DataCell(Text(x["straniVariTheme"] ?? "")),
                 DataCell(Text(x["startDate"] ?? "")),
@@ -90,6 +95,9 @@ class _EventListScreenState extends State<EventListScreen> {
                     Text("Schools", 
                     style: TextStyle(color: Colors.black)), 
                     onPressed:(){
+                      // var id = x["id"];
+                      IdGetter.Id = x["id"];
+                      Navigator.pushNamed(context, EventListScreen.eventSchoolrouteName, arguments: IdGetter.Id);
                     }, 
                 )), 
                  DataCell(TextButton(
@@ -114,6 +122,9 @@ class _EventListScreenState extends State<EventListScreen> {
   }
 }
 
+class IdGetter {
+  static int Id =0;
+}
 
 
 

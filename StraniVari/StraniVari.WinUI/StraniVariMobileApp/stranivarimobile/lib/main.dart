@@ -3,19 +3,28 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:stranivarimobile/providers/event_provider.dart';
+import 'package:stranivarimobile/providers/eventschools_provider.dart';
 import 'package:stranivarimobile/screens/events/events_list_screen.dart';
+import 'package:stranivarimobile/screens/schools/eventschools_list_screen.dart';
 
 void main() => runApp(MultiProvider(
-      providers: [ChangeNotifierProvider(create: (_) => EventProvider())],
+      providers: [
+        ChangeNotifierProvider(create: (_) => EventProvider()),
+        ChangeNotifierProvider(create: (_) => EventSchoolsProvider()),
+        ],
       child: MaterialApp(
         debugShowCheckedModeBanner: true,
         home: HomePage(),
         routes: {
           EventListScreen.routeName: (context) => EventListScreen(),
+          EventSchoolScreen.eventschoolrouteName:(context) => EventSchoolScreen(),
         },
         onGenerateRoute: (settings) {
           if (settings.name == EventListScreen.routeName) {
             return MaterialPageRoute(builder: ((context) => EventListScreen()));
+          }
+          else if(settings.name == EventSchoolScreen.eventschoolrouteName){
+            return MaterialPageRoute(builder: ((context) => EventSchoolScreen()));
           }
         },
       ),
