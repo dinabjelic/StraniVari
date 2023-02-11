@@ -1,4 +1,4 @@
-﻿using StraniVari.Core.Requests;
+﻿ using StraniVari.Core.Requests;
 using StraniVari.Core.Responses;
 using StraniVari.WinUI.Service;
 
@@ -16,7 +16,7 @@ namespace StraniVari.WinUI.Notifications
         public async void frmAllNotifications_Load(object sender, EventArgs e)
         {
             dgvNotifications.AutoGenerateColumns = false;
-            var result = await _apiService.Get<List<GetMeetingsResponse>>();
+            var result = await _apiService.GetById<List<GetMeetingsResponse>>(SelectedEvent.Id);
             dgvNotifications.DataSource = result;
 
             txtName.Text = SelectedEvent.Name;

@@ -3,9 +3,12 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:stranivarimobile/main.dart';
+import 'package:stranivarimobile/providers/event_plan_and_programme_provider.dart';
 import 'package:stranivarimobile/providers/event_provider.dart';
 import 'package:flutter/src/material/data_table.dart';
 import 'package:stranivarimobile/helpers/token.dart';
+import 'package:stranivarimobile/screens/notifications/event_notifications_screen.dart';
+import 'package:stranivarimobile/screens/plan_and_programme/event_plan_and_programee_screen.dart';
 
 
 class EventListScreen extends StatefulWidget {
@@ -50,7 +53,7 @@ class _EventListScreenState extends State<EventListScreen> {
             columnSpacing: 12,
             horizontalMargin: 12,
             columns: [
-              DataColumn(label: Text("Id")),
+              // DataColumn(label: Text("Id")),
               DataColumn(label: Text("Name")),
               DataColumn(label: Text("StraniVariTheme")),
               DataColumn(label: Text("StartDate")),
@@ -70,7 +73,7 @@ class _EventListScreenState extends State<EventListScreen> {
     if (data.length == 0) {
       return [
         DataRow(cells: [
-          DataCell(Text("Loading...")),
+          // DataCell(Text("Loading...")),
           DataCell(Text("Loading...")),
           DataCell(Text("Loading...")),
           DataCell(Text("Loading...")),
@@ -85,7 +88,7 @@ class _EventListScreenState extends State<EventListScreen> {
     List<DataRow> list = data
         .map((x) => DataRow(
               cells: [
-                DataCell(Text(x["id"]?.toString() ?? "0")),
+                // DataCell(Text(x["id"]?.toString() ?? "0")),
                 DataCell(Text(x["name"] ?? "")),
                 DataCell(Text(x["straniVariTheme"] ?? "")),
                 DataCell(Text(x["startDate"] ?? "")),
@@ -105,6 +108,8 @@ class _EventListScreenState extends State<EventListScreen> {
                     Text("Notifications", 
                     style: TextStyle(color: Colors.black)), 
                     onPressed:(){
+                      IdGetter.Id = x["id"];
+                      Navigator.pushNamed(context, EventNotificationsScreen.eventnotificationsrouteName, arguments: IdGetter.Id);
                     }, 
                 )), 
                  DataCell(TextButton(
@@ -112,6 +117,8 @@ class _EventListScreenState extends State<EventListScreen> {
                     Text("Plan and Programme", 
                     style: TextStyle(color: Colors.black)), 
                     onPressed:(){
+                      IdGetter.Id = x["id"];
+                      Navigator.pushNamed(context, EventPlanAndProgrammeScreen.eventplandandprogrammerouteName, arguments: IdGetter.Id);
                     }, 
                 ))
               ],

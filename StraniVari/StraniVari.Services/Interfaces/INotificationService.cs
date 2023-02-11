@@ -27,6 +27,6 @@ namespace StraniVari.Services.Interfaces
         /// get meeting for choosen day
         /// </summary>
         /// <returns></returns>
-        Task<List<GetMeetingsResponse>> NotificationListAsync(DayOfWeek? meetingDay, int? volunteeringYear);
+        Task<List<GetMeetingsResponse>> NotificationListAsync(int id);
     }
 }

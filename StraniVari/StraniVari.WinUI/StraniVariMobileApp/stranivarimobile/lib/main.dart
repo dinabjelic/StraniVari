@@ -2,15 +2,21 @@ import 'dart:async';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:stranivarimobile/providers/event_notifications_provider.dart';
+import 'package:stranivarimobile/providers/event_plan_and_programme_provider.dart';
 import 'package:stranivarimobile/providers/event_provider.dart';
-import 'package:stranivarimobile/providers/eventschools_provider.dart';
+import 'package:stranivarimobile/providers/event_schools_provider.dart';
 import 'package:stranivarimobile/screens/events/events_list_screen.dart';
-import 'package:stranivarimobile/screens/schools/eventschools_list_screen.dart';
+import 'package:stranivarimobile/screens/notifications/event_notifications_screen.dart';
+import 'package:stranivarimobile/screens/plan_and_programme/event_plan_and_programee_screen.dart';
+import 'package:stranivarimobile/screens/schools/event_schools_list_screen.dart';
 
 void main() => runApp(MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => EventProvider()),
         ChangeNotifierProvider(create: (_) => EventSchoolsProvider()),
+        ChangeNotifierProvider(create: (_) => EventNotificationsProvider()),
+        ChangeNotifierProvider(create: (_) => EventPlanAndProgrameProvider()),
         ],
       child: MaterialApp(
         debugShowCheckedModeBanner: true,
@@ -18,6 +24,8 @@ void main() => runApp(MultiProvider(
         routes: {
           EventListScreen.routeName: (context) => EventListScreen(),
           EventSchoolScreen.eventschoolrouteName:(context) => EventSchoolScreen(),
+          EventNotificationsScreen.eventnotificationsrouteName:(context) => EventNotificationsScreen(),
+          EventPlanAndProgrammeScreen.eventplandandprogrammerouteName:(context) => EventPlanAndProgrammeScreen(),
         },
         onGenerateRoute: (settings) {
           if (settings.name == EventListScreen.routeName) {
@@ -25,6 +33,9 @@ void main() => runApp(MultiProvider(
           }
           else if(settings.name == EventSchoolScreen.eventschoolrouteName){
             return MaterialPageRoute(builder: ((context) => EventSchoolScreen()));
+          }
+           else if(settings.name == EventNotificationsScreen.eventnotificationsrouteName){
+            return MaterialPageRoute(builder: ((context) => EventNotificationsScreen()));
           }
         },
       ),
@@ -46,7 +57,7 @@ class HomePage extends StatelessWidget {
               decoration: BoxDecoration(
                   image: DecorationImage(
                       image: AssetImage("assets/images/white.png"),
-                      fit: BoxFit.fill)),
+                      fit: BoxFit.cover)),
               child: Stack(children: [
                 Positioned(
                   top: 90,

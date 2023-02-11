@@ -6,19 +6,10 @@ import 'package:stranivarimobile/helpers/token.dart';
 import 'package:stranivarimobile/main.dart';
 import 'package:stranivarimobile/screens/events/events_list_screen.dart';
 
-class EventSchoolsProvider with ChangeNotifier {
-  late int _id ;
-
-  int get id => _id;
-
-  void addId(int newId) {
-    _id = newId;
-    // notifyListeners();
-  }
-
+class EventNotificationsProvider with ChangeNotifier {
   HttpClient client = new HttpClient();
   IOClient? http;
-  EventSchoolsProvider() {
+  EventNotificationsProvider() {
     client.badCertificateCallback = (cert, host, port) => true;
     http = IOClient(client);
   }
@@ -29,7 +20,7 @@ class EventSchoolsProvider with ChangeNotifier {
       throw Exception("Token not found");
     }
 
-    var url = Uri.parse("https://localhost:7241/api/EventSchool?id="+ IdGetter.Id.toString());
+    var url = Uri.parse("https://localhost:7241/api/Notifications?id="+ IdGetter.Id.toString());
 
     var response = await http!.get(url, headers: {
       "Authorization": "Bearer $token",
@@ -43,4 +34,3 @@ class EventSchoolsProvider with ChangeNotifier {
     }
   }
 }
-

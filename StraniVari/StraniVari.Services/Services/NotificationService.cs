@@ -46,10 +46,10 @@ namespace StraniVari.Services.Services
             await _straniVariDbContext.SaveChangesAsync();
         }
 
-        public async Task<List<GetMeetingsResponse>> NotificationListAsync(DayOfWeek? meetingDay,int? volunteeringYear)
+        public async Task<List<GetMeetingsResponse>> NotificationListAsync(int id)
         {
             var notificationList = await _straniVariDbContext.Notifications
-                .Where(x => x.DayOfWeek == meetingDay || meetingDay== null) 
+                .Where(x => x.EventId == id) 
                 .Select(x => new GetMeetingsResponse
                 {
                     Id = x.Id,
