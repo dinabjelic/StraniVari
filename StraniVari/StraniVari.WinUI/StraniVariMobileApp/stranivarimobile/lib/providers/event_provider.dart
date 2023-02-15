@@ -18,7 +18,7 @@ class EventProvider with ChangeNotifier {
     if (token == null) {
       throw Exception("Token not found");
     }
-    var url = Uri.parse("https://localhost:7241/api/Event");
+    var url = Uri.parse("https://10.0.2.2:7241/api/Event");
     
     var response = await http!.get(url, headers: {
       "Authorization": "Bearer $token",

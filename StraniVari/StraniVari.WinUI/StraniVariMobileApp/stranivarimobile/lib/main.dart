@@ -1,6 +1,9 @@
 import 'dart:async';
+import 'dart:convert';
+import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:http/io_client.dart';
 import 'package:provider/provider.dart';
 import 'package:stranivarimobile/providers/event_notifications_provider.dart';
 import 'package:stranivarimobile/providers/event_plan_and_programme_provider.dart';
@@ -10,6 +13,7 @@ import 'package:stranivarimobile/screens/events/events_list_screen.dart';
 import 'package:stranivarimobile/screens/notifications/event_notifications_screen.dart';
 import 'package:stranivarimobile/screens/plan_and_programme/event_plan_and_programee_screen.dart';
 import 'package:stranivarimobile/screens/schools/event_schools_list_screen.dart';
+import 'package:http/http.dart' as http;
 
 void main() => runApp(MultiProvider(
       providers: [
@@ -53,28 +57,28 @@ class HomePage extends StatelessWidget {
         child: Column(
           children: [
             Container(
-              height: 450,
+              height: 700,
               decoration: BoxDecoration(
                   image: DecorationImage(
                       image: AssetImage("assets/images/white.png"),
                       fit: BoxFit.cover)),
               child: Stack(children: [
                 Positioned(
-                  top: 90,
+                  top: 170,
                   left: 70,
                   child: Center(
                       child: Text(
                     "STRANI VARI",
                     style: TextStyle(
                         color: Colors.black,
-                        fontSize: 20,
+                        fontSize: 25,
                         fontFamily: 'NothingYouCouldDo-Regular',
                         fontWeight: FontWeight.bold),
                   )),
                 ),
                 Padding(
                     padding:
-                        EdgeInsets.symmetric(horizontal: 40, vertical: 150),
+                        EdgeInsets.symmetric(horizontal: 40, vertical: 250),
                     child: Container(
                       child: Column(children: [
                         Container(
@@ -89,7 +93,7 @@ class HomePage extends StatelessWidget {
                                   border: InputBorder.none,
                                   hintText: "Username",
                                   hintStyle: TextStyle(
-                                      fontSize: 10, color: Colors.grey))),
+                                      fontSize: 12, color: Colors.grey))),
                         ),
                         Container(
                           padding: EdgeInsets.symmetric(horizontal: 10),
@@ -103,7 +107,8 @@ class HomePage extends StatelessWidget {
                                 border: InputBorder.none,
                                 hintText: "Password",
                                 hintStyle: TextStyle(
-                                    fontSize: 10, color: Colors.grey)),
+                                    fontSize: 12, color: Colors.grey)),
+                          obscureText: true,
                           ),
                         ),
                         Container(
@@ -136,22 +141,31 @@ class HomePage extends StatelessWidget {
   Future<GetUserResponse> login(
       BuildContext context, String username, String password) async {
     try {
-      Dio dio = Dio();
-      Response response = await dio.post(
-          "https://localhost:7241/api/Autentication/login",
-          data: {"Username": username, "Password": password});
+        final ioc = new HttpClient();
+        ioc.badCertificateCallback =
+            (X509Certificate cert, String host, int port) => true;
+        final http = new IOClient(ioc);
+
+        final response = await http.post(
+        Uri.parse("https://10.0.2.2:7241/api/Autentication/login"),
+        headers: {'Content-Type': 'application/json'},
+        body:jsonEncode({"Username": username, "Password": password})
+      );
+      
       if (response.statusCode == 401) {
         throw Exception('Invalid credentials');
       }
       if (response.statusCode != 200) {
         throw Exception('Failed to login');
       }
-      var finalData = GetUserResponse.fromJson(response.data);
+      // final finalData = GetUserResponse.fromJson(response.body);
+      final finalData = GetUserResponse.fromJson(jsonDecode(response.body));
       TokenGetter.token = finalData.token;
       Navigator.pushNamed(context, EventListScreen.routeName,
           arguments: finalData);
       return finalData;
     } catch (e) {
+      print("Error: $e");
       throw Exception('Failed to login');
     }
   }

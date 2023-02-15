@@ -20,7 +20,7 @@ class EventSchoolsProvider with ChangeNotifier {
       throw Exception("Token not found");
     }
 
-    var url = Uri.parse("https://localhost:7241/api/EventSchool?id="+ IdGetter.Id.toString());
+    var url = Uri.parse("https://10.0.2.2:7241/api/EventSchool?id="+ IdGetter.Id.toString());
 
     var response = await http!.get(url, headers: {
       "Authorization": "Bearer $token",

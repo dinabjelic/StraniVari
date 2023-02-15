@@ -33,11 +33,22 @@ class _EventSchoolScreenState extends State<EventSchoolScreen> {
   @override
   Widget build(BuildContext context) {
   return Scaffold(
+     appBar: AppBar(title: 
+       Text("Schools"),
+        backgroundColor: Color.fromARGB(255, 209, 179, 171),
+       ),
         body: SafeArea(
+          child: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("assets/images/beige.png"),
+            fit: BoxFit.cover,
+          ),
+        ),
             child: SingleChildScrollView(
               scrollDirection: Axis.horizontal,
       child: Column(children: [
-        SizedBox(height: 50),
+        // SizedBox(height: 50),
         Container(
           height: 200,
           child: DataTable(
@@ -54,7 +65,7 @@ class _EventSchoolScreenState extends State<EventSchoolScreen> {
           ),
         ),
       ]),
-    )));
+    ))));
   }
 List<DataRow> _buildSchoolsList() {
   if (data.length == 0) {
