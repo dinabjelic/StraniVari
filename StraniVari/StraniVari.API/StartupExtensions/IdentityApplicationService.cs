@@ -29,6 +29,7 @@ namespace StraniVari.API.StartupExtensions
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["TokenKey"])),
                     ValidateIssuer = false,
                     ValidateAudience = false,
+                    
                 };
             });
             services.AddAuthorization();

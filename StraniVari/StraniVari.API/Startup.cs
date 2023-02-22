@@ -39,6 +39,7 @@ namespace StraniVari.API
             app.UseHttpsRedirection();
             app.UseRouting();
             app.UseAuthentication();
+
             app.UseAuthorization();
             app.UseEndpoints(x =>
             {

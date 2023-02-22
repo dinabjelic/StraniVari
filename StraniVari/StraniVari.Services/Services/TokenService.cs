@@ -16,15 +16,17 @@ namespace StraniVari.Services.Services
             _key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(config["TokenKey"]));
         }
 
-        public string CreateToken(User user)
+        public string CreateToken(User user, IList<string> userRoles)
         {
             var claims = new List<Claim>
             {
                 new Claim(JwtRegisteredClaimNames.NameId, user.Id.ToString()),
-                new Claim(ClaimTypes.Role, "Administrator"),
-                new Claim(ClaimTypes.Role, "User")
-
             };
+
+            foreach (var item in userRoles)
+            {
+                claims.Add(new Claim(ClaimTypes.Role, item));
+            }
 
             var creds = new SigningCredentials(_key, SecurityAlgorithms.HmacSha256Signature);
 

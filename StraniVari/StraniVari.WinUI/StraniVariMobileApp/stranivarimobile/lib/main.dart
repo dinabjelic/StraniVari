@@ -9,11 +9,17 @@ import 'package:stranivarimobile/providers/event_notifications_provider.dart';
 import 'package:stranivarimobile/providers/event_plan_and_programme_provider.dart';
 import 'package:stranivarimobile/providers/event_provider.dart';
 import 'package:stranivarimobile/providers/event_schools_provider.dart';
+import 'package:stranivarimobile/providers/games_provider.dart';
+import 'package:stranivarimobile/providers/school_material_provider.dart';
+import 'package:stranivarimobile/providers/school_volunteers_provider.dart';
 import 'package:stranivarimobile/screens/events/events_list_screen.dart';
+import 'package:stranivarimobile/screens/games/games_screen.dart';
+import 'package:stranivarimobile/screens/material/school_material_screen.dart';
 import 'package:stranivarimobile/screens/notifications/event_notifications_screen.dart';
 import 'package:stranivarimobile/screens/plan_and_programme/event_plan_and_programee_screen.dart';
 import 'package:stranivarimobile/screens/schools/event_schools_list_screen.dart';
 import 'package:http/http.dart' as http;
+import 'package:stranivarimobile/screens/volunteers/school_volunteers_screen.dart';
 
 void main() => runApp(MultiProvider(
       providers: [
@@ -21,6 +27,9 @@ void main() => runApp(MultiProvider(
         ChangeNotifierProvider(create: (_) => EventSchoolsProvider()),
         ChangeNotifierProvider(create: (_) => EventNotificationsProvider()),
         ChangeNotifierProvider(create: (_) => EventPlanAndProgrameProvider()),
+        ChangeNotifierProvider(create: (_) => SchoolMaterialProvider()),
+        ChangeNotifierProvider(create: (_) => SchoolVolunteersProvider()),
+        ChangeNotifierProvider(create: (_) => GamesProvider()),
         ],
       child: MaterialApp(
         debugShowCheckedModeBanner: true,
@@ -30,17 +39,32 @@ void main() => runApp(MultiProvider(
           EventSchoolScreen.eventschoolrouteName:(context) => EventSchoolScreen(),
           EventNotificationsScreen.eventnotificationsrouteName:(context) => EventNotificationsScreen(),
           EventPlanAndProgrammeScreen.eventplandandprogrammerouteName:(context) => EventPlanAndProgrammeScreen(),
+          SchoolMaterialScreen.schoolmaterialrouteName:(context) => SchoolMaterialScreen(),
+          SchoolVolunteersScreen.schoolvolunteersroutename:(context) => SchoolVolunteersScreen(),
+          GamesScreen.gamesrouteName:(context) => GamesScreen(),
         },
         onGenerateRoute: (settings) {
-          if (settings.name == EventListScreen.routeName) {
-            return MaterialPageRoute(builder: ((context) => EventListScreen()));
-          }
-          else if(settings.name == EventSchoolScreen.eventschoolrouteName){
-            return MaterialPageRoute(builder: ((context) => EventSchoolScreen()));
-          }
-           else if(settings.name == EventNotificationsScreen.eventnotificationsrouteName){
-            return MaterialPageRoute(builder: ((context) => EventNotificationsScreen()));
-          }
+          // if (settings.name == EventListScreen.routeName) {
+          //   return MaterialPageRoute(builder: ((context) => EventListScreen()));
+          // }
+          // else if(settings.name == EventSchoolScreen.eventschoolrouteName){
+          //   return MaterialPageRoute(builder: ((context) => EventSchoolScreen()));
+          // }
+          //  else if(settings.name == EventNotificationsScreen.eventnotificationsrouteName){
+          //   return MaterialPageRoute(builder: ((context) => EventNotificationsScreen()));
+          // }
+          //   else if(settings.name == EventPlanAndProgrammeScreen.eventplandandprogrammerouteName){
+          //   return MaterialPageRoute(builder: ((context) => EventPlanAndProgrammeScreen()));
+          // }
+          // else if(settings.name == SchoolMaterialScreen.schoolmaterialrouteName){
+          //   return MaterialPageRoute(builder: ((context) => SchoolMaterialScreen()));
+          // }
+          //  else if(settings.name == SchoolVolunteersScreen.schoolvolunteersroutename){
+          //   return MaterialPageRoute(builder: ((context) => SchoolVolunteersScreen()));
+          // }
+          // else if(settings.name == GamesScreen.gamesrouteName){
+          //   return MaterialPageRoute(builder: (((context) => GamesScreen())));
+          // }
         },
       ),
     ));
@@ -113,7 +137,7 @@ class HomePage extends StatelessWidget {
                         ),
                         Container(
                           height: 40,
-                          margin: EdgeInsets.fromLTRB(2, 10, 2, 0),
+                          margin: EdgeInsets.fromLTRB(2, 10, 2, 10),
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(5),
                               gradient: LinearGradient(colors: [

@@ -54,7 +54,7 @@ namespace StraniVari.API.Controllers
             return new GetUserResponse
             {
                 Username = _user.UserName,
-                Token = _token.CreateToken(user)
+                Token = _token.CreateToken(user, userRoles)
             };
         }
         
@@ -64,6 +64,8 @@ namespace StraniVari.API.Controllers
         {
             var _user = await _userManager.Users.SingleOrDefaultAsync(x => x.UserName == "Dina");
             return _passwordHasher.HashPassword(_user, "test");
+
+
         }
     }
 }

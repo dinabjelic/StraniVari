@@ -16,8 +16,8 @@ namespace StraniVari.API.Controllers
             _eventService = eventService;
         }
 
-        //[Authorize(Roles = "Administrator")]
         //[AllowAnonymous]
+        [Authorize(Roles = "Administrator")]
         [HttpGet]
         public async Task<IActionResult> GetEventDetails()
         {
@@ -25,12 +25,14 @@ namespace StraniVari.API.Controllers
         }
 
         [HttpGet("event-details")]
+        [Authorize(Roles = "RegularUser, Administrator")]
         public async Task<IActionResult> GetEventDetailsById(int id)
         {
             return Ok(await _eventService.GetEventDetailsByIdAsync(id));
         }
 
         [HttpPost]
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> AddEvent(EventUpsertRequest addEventRequest)
         {
             await _eventService.AddEventAsync(addEventRequest);
@@ -38,6 +40,7 @@ namespace StraniVari.API.Controllers
         }
 
         [HttpPut]
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> UpdateEvent(int id, [FromBody] EventUpsertRequest updateEventRequest)
         {
             await _eventService.UpdateEventAsync(id, updateEventRequest);
@@ -45,6 +48,7 @@ namespace StraniVari.API.Controllers
         }
 
         [HttpDelete]
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> DeleteEvent(int id)
         {
             await _eventService.DeleteEventAsync(id);

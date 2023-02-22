@@ -57,7 +57,8 @@ namespace StraniVari.Services.Services
             var gameList = await _straniVariDbContext.Games.Select(x => new GetGamesResponse
             {
                 Id = x.Id,
-                Rules = x.Rules
+                Rules = x.Rules, 
+                //Name = x.Name
             }).ToListAsync();
 
             return gameList;

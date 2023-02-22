@@ -9,6 +9,6 @@ namespace StraniVari.Services.Interfaces
         /// </summary>
         /// <param name="user"></param>
         /// <returns></returns>
-        string CreateToken(User user);
+        string CreateToken(User user, IList<string> userRoles);
     }
 }
