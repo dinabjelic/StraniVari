@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using StraniVari.Common.Helper;
 using StraniVari.Core.Requests;
 using StraniVari.Core.Responses;
 using StraniVari.Services.Interfaces;
@@ -15,12 +17,14 @@ namespace StraniVari.API.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = Role.Administrator + "," + Role.RegularUser)]
         public async Task<IActionResult> GetMaterials()
         {
             return Ok(await _materialService.GetMaterialsAsync());
         }
 
         [HttpPost]
+        [Authorize(Roles = Role.Administrator)]
         public async Task<IActionResult> AddMaterial(MaterialUpsertRequest addMaterialRequest)
         {
             await _materialService.AddMaterialAsync(addMaterialRequest);
@@ -28,6 +32,7 @@ namespace StraniVari.API.Controllers
         }
 
         [HttpPut]
+        [Authorize(Roles = Role.Administrator)]
         public async Task<IActionResult> UpdateMaterial(int id, [FromBody]MaterialUpsertRequest updateMaterialRequest)
         {
             await _materialService.UpdatedMaterialAsync(id, updateMaterialRequest);
@@ -35,6 +40,7 @@ namespace StraniVari.API.Controllers
         }
 
         [HttpDelete]
+        [Authorize(Roles = Role.Administrator)]
         public async Task<IActionResult> DeleteMaterial(int id)
         {
             await _materialService.DeleteMaterialAsync(id);

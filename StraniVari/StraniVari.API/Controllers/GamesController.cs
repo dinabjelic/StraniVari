@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using StraniVari.Common.Helper;
 using StraniVari.Core.Requests;
 using StraniVari.Core.Responses;
 using StraniVari.Services.Interfaces;
@@ -15,6 +17,7 @@ namespace StraniVari.API.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = Role.Administrator)]
         public async Task<IActionResult> AddGame(UpSertGameRequest addGameRequest)
         {
             await _gameService.AddGameAsync(addGameRequest);
@@ -22,6 +25,7 @@ namespace StraniVari.API.Controllers
         }
 
         [HttpPut]
+        [Authorize(Roles = Role.Administrator)]
         public async Task<IActionResult> UpdateGame(int id, [FromBody]UpSertGameRequest updateGameRequest)
         {
             await _gameService.UpdateGameAsync(id,updateGameRequest);
@@ -29,6 +33,7 @@ namespace StraniVari.API.Controllers
         }
 
         [HttpDelete]
+        [Authorize(Roles = Role.Administrator)]
         public async Task<IActionResult> DeleteGame(int id)
         {
             await _gameService.DeleteGameAsync(id);
@@ -36,12 +41,14 @@ namespace StraniVari.API.Controllers
         }
 
         [HttpGet("with-details")]
+        [Authorize(Roles = Role.Administrator + "," + Role.RegularUser)]
         public async Task<IActionResult> GameListWithDetails()
         {
             return Ok(await _gameService.GameListWithDetailsAsync());
         }
 
         [HttpGet]
+        [Authorize(Roles = Role.Administrator + "," + Role.RegularUser)]
         public async Task<IActionResult> GameList()
         {
             return Ok(await _gameService.GameListAsync());

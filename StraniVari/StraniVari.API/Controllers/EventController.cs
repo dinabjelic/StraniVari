@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using StraniVari.Common.Enums;
+using StraniVari.Common.Helper;
 using StraniVari.Core.Dtos;
 using StraniVari.Core.Requests;
 using StraniVari.Core.Responses;
@@ -16,23 +18,22 @@ namespace StraniVari.API.Controllers
             _eventService = eventService;
         }
 
-        //[AllowAnonymous]
-        [Authorize(Roles = "Administrator")]
         [HttpGet]
+        [Authorize(Roles = Role.Administrator + "," + Role.RegularUser)]
         public async Task<IActionResult> GetEventDetails()
         {
             return Ok(await _eventService.GetEventDetailsAsync());
         }
 
         [HttpGet("event-details")]
-        [Authorize(Roles = "RegularUser, Administrator")]
+        [Authorize(Roles = Role.Administrator + "," + Role.RegularUser)]
         public async Task<IActionResult> GetEventDetailsById(int id)
         {
             return Ok(await _eventService.GetEventDetailsByIdAsync(id));
         }
 
         [HttpPost]
-        [Authorize(Roles = "Administrator")]
+        [Authorize(Roles = Role.Administrator)]
         public async Task<IActionResult> AddEvent(EventUpsertRequest addEventRequest)
         {
             await _eventService.AddEventAsync(addEventRequest);
@@ -40,7 +41,7 @@ namespace StraniVari.API.Controllers
         }
 
         [HttpPut]
-        [Authorize(Roles = "Administrator")]
+        [Authorize(Roles = Role.Administrator)]
         public async Task<IActionResult> UpdateEvent(int id, [FromBody] EventUpsertRequest updateEventRequest)
         {
             await _eventService.UpdateEventAsync(id, updateEventRequest);
@@ -48,7 +49,7 @@ namespace StraniVari.API.Controllers
         }
 
         [HttpDelete]
-        [Authorize(Roles = "Administrator")]
+        [Authorize(Roles = Role.Administrator)]
         public async Task<IActionResult> DeleteEvent(int id)
         {
             await _eventService.DeleteEventAsync(id);

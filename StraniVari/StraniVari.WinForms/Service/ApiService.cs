@@ -24,11 +24,11 @@ namespace StraniVari.WinUI.Service
             {
                 if (ex.Call.Response.StatusCode == 401)
                 {
-                    MessageBox.Show("Neuspješna autentifikacija.");
+                    MessageBox.Show("Authentication failed.");
                 }
                 if (ex.Call.Response.StatusCode == 403)
                 {
-                    MessageBox.Show("Nemate permisije za pristup ovom resursu.");
+                    MessageBox.Show("You do not have permission to access this resource.");
                 }
                 throw;
             }
@@ -46,11 +46,11 @@ namespace StraniVari.WinUI.Service
             {
                 if (ex.Call.Response.StatusCode == 401)
                 {
-                    MessageBox.Show("Neuspješna autentifikacija.");
+                    MessageBox.Show("Authentication failed.");
                 }
                 if (ex.Call.Response.StatusCode == 403)
                 {
-                    MessageBox.Show("Nemate permisije za pristup ovom resursu.");
+                    MessageBox.Show("You do not have permission to access this resource.");
                 }
                 throw;
             }
@@ -69,11 +69,11 @@ namespace StraniVari.WinUI.Service
             {
                 if (ex.Call.Response.StatusCode == 401)
                 {
-                    MessageBox.Show("Neuspješna autentifikacija.");
+                    MessageBox.Show("Authentication failed.");
                 }
                 if (ex.Call.Response.StatusCode == 403)
                 {
-                    MessageBox.Show("Nemate permisije za pristup ovom resursu.");
+                    MessageBox.Show("You do not have permission to access this resource.");
                 }
                 throw;
             }
@@ -92,11 +92,11 @@ namespace StraniVari.WinUI.Service
             {
                 if (ex.Call.Response.StatusCode == 401)
                 {
-                    MessageBox.Show("Neuspješna autentifikacija.");
+                    MessageBox.Show("Authentication failed.");
                 }
                 if (ex.Call.Response.StatusCode == 403)
                 {
-                    MessageBox.Show("Nemate permisije za pristup ovom resursu.");
+                    MessageBox.Show("You do not have permission to access this resource.");
                 }
                 throw;
             }
@@ -113,11 +113,11 @@ namespace StraniVari.WinUI.Service
             {
                 if (ex.Call.Response.StatusCode == 401)
                 {
-                    MessageBox.Show("Neuspješna autentifikacija.");
+                    MessageBox.Show("Authentication failed.");
                 }
                 if (ex.Call.Response.StatusCode == 403)
                 {
-                    MessageBox.Show("Nemate permisije za pristup ovom resursu.");
+                    MessageBox.Show("You do not have permission to access this resource.");
                 }
                 throw;
             }
@@ -134,11 +134,11 @@ namespace StraniVari.WinUI.Service
             {
                 if (ex.Call.Response.StatusCode == 401)
                 {
-                    MessageBox.Show("Neuspješna autentifikacija.");
+                    MessageBox.Show("Authentication failed.");
                 }
                 if (ex.Call.Response.StatusCode == 403)
                 {
-                    MessageBox.Show("Nemate permisije za pristup ovom resursu.");
+                    MessageBox.Show("You do not have permission to access this resource.");
                 }
                 throw;
             }

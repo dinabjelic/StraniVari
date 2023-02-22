@@ -23,7 +23,7 @@ class GamesProvider with ChangeNotifier {
       throw Exception("Token not found");
     }
 
-    var url = Uri.parse("${BaseProvider.baseUrl}//Games/with-details");
+    var url = Uri.parse("${BaseProvider.baseUrl}/Games/with-details");
 
     var response = await http!.get(url, headers: {
       "Authorization": "Bearer $token",
