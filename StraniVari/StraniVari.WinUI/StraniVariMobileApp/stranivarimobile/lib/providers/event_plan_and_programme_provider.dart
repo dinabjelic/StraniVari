@@ -6,6 +6,7 @@ import 'package:stranivarimobile/helpers/token.dart';
 import 'package:stranivarimobile/main.dart';
 
 import '../screens/events/events_list_screen.dart';
+import 'base_provider.dart';
 
 class EventPlanAndProgrameProvider with ChangeNotifier {
   HttpClient client = new HttpClient();
@@ -20,7 +21,7 @@ class EventPlanAndProgrameProvider with ChangeNotifier {
     if (token == null) {
       throw Exception("Token not found");
     }
-     var url = Uri.parse("https://10.0.2.2:7241/api/PlanAndProgramme?id="+ IdGetter.Id.toString());
+     var url = Uri.parse("${BaseProvider.baseUrl}/PlanAndProgramme?id="+ IdGetter.Id.toString());
     
     var response = await http!.get(url, headers: {
       "Authorization": "Bearer $token",

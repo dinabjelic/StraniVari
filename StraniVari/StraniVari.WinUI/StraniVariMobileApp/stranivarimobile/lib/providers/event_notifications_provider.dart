@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:http/io_client.dart';
 import 'package:stranivarimobile/helpers/token.dart';
 import 'package:stranivarimobile/main.dart';
+import 'package:stranivarimobile/providers/base_provider.dart';
 import 'package:stranivarimobile/screens/events/events_list_screen.dart';
 
 class EventNotificationsProvider with ChangeNotifier {
@@ -20,7 +21,9 @@ class EventNotificationsProvider with ChangeNotifier {
       throw Exception("Token not found");
     }
 
-    var url = Uri.parse("https://10.0.2.2:7241/api/Notifications?id="+ IdGetter.Id.toString());
+    var url = Uri.parse("${BaseProvider.baseUrl}/Notifications?id="+ IdGetter.Id.toString());
+
+  
 
     var response = await http!.get(url, headers: {
       "Authorization": "Bearer $token",

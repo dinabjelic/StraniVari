@@ -6,6 +6,8 @@ import 'package:stranivarimobile/helpers/token.dart';
 import 'package:stranivarimobile/main.dart';
 import 'package:stranivarimobile/screens/events/events_list_screen.dart';
 
+import 'base_provider.dart';
+
 class EventSchoolsProvider with ChangeNotifier {
   HttpClient client = new HttpClient();
   IOClient? http;
@@ -20,7 +22,7 @@ class EventSchoolsProvider with ChangeNotifier {
       throw Exception("Token not found");
     }
 
-    var url = Uri.parse("https://10.0.2.2:7241/api/EventSchool?id="+ IdGetter.Id.toString());
+    var url = Uri.parse("${BaseProvider.baseUrl}//EventSchool?id="+ IdGetter.Id.toString());
 
     var response = await http!.get(url, headers: {
       "Authorization": "Bearer $token",

@@ -5,6 +5,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:http/io_client.dart';
 import 'package:provider/provider.dart';
+import 'package:stranivarimobile/providers/base_provider.dart';
 import 'package:stranivarimobile/providers/event_notifications_provider.dart';
 import 'package:stranivarimobile/providers/event_plan_and_programme_provider.dart';
 import 'package:stranivarimobile/providers/event_provider.dart';

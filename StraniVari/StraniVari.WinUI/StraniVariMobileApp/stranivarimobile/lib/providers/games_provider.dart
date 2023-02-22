@@ -7,6 +7,7 @@ import 'package:stranivarimobile/main.dart';
 import 'package:stranivarimobile/screens/events/events_list_screen.dart';
 
 import '../screens/schools/event_schools_list_screen.dart';
+import 'base_provider.dart';
 
 class GamesProvider with ChangeNotifier {
   HttpClient client = new HttpClient();
@@ -22,7 +23,7 @@ class GamesProvider with ChangeNotifier {
       throw Exception("Token not found");
     }
 
-    var url = Uri.parse("https://10.0.2.2:7241/api/Games/with-details");
+    var url = Uri.parse("${BaseProvider.baseUrl}//Games/with-details");
 
     var response = await http!.get(url, headers: {
       "Authorization": "Bearer $token",

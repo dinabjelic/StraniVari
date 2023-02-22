@@ -7,6 +7,7 @@ import 'package:stranivarimobile/main.dart';
 import 'package:stranivarimobile/screens/events/events_list_screen.dart';
 
 import '../screens/schools/event_schools_list_screen.dart';
+import 'base_provider.dart';
 
 class SchoolMaterialProvider with ChangeNotifier {
   HttpClient client = new HttpClient();
@@ -22,7 +23,7 @@ class SchoolMaterialProvider with ChangeNotifier {
       throw Exception("Token not found");
     }
 
-    var url = Uri.parse("https://10.0.2.2:7241/api/SchoolMaterials?id="+ SchoolIdGetter.Id.toString());
+    var url = Uri.parse("${BaseProvider.baseUrl}//SchoolMaterials?id="+ SchoolIdGetter.Id.toString());
 
     var response = await http!.get(url, headers: {
       "Authorization": "Bearer $token",
