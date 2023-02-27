@@ -12,8 +12,8 @@ using StraniVari.Database;
 namespace StraniVari.Database.Migrations
 {
     [DbContext(typeof(StraniVariDbContext))]
-    [Migration("20221130124544_InitialCommit")]
-    partial class InitialCommit
+    [Migration("20230226212815_InitCommit")]
+    partial class InitCommit
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -171,20 +171,49 @@ namespace StraniVari.Database.Migrations
                     b.Property<DateTime>("EndDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("StartDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("StraniVariTheme")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Events");
+                });
+
+            modelBuilder.Entity("StraniVari.Core.Entities.EventSchool", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("EventId")
+                        .HasColumnType("int");
+
                     b.Property<int>("NumberOfChildren")
                         .HasColumnType("int");
 
                     b.Property<int>("SchoolId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("StartDate")
-                        .HasColumnType("datetime2");
-
                     b.HasKey("Id");
+
+                    b.HasIndex("EventId");
 
                     b.HasIndex("SchoolId");
 
-                    b.ToTable("Events");
+                    b.ToTable("EventSchools");
                 });
 
             modelBuilder.Entity("StraniVari.Core.Entities.Game", b =>
@@ -231,7 +260,7 @@ namespace StraniVari.Database.Migrations
                     b.ToTable("Materials");
                 });
 
-            modelBuilder.Entity("StraniVari.Core.Entities.Meeting", b =>
+            modelBuilder.Entity("StraniVari.Core.Entities.Notification", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -250,7 +279,10 @@ namespace StraniVari.Database.Migrations
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("DayOfWeek")
+                    b.Property<int?>("DayOfWeek")
+                        .HasColumnType("int");
+
+                    b.Property<int>("EventId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("MeetingDate")
@@ -264,12 +296,11 @@ namespace StraniVari.Database.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("VolunteeringYear")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
-                    b.ToTable("Meetings");
+                    b.HasIndex("EventId");
+
+                    b.ToTable("Notifications");
                 });
 
             modelBuilder.Entity("StraniVari.Core.Entities.PlanAndProgramme", b =>
@@ -284,16 +315,24 @@ namespace StraniVari.Database.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("ActivityDateTime")
-                        .HasColumnType("datetime2");
-
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("DayOfWeek")
+                    b.Property<int?>("DayOfWeek")
                         .HasColumnType("int");
 
+                    b.Property<DateTime>("EndDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("EventId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("StartDate")
+                        .HasColumnType("datetime2");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("EventId");
 
                     b.ToTable("PlanAndProgramme");
                 });
@@ -324,6 +363,64 @@ namespace StraniVari.Database.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Schools");
+                });
+
+            modelBuilder.Entity("StraniVari.Core.Entities.SchoolMaterial", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("EventSchoolId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("MaterialId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EventSchoolId");
+
+                    b.HasIndex("MaterialId");
+
+                    b.ToTable("SchoolMaterials");
+                });
+
+            modelBuilder.Entity("StraniVari.Core.Entities.SchoolVolunteer", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("EventSchoolId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("TransportNeeded")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("VolunteerId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EventSchoolId");
+
+                    b.HasIndex("VolunteerId");
+
+                    b.ToTable("SchoolVolunteers");
                 });
 
             modelBuilder.Entity("StraniVari.Core.Entities.User", b =>
@@ -491,15 +588,83 @@ namespace StraniVari.Database.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("StraniVari.Core.Entities.Event", b =>
+            modelBuilder.Entity("StraniVari.Core.Entities.EventSchool", b =>
                 {
-                    b.HasOne("StraniVari.Core.Entities.School", "Schools")
+                    b.HasOne("StraniVari.Core.Entities.Event", "Event")
+                        .WithMany()
+                        .HasForeignKey("EventId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("StraniVari.Core.Entities.School", "School")
                         .WithMany()
                         .HasForeignKey("SchoolId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Schools");
+                    b.Navigation("Event");
+
+                    b.Navigation("School");
+                });
+
+            modelBuilder.Entity("StraniVari.Core.Entities.Notification", b =>
+                {
+                    b.HasOne("StraniVari.Core.Entities.Event", "Event")
+                        .WithMany()
+                        .HasForeignKey("EventId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Event");
+                });
+
+            modelBuilder.Entity("StraniVari.Core.Entities.PlanAndProgramme", b =>
+                {
+                    b.HasOne("StraniVari.Core.Entities.Event", "Event")
+                        .WithMany()
+                        .HasForeignKey("EventId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Event");
+                });
+
+            modelBuilder.Entity("StraniVari.Core.Entities.SchoolMaterial", b =>
+                {
+                    b.HasOne("StraniVari.Core.Entities.EventSchool", "EventSchool")
+                        .WithMany()
+                        .HasForeignKey("EventSchoolId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("StraniVari.Core.Entities.Material", "Material")
+                        .WithMany()
+                        .HasForeignKey("MaterialId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("EventSchool");
+
+                    b.Navigation("Material");
+                });
+
+            modelBuilder.Entity("StraniVari.Core.Entities.SchoolVolunteer", b =>
+                {
+                    b.HasOne("StraniVari.Core.Entities.EventSchool", "EventSchool")
+                        .WithMany()
+                        .HasForeignKey("EventSchoolId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("StraniVari.Core.Entities.Volunteer", "Volunteer")
+                        .WithMany()
+                        .HasForeignKey("VolunteerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("EventSchool");
+
+                    b.Navigation("Volunteer");
                 });
 #pragma warning restore 612, 618
         }

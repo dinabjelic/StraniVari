@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAddEditGame));
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -36,7 +37,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.rtbRules = new System.Windows.Forms.RichTextBox();
+            this.err = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.err)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
@@ -105,6 +108,10 @@
             this.rtbRules.TabIndex = 2;
             this.rtbRules.Text = "";
             // 
+            // err
+            // 
+            this.err.ContainerControl = this;
+            // 
             // frmAddEditGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -121,6 +128,7 @@
             this.Text = "frmAddEditGame";
             this.Load += new System.EventHandler(this.frmAddEditGame_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.err)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -135,5 +143,6 @@
         private Label label1;
         private Label label2;
         private RichTextBox rtbRules;
+        private ErrorProvider err;
     }
 }

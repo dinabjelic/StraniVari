@@ -119,6 +119,7 @@
             // 
             this.txtVolunteerCity.Location = new System.Drawing.Point(436, 153);
             this.txtVolunteerCity.Name = "txtVolunteerCity";
+            this.txtVolunteerCity.ReadOnly = true;
             this.txtVolunteerCity.Size = new System.Drawing.Size(197, 27);
             this.txtVolunteerCity.TabIndex = 55;
             // 
@@ -126,6 +127,7 @@
             // 
             this.txtLastName.Location = new System.Drawing.Point(436, 112);
             this.txtLastName.Name = "txtLastName";
+            this.txtLastName.ReadOnly = true;
             this.txtLastName.Size = new System.Drawing.Size(197, 27);
             this.txtLastName.TabIndex = 54;
             // 
@@ -133,6 +135,7 @@
             // 
             this.txtSFirstName.Location = new System.Drawing.Point(436, 64);
             this.txtSFirstName.Name = "txtSFirstName";
+            this.txtSFirstName.ReadOnly = true;
             this.txtSFirstName.Size = new System.Drawing.Size(197, 27);
             this.txtSFirstName.TabIndex = 53;
             // 
@@ -176,6 +179,7 @@
             // 
             this.txtVolunteerAddress.Location = new System.Drawing.Point(436, 201);
             this.txtVolunteerAddress.Name = "txtVolunteerAddress";
+            this.txtVolunteerAddress.ReadOnly = true;
             this.txtVolunteerAddress.Size = new System.Drawing.Size(197, 27);
             this.txtVolunteerAddress.TabIndex = 58;
             // 

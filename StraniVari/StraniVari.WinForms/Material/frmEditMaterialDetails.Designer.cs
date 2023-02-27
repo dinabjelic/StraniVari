@@ -69,6 +69,7 @@
             // 
             this.txtMaterailName.Location = new System.Drawing.Point(435, 128);
             this.txtMaterailName.Name = "txtMaterailName";
+            this.txtMaterailName.ReadOnly = true;
             this.txtMaterailName.Size = new System.Drawing.Size(197, 27);
             this.txtMaterailName.TabIndex = 32;
             // 

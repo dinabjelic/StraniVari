@@ -1,8 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using StraniVari.Common.Enums;
-using StraniVari.Common.Helper;
-using StraniVari.Core.Dtos;
+using StraniVari.Core.Helper;
 using StraniVari.Core.Requests;
 using StraniVari.Core.Responses;
 using StraniVari.Services.Interfaces;
@@ -23,6 +21,13 @@ namespace StraniVari.API.Controllers
         public async Task<IActionResult> GetEventDetails()
         {
             return Ok(await _eventService.GetEventDetailsAsync());
+        }
+
+        [HttpGet("event-details-for-active-year")]
+        [Authorize(Roles = Role.Administrator + "," + Role.RegularUser)]
+        public async Task<IActionResult> GetEventDetailsForActiveYear()
+        {
+            return Ok(await _eventService.GetEventDetailsActiveYear());
         }
 
         [HttpGet("event-details")]

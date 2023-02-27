@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.txtEndDate = new System.Windows.Forms.TextBox();
             this.txtStartDate = new System.Windows.Forms.TextBox();
             this.txtTheme = new System.Windows.Forms.TextBox();
@@ -40,6 +41,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.rtbRules = new System.Windows.Forms.RichTextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.err = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.err)).BeginInit();
             this.SuspendLayout();
             // 
             // txtEndDate
@@ -151,6 +154,10 @@
             this.label2.TabIndex = 37;
             this.label2.Text = "Activities";
             // 
+            // err
+            // 
+            this.err.ContainerControl = this;
+            // 
             // frmAddEditProgramme
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -171,6 +178,7 @@
             this.Name = "frmAddEditProgramme";
             this.Text = "frmAddEditProgramme";
             this.Load += new System.EventHandler(this.frmAddEditProgramme_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.err)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -190,5 +198,6 @@
         private Label label3;
         private RichTextBox rtbRules;
         private Label label2;
+        private ErrorProvider err;
     }
 }

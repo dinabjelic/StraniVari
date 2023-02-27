@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAddEditVolunteer));
             this.txtVolunteerAddress = new System.Windows.Forms.TextBox();
             this.btnEditVolunteerDetails = new System.Windows.Forms.Button();
@@ -42,7 +43,9 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.dtpBirth = new System.Windows.Forms.DateTimePicker();
+            this.err = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.err)).BeginInit();
             this.SuspendLayout();
             // 
             // txtVolunteerAddress
@@ -155,6 +158,10 @@
             this.dtpBirth.Size = new System.Drawing.Size(250, 27);
             this.dtpBirth.TabIndex = 5;
             // 
+            // err
+            // 
+            this.err.ContainerControl = this;
+            // 
             // frmAddEditVolunteer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -177,6 +184,7 @@
             this.Text = "frmAddEditVolunteer";
             this.Load += new System.EventHandler(this.frmAddEditVolunteer_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.err)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -196,5 +204,6 @@
         private PictureBox pictureBox1;
         private Label label5;
         private DateTimePicker dtpBirth;
+        private ErrorProvider err;
     }
 }

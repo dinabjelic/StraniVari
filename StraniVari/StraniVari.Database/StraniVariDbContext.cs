@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using StraniVari.Core.Entities;
+using StraniVari.Database.DataSeed;
 
 namespace StraniVari.Database
 {
@@ -22,11 +23,25 @@ namespace StraniVari.Database
         public DbSet<SchoolMaterial> SchoolMaterials { get; set; }
         public DbSet<SchoolVolunteer> SchoolVolunteers { get; set; }
         public DbSet<EventSchool> EventSchools { get; set; }
-        
 
-        //protected override void OnModelCreating(ModelBuilder modelBuilder)
-        //{
-        //    base.OnModelCreating(modelBuilder);
-        //}
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.SeedGames();
+            modelBuilder.SeedEvent();
+            modelBuilder.SeedEventSchool();
+            modelBuilder.SeedMaterial();
+            modelBuilder.SeedNotifications();
+            modelBuilder.SeedPlanAndProgramme();
+            modelBuilder.SeedSchoolMaterial();
+            modelBuilder.SeedSchools();
+            modelBuilder.SeedSchoolVolunteers();
+            modelBuilder.SeedVolunteers();
+            modelBuilder.SeedUserInformation();
+            modelBuilder.SeedRoles();
+            modelBuilder.SeedUserRoles();
+        }
     }
 }

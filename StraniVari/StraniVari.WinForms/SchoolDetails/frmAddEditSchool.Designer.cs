@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAddEditSchool));
             this.btnEditSchoolDetails = new System.Windows.Forms.Button();
             this.txtSchoolCity = new System.Windows.Forms.TextBox();
@@ -38,11 +39,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.err = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.err)).BeginInit();
             this.SuspendLayout();
             // 
             // btnEditSchoolDetails
             // 
+            this.btnEditSchoolDetails.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEditSchoolDetails.Location = new System.Drawing.Point(477, 230);
             this.btnEditSchoolDetails.Name = "btnEditSchoolDetails";
             this.btnEditSchoolDetails.Size = new System.Drawing.Size(94, 29);
@@ -118,6 +122,10 @@
             this.pictureBox1.TabIndex = 33;
             this.pictureBox1.TabStop = false;
             // 
+            // err
+            // 
+            this.err.ContainerControl = this;
+            // 
             // frmAddEditSchool
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -136,6 +144,7 @@
             this.Text = "frmAddEditSchool";
             this.Load += new System.EventHandler(this.frmAddEditSchool_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.err)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -152,5 +161,6 @@
         private Label label1;
         private Label label4;
         private PictureBox pictureBox1;
+        private ErrorProvider err;
     }
 }

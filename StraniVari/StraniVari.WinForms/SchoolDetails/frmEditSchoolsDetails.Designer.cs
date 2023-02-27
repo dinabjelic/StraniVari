@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label4 = new System.Windows.Forms.Label();
             this.txtEndDate = new System.Windows.Forms.TextBox();
             this.txtStartDate = new System.Windows.Forms.TextBox();
@@ -42,6 +43,8 @@
             this.txtSchoolCity = new System.Windows.Forms.TextBox();
             this.txtNumberOfChildren = new System.Windows.Forms.TextBox();
             this.btnEditSchoolDetails = new System.Windows.Forms.Button();
+            this.err = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.err)).BeginInit();
             this.SuspendLayout();
             // 
             // label4
@@ -133,6 +136,7 @@
             // 
             this.txtSchoolName.Location = new System.Drawing.Point(440, 83);
             this.txtSchoolName.Name = "txtSchoolName";
+            this.txtSchoolName.ReadOnly = true;
             this.txtSchoolName.Size = new System.Drawing.Size(197, 27);
             this.txtSchoolName.TabIndex = 18;
             // 
@@ -140,6 +144,7 @@
             // 
             this.txtSchoolAddress.Location = new System.Drawing.Point(440, 131);
             this.txtSchoolAddress.Name = "txtSchoolAddress";
+            this.txtSchoolAddress.ReadOnly = true;
             this.txtSchoolAddress.Size = new System.Drawing.Size(197, 27);
             this.txtSchoolAddress.TabIndex = 19;
             // 
@@ -147,6 +152,7 @@
             // 
             this.txtSchoolCity.Location = new System.Drawing.Point(440, 172);
             this.txtSchoolCity.Name = "txtSchoolCity";
+            this.txtSchoolCity.ReadOnly = true;
             this.txtSchoolCity.Size = new System.Drawing.Size(197, 27);
             this.txtSchoolCity.TabIndex = 20;
             // 
@@ -171,6 +177,10 @@
             this.btnEditSchoolDetails.UseVisualStyleBackColor = true;
             this.btnEditSchoolDetails.Click += new System.EventHandler(this.btnEditSchoolDetails_Click);
             // 
+            // err
+            // 
+            this.err.ContainerControl = this;
+            // 
             // frmEditSchoolsDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -193,6 +203,7 @@
             this.Name = "frmEditSchoolsDetails";
             this.Text = "frmEditSchoolsDetails";
             this.Load += new System.EventHandler(this.frmEditSchoolsDetails_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.err)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -214,5 +225,6 @@
         private TextBox txtSchoolCity;
         private TextBox txtNumberOfChildren;
         private Button btnEditSchoolDetails;
+        private ErrorProvider err;
     }
 }

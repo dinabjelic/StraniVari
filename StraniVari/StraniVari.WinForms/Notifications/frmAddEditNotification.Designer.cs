@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAddEditNotification));
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -42,7 +43,9 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.err = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.err)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
@@ -157,6 +160,10 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(250, 27);
             this.dateTimePicker1.TabIndex = 35;
             // 
+            // err
+            // 
+            this.err.ContainerControl = this;
+            // 
             // frmAddEditNotification
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -179,6 +186,7 @@
             this.Text = "frmAddEditNotification";
             this.Load += new System.EventHandler(this.frmAddEditNotification_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.err)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -199,5 +207,6 @@
         private Label label5;
         private Button btnSave;
         private DateTimePicker dateTimePicker1;
+        private ErrorProvider err;
     }
 }

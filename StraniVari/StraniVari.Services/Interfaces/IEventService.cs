@@ -35,6 +35,10 @@ namespace StraniVari.Services.Interfaces
         /// <param name="id"></param>
         /// <returns></returns>
         Task DeleteEventAsync(int id);
-
+        /// <summary>
+        /// showing events only for active year
+        /// </summary>
+        /// <returns></returns>
+        Task<List<GetEventDetailsResponse>> GetEventDetailsActiveYear();
     }
 }

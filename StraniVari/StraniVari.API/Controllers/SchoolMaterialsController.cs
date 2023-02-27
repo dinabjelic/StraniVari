@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using StraniVari.Common.Helper;
 using StraniVari.Core.Entities;
+using StraniVari.Core.Helper;
 using StraniVari.Core.Requests;
 using StraniVari.Core.Responses;
 using StraniVari.Services.Interfaces;
@@ -48,10 +48,10 @@ namespace StraniVari.API.Controllers
         }
 
         [HttpGet("{eventSchoolId}/recommend")]
-        [AllowAnonymous]
-        public List<SchoolMaterial> RecommendSystem(int eventSchoolId)
+        [Authorize(Roles = Role.Administrator)]
+        public IActionResult RecommendSystem(int eventSchoolId)
         {
-            return _materialSchoolService.Recommend(eventSchoolId);
+            return Ok(_materialSchoolService.Recommend(eventSchoolId));
         }
 
     }

@@ -106,11 +106,5 @@ namespace StraniVari.WinUI.EventDetails
             frmAllGames frmAllGames = new frmAllGames();
             frmAllGames.ShowDialog();
         }
-
-        //private void btnReport_Click(object sender, EventArgs e)
-        //{
-        //    frmReports frmReports = new frmReports();
-        //    frmReports.ShowDialog();
-        //}
     }
 }

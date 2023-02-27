@@ -1,4 +1,5 @@
-﻿using StraniVari.Core.Requests;
+﻿using StraniVari.Common.Constants;
+using StraniVari.Core.Requests;
 using StraniVari.Core.Responses;
 using StraniVari.WinUI.Service;
 
@@ -28,31 +29,54 @@ namespace StraniVari.WinUI.Volunteers
 
         private async void btnEditVolunteerDetails_Click(object sender, EventArgs e)
         {
-            var volunteer = new VolunteerUpSertRequest
+            if (ValidateEntry())
             {
-                FirstName = txtFirstName.Text,
-                LastName = txtLastName.Text,
-                Address = txtVolunteerAddress.Text,
-                City = txtVolunteerCity.Text,
-                DateOfBirth = dtpBirth.Value
-            };
+                var volunteer = new VolunteerUpSertRequest
+                {
+                    FirstName = txtFirstName.Text,
+                    LastName = txtLastName.Text,
+                    Address = txtVolunteerAddress.Text,
+                    City = txtVolunteerCity.Text,
+                    DateOfBirth = dtpBirth.Value
+                };
 
-            if(SelectedVolunteer == null)
-            {
-                await _apiService.Insert<ResponseResult>(volunteer);
-                MessageBox.Show("Volunteer successfully added.", "Infomation", MessageBoxButtons.OK);
+                if (SelectedVolunteer == null)
+                {
+                    await _apiService.Insert<ResponseResult>(volunteer);
+                    MessageBox.Show("Volunteer successfully added.", "Infomation", MessageBoxButtons.OK);
+                }
+                else
+                {
+                    await _apiService.Update<ResponseResult>(volunteer, SelectedVolunteer.Id);
+                    MessageBox.Show("Details successfully updated.", "Infomation", MessageBoxButtons.OK);
+                }
+                this.DialogResult = DialogResult.OK;
+                Close();
             }
-            else
-            {
-                await _apiService.Update<ResponseResult>(volunteer, SelectedVolunteer.Id);
-                MessageBox.Show("Details successfully updated.", "Infomation", MessageBoxButtons.OK);
-            }
-            this.DialogResult = DialogResult.OK;
-            Close();
 
             var principalForm = Application.OpenForms.OfType<frmAllVolunteers>().FirstOrDefault();
             principalForm.frmAllVolunteers_Load(sender, e);
 
+        }
+
+        private bool ValidateEntry()
+        {
+            return ValidateControl(txtFirstName, Constants.RequiredValue) &&
+                   ValidateControl(txtLastName, Constants.RequiredValue) &&
+                   ValidateControl(txtVolunteerCity, Constants.RequiredValue) &&
+                   ValidateControl(txtVolunteerAddress, Constants.RequiredValue) &&
+                   ValidateControl(dtpBirth, Constants.RequiredValue);
+        }
+
+        private bool ValidateControl(Control control, string message)
+        {
+            if (string.IsNullOrWhiteSpace(control.Text))
+            {
+                err.SetError(control, message);
+                return false;
+            }
+            err.Clear();
+            return true;
         }
     }
 }

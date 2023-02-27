@@ -88,9 +88,9 @@ class _EventPlanAndProgrammeScreenState
       return [
         DataRow(cells: [
           // DataCell(Text("Loading...")),
-          DataCell(Text("Loading...")),
-          DataCell(Text("Loading...")),
-          DataCell(Text("Loading...")),
+          DataCell(Text("No data...")),
+          DataCell(Text("No data...")),
+          DataCell(Text("No data...")),
         ])
       ];
     }
@@ -102,14 +102,14 @@ class _EventPlanAndProgrammeScreenState
 
                 DataCell(
                   Text(
-                    DateFormat('dd/MM/yyyy')
+                    DateFormat('dd/MM/yyyy hh:mm a')
                         .format(DateTime.parse(x["startDate"])),
                     style: TextStyle(fontSize: 14),
                   ),
                 ),
                 DataCell(
                   Text(
-                    DateFormat('dd/MM/yyyy')
+                    DateFormat('dd/MM/yyyy hh:mm a')
                         .format(DateTime.parse(x["endDate"])),
                     style: TextStyle(fontSize: 14),
                   ),

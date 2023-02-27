@@ -82,8 +82,8 @@ class _SchoolMaterialScreenState extends State<SchoolMaterialScreen> {
         DataRow(cells: [
           // DataCell(Text("Loading...")),
           // DataCell(Text("Loading...")),
-          DataCell(Text("Loading...")),
-          DataCell(Text("Loading...")),
+          DataCell(Text("No data...")),
+          DataCell(Text("No data...")),
         ])
       ];
     }

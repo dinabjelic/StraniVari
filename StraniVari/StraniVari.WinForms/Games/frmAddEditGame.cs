@@ -1,4 +1,5 @@
-﻿using StraniVari.Core.Entities;
+﻿using StraniVari.Common.Constants;
+using StraniVari.Core.Entities;
 using StraniVari.Core.Requests;
 using StraniVari.Core.Responses;
 using StraniVari.WinUI.Service;
@@ -21,29 +22,32 @@ namespace StraniVari.WinUI.Games
 
         private async void btnSave_Click(object sender, EventArgs e)
         {
-            var game = new UpSertGameRequest
+            if (ValidateEntry())
             {
-                Name = txtGameName.Text,
-                Rules = rtbRules.Text
-            };
-
-            if (GameName == null)
-            {
-                await _apiService.Insert<ResponseResult>(game);
-                MessageBox.Show("Game successfully added.", "Infomation", MessageBoxButtons.OK);
-            }
-            else
-            {
-                var model = new GetGamesResponse
+                var game = new UpSertGameRequest
                 {
                     Name = txtGameName.Text,
                     Rules = rtbRules.Text
                 };
-                await _apiService.Update<ResponseResult>(model, SelectedItem.Id);
-                MessageBox.Show("Details successfully updated.", "Infomation", MessageBoxButtons.OK);
+
+                if (GameName == null)
+                {
+                    await _apiService.Insert<ResponseResult>(game);
+                    MessageBox.Show("Game successfully added.", "Infomation", MessageBoxButtons.OK);
+                }
+                else
+                {
+                    var model = new GetGamesResponse
+                    {
+                        Name = txtGameName.Text,
+                        Rules = rtbRules.Text
+                    };
+                    await _apiService.Update<ResponseResult>(model, SelectedItem.Id);
+                    MessageBox.Show("Details successfully updated.", "Infomation", MessageBoxButtons.OK);
+                }
+                this.DialogResult = DialogResult.OK;
+                Close();
             }
-            this.DialogResult = DialogResult.OK;
-            Close();
 
             var principalForm = Application.OpenForms.OfType<frmAllGames>().FirstOrDefault();
             principalForm.frmAllGames_Load(sender, e);
@@ -56,6 +60,23 @@ namespace StraniVari.WinUI.Games
                 txtGameName.Text = GameName;
                 rtbRules.Text = Rule.Substring(Rule.IndexOf("Rules: ") + "Rules: ".Length);
             }
+        }
+
+        private bool ValidateEntry()
+        {
+            return ValidateControl(txtGameName, Constants.RequiredValue) &&
+                   ValidateControl(rtbRules, Constants.RequiredValue);
+        }
+
+        private bool ValidateControl(Control control, string message)
+        {
+            if (string.IsNullOrWhiteSpace(control.Text))
+            {
+                err.SetError(control, message);
+                return false;
+            }
+            err.Clear();
+            return true;
         }
     }
 }

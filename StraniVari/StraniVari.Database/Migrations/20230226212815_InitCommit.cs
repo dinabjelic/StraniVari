@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace StraniVari.Database.Migrations
 {
-    public partial class InitialCommit : Migration
+    public partial class InitCommit : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -53,6 +53,23 @@ namespace StraniVari.Database.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Events",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    StartDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    EndDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    StraniVariTheme = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Events", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Games",
                 columns: table => new
                 {
@@ -79,42 +96,6 @@ namespace StraniVari.Database.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Materials", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Meetings",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    DayOfWeek = table.Column<int>(type: "int", nullable: false),
-                    MeetingDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Address = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    City = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    MeetingPlace = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    MeetingTheme = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    VolunteeringYear = table.Column<int>(type: "int", nullable: false),
-                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Meetings", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "PlanAndProgramme",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    DayOfWeek = table.Column<int>(type: "int", nullable: false),
-                    ActivityDateTime = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Activity = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_PlanAndProgramme", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -259,24 +240,135 @@ namespace StraniVari.Database.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Events",
+                name: "Notifications",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    EventId = table.Column<int>(type: "int", nullable: false),
+                    DayOfWeek = table.Column<int>(type: "int", nullable: true),
+                    MeetingDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Address = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    City = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    MeetingPlace = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    MeetingTheme = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Notifications", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Notifications_Events_EventId",
+                        column: x => x.EventId,
+                        principalTable: "Events",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "PlanAndProgramme",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    EventId = table.Column<int>(type: "int", nullable: false),
+                    DayOfWeek = table.Column<int>(type: "int", nullable: true),
+                    StartDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    EndDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Activity = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_PlanAndProgramme", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_PlanAndProgramme_Events_EventId",
+                        column: x => x.EventId,
+                        principalTable: "Events",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "EventSchools",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     SchoolId = table.Column<int>(type: "int", nullable: false),
+                    EventId = table.Column<int>(type: "int", nullable: false),
                     NumberOfChildren = table.Column<int>(type: "int", nullable: false),
-                    StartDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    EndDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Events", x => x.Id);
+                    table.PrimaryKey("PK_EventSchools", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Events_Schools_SchoolId",
+                        name: "FK_EventSchools_Events_EventId",
+                        column: x => x.EventId,
+                        principalTable: "Events",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_EventSchools_Schools_SchoolId",
                         column: x => x.SchoolId,
                         principalTable: "Schools",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "SchoolMaterials",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    EventSchoolId = table.Column<int>(type: "int", nullable: false),
+                    MaterialId = table.Column<int>(type: "int", nullable: false),
+                    Quantity = table.Column<int>(type: "int", nullable: false),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_SchoolMaterials", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_SchoolMaterials_EventSchools_EventSchoolId",
+                        column: x => x.EventSchoolId,
+                        principalTable: "EventSchools",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_SchoolMaterials_Materials_MaterialId",
+                        column: x => x.MaterialId,
+                        principalTable: "Materials",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "SchoolVolunteers",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    EventSchoolId = table.Column<int>(type: "int", nullable: false),
+                    VolunteerId = table.Column<int>(type: "int", nullable: false),
+                    TransportNeeded = table.Column<bool>(type: "bit", nullable: false),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_SchoolVolunteers", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_SchoolVolunteers_EventSchools_EventSchoolId",
+                        column: x => x.EventSchoolId,
+                        principalTable: "EventSchools",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_SchoolVolunteers_Volunteers_VolunteerId",
+                        column: x => x.VolunteerId,
+                        principalTable: "Volunteers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -321,9 +413,44 @@ namespace StraniVari.Database.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Events_SchoolId",
-                table: "Events",
+                name: "IX_EventSchools_EventId",
+                table: "EventSchools",
+                column: "EventId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_EventSchools_SchoolId",
+                table: "EventSchools",
                 column: "SchoolId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Notifications_EventId",
+                table: "Notifications",
+                column: "EventId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_PlanAndProgramme_EventId",
+                table: "PlanAndProgramme",
+                column: "EventId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_SchoolMaterials_EventSchoolId",
+                table: "SchoolMaterials",
+                column: "EventSchoolId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_SchoolMaterials_MaterialId",
+                table: "SchoolMaterials",
+                column: "MaterialId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_SchoolVolunteers_EventSchoolId",
+                table: "SchoolVolunteers",
+                column: "EventSchoolId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_SchoolVolunteers_VolunteerId",
+                table: "SchoolVolunteers",
+                column: "VolunteerId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -344,28 +471,37 @@ namespace StraniVari.Database.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "Events");
-
-            migrationBuilder.DropTable(
                 name: "Games");
 
             migrationBuilder.DropTable(
-                name: "Materials");
-
-            migrationBuilder.DropTable(
-                name: "Meetings");
+                name: "Notifications");
 
             migrationBuilder.DropTable(
                 name: "PlanAndProgramme");
 
             migrationBuilder.DropTable(
-                name: "Volunteers");
+                name: "SchoolMaterials");
+
+            migrationBuilder.DropTable(
+                name: "SchoolVolunteers");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
+
+            migrationBuilder.DropTable(
+                name: "Materials");
+
+            migrationBuilder.DropTable(
+                name: "EventSchools");
+
+            migrationBuilder.DropTable(
+                name: "Volunteers");
+
+            migrationBuilder.DropTable(
+                name: "Events");
 
             migrationBuilder.DropTable(
                 name: "Schools");

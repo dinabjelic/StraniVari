@@ -96,23 +96,19 @@ namespace StraniVari.WinUI.Material
 
         private async void btnRecommend_Click(object sender, EventArgs e)
         {
-            //if (materials.Materials.Count() == 1)
-            //{
-            //var choosenMaterial = materials.Materials.First();
+            var materialForSchool = await _apiServiceMaterial.GetById<List<GetMaterialsForSchoolRequest>>(SelectedElement.SchoolEventId);
 
-                var materialForSchool = await _apiServiceMaterial.GetById<List<GetMaterialsForSchoolRequest>>(SelectedElement.SchoolEventId);
+            var materialList = await _apiServiceMaterial.Get<List<SchoolMaterial>>($"{SelectedElement.SchoolEventId}/recommend");
 
-                HttpClient clint = new HttpClient();
-                clint.BaseAddress = new Uri("https://localhost:7241");
-                HttpResponseMessage response = clint.GetAsync($"/api/SchoolMaterials/{SelectedElement.SchoolEventId}/recommend").Result;
-                var resultArray = await response.Content.ReadAsStringAsync();
-                var materialList = JsonConvert.DeserializeObject<List<SchoolMaterial>>(resultArray);
-                if (materialList.Count() > 0)
-                {
-                    frmRecommendationSystem frmRecommendationSystem = new frmRecommendationSystem(materialList, SelectedElement, materialForSchool);
-                    frmRecommendationSystem.ShowDialog();
-                }
-            //}
+            if (materialList.Count() > 0)
+            {
+                frmRecommendationSystem frmRecommendationSystem = new frmRecommendationSystem(materialList, SelectedElement, materialForSchool);
+                frmRecommendationSystem.Show();
+            }
+            else
+            {
+                MessageBox.Show("There are no recommended materials.");
+            }
         }
     }
 }

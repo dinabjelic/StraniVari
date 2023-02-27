@@ -1,4 +1,4 @@
-﻿namespace StraniVari.Common.Helper
+﻿namespace StraniVari.Core.Helper
 {
     public static class Role
     {

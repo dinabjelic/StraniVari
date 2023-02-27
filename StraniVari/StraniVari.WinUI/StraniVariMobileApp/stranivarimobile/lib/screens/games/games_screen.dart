@@ -76,7 +76,7 @@ class _GamesScreenState extends State<GamesScreen> {
      if (data.length == 0) {
       return [
         DataRow(cells: [
-          DataCell(Text("Loading...")),
+          DataCell(Text("No data...")),
         ])
       ];
     }

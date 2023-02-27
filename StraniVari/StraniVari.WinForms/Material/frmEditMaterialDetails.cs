@@ -38,7 +38,7 @@ namespace StraniVari.WinUI.Material
                 var editedDetails = new UpdateMaterialToSchoolRequest
                 {
                     SchoolMaterialId = SelectedMaterial.SchoolMaterialId,
-                    Quantity = Int32.Parse(txtQuantity.Text)
+                    Quantity = Int32.TryParse(txtQuantity.Text, out var result) ? result : 0
                 };
 
                 if (editedDetails != null)

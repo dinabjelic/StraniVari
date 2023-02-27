@@ -92,6 +92,7 @@
             // 
             this.rtbActivities.Location = new System.Drawing.Point(289, 93);
             this.rtbActivities.Name = "rtbActivities";
+            this.rtbActivities.ReadOnly = true;
             this.rtbActivities.Size = new System.Drawing.Size(424, 269);
             this.rtbActivities.TabIndex = 46;
             this.rtbActivities.Text = "";

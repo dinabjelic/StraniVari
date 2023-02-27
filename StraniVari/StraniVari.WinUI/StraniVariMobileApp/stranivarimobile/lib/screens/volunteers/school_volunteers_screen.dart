@@ -95,11 +95,11 @@ class _SchoolVolunteersScreenState extends State<SchoolVolunteersScreen> {
       return [
         DataRow(cells: [
           // DataCell(Text("Loading...")),
-          DataCell(Text("Loading...")),
-          DataCell(Text("Loading...")),
-          DataCell(Text("Loading...")),
-          DataCell(Text("Loading...")),
-          DataCell(Text("Loading...")),
+          DataCell(Text("No data...")),
+          DataCell(Text("No data...")),
+          DataCell(Text("No data...")),
+          DataCell(Text("No data...")),
+          DataCell(Text("No data...")),
         ])
       ];
     }

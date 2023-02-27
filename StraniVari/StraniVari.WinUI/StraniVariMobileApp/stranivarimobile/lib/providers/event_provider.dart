@@ -21,7 +21,7 @@ class EventProvider with ChangeNotifier {
       throw Exception("Token not found");
     }
 
-    var url = Uri.parse("${BaseProvider.baseUrl}/Event");
+    var url = Uri.parse("${BaseProvider.baseUrl}/Event/event-details-for-active-year");
     
     var response = await http!.get(url, headers: {
       "Authorization": "Bearer $token",

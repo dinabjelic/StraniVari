@@ -82,7 +82,7 @@ class HomePage extends StatelessWidget {
         child: Column(
           children: [
             Container(
-              height: 700,
+              height: 730,
               decoration: BoxDecoration(
                   image: DecorationImage(
                       image: AssetImage("assets/images/white.png"),
@@ -172,7 +172,7 @@ class HomePage extends StatelessWidget {
         final http = new IOClient(ioc);
 
         final response = await http.post(
-        Uri.parse("https://10.0.2.2:7241/api/Autentication/login"),
+        Uri.parse("${BaseProvider.baseUrl}/Autentication/login"),
         headers: {'Content-Type': 'application/json'},
         body:jsonEncode({"Username": username, "Password": password})
       );

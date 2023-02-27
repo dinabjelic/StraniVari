@@ -1,4 +1,5 @@
-﻿using StraniVari.Core.Requests;
+﻿using StraniVari.Common.Constants;
+using StraniVari.Core.Requests;
 using StraniVari.Core.Responses;
 using StraniVari.WinUI.Service;
 
@@ -32,22 +33,48 @@ namespace StraniVari.WinUI.SchoolDetails
 
         private async void btnEditSchoolDetails_Click(object sender, EventArgs e)
         {
-            var editedDetails = new EventSchoolUpdateRequest
+            if (ValidateEntry())
             {
-                EventSchoolId = _selectedSchool.SchoolEventId,
-                NumberOfChildren = Int32.Parse(txtNumberOfChildren.Text)
-            };
+                //int numberOfChildren;
+                //if (!int.TryParse(txtNumberOfChildren.Text, out numberOfChildren))
+                //{
+                //    MessageBox.Show("Please enter a valid integer value for the number of children.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //    return;
+                //}
 
-            if(editedDetails != null)
-            {
-                await _apiServiceEventSchool.Update<ResponseResult>(editedDetails);
-                MessageBox.Show("Details successfully updated.", "Infomation", MessageBoxButtons.OK);
+                var editedDetails = new EventSchoolUpdateRequest
+                {
+                    EventSchoolId = _selectedSchool.SchoolEventId,
+                    NumberOfChildren = Int32.TryParse(txtNumberOfChildren.Text, out var result) ? result : 0
+                };
+
+                if (editedDetails != null)
+                {
+                    await _apiServiceEventSchool.Update<ResponseResult>(editedDetails);
+                    MessageBox.Show("Details successfully updated.", "Infomation", MessageBoxButtons.OK);
+                }
+                this.DialogResult = DialogResult.OK;
+                Close();
             }
-            this.DialogResult = DialogResult.OK;
-            Close();
 
             var principalForm = Application.OpenForms.OfType<frmSchoolsEventDetails>().FirstOrDefault();
             principalForm.frmSchoolsEventDetails_Load(sender,e);
+        }
+
+        private bool ValidateEntry()
+        {
+            return ValidateControl(txtNumberOfChildren, Constants.RequiredValue);
+        }
+
+        private bool ValidateControl(Control control, string message)
+        {
+            if (string.IsNullOrWhiteSpace(control.Text))
+            {
+                err.SetError(control, message);
+                return false;
+            }
+            err.Clear();
+            return true;
         }
     }
 }

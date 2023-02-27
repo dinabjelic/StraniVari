@@ -119,6 +119,11 @@ namespace StraniVari.Services.Services
 
                 }
 
+                if (!data.Any())
+                {
+                    return Enumerable.Empty<SchoolMaterial>().ToList();
+                }
+
                 var trainData = mlContext.Data.LoadFromEnumerable(data);
 
                 //STEP 3: Your data is already encoded so all you need to do is specify options for MatrxiFactorizationTrainer with a few extra hyperparameters
@@ -139,7 +144,10 @@ namespace StraniVari.Services.Services
             var elements = _straniVariDbContext.SchoolMaterials.Where(x=>x.EventSchoolId != eventSchoolId).ToList();
             var allItems = elements.GroupBy(x => x.MaterialId).Select(y => y.First()).ToList();
 
-
+            if(model == null)
+            {
+                return Enumerable.Empty<SchoolMaterial>().ToList();
+            }
 
             var predictionResult = new List<Tuple<StraniVari.Core.Entities.SchoolMaterial, float>>();
 
@@ -148,7 +156,6 @@ namespace StraniVari.Services.Services
                 var predictionEngine = mlContext.Model.CreatePredictionEngine<ProductEntry, Copurchase_prediction>(model);
                 var prediction = predictionEngine.Predict(new ProductEntry()
                 {
-                    //MaterialID = (uint)materialId,
                     CoPurchaseProductID = (uint)item.MaterialId
                 });
 
@@ -156,28 +163,6 @@ namespace StraniVari.Services.Services
             }
             var finalResult = predictionResult.OrderByDescending(x => x.Item2)
                .Select(x => x.Item1).Take(3).ToList();
-
-            //var addedMaterialForSchool = _straniVariDbContext.SchoolMaterials.Where(x => x.EventSchoolId == eventSchoolId).ToList();
-            
-            //foreach(var x in addedMaterialForSchool)
-            //{
-            //    foreach(var y in finalResult)
-            //    {
-            //        if(x.MaterialId == y.MaterialId)
-            //        {
-            //            //var predictionEngine = mlContext.Model.CreatePredictionEngine<ProductEntry, Copurchase_prediction>(model);
-            //            //var prediction = predictionEngine.Predict(new ProductEntry()
-            //            //{
-            //            //    //MaterialID = (uint)materialId,
-            //            //    CoPurchaseProductID = (uint)x.MaterialId
-            //            //});
-            //            finalResult = predictionResult.OrderByDescending(x => x.Item2)
-            //                          .Select(x => x.Item1).Take(1).ToList();
-
-            //            //predictionResult.Add(new Tuple<StraniVari.Core.Entities.SchoolMaterial, float>(x, prediction.Score));
-            //        }
-            //    }
-            //}
 
             return finalResult;
         }

@@ -33,12 +33,18 @@ namespace StraniVari.WinUI.EventDetails
                 if (selectedEvent == null)
                 {
                     await _apiService.Insert<ResponseResult>(straniVariEvent);
-                    MessageBox.Show("Event successfully added.", "Infomation", MessageBoxButtons.OK);
+                    //if(result is not null)
+                    //{
+                        MessageBox.Show("Event successfully added.", "Infomation", MessageBoxButtons.OK);
+                    //}
                 }
                 else
                 {
                     await _apiService.Update<ResponseResult>(straniVariEvent, selectedEvent.Id);
-                    MessageBox.Show("Event successfully updated.", "Infomation", MessageBoxButtons.OK);
+                    //if(result is not null)
+                    //{
+                        MessageBox.Show("Event successfully updated.", "Infomation", MessageBoxButtons.OK);
+                    //}
                 }
 
             this.DialogResult = DialogResult.OK;

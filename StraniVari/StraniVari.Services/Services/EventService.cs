@@ -57,6 +57,21 @@ namespace StraniVari.Services.Services
             return eventDetails;
         }
 
+        public async Task<List<GetEventDetailsResponse>> GetEventDetailsActiveYear()
+        {
+            var eventDetails = await _straniVariDbContext.Events
+                               .Where(x=>x.EndDate.Year == DateTime.Now.Year)
+                               .Select(x => new GetEventDetailsResponse
+                               {
+                                   Id = x.Id,
+                                   StartDate = x.StartDate,
+                                   EndDate = x.EndDate,
+                                   Name = x.Name,
+                                   StraniVariTheme = x.StraniVariTheme
+                               }).ToListAsync();
+            return eventDetails;
+        }
+
         public async Task<List<GetEventDetailsByIdResponse>> GetEventDetailsByIdAsync(int id)
         {
             var eventDetails = await _straniVariDbContext.Events

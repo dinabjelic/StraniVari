@@ -130,13 +130,13 @@ class _EventListScreenState extends State<EventListScreen> {
       return [
         DataRow(cells: [
           // DataCell(Text("Loading...")),
-          DataCell(Text("Loading...")),
-          DataCell(Text("Loading...")),
-          DataCell(Text("Loading...")),
-          DataCell(Text("Loading...")),
-          DataCell(Text("Loading...")),
-          DataCell(Text("Loading...")),
-          DataCell(Text("Loading...")),
+          DataCell(Text("No data...")),
+          DataCell(Text("No data...")),
+          DataCell(Text("No data...")),
+          DataCell(Text("No data...")),
+          DataCell(Text("No data...")),
+          DataCell(Text("No data...")),
+          DataCell(Text("No data...")),
         ])
       ];
     }

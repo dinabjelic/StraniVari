@@ -1,4 +1,5 @@
 ﻿using StraniVari.Common.Constants;
+using StraniVari.Core.Helper;
 using StraniVari.Core.Requests;
 using StraniVari.Core.Responses;
 using StraniVari.WinUI.EventDetails;
@@ -37,12 +38,18 @@ namespace StraniVari.WinUI.Login
                 try
                 {
                     var result = await _apiService.Login<GetUserResponse>(requestLoginDto);
+
+                  
+                    if (result.Roles.All(x => x == Role.RegularUser))
+                    {
+                        throw new Exception();
+                    }
                     ApiService.Token = result.Token;
                     frmAllEvents frm = new frmAllEvents();
                     frm.ShowDialog();
                     this.Hide();
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
                     MessageBox.Show("Invalid username or password");
                     btnLogin.Enabled = true;
