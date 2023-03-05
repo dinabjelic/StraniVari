@@ -31,12 +31,10 @@ namespace StraniVari.API
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             // Configure the HTTP request pipeline.
-            if (env.IsDevelopment())
-            {
-                app.UseSwagger();
-                app.UseSwaggerUI();
-            }
-            app.UseHttpsRedirection();
+            app.UseSwagger();
+            app.UseSwaggerUI();
+
+            
             app.UseRouting();
             app.UseAuthentication();
 
