@@ -74,14 +74,6 @@ namespace StraniVari.WinUI.Service
             }
             catch (FlurlHttpException ex)
             {
-                if (ex.Call.Response.StatusCode == 401)
-                {
-                    MessageBox.Show("Authentication failed.");
-                }
-                if (ex.Call.Response.StatusCode == 403)
-                {
-                    MessageBox.Show("You do not have permission to access this resource.");
-                }
                 throw;
             }
         }

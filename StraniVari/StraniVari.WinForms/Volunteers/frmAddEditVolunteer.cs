@@ -24,6 +24,7 @@ namespace StraniVari.WinUI.Volunteers
                 txtVolunteerCity.Text = SelectedVolunteer.City;
                 txtVolunteerAddress.Text = SelectedVolunteer.Address;
                 dtpBirth.Value = SelectedVolunteer.DateOfBirth;
+                txtUsername.Text = SelectedVolunteer.Username;
             }
         }
 
@@ -37,7 +38,9 @@ namespace StraniVari.WinUI.Volunteers
                     LastName = txtLastName.Text,
                     Address = txtVolunteerAddress.Text,
                     City = txtVolunteerCity.Text,
-                    DateOfBirth = dtpBirth.Value
+                    DateOfBirth = dtpBirth.Value, 
+                    Username = txtUsername.Text,
+                    Password = txtPassword.Text
                 };
 
                 if (SelectedVolunteer == null)
@@ -65,7 +68,9 @@ namespace StraniVari.WinUI.Volunteers
                    ValidateControl(txtLastName, Constants.RequiredValue) &&
                    ValidateControl(txtVolunteerCity, Constants.RequiredValue) &&
                    ValidateControl(txtVolunteerAddress, Constants.RequiredValue) &&
-                   ValidateControl(dtpBirth, Constants.RequiredValue);
+                   ValidateControl(dtpBirth, Constants.RequiredValue) &&
+                   ValidateControl(txtUsername, Constants.RequiredValue) &&
+                   ValidateConfirmPassword();
         }
 
         private bool ValidateControl(Control control, string message)
@@ -76,6 +81,16 @@ namespace StraniVari.WinUI.Volunteers
                 return false;
             }
             err.Clear();
+            return true;
+        }
+        
+        private bool ValidateConfirmPassword()
+        {
+            if((!string.IsNullOrWhiteSpace(txtPassword.Text) || !string.IsNullOrWhiteSpace(txtConfirmPassword.Text)) && txtPassword.Text != txtConfirmPassword.Text)
+            {
+                err.SetError(txtConfirmPassword, Constants.ConfirmPassword);
+                return false;
+            }
             return true;
         }
     }

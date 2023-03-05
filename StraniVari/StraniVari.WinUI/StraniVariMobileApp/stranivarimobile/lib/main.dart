@@ -190,8 +190,19 @@ class HomePage extends StatelessWidget {
           arguments: finalData);
       return finalData;
     } catch (e) {
-      print("Error: $e");
-      throw Exception('Failed to login');
+      showDialog(
+          context: context,
+          builder: (BuildContext context) => AlertDialog(
+                title: Text("Error"),
+                content: Text(e.toString()),
+                actions: [
+                  TextButton(
+                    child: Text("Ok"),
+                    onPressed: () => Navigator.pop(context),
+                  )
+                ],
+              ));
+              return new Future<GetUserResponse>.value(new GetUserResponse(username: '', token: ''));
     }
   }
 }

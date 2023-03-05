@@ -9,5 +9,7 @@
         public int EventId { get; set; }
 
         public int NumberOfChildren { get; set; }
+
+        public ICollection<SchoolVolunteer> SchoolVolunteers { get; set; }
     }
 }

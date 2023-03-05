@@ -42,7 +42,7 @@ namespace StraniVari.Database.DataSeed
             var startDate = new DateTime(2022, 1, 1);
             var endDate = new DateTime(2022, 11, 29);
 
-            for(int i= 1; i<= 5; i++)
+            for(int i= 2; i<= 6; i++)
             {
                 volunteers.Add(new Volunteer
                 {
@@ -52,7 +52,7 @@ namespace StraniVari.Database.DataSeed
                     Address = address[i%2], 
                     City = city[i%1], 
                     DateOfBirth = DateGenerator.GenerateRandomDate(startDate, endDate), 
-                    StartDateOfVolunteering = DateGenerator.GenerateRandomDate(startDate, endDate)
+                    StartDateOfVolunteering = DateGenerator.GenerateRandomDate(startDate, endDate), 
                 }); 
             }
             builder.Entity<Volunteer>().HasData(volunteers);

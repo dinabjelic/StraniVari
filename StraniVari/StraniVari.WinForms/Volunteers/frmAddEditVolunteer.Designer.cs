@@ -44,6 +44,12 @@
             this.label5 = new System.Windows.Forms.Label();
             this.dtpBirth = new System.Windows.Forms.DateTimePicker();
             this.err = new System.Windows.Forms.ErrorProvider(this.components);
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label = new System.Windows.Forms.Label();
+            this.txtUsername = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.txtConfirmPassword = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.err)).BeginInit();
             this.SuspendLayout();
@@ -58,7 +64,7 @@
             // btnEditVolunteerDetails
             // 
             this.btnEditVolunteerDetails.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEditVolunteerDetails.Location = new System.Drawing.Point(547, 324);
+            this.btnEditVolunteerDetails.Location = new System.Drawing.Point(547, 481);
             this.btnEditVolunteerDetails.Name = "btnEditVolunteerDetails";
             this.btnEditVolunteerDetails.Size = new System.Drawing.Size(94, 29);
             this.btnEditVolunteerDetails.TabIndex = 6;
@@ -126,15 +132,15 @@
             // label4
             // 
             this.label4.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label4.Location = new System.Drawing.Point(222, 53);
+            this.label4.Location = new System.Drawing.Point(213, 53);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(1, 282);
+            this.label4.Size = new System.Drawing.Size(1, 438);
             this.label4.TabIndex = 62;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(30, 103);
+            this.pictureBox1.Location = new System.Drawing.Point(28, 160);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(147, 166);
@@ -162,11 +168,67 @@
             // 
             this.err.ContainerControl = this;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(247, 429);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(129, 20);
+            this.label6.TabIndex = 75;
+            this.label6.Text = "Confirm password";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(247, 380);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(70, 20);
+            this.label7.TabIndex = 76;
+            this.label7.Text = "Password";
+            // 
+            // label
+            // 
+            this.label.AutoSize = true;
+            this.label.Location = new System.Drawing.Point(247, 337);
+            this.label.Name = "label";
+            this.label.Size = new System.Drawing.Size(75, 20);
+            this.label.TabIndex = 77;
+            this.label.Text = "Username";
+            // 
+            // txtUsername
+            // 
+            this.txtUsername.Location = new System.Drawing.Point(392, 334);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(249, 27);
+            this.txtUsername.TabIndex = 78;
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.Location = new System.Drawing.Point(391, 382);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
+            this.txtPassword.Size = new System.Drawing.Size(250, 27);
+            this.txtPassword.TabIndex = 79;
+            // 
+            // txtConfirmPassword
+            // 
+            this.txtConfirmPassword.Location = new System.Drawing.Point(390, 430);
+            this.txtConfirmPassword.Name = "txtConfirmPassword";
+            this.txtConfirmPassword.PasswordChar = '*';
+            this.txtConfirmPassword.Size = new System.Drawing.Size(251, 27);
+            this.txtConfirmPassword.TabIndex = 80;
+            // 
             // frmAddEditVolunteer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(681, 390);
+            this.ClientSize = new System.Drawing.Size(681, 544);
+            this.Controls.Add(this.txtConfirmPassword);
+            this.Controls.Add(this.txtPassword);
+            this.Controls.Add(this.txtUsername);
+            this.Controls.Add(this.label);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.dtpBirth);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.pictureBox1);
@@ -205,5 +267,11 @@
         private Label label5;
         private DateTimePicker dtpBirth;
         private ErrorProvider err;
+        private Label label;
+        private Label label7;
+        private Label label6;
+        private TextBox txtConfirmPassword;
+        private TextBox txtPassword;
+        private TextBox txtUsername;
     }
 }

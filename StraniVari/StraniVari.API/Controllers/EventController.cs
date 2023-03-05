@@ -4,6 +4,8 @@ using StraniVari.Core.Helper;
 using StraniVari.Core.Requests;
 using StraniVari.Core.Responses;
 using StraniVari.Services.Interfaces;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
 
 namespace StraniVari.API.Controllers
 {
@@ -27,7 +29,8 @@ namespace StraniVari.API.Controllers
         [Authorize(Roles = Role.Administrator + "," + Role.RegularUser)]
         public async Task<IActionResult> GetEventDetailsForActiveYear()
         {
-            return Ok(await _eventService.GetEventDetailsActiveYear());
+            var userId = HttpContext.User.FindFirst(x => x.Type == ClaimTypes.NameIdentifier);
+            return Ok(await _eventService.GetEventDetailsActiveYear(int.Parse(userId.Value)));
         }
 
         [HttpGet("event-details")]

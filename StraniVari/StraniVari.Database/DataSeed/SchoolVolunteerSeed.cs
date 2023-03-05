@@ -24,7 +24,7 @@ namespace StraniVari.Database.DataSeed
                     Id=i, 
                     TransportNeeded = transportNeeded[i % 2],
                     EventSchoolId = random.Next(1, 10),
-                    VolunteerId = random.Next(1, 5)
+                    VolunteerId = random.Next(2, 6)
                 });
             }
             builder.Entity<SchoolVolunteer>().HasData(schoolVolunteers);

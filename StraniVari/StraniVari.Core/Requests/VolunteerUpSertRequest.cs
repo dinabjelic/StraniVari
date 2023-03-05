@@ -8,5 +8,7 @@
         public string City { get; set; }
         public DateTime DateOfBirth { get; set; }
         public DateTime StartDateOfVolunteering { get; set; }
+        public string Username { get; set; }
+        public string Password { get; set; }
     }
 }

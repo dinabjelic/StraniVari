@@ -6,5 +6,7 @@
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
         public string StraniVariTheme { get; set; }
+
+        public ICollection<EventSchool> EventSchools { get; set; }
     }
 }

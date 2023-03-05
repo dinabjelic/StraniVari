@@ -6,7 +6,7 @@ using StraniVari.Database.DataSeed;
 
 namespace StraniVari.Database
 {
-    public class StraniVariDbContext:IdentityDbContext<User, IdentityRole<int>, int>
+    public class StraniVariDbContext : IdentityDbContext<User, IdentityRole<int>, int>
     {
 
         public StraniVariDbContext(DbContextOptions<StraniVariDbContext> options)
@@ -29,6 +29,11 @@ namespace StraniVari.Database
         {
             base.OnModelCreating(modelBuilder);
 
+            modelBuilder.Entity<User>()
+                .HasOne(v => v.Volunteer)
+                .WithOne(u => u.User)
+                .HasForeignKey<Volunteer>(u => u.Id);
+
             modelBuilder.SeedGames();
             modelBuilder.SeedEvent();
             modelBuilder.SeedEventSchool();
@@ -38,8 +43,8 @@ namespace StraniVari.Database
             modelBuilder.SeedSchoolMaterial();
             modelBuilder.SeedSchools();
             modelBuilder.SeedSchoolVolunteers();
-            modelBuilder.SeedVolunteers();
             modelBuilder.SeedUserInformation();
+            modelBuilder.SeedVolunteers();
             modelBuilder.SeedRoles();
             modelBuilder.SeedUserRoles();
         }

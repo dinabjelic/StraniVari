@@ -6,5 +6,6 @@ namespace StraniVari.Core.Entities
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        public Volunteer Volunteer { get; set; }
     }
 }

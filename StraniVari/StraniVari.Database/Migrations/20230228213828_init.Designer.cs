@@ -12,8 +12,8 @@ using StraniVari.Database;
 namespace StraniVari.Database.Migrations
 {
     [DbContext(typeof(StraniVariDbContext))]
-    [Migration("20230226212815_InitCommit")]
-    partial class InitCommit
+    [Migration("20230228213828_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -502,10 +502,7 @@ namespace StraniVari.Database.Migrations
             modelBuilder.Entity("StraniVari.Core.Entities.Volunteer", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("Address")
                         .IsRequired()
@@ -591,7 +588,7 @@ namespace StraniVari.Database.Migrations
             modelBuilder.Entity("StraniVari.Core.Entities.EventSchool", b =>
                 {
                     b.HasOne("StraniVari.Core.Entities.Event", "Event")
-                        .WithMany()
+                        .WithMany("EventSchools")
                         .HasForeignKey("EventId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -651,7 +648,7 @@ namespace StraniVari.Database.Migrations
             modelBuilder.Entity("StraniVari.Core.Entities.SchoolVolunteer", b =>
                 {
                     b.HasOne("StraniVari.Core.Entities.EventSchool", "EventSchool")
-                        .WithMany()
+                        .WithMany("SchoolVolunteers")
                         .HasForeignKey("EventSchoolId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -665,6 +662,33 @@ namespace StraniVari.Database.Migrations
                     b.Navigation("EventSchool");
 
                     b.Navigation("Volunteer");
+                });
+
+            modelBuilder.Entity("StraniVari.Core.Entities.Volunteer", b =>
+                {
+                    b.HasOne("StraniVari.Core.Entities.User", "User")
+                        .WithOne("Volunteer")
+                        .HasForeignKey("StraniVari.Core.Entities.Volunteer", "Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("StraniVari.Core.Entities.Event", b =>
+                {
+                    b.Navigation("EventSchools");
+                });
+
+            modelBuilder.Entity("StraniVari.Core.Entities.EventSchool", b =>
+                {
+                    b.Navigation("SchoolVolunteers");
+                });
+
+            modelBuilder.Entity("StraniVari.Core.Entities.User", b =>
+                {
+                    b.Navigation("Volunteer")
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

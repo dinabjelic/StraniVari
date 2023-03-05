@@ -57,19 +57,37 @@ namespace StraniVari.Services.Services
             return eventDetails;
         }
 
-        public async Task<List<GetEventDetailsResponse>> GetEventDetailsActiveYear()
+        public async Task<List<GetEventDetailsResponse>> GetEventDetailsActiveYear(int userId)
         {
-            var eventDetails = await _straniVariDbContext.Events
-                               .Where(x=>x.EndDate.Year == DateTime.Now.Year)
-                               .Select(x => new GetEventDetailsResponse
-                               {
-                                   Id = x.Id,
-                                   StartDate = x.StartDate,
-                                   EndDate = x.EndDate,
-                                   Name = x.Name,
-                                   StraniVariTheme = x.StraniVariTheme
-                               }).ToListAsync();
-            return eventDetails;
+            var isVolunteer = await _straniVariDbContext.Volunteers.AnyAsync(x => x.Id == userId);
+
+            var eventDetails = _straniVariDbContext.Events
+                .AsQueryable();
+
+            if (isVolunteer)
+            {
+                var volunteersEventIds = await _straniVariDbContext
+                    .SchoolVolunteers
+                    .Include(x => x.EventSchool)
+                    .Where(x => x.VolunteerId == userId)
+                    .Select(x => x.EventSchool.EventId)
+                    .ToArrayAsync();
+
+                eventDetails = eventDetails
+                    .Where(x => volunteersEventIds.Contains(x.Id));
+            }
+
+            var result = await eventDetails
+                .Select(x => new GetEventDetailsResponse
+            {
+                Id = x.Id,
+                StartDate = x.StartDate,
+                EndDate = x.EndDate,
+                Name = x.Name,
+                StraniVariTheme = x.StraniVariTheme
+            }).ToListAsync();
+
+            return result;
         }
 
         public async Task<List<GetEventDetailsByIdResponse>> GetEventDetailsByIdAsync(int id)

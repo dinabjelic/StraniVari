@@ -23,6 +23,26 @@ namespace StraniVari.Database.DataSeed
                 {
                     UserId = 2,
                     RoleId = 2
+                },
+                new IdentityUserRole<int>
+                {
+                    UserId = 3,
+                    RoleId = 2
+                },
+                new IdentityUserRole<int>
+                {
+                    UserId = 4,
+                    RoleId = 2
+                },
+                new IdentityUserRole<int>
+                {
+                    UserId = 5,
+                    RoleId = 2
+                },
+                new IdentityUserRole<int>
+                {
+                    UserId = 6,
+                    RoleId = 2
                 }
             };
 

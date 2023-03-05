@@ -39,6 +39,6 @@ namespace StraniVari.Services.Interfaces
         /// showing events only for active year
         /// </summary>
         /// <returns></returns>
-        Task<List<GetEventDetailsResponse>> GetEventDetailsActiveYear();
+        Task<List<GetEventDetailsResponse>> GetEventDetailsActiveYear(int userId);
     }
 }
