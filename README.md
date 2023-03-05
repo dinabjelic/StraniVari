@@ -8,7 +8,7 @@ Aplikacija za ljetni kamp
   password: admin
   
 ### Mobile user:
-  username: una3                                                                                                                                                     
+  username: una2                                                                                                                                                     
   password: user
   
   # Flutter
