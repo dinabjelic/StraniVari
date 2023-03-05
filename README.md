@@ -1,1 +1,1 @@
-# StraniVari FIT-Razvoj softvera II
+# StraniVariv :: FIT-Razvoj softvera II
