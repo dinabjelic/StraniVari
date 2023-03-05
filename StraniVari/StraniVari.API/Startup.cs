@@ -1,6 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using StraniVari.API.StartupExtensions;
-using StraniVari.Database;
+﻿using StraniVari.API.StartupExtensions;
 
 namespace StraniVari.API
 {
@@ -22,6 +20,7 @@ namespace StraniVari.API
             services.AddApplicationServices(_configuration);
             services.AddIdentiyServices(_configuration);
             services.AddDbContextService(_configuration);
+            services.AddSwaggerService();
 
             //services.AddDbContext<StraniVariDbContext>(options =>
             //   options.UseSqlServer(_configuration.GetConnectionString("DefaultConnection")));
@@ -32,14 +31,13 @@ namespace StraniVari.API
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             // Configure the HTTP request pipeline.
-            if (env.IsDevelopment())
-            {
-                app.UseSwagger();
-                app.UseSwaggerUI();
-            }
-            app.UseHttpsRedirection();
+            app.UseSwagger();
+            app.UseSwaggerUI();
+
+            
             app.UseRouting();
             app.UseAuthentication();
+
             app.UseAuthorization();
             app.UseEndpoints(x =>
             {
@@ -47,5 +45,4 @@ namespace StraniVari.API
             });
         }
     }
-
 }

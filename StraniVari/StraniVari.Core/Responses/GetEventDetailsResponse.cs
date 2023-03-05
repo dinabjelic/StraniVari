@@ -4,7 +4,8 @@
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public int NumberOfChildren { get; set; }
-        public int StartDateYear { get; set; }
+        public DateTime StartDate { get; set; }
+        public DateTime EndDate { get; set; }
+        public string StraniVariTheme { get; set; }
     }
 }

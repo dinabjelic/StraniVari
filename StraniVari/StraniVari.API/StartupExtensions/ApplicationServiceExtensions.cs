@@ -11,13 +11,13 @@ namespace StraniVari.API.StartupExtensions
             services.AddScoped<ISchoolService, SchoolService>();
             services.AddScoped<IEventService, EventService>();
             services.AddScoped<IVolunteerService, VolunteerService>();
-            services.AddScoped<IVolunteerSchoolService, VolunteerSchoolService>();
             services.AddScoped<IMaterialService, MaterialService>();
-            services.AddScoped<IMaterialSchoolService, MaterialSchoolService>();
-            services.AddScoped<IStraniVariThemeService, StraniVariThemeService>();
-            services.AddScoped<IMeetingService, MeetingService>();
+            services.AddScoped<INotificationService, NotificationService>();
             services.AddScoped<IGameService, GameService>();
             services.AddScoped<IPlanAndProgrammeService, PlanAndProgrammeService>();
+            services.AddScoped<IEventSchoolService, EventSchoolService>();
+            services.AddScoped<ISchoolVolunteerService, SchoolVolunteerService>();
+            services.AddScoped<IMaterialSchoolService, MaterialSchoolService>();
 
             return services;
         }

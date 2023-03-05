@@ -2,11 +2,12 @@
 {
     public class PlanAndProgramme:BaseEntity
     {
-        public DayOfWeek DayOfWeek { get; set; }
-        public DateTime ActivityDateTime { get; set; }
-        public string Activity { get; set; }
+        public Event Event { get; set; }
+        public int EventId { get; set; }
 
-        public StraniVariTheme StraniVariTheme { get; set; }
-        public int StraniVariThemeId { get; set; }
+        public DayOfWeek? DayOfWeek { get; set; }
+        public DateTime StartDate { get; set; }
+        public DateTime EndDate { get; set; }
+        public string Activity { get; set; }
     }
 }

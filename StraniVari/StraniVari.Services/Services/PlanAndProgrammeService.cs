@@ -18,26 +18,29 @@ namespace StraniVari.Services.Services
         {
             var newPlanAndProgramme = new PlanAndProgramme
             {
-                Activity = addPlanAndProgrammeRequest.Activity,
-                ActivityDateTime = addPlanAndProgrammeRequest.ActivityDateTime,
                 DayOfWeek = addPlanAndProgrammeRequest.DayOfWeek,
-                StraniVariThemeId = addPlanAndProgrammeRequest.StraniVariThemeId
+                StartDate = addPlanAndProgrammeRequest.StartDate, 
+                EndDate = addPlanAndProgrammeRequest.EndDate,
+                Activity = addPlanAndProgrammeRequest.Activity,
+                EventId = addPlanAndProgrammeRequest.EventId, 
             };
 
             await _straniVariDbContext.PlanAndProgramme.AddAsync(newPlanAndProgramme);
             await _straniVariDbContext.SaveChangesAsync();
         }
 
-        public async Task<List<GetPlanAndProgrameResposnse>> PlanAndProgrammeListAsync(DayOfWeek? dayOfWeek, string? StraniVariTheme)
+        public async Task<List<GetPlanAndProgrameResposnse>> PlanAndProgrammeListAsync(DayOfWeek? dayOfWeek, int id)
         {
             var planAndProgrameList = await _straniVariDbContext.PlanAndProgramme
-                .Where(x => x.DayOfWeek == dayOfWeek || dayOfWeek== null
-                || x.StraniVariTheme.Theme == StraniVariTheme)
+                .Include(x => x.Event)
+                .Where(x => x.DayOfWeek == dayOfWeek || dayOfWeek== null && x.EventId == id)
                 .Select(x => new GetPlanAndProgrameResposnse
                 {
-                    Activity = x.Activity,
+                    Id = x.Id,
                     DayOfWeek = x.DayOfWeek,
-                    ActivityDateTime = x.ActivityDateTime,
+                    StartDate = x.StartDate, 
+                    EndDate =x.EndDate, 
+                    Activity = x.Activity,
                 }).ToListAsync();
 
             return planAndProgrameList;
@@ -58,8 +61,9 @@ namespace StraniVari.Services.Services
             }
 
             planFound.Activity = updatePlanAndProgrammeRequest.Activity;
-            planFound.ActivityDateTime = updatePlanAndProgrammeRequest.ActivityDateTime;
             planFound.DayOfWeek = updatePlanAndProgrammeRequest.DayOfWeek;
+            planFound.StartDate = updatePlanAndProgrammeRequest.StartDate;
+            planFound.EndDate = updatePlanAndProgrammeRequest.EndDate;
 
             _straniVariDbContext.PlanAndProgramme.Update(planFound);
             await _straniVariDbContext.SaveChangesAsync();

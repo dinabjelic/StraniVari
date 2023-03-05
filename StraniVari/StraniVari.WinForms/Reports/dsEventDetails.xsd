@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsEventDetails" targetNamespace="http://tempuri.org/dsEventDetails.xsd" xmlns:mstns="http://tempuri.org/dsEventDetails.xsd" xmlns="http://tempuri.org/dsEventDetails.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsEventDetails" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsEventDetails" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsEventDetails">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Volunteers" msprop:Generator_RowEvHandlerName="VolunteersRowChangeEventHandler" msprop:Generator_RowDeletedName="VolunteersRowDeleted" msprop:Generator_RowDeletingName="VolunteersRowDeleting" msprop:Generator_RowEvArgName="VolunteersRowChangeEvent" msprop:Generator_TablePropName="Volunteers" msprop:Generator_RowChangedName="VolunteersRowChanged" msprop:Generator_UserTableName="Volunteers" msprop:Generator_RowChangingName="VolunteersRowChanging" msprop:Generator_RowClassName="VolunteersRow" msprop:Generator_TableClassName="VolunteersDataTable" msprop:Generator_TableVarName="tableVolunteers">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="FirstName" msprop:Generator_ColumnPropNameInTable="FirstNameColumn" msprop:Generator_ColumnPropNameInRow="FirstName" msprop:Generator_UserColumnName="FirstName" msprop:Generator_ColumnVarNameInTable="columnFirstName" type="xs:string" minOccurs="0" />
+              <xs:element name="LastName" msprop:Generator_ColumnPropNameInTable="LastNameColumn" msprop:Generator_ColumnPropNameInRow="LastName" msprop:Generator_UserColumnName="LastName" msprop:Generator_ColumnVarNameInTable="columnLastName" type="xs:string" minOccurs="0" />
+              <xs:element name="Address" msprop:Generator_ColumnPropNameInTable="AddressColumn" msprop:Generator_ColumnPropNameInRow="Address" msprop:Generator_UserColumnName="Address" msprop:Generator_ColumnVarNameInTable="columnAddress" type="xs:string" minOccurs="0" />
+              <xs:element name="City" msprop:Generator_ColumnPropNameInTable="CityColumn" msprop:Generator_ColumnPropNameInRow="City" msprop:Generator_UserColumnName="City" msprop:Generator_ColumnVarNameInTable="columnCity" type="xs:string" minOccurs="0" />
+              <xs:element name="DateOfBirth" msprop:Generator_ColumnPropNameInTable="DateOfBirthColumn" msprop:Generator_ColumnPropNameInRow="DateOfBirth" msprop:Generator_UserColumnName="DateOfBirth" msprop:Generator_ColumnVarNameInTable="columnDateOfBirth" type="xs:string" minOccurs="0" />
+              <xs:element name="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_UserColumnName="Id" msprop:Generator_ColumnVarNameInTable="columnId" type="xs:int" minOccurs="0" />
+              <xs:element name="TransportNeeded" msprop:Generator_ColumnPropNameInTable="TransportNeededColumn" msprop:Generator_ColumnPropNameInRow="TransportNeeded" msprop:Generator_UserColumnName="TransportNeeded" msprop:Generator_ColumnVarNameInTable="columnTransportNeeded" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Material" msprop:Generator_RowEvHandlerName="MaterialRowChangeEventHandler" msprop:Generator_RowDeletedName="MaterialRowDeleted" msprop:Generator_RowDeletingName="MaterialRowDeleting" msprop:Generator_RowEvArgName="MaterialRowChangeEvent" msprop:Generator_TablePropName="Material" msprop:Generator_RowChangedName="MaterialRowChanged" msprop:Generator_UserTableName="Material" msprop:Generator_RowChangingName="MaterialRowChanging" msprop:Generator_RowClassName="MaterialRow" msprop:Generator_TableClassName="MaterialDataTable" msprop:Generator_TableVarName="tableMaterial">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MaterialName" msprop:Generator_ColumnPropNameInTable="MaterialNameColumn" msprop:Generator_ColumnPropNameInRow="MaterialName" msprop:Generator_UserColumnName="MaterialName" msprop:Generator_ColumnVarNameInTable="columnMaterialName" type="xs:string" minOccurs="0" />
+              <xs:element name="Quantity" msprop:Generator_ColumnPropNameInTable="QuantityColumn" msprop:Generator_ColumnPropNameInRow="Quantity" msprop:Generator_UserColumnName="Quantity" msprop:Generator_ColumnVarNameInTable="columnQuantity" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

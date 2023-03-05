@@ -2,7 +2,8 @@
 {
     public class GetMeetingsResponse
     {
-        public DayOfWeek DayOfWeek { get; set; }
+        public int Id { get; set; }
+        public DayOfWeek? DayOfWeek { get; set; }
         public DateTime MeetingDate { get; set; }
         public string Address { get; set; }
         public string City { get; set; }

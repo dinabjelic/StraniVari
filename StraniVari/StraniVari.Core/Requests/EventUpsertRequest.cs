@@ -2,10 +2,10 @@
 {
     public class EventUpsertRequest
     {
-        public int SchoolId { get; set; }
-        public string SchoolName { get; set; }
-        public int NumberOfChildren { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
+        public string StraniVariTheme { get; set; }
     }
 }

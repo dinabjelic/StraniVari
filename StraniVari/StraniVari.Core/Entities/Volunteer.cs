@@ -1,4 +1,6 @@
-﻿namespace StraniVari.Core.Entities
+﻿using Microsoft.AspNetCore.Identity;
+
+namespace StraniVari.Core.Entities
 {
     public class Volunteer:BaseEntity
     {
@@ -8,5 +10,7 @@
         public string City { get; set; }
         public DateTime DateOfBirth { get; set; }
         public DateTime StartDateOfVolunteering { get; set; }
+
+        public User User { get; set; }
     }
 }

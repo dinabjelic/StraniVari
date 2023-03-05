@@ -8,6 +8,6 @@
         public string City { get; set; }
         public string MeetingPlace { get; set; }
         public string MeetingTheme { get; set; }
-        public int VolunteeringYear { get; set; }
+        public int EventId { get; set; }
     }
 }

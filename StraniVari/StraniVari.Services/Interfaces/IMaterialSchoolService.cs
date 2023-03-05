@@ -1,4 +1,5 @@
-﻿using StraniVari.Core.Requests;
+﻿using StraniVari.Core.Entities;
+using StraniVari.Core.Requests;
 using StraniVari.Core.Responses;
 
 namespace StraniVari.Services.Interfaces
@@ -6,21 +7,34 @@ namespace StraniVari.Services.Interfaces
     public interface IMaterialSchoolService
     {
         /// <summary>
-        /// getting list of materials
+        /// add material to school
         /// </summary>
+        /// <param name="insertMaterialToSchoolRequest"></param>
         /// <returns></returns>
-        Task<List<GetMaterialSchoolDetailsResponse>> MaterialSchoolListAsync();
+        Task AddMaterialToSchoolAsync(InsertMaterialToSchoolRequest insertMaterialToSchoolRequest);
         /// <summary>
-        /// adding material to school
+        /// getting list of material for choosen school
         /// </summary>
-        /// <param name="addMaterialToSchoolRequest"></param>
+        /// <param name="id"></param>
         /// <returns></returns>
-        Task AddMaterialToSchoolAsync(MaterialSchoolUpSertRequest addMaterialToSchoolRequest);
+        Task<List<GetMaterialsForSchoolRequest>> MaterialForSchoolAsync(int id);
         /// <summary>
-        /// removing material from school
+        /// update material choosen for school
         /// </summary>
-        /// <param name="materialSchoolDeleteRequest"></param>
+        /// <param name="updateMaterialToSchoolRequest"></param>
         /// <returns></returns>
-        Task RemoveMaterialFromSchoolAsync(MaterialSchoolDeleteRequest materialSchoolDeleteRequest);
+        Task UpdateMaterialForSchoolAsync(UpdateMaterialToSchoolRequest updateMaterialToSchoolRequest);
+        /// <summary>
+        /// delete material
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        Task DeleteMaterialForSchoolAsync(int id);
+        /// <summary>
+        /// recomending materials for school
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        List<SchoolMaterial> Recommend(int eventSchoolId);
     }
 }
