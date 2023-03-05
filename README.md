@@ -3,7 +3,7 @@ Aplikacija za ljetni kamp
 
 # Credentials
 
-### Desktop users:
+### Desktop user:
   username: admin                                                                                                                                              
   password: admin
   
