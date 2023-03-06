@@ -1,7 +1,8 @@
 # StraniVari :: FIT-Razvoj softvera II
 Aplikacija za ljetni kamp
 
-#Docker
+# Docker
+
 docker-compose build
 docker-compose up
 
