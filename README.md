@@ -3,8 +3,8 @@ Aplikacija za ljetni kamp
 
 # Docker
 
-   docker-compose build
-   docker-compose up
+   #docker-compose build
+   #docker-compose up
 
 # Credentials
 
