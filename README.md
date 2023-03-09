@@ -20,3 +20,4 @@ Aplikacija za ljetni kamp
   flutter pub get                                                                                                                                                       
   flutter emulators --launch Pixel 2 API 30                                                                                                                         
   flutter run
+  Flutter application is in the WinUI folder
