@@ -1,101 +1,120 @@
-﻿using Microsoft.EntityFrameworkCore;
-using StraniVari.Core.Entities;
+﻿using StraniVari.Core.Entities;
 using StraniVari.Core.Requests;
 using StraniVari.Core.Responses;
 using StraniVari.Database;
+using StraniVari.Services.Base;
 using StraniVari.Services.Interfaces;
 
 namespace StraniVari.Services.Services
 {
-    public class SchoolService : ISchoolService
+    public class SchoolService : BaseCrudService<School>, ISchoolService 
     {
-        private readonly StraniVariDbContext _context;
-
-        public SchoolService(StraniVariDbContext context)
-        {
-            _context = context;
-        }
-
-        public async Task AddSchoolAsync(SchoolUpsertRequest addSchoolRequest)
-        {
-            var newSchool = new School
-            {
-                Name = addSchoolRequest.Name,
-                Address = addSchoolRequest.Address,
-                City = addSchoolRequest.City
-            };
-
-
-            await _context.Schools.AddAsync(newSchool);
-            await _context.SaveChangesAsync();
-
-        }
-
-        public async Task DeleteSchoolAsync(int id)
-        {
-            var school = await _context.Schools.FirstOrDefaultAsync(x => x.Id == id);
-
-            if (school == null)
-            {
-                throw new ArgumentException("Invalid id");
-            }
-
-            _context.Schools.Remove(school);
-            await _context.SaveChangesAsync();
-        }
+        public SchoolService(StraniVariDbContext dbContext): base(dbContext) {}
 
         public async Task<GetSchoolDetailsResponse> GetSchoolDetailsAsync(int id)
         {
-            var schoolDetails = await _context.Schools
-                .Select(x => new GetSchoolDetailsResponse
-                {
-                    Id = x.Id,
-                    Name = x.Name,
-                    Address=x.Address, 
-                    City = x.City
-
-                }).FirstOrDefaultAsync(x=>x.Id==id);
-
-            return schoolDetails;
-        }
-
-        public async Task<List<GetSchoolDetailsResponse>> SchoolListAsync()
-        {
-            var schoolList = await _context.Schools
-               .Select(x => new GetSchoolDetailsResponse
-               {
-                   Id=x.Id,
-                   //Name= x.Name + ", " + x.Address +", "+ x.City,
-                   Name= x.Name,
-                   Address = x.Address,
-                   City = x.City
-
-               }).ToListAsync();
-
-            return schoolList;
-        }
-
-        public async Task UpdateSchoolAsync(int id, SchoolUpsertRequest updateSchoolRequest)
-        {
-            if (updateSchoolRequest == null)
-            {
-                throw new ArgumentException("Invalid request");
-            }
-
-            var schoolFound = await _context.Schools.FirstOrDefaultAsync(x => x.Id == id);
+            var schoolFound = await GetByIdAsync(id);
 
             if (schoolFound == null)
             {
                 throw new ArgumentException("Invalid id");
             }
 
-            schoolFound.Name = updateSchoolRequest.Name;
-            schoolFound.Address = updateSchoolRequest.Address;
-            schoolFound.City = updateSchoolRequest.City;
+            var schoolDetails = new GetSchoolDetailsResponse
+            {
+                Id = schoolFound.Id,
+                Name = schoolFound.Name,
+                Address = schoolFound.Address,
+                City = schoolFound.City
+            };
 
-            _context.Schools.Update(schoolFound);
-            await _context.SaveChangesAsync();
+            return schoolDetails;
+        }
 
+        public async Task<List<GetSchoolDetailsResponse>> SchoolListAsync()
+        {
+            var schools = await GetAllAsync();
+            var schoolList = schools.Select(x => new GetSchoolDetailsResponse
+            {
+                Id = x.Id,
+                Name = x.Name,
+                Address = x.Address,
+                City = x.City
+            }).ToList();
+
+            return schoolList;
+        }
+
+        public async Task Insert(SchoolUpsertRequest request)
+        {
+            var newSchool = new School
+            {
+                Name = request.Name,
+                Address = request.Address,
+                City = request.City
+            };
+
+            await CreateAsync(newSchool);
+        }
+
+        public async Task Update(int id, SchoolUpsertRequest request)
+        {
+            if (request == null)
+            {
+                throw new ArgumentException("Invalid request");
+            }
+
+            var schoolFound = await GetByIdAsync(id);
+
+            if (schoolFound == null)
+            {
+                throw new ArgumentException("Invalid id");
+            }
+
+            schoolFound.Name = request.Name;
+            schoolFound.Address = request.Address;
+            schoolFound.City = request.City;
+
+            await UpdateAsync(schoolFound);
+        }
+
+        public async Task Delete(int id)
+        {
+            await DeleteAsync(id);
+        }
+
+        public async Task<List<School>> GetAll()
+        {
+            var schools = await GetAllAsync();
+            var schoolList = schools.Select(x => new School
+            {
+                Id = x.Id,
+                Name = x.Name,
+                Address = x.Address,
+                City = x.City
+            }).ToList();
+
+            return schoolList;
+        }
+
+        public async Task<School> GetById(int id)
+        {
+            var schoolFound = await GetByIdAsync(id);
+
+            if (schoolFound == null)
+            {
+                throw new ArgumentException("Invalid id");
+            }
+
+            var schoolDetails = new School
+            {
+                Id = schoolFound.Id,
+                Name = schoolFound.Name,
+                Address = schoolFound.Address,
+                City = schoolFound.City
+            };
+
+            return schoolDetails;
         }
     }
 }
