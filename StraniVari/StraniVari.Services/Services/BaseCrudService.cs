@@ -1,51 +1,84 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using AutoMapper;
 using StraniVari.Database;
 using StraniVari.Services.Interfaces;
 
 namespace StraniVari.Services.Base
 {
-    public class BaseCrudService<TEntity> : IBaseCrudService<TEntity> where TEntity : class
+    public class BaseCrudService<T, TInsertUpdate, TGet> : ICrudService<T, TInsertUpdate, TGet> where TInsertUpdate : class where T : class where TGet: class
     {
         private readonly StraniVariDbContext _dbContext;
-        private readonly DbSet<TEntity> _dbSet;
+        protected readonly IMapper _mapper;
 
-        public BaseCrudService(StraniVariDbContext dbContext)
+        public BaseCrudService(StraniVariDbContext dbContext, IMapper mapper)
         {
             _dbContext = dbContext;
-            _dbSet = _dbContext.Set<TEntity>();
+            _mapper = mapper;
         }
 
-        public async Task<IEnumerable<TEntity>> GetAllAsync()
+        public T Delete(int id)
         {
-            return await _dbContext.Set<TEntity>().ToListAsync();
-        }
+            var set = _dbContext.Set<T>();
+            var entity = set.Find(id);
 
-        public async Task<TEntity> GetByIdAsync(int id)
-        {
-            return await _dbSet.FindAsync(id);
-        }
-
-        public async Task CreateAsync(TEntity entity)
-        {
-            await _dbContext.Set<TEntity>().AddAsync(entity);
-            await _dbContext.SaveChangesAsync();
-        }
-
-        public async Task UpdateAsync(TEntity entity)
-        {
-            _dbContext.Set<TEntity>().Update(entity);
-            await _dbContext.SaveChangesAsync();
-        }
-
-        public async Task DeleteAsync(int id)
-        {
-            var entity = await GetByIdAsync(id);
             if (entity == null)
             {
                 throw new ArgumentException($"Entity with id {id} not found.");
             }
-            _dbContext.Set<TEntity>().Remove(entity);
-            await _dbContext.SaveChangesAsync();
+
+            set.Remove(entity);
+            _dbContext.SaveChanges();
+
+            return _mapper.Map<T>(entity);
+        }
+
+        public async Task<List<TGet>> GetAll()
+        {
+            var entity = _dbContext.Set<T>();
+            var list = entity.ToList();
+            return _mapper.Map<List<TGet>>(list);
+        }
+
+        public async Task<TGet> GetById(int id)
+        {
+            var set = _dbContext.Set<T>();
+            var entity = set.Find(id);
+            if (entity == null)
+            {
+                throw new ArgumentException("Invalid request");
+            }
+            return _mapper.Map<TGet>(entity);
+        }
+
+        public T Insert(TInsertUpdate request)
+        {
+            var set = _dbContext.Set<T>();
+            T entity = _mapper.Map<T>(request);
+
+            set.Add(entity);
+           _dbContext.SaveChanges();
+
+            return _mapper.Map<T>(entity);
+        }
+
+        public T Update(int id, TInsertUpdate request)
+        {
+            if (request == null)
+            {
+                throw new ArgumentException("Invalid request");
+            }
+
+            var set = _dbContext.Set<T>();
+            var entity = set.Find(id);
+
+            if (entity == null)
+            {
+                throw new ArgumentException("Invalid id");
+            }
+
+            _mapper.Map(request, entity);
+
+            _dbContext.SaveChanges();
+            return _mapper.Map<T>(entity);
         }
     }
 }

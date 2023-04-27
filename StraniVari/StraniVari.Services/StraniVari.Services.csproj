@@ -21,6 +21,7 @@
   <ItemGroup>
     <ProjectReference Include="..\StraniVari.Core\StraniVari.Core.csproj" />
     <ProjectReference Include="..\StraniVari.Database\StraniVari.Database.csproj" />
+    <ProjectReference Include="..\StraniVari.Mapper\StraniVari.Mapper.csproj" />
   </ItemGroup>
 
 </Project>

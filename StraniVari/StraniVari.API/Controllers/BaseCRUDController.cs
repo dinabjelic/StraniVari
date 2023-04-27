@@ -10,11 +10,11 @@ namespace StraniVari.API.Controllers
     [ApiController]
     [Route("api/[controller]")]
     [Authorize]
-    public class BaseCRUDController<T, TUpsert> : ControllerBase where TUpsert : class where T :class
+    public class BaseCRUDController<T, TUpsert, TGet> : BaseReadController<TGet> where TUpsert : class where T :class where TGet:class
     {
-        private readonly ICrudService<T, TUpsert> _crudService;
+        private readonly ICrudService<T, TUpsert, TGet> _crudService;
 
-        public BaseCRUDController(ICrudService<T, TUpsert> crudService)
+        public BaseCRUDController(ICrudService<T, TUpsert, TGet> crudService): base(crudService)
         {
             _crudService = crudService;
         }
@@ -23,7 +23,7 @@ namespace StraniVari.API.Controllers
         [Authorize(Roles = Role.Administrator)]
         public async Task<IActionResult> Insert([FromBody] TUpsert request)
         {
-            await _crudService.Insert(request);
+            _crudService.Insert(request);
             return Ok(new ResponseResult { Message = "You succeeded" });
         }
 
@@ -31,7 +31,7 @@ namespace StraniVari.API.Controllers
         [Authorize(Roles = Role.Administrator)]
         public async Task<IActionResult> Update(int id, [FromBody] TUpsert request)
         {
-            await _crudService.Update(id, request);
+            _crudService.Update(id, request);
             return Ok(new ResponseResult { Message = "You succeeded" });
         }
 
@@ -39,23 +39,8 @@ namespace StraniVari.API.Controllers
         [Authorize(Roles = Role.Administrator)]
         public async Task<IActionResult> Delete(int id)
         {
-            await _crudService.Delete(id);
+            _crudService.Delete(id);
             return Ok(new ResponseResult { Message = "You succeeded" });
         }
-
-        [HttpGet("get-all")]
-        [Authorize(Roles = Role.Administrator + "," + Role.RegularUser)]
-        public async Task<IActionResult> GetAll()
-        {
-            return Ok(await _crudService.GetAll());
-        }
-
-        [HttpGet("school-details")]
-        [Authorize(Roles = Role.Administrator + "," + Role.RegularUser)]
-        public async Task<IActionResult> GetById(int id)
-        {
-            return Ok(await _crudService.GetById(id));
-        }
-
     }
 }

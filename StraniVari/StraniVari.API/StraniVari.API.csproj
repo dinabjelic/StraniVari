@@ -23,6 +23,7 @@
   <ItemGroup>
     <ProjectReference Include="..\StraniVari.Common\StraniVari.Common.csproj" />
     <ProjectReference Include="..\StraniVari.Database\StraniVari.Database.csproj" />
+    <ProjectReference Include="..\StraniVari.Mapper\StraniVari.Mapper.csproj" />
     <ProjectReference Include="..\StraniVari.Services\StraniVari.Services.csproj" />
   </ItemGroup>
 

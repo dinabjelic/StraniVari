@@ -6,7 +6,7 @@ namespace StraniVari.WinUI.SchoolDetails
 {
     public partial class frmShoolsForEvent : Form
     {
-        ApiService _apiService = new ApiService("Schools/get-all");
+        ApiService _apiService = new ApiService("Schools");
         ApiService _apiServiceEventSchool = new ApiService("EventSchool");
         public EventUpsertRequest _selectedEvent { get; }
         List<GetSchoolDetailsResponse> schools = new List<GetSchoolDetailsResponse>();

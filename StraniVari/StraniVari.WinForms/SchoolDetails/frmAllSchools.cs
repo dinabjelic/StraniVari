@@ -5,7 +5,7 @@ namespace StraniVari.WinUI.SchoolDetails
 {
     public partial class frmAllSchools : Form
     {
-        private readonly ApiService _apiService = new ApiService("Schools/get-all");
+        private readonly ApiService _apiService = new ApiService("Schools");
         private readonly ApiService _apiServiceDelete = new ApiService("Schools");
         public frmAllSchools()
         {
@@ -39,7 +39,7 @@ namespace StraniVari.WinUI.SchoolDetails
                     }
                     else
                     {
-                        await _apiServiceDelete.Delete<ResponseResult>(selectedSchool.Id);
+                        await _apiService.Delete<ResponseResult>(selectedSchool.Id);
                         frmAllSchools_Load(sender, e);
                     }
                 }

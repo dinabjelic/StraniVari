@@ -1,8 +1,8 @@
 ﻿namespace StraniVari.Services.Interfaces
 {
-    public interface IReadService<T> where T : class
+    public interface IReadService<TGet> where TGet : class
     {
-        public Task<List<T>> GetAll();
-        public Task<T> GetById(int id);
+        Task<List<TGet>> GetAll();
+        Task<TGet> GetById(int id);
     }
 }

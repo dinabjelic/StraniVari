@@ -1,5 +1,4 @@
 ﻿using StraniVari.API.StartupExtensions;
-
 namespace StraniVari.API
 {
 
@@ -21,6 +20,7 @@ namespace StraniVari.API
             services.AddIdentiyServices(_configuration);
             services.AddDbContextService(_configuration);
             services.AddSwaggerService();
+            services.AddAutoMapper(typeof(StraniVari.Mapper.Auto_Mapper));
 
             //services.AddDbContext<StraniVariDbContext>(options =>
             //   options.UseSqlServer(_configuration.GetConnectionString("DefaultConnection")));
