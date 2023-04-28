@@ -23,6 +23,7 @@ namespace StraniVari.Services.Services
                 EndDate = addPlanAndProgrammeRequest.EndDate,
                 Activity = addPlanAndProgrammeRequest.Activity,
                 EventId = addPlanAndProgrammeRequest.EventId, 
+
             };
 
             await _straniVariDbContext.PlanAndProgramme.AddAsync(newPlanAndProgramme);
