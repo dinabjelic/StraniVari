@@ -7,10 +7,10 @@ namespace StraniVari.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class BaseReadController<T> : ControllerBase where T : class 
+    public class BaseReadController<T, TGet> : ControllerBase where T : class where TGet: class
     {
-        protected readonly IReadService<T> _service;
-        public BaseReadController(IReadService<T> service)
+        protected readonly IReadService<T, TGet> _service;
+        public BaseReadController(IReadService<T, TGet> service)
         {
             _service = service;
         }

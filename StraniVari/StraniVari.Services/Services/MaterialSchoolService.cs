@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.ML;
 using Microsoft.ML.Trainers;
 using StraniVari.Core.Entities;
@@ -6,15 +7,16 @@ using StraniVari.Core.ML;
 using StraniVari.Core.Requests;
 using StraniVari.Core.Responses;
 using StraniVari.Database;
+using StraniVari.Services.Base;
 using StraniVari.Services.Interfaces;
 
 namespace StraniVari.Services.Services
 {
-    public class MaterialSchoolService : IMaterialSchoolService
+    public class MaterialSchoolService : BaseCrudService<SchoolMaterial, UpdateMaterialToSchoolRequest, GetMaterialsForSchoolRequest>, IMaterialSchoolService
     {
         static MLContext mlContext = null;
         private readonly StraniVariDbContext _straniVariDbContext;
-        public MaterialSchoolService(StraniVariDbContext straniVariDbContext)
+        public MaterialSchoolService(StraniVariDbContext straniVariDbContext, IMapper mapper) : base(straniVariDbContext, mapper)
         {
             _straniVariDbContext = straniVariDbContext;
         }
@@ -32,52 +34,52 @@ namespace StraniVari.Services.Services
             await _straniVariDbContext.SaveChangesAsync();
         }
 
-        public async Task DeleteMaterialForSchoolAsync(int id)
-        {
-            var materialFound = await _straniVariDbContext.SchoolMaterials.FirstOrDefaultAsync(x => x.Id == id);
+        //public async Task DeleteMaterialForSchoolAsync(int id)
+        //{
+        //    var materialFound = await _straniVariDbContext.SchoolMaterials.FirstOrDefaultAsync(x => x.Id == id);
 
-            if (materialFound == null)
-            {
-                throw new ArgumentException("Invalid id");
-            }
+        //    if (materialFound == null)
+        //    {
+        //        throw new ArgumentException("Invalid id");
+        //    }
 
-            _straniVariDbContext.SchoolMaterials.Remove(materialFound);
-            await _straniVariDbContext.SaveChangesAsync();
-        }
+        //    _straniVariDbContext.SchoolMaterials.Remove(materialFound);
+        //    await _straniVariDbContext.SaveChangesAsync();
+        //}
 
-        public async Task<List<GetMaterialsForSchoolRequest>> MaterialForSchoolAsync(int id)
-        {
-            var schoolMaterialList = await _straniVariDbContext.SchoolMaterials
-                .Where(x => x.EventSchoolId == id)
-                .Select(x => new GetMaterialsForSchoolRequest
-                {
-                    MaterialId = x.MaterialId,
-                    SchoolMaterialId = x.Id,
-                    MaterialName = x.Material.Name,
-                    Quantity = x.Quantity
-                }).ToListAsync();
+        //public async Task<List<GetMaterialsForSchoolRequest>> MaterialForSchoolAsync(int id)
+        //{
+        //    var schoolMaterialList = await _straniVariDbContext.SchoolMaterials
+        //        .Where(x => x.EventSchoolId == id)
+        //        .Select(x => new GetMaterialsForSchoolRequest
+        //        {
+        //            MaterialId = x.MaterialId,
+        //            SchoolMaterialId = x.Id,
+        //            MaterialName = x.Material.Name,
+        //            Quantity = x.Quantity
+        //        }).ToListAsync();
 
-            return schoolMaterialList;
-        }
-        public async Task UpdateMaterialForSchoolAsync(UpdateMaterialToSchoolRequest updateMaterialToSchoolRequest)
-        {
-            if (updateMaterialToSchoolRequest == null)
-            {
-                throw new ArgumentException("Invalid request");
-            }
+        //    return schoolMaterialList;
+        //}
+        //public async Task UpdateMaterialForSchoolAsync(UpdateMaterialToSchoolRequest updateMaterialToSchoolRequest)
+        //{
+        //    if (updateMaterialToSchoolRequest == null)
+        //    {
+        //        throw new ArgumentException("Invalid request");
+        //    }
 
-            var schoolMaterialFound = await _straniVariDbContext.SchoolMaterials.FirstOrDefaultAsync(x => x.Id == updateMaterialToSchoolRequest.SchoolMaterialId);
+        //    var schoolMaterialFound = await _straniVariDbContext.SchoolMaterials.FirstOrDefaultAsync(x => x.Id == updateMaterialToSchoolRequest.SchoolMaterialId);
 
-            if (schoolMaterialFound == null)
-            {
-                throw new ArgumentException("Invalid id");
-            }
+        //    if (schoolMaterialFound == null)
+        //    {
+        //        throw new ArgumentException("Invalid id");
+        //    }
 
-            schoolMaterialFound.Quantity = updateMaterialToSchoolRequest.Quantity;
+        //    schoolMaterialFound.Quantity = updateMaterialToSchoolRequest.Quantity;
 
-            _straniVariDbContext.SchoolMaterials.Update(schoolMaterialFound);
-            await _straniVariDbContext.SaveChangesAsync();
-        }
+        //    _straniVariDbContext.SchoolMaterials.Update(schoolMaterialFound);
+        //    await _straniVariDbContext.SaveChangesAsync();
+        //}
         static ITransformer model = null;
         public List<SchoolMaterial> Recommend(int eventSchoolId)
         {

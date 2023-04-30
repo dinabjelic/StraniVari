@@ -1,21 +1,21 @@
 ﻿using AutoMapper;
 using StraniVari.Database;
-using StraniVari.Services.Interfaces;
+using StraniVari.Services.Services;
 
 namespace StraniVari.Services.Base
 {
-    public class BaseCrudService<T, TInsertUpdate, TGet> : ICrudService<T, TInsertUpdate, TGet> where TInsertUpdate : class where T : class where TGet: class
+    public class BaseCrudService<T, TInsertUpdate, TGet> : BaseReadService<T, TGet> where TInsertUpdate : class where T : class where TGet: class
     {
         private readonly StraniVariDbContext _dbContext;
         protected readonly IMapper _mapper;
 
-        public BaseCrudService(StraniVariDbContext dbContext, IMapper mapper)
+        public BaseCrudService(StraniVariDbContext dbContext, IMapper mapper):base(dbContext, mapper)
         {
             _dbContext = dbContext;
             _mapper = mapper;
         }
 
-        public T Delete(int id)
+        public async Task Delete(int id)
         {
             var set = _dbContext.Set<T>();
             var entity = set.Find(id);
@@ -26,41 +26,20 @@ namespace StraniVari.Services.Base
             }
 
             set.Remove(entity);
-            _dbContext.SaveChanges();
+            await _dbContext.SaveChangesAsync();
 
-            return _mapper.Map<T>(entity);
         }
 
-        public async Task<List<TGet>> GetAll()
-        {
-            var entity = _dbContext.Set<T>();
-            var list = entity.ToList();
-            return _mapper.Map<List<TGet>>(list);
-        }
-
-        public async Task<TGet> GetById(int id)
-        {
-            var set = _dbContext.Set<T>();
-            var entity = set.Find(id);
-            if (entity == null)
-            {
-                throw new ArgumentException("Invalid request");
-            }
-            return _mapper.Map<TGet>(entity);
-        }
-
-        public T Insert(TInsertUpdate request)
+        public async Task Insert(TInsertUpdate request)
         {
             var set = _dbContext.Set<T>();
             T entity = _mapper.Map<T>(request);
 
-            set.Add(entity);
-           _dbContext.SaveChanges();
-
-            return _mapper.Map<T>(entity);
+            await set.AddAsync(entity);
+           await _dbContext.SaveChangesAsync();
         }
 
-        public T Update(int id, TInsertUpdate request)
+        public async Task Update(int id, TInsertUpdate request)
         {
             if (request == null)
             {
@@ -68,7 +47,7 @@ namespace StraniVari.Services.Base
             }
 
             var set = _dbContext.Set<T>();
-            var entity = set.Find(id);
+            var entity =await set.FindAsync(id);
 
             if (entity == null)
             {
@@ -77,8 +56,7 @@ namespace StraniVari.Services.Base
 
             _mapper.Map(request, entity);
 
-            _dbContext.SaveChanges();
-            return _mapper.Map<T>(entity);
+            await _dbContext.SaveChangesAsync();
         }
     }
 }

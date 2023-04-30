@@ -3,14 +3,13 @@ using Microsoft.AspNetCore.Mvc;
 using StraniVari.Core.Helper;
 using StraniVari.Core.Responses;
 using StraniVari.Services.Interfaces;
-using StraniVari.Services.Services;
 
 namespace StraniVari.API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
     [Authorize]
-    public class BaseCRUDController<T, TUpsert, TGet> : BaseReadController<TGet> where TUpsert : class where T :class where TGet:class
+    public class BaseCRUDController<T, TUpsert, TGet> : BaseReadController<T,TGet> where TUpsert : class where T :class where TGet:class
     {
         private readonly ICrudService<T, TUpsert, TGet> _crudService;
 
@@ -23,7 +22,7 @@ namespace StraniVari.API.Controllers
         [Authorize(Roles = Role.Administrator)]
         public async Task<IActionResult> Insert([FromBody] TUpsert request)
         {
-            _crudService.Insert(request);
+            await _crudService.Insert(request);
             return Ok(new ResponseResult { Message = "You succeeded" });
         }
 
@@ -31,7 +30,7 @@ namespace StraniVari.API.Controllers
         [Authorize(Roles = Role.Administrator)]
         public async Task<IActionResult> Update(int id, [FromBody] TUpsert request)
         {
-            _crudService.Update(id, request);
+            await _crudService.Update(id, request);
             return Ok(new ResponseResult { Message = "You succeeded" });
         }
 
@@ -39,7 +38,7 @@ namespace StraniVari.API.Controllers
         [Authorize(Roles = Role.Administrator)]
         public async Task<IActionResult> Delete(int id)
         {
-            _crudService.Delete(id);
+            await _crudService.Delete(id);
             return Ok(new ResponseResult { Message = "You succeeded" });
         }
     }
