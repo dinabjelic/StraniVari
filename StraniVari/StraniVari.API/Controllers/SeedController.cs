@@ -44,6 +44,7 @@ namespace StraniVari.API.Controllers
             //await _userManager.AddToRoleAsync(user, Role.Admin.ToString());
 
             return Ok();
+
         }
     }
 }
