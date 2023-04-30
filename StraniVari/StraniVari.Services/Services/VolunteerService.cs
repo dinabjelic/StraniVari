@@ -1,15 +1,17 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using StraniVari.Core.Entities;
 using StraniVari.Core.Helper;
 using StraniVari.Core.Requests;
 using StraniVari.Core.Responses;
 using StraniVari.Database;
+using StraniVari.Services.Base;
 using StraniVari.Services.Interfaces;
 
 namespace StraniVari.Services.Services
 {
-    public class VolunteerService:IVolunteerService
+    public class VolunteerService: BaseCrudService<Volunteer, VolunteerUpSertRequest, GetVolunteerDetailsResposne>, IVolunteerService
     {
         private readonly StraniVariDbContext _straniVariDbContext;
         private readonly IPasswordHasher<User> _passwordHasher;
@@ -17,8 +19,9 @@ namespace StraniVari.Services.Services
         public VolunteerService
         (
             StraniVariDbContext straniVariDbContext,
-            IPasswordHasher<User> passwordHasher
-        )
+            IPasswordHasher<User> passwordHasher,
+            IMapper mapper
+        ): base(straniVariDbContext, mapper)
         {
             _straniVariDbContext = straniVariDbContext;
             _passwordHasher = passwordHasher;
@@ -67,18 +70,18 @@ namespace StraniVari.Services.Services
             await _straniVariDbContext.SaveChangesAsync();
         }
 
-        public async Task DeleteVolunteerAsync(int id)
-        {
-            var volunteer = await _straniVariDbContext.Volunteers.FirstOrDefaultAsync(x => x.Id == id);
+        //public async Task DeleteVolunteerAsync(int id)
+        //{
+        //    var volunteer = await _straniVariDbContext.Volunteers.FirstOrDefaultAsync(x => x.Id == id);
 
-            if(volunteer==null)
-            {
-                throw new ArgumentException("Invalid id");
-            }
+        //    if(volunteer==null)
+        //    {
+        //        throw new ArgumentException("Invalid id");
+        //    }
 
-            _straniVariDbContext.Volunteers.Remove(volunteer);
-            await _straniVariDbContext.SaveChangesAsync();
-        }
+        //    _straniVariDbContext.Volunteers.Remove(volunteer);
+        //    await _straniVariDbContext.SaveChangesAsync();
+        //}
 
         public async Task<GetVolunteerDetailsResposne> GetVolunteerDetailsAsync(int id)
         {

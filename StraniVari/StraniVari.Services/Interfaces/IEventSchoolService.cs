@@ -1,9 +1,10 @@
-﻿using StraniVari.Core.Requests;
+﻿using StraniVari.Core.Entities;
+using StraniVari.Core.Requests;
 using StraniVari.Core.Responses;
 
 namespace StraniVari.Services.Interfaces
 {
-    public interface IEventSchoolService
+    public interface IEventSchoolService: ICrudService<EventSchool, EventSchoolUpdateRequest, GetEventSchoolDetailsResponse>
     {
         /// <summary>
         /// adding schools to choosen event
@@ -22,19 +23,19 @@ namespace StraniVari.Services.Interfaces
         /// </summary>
         /// <param name="Id"></param>
         /// <returns></returns>
-        Task<List<GetEventSchoolDetailsResponse>> EventSchoolDetailsAsync(int id);
-        /// <summary>
-        /// update number of children for school
-        /// </summary>
-        /// <param name="eventSchoolUpdateRequest"></param>
-        /// <returns></returns>
-        Task UpdateSchoolForEventAsync(EventSchoolUpdateRequest eventSchoolUpdateRequest);
-        /// <summary>
-        /// deleting school of that event
-        /// </summary>
-        /// <param name="eventId"></param>
-        /// <param name="schoolId"></param>
-        /// <returns></returns>
-        Task DeleteSchoolForEventAsync(int id);
+        //Task<List<GetEventSchoolDetailsResponse>> EventSchoolDetailsAsync(int id);
+        ///// <summary>
+        ///// update number of children for school
+        ///// </summary>
+        ///// <param name="eventSchoolUpdateRequest"></param>
+        ///// <returns></returns>
+        //Task UpdateSchoolForEventAsync(EventSchoolUpdateRequest eventSchoolUpdateRequest);
+        ///// <summary>
+        ///// deleting school of that event
+        ///// </summary>
+        ///// <param name="eventId"></param>
+        ///// <param name="schoolId"></param>
+        ///// <returns></returns>
+        //Task DeleteSchoolForEventAsync(int id);
     }
 }

@@ -1,9 +1,10 @@
-﻿using StraniVari.Core.Requests;
+﻿using StraniVari.Core.Entities;
+using StraniVari.Core.Requests;
 using StraniVari.Core.Responses;
 
 namespace StraniVari.Services.Interfaces
 {
-    public interface IVolunteerService
+    public interface IVolunteerService: ICrudService<Volunteer, VolunteerUpSertRequest, GetVolunteerDetailsResposne>
     {
         /// <summary>
         /// getting volunteer details
@@ -29,12 +30,12 @@ namespace StraniVari.Services.Interfaces
         /// <param name="updateVolunteerRequest"></param>
         /// <returns></returns>
         Task UpdateVolunteerAsync(int id, VolunteerUpSertRequest updateVolunteerRequest);
-        /// <summary>
-        /// deleting volunteer
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        Task DeleteVolunteerAsync(int id);
+        ///// <summary>
+        ///// deleting volunteer
+        ///// </summary>
+        ///// <param name="id"></param>
+        ///// <returns></returns>
+        //Task DeleteVolunteerAsync(int id);
         
     }
 }

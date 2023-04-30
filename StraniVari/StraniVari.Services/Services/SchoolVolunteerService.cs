@@ -1,16 +1,18 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using StraniVari.Core.Entities;
 using StraniVari.Core.Requests;
 using StraniVari.Core.Responses;
 using StraniVari.Database;
+using StraniVari.Services.Base;
 using StraniVari.Services.Interfaces;
 
 namespace StraniVari.Services.Services
 {
-    public class SchoolVolunteerService: ISchoolVolunteerService
+    public class SchoolVolunteerService: BaseCrudService<SchoolVolunteer, UpdateVolunteerAssignedToSchoolRequest, GetVolunteersForSchoolResponse>, ISchoolVolunteerService
     {
         private readonly StraniVariDbContext _straniVariDbContext;
-        public SchoolVolunteerService(StraniVariDbContext straniVariDbContext)
+        public SchoolVolunteerService(StraniVariDbContext straniVariDbContext, IMapper mapper) : base(straniVariDbContext, mapper)
         {
             _straniVariDbContext = straniVariDbContext;
         }
@@ -29,28 +31,15 @@ namespace StraniVari.Services.Services
             await _straniVariDbContext.SaveChangesAsync();
         }
 
-        public async Task DeleteVolunteerFromSchoolAsync(int id)
-        {
-            var volunteerFound = await _straniVariDbContext.SchoolVolunteers.FirstOrDefaultAsync(x => x.Id == id);
-
-            if (volunteerFound == null)
-            {
-                throw new ArgumentException("Invalid id");
-            }
-
-            _straniVariDbContext.SchoolVolunteers.Remove(volunteerFound);
-            await _straniVariDbContext.SaveChangesAsync();
-        }
-
         public async Task<List<GetVolunteersForSchoolResponse>> SchoolVolunteerListAsync(int id)
         {
             var schoolVolunteers = await _straniVariDbContext.SchoolVolunteers
                 .Include(x => x.EventSchool)
-                .Where(x=>x.EventSchoolId == id)
+                .Where(x => x.EventSchoolId == id)
                 .Select(x => new GetVolunteersForSchoolResponse
                 {
-                    VolunteerId = x.VolunteerId, 
-                    SchoolVolunteerId = x.Id, 
+                    VolunteerId = x.VolunteerId,
+                    SchoolVolunteerId = x.Id,
                     VolunteerAddress = x.Volunteer.Address,
                     VolunteerCity = x.Volunteer.City,
                     FirstName = x.Volunteer.FirstName,
@@ -69,24 +58,39 @@ namespace StraniVari.Services.Services
             return schoolVolunteers;
         }
 
-        public async Task UpdateVolunteerDetailsAsync(UpdateVolunteerAssignedToSchoolRequest updateVolunteerAssignedToSchoolRequest)
-        {
-            if (updateVolunteerAssignedToSchoolRequest == null)
-            {
-                throw new ArgumentException("Invalid request");
-            }
+        //public async Task DeleteVolunteerFromSchoolAsync(int id)
+        //{
+        //    var volunteerFound = await _straniVariDbContext.SchoolVolunteers.FirstOrDefaultAsync(x => x.Id == id);
 
-            var volunteerSchoolFound = await _straniVariDbContext.SchoolVolunteers.FirstOrDefaultAsync(x => x.Id == updateVolunteerAssignedToSchoolRequest.SchoolVolunteerId);
+        //    if (volunteerFound == null)
+        //    {
+        //        throw new ArgumentException("Invalid id");
+        //    }
 
-            if (volunteerSchoolFound == null)
-            {
-                throw new ArgumentException("Invalid id");
-            }
+        //    _straniVariDbContext.SchoolVolunteers.Remove(volunteerFound);
+        //    await _straniVariDbContext.SaveChangesAsync();
+        //}
 
-            volunteerSchoolFound.TransportNeeded = updateVolunteerAssignedToSchoolRequest.TransportNeeded;
 
-            _straniVariDbContext.SchoolVolunteers.Update(volunteerSchoolFound);
-            await _straniVariDbContext.SaveChangesAsync();
-        }
+
+        //public async Task UpdateVolunteerDetailsAsync(UpdateVolunteerAssignedToSchoolRequest updateVolunteerAssignedToSchoolRequest)
+        //{
+        //    if (updateVolunteerAssignedToSchoolRequest == null)
+        //    {
+        //        throw new ArgumentException("Invalid request");
+        //    }
+
+        //    var volunteerSchoolFound = await _straniVariDbContext.SchoolVolunteers.FirstOrDefaultAsync(x => x.Id == updateVolunteerAssignedToSchoolRequest.SchoolVolunteerId);
+
+        //    if (volunteerSchoolFound == null)
+        //    {
+        //        throw new ArgumentException("Invalid id");
+        //    }
+
+        //    volunteerSchoolFound.TransportNeeded = updateVolunteerAssignedToSchoolRequest.TransportNeeded;
+
+        //    _straniVariDbContext.SchoolVolunteers.Update(volunteerSchoolFound);
+        //    await _straniVariDbContext.SaveChangesAsync();
+        //}
     }
 }

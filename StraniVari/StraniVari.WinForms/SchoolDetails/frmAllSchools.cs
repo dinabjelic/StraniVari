@@ -6,6 +6,7 @@ namespace StraniVari.WinUI.SchoolDetails
     public partial class frmAllSchools : Form
     {
         private readonly ApiService _apiService = new ApiService("Schools");
+        private readonly ApiService _apiServiceDelete = new ApiService("Schools");
         public frmAllSchools()
         {
             InitializeComponent();

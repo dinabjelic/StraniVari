@@ -1,28 +1,21 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using StraniVari.Core.Entities;
 using StraniVari.Core.Helper;
 using StraniVari.Core.Requests;
 using StraniVari.Core.Responses;
 using StraniVari.Services.Interfaces;
-using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 
 namespace StraniVari.API.Controllers
 {
-    public class EventController : BaseApiController
+    public class EventController : BaseCRUDController<Event, EventUpsertRequestMapp, GetEventDetailsResponse>
     {
         private readonly IEventService _eventService;
 
-        public EventController(IEventService eventService)
+        public EventController(IEventService eventService):base(eventService)
         {
             _eventService = eventService;
-        }
-
-        [HttpGet]
-        [Authorize(Roles = Role.Administrator + "," + Role.RegularUser)]
-        public async Task<IActionResult> GetEventDetails()
-        {
-            return Ok(await _eventService.GetEventDetailsAsync());
         }
 
         [HttpGet("event-details-for-active-year")]
@@ -31,37 +24,6 @@ namespace StraniVari.API.Controllers
         {
             var userId = HttpContext.User.FindFirst(x => x.Type == ClaimTypes.NameIdentifier);
             return Ok(await _eventService.GetEventDetailsActiveYear(int.Parse(userId.Value)));
-        }
-
-        [HttpGet("event-details")]
-        [Authorize(Roles = Role.Administrator + "," + Role.RegularUser)]
-        public async Task<IActionResult> GetEventDetailsById(int id)
-        {
-            return Ok(await _eventService.GetEventDetailsByIdAsync(id));
-        }
-
-        [HttpPost]
-        [Authorize(Roles = Role.Administrator)]
-        public async Task<IActionResult> AddEvent(EventUpsertRequest addEventRequest)
-        {
-            await _eventService.AddEventAsync(addEventRequest);
-            return Ok(new ResponseResult { Message = "You succeeded" });
-        }
-
-        [HttpPut]
-        [Authorize(Roles = Role.Administrator)]
-        public async Task<IActionResult> UpdateEvent(int id, [FromBody] EventUpsertRequest updateEventRequest)
-        {
-            await _eventService.UpdateEventAsync(id, updateEventRequest);
-            return Ok(new ResponseResult { Message = "You succeeded" });
-        }
-
-        [HttpDelete]
-        [Authorize(Roles = Role.Administrator)]
-        public async Task<IActionResult> DeleteEvent(int id)
-        {
-            await _eventService.DeleteEventAsync(id);
-            return Ok(new ResponseResult { Message = "You succeeded" });
         }
     }
 }

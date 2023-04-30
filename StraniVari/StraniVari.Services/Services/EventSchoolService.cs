@@ -1,16 +1,18 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using StraniVari.Core.Entities;
 using StraniVari.Core.Requests;
 using StraniVari.Core.Responses;
 using StraniVari.Database;
+using StraniVari.Services.Base;
 using StraniVari.Services.Interfaces;
 
 namespace StraniVari.Services.Services
 {
-    public class EventSchoolService : IEventSchoolService
+    public class EventSchoolService : BaseCrudService<EventSchool, EventSchoolUpdateRequest, GetEventSchoolDetailsResponse>, IEventSchoolService
     {
         private readonly StraniVariDbContext _straniVariDbContext;
-        public EventSchoolService(StraniVariDbContext straniVariDbContext)
+        public EventSchoolService(StraniVariDbContext straniVariDbContext, IMapper mapper) : base(straniVariDbContext, mapper)
         {
             _straniVariDbContext = straniVariDbContext;
         }
@@ -31,36 +33,36 @@ namespace StraniVari.Services.Services
             await _straniVariDbContext.SaveChangesAsync();
         }
 
-        public async Task DeleteSchoolForEventAsync(int id)
-        {
-            var schoolFound = await _straniVariDbContext.EventSchools.FirstOrDefaultAsync(x => x.Id == id);
+        //public async Task DeleteSchoolForEventAsync(int id)
+        //{
+        //    var schoolFound = await _straniVariDbContext.EventSchools.FirstOrDefaultAsync(x => x.Id == id);
 
-            if (schoolFound == null)
-            {
-                throw new ArgumentException("Invalid id");
-            }
+        //    if (schoolFound == null)
+        //    {
+        //        throw new ArgumentException("Invalid id");
+        //    }
 
-            _straniVariDbContext.EventSchools.Remove(schoolFound);
-            await _straniVariDbContext.SaveChangesAsync();
-        }
+        //    _straniVariDbContext.EventSchools.Remove(schoolFound);
+        //    await _straniVariDbContext.SaveChangesAsync();
+        //}
 
-        public async Task<List<GetEventSchoolDetailsResponse>> EventSchoolDetailsAsync(int id)
-        {
-            var schoolEventDetails = await _straniVariDbContext.EventSchools
-                .Where(x=>x.Id ==id)
-                .Select(x => new GetEventSchoolDetailsResponse
-                {
-                    EndDate = x.Event.EndDate,
-                    StartDate = x.Event.StartDate,
-                    StraniVariTheme = x.Event.StraniVariTheme,
-                    EventName = x.Event.Name,
-                    SchoolAddress = x.School.Address,
-                    SchoolCity = x.School.City,
-                    SchoolName = x.School.Name
-                }).ToListAsync();
+        //public async Task<List<GetEventSchoolDetailsResponse>> EventSchoolDetailsAsync(int id)
+        //{
+        //    var schoolEventDetails = await _straniVariDbContext.EventSchools
+        //        .Where(x=>x.Id ==id)
+        //        .Select(x => new GetEventSchoolDetailsResponse
+        //        {
+        //            EndDate = x.Event.EndDate,
+        //            StartDate = x.Event.StartDate,
+        //            StraniVariTheme = x.Event.StraniVariTheme,
+        //            EventName = x.Event.Name,
+        //            SchoolAddress = x.School.Address,
+        //            SchoolCity = x.School.City,
+        //            SchoolName = x.School.Name
+        //        }).ToListAsync();
 
-            return schoolEventDetails;    
-        }
+        //    return schoolEventDetails;    
+        //}
 
         public async Task<List<GetSchoolsForEventResponse>> SchoolsForEventListAsync(int id)
         {
@@ -85,25 +87,25 @@ namespace StraniVari.Services.Services
             return schoolForEvent;
         }
 
-        public async Task UpdateSchoolForEventAsync(EventSchoolUpdateRequest eventSchoolUpdateRequest)
-        {
-            if (eventSchoolUpdateRequest == null)
-            {
-                throw new ArgumentException("Invalid request");
-            }
+        //public async Task UpdateSchoolForEventAsync(EventSchoolUpdateRequest eventSchoolUpdateRequest)
+        //{
+        //    if (eventSchoolUpdateRequest == null)
+        //    {
+        //        throw new ArgumentException("Invalid request");
+        //    }
 
-            var eventSchoolFound = await _straniVariDbContext.EventSchools.FirstOrDefaultAsync(x => x.Id == eventSchoolUpdateRequest.EventSchoolId);
+        //    var eventSchoolFound = await _straniVariDbContext.EventSchools.FirstOrDefaultAsync(x => x.Id == eventSchoolUpdateRequest.EventSchoolId);
 
-            if (eventSchoolFound == null)
-            {
-                throw new ArgumentException("Invalid id");
-            }
+        //    if (eventSchoolFound == null)
+        //    {
+        //        throw new ArgumentException("Invalid id");
+        //    }
 
-            eventSchoolFound.NumberOfChildren = eventSchoolUpdateRequest.NumberOfChildren;
+        //    eventSchoolFound.NumberOfChildren = eventSchoolUpdateRequest.NumberOfChildren;
 
-            _straniVariDbContext.EventSchools.Update(eventSchoolFound);
-            await _straniVariDbContext.SaveChangesAsync();
+        //    _straniVariDbContext.EventSchools.Update(eventSchoolFound);
+        //    await _straniVariDbContext.SaveChangesAsync();
             
-        }
+        //}
     }
 }
