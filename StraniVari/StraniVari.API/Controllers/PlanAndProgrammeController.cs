@@ -12,17 +12,17 @@ namespace StraniVari.API.Controllers
     {
         private readonly IPlanAndProgrammeService _planAndProgrammeService;
 
-        public PlanAndProgrammeController(IPlanAndProgrammeService planAndProgrammeService):base(planAndProgrammeService)
+        public PlanAndProgrammeController(IPlanAndProgrammeService planAndProgrammeService) : base(planAndProgrammeService)
         {
             _planAndProgrammeService = planAndProgrammeService;
         }
 
-        [HttpGet]
-        [Authorize(Roles = Role.Administrator + "," + Role.RegularUser)]
-        public async Task<IActionResult> PlanAndProgrammeList(DayOfWeek? dayOfWeek, int id)
-        {
-            return Ok(await _planAndProgrammeService.PlanAndProgrammeListAsync(dayOfWeek, id));
-        }
+        //[HttpGet("get")]
+        //[Authorize(Roles = Role.Administrator + "," + Role.RegularUser)]
+        //public override async Task<IActionResult> GetById(int id)
+        //{
+        //    return Ok(await _planAndProgrammeService.PlanAndProgrammeListAsync(id));
+        //}
         //[HttpPost]
         //[Authorize(Roles = Role.Administrator)]
         //public async Task<IActionResult> AddPlanAndProgramme(UpSertPlanAndProgrammeRequest addPlanAndProgrammeRequest)
@@ -37,6 +37,5 @@ namespace StraniVari.API.Controllers
         //{
         //    await _planAndProgrammeService.UpdatePlanAndProgrammeAsync(id, updatePlanAndProgrammeRequest);
         //    return Ok(new ResponseResult { Message = "You succeeded" });
-    }
     }
 }

@@ -43,7 +43,7 @@ namespace StraniVari.WinUI.Volunteers
 
             if(editedDetails != null)
             {
-                await _apiServiceSchoolVolunteers.Update<ResponseResult>(editedDetails);
+                await _apiServiceSchoolVolunteers.Update<ResponseResult>(editedDetails, editedDetails.SchoolVolunteerId);
                 MessageBox.Show("Details successfully updated.", "Infomation", MessageBoxButtons.OK);
             }
             this.DialogResult = DialogResult.OK;

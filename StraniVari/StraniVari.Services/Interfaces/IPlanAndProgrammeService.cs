@@ -1,7 +1,6 @@
 ﻿using StraniVari.Core.Entities;
 using StraniVari.Core.Requests;
 using StraniVari.Core.Responses;
-using StraniVari.Services.Base;
 
 namespace StraniVari.Services.Interfaces
 {
@@ -25,6 +24,6 @@ namespace StraniVari.Services.Interfaces
         /// </summary>
         /// <param name="dayOfWeek"></param>
         /// <returns></returns>
-        Task<List<GetPlanAndProgrameResposnse>> PlanAndProgrammeListAsync(DayOfWeek? dayOfWeek, int id);
+        //Task<List<GetPlanAndProgrameResposnse>> PlanAndProgrammeListAsync(int id);
     }
 }

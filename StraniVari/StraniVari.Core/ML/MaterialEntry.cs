@@ -2,16 +2,16 @@
 
 namespace StraniVari.Core.ML
 {
-    public class Copurchase_prediction
+    public class Materialprediction
     {
         public float Score { get; set; }
     }
-    public class ProductEntry
+    public class MaterialEntry
     {
         [KeyType(count: 2000)]
         public uint MaterialID { get; set; }
         [KeyType(count: 2000)]
-        public uint CoPurchaseProductID { get; set; }
+        public uint MaterialIDRelated { get; set; }
         public float Label { get; set; }
     }
 

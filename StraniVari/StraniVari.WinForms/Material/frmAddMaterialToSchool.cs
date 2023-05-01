@@ -11,6 +11,8 @@ namespace StraniVari.WinUI.Material
     {
         ApiService _apiService = new ApiService("Materials");
         private readonly ApiService _apiServiceMaterial = new ApiService("SchoolMaterials");
+        private readonly ApiService _apiServiceMaterialDetails = new ApiService("SchoolMaterials/details");
+
         public GetSchoolsForEventResponse SelectedElement { get; }
         public EventUpsertRequest SelectedEvent { get; }
 
@@ -46,7 +48,7 @@ namespace StraniVari.WinUI.Material
 
         private async void btnAddMaterialToSchool_Click(object sender, EventArgs e)
         {
-            var materialForSchool =await _apiServiceMaterial.GetById<List<GetMaterialsForSchoolRequest>>(SelectedElement.SchoolEventId);
+            var materialForSchool =await _apiServiceMaterialDetails.GetById<List<GetMaterialsForSchoolRequest>>(SelectedElement.SchoolEventId);
             var materials = new InsertMaterialToSchoolRequest
             {
                 EventSchoolId = SelectedElement.SchoolEventId,

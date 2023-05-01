@@ -8,6 +8,8 @@ namespace StraniVari.WinUI.SchoolDetails
     public partial class frmEditSchoolsDetails : Form
     {
         ApiService _apiServiceEventSchool = new ApiService("EventSchool");
+        ApiService _apiServiceEventSchoolDetails = new ApiService("EventSchool/details");
+
         public GetSchoolsForEventResponse _selectedSchool { get; }
         public EventUpsertRequest _selectedEvent { get; }
 
@@ -50,7 +52,7 @@ namespace StraniVari.WinUI.SchoolDetails
 
                 if (editedDetails != null)
                 {
-                    await _apiServiceEventSchool.Update<ResponseResult>(editedDetails);
+                    await _apiServiceEventSchool.Update<ResponseResult>(editedDetails, editedDetails.EventSchoolId);
                     MessageBox.Show("Details successfully updated.", "Infomation", MessageBoxButtons.OK);
                 }
                 this.DialogResult = DialogResult.OK;

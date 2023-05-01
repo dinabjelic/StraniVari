@@ -32,22 +32,22 @@ namespace StraniVari.Services.Services
         //    await _straniVariDbContext.SaveChangesAsync();
         //}
 
-        public async Task<List<GetPlanAndProgrameResposnse>> PlanAndProgrammeListAsync(DayOfWeek? dayOfWeek, int id)
-        {
-            var planAndProgrameList = await _straniVariDbContext.PlanAndProgramme
-                .Include(x => x.Event)
-                .Where(x => x.DayOfWeek == dayOfWeek || dayOfWeek== null && x.EventId == id)
-                .Select(x => new GetPlanAndProgrameResposnse
-                {
-                    Id = x.Id,
-                    DayOfWeek = x.DayOfWeek,
-                    StartDate = x.StartDate, 
-                    EndDate =x.EndDate, 
-                    Activity = x.Activity,
-                }).ToListAsync();
+        //public async Task<List<GetPlanAndProgrameResposnse>> PlanAndProgrammeListAsync(DayOfWeek? dayOfWeek, int id)
+        //{
+        //    var planAndProgrameList = await _straniVariDbContext.PlanAndProgramme
+        //        .Include(x => x.Event)
+        //        .Where(x => x.DayOfWeek == dayOfWeek || dayOfWeek== null && x.EventId == id)
+        //        .Select(x => new GetPlanAndProgrameResposnse
+        //        {
+        //            Id = x.Id,
+        //            DayOfWeek = x.DayOfWeek,
+        //            StartDate = x.StartDate, 
+        //            EndDate =x.EndDate, 
+        //            Activity = x.Activity,
+        //        }).ToListAsync();
 
-            return planAndProgrameList;
-        }
+        //    return planAndProgrameList;
+        //}
 
         //public async Task UpdatePlanAndProgrammeAsync(int id, UpSertPlanAndProgrammeRequest updatePlanAndProgrammeRequest)
         //{

@@ -9,7 +9,8 @@ namespace StraniVari.WinUI.SchoolDetails
     public partial class frmSchoolsEventDetails : Form
     {
         private readonly ApiService _apiService = new ApiService("EventSchool");
-        ApiService _apiServiceEvent = new ApiService("Event/event-details");
+        private readonly ApiService _apiServiceDetails = new ApiService("EventSchool/details");
+        ApiService _apiServiceEvent = new ApiService("EventSchool/school-details");
         public EventUpsertRequest _selectedEvent { get; }
 
         public frmSchoolsEventDetails(EventUpsertRequest selectedEvent=null)
@@ -21,7 +22,7 @@ namespace StraniVari.WinUI.SchoolDetails
         public async void frmSchoolsEventDetails_Load(object sender, EventArgs e)
         {
             dgvSchoolsEventDetails.AutoGenerateColumns = false;
-            var result = await _apiService.GetById<List<GetSchoolsForEventResponse>>(_selectedEvent.Id);
+            var result = await _apiServiceDetails.GetById<List<GetSchoolsForEventResponse>>(_selectedEvent.Id);
             dgvSchoolsEventDetails.DataSource = result;
             await LoadEventDetails();
         }

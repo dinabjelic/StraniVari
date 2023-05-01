@@ -8,6 +8,8 @@ namespace StraniVari.WinUI.Volunteers
     {
         private readonly ApiService _apiService = new ApiService("Volunteers");
         private readonly ApiService _apiServiceVolunteersSchool = new ApiService("SchoolVolunteers");
+        private readonly ApiService _apiServiceVolunteersSchoolDetails = new ApiService("SchoolVolunteers/details");
+
         public GetSchoolsForEventResponse _selectedSchool { get; }
         public EventUpsertRequest _selectedEvent { get; }
        
@@ -43,7 +45,7 @@ namespace StraniVari.WinUI.Volunteers
 
         private async void btnAddVolunteersToSchool_Click(object sender, EventArgs e)
         {
-            var volunteersForSchool = await _apiServiceVolunteersSchool.GetById<List<GetVolunteersForSchoolResponse>>(_selectedSchool.SchoolEventId);
+            var volunteersForSchool = await _apiServiceVolunteersSchoolDetails.GetById<List<GetVolunteersForSchoolResponse>>(_selectedSchool.SchoolEventId);
             var volunteers = new InsertVolunteerToSchoolRequest
             {
                 EventSchoolId = _selectedSchool.SchoolEventId,

@@ -4,14 +4,14 @@ using StraniVari.Core.Responses;
 
 namespace StraniVari.Services.Interfaces
 {
-    public interface IMaterialSchoolService:ICrudService<SchoolMaterial, UpdateMaterialToSchoolRequest, GetMaterialsForSchoolRequest>
+    public interface IMaterialSchoolService : I_CrudService<SchoolMaterial, InsertMaterialToSchoolRequest, UpdateMaterialToSchoolRequest, GetMaterialsForSchoolRequest>
     {
         /// <summary>
         /// add material to school
         /// </summary>
         /// <param name="insertMaterialToSchoolRequest"></param>
         /// <returns></returns>
-        Task AddMaterialToSchoolAsync(InsertMaterialToSchoolRequest insertMaterialToSchoolRequest);
+        Task Insert(InsertMaterialToSchoolRequest insertMaterialToSchoolRequest);
 
         /// <summary>
         /// recomending materials for school
@@ -25,7 +25,7 @@ namespace StraniVari.Services.Interfaces
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        //Task<List<GetMaterialsForSchoolRequest>> MaterialForSchoolAsync(int id);
+        Task<List<GetMaterialsForSchoolRequest>> GetById(int id);
         ///// <summary>
         ///// update material choosen for school
         ///// </summary>

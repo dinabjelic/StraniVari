@@ -4,7 +4,7 @@ using StraniVari.Core.Responses;
 
 namespace StraniVari.Services.Interfaces
 {
-    public interface IVolunteerService: ICrudService<Volunteer, VolunteerUpSertRequest, GetVolunteerDetailsResposne>
+    public interface IVolunteerService
     {
         /// <summary>
         /// getting volunteer details
@@ -35,7 +35,7 @@ namespace StraniVari.Services.Interfaces
         ///// </summary>
         ///// <param name="id"></param>
         ///// <returns></returns>
-        //Task DeleteVolunteerAsync(int id);
-        
+        Task DeleteVolunteerAsync(int id);
+
     }
 }

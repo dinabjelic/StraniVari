@@ -8,19 +8,19 @@ using StraniVari.Services.Interfaces;
 
 namespace StraniVari.API.Controllers
 {
-    public class SchoolMaterialsController : BaseCRUDController<SchoolMaterial, UpdateMaterialToSchoolRequest, GetMaterialsForSchoolRequest>
+    public class SchoolMaterialsController : Base_CRUDController<SchoolMaterial, InsertMaterialToSchoolRequest, UpdateMaterialToSchoolRequest, GetMaterialsForSchoolRequest>
     {
         private readonly IMaterialSchoolService _materialSchoolService;
-        public SchoolMaterialsController(IMaterialSchoolService materialSchoolService):base(materialSchoolService)
+        public SchoolMaterialsController(IMaterialSchoolService materialSchoolService) : base(materialSchoolService)
         {
             _materialSchoolService = materialSchoolService;
         }
 
         [HttpPost]
         [Authorize(Roles = Role.Administrator)]
-        public async Task<IActionResult> AddMaterialToSchool(InsertMaterialToSchoolRequest insertMaterialToSchoolRequest)
+        public override async Task<IActionResult> Insert(InsertMaterialToSchoolRequest insertMaterialToSchoolRequest)
         {
-            await _materialSchoolService.AddMaterialToSchoolAsync(insertMaterialToSchoolRequest);
+            await base.Insert(insertMaterialToSchoolRequest);
             return Ok(new ResponseResult { Message = "You succeeded" });
         }
 
@@ -30,12 +30,13 @@ namespace StraniVari.API.Controllers
         {
             return Ok(_materialSchoolService.Recommend(eventSchoolId));
         }
-        //[HttpGet]
-        //[Authorize(Roles = Role.Administrator + "," + Role.RegularUser)]
-        //public async Task<IActionResult> MaterialForSchool(int id)
-        //{
-        //    return Ok(await _materialSchoolService.MaterialForSchoolAsync(id));
-        //}
+
+        [HttpGet("details")]
+        [Authorize(Roles = Role.Administrator + "," + Role.RegularUser)]
+        public override async Task<IActionResult> GetById(int id)
+        {
+            return Ok(await _materialSchoolService.GetById(id));
+        }
 
         //[HttpPut]
         //[Authorize(Roles = Role.Administrator)]

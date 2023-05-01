@@ -30,6 +30,20 @@ namespace StraniVari.Mapper
 
             CreateMap<Volunteer, VolunteerUpSertRequest>().ReverseMap();
             CreateMap<Volunteer, GetVolunteerDetailsResposne>().ReverseMap();
+
+            CreateMap<SchoolMaterial, UpdateMaterialToSchoolRequest>().ReverseMap();
+            CreateMap<SchoolMaterial, GetMaterialsForSchoolRequest>().ReverseMap();
+            CreateMap<SchoolMaterial, InsertMaterialToSchoolRequest>().ReverseMap();
+
+
+            CreateMap<EventSchool, EventSchoolUpdateRequest>().ReverseMap();
+            CreateMap<EventSchool, GetSchoolsForEventResponse>().ReverseMap();
+            CreateMap<EventSchool, EventSchoolInsertRequest>().ReverseMap();
+            CreateMap<EventSchool, EventSchoolUpdateRequestMapp>().ReverseMap();
+
+
+            CreateMap<SchoolVolunteer, UpdateVolunteerAssignedToSchoolRequest>().ReverseMap();
+            CreateMap<SchoolVolunteer, GetVolunteersForSchoolResponse>().ReverseMap();
         }
     }
 }

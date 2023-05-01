@@ -43,7 +43,7 @@ namespace StraniVari.WinUI.Material
 
                 if (editedDetails != null)
                 {
-                    await _apiServiceSchoolMaterials.Update<ResponseResult>(editedDetails);
+                    await _apiServiceSchoolMaterials.Update<ResponseResult>(editedDetails, editedDetails.SchoolMaterialId);
                     MessageBox.Show("Details successfully updated.", "Infomation", MessageBoxButtons.OK);
                 }
                 this.DialogResult = DialogResult.OK;
