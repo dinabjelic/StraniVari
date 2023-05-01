@@ -18,17 +18,5 @@ namespace StraniVari.Services.Interfaces
         /// <param name="id"></param>
         /// <returns></returns>
         Task<List<GetVolunteersForSchoolResponse>> GetById(int id);
-        ///// <summary>
-        ///// updating volunteering details
-        ///// </summary>
-        ///// <param name="updateVolunteerAssignedToSchoolRequest"></param>
-        ///// <returns></returns>
-        //Task UpdateVolunteerDetailsAsync(UpdateVolunteerAssignedToSchoolRequest updateVolunteerAssignedToSchoolRequest);
-        ///// <summary>
-        ///// deleting volunteer from school
-        ///// </summary>
-        ///// <param name="id"></param>
-        ///// <returns></returns>
-        //Task DeleteVolunteerFromSchoolAsync(int id);
     }
 }

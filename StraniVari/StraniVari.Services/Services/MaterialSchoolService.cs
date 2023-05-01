@@ -33,19 +33,6 @@ namespace StraniVari.Services.Services
             await _straniVariDbContext.SaveChangesAsync();
         }
 
-        public async Task DeleteMaterialForSchoolAsync(int id)
-        {
-            var materialFound = await _straniVariDbContext.SchoolMaterials.FirstOrDefaultAsync(x => x.Id == id);
-
-            if (materialFound == null)
-            {
-                throw new ArgumentException("Invalid id");
-            }
-
-            _straniVariDbContext.SchoolMaterials.Remove(materialFound);
-            await _straniVariDbContext.SaveChangesAsync();
-        }
-
         public async Task<List<GetMaterialsForSchoolRequest>> GetById(int id)
         {
             var schoolMaterialList = await _straniVariDbContext.SchoolMaterials
@@ -59,26 +46,6 @@ namespace StraniVari.Services.Services
                 }).ToListAsync();
 
             return schoolMaterialList;
-        }
-
-        public async Task UpdateMaterialForSchoolAsync(UpdateMaterialToSchoolRequest updateMaterialToSchoolRequest)
-        {
-            if (updateMaterialToSchoolRequest == null)
-            {
-                throw new ArgumentException("Invalid request");
-            }
-
-            var schoolMaterialFound = await _straniVariDbContext.SchoolMaterials.FirstOrDefaultAsync(x => x.Id == updateMaterialToSchoolRequest.SchoolMaterialId);
-
-            if (schoolMaterialFound == null)
-            {
-                throw new ArgumentException("Invalid id");
-            }
-
-            schoolMaterialFound.Quantity = updateMaterialToSchoolRequest.Quantity;
-
-            _straniVariDbContext.SchoolMaterials.Update(schoolMaterialFound);
-            await _straniVariDbContext.SaveChangesAsync();
         }
 
         static ITransformer model = null;

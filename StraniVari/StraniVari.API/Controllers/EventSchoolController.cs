@@ -30,30 +30,5 @@ namespace StraniVari.API.Controllers
         {
             return Ok(await _eventSchoolService.GetById(id));
         }
-
-        //[HttpGet("school-details")]
-        //[Authorize(Roles = Role.Administrator + "," + Role.RegularUser)]
-        //public async Task<IActionResult> EventSchoolDetails(int id)
-        //{
-        //    return Ok(await _eventSchoolService.EventSchoolDetailsAsync(id));
-        //}
-
-        //[HttpPut]
-        //[Authorize(Roles = Role.Administrator)]
-        //public override async Task<IActionResult> Update(int id,[FromBody] EventSchoolUpdateRequest eventSchoolUpdateRequest)
-        //{
-        //    await base.Update(id,eventSchoolUpdateRequest);
-        //    await _eventSchoolService.Update(id, eventSchoolUpdateRequest);
-        //    return Ok(new ResponseResult { Message = "You succeeded" });
-        //}
-
-        //[HttpDelete]
-        //[Authorize(Roles = Role.Administrator)]
-        //public override async Task<IActionResult> DeleteSchoolForEvent(int id)
-        //{
-        //    await base.Delete(id);
-        //    await _eventSchoolService.DeleteSchoolForEventAsync(id);
-        //    return Ok(new ResponseResult { Message = "You succeeded" });
-        //}
     }
 }

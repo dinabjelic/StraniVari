@@ -37,21 +37,5 @@ namespace StraniVari.API.Controllers
         {
             return Ok(await _materialSchoolService.GetById(id));
         }
-
-        //[HttpPut]
-        //[Authorize(Roles = Role.Administrator)]
-        //public async Task<IActionResult> UpdateMaterialForSchool(UpdateMaterialToSchoolRequest updateMaterialToSchoolRequest)
-        //{
-        //    await _materialSchoolService.UpdateMaterialForSchoolAsync(updateMaterialToSchoolRequest);
-        //    return Ok(new ResponseResult { Message = "You succeeded" });
-        //}
-
-        //[HttpDelete]
-        //[Authorize(Roles = Role.Administrator)]
-        //public async Task<IActionResult> DeleteMaterialForSchool(int id)
-        //{
-        //    await _materialSchoolService.DeleteMaterialForSchoolAsync(id);
-        //    return Ok(new ResponseResult { Message = "You succeeded" });
-        //}
     }
 }

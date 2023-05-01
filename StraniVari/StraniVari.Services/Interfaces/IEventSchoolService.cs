@@ -18,24 +18,5 @@ namespace StraniVari.Services.Interfaces
         /// <param name="id"></param>
         /// <returns></returns>
         Task<List<GetSchoolsForEventResponse>> GetById(int id);
-        /// <summary>
-        /// getting details for choosen event and school
-        /// </summary>
-        /// <param name="Id"></param>
-        /// <returns></returns>
-        //Task<List<GetEventSchoolDetailsResponse>> EventSchoolDetailsAsync(int id);
-        ///// <summary>
-        ///// update number of children for school
-        ///// </summary>
-        ///// <param name="eventSchoolUpdateRequest"></param>
-        ///// <returns></returns>
-        //Task Update(int id, EventSchoolUpdateRequest eventSchoolUpdateRequest);
-        ///// <summary>
-        ///// deleting school of that event
-        ///// </summary>
-        ///// <param name="eventId"></param>
-        ///// <param name="schoolId"></param>
-        /// <returns></returns>
-        //Task DeleteSchoolForEventAsync(int id);
     }
 }

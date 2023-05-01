@@ -1,8 +1,6 @@
 ﻿using AutoMapper;
-using Microsoft.EntityFrameworkCore;
 using StraniVari.Database;
 using StraniVari.Services.Interfaces;
-using System.Data.Entity;
 
 namespace StraniVari.Services.Services
 {

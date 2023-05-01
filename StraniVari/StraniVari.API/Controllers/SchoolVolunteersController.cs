@@ -20,7 +20,6 @@ namespace StraniVari.API.Controllers
         [Authorize(Roles = Role.Administrator)]
         public override async Task<IActionResult> Insert(InsertVolunteerToSchoolRequest insertVolunteerToSchoolRequest)
         {
-            //await _schoolVolunteerService.AddVolunteerToSchoolAsync(insertVolunteerToSchoolRequest);
             await base.Insert(insertVolunteerToSchoolRequest);
             return Ok(new ResponseResult { Message = "You succeeded" });
         }
@@ -31,21 +30,5 @@ namespace StraniVari.API.Controllers
         {
             return Ok(await _schoolVolunteerService.GetById(id));
         }
-
-        //[HttpPut]
-        //[Authorize(Roles = Role.Administrator)]
-        //public async Task<IActionResult> UpdateVolunteerDetails(UpdateVolunteerAssignedToSchoolRequest updateVolunteerAssignedToSchoolRequest)
-        //{
-        //    await _schoolVolunteerService.UpdateVolunteerDetailsAsync(updateVolunteerAssignedToSchoolRequest);
-        //    return Ok(new ResponseResult { Message = "You succeeded" });
-        //}
-
-        //[HttpDelete]
-        //[Authorize(Roles = Role.Administrator)]
-        //public async Task<IActionResult> DeleteVolunteerFromSchool(int id)
-        //{
-        //    await _schoolVolunteerService.DeleteVolunteerFromSchoolAsync(id);
-        //    return Ok(new ResponseResult { Message = "You succeeded" });
-        //}
     }
 }

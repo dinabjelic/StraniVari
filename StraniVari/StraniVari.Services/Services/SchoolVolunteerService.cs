@@ -44,13 +44,6 @@ namespace StraniVari.Services.Services
                     FirstName = x.Volunteer.FirstName,
                     LastName = x.Volunteer.LastName,
                     VolunteerBirthDate = x.Volunteer.DateOfBirth,
-                    //EventName = x.EventSchool.Event.Name,
-                    //EndDate = x.EventSchool.Event.EndDate,
-                    //StartDate = x.EventSchool.Event.StartDate,
-                    //SchoolAddress = x.EventSchool.School.Address,
-                    //SchoolCity = x.EventSchool.School.City,
-                    //SchoolName = x.EventSchool.School.Name,
-                    //StraniVariTheme = x.EventSchool.Event.StraniVariTheme,
                     TransportNeeded = x.TransportNeeded
                 }).ToListAsync();
 

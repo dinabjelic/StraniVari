@@ -26,19 +26,5 @@ namespace StraniVari.Services.Interfaces
         /// <param name="id"></param>
         /// <returns></returns>
         Task<List<GetMaterialsForSchoolRequest>> GetById(int id);
-        ///// <summary>
-        ///// update material choosen for school
-        ///// </summary>
-        ///// <param name="updateMaterialToSchoolRequest"></param>
-        ///// <returns></returns>
-        //Task UpdateMaterialForSchoolAsync(UpdateMaterialToSchoolRequest updateMaterialToSchoolRequest);
-        ///// <summary>
-        ///// delete material
-        ///// </summary>
-        ///// <param name="id"></param>
-        ///// <returns></returns>
-        //Task DeleteMaterialForSchoolAsync(int id);
-
-
     }
 }
