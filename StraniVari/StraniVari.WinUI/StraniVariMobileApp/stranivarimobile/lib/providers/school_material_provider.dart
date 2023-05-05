@@ -23,7 +23,7 @@ class SchoolMaterialProvider with ChangeNotifier {
       throw Exception("Token not found");
     }
 
-    var url = Uri.parse("${BaseProvider.baseUrl}/SchoolMaterials?id="+ SchoolIdGetter.Id.toString());
+    var url = Uri.parse("${BaseProvider.baseUrl}/SchoolMaterials/details?id="+ SchoolIdGetter.Id.toString());
 
     var response = await http!.get(url, headers: {
       "Authorization": "Bearer $token",

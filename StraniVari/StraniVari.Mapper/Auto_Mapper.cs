@@ -44,6 +44,9 @@ namespace StraniVari.Mapper
 
             CreateMap<SchoolVolunteer, UpdateVolunteerAssignedToSchoolRequest>().ReverseMap();
             CreateMap<SchoolVolunteer, GetVolunteersForSchoolResponse>().ReverseMap();
+
+            CreateMap<Trip, UpSertTripRequest>().ReverseMap();
+            CreateMap<Trip, GetTripResponse>().ReverseMap();
         }
     }
 }

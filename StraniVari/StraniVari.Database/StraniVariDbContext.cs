@@ -23,6 +23,10 @@ namespace StraniVari.Database
         public DbSet<SchoolMaterial> SchoolMaterials { get; set; }
         public DbSet<SchoolVolunteer> SchoolVolunteers { get; set; }
         public DbSet<EventSchool> EventSchools { get; set; }
+        public DbSet<VolunteerTrip> VolunteerTrip { get; set; }
+        public DbSet<TripStatus> TripStatuses { get; set; }
+        public DbSet<Trip> Trips { get; set; }
+
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -47,6 +51,9 @@ namespace StraniVari.Database
             modelBuilder.SeedVolunteers();
             modelBuilder.SeedRoles();
             modelBuilder.SeedUserRoles();
+            modelBuilder.SeedTrips();
+            modelBuilder.SeedStatus();
+            modelBuilder.SeedVolunteerTrips();
         }
     }
 }
