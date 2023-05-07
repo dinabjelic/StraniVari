@@ -1,6 +1,7 @@
 ﻿using StraniVari.Core.Entities;
 using StraniVari.Core.Requests;
 using StraniVari.Core.Responses;
+using StraniVari.Services.Services;
 
 namespace StraniVari.Services.Interfaces
 {

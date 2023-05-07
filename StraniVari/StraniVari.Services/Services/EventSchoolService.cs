@@ -8,7 +8,7 @@ using StraniVari.Services.Interfaces;
 
 namespace StraniVari.Services.Services
 {
-    public class EventSchoolService : Base_CrudService<EventSchool, EventSchoolInsertRequest, EventSchoolUpdateRequest, GetSchoolsForEventResponse>, IEventSchoolService
+    public class EventSchoolService : IBase_CrudService<EventSchool, EventSchoolInsertRequest, EventSchoolUpdateRequest, GetSchoolsForEventResponse>, IEventSchoolService
     {
         private readonly StraniVariDbContext _straniVariDbContext;
         public EventSchoolService(StraniVariDbContext straniVariDbContext, IMapper mapper) : base(straniVariDbContext, mapper)

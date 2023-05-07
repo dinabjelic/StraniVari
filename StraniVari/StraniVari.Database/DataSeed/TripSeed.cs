@@ -8,26 +8,23 @@ namespace StraniVari.Database.DataSeed
     {
         public static void SeedTrips(this ModelBuilder builder)
         {
+            Random random = new Random();
             List<string> tripPlaces = new()
             {
                 "Sarajevo",
-                "Mostar",
-                "Tuzla",
             };
 
             var startDate = new DateTime(2021, 1, 1);
             var endDate = new DateTime(2021, 11, 29);
             List<Trip> trips = new();
 
-            for (int i = 1; i <= 3; i++)
+            trips.Add(new Trip
             {
-                trips.Add(new Trip
-                {
-                    Id = i,
-                    Place = tripPlaces[i % 3],
-                    TripDateTime = DateGenerator.GenerateRandomDate(startDate, endDate),
-                });
-            }
+                Id = 1,
+                Place = tripPlaces[0],
+                TripDateTime = DateGenerator.GenerateRandomDate(startDate, endDate),
+                EventId = 6
+            });
             builder.Entity<Trip>().HasData(trips);
         }
     }

@@ -11,7 +11,7 @@ using StraniVari.Services.Interfaces;
 
 namespace StraniVari.Services.Services
 {
-    public class MaterialSchoolService : Base_CrudService<SchoolMaterial, InsertMaterialToSchoolRequest, UpdateMaterialToSchoolRequest, GetMaterialsForSchoolRequest>, IMaterialSchoolService
+    public class MaterialSchoolService : IBase_CrudService<SchoolMaterial, InsertMaterialToSchoolRequest, UpdateMaterialToSchoolRequest, GetMaterialsForSchoolRequest>, IMaterialSchoolService
     {
         static MLContext mlContext = null;
         private readonly StraniVariDbContext _straniVariDbContext;

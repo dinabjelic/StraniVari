@@ -25,5 +25,12 @@ namespace StraniVari.API.Controllers
             var userId = HttpContext.User.FindFirst(x => x.Type == ClaimTypes.NameIdentifier);
             return Ok(await _eventService.GetEventDetailsActiveYear(int.Parse(userId.Value)));
         }
+
+        [HttpGet("last-added-event")]
+        [Authorize(Roles = Role.Administrator + "," + Role.RegularUser)]
+        public async Task<IActionResult> GetLastAddedEvent()
+        {
+            return Ok(await _eventService.GetLastAddedEvent());
+        }
     }
 }

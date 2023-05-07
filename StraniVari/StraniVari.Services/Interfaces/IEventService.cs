@@ -11,5 +11,10 @@ namespace StraniVari.Services.Interfaces
         /// </summary>
         /// <returns></returns>
         Task<List<GetEventDetailsResponse>> GetEventDetailsActiveYear(int userId);
+        /// <summary>
+        /// returns the last added Event
+        /// </summary>
+        /// <returns></returns>
+        Task<GetEventDetailsResponse> GetLastAddedEvent();
     }
 }

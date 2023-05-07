@@ -3,12 +3,12 @@ using StraniVari.Database;
 
 namespace StraniVari.Services.Services
 {
-    public class Base_CrudService<T, TInsert, TUpdate, TGet> : BaseReadService<T, TGet> where TInsert : class where TUpdate : class where T : class where TGet : class
+    public class IBase_CrudService<T, TInsert, TUpdate, TGet> : BaseReadService<T, TGet> where TInsert : class where TUpdate : class where T : class where TGet : class
     {
         private readonly StraniVariDbContext _dbContext;
         protected readonly IMapper _mapper;
 
-        public Base_CrudService(StraniVariDbContext dbContext, IMapper mapper) : base(dbContext, mapper)
+        public IBase_CrudService(StraniVariDbContext dbContext, IMapper mapper) : base(dbContext, mapper)
         {
             _dbContext = dbContext;
             _mapper = mapper;

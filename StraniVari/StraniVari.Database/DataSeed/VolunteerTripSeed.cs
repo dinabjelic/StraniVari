@@ -10,14 +10,14 @@ namespace StraniVari.Database.DataSeed
             Random random = new Random();
             List<VolunteerTrip> volunteerTrip = new();
 
-            for (int i = 1; i <= 5; i++)
+            for (int i = 1; i <= 2; i++)
             {
                 volunteerTrip.Add(new VolunteerTrip
                 {
                     Id = i,
                     VolunteerId = random.Next(2, 6), 
-                    TripId= random.Next(1,3), 
-                    StatusId = random.Next(1,3)
+                    TripId= 1, 
+                    StatusId = 3
                 });
             }
             builder.Entity<VolunteerTrip>().HasData(volunteerTrip);

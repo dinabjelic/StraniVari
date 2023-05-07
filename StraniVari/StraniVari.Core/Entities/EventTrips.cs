@@ -1,11 +1,11 @@
 ﻿namespace StraniVari.Core.Entities
 {
-    public class Trip:BaseEntity
+    public class EventTrips:BaseEntity
     {
-        public string Place { get; set; }
-        public DateTime TripDateTime { get; set; }
-
         public int EventId { get; set; }
         public Event Event { get; set; }
+
+        public int TripId { get; set; }
+        public Trip Trip { get; set; }
     }
 }

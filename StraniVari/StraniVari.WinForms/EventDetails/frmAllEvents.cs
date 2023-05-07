@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using StraniVari.Core.Requests;
 using StraniVari.Core.Responses;
+using StraniVari.WinUI.Applications;
 using StraniVari.WinUI.Games;
 using StraniVari.WinUI.Material;
 using StraniVari.WinUI.Notifications;
@@ -8,6 +9,7 @@ using StraniVari.WinUI.PlanAndProgramme;
 using StraniVari.WinUI.Reports;
 using StraniVari.WinUI.SchoolDetails;
 using StraniVari.WinUI.Service;
+using StraniVari.WinUI.Trip;
 using StraniVari.WinUI.Volunteers;
 
 namespace StraniVari.WinUI.EventDetails
@@ -80,6 +82,11 @@ namespace StraniVari.WinUI.EventDetails
                     frmAllPlanAndProgramme frmAllPlanAndProgramme = new frmAllPlanAndProgramme(selectedEvent);
                     frmAllPlanAndProgramme.ShowDialog();
                 }
+                else if (e.ColumnIndex == 10)
+                {
+                    frmAllApplications frmAllApplications = new frmAllApplications(selectedEvent);
+                    frmAllApplications.ShowDialog();
+                }
             }
         }
 
@@ -105,6 +112,12 @@ namespace StraniVari.WinUI.EventDetails
         {
             frmAllGames frmAllGames = new frmAllGames();
             frmAllGames.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            frmAllTrips frmAllTrips = new frmAllTrips();
+            frmAllTrips.ShowDialog();
         }
     }
 }

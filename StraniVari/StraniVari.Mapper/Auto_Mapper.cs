@@ -47,6 +47,10 @@ namespace StraniVari.Mapper
 
             CreateMap<Trip, UpSertTripRequest>().ReverseMap();
             CreateMap<Trip, GetTripResponse>().ReverseMap();
+            CreateMap<Trip, GetTripsDetailsForEvent>().ReverseMap();
+
+            CreateMap<TripStatus, StatusUpSertRequest>().ReverseMap();
+            CreateMap<TripStatus, GetStatusResponse>().ReverseMap();
         }
     }
 }

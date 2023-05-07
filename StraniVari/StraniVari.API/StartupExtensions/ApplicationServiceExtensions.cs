@@ -19,6 +19,8 @@ namespace StraniVari.API.StartupExtensions
             services.AddScoped<ISchoolVolunteerService, SchoolVolunteerService>();
             services.AddScoped<IMaterialSchoolService, MaterialSchoolService>();
             services.AddScoped<ITripService, TripService>();
+            services.AddScoped<IVolunteerTripService, VolunteerTripService>();
+            services.AddScoped<ITripStatusService, TripStatusService>();
 
             return services;
         }
