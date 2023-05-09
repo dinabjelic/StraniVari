@@ -22,11 +22,26 @@ namespace StraniVari.API.Controllers
             return Ok(await _volunteerTripService.GetTripApplications(id));
         }
 
+        [HttpGet("details")]
+        [Authorize(Roles = Role.Administrator + "," + Role.RegularUser)]
+        public async Task<IActionResult> GetStatusForLoggedInVolunteer(int id)
+        {
+            return Ok(await _volunteerTripService.GetTripStatusForLoggedInUser(id));
+        }
+
         [HttpPut]
         [Authorize(Roles = Role.Administrator + "," + Role.RegularUser)]
         public async Task<IActionResult> Update(int id, VolunteerTripUpsertRequest rew)
         {
             await _volunteerTripService.UpdateVolunteerDetailsAsync(id,rew);
+            return Ok(new ResponseResult { Message = "You succeeded" });
+        }
+
+        [HttpPost]
+        [Authorize(Roles = Role.Administrator + "," + Role.RegularUser)]
+        public async Task<IActionResult> Insert(int id)
+        {
+            await _volunteerTripService.Insert(id);
             return Ok(new ResponseResult { Message = "You succeeded" });
         }
     }

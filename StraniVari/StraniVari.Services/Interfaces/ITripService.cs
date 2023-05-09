@@ -12,5 +12,6 @@ namespace StraniVari.Services.Interfaces
         /// <param name="id"></param>
         /// <returns></returns>
         Task<List<GetTripsDetailsForEvent>> GetById(int id);
+
     }
 }

@@ -7,7 +7,6 @@ namespace StraniVari.API.Controllers
 {
     public class TripStatusController : BaseCRUDController<TripStatus, StatusUpSertRequest, GetStatusResponse>
     {
-
         public TripStatusController(ITripStatusService tripStatus) : base(tripStatus)
         {
         }

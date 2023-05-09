@@ -8,6 +8,7 @@ import 'package:stranivarimobile/providers/event_plan_and_programme_provider.dar
 import 'package:stranivarimobile/providers/event_provider.dart';
 import 'package:flutter/src/material/data_table.dart';
 import 'package:stranivarimobile/helpers/token.dart';
+import 'package:stranivarimobile/screens/applications/applications_screen.dart';
 import 'package:stranivarimobile/screens/games/games_screen.dart';
 import 'package:stranivarimobile/screens/notifications/event_notifications_screen.dart';
 import 'package:stranivarimobile/screens/plan_and_programme/event_plan_and_programee_screen.dart';
@@ -59,23 +60,25 @@ class _EventListScreenState extends State<EventListScreen> {
                   scrollDirection: Axis.horizontal,
                   child: Column(children: [
                     SizedBox(height: 5),
-                  Container(
-                          height: 40,
-                          width: 100,
-                          margin: EdgeInsets.fromLTRB(10, 0, 820, 0),
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(2),
-                              gradient: LinearGradient(colors: [
-                                Color.fromARGB(255, 241, 195, 167),
-                                Color.fromARGB(255, 217, 215, 208)
-                              ])),
-                          child: InkWell(
-                            onTap: (){
-                              Navigator.pushNamed(context, GamesScreen.gamesrouteName);
-                            },
-                            child: Center(child: Text("Games")),
-                          ),
-                        ),
+                    Container(
+                      height: 40,
+                      width: 100,
+                      margin: EdgeInsets.fromLTRB(10, 0, 830, 0),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(2),
+                        gradient: LinearGradient(colors: [
+                          Color.fromARGB(255, 241, 195, 167),
+                          Color.fromARGB(255, 217, 215, 208)
+                        ]),
+                      ),
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.pushNamed(
+                              context, GamesScreen.gamesrouteName);
+                        },
+                        child: Center(child: Text("Games")),
+                      ),
+                    ),
                     Container(
                       child: DataTable(
                         columnSpacing: 40,
@@ -117,6 +120,11 @@ class _EventListScreenState extends State<EventListScreen> {
                                   alignment: Alignment.center,
                                   child: Text("Action",
                                       style: TextStyle(fontSize: 14)))),
+                          DataColumn(
+                              label: Container(
+                                  alignment: Alignment.center,
+                                  child: Text("Action",
+                                      style: TextStyle(fontSize: 14)))),
                         ],
                         rows: _buildEventsList(),
                       ),
@@ -130,6 +138,7 @@ class _EventListScreenState extends State<EventListScreen> {
       return [
         DataRow(cells: [
           // DataCell(Text("Loading...")),
+          DataCell(Text("No data...")),
           DataCell(Text("No data...")),
           DataCell(Text("No data...")),
           DataCell(Text("No data...")),
@@ -200,6 +209,19 @@ class _EventListScreenState extends State<EventListScreen> {
                         context,
                         EventPlanAndProgrammeScreen
                             .eventplandandprogrammerouteName,
+                        arguments: IdGetter.Id);
+                  },
+                )),
+                DataCell(TextButton(
+                  child: Text("Trips",
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 14,
+                          fontWeight: FontWeight.bold)),
+                  onPressed: () {
+                    IdGetter.Id = x["id"];
+                    Navigator.pushNamed(
+                        context, ApplicationScreen.applicationRouteName,
                         arguments: IdGetter.Id);
                   },
                 ))

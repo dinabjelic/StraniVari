@@ -21,6 +21,7 @@ namespace StraniVari.Services.Services
             var claims = new List<Claim>
             {
                 new Claim(JwtRegisteredClaimNames.NameId, user.Id.ToString()),
+                new Claim(JwtRegisteredClaimNames.Sub, user.Id.ToString()),
             };
 
             foreach (var item in userRoles)

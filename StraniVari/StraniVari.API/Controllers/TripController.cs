@@ -5,8 +5,6 @@ using StraniVari.Core.Helper;
 using StraniVari.Core.Requests;
 using StraniVari.Core.Responses;
 using StraniVari.Services.Interfaces;
-using StraniVari.Services.Services;
-using System.Threading.Tasks;
 
 namespace StraniVari.API.Controllers
 {

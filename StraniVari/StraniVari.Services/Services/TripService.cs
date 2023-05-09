@@ -23,12 +23,12 @@ namespace StraniVari.Services.Services
                 .Where(x => x.EventId == id)
                 .Select(x => new GetTripsDetailsForEvent
                 {
+                   Id = x.Id,
                    Place = x.Place, 
                    TripDateTime = x.TripDateTime
                 }).ToListAsync();
 
             return tripDetails;
         }
-
     }
 }

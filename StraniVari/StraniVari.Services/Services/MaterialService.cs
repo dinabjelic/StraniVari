@@ -10,10 +10,8 @@ namespace StraniVari.Services.Services
 {
     public class MaterialService: BaseCrudService<Material, MaterialUpsertRequest, GetMaterialDetailsResponse>, IMaterialService
     {
-        private readonly StraniVariDbContext _straniVariDbContext;
         public MaterialService(StraniVariDbContext straniVariDbContext,IMapper mapper) : base(straniVariDbContext, mapper)
         {
-            _straniVariDbContext = straniVariDbContext;
         }
     }
 }

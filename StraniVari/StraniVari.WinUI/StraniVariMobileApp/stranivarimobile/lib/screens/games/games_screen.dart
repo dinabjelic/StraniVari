@@ -6,6 +6,7 @@ import '../../providers/games_provider.dart';
 
 class GamesScreen extends StatefulWidget {
   static const String gamesrouteName = '/games';
+
   const GamesScreen({Key? key}) : super(key: key);
 
   @override
