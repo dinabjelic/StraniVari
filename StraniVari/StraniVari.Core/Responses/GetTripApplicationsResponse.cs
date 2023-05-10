@@ -2,6 +2,7 @@
 {
     public class GetTripApplicationsResponse
     {
+        public int Id { get; set; }
         public int VolunteerId { get; set; }
         public string VolunteerName { get; set; }
         public string VolunteerLastName { get; set; }

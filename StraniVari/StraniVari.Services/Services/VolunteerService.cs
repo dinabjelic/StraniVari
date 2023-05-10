@@ -27,7 +27,7 @@ namespace StraniVari.Services.Services
             _passwordHasher = passwordHasher;
         }
 
-        public async Task Insert(VolunteerUpSertRequest addVolunteerRequest)
+        public override async Task Insert(VolunteerUpSertRequest addVolunteerRequest)
         {
             var volunteerInfo = new User
             {
@@ -70,7 +70,7 @@ namespace StraniVari.Services.Services
             await _straniVariDbContext.SaveChangesAsync();
         }
 
-        public async Task<GetVolunteerDetailsResposne> GetById(int id)
+        public override async Task<GetVolunteerDetailsResposne> GetById(int id)
         {
             var volunteerDetails = await _straniVariDbContext.Volunteers
                 .Include(x => x.User)
@@ -89,7 +89,7 @@ namespace StraniVari.Services.Services
             return volunteerDetails;
         }
 
-        public async Task Update(int id, VolunteerUpSertRequest updateVolunteerRequest)
+        public override async Task Update(int id, VolunteerUpSertRequest updateVolunteerRequest)
         {
             if (updateVolunteerRequest == null)
             {
@@ -130,7 +130,7 @@ namespace StraniVari.Services.Services
             await _straniVariDbContext.SaveChangesAsync();
         }
 
-        public async Task<List<GetVolunteerDetailsResposne>> GetAll()
+        public override async Task<List<GetVolunteerDetailsResposne>> GetAll()
         {
             var volunteerList = await _straniVariDbContext.Volunteers
                 .Include(x => x.User)

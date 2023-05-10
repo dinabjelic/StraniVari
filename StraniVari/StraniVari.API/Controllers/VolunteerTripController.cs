@@ -28,14 +28,7 @@ namespace StraniVari.API.Controllers
         {
             return Ok(await _volunteerTripService.GetTripStatusForEvent(id));
         }
-
-        [HttpPut]
-        public override async Task<IActionResult> Update(int id, VolunteerTripUpdateRequest volunteerTripUpdateRequest)
-        {
-            await base.Update(id, volunteerTripUpdateRequest);
-            return Ok(new ResponseResult { Message = "You succeeded" });
-        }
-
+   
         [HttpPost("insert")]
         [Authorize(Roles = Role.Administrator + "," + Role.RegularUser)]
         public async Task<IActionResult> Insert([FromQuery]VolunteerTripInsertRequest volunteerTripInsertRequest)

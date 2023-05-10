@@ -53,7 +53,7 @@ namespace StraniVari.Mapper
             CreateMap<TripStatus, StatusUpSertRequest>().ReverseMap();
             CreateMap<TripStatus, GetStatusResponse>().ReverseMap();
 
-            CreateMap<IdentityUser, User>().ReverseMap();
+            CreateMap<VolunteerTrip, VolunteerTripUpdateRequest>().ReverseMap();
         }
     }
 }

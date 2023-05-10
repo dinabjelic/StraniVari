@@ -13,19 +13,6 @@ namespace StraniVari.Services.Interfaces
         /// <returns></returns>
         Task<List<GetTripApplicationsResponse>> GetById(int id);
         /// <summary>
-        /// updating trip status for choosen volunteer
-        /// </summary>
-        /// <param name="id"></param>
-        /// <param name="req"></param>
-        /// <returns></returns>
-        Task Update(int id, VolunteerTripUpdateRequest req);
-        /// <summary>
-        /// inserting trip status for logged in volonteer
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        Task Insert(VolunteerTripInsertRequest req);
-        /// <summary>
         /// getting trip status for 
         /// </summary>
         /// <param name="id"></param>

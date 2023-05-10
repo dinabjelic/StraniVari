@@ -15,7 +15,7 @@ namespace StraniVari.Services.Base
             _mapper = mapper;
         }
 
-        public async Task Delete(int id)
+        public virtual async Task Delete(int id)
         {
             var set = _dbContext.Set<T>();
             var entity = set.Find(id);
@@ -30,7 +30,7 @@ namespace StraniVari.Services.Base
 
         }
 
-        public async Task Insert(TInsert request)
+        public virtual async Task Insert(TInsert request)
         {
             var set = _dbContext.Set<T>();
             T entity = _mapper.Map<T>(request);
@@ -39,7 +39,7 @@ namespace StraniVari.Services.Base
            await _dbContext.SaveChangesAsync();
         }
 
-        public async Task Update(int id, TUpdate request)
+        public virtual async Task Update(int id, TUpdate request)
         {
             if (request == null)
             {

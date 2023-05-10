@@ -193,7 +193,7 @@
             // 
             // Id
             // 
-            this.Id.DataPropertyName = "Id";
+            this.Id.DataPropertyName = "id";
             this.Id.HeaderText = "Id";
             this.Id.MinimumWidth = 6;
             this.Id.Name = "Id";

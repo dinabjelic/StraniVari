@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿
+using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using StraniVari.Core.Entities;
 using StraniVari.Core.Requests;
@@ -17,7 +18,7 @@ namespace StraniVari.Services.Services
             _straniVariDbContext = straniVariDbContext;
         }
 
-        public async Task Insert(EventSchoolInsertRequest addEventSchoolInsertRequest)
+        public override async Task Insert(EventSchoolInsertRequest addEventSchoolInsertRequest)
         {
             var eventFound = await _straniVariDbContext.Events.FirstOrDefaultAsync(x => x.Id == addEventSchoolInsertRequest.EventId);
 

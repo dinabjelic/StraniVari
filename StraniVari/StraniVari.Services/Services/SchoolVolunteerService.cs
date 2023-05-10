@@ -17,7 +17,7 @@ namespace StraniVari.Services.Services
             _straniVariDbContext = straniVariDbContext;
         }
 
-        public async Task Insert(InsertVolunteerToSchoolRequest insertVolunteerToSchoolRequest)
+        public override async Task Insert(InsertVolunteerToSchoolRequest insertVolunteerToSchoolRequest)
         {
 
             foreach(var item in insertVolunteerToSchoolRequest.Volunteers)

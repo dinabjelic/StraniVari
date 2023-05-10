@@ -19,9 +19,9 @@ namespace StraniVari.API.Controllers
 
         [HttpGet("with-details")]
         [Authorize(Roles = Role.Administrator + "," + Role.RegularUser)]
-        public async Task<IActionResult> GameListWithDetails()
+        public override async Task<IActionResult> GetAll()
         {
-            return Ok(await _gameService.GameListWithDetailsAsync());
+            return Ok(await _gameService.GetAll());
         }
     }
 }

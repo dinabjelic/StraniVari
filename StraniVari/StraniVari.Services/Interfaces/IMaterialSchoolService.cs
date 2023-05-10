@@ -7,13 +7,6 @@ namespace StraniVari.Services.Interfaces
     public interface IMaterialSchoolService : ICrudService<SchoolMaterial, InsertMaterialToSchoolRequest, UpdateMaterialToSchoolRequest, GetMaterialsForSchoolRequest>
     {
         /// <summary>
-        /// add material to school
-        /// </summary>
-        /// <param name="insertMaterialToSchoolRequest"></param>
-        /// <returns></returns>
-        Task Insert(InsertMaterialToSchoolRequest insertMaterialToSchoolRequest);
-
-        /// <summary>
         /// recomending materials for school
         /// </summary>
         /// <param name="id"></param>

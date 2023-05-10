@@ -18,7 +18,7 @@ namespace StraniVari.Services.Services
             _straniVariDbContext = straniVariDbContext;
         }
 
-        public async Task<List<GetGamesResponse>> GameListWithDetailsAsync()
+        public override async Task<List<GetGamesResponse>> GetAll()
         {
             var gameList = await _straniVariDbContext.Games.Select(x => new GetGamesResponse
             {

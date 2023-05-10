@@ -20,7 +20,7 @@ namespace StraniVari.Services.Services
         {
             _straniVariDbContext = straniVariDbContext;
         }
-        public async Task Insert(InsertMaterialToSchoolRequest insertMaterialToSchoolRequest)
+        public override async Task Insert(InsertMaterialToSchoolRequest insertMaterialToSchoolRequest)
         {
             foreach (var item in insertMaterialToSchoolRequest.Materials)
             {

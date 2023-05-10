@@ -57,7 +57,7 @@ namespace StraniVari.WinUI.Applications
                 StatusId = int.Parse(comboBox1.SelectedValue.ToString())
             };
 
-            await _apiServiceVolunteerTrip.Update<ResponseResult>(status, SelectedVolunteer.VolunteerId);
+            await _apiServiceVolunteerTrip.Update<ResponseResult>(status, SelectedVolunteer.Id);
             MessageBox.Show("Details successfully updated.", "Infomation", MessageBoxButtons.OK);
             this.DialogResult = DialogResult.OK;
             Close();

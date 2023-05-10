@@ -24,7 +24,7 @@ namespace StraniVari.Services.Services
             _httpContextAccessor = httpContextAccessor;
             _userManager = userManager;
         }
-        public async Task Insert(VolunteerTripInsertRequest volunteerTripInsertRequest)
+        public override async Task Insert(VolunteerTripInsertRequest volunteerTripInsertRequest)
         {
             var userId = _httpContextAccessor.HttpContext.User.FindFirst(x => x.Type == ClaimTypes.NameIdentifier)?.Value;
             var user = await _userManager.FindByIdAsync(userId);
@@ -55,6 +55,7 @@ namespace StraniVari.Services.Services
                 .Where(x => x.Trip.EventId == id)
                 .Select(x => new GetTripApplicationsResponse
                 {
+                    Id = x.Id,
                     VolunteerId = x.VolunteerId,
                     VolunteerName = x.Volunteer.FirstName,
                     VolunteerLastName = x.Volunteer.LastName,
@@ -63,25 +64,6 @@ namespace StraniVari.Services.Services
                 }).ToListAsync();
 
             return tripsApplications;
-        }
-        public async Task Update(int id, VolunteerTripUpdateRequest updateApplicationStatus)
-        {
-            if (updateApplicationStatus == null)
-            {
-                throw new ArgumentException("Invalid request");
-            }
-
-            var volunteerFound = await _straniVariDbContext.VolunteerTrip.FirstOrDefaultAsync(x => x.VolunteerId == id);
-
-            if (volunteerFound == null)
-            {
-                throw new ArgumentException("Invalid id");
-            }
-
-            volunteerFound.StatusId = updateApplicationStatus.StatusId;
-
-            _straniVariDbContext.VolunteerTrip.Update(volunteerFound);
-            await _straniVariDbContext.SaveChangesAsync();
         }
 
         public async Task<GetTripsDetailsForEventResponse> GetTripStatusForEvent(int id)
