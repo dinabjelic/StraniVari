@@ -8,7 +8,7 @@ using StraniVari.Services.Interfaces;
 
 namespace StraniVari.Services.Services
 {
-    public class TripStatusService: BaseCrudService<TripStatus, StatusUpSertRequest, GetStatusResponse>, ITripStatusService
+    public class TripStatusService: BaseCrudService<TripStatus, StatusUpSertRequest, StatusUpSertRequest, GetStatusResponse>, ITripStatusService
     {
         public TripStatusService(StraniVariDbContext straniVariDbContext, IMapper mapper) : base(straniVariDbContext, mapper)
         {

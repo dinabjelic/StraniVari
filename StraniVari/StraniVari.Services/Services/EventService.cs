@@ -9,7 +9,7 @@ using StraniVari.Services.Interfaces;
 
 namespace StraniVari.Services.Services
 {
-    public class EventService : BaseCrudService<Event, EventUpsertRequestMapp, GetEventDetailsResponse>, IEventService
+    public class EventService : BaseCrudService<Event, EventUpsertRequestMapp, EventUpsertRequestMapp, GetEventDetailsResponse>, IEventService
     {
         private readonly StraniVariDbContext _straniVariDbContext;
         public EventService(StraniVariDbContext straniVariDbContext, IMapper mapper):base(straniVariDbContext, mapper)

@@ -1,6 +1,6 @@
 ﻿namespace StraniVari.Core.Responses
 {
-    public class GetTripsDetailsForEvent
+    public class GetTripsDetailsForEventResponse
     {
         public int Id { get; set; }
         public string Place { get; set; }

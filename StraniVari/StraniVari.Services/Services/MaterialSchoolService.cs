@@ -7,11 +7,12 @@ using StraniVari.Core.ML;
 using StraniVari.Core.Requests;
 using StraniVari.Core.Responses;
 using StraniVari.Database;
+using StraniVari.Services.Base;
 using StraniVari.Services.Interfaces;
 
 namespace StraniVari.Services.Services
 {
-    public class MaterialSchoolService : IBase_CrudService<SchoolMaterial, InsertMaterialToSchoolRequest, UpdateMaterialToSchoolRequest, GetMaterialsForSchoolRequest>, IMaterialSchoolService
+    public class MaterialSchoolService : BaseCrudService<SchoolMaterial, InsertMaterialToSchoolRequest, UpdateMaterialToSchoolRequest, GetMaterialsForSchoolRequest>, IMaterialSchoolService
     {
         static MLContext mlContext = null;
         private readonly StraniVariDbContext _straniVariDbContext;

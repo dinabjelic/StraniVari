@@ -9,7 +9,7 @@ using System.Security.Claims;
 
 namespace StraniVari.API.Controllers
 {
-    public class EventController : BaseCRUDController<Event, EventUpsertRequestMapp, GetEventDetailsResponse>
+    public class EventController : BaseCRUDController<Event, EventUpsertRequestMapp, EventUpsertRequestMapp, GetEventDetailsResponse>
     {
         private readonly IEventService _eventService;
 

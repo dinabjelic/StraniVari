@@ -9,7 +9,7 @@ using StraniVari.Services.Interfaces;
 
 namespace StraniVari.Services.Services
 {
-    public class GameService : BaseCrudService<Game, UpSertGameRequest, GetGamesResponse>, IGameService
+    public class GameService : BaseCrudService<Game, UpSertGameRequest, UpSertGameRequest, GetGamesResponse>, IGameService
     {
         private readonly StraniVariDbContext _straniVariDbContext;
 

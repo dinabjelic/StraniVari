@@ -4,7 +4,7 @@ using StraniVari.Core.Responses;
 
 namespace StraniVari.Services.Interfaces
 {
-    public interface IMaterialSchoolService : I_CrudService<SchoolMaterial, InsertMaterialToSchoolRequest, UpdateMaterialToSchoolRequest, GetMaterialsForSchoolRequest>
+    public interface IMaterialSchoolService : ICrudService<SchoolMaterial, InsertMaterialToSchoolRequest, UpdateMaterialToSchoolRequest, GetMaterialsForSchoolRequest>
     {
         /// <summary>
         /// add material to school

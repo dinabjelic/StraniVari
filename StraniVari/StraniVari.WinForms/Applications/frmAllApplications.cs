@@ -9,7 +9,7 @@ namespace StraniVari.WinUI.Applications
     public partial class frmAllApplications : Form
     {
         ApiService _apiServiceDetails = new ApiService("Trip/details");
-        ApiService _apiService = new ApiService("VolunteerTrip");
+        ApiService _apiService = new ApiService("VolunteerTrip/details");
 
         public EventUpsertRequest SelectedEvent { get; }
         public frmAllApplications(EventUpsertRequest selectedEvent)
@@ -24,7 +24,7 @@ namespace StraniVari.WinUI.Applications
             var result = await _apiService.GetById<List<GetTripApplicationsResponse>>(SelectedEvent.Id);
             dgvApplications.DataSource = result;
 
-            var tripDetails = await _apiServiceDetails.GetById<List<GetTripsDetailsForEvent>>(SelectedEvent.Id);
+            var tripDetails = await _apiServiceDetails.GetById<List<GetTripsDetailsForEventResponse>>(SelectedEvent.Id);
 
             txtName.Text = SelectedEvent.Name;
             txtTheme.Text = SelectedEvent.StraniVariTheme;

@@ -13,6 +13,8 @@ import 'package:stranivarimobile/screens/games/games_screen.dart';
 import 'package:stranivarimobile/screens/notifications/event_notifications_screen.dart';
 import 'package:stranivarimobile/screens/plan_and_programme/event_plan_and_programee_screen.dart';
 
+import '../../providers/send_application_provider.dart';
+
 class EventListScreen extends StatefulWidget {
   static const String routeName = '/events';
   const EventListScreen({super.key});
@@ -24,6 +26,7 @@ class EventListScreen extends StatefulWidget {
 
 class _EventListScreenState extends State<EventListScreen> {
   EventProvider? _eventProvider = null;
+  Set<int> disabledButtons = Set<int>();
   dynamic data = {};
 
   void initState() {
@@ -63,7 +66,7 @@ class _EventListScreenState extends State<EventListScreen> {
                     Container(
                       height: 40,
                       width: 100,
-                      margin: EdgeInsets.fromLTRB(10, 0, 830, 0),
+                      margin: EdgeInsets.fromLTRB(10, 0, 1100, 0),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(2),
                         gradient: LinearGradient(colors: [
@@ -125,6 +128,11 @@ class _EventListScreenState extends State<EventListScreen> {
                                   alignment: Alignment.center,
                                   child: Text("Action",
                                       style: TextStyle(fontSize: 14)))),
+                                      DataColumn(
+                              label: Container(
+                                  alignment: Alignment.center,
+                                  child: Text("Action",
+                                      style: TextStyle(fontSize: 14))))
                         ],
                         rows: _buildEventsList(),
                       ),
@@ -138,6 +146,7 @@ class _EventListScreenState extends State<EventListScreen> {
       return [
         DataRow(cells: [
           // DataCell(Text("Loading...")),
+          DataCell(Text("No data...")),
           DataCell(Text("No data...")),
           DataCell(Text("No data...")),
           DataCell(Text("No data...")),
@@ -212,6 +221,56 @@ class _EventListScreenState extends State<EventListScreen> {
                         arguments: IdGetter.Id);
                   },
                 )),
+                DataCell(
+                  ElevatedButton(
+                    child: Text(
+                      "Send Application",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all<Color>(
+                        Color.fromARGB(255, 212, 189, 134),
+                      ),
+                    ),
+                    onPressed: disabledButtons.contains(x["id"]) ? null : () {
+                      showDialog(
+                        context: context,
+                        builder: (BuildContext context) => AlertDialog(
+                          title: Text("Confirm"),
+                          content: Text(
+                            "Are you sure you want to send an application for the trip?",
+                          ),
+                          actions: [
+                            TextButton(
+                              child: Text("Cancel"),
+                              onPressed: () => Navigator.pop(context),
+                            ),
+                            TextButton(
+                              child: Text("Send Application"),
+                              onPressed: () async {
+                                setState(() {
+                                  disabledButtons.add(x["id"]);
+                                });
+                                await Provider.of<SendApplicationProvider>(
+                                  context,
+                                  listen: false,
+                                ).sendApplication(x["id"]);
+                                Navigator.pop(context);
+                                setState(() {
+                                  loadData();
+                                });
+                              },
+                            ),
+                          ],
+                        ),
+                      );
+                    },
+                  ),
+                ),
                 DataCell(TextButton(
                   child: Text("Trips",
                       style: TextStyle(
@@ -225,6 +284,7 @@ class _EventListScreenState extends State<EventListScreen> {
                         arguments: IdGetter.Id);
                   },
                 ))
+                // ...
               ],
             ))
         .toList()

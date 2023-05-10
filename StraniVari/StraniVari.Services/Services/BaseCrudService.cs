@@ -4,7 +4,7 @@ using StraniVari.Services.Services;
 
 namespace StraniVari.Services.Base
 {
-    public class BaseCrudService<T, TInsertUpdate, TGet> : BaseReadService<T, TGet> where TInsertUpdate : class where T : class where TGet: class
+    public class BaseCrudService<T, TInsert, TUpdate, TGet> : BaseReadService<T, TGet> where TInsert : class where T : class where TGet: class
     {
         private readonly StraniVariDbContext _dbContext;
         protected readonly IMapper _mapper;
@@ -30,7 +30,7 @@ namespace StraniVari.Services.Base
 
         }
 
-        public async Task Insert(TInsertUpdate request)
+        public async Task Insert(TInsert request)
         {
             var set = _dbContext.Set<T>();
             T entity = _mapper.Map<T>(request);
@@ -39,7 +39,7 @@ namespace StraniVari.Services.Base
            await _dbContext.SaveChangesAsync();
         }
 
-        public async Task Update(int id, TInsertUpdate request)
+        public async Task Update(int id, TUpdate request)
         {
             if (request == null)
             {

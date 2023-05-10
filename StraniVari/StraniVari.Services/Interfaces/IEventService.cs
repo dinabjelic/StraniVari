@@ -4,7 +4,7 @@ using StraniVari.Core.Responses;
 
 namespace StraniVari.Services.Interfaces
 {
-    public interface IEventService: ICrudService<Event, EventUpsertRequestMapp, GetEventDetailsResponse>
+    public interface IEventService: ICrudService<Event, EventUpsertRequestMapp, EventUpsertRequestMapp, GetEventDetailsResponse>
     {
         /// <summary>
         /// showing events only for active year

@@ -4,7 +4,7 @@ using StraniVari.Core.Responses;
 
 namespace StraniVari.Services.Interfaces
 {
-    public interface IMaterialService : ICrudService<Material, MaterialUpsertRequest, GetMaterialDetailsResponse>
+    public interface IMaterialService : ICrudService<Material, MaterialUpsertRequest, MaterialUpsertRequest,GetMaterialDetailsResponse>
     {
     }
 }

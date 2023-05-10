@@ -4,7 +4,7 @@ using StraniVari.Core.Responses;
 
 namespace StraniVari.Services.Interfaces
 {
-    public interface ITripStatusService: ICrudService<TripStatus, StatusUpSertRequest, GetStatusResponse>
+    public interface ITripStatusService: ICrudService<TripStatus, StatusUpSertRequest, StatusUpSertRequest,GetStatusResponse>
     {
     }
 }

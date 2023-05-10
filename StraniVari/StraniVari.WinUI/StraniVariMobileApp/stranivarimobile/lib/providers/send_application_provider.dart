@@ -20,7 +20,7 @@ class SendApplicationProvider with ChangeNotifier {
 
   Future sendApplication(int id)async {
 
-    var url = Uri.parse("${BaseProvider.baseUrl}/VolunteerTrip?id=$id");
+    var url = Uri.parse("${BaseProvider.baseUrl}/VolunteerTrip/insert?EventId=$id");
 
     var token = await TokenGetter.token;
     if (token == null) {

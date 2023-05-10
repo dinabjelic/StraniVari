@@ -8,7 +8,7 @@ using StraniVari.Services.Interfaces;
 
 namespace StraniVari.API.Controllers
 {
-    public class GamesController : BaseCRUDController<Game, UpSertGameRequest, GetGamesResponse>
+    public class GamesController : BaseCRUDController<Game, UpSertGameRequest, UpSertGameRequest,GetGamesResponse>
     {
         private readonly IGameService _gameService;
 

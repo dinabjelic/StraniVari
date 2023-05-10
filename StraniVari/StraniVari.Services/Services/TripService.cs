@@ -9,7 +9,7 @@ using StraniVari.Services.Interfaces;
 
 namespace StraniVari.Services.Services
 {
-    public class TripService : BaseCrudService<Trip, UpSertTripRequest, GetTripResponse>, ITripService
+    public class TripService : BaseCrudService<Trip, UpSertTripRequest, UpSertTripRequest,GetTripResponse>, ITripService
     {
         private readonly StraniVariDbContext _straniVariDbContext;
         public TripService(StraniVariDbContext straniVariDbContext, IMapper mapper) : base(straniVariDbContext, mapper)
@@ -17,11 +17,11 @@ namespace StraniVari.Services.Services
             _straniVariDbContext = straniVariDbContext;
         }
 
-        public async Task<List<GetTripsDetailsForEvent>> GetById(int id)
+        public async Task<List<GetTripsDetailsForEventResponse>> GetById(int id)
         {
             var tripDetails = await _straniVariDbContext.Trips
                 .Where(x => x.EventId == id)
-                .Select(x => new GetTripsDetailsForEvent
+                .Select(x => new GetTripsDetailsForEventResponse
                 {
                    Id = x.Id,
                    Place = x.Place, 

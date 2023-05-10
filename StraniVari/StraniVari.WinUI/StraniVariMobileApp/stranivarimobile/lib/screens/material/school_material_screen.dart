@@ -10,8 +10,7 @@ class SchoolMaterialScreen extends StatefulWidget {
   const SchoolMaterialScreen({Key? key}) : super(key: key);
 
   @override
-  State<SchoolMaterialScreen> createState() =>
-      _SchoolMaterialScreenState();
+  State<SchoolMaterialScreen> createState() => _SchoolMaterialScreenState();
 }
 
 class _SchoolMaterialScreenState extends State<SchoolMaterialScreen> {
@@ -75,9 +74,9 @@ class _SchoolMaterialScreenState extends State<SchoolMaterialScreen> {
                   ]),
                 ))));
   }
-  
+
   _buildSchoolMaterialList() {
-     if (data.length == 0) {
+    if (data.length == 0) {
       return [
         DataRow(cells: [
           // DataCell(Text("Loading...")),
@@ -92,14 +91,10 @@ class _SchoolMaterialScreenState extends State<SchoolMaterialScreen> {
         .map((x) => DataRow(
               cells: [
                 // DataCell(Text(x["id"]?.toString() ?? "0")),
-                DataCell(
-                    Text(x["materialName"] ?? "",
-                        style: TextStyle(fontSize: 14))
-                        ),
-                        DataCell(
-                    Text(x["quantity"].toString() ?? "",
-                        style: TextStyle(fontSize: 14))
-                        ),
+                DataCell(Text(x["materialName"] ?? "",
+                    style: TextStyle(fontSize: 14))),
+                DataCell(Text(x["quantity"].toString() ?? "",
+                    style: TextStyle(fontSize: 14))),
               ],
             ))
         .toList()

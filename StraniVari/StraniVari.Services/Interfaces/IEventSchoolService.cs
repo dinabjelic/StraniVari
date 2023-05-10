@@ -5,7 +5,7 @@ using StraniVari.Services.Services;
 
 namespace StraniVari.Services.Interfaces
 {
-    public interface IEventSchoolService: I_CrudService<EventSchool, EventSchoolInsertRequest, EventSchoolUpdateRequest, GetSchoolsForEventResponse>
+    public interface IEventSchoolService: ICrudService<EventSchool, EventSchoolInsertRequest, EventSchoolUpdateRequest, GetSchoolsForEventResponse>
     {
         /// <summary>
         /// adding schools to choosen event

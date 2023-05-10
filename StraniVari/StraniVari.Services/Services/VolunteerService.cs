@@ -1,15 +1,17 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using StraniVari.Core.Entities;
 using StraniVari.Core.Helper;
 using StraniVari.Core.Requests;
 using StraniVari.Core.Responses;
 using StraniVari.Database;
+using StraniVari.Services.Base;
 using StraniVari.Services.Interfaces;
 
 namespace StraniVari.Services.Services
 {
-    public class VolunteerService: IVolunteerService
+    public class VolunteerService: BaseCrudService<Volunteer, VolunteerUpSertRequest, VolunteerUpSertRequest, GetVolunteerDetailsResposne>, IVolunteerService
     {
         private readonly StraniVariDbContext _straniVariDbContext;
         private readonly IPasswordHasher<User> _passwordHasher;
@@ -17,14 +19,15 @@ namespace StraniVari.Services.Services
         public VolunteerService
         (
             StraniVariDbContext straniVariDbContext,
+            IMapper mapper,
             IPasswordHasher<User> passwordHasher
-        )
+        ) : base(straniVariDbContext, mapper)
         {
             _straniVariDbContext = straniVariDbContext;
             _passwordHasher = passwordHasher;
         }
 
-        public async Task AddVolunteerAsync(VolunteerUpSertRequest addVolunteerRequest)
+        public async Task Insert(VolunteerUpSertRequest addVolunteerRequest)
         {
             var volunteerInfo = new User
             {
@@ -67,20 +70,7 @@ namespace StraniVari.Services.Services
             await _straniVariDbContext.SaveChangesAsync();
         }
 
-        public async Task DeleteVolunteerAsync(int id)
-        {
-            var volunteer = await _straniVariDbContext.Volunteers.FirstOrDefaultAsync(x => x.Id == id);
-
-            if (volunteer == null)
-            {
-                throw new ArgumentException("Invalid id");
-            }
-
-            _straniVariDbContext.Volunteers.Remove(volunteer);
-            await _straniVariDbContext.SaveChangesAsync();
-        }
-
-        public async Task<GetVolunteerDetailsResposne> GetVolunteerDetailsAsync(int id)
+        public async Task<GetVolunteerDetailsResposne> GetById(int id)
         {
             var volunteerDetails = await _straniVariDbContext.Volunteers
                 .Include(x => x.User)
@@ -99,7 +89,7 @@ namespace StraniVari.Services.Services
             return volunteerDetails;
         }
 
-        public async Task UpdateVolunteerAsync(int id, VolunteerUpSertRequest updateVolunteerRequest)
+        public async Task Update(int id, VolunteerUpSertRequest updateVolunteerRequest)
         {
             if (updateVolunteerRequest == null)
             {
@@ -126,6 +116,7 @@ namespace StraniVari.Services.Services
             volunteerFound.City = updateVolunteerRequest.City;
             volunteerFound.DateOfBirth = updateVolunteerRequest.DateOfBirth;
             volunteerFound.StartDateOfVolunteering = updateVolunteerRequest.StartDateOfVolunteering;
+            volunteerFound.User.UserName = updateVolunteerRequest.Username;
 
             user.UserName = updateVolunteerRequest.Username.ToLower();
             user.NormalizedUserName = user.UserName;
@@ -139,7 +130,7 @@ namespace StraniVari.Services.Services
             await _straniVariDbContext.SaveChangesAsync();
         }
 
-        public async Task<List<GetVolunteerDetailsResposne>> VolunteerListAsync()
+        public async Task<List<GetVolunteerDetailsResposne>> GetAll()
         {
             var volunteerList = await _straniVariDbContext.Volunteers
                 .Include(x => x.User)

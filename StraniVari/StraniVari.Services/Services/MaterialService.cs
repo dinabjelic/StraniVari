@@ -8,7 +8,7 @@ using StraniVari.Services.Interfaces;
 
 namespace StraniVari.Services.Services
 {
-    public class MaterialService: BaseCrudService<Material, MaterialUpsertRequest, GetMaterialDetailsResponse>, IMaterialService
+    public class MaterialService: BaseCrudService<Material, MaterialUpsertRequest, MaterialUpsertRequest,GetMaterialDetailsResponse>, IMaterialService
     {
         public MaterialService(StraniVariDbContext straniVariDbContext,IMapper mapper) : base(straniVariDbContext, mapper)
         {

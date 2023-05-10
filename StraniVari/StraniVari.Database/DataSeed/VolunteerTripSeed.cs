@@ -15,7 +15,7 @@ namespace StraniVari.Database.DataSeed
                 volunteerTrip.Add(new VolunteerTrip
                 {
                     Id = i,
-                    VolunteerId = random.Next(2, 6), 
+                    VolunteerId = random.Next(3, 6), 
                     TripId= 1, 
                     StatusId = 3
                 });

@@ -4,7 +4,7 @@ using StraniVari.Core.Responses;
 
 namespace StraniVari.Services.Interfaces
 {
-    public interface IPlanAndProgrammeService: ICrudService<PlanAndProgramme, UpSertPlanAndProgrammeRequest, GetPlanAndProgrameResposnse>
+    public interface IPlanAndProgrammeService: ICrudService<PlanAndProgramme, UpSertPlanAndProgrammeRequest, UpSertPlanAndProgrammeRequest, GetPlanAndProgrameResposnse>
     {
     }
 }

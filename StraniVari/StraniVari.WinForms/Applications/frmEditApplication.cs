@@ -28,7 +28,7 @@ namespace StraniVari.WinUI.Applications
             comboBox1.DisplayMember = "Status";
             comboBox1.ValueMember = "Id";
             comboBox1.SelectedValue = SelectedVolunteer.StatusId;
-            var tripDetails = await _apiServiceDetails.GetById<List<GetTripsDetailsForEvent>>(SelectedEvent.Id);
+            var tripDetails = await _apiServiceDetails.GetById<List<GetTripsDetailsForEventResponse>>(SelectedEvent.Id);
 
             txtName.Text = SelectedEvent.Name;
             txtTheme.Text = SelectedEvent.StraniVariTheme;
@@ -52,7 +52,7 @@ namespace StraniVari.WinUI.Applications
         private async void btnSave_Click(object sender, EventArgs e)
         {
 
-            var status = new VolunteerTripUpsertRequest
+            var status = new VolunteerTripUpdateRequest
             {
                 StatusId = int.Parse(comboBox1.SelectedValue.ToString())
             };

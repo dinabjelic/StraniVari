@@ -1,43 +1,55 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using StraniVari.Core.Entities;
 using StraniVari.Core.Requests;
 using StraniVari.Core.Responses;
 using StraniVari.Database;
+using StraniVari.Services.Base;
 using StraniVari.Services.Interfaces;
 using System.Security.Claims;
 
+
 namespace StraniVari.Services.Services
 {
-    public class VolunteerTripService : IVolunteerTripService
+    public class VolunteerTripService : BaseCrudService<VolunteerTrip, VolunteerTripInsertRequest, VolunteerTripUpdateRequest, GetTripApplicationsResponse>, IVolunteerTripService
     {
         private readonly StraniVariDbContext _straniVariDbContext;
         private readonly IHttpContextAccessor _httpContextAccessor;
-        public VolunteerTripService(StraniVariDbContext straniVariDbContext, IHttpContextAccessor httpContextAccessor)
+        private readonly UserManager<User> _userManager;
+        public VolunteerTripService(StraniVariDbContext straniVariDbContext, IHttpContextAccessor httpContextAccessor, UserManager<User> userManager, IMapper mapper):base(straniVariDbContext, mapper)
         {
             _straniVariDbContext = straniVariDbContext;
             _httpContextAccessor = httpContextAccessor;
+            _userManager = userManager;
         }
-        public async Task Insert(int tripId)
+        public async Task Insert(VolunteerTripInsertRequest volunteerTripInsertRequest)
         {
-            var userId = _httpContextAccessor.HttpContext.User.FindFirst(x => x.Type == ClaimTypes.NameIdentifier);
-            //bool isRecordExists = await _straniVariDbContext.VolunteerTrip
-            //.AnyAsync(x=>x.VolunteerId == int.Parse(userId.Value) && x.TripId == tripId);
+            var userId = _httpContextAccessor.HttpContext.User.FindFirst(x => x.Type == ClaimTypes.NameIdentifier)?.Value;
+            var user = await _userManager.FindByIdAsync(userId);
+            var roles = await _userManager.GetRolesAsync(user);
 
-            //if (!isRecordExists)
-            //{
-                var newApplication = new VolunteerTrip
+
+            var tripFound = await _straniVariDbContext.Trips.FirstOrDefaultAsync(x => x.EventId == volunteerTripInsertRequest.EventId);
+
+            if(tripFound is not null)
+            {
+                if (!roles.Contains("Administrator"))
                 {
-                    StatusId = 3,
-                    VolunteerId = int.Parse(userId.Value),
-                    TripId = tripId
-                };
-              await _straniVariDbContext.VolunteerTrip.AddAsync(newApplication);
-        //}
-        await _straniVariDbContext.SaveChangesAsync();
+                    var newApplication = new VolunteerTrip
+                    {
+                        StatusId = 3,
+                        VolunteerId = int.Parse(userId),
+                        TripId = tripFound.Id,
+                    };
+                    await _straniVariDbContext.VolunteerTrip.AddAsync(newApplication);
+                    await _straniVariDbContext.SaveChangesAsync();
+                }
+            }
         }
 
-        public async Task<List<GetTripApplicationsResponse>> GetTripApplications(int id)
+        public async Task<List<GetTripApplicationsResponse>> GetById(int id)
         {
             var tripsApplications = await _straniVariDbContext.VolunteerTrip
                 .Where(x => x.Trip.EventId == id)
@@ -52,7 +64,7 @@ namespace StraniVari.Services.Services
 
             return tripsApplications;
         }
-        public async Task UpdateVolunteerDetailsAsync(int id, VolunteerTripUpsertRequest updateApplicationStatus)
+        public async Task Update(int id, VolunteerTripUpdateRequest updateApplicationStatus)
         {
             if (updateApplicationStatus == null)
             {
@@ -72,15 +84,18 @@ namespace StraniVari.Services.Services
             await _straniVariDbContext.SaveChangesAsync();
         }
 
-        public async Task<GetTripsDetailsForEvent> GetTripStatusForLoggedInUser(int id)
+        public async Task<GetTripsDetailsForEventResponse> GetTripStatusForEvent(int id)
         {
-            var status = await _straniVariDbContext.Trips
-                .Where(x=>x.EventId == id)
-                .Select(x => new GetTripsDetailsForEvent
+            var userId = _httpContextAccessor.HttpContext.User.FindFirst(x => x.Type == ClaimTypes.NameIdentifier)?.Value;
+
+            var status = await _straniVariDbContext.VolunteerTrip.
+                Where(x => x.Trip.EventId == id && x.VolunteerId == int.Parse(userId))
+                .Select(x => new GetTripsDetailsForEventResponse
                 {
-                    Place = x.Place,
-                    TripDateTime = x.TripDateTime,
+                    Place = x.Trip.Place,
+                    TripDateTime = x.Trip.TripDateTime,
                     Id = x.Id,
+                    Status = x.Status.Status
                 }).FirstOrDefaultAsync();
 
             return status;

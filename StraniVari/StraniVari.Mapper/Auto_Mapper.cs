@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Identity;
 using StraniVari.Core.Entities;
 using StraniVari.Core.Requests;
 using StraniVari.Core.Responses;
@@ -47,10 +48,12 @@ namespace StraniVari.Mapper
 
             CreateMap<Trip, UpSertTripRequest>().ReverseMap();
             CreateMap<Trip, GetTripResponse>().ReverseMap();
-            CreateMap<Trip, GetTripsDetailsForEvent>().ReverseMap();
+            CreateMap<Trip, GetTripsDetailsForEventResponse>().ReverseMap();
 
             CreateMap<TripStatus, StatusUpSertRequest>().ReverseMap();
             CreateMap<TripStatus, GetStatusResponse>().ReverseMap();
+
+            CreateMap<IdentityUser, User>().ReverseMap();
         }
     }
 }

@@ -28,6 +28,14 @@ namespace StraniVari.Database.DataSeed
                     SchoolId = random.Next(1,4)
                 });
             }
+
+            eventSchools.Add(new EventSchool
+            {
+                Id = 11,
+                SchoolId=2, 
+                EventId=6, 
+                NumberOfChildren=50
+            });
             //eventSchools = eventSchools.DistinctBy(x => new { x.EventId, x.SchoolId }).ToList();
             builder.Entity<EventSchool>().HasData(eventSchools);
         }

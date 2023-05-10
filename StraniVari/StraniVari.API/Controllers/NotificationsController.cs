@@ -5,7 +5,7 @@ using StraniVari.Services.Interfaces;
 
 namespace StraniVari.API.Controllers
 {
-    public class NotificationsController : BaseCRUDController<Notification, UpSertMeetingRequest, GetMeetingsResponse>
+    public class NotificationsController : BaseCRUDController<Notification, UpSertMeetingRequest, UpSertMeetingRequest,GetMeetingsResponse>
     {
         public NotificationsController(INotificationService meetingService):base(meetingService)
         {

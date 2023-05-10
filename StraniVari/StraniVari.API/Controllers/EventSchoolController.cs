@@ -8,7 +8,7 @@ using StraniVari.Services.Interfaces;
 
 namespace StraniVari.API.Controllers
 {
-    public class EventSchoolController : Base_CRUDController<EventSchool, EventSchoolInsertRequest, EventSchoolUpdateRequest, GetSchoolsForEventResponse>
+    public class EventSchoolController : BaseCRUDController<EventSchool, EventSchoolInsertRequest, EventSchoolUpdateRequest, GetSchoolsForEventResponse>
     {
         private readonly IEventSchoolService _eventSchoolService;
         public EventSchoolController(IEventSchoolService eventSchoolService):base(eventSchoolService)
@@ -17,7 +17,6 @@ namespace StraniVari.API.Controllers
         }
 
         [HttpPost]
-        [Authorize(Roles = Role.Administrator)]
         public override async Task<IActionResult> Insert([FromBody] EventSchoolInsertRequest addEventSchoolUpSertRequest)
         {
             await base.Insert(addEventSchoolUpSertRequest);
@@ -25,7 +24,6 @@ namespace StraniVari.API.Controllers
         }
 
         [HttpGet("details")]
-        [Authorize(Roles = Role.Administrator + "," + Role.RegularUser)]
         public override async Task<IActionResult> GetById(int id)
         {
             return Ok(await _eventSchoolService.GetById(id));

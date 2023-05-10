@@ -8,7 +8,7 @@ using StraniVari.Services.Interfaces;
 
 namespace StraniVari.API.Controllers
 {
-    public class SchoolMaterialsController : Base_CRUDController<SchoolMaterial, InsertMaterialToSchoolRequest, UpdateMaterialToSchoolRequest, GetMaterialsForSchoolRequest>
+    public class SchoolMaterialsController : BaseCRUDController<SchoolMaterial, InsertMaterialToSchoolRequest, UpdateMaterialToSchoolRequest, GetMaterialsForSchoolRequest>
     {
         private readonly IMaterialSchoolService _materialSchoolService;
         public SchoolMaterialsController(IMaterialSchoolService materialSchoolService) : base(materialSchoolService)
@@ -17,7 +17,6 @@ namespace StraniVari.API.Controllers
         }
 
         [HttpPost]
-        [Authorize(Roles = Role.Administrator)]
         public override async Task<IActionResult> Insert(InsertMaterialToSchoolRequest insertMaterialToSchoolRequest)
         {
             await base.Insert(insertMaterialToSchoolRequest);
@@ -32,7 +31,6 @@ namespace StraniVari.API.Controllers
         }
 
         [HttpGet("details")]
-        [Authorize(Roles = Role.Administrator + "," + Role.RegularUser)]
         public override async Task<IActionResult> GetById(int id)
         {
             return Ok(await _materialSchoolService.GetById(id));

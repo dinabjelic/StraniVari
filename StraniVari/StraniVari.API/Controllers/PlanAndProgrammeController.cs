@@ -8,7 +8,7 @@ using StraniVari.Services.Interfaces;
 
 namespace StraniVari.API.Controllers
 {
-    public class PlanAndProgrammeController : BaseCRUDController<PlanAndProgramme, UpSertPlanAndProgrammeRequest, GetPlanAndProgrameResposnse>
+    public class PlanAndProgrammeController : BaseCRUDController<PlanAndProgramme, UpSertPlanAndProgrammeRequest, UpSertPlanAndProgrammeRequest, GetPlanAndProgrameResposnse>
     {
 
         public PlanAndProgrammeController(IPlanAndProgrammeService planAndProgrammeService) : base(planAndProgrammeService)

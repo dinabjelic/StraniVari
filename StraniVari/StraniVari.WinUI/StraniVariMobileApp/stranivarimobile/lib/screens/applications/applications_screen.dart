@@ -75,16 +75,11 @@ class _ApplicationScreenState extends State<ApplicationScreen> {
                                   alignment: Alignment.center,
                                   child: Text("Date and time",
                                       style: TextStyle(fontSize: 14)))),
-                              //         DataColumn(
-                              // label: Container(
-                              //     alignment: Alignment.center,
-                              //     child: Text("Status",
-                              //         style: TextStyle(fontSize: 14)))),
-                          DataColumn(
+                                       DataColumn(
                               label: Container(
                                   alignment: Alignment.center,
-                                  child: Text("Action",
-                                      style: TextStyle(fontSize: 14))))
+                                  child: Text("Status",
+                                      style: TextStyle(fontSize: 14)))),
                         ],
                         rows: _loadApplications(),
                       ),
@@ -97,8 +92,6 @@ class _ApplicationScreenState extends State<ApplicationScreen> {
   if (data.isEmpty) {
     return [
       DataRow(cells: [
-        // DataCell(Text("No data...")),
-        // DataCell(Text("No data...")),
         DataCell(Text("No data...")),
         DataCell(Text("No data...")),
         DataCell(Text("No data...")),
@@ -109,9 +102,6 @@ class _ApplicationScreenState extends State<ApplicationScreen> {
   return [
     DataRow(
       cells: [
-        // DataCell(
-        //   Text(data["tripId"]?.toString() ?? "0", style: TextStyle(fontSize: 14)),
-        // ),
         DataCell(
           Text(data["place"] ?? "", style: TextStyle(fontSize: 14)),
         ),
@@ -122,55 +112,8 @@ class _ApplicationScreenState extends State<ApplicationScreen> {
                     style: TextStyle(fontSize: 14),
                   ),
                 ),
-        // DataCell(
-        //   Text(data["status"] ?? "", style: TextStyle(fontSize: 14)),
-        // ),
-        DataCell(
-          ElevatedButton(
-            child: Text(
-              "Send Application",
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 14,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            style: ButtonStyle(
-              backgroundColor: MaterialStateProperty.all<Color>(
-                Color.fromARGB(255, 212, 189, 134),
-              ),
-            ),
-            onPressed: () {
-              showDialog(
-                context: context,
-                builder: (BuildContext context) => AlertDialog(
-                  title: Text("Confirm"),
-                  content: Text(
-                    "Are you sure you want to send an application for the trip?",
-                  ),
-                  actions: [
-                    TextButton(
-                      child: Text("Cancel"),
-                      onPressed: () => Navigator.pop(context),
-                    ),
-                    TextButton(
-                      child: Text("Send Application"),
-                      onPressed: () async {
-                        await Provider.of<SendApplicationProvider>(
-                          context,
-                          listen: false,
-                        ).sendApplication(data["id"]);
-                        Navigator.pop(context);
-                        setState(() {
-                          loadData();
-                        });
-                      },
-                    ),
-                  ],
-                ),
-              );
-            },
-          ),
+                DataCell(
+          Text(data["status"] ?? "", style: TextStyle(fontSize: 14)),
         ),
       ],
     ),

@@ -28,7 +28,7 @@ namespace StraniVari.WinUI.Material
                 if (SelectedMaterial == null)
                 {
                     await _apiService.Insert<ResponseResult>(newMaterial);
-                    MessageBox.Show("Trip successfully added.", "Infomation", MessageBoxButtons.OK);
+                    MessageBox.Show("Material successfully added.", "Infomation", MessageBoxButtons.OK);
                 }
                 else
                 {

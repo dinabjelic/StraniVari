@@ -1,6 +1,6 @@
 ﻿namespace StraniVari.Core.Requests
 {
-    public class VolunteerTripUpsertRequest
+    public class VolunteerTripUpdateRequest
     {
         public int StatusId { get; set; }
     }

@@ -8,7 +8,7 @@ using StraniVari.Services.Interfaces;
 
 namespace StraniVari.API.Controllers
 {
-    public class TripController : BaseCRUDController<Trip, UpSertTripRequest, GetTripResponse>
+    public class TripController : BaseCRUDController<Trip, UpSertTripRequest, UpSertTripRequest, GetTripResponse>
     {
         private readonly ITripService _tripService;
         public TripController(ITripService tripService) : base(tripService)
@@ -17,7 +17,6 @@ namespace StraniVari.API.Controllers
         }
 
         [HttpGet("details")]
-        [Authorize(Roles = Role.Administrator + "," + Role.RegularUser)]
         public override async Task<IActionResult> GetById(int id)
         {
             return Ok(await _tripService.GetById(id));

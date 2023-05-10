@@ -8,7 +8,7 @@ using StraniVari.Services.Interfaces;
 
 namespace StraniVari.API.Controllers
 {
-    public class SchoolVolunteersController : Base_CRUDController<SchoolVolunteer, InsertVolunteerToSchoolRequest, UpdateVolunteerAssignedToSchoolRequest, GetVolunteersForSchoolResponse>
+    public class SchoolVolunteersController : BaseCRUDController<SchoolVolunteer, InsertVolunteerToSchoolRequest, UpdateVolunteerAssignedToSchoolRequest, GetVolunteersForSchoolResponse>
     {
         private readonly ISchoolVolunteerService _schoolVolunteerService;
         public SchoolVolunteersController(ISchoolVolunteerService schoolVolunteerService):base(schoolVolunteerService)
@@ -17,7 +17,6 @@ namespace StraniVari.API.Controllers
         }
 
         [HttpPost]
-        [Authorize(Roles = Role.Administrator)]
         public override async Task<IActionResult> Insert(InsertVolunteerToSchoolRequest insertVolunteerToSchoolRequest)
         {
             await base.Insert(insertVolunteerToSchoolRequest);
@@ -25,7 +24,6 @@ namespace StraniVari.API.Controllers
         }
 
         [HttpGet("details")]
-        [Authorize(Roles = Role.Administrator + "," + Role.RegularUser)]
         public override async Task<IActionResult> GetById(int id)
         {
             return Ok(await _schoolVolunteerService.GetById(id));

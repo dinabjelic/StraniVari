@@ -8,7 +8,7 @@ using StraniVari.Services.Interfaces;
 
 namespace StraniVari.Services.Services
 {
-    public class NotificationService : BaseCrudService<Notification, UpSertMeetingRequest, GetMeetingsResponse>, INotificationService
+    public class NotificationService : BaseCrudService<Notification, UpSertMeetingRequest, UpSertMeetingRequest,GetMeetingsResponse>, INotificationService
     {
 
         public NotificationService(StraniVariDbContext straniVariDbContext, IMapper mapper) : base(straniVariDbContext, mapper)

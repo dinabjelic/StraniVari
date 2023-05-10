@@ -23,7 +23,7 @@ class ApplicationProvider with ChangeNotifier {
       throw Exception("Token not found");
     }
 
-    var url = Uri.parse("${BaseProvider.baseUrl}/VolunteerTrip/details?id="+ IdGetter.Id.toString());
+    var url = Uri.parse("${BaseProvider.baseUrl}/VolunteerTrip/trip-status-for-event?id="+ IdGetter.Id.toString());
 
     var response = await http!.get(url, headers: {
       "Authorization": "Bearer $token",

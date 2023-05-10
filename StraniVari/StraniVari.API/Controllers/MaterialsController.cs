@@ -5,7 +5,7 @@ using StraniVari.Services.Interfaces;
 
 namespace StraniVari.API.Controllers
 {
-    public class MaterialsController : BaseCRUDController<Material, MaterialUpsertRequest, GetMaterialDetailsResponse>
+    public class MaterialsController : BaseCRUDController<Material, MaterialUpsertRequest, MaterialUpsertRequest,GetMaterialDetailsResponse>
     {
         public MaterialsController(IMaterialService materialService):base(materialService)
         {
