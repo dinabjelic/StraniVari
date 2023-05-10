@@ -33,18 +33,25 @@ namespace StraniVari.Services.Services
 
             var tripFound = await _straniVariDbContext.Trips.FirstOrDefaultAsync(x => x.EventId == volunteerTripInsertRequest.EventId);
 
-            if(tripFound is not null)
+            var volunteerExists = await _straniVariDbContext.VolunteerTrip
+                .AnyAsync(x => x.VolunteerId == int.Parse(userId) && 
+                x.TripId == tripFound.Id);
+
+            if (!volunteerExists)
             {
-                if (!roles.Contains("Administrator"))
+                if (tripFound is not null)
                 {
-                    var newApplication = new VolunteerTrip
+                    if (!roles.Contains("Administrator"))
                     {
-                        StatusId = 3,
-                        VolunteerId = int.Parse(userId),
-                        TripId = tripFound.Id,
-                    };
-                    await _straniVariDbContext.VolunteerTrip.AddAsync(newApplication);
-                    await _straniVariDbContext.SaveChangesAsync();
+                        var newApplication = new VolunteerTrip
+                        {
+                            StatusId = 3,
+                            VolunteerId = int.Parse(userId),
+                            TripId = tripFound.Id,
+                        };
+                        await _straniVariDbContext.VolunteerTrip.AddAsync(newApplication);
+                        await _straniVariDbContext.SaveChangesAsync();
+                    }
                 }
             }
         }
