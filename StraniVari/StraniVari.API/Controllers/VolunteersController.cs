@@ -10,10 +10,8 @@ namespace StraniVari.API.Controllers
 {
     public class VolunteersController : BaseCRUDController<Volunteer, VolunteerUpSertRequest, VolunteerUpSertRequest, GetVolunteerDetailsResposne>
     {
-        private readonly IVolunteerService _volunteerService;
         public VolunteersController(IVolunteerService volunteerService):base(volunteerService)
         {
-            _volunteerService = volunteerService;
         }
     }
 }
