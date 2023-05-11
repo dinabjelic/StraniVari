@@ -7,6 +7,8 @@ namespace StraniVari.WinUI.Notifications
     public partial class frmAllNotifications : Form
     {
         private readonly ApiService _apiService = new ApiService("Notifications");
+        private readonly ApiService _apiServiceGet = new ApiService("Notifications/notifications");
+
         public EventUpsertRequest SelectedEvent { get; }
         public frmAllNotifications(EventUpsertRequest selectedEvent=null)
         {
@@ -16,7 +18,7 @@ namespace StraniVari.WinUI.Notifications
         public async void frmAllNotifications_Load(object sender, EventArgs e)
         {
             dgvNotifications.AutoGenerateColumns = false;
-            var result = await _apiService.GetById<List<GetMeetingsResponse>>(SelectedEvent.Id);
+            var result = await _apiServiceGet.GetById<List<GetMeetingsResponse>>(SelectedEvent.Id);
             dgvNotifications.DataSource = result;
 
             txtName.Text = SelectedEvent.Name;

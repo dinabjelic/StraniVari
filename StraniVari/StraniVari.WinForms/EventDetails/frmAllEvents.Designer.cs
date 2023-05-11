@@ -31,6 +31,11 @@
             this.btnAddEvent = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvEvents = new System.Windows.Forms.DataGridView();
+            this.btnMaterials = new System.Windows.Forms.Button();
+            this.btnVolunteers = new System.Windows.Forms.Button();
+            this.btnSchools = new System.Windows.Forms.Button();
+            this.btnGames = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EventName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StraniVariTheme = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,10 +46,7 @@
             this.btnAddSchool = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnNotification = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dataGridViewButtonColumn1 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.btnMaterials = new System.Windows.Forms.Button();
-            this.btnVolunteers = new System.Windows.Forms.Button();
-            this.btnSchools = new System.Windows.Forms.Button();
-            this.btnGames = new System.Windows.Forms.Button();
+            this.Applications = new System.Windows.Forms.DataGridViewButtonColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEvents)).BeginInit();
             this.SuspendLayout();
@@ -52,9 +54,10 @@
             // btnAddEvent
             // 
             this.btnAddEvent.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddEvent.Location = new System.Drawing.Point(1055, 79);
+            this.btnAddEvent.Location = new System.Drawing.Point(1319, 99);
+            this.btnAddEvent.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddEvent.Name = "btnAddEvent";
-            this.btnAddEvent.Size = new System.Drawing.Size(181, 29);
+            this.btnAddEvent.Size = new System.Drawing.Size(226, 36);
             this.btnAddEvent.TabIndex = 3;
             this.btnAddEvent.Text = "Add new event";
             this.btnAddEvent.UseVisualStyleBackColor = true;
@@ -63,11 +66,11 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dgvEvents);
-            this.groupBox1.Location = new System.Drawing.Point(12, 105);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox1.Location = new System.Drawing.Point(15, 131);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox1.Size = new System.Drawing.Size(1230, 329);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox1.Size = new System.Drawing.Size(1538, 411);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "EVENTS";
@@ -87,19 +90,80 @@
             this.btnEdit,
             this.btnAddSchool,
             this.btnNotification,
-            this.dataGridViewButtonColumn1});
+            this.dataGridViewButtonColumn1,
+            this.Applications});
             this.dgvEvents.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dgvEvents.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvEvents.Location = new System.Drawing.Point(3, 24);
-            this.dgvEvents.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dgvEvents.Location = new System.Drawing.Point(4, 29);
+            this.dgvEvents.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgvEvents.Name = "dgvEvents";
             this.dgvEvents.ReadOnly = true;
             this.dgvEvents.RowHeadersWidth = 51;
             this.dgvEvents.RowTemplate.Height = 24;
             this.dgvEvents.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEvents.Size = new System.Drawing.Size(1224, 301);
+            this.dgvEvents.Size = new System.Drawing.Size(1530, 377);
             this.dgvEvents.TabIndex = 0;
             this.dgvEvents.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEvents_CellContentClick);
+            // 
+            // btnMaterials
+            // 
+            this.btnMaterials.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMaterials.Location = new System.Drawing.Point(19, 15);
+            this.btnMaterials.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMaterials.Name = "btnMaterials";
+            this.btnMaterials.Size = new System.Drawing.Size(131, 36);
+            this.btnMaterials.TabIndex = 4;
+            this.btnMaterials.Text = "Materials";
+            this.btnMaterials.UseVisualStyleBackColor = true;
+            this.btnMaterials.Click += new System.EventHandler(this.btnMaterials_Click);
+            // 
+            // btnVolunteers
+            // 
+            this.btnVolunteers.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVolunteers.Location = new System.Drawing.Point(145, 15);
+            this.btnVolunteers.Margin = new System.Windows.Forms.Padding(4);
+            this.btnVolunteers.Name = "btnVolunteers";
+            this.btnVolunteers.Size = new System.Drawing.Size(130, 36);
+            this.btnVolunteers.TabIndex = 5;
+            this.btnVolunteers.Text = "Volunteers";
+            this.btnVolunteers.UseVisualStyleBackColor = true;
+            this.btnVolunteers.Click += new System.EventHandler(this.btnVolunteers_Click);
+            // 
+            // btnSchools
+            // 
+            this.btnSchools.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSchools.Location = new System.Drawing.Point(268, 15);
+            this.btnSchools.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSchools.Name = "btnSchools";
+            this.btnSchools.Size = new System.Drawing.Size(124, 36);
+            this.btnSchools.TabIndex = 6;
+            this.btnSchools.Text = "Schools";
+            this.btnSchools.UseVisualStyleBackColor = true;
+            this.btnSchools.Click += new System.EventHandler(this.btnSchools_Click);
+            // 
+            // btnGames
+            // 
+            this.btnGames.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGames.Location = new System.Drawing.Point(386, 15);
+            this.btnGames.Margin = new System.Windows.Forms.Padding(4);
+            this.btnGames.Name = "btnGames";
+            this.btnGames.Size = new System.Drawing.Size(130, 36);
+            this.btnGames.TabIndex = 7;
+            this.btnGames.Text = "Games";
+            this.btnGames.UseVisualStyleBackColor = true;
+            this.btnGames.Click += new System.EventHandler(this.btnGames_Click);
+            // 
+            // button1
+            // 
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.Location = new System.Drawing.Point(514, 15);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(130, 36);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Trips";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Id
             // 
@@ -202,61 +266,32 @@
             this.dataGridViewButtonColumn1.UseColumnTextForButtonValue = true;
             this.dataGridViewButtonColumn1.Width = 170;
             // 
-            // btnMaterials
+            // Applications
             // 
-            this.btnMaterials.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMaterials.Location = new System.Drawing.Point(15, 12);
-            this.btnMaterials.Name = "btnMaterials";
-            this.btnMaterials.Size = new System.Drawing.Size(105, 29);
-            this.btnMaterials.TabIndex = 4;
-            this.btnMaterials.Text = "Materials";
-            this.btnMaterials.UseVisualStyleBackColor = true;
-            this.btnMaterials.Click += new System.EventHandler(this.btnMaterials_Click);
-            // 
-            // btnVolunteers
-            // 
-            this.btnVolunteers.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnVolunteers.Location = new System.Drawing.Point(116, 12);
-            this.btnVolunteers.Name = "btnVolunteers";
-            this.btnVolunteers.Size = new System.Drawing.Size(104, 29);
-            this.btnVolunteers.TabIndex = 5;
-            this.btnVolunteers.Text = "Volunteers";
-            this.btnVolunteers.UseVisualStyleBackColor = true;
-            this.btnVolunteers.Click += new System.EventHandler(this.btnVolunteers_Click);
-            // 
-            // btnSchools
-            // 
-            this.btnSchools.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSchools.Location = new System.Drawing.Point(214, 12);
-            this.btnSchools.Name = "btnSchools";
-            this.btnSchools.Size = new System.Drawing.Size(99, 29);
-            this.btnSchools.TabIndex = 6;
-            this.btnSchools.Text = "Schools";
-            this.btnSchools.UseVisualStyleBackColor = true;
-            this.btnSchools.Click += new System.EventHandler(this.btnSchools_Click);
-            // 
-            // btnGames
-            // 
-            this.btnGames.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGames.Location = new System.Drawing.Point(309, 12);
-            this.btnGames.Name = "btnGames";
-            this.btnGames.Size = new System.Drawing.Size(104, 29);
-            this.btnGames.TabIndex = 7;
-            this.btnGames.Text = "Games";
-            this.btnGames.UseVisualStyleBackColor = true;
-            this.btnGames.Click += new System.EventHandler(this.btnGames_Click);
+            this.Applications.HeaderText = "Action";
+            this.Applications.MinimumWidth = 8;
+            this.Applications.Name = "Applications";
+            this.Applications.ReadOnly = true;
+            this.Applications.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Applications.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Applications.Text = "Applications";
+            this.Applications.ToolTipText = "Applications";
+            this.Applications.UseColumnTextForButtonValue = true;
+            this.Applications.Width = 150;
             // 
             // frmAllEvents
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1259, 447);
+            this.ClientSize = new System.Drawing.Size(1574, 559);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnGames);
             this.Controls.Add(this.btnSchools);
             this.Controls.Add(this.btnVolunteers);
             this.Controls.Add(this.btnMaterials);
             this.Controls.Add(this.btnAddEvent);
             this.Controls.Add(this.groupBox1);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmAllEvents";
             this.Text = "frmAllEvents";
             this.Load += new System.EventHandler(this.frmAllEvents_Load);
@@ -275,6 +310,7 @@
         private Button btnVolunteers;
         private Button btnSchools;
         private Button btnGames;
+        private Button button1;
         private DataGridViewTextBoxColumn Id;
         private DataGridViewTextBoxColumn EventName;
         private DataGridViewTextBoxColumn StraniVariTheme;
@@ -285,5 +321,6 @@
         private DataGridViewButtonColumn btnAddSchool;
         private DataGridViewButtonColumn btnNotification;
         private DataGridViewButtonColumn dataGridViewButtonColumn1;
+        private DataGridViewButtonColumn Applications;
     }
 }

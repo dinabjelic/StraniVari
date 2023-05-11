@@ -1,8 +1,6 @@
 ﻿using AutoMapper;
-using Microsoft.EntityFrameworkCore;
 using StraniVari.Database;
 using StraniVari.Services.Interfaces;
-using System.Data.Entity;
 
 namespace StraniVari.Services.Services
 {
@@ -19,14 +17,14 @@ namespace StraniVari.Services.Services
 
         }
 
-        public async Task<List<TGet>> GetAll()
+        public virtual async Task<List<TGet>> GetAll()
         {
             var entity = _straniVariDbContext.Set<T>();
             var list = entity.ToList();
             return _mapper.Map<List<TGet>>(list);
         }
 
-        public async Task<TGet> GetById(int id)
+        public virtual async Task<TGet> GetById(int id)
         {
             var set = _straniVariDbContext.Set<T>();
             var entity = set.Find(id);

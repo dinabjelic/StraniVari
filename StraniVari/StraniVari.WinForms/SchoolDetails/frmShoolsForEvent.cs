@@ -8,6 +8,8 @@ namespace StraniVari.WinUI.SchoolDetails
     {
         ApiService _apiService = new ApiService("Schools");
         ApiService _apiServiceEventSchool = new ApiService("EventSchool");
+        private readonly ApiService _apiServiceDetails = new ApiService("EventSchool/details");
+
         public EventUpsertRequest _selectedEvent { get; }
         List<GetSchoolDetailsResponse> schools = new List<GetSchoolDetailsResponse>();
         public frmShoolsForEvent(EventUpsertRequest selectedEvent = null)
@@ -41,7 +43,7 @@ namespace StraniVari.WinUI.SchoolDetails
 
         private async void btnAddSchoolToEvent_Click(object sender, EventArgs e)
         {
-            var schoolsForEvent = await _apiServiceEventSchool.GetById<List<GetSchoolsForEventResponse>>(_selectedEvent.Id);
+            var schoolsForEvent = await _apiServiceDetails.GetById<List<GetSchoolsForEventResponse>>(_selectedEvent.Id);
 
             var straniVariEvent = new EventSchoolInsertRequest
             {

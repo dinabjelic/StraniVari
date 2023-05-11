@@ -5,6 +5,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:http/io_client.dart';
 import 'package:provider/provider.dart';
+import 'package:stranivarimobile/providers/applications_provider.dart';
 import 'package:stranivarimobile/providers/base_provider.dart';
 import 'package:stranivarimobile/providers/event_notifications_provider.dart';
 import 'package:stranivarimobile/providers/event_plan_and_programme_provider.dart';
@@ -13,6 +14,8 @@ import 'package:stranivarimobile/providers/event_schools_provider.dart';
 import 'package:stranivarimobile/providers/games_provider.dart';
 import 'package:stranivarimobile/providers/school_material_provider.dart';
 import 'package:stranivarimobile/providers/school_volunteers_provider.dart';
+import 'package:stranivarimobile/providers/send_application_provider.dart';
+import 'package:stranivarimobile/screens/applications/applications_screen.dart';
 import 'package:stranivarimobile/screens/events/events_list_screen.dart';
 import 'package:stranivarimobile/screens/games/games_screen.dart';
 import 'package:stranivarimobile/screens/material/school_material_screen.dart';
@@ -31,42 +34,29 @@ void main() => runApp(MultiProvider(
         ChangeNotifierProvider(create: (_) => SchoolMaterialProvider()),
         ChangeNotifierProvider(create: (_) => SchoolVolunteersProvider()),
         ChangeNotifierProvider(create: (_) => GamesProvider()),
-        ],
+        ChangeNotifierProvider(create: (_) => ApplicationProvider()),
+        ChangeNotifierProvider(create: (_) => SendApplicationProvider()),
+      ],
       child: MaterialApp(
         debugShowCheckedModeBanner: true,
         home: HomePage(),
         routes: {
           EventListScreen.routeName: (context) => EventListScreen(),
-          EventSchoolScreen.eventschoolrouteName:(context) => EventSchoolScreen(),
-          EventNotificationsScreen.eventnotificationsrouteName:(context) => EventNotificationsScreen(),
-          EventPlanAndProgrammeScreen.eventplandandprogrammerouteName:(context) => EventPlanAndProgrammeScreen(),
-          SchoolMaterialScreen.schoolmaterialrouteName:(context) => SchoolMaterialScreen(),
-          SchoolVolunteersScreen.schoolvolunteersroutename:(context) => SchoolVolunteersScreen(),
-          GamesScreen.gamesrouteName:(context) => GamesScreen(),
+          EventSchoolScreen.eventschoolrouteName: (context) =>
+              EventSchoolScreen(),
+          EventNotificationsScreen.eventnotificationsrouteName: (context) =>
+              EventNotificationsScreen(),
+          EventPlanAndProgrammeScreen.eventplandandprogrammerouteName:
+              (context) => EventPlanAndProgrammeScreen(),
+          SchoolMaterialScreen.schoolmaterialrouteName: (context) =>
+              SchoolMaterialScreen(),
+          SchoolVolunteersScreen.schoolvolunteersroutename: (context) =>
+              SchoolVolunteersScreen(),
+          GamesScreen.gamesrouteName: (context) => GamesScreen(),
+          ApplicationScreen.applicationRouteName: (context) =>
+              ApplicationScreen(),
         },
-        onGenerateRoute: (settings) {
-          // if (settings.name == EventListScreen.routeName) {
-          //   return MaterialPageRoute(builder: ((context) => EventListScreen()));
-          // }
-          // else if(settings.name == EventSchoolScreen.eventschoolrouteName){
-          //   return MaterialPageRoute(builder: ((context) => EventSchoolScreen()));
-          // }
-          //  else if(settings.name == EventNotificationsScreen.eventnotificationsrouteName){
-          //   return MaterialPageRoute(builder: ((context) => EventNotificationsScreen()));
-          // }
-          //   else if(settings.name == EventPlanAndProgrammeScreen.eventplandandprogrammerouteName){
-          //   return MaterialPageRoute(builder: ((context) => EventPlanAndProgrammeScreen()));
-          // }
-          // else if(settings.name == SchoolMaterialScreen.schoolmaterialrouteName){
-          //   return MaterialPageRoute(builder: ((context) => SchoolMaterialScreen()));
-          // }
-          //  else if(settings.name == SchoolVolunteersScreen.schoolvolunteersroutename){
-          //   return MaterialPageRoute(builder: ((context) => SchoolVolunteersScreen()));
-          // }
-          // else if(settings.name == GamesScreen.gamesrouteName){
-          //   return MaterialPageRoute(builder: (((context) => GamesScreen())));
-          // }
-        },
+        onGenerateRoute: (settings) {},
       ),
     ));
 
@@ -133,7 +123,7 @@ class HomePage extends StatelessWidget {
                                 hintText: "Password",
                                 hintStyle: TextStyle(
                                     fontSize: 12, color: Colors.grey)),
-                          obscureText: true,
+                            obscureText: true,
                           ),
                         ),
                         Container(
@@ -166,17 +156,16 @@ class HomePage extends StatelessWidget {
   Future<GetUserResponse> login(
       BuildContext context, String username, String password) async {
     try {
-        final ioc = new HttpClient();
-        ioc.badCertificateCallback =
-            (X509Certificate cert, String host, int port) => true;
-        final http = new IOClient(ioc);
+      final ioc = new HttpClient();
+      ioc.badCertificateCallback =
+          (X509Certificate cert, String host, int port) => true;
+      final http = new IOClient(ioc);
 
-        final response = await http.post(
-        Uri.parse("${BaseProvider.baseUrl}/Autentication/login"),
-        headers: {'Content-Type': 'application/json'},
-        body:jsonEncode({"Username": username, "Password": password})
-      );
-      
+      final response = await http.post(
+          Uri.parse("${BaseProvider.baseUrl}/Autentication/login"),
+          headers: {'Content-Type': 'application/json'},
+          body: jsonEncode({"Username": username, "Password": password}));
+
       if (response.statusCode == 401) {
         throw Exception('Invalid credentials');
       }
@@ -202,7 +191,8 @@ class HomePage extends StatelessWidget {
                   )
                 ],
               ));
-              return new Future<GetUserResponse>.value(new GetUserResponse(username: '', token: ''));
+      return new Future<GetUserResponse>.value(
+          new GetUserResponse(username: '', token: ''));
     }
   }
 }

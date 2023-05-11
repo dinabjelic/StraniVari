@@ -9,7 +9,7 @@ using StraniVari.Services.Interfaces;
 
 namespace StraniVari.Services.Services
 {
-    public class EventService : BaseCrudService<Event, EventUpsertRequestMapp, GetEventDetailsResponse>, IEventService
+    public class EventService : BaseCrudService<Event, EventUpsertRequestMapp, EventUpsertRequestMapp, GetEventDetailsResponse>, IEventService
     {
         private readonly StraniVariDbContext _straniVariDbContext;
         public EventService(StraniVariDbContext straniVariDbContext, IMapper mapper):base(straniVariDbContext, mapper)
@@ -48,6 +48,22 @@ namespace StraniVari.Services.Services
             }).ToListAsync();
 
             return result;
+        }
+
+        public async Task<GetEventDetailsResponse> GetLastAddedEvent()
+        {
+            var lastAdded = await _straniVariDbContext.Events
+                .OrderBy(x => x.StartDate.Year).
+                Select(x => new GetEventDetailsResponse
+                {
+                    Id = x.Id,
+                    StartDate = x.StartDate,
+                    EndDate = x.EndDate,
+                    Name = x.Name,
+                    StraniVariTheme = x.StraniVariTheme
+                }).LastOrDefaultAsync();
+
+            return lastAdded;
         }
     }
 }

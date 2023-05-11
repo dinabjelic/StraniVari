@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Identity;
 using StraniVari.Core.Entities;
 using StraniVari.Core.Requests;
 using StraniVari.Core.Responses;
@@ -30,6 +31,29 @@ namespace StraniVari.Mapper
 
             CreateMap<Volunteer, VolunteerUpSertRequest>().ReverseMap();
             CreateMap<Volunteer, GetVolunteerDetailsResposne>().ReverseMap();
+
+            CreateMap<SchoolMaterial, UpdateMaterialToSchoolRequest>().ReverseMap();
+            CreateMap<SchoolMaterial, GetMaterialsForSchoolRequest>().ReverseMap();
+            CreateMap<SchoolMaterial, InsertMaterialToSchoolRequest>().ReverseMap();
+
+
+            CreateMap<EventSchool, EventSchoolUpdateRequest>().ReverseMap();
+            CreateMap<EventSchool, GetSchoolsForEventResponse>().ReverseMap();
+            CreateMap<EventSchool, EventSchoolInsertRequest>().ReverseMap();
+            CreateMap<EventSchool, EventSchoolUpdateRequestMapp>().ReverseMap();
+
+
+            CreateMap<SchoolVolunteer, UpdateVolunteerAssignedToSchoolRequest>().ReverseMap();
+            CreateMap<SchoolVolunteer, GetVolunteersForSchoolResponse>().ReverseMap();
+
+            CreateMap<Trip, UpSertTripRequest>().ReverseMap();
+            CreateMap<Trip, GetTripResponse>().ReverseMap();
+            CreateMap<Trip, GetTripsDetailsForEventResponse>().ReverseMap();
+
+            CreateMap<TripStatus, StatusUpSertRequest>().ReverseMap();
+            CreateMap<TripStatus, GetStatusResponse>().ReverseMap();
+
+            CreateMap<VolunteerTrip, VolunteerTripUpdateRequest>().ReverseMap();
         }
     }
 }

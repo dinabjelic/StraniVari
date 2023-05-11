@@ -34,7 +34,7 @@ namespace StraniVari.API
             app.UseSwagger();
             app.UseSwaggerUI();
 
-            
+
             app.UseRouting();
             app.UseAuthentication();
 

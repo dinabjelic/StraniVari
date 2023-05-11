@@ -6,11 +6,11 @@ import '../../providers/games_provider.dart';
 
 class GamesScreen extends StatefulWidget {
   static const String gamesrouteName = '/games';
+
   const GamesScreen({Key? key}) : super(key: key);
 
   @override
-  State<GamesScreen> createState() =>
-      _GamesScreenState();
+  State<GamesScreen> createState() => _GamesScreenState();
 }
 
 class _GamesScreenState extends State<GamesScreen> {
@@ -28,9 +28,10 @@ class _GamesScreenState extends State<GamesScreen> {
     var tmpData = await _schoolmaterialProvider?.get(null);
     setState(() {
       data = tmpData;
-    });}
+    });
+  }
 
-@override
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
@@ -71,9 +72,8 @@ class _GamesScreenState extends State<GamesScreen> {
                 ))));
   }
 
-  
-  List<DataRow> _loadGames(){
-     if (data.length == 0) {
+  List<DataRow> _loadGames() {
+    if (data.length == 0) {
       return [
         DataRow(cells: [
           DataCell(Text("No data...")),
@@ -84,10 +84,7 @@ class _GamesScreenState extends State<GamesScreen> {
         .map((x) => DataRow(
               cells: [
                 // DataCell(Text(x["id"]?.toString() ?? "0")),
-                DataCell(
-                    Text(x["name"] ?? "",
-                        style: TextStyle(fontSize: 14))
-                        ),
+                DataCell(Text(x["name"] ?? "", style: TextStyle(fontSize: 14))),
               ],
             ))
         .toList()

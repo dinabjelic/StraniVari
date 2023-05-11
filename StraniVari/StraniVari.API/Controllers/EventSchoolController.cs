@@ -8,7 +8,7 @@ using StraniVari.Services.Interfaces;
 
 namespace StraniVari.API.Controllers
 {
-    public class EventSchoolController : BaseCRUDController<EventSchool, EventSchoolUpdateRequest, GetEventSchoolDetailsResponse>
+    public class EventSchoolController : BaseCRUDController<EventSchool, EventSchoolInsertRequest, EventSchoolUpdateRequest, GetSchoolsForEventResponse>
     {
         private readonly IEventSchoolService _eventSchoolService;
         public EventSchoolController(IEventSchoolService eventSchoolService):base(eventSchoolService)
@@ -17,41 +17,16 @@ namespace StraniVari.API.Controllers
         }
 
         [HttpPost]
-        [Authorize(Roles = Role.Administrator)]
-        public async Task<IActionResult> AddSchoolToEvent(EventSchoolInsertRequest addEventSchoolUpSertRequest)
+        public override async Task<IActionResult> Insert([FromBody] EventSchoolInsertRequest addEventSchoolUpSertRequest)
         {
-            await _eventSchoolService.AddSchoolToEventAsync(addEventSchoolUpSertRequest);
+            await base.Insert(addEventSchoolUpSertRequest);
             return Ok(new ResponseResult { Message = "You succeeded" });
         }
 
-        [HttpGet]
-        [Authorize(Roles = Role.Administrator + "," + Role.RegularUser)]
-        public async Task<IActionResult> SchoolsForEventList(int id)
+        [HttpGet("details")]
+        public override async Task<IActionResult> GetById(int id)
         {
-            return Ok(await _eventSchoolService.SchoolsForEventListAsync(id));
+            return Ok(await _eventSchoolService.GetById(id));
         }
-
-        //[HttpGet("School-Event-details")]
-        //[Authorize(Roles = Role.Administrator + "," + Role.RegularUser)]
-        //public async Task<IActionResult> EventSchoolDetails(int id)
-        //{
-        //    return Ok(await _eventSchoolService.EventSchoolDetailsAsync(id));
-        //}
-
-        //[HttpPut]
-        //[Authorize(Roles = Role.Administrator)]
-        //public async Task<IActionResult> UpdateSchoolForEvent(EventSchoolUpdateRequest eventSchoolUpdateRequest)
-        //{
-        //    await _eventSchoolService.UpdateSchoolForEventAsync(eventSchoolUpdateRequest);
-        //    return Ok(new ResponseResult { Message = "You succeeded" });
-        //}
-
-        //[HttpDelete]
-        //[Authorize(Roles = Role.Administrator)]
-        //public async Task<IActionResult> DeleteSchoolForEvent(int id)
-        //{
-        //    await _eventSchoolService.DeleteSchoolForEventAsync(id);
-        //    return Ok(new ResponseResult { Message = "You succeeded" });
-        //}
     }
 }

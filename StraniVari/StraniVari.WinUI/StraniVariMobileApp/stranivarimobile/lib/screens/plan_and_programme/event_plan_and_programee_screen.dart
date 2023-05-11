@@ -115,9 +115,7 @@ class _EventPlanAndProgrammeScreenState
                   ),
                 ),
                 DataCell(
-                    Text(x["activity"] ?? "",
-                        style: TextStyle(fontSize: 14))
-                        ),
+                    Text(x["activity"] ?? "", style: TextStyle(fontSize: 14))),
               ],
             ))
         .toList()

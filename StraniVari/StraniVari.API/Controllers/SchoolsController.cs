@@ -5,7 +5,7 @@ using StraniVari.Services.Interfaces;
 
 namespace StraniVari.API.Controllers
 {
-    public class SchoolsController : BaseCRUDController<School, SchoolUpsertRequest, GetSchoolDetailsResponse>
+    public class SchoolsController : BaseCRUDController<School, SchoolUpsertRequest, SchoolUpsertRequest, GetSchoolDetailsResponse>
     {
         public SchoolsController(ISchoolService schoolService):base(schoolService)
         {

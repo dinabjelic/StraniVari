@@ -5,12 +5,11 @@ import 'package:provider/provider.dart';
 import 'package:stranivarimobile/providers/school_volunteers_provider.dart';
 
 class SchoolVolunteersScreen extends StatefulWidget {
- static const String schoolvolunteersroutename = '/schoolVolunteers';
+  static const String schoolvolunteersroutename = '/schoolVolunteers';
   const SchoolVolunteersScreen({Key? key}) : super(key: key);
 
   @override
-  State<SchoolVolunteersScreen> createState() =>
-      _SchoolVolunteersScreenState();
+  State<SchoolVolunteersScreen> createState() => _SchoolVolunteersScreenState();
 }
 
 class _SchoolVolunteersScreenState extends State<SchoolVolunteersScreen> {
@@ -30,7 +29,7 @@ class _SchoolVolunteersScreenState extends State<SchoolVolunteersScreen> {
     });
   }
 
-@override
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
@@ -109,22 +108,22 @@ class _SchoolVolunteersScreenState extends State<SchoolVolunteersScreen> {
               cells: [
                 // DataCell(Text(x["schoolId"]?.toString() ?? "0")),
                 DataCell(
-                    Text(x["firstName"] ?? "",
-                        style: TextStyle(fontSize: 14))),
+                    Text(x["firstName"] ?? "", style: TextStyle(fontSize: 14))),
                 DataCell(
-                    Text(x["lastName"] ?? "",
-                        style: TextStyle(fontSize: 14))),
-                DataCell(Text(x["address"] ?? "",
-                        style: TextStyle(fontSize: 14))),
+                    Text(x["lastName"] ?? "", style: TextStyle(fontSize: 14))),
                 DataCell(
-                        Text(x["city"] ?? "", style: TextStyle(fontSize: 14))),
-                DataCell(Text(bool.fromEnvironment("transportNeeded", defaultValue: x["transportNeeded"] ?? false) ? "Yes" : "No", style: TextStyle(fontSize: 14)))
+                    Text(x["address"] ?? "", style: TextStyle(fontSize: 14))),
+                DataCell(Text(x["city"] ?? "", style: TextStyle(fontSize: 14))),
+                DataCell(Text(
+                    bool.fromEnvironment("transportNeeded",
+                            defaultValue: x["transportNeeded"] ?? false)
+                        ? "Yes"
+                        : "No",
+                    style: TextStyle(fontSize: 14)))
               ],
             ))
         .toList()
         .cast<DataRow>();
     return list;
   }
-
-
 }

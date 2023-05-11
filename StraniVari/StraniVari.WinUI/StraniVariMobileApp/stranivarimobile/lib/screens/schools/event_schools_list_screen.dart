@@ -79,7 +79,7 @@ class _EventSchoolScreenState extends State<EventSchoolScreen> {
                               label: Container(
                                   alignment: Alignment.center,
                                   child: Text("Action",
-                                      style: TextStyle(fontSize: 14)))), 
+                                      style: TextStyle(fontSize: 14)))),
                           DataColumn(
                               label: Container(
                                   alignment: Alignment.center,
@@ -137,8 +137,8 @@ class _EventSchoolScreenState extends State<EventSchoolScreen> {
                           fontWeight: FontWeight.bold)),
                   onPressed: () {
                     SchoolIdGetter.Id = x["schoolEventId"];
-                    Navigator.pushNamed(
-                        context, SchoolVolunteersScreen.schoolvolunteersroutename,
+                    Navigator.pushNamed(context,
+                        SchoolVolunteersScreen.schoolvolunteersroutename,
                         arguments: SchoolIdGetter.Id);
                   },
                 )),

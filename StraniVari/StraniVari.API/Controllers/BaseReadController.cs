@@ -17,14 +17,14 @@ namespace StraniVari.API.Controllers
 
         [HttpGet]
         [Authorize(Roles = Role.Administrator + "," + Role.RegularUser)]
-        public async Task<IActionResult> GetAll()
+        public virtual async Task<IActionResult> GetAll()
         {
             return Ok(await _service.GetAll());
         }
 
         [HttpGet("details")]
         [Authorize(Roles = Role.Administrator + "," + Role.RegularUser)]
-        public async Task<IActionResult> GetById(int id)
+        public virtual async Task<IActionResult> GetById(int id)
         {
             return Ok(await _service.GetById(id));
         }

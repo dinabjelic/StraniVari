@@ -109,16 +109,13 @@ class _EventNotificationsScreenState extends State<EventNotificationsScreen> {
         .map((x) => DataRow(
               cells: [
                 // DataCell(Text(x["schoolId"]?.toString() ?? "0")),
+                DataCell(Text(x["meetingTheme"] ?? "",
+                    style: TextStyle(fontSize: 14))),
+                DataCell(Text(x["meetingPlace"] ?? "",
+                    style: TextStyle(fontSize: 14))),
                 DataCell(
-                    Text(x["meetingTheme"] ?? "",
-                        style: TextStyle(fontSize: 14))),
-                DataCell(
-                    Text(x["meetingPlace"] ?? "",
-                        style: TextStyle(fontSize: 14))),
-                DataCell(Text(x["address"] ?? "",
-                        style: TextStyle(fontSize: 14))),
-                DataCell(
-                        Text(x["city"] ?? "", style: TextStyle(fontSize: 14))),
+                    Text(x["address"] ?? "", style: TextStyle(fontSize: 14))),
+                DataCell(Text(x["city"] ?? "", style: TextStyle(fontSize: 14))),
                 DataCell(
                   Text(
                     DateFormat('dd/MM/yyyy')

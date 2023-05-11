@@ -8,6 +8,8 @@ namespace StraniVari.WinUI.Volunteers
     public partial class frmVolunteerDetails : Form
     {
         private readonly ApiService _apiService = new ApiService("SchoolVolunteers");
+        private readonly ApiService _apiServiceDetails = new ApiService("SchoolVolunteers/details");
+
         public GetSchoolsForEventResponse _selectedSchool { get; }
         public EventUpsertRequest _selectedEvent { get; }
 
@@ -21,7 +23,7 @@ namespace StraniVari.WinUI.Volunteers
         public async void frmVolunteerDetails_Load(object sender, EventArgs e)
         {
             dgvVolunteers.AutoGenerateColumns = false;
-            var result = await _apiService.GetById<List<GetVolunteersForSchoolResponse>>(_selectedSchool.SchoolEventId);
+            var result = await _apiServiceDetails.GetById<List<GetVolunteersForSchoolResponse>>(_selectedSchool.SchoolEventId);
             dgvVolunteers.DataSource = result;
             await LoadEventDetails();
         }

@@ -14,7 +14,8 @@ namespace StraniVari.Database.DataSeed
                 "Strani Vari 2019",
                 "Strani Vari 2020",
                 "Strani Vari 2021",
-                "Strani Vari 2022"
+                "Strani Vari 2022",
+                "Strani Vari 2023",
             };
 
             List<string> eventTheme = new()
@@ -23,7 +24,8 @@ namespace StraniVari.Database.DataSeed
                 "Cartoon characters",
                 "Favourite activity",
                 "Circus",
-                "Favourite cartoon"
+                "Favourite cartoon",
+                "Elements",
             };
 
             List<Event> events = new();
@@ -44,17 +46,6 @@ namespace StraniVari.Database.DataSeed
 
             var startDate1 = new DateTime(2023, 7, 27);
             var endDate1 = new DateTime(2023, 11, 8);
-            //for (int i = 6; i < 7; i++)
-            //{
-            //    events.Add(new Event
-            //    {
-            //        Id = i,
-            //        Name = "Strani Vari 2023",
-            //        StraniVariTheme = "Elements",
-            //        StartDate = DateGenerator.GenerateRandomDate(startDate1, endDate1),
-            //        EndDate = DateGenerator.GenerateRandomDate(startDate1, endDate1)
-            //    });
-            //}
 
             events.Add(new Event
             {

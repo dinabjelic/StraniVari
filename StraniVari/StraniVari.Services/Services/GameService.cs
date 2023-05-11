@@ -9,7 +9,7 @@ using StraniVari.Services.Interfaces;
 
 namespace StraniVari.Services.Services
 {
-    public class GameService : BaseCrudService<Game, UpSertGameRequest, GetGamesResponse>, IGameService
+    public class GameService : BaseCrudService<Game, UpSertGameRequest, UpSertGameRequest, GetGamesResponse>, IGameService
     {
         private readonly StraniVariDbContext _straniVariDbContext;
 
@@ -18,7 +18,7 @@ namespace StraniVari.Services.Services
             _straniVariDbContext = straniVariDbContext;
         }
 
-        public async Task<List<GetGamesResponse>> GameListWithDetailsAsync()
+        public override async Task<List<GetGamesResponse>> GetAll()
         {
             var gameList = await _straniVariDbContext.Games.Select(x => new GetGamesResponse
             {

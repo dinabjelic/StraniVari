@@ -1,9 +1,9 @@
 ﻿namespace StraniVari.Services.Interfaces
 {
-    public interface ICrudService <T, TInsertUpdate, TGet> : IReadService<T,TGet> where TInsertUpdate :class where T : class where TGet: class
+    public interface ICrudService <T, TInsert, TUpdate, TGet> : IReadService<T,TGet> where TInsert :class where T : class where TGet: class
     {
-        Task Insert(TInsertUpdate request);
-        Task Update(int id, TInsertUpdate request);
+        Task Insert(TInsert request);
+        Task Update(int id, TUpdate request);
         Task Delete(int id);
     }
 }

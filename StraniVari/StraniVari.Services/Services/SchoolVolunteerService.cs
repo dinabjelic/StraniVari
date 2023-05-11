@@ -9,7 +9,7 @@ using StraniVari.Services.Interfaces;
 
 namespace StraniVari.Services.Services
 {
-    public class SchoolVolunteerService: BaseCrudService<SchoolVolunteer, UpdateVolunteerAssignedToSchoolRequest, GetVolunteersForSchoolResponse>, ISchoolVolunteerService
+    public class SchoolVolunteerService : BaseCrudService<SchoolVolunteer, InsertVolunteerToSchoolRequest, UpdateVolunteerAssignedToSchoolRequest, GetVolunteersForSchoolResponse>, ISchoolVolunteerService
     {
         private readonly StraniVariDbContext _straniVariDbContext;
         public SchoolVolunteerService(StraniVariDbContext straniVariDbContext, IMapper mapper) : base(straniVariDbContext, mapper)
@@ -17,7 +17,7 @@ namespace StraniVari.Services.Services
             _straniVariDbContext = straniVariDbContext;
         }
 
-        public async Task AddVolunteerToSchoolAsync(InsertVolunteerToSchoolRequest insertVolunteerToSchoolRequest)
+        public override async Task Insert(InsertVolunteerToSchoolRequest insertVolunteerToSchoolRequest)
         {
 
             foreach(var item in insertVolunteerToSchoolRequest.Volunteers)
@@ -31,7 +31,7 @@ namespace StraniVari.Services.Services
             await _straniVariDbContext.SaveChangesAsync();
         }
 
-        public async Task<List<GetVolunteersForSchoolResponse>> SchoolVolunteerListAsync(int id)
+        public async Task<List<GetVolunteersForSchoolResponse>> GetById(int id)
         {
             var schoolVolunteers = await _straniVariDbContext.SchoolVolunteers
                 .Include(x => x.EventSchool)
@@ -45,52 +45,10 @@ namespace StraniVari.Services.Services
                     FirstName = x.Volunteer.FirstName,
                     LastName = x.Volunteer.LastName,
                     VolunteerBirthDate = x.Volunteer.DateOfBirth,
-                    //EventName = x.EventSchool.Event.Name,
-                    //EndDate = x.EventSchool.Event.EndDate,
-                    //StartDate = x.EventSchool.Event.StartDate,
-                    //SchoolAddress = x.EventSchool.School.Address,
-                    //SchoolCity = x.EventSchool.School.City,
-                    //SchoolName = x.EventSchool.School.Name,
-                    //StraniVariTheme = x.EventSchool.Event.StraniVariTheme,
                     TransportNeeded = x.TransportNeeded
                 }).ToListAsync();
 
             return schoolVolunteers;
         }
-
-        //public async Task DeleteVolunteerFromSchoolAsync(int id)
-        //{
-        //    var volunteerFound = await _straniVariDbContext.SchoolVolunteers.FirstOrDefaultAsync(x => x.Id == id);
-
-        //    if (volunteerFound == null)
-        //    {
-        //        throw new ArgumentException("Invalid id");
-        //    }
-
-        //    _straniVariDbContext.SchoolVolunteers.Remove(volunteerFound);
-        //    await _straniVariDbContext.SaveChangesAsync();
-        //}
-
-
-
-        //public async Task UpdateVolunteerDetailsAsync(UpdateVolunteerAssignedToSchoolRequest updateVolunteerAssignedToSchoolRequest)
-        //{
-        //    if (updateVolunteerAssignedToSchoolRequest == null)
-        //    {
-        //        throw new ArgumentException("Invalid request");
-        //    }
-
-        //    var volunteerSchoolFound = await _straniVariDbContext.SchoolVolunteers.FirstOrDefaultAsync(x => x.Id == updateVolunteerAssignedToSchoolRequest.SchoolVolunteerId);
-
-        //    if (volunteerSchoolFound == null)
-        //    {
-        //        throw new ArgumentException("Invalid id");
-        //    }
-
-        //    volunteerSchoolFound.TransportNeeded = updateVolunteerAssignedToSchoolRequest.TransportNeeded;
-
-        //    _straniVariDbContext.SchoolVolunteers.Update(volunteerSchoolFound);
-        //    await _straniVariDbContext.SaveChangesAsync();
-        //}
     }
 }

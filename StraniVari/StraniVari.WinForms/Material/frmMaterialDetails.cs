@@ -8,6 +8,8 @@ namespace StraniVari.WinUI.Material
     public partial class frmMaterialDetails : Form
     {
         private readonly ApiService _apiService = new ApiService("SchoolMaterials");
+        private readonly ApiService _apiServiceDetails = new ApiService("SchoolMaterials/details");
+
         public EventUpsertRequest SelectedEvent { get; }
         public GetSchoolsForEventResponse SelectedElement { get; }
 
@@ -20,7 +22,7 @@ namespace StraniVari.WinUI.Material
         public async void frmMaterialDetails_Load(object sender, EventArgs e)
         {
             dgvMaterialForSchool.AutoGenerateColumns = false;
-            var result = await _apiService.GetById<List<GetMaterialsForSchoolRequest>>(SelectedElement.SchoolEventId);
+            var result = await _apiServiceDetails.GetById<List<GetMaterialsForSchoolRequest>>(SelectedElement.SchoolEventId);
             dgvMaterialForSchool.DataSource = result;
             await LoadEventDetails();
         }

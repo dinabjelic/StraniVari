@@ -8,9 +8,12 @@ import 'package:stranivarimobile/providers/event_plan_and_programme_provider.dar
 import 'package:stranivarimobile/providers/event_provider.dart';
 import 'package:flutter/src/material/data_table.dart';
 import 'package:stranivarimobile/helpers/token.dart';
+import 'package:stranivarimobile/screens/applications/applications_screen.dart';
 import 'package:stranivarimobile/screens/games/games_screen.dart';
 import 'package:stranivarimobile/screens/notifications/event_notifications_screen.dart';
 import 'package:stranivarimobile/screens/plan_and_programme/event_plan_and_programee_screen.dart';
+
+import '../../providers/send_application_provider.dart';
 
 class EventListScreen extends StatefulWidget {
   static const String routeName = '/events';
@@ -23,6 +26,7 @@ class EventListScreen extends StatefulWidget {
 
 class _EventListScreenState extends State<EventListScreen> {
   EventProvider? _eventProvider = null;
+  Set<int> disabledButtons = Set<int>();
   dynamic data = {};
 
   void initState() {
@@ -59,23 +63,25 @@ class _EventListScreenState extends State<EventListScreen> {
                   scrollDirection: Axis.horizontal,
                   child: Column(children: [
                     SizedBox(height: 5),
-                  Container(
-                          height: 40,
-                          width: 100,
-                          margin: EdgeInsets.fromLTRB(10, 0, 820, 0),
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(2),
-                              gradient: LinearGradient(colors: [
-                                Color.fromARGB(255, 241, 195, 167),
-                                Color.fromARGB(255, 217, 215, 208)
-                              ])),
-                          child: InkWell(
-                            onTap: (){
-                              Navigator.pushNamed(context, GamesScreen.gamesrouteName);
-                            },
-                            child: Center(child: Text("Games")),
-                          ),
-                        ),
+                    Container(
+                      height: 40,
+                      width: 100,
+                      margin: EdgeInsets.fromLTRB(10, 0, 1100, 0),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(2),
+                        gradient: LinearGradient(colors: [
+                          Color.fromARGB(255, 241, 195, 167),
+                          Color.fromARGB(255, 217, 215, 208)
+                        ]),
+                      ),
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.pushNamed(
+                              context, GamesScreen.gamesrouteName);
+                        },
+                        child: Center(child: Text("Games")),
+                      ),
+                    ),
                     Container(
                       child: DataTable(
                         columnSpacing: 40,
@@ -117,6 +123,16 @@ class _EventListScreenState extends State<EventListScreen> {
                                   alignment: Alignment.center,
                                   child: Text("Action",
                                       style: TextStyle(fontSize: 14)))),
+                          DataColumn(
+                              label: Container(
+                                  alignment: Alignment.center,
+                                  child: Text("Action",
+                                      style: TextStyle(fontSize: 14)))),
+                                      DataColumn(
+                              label: Container(
+                                  alignment: Alignment.center,
+                                  child: Text("Action",
+                                      style: TextStyle(fontSize: 14))))
                         ],
                         rows: _buildEventsList(),
                       ),
@@ -130,6 +146,8 @@ class _EventListScreenState extends State<EventListScreen> {
       return [
         DataRow(cells: [
           // DataCell(Text("Loading...")),
+          DataCell(Text("No data...")),
+          DataCell(Text("No data...")),
           DataCell(Text("No data...")),
           DataCell(Text("No data...")),
           DataCell(Text("No data...")),
@@ -202,7 +220,71 @@ class _EventListScreenState extends State<EventListScreen> {
                             .eventplandandprogrammerouteName,
                         arguments: IdGetter.Id);
                   },
+                )),
+                DataCell(
+                  ElevatedButton(
+                    child: Text(
+                      "Send Application",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all<Color>(
+                        Color.fromARGB(255, 212, 189, 134),
+                      ),
+                    ),
+                    onPressed: disabledButtons.contains(x["id"]) ? null : () {
+                      showDialog(
+                        context: context,
+                        builder: (BuildContext context) => AlertDialog(
+                          title: Text("Confirm"),
+                          content: Text(
+                            "Are you sure you want to send an application for the trip?",
+                          ),
+                          actions: [
+                            TextButton(
+                              child: Text("Cancel"),
+                              onPressed: () => Navigator.pop(context),
+                            ),
+                            TextButton(
+                              child: Text("Send Application"),
+                              onPressed: () async {
+                                setState(() {
+                                  disabledButtons.add(x["id"]);
+                                });
+                                await Provider.of<SendApplicationProvider>(
+                                  context,
+                                  listen: false,
+                                ).sendApplication(x["id"]);
+                                Navigator.pop(context);
+                                setState(() {
+                                  loadData();
+                                });
+                              },
+                            ),
+                          ],
+                        ),
+                      );
+                    },
+                  ),
+                ),
+                DataCell(TextButton(
+                  child: Text("Trips",
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 14,
+                          fontWeight: FontWeight.bold)),
+                  onPressed: () {
+                    IdGetter.Id = x["id"];
+                    Navigator.pushNamed(
+                        context, ApplicationScreen.applicationRouteName,
+                        arguments: IdGetter.Id);
+                  },
                 ))
+                // ...
               ],
             ))
         .toList()

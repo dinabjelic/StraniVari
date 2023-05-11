@@ -7,8 +7,8 @@ namespace StraniVari.WinUI.Reports
 {
     public partial class frmReports : Form
     {
-        private readonly ApiService _apiServiceVolunteers = new ApiService("SchoolVolunteers");
-        private readonly ApiService _apiServiceMaterial = new ApiService("SchoolMaterials");
+        private readonly ApiService _apiServiceVolunteers = new ApiService("SchoolVolunteers/details");
+        private readonly ApiService _apiServiceMaterial = new ApiService("SchoolMaterials/details");
         public frmReports(EventUpsertRequest selectedEvent, GetSchoolsForEventResponse selectedSchool)
         {
             InitializeComponent();

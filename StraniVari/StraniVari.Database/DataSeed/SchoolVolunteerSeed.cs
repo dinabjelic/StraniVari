@@ -1,5 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using StraniVari.Core.Entities;
+using StraniVari.Core.Helper;
 
 namespace StraniVari.Database.DataSeed
 {
@@ -27,6 +29,15 @@ namespace StraniVari.Database.DataSeed
                     VolunteerId = random.Next(2, 6)
                 });
             }
+
+            schoolVolunteers.Add(new SchoolVolunteer
+            {
+                Id = 6,
+                VolunteerId=2, 
+                EventSchoolId=11, 
+                TransportNeeded= false
+            });
+
             builder.Entity<SchoolVolunteer>().HasData(schoolVolunteers);
         }
     }

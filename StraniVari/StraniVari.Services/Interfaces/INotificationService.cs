@@ -4,7 +4,8 @@ using StraniVari.Core.Responses;
 
 namespace StraniVari.Services.Interfaces
 {
-    public interface INotificationService : ICrudService<Notification, UpSertMeetingRequest, GetMeetingsResponse>
+    public interface INotificationService : ICrudService<Notification, UpSertMeetingRequest, UpSertMeetingRequest, GetMeetingsResponse>
     {
+        Task<List<GetMeetingsResponse>> NotificationListAsync(int id);
     }
 }

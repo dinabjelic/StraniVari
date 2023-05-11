@@ -21,7 +21,7 @@ class EventNotificationsProvider with ChangeNotifier {
       throw Exception("Token not found");
     }
 
-    var url = Uri.parse("${BaseProvider.baseUrl}/Notifications?id="+ IdGetter.Id.toString());
+    var url = Uri.parse("${BaseProvider.baseUrl}/Notifications/notifications?id="+ IdGetter.Id.toString());
 
   
 

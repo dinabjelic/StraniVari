@@ -22,7 +22,7 @@ class EventSchoolsProvider with ChangeNotifier {
       throw Exception("Token not found");
     }
 
-    var url = Uri.parse("${BaseProvider.baseUrl}/EventSchool?id="+ IdGetter.Id.toString());
+    var url = Uri.parse("${BaseProvider.baseUrl}/EventSchool/details?id="+ IdGetter.Id.toString());
 
     var response = await http!.get(url, headers: {
       "Authorization": "Bearer $token",

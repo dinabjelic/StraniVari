@@ -12,7 +12,7 @@ using StraniVari.Services.Interfaces;
 
 namespace StraniVari.Services.Services
 {
-    public class MaterialSchoolService : BaseCrudService<SchoolMaterial, UpdateMaterialToSchoolRequest, GetMaterialsForSchoolRequest>, IMaterialSchoolService
+    public class MaterialSchoolService : BaseCrudService<SchoolMaterial, InsertMaterialToSchoolRequest, UpdateMaterialToSchoolRequest, GetMaterialsForSchoolRequest>, IMaterialSchoolService
     {
         static MLContext mlContext = null;
         private readonly StraniVariDbContext _straniVariDbContext;
@@ -20,7 +20,7 @@ namespace StraniVari.Services.Services
         {
             _straniVariDbContext = straniVariDbContext;
         }
-        public async Task AddMaterialToSchoolAsync(InsertMaterialToSchoolRequest insertMaterialToSchoolRequest)
+        public override async Task Insert(InsertMaterialToSchoolRequest insertMaterialToSchoolRequest)
         {
             foreach (var item in insertMaterialToSchoolRequest.Materials)
             {
@@ -34,52 +34,21 @@ namespace StraniVari.Services.Services
             await _straniVariDbContext.SaveChangesAsync();
         }
 
-        //public async Task DeleteMaterialForSchoolAsync(int id)
-        //{
-        //    var materialFound = await _straniVariDbContext.SchoolMaterials.FirstOrDefaultAsync(x => x.Id == id);
+        public async Task<List<GetMaterialsForSchoolRequest>> GetById(int id)
+        {
+            var schoolMaterialList = await _straniVariDbContext.SchoolMaterials
+                .Where(x => x.EventSchoolId == id)
+                .Select(x => new GetMaterialsForSchoolRequest
+                {
+                    MaterialId = x.MaterialId,
+                    SchoolMaterialId = x.Id,
+                    MaterialName = x.Material.Name,
+                    Quantity = x.Quantity
+                }).ToListAsync();
 
-        //    if (materialFound == null)
-        //    {
-        //        throw new ArgumentException("Invalid id");
-        //    }
+            return schoolMaterialList;
+        }
 
-        //    _straniVariDbContext.SchoolMaterials.Remove(materialFound);
-        //    await _straniVariDbContext.SaveChangesAsync();
-        //}
-
-        //public async Task<List<GetMaterialsForSchoolRequest>> MaterialForSchoolAsync(int id)
-        //{
-        //    var schoolMaterialList = await _straniVariDbContext.SchoolMaterials
-        //        .Where(x => x.EventSchoolId == id)
-        //        .Select(x => new GetMaterialsForSchoolRequest
-        //        {
-        //            MaterialId = x.MaterialId,
-        //            SchoolMaterialId = x.Id,
-        //            MaterialName = x.Material.Name,
-        //            Quantity = x.Quantity
-        //        }).ToListAsync();
-
-        //    return schoolMaterialList;
-        //}
-        //public async Task UpdateMaterialForSchoolAsync(UpdateMaterialToSchoolRequest updateMaterialToSchoolRequest)
-        //{
-        //    if (updateMaterialToSchoolRequest == null)
-        //    {
-        //        throw new ArgumentException("Invalid request");
-        //    }
-
-        //    var schoolMaterialFound = await _straniVariDbContext.SchoolMaterials.FirstOrDefaultAsync(x => x.Id == updateMaterialToSchoolRequest.SchoolMaterialId);
-
-        //    if (schoolMaterialFound == null)
-        //    {
-        //        throw new ArgumentException("Invalid id");
-        //    }
-
-        //    schoolMaterialFound.Quantity = updateMaterialToSchoolRequest.Quantity;
-
-        //    _straniVariDbContext.SchoolMaterials.Update(schoolMaterialFound);
-        //    await _straniVariDbContext.SaveChangesAsync();
-        //}
         static ITransformer model = null;
         public List<SchoolMaterial> Recommend(int eventSchoolId)
         {
@@ -96,7 +65,7 @@ namespace StraniVari.Services.Services
                        MaterialName = y.Material.Name
                    })).ToList();
 
-                var data = new List<ProductEntry>();
+                var data = new List<MaterialEntry>();
                 foreach (var item in tmpData)
                 {
                     if (item.Count() > 1)
@@ -110,10 +79,10 @@ namespace StraniVari.Services.Services
 
                             relatedItems.ForEach(z =>
                             {
-                                data.Add(new ProductEntry()
+                                data.Add(new MaterialEntry()
                                 {
                                     MaterialID = (uint)y,
-                                    CoPurchaseProductID = (uint)z.MaterialId
+                                    MaterialIDRelated = (uint)z.MaterialId
                                 });
                             });
                         });
@@ -131,8 +100,8 @@ namespace StraniVari.Services.Services
                 //STEP 3: Your data is already encoded so all you need to do is specify options for MatrxiFactorizationTrainer with a few extra hyperparameters
                 //        LossFunction, Alpa, Lambda and a few others like K and C as shown below and call the trainer.
                 MatrixFactorizationTrainer.Options options = new MatrixFactorizationTrainer.Options();
-                options.MatrixColumnIndexColumnName = nameof(ProductEntry.MaterialID);
-                options.MatrixRowIndexColumnName = nameof(ProductEntry.CoPurchaseProductID);
+                options.MatrixColumnIndexColumnName = nameof(MaterialEntry.MaterialID);
+                options.MatrixRowIndexColumnName = nameof(MaterialEntry.MaterialIDRelated);
                 options.LabelColumnName = "Label";
                 options.LossFunction = MatrixFactorizationTrainer.LossFunctionType.SquareLossOneClass;
                 options.Alpha = 0.01;
@@ -155,10 +124,11 @@ namespace StraniVari.Services.Services
 
             foreach (var item in allItems)
             {
-                var predictionEngine = mlContext.Model.CreatePredictionEngine<ProductEntry, Copurchase_prediction>(model);
-                var prediction = predictionEngine.Predict(new ProductEntry()
+                var predictionEngine = mlContext.Model.CreatePredictionEngine<MaterialEntry, Materialprediction>(model);
+                var prediction = predictionEngine.Predict(new MaterialEntry()
                 {
-                    CoPurchaseProductID = (uint)item.MaterialId
+                    MaterialID = (uint)eventSchoolId,
+                    MaterialIDRelated = (uint)item.MaterialId
                 });
 
                 predictionResult.Add(new Tuple<StraniVari.Core.Entities.SchoolMaterial, float>(item, prediction.Score));
