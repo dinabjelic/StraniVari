@@ -18,6 +18,6 @@ namespace StraniVari.Services.Interfaces
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        Task<List<GetMaterialsForSchoolRequest>> GetById(int id);
+        Task<List<GetMaterialsForSchoolRequest>> GetMaterialsForSchool(int id);
     }
 }

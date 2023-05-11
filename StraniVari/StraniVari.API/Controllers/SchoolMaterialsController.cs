@@ -24,9 +24,10 @@ namespace StraniVari.API.Controllers
         }
 
         [HttpGet("details")]
-        public override async Task<IActionResult> GetById(int id)
+        [Authorize(Roles = Role.Administrator + "," + Role.RegularUser)]
+        public async Task<IActionResult> GetMaterialsForSchool(int id)
         {
-            return Ok(await _materialSchoolService.GetById(id));
+            return Ok(await _materialSchoolService.GetMaterialsForSchool(id));
         }
     }
 }

@@ -16,6 +16,7 @@ namespace StraniVari.API.Controllers
         }
 
         [HttpGet("planAndProgramme")]
+        [Authorize(Roles = Role.Administrator + "," + Role.RegularUser)]
         public async Task<IActionResult> PlanAndProgrammeList(int id)
         {
             return Ok(await _planAndProgrammeService.PlanAndProgrammeListAsync(id));

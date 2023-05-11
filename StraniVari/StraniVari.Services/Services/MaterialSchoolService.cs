@@ -34,7 +34,7 @@ namespace StraniVari.Services.Services
             await _straniVariDbContext.SaveChangesAsync();
         }
 
-        public async Task<List<GetMaterialsForSchoolRequest>> GetById(int id)
+        public async Task<List<GetMaterialsForSchoolRequest>> GetMaterialsForSchool(int id)
         {
             var schoolMaterialList = await _straniVariDbContext.SchoolMaterials
                 .Where(x => x.EventSchoolId == id)

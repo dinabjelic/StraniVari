@@ -56,7 +56,7 @@ namespace StraniVari.Services.Services
             }
         }
 
-        public async Task<List<GetTripApplicationsResponse>> GetById(int id)
+        public async Task<List<GetTripApplicationsResponse>> GetBGetTripApplicationsyId(int id)
         {
             var tripsApplications = await _straniVariDbContext.VolunteerTrip
                 .Where(x => x.Trip.EventId == id)

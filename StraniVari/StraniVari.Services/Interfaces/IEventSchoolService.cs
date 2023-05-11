@@ -11,6 +11,6 @@ namespace StraniVari.Services.Interfaces
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        Task<List<GetSchoolsForEventResponse>> GetById(int id);
+        Task<List<GetSchoolsForEventResponse>> GetSchoolsForEvent(int id);
     }
 }
