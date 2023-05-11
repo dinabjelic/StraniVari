@@ -6,7 +6,7 @@ namespace StraniVari.WinUI.PlanAndProgramme
 {
     public partial class frmAllPlanAndProgramme : Form
     {
-        ApiService _apiService = new ApiService("PlanAndProgramme");
+        ApiService _apiService = new ApiService("PlanAndProgramme/planAndProgramme");
         public EventUpsertRequest SelectedEvent { get; }
         public frmAllPlanAndProgramme(EventUpsertRequest selectedEvent)
         {

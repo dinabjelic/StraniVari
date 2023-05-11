@@ -21,7 +21,7 @@ class EventPlanAndProgrameProvider with ChangeNotifier {
     if (token == null) {
       throw Exception("Token not found");
     }
-     var url = Uri.parse("${BaseProvider.baseUrl}/PlanAndProgramme?id="+ IdGetter.Id.toString());
+     var url = Uri.parse("${BaseProvider.baseUrl}/PlanAndProgramme/planAndProgramme?id="+ IdGetter.Id.toString());
     
     var response = await http!.get(url, headers: {
       "Authorization": "Bearer $token",

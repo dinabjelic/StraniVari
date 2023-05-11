@@ -6,5 +6,6 @@ namespace StraniVari.Services.Interfaces
 {
     public interface IPlanAndProgrammeService: ICrudService<PlanAndProgramme, UpSertPlanAndProgrammeRequest, UpSertPlanAndProgrammeRequest, GetPlanAndProgrameResposnse>
     {
+        Task<List<GetPlanAndProgrameResposnse>> PlanAndProgrammeListAsync(int id);
     }
 }

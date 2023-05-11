@@ -31,6 +31,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvNotifications = new System.Windows.Forms.DataGridView();
+            this.btnNotification = new System.Windows.Forms.Button();
+            this.txtEndDate = new System.Windows.Forms.TextBox();
+            this.txtStartDate = new System.Windows.Forms.TextBox();
+            this.txtTheme = new System.Windows.Forms.TextBox();
+            this.txtName = new System.Windows.Forms.TextBox();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MeetingTheme = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MeetingPlace = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -39,11 +44,6 @@
             this.MeetingDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnEdit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnDelete = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.btnNotification = new System.Windows.Forms.Button();
-            this.txtEndDate = new System.Windows.Forms.TextBox();
-            this.txtStartDate = new System.Windows.Forms.TextBox();
-            this.txtTheme = new System.Windows.Forms.TextBox();
-            this.txtName = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNotifications)).BeginInit();
             this.SuspendLayout();
@@ -51,17 +51,20 @@
             // label3
             // 
             this.label3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label3.Location = new System.Drawing.Point(273, 38);
+            this.label3.Location = new System.Drawing.Point(341, 48);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(1, 335);
+            this.label3.Size = new System.Drawing.Size(1, 419);
             this.label3.TabIndex = 15;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dgvNotifications);
-            this.groupBox1.Location = new System.Drawing.Point(291, 64);
+            this.groupBox1.Location = new System.Drawing.Point(364, 80);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(935, 262);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Size = new System.Drawing.Size(1169, 328);
             this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Notifications";
@@ -82,15 +85,73 @@
             this.btnDelete});
             this.dgvNotifications.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dgvNotifications.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvNotifications.Location = new System.Drawing.Point(3, 23);
+            this.dgvNotifications.Location = new System.Drawing.Point(4, 28);
+            this.dgvNotifications.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvNotifications.Name = "dgvNotifications";
             this.dgvNotifications.ReadOnly = true;
             this.dgvNotifications.RowHeadersWidth = 51;
             this.dgvNotifications.RowTemplate.Height = 29;
             this.dgvNotifications.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvNotifications.Size = new System.Drawing.Size(929, 236);
+            this.dgvNotifications.Size = new System.Drawing.Size(1161, 296);
             this.dgvNotifications.TabIndex = 0;
             this.dgvNotifications.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNotifications_CellContentClick);
+            // 
+            // btnNotification
+            // 
+            this.btnNotification.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNotification.Location = new System.Drawing.Point(1335, 48);
+            this.btnNotification.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnNotification.Name = "btnNotification";
+            this.btnNotification.Size = new System.Drawing.Size(198, 36);
+            this.btnNotification.TabIndex = 17;
+            this.btnNotification.Text = "Add notification";
+            this.btnNotification.UseVisualStyleBackColor = true;
+            this.btnNotification.Click += new System.EventHandler(this.btnNotification_Click);
+            // 
+            // txtEndDate
+            // 
+            this.txtEndDate.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtEndDate.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtEndDate.Location = new System.Drawing.Point(41, 234);
+            this.txtEndDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEndDate.Name = "txtEndDate";
+            this.txtEndDate.ReadOnly = true;
+            this.txtEndDate.Size = new System.Drawing.Size(271, 23);
+            this.txtEndDate.TabIndex = 21;
+            // 
+            // txtStartDate
+            // 
+            this.txtStartDate.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtStartDate.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtStartDate.Location = new System.Drawing.Point(41, 292);
+            this.txtStartDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtStartDate.Name = "txtStartDate";
+            this.txtStartDate.ReadOnly = true;
+            this.txtStartDate.Size = new System.Drawing.Size(271, 23);
+            this.txtStartDate.TabIndex = 20;
+            // 
+            // txtTheme
+            // 
+            this.txtTheme.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTheme.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtTheme.Location = new System.Drawing.Point(41, 178);
+            this.txtTheme.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTheme.Name = "txtTheme";
+            this.txtTheme.ReadOnly = true;
+            this.txtTheme.Size = new System.Drawing.Size(271, 23);
+            this.txtTheme.TabIndex = 19;
+            // 
+            // txtName
+            // 
+            this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtName.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtName.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.txtName.Location = new System.Drawing.Point(41, 134);
+            this.txtName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtName.Name = "txtName";
+            this.txtName.ReadOnly = true;
+            this.txtName.Size = new System.Drawing.Size(271, 23);
+            this.txtName.TabIndex = 18;
             // 
             // Id
             // 
@@ -104,7 +165,7 @@
             // 
             // MeetingTheme
             // 
-            this.MeetingTheme.DataPropertyName = "MeetingTheme";
+            this.MeetingTheme.DataPropertyName = "meetingTheme";
             this.MeetingTheme.HeaderText = "MeetingTheme";
             this.MeetingTheme.MinimumWidth = 6;
             this.MeetingTheme.Name = "MeetingTheme";
@@ -113,7 +174,7 @@
             // 
             // MeetingPlace
             // 
-            this.MeetingPlace.DataPropertyName = "MeetingPlace";
+            this.MeetingPlace.DataPropertyName = "meetingPlace";
             this.MeetingPlace.HeaderText = "MeetingPlace";
             this.MeetingPlace.MinimumWidth = 6;
             this.MeetingPlace.Name = "MeetingPlace";
@@ -122,7 +183,7 @@
             // 
             // Address
             // 
-            this.Address.DataPropertyName = "Address";
+            this.Address.DataPropertyName = "address";
             this.Address.HeaderText = "Address";
             this.Address.MinimumWidth = 6;
             this.Address.Name = "Address";
@@ -131,7 +192,7 @@
             // 
             // City
             // 
-            this.City.DataPropertyName = "City";
+            this.City.DataPropertyName = "city";
             this.City.HeaderText = "City";
             this.City.MinimumWidth = 6;
             this.City.Name = "City";
@@ -140,7 +201,7 @@
             // 
             // MeetingDate
             // 
-            this.MeetingDate.DataPropertyName = "MeetingDate";
+            this.MeetingDate.DataPropertyName = "meetingDate";
             this.MeetingDate.HeaderText = "MeetingDate";
             this.MeetingDate.MinimumWidth = 6;
             this.MeetingDate.Name = "MeetingDate";
@@ -171,63 +232,11 @@
             this.btnDelete.UseColumnTextForButtonValue = true;
             this.btnDelete.Width = 125;
             // 
-            // btnNotification
-            // 
-            this.btnNotification.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNotification.Location = new System.Drawing.Point(1068, 38);
-            this.btnNotification.Name = "btnNotification";
-            this.btnNotification.Size = new System.Drawing.Size(158, 29);
-            this.btnNotification.TabIndex = 17;
-            this.btnNotification.Text = "Add notification";
-            this.btnNotification.UseVisualStyleBackColor = true;
-            this.btnNotification.Click += new System.EventHandler(this.btnNotification_Click);
-            // 
-            // txtEndDate
-            // 
-            this.txtEndDate.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtEndDate.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtEndDate.Location = new System.Drawing.Point(33, 187);
-            this.txtEndDate.Name = "txtEndDate";
-            this.txtEndDate.ReadOnly = true;
-            this.txtEndDate.Size = new System.Drawing.Size(217, 19);
-            this.txtEndDate.TabIndex = 21;
-            // 
-            // txtStartDate
-            // 
-            this.txtStartDate.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtStartDate.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtStartDate.Location = new System.Drawing.Point(33, 234);
-            this.txtStartDate.Name = "txtStartDate";
-            this.txtStartDate.ReadOnly = true;
-            this.txtStartDate.Size = new System.Drawing.Size(217, 19);
-            this.txtStartDate.TabIndex = 20;
-            // 
-            // txtTheme
-            // 
-            this.txtTheme.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTheme.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtTheme.Location = new System.Drawing.Point(33, 142);
-            this.txtTheme.Name = "txtTheme";
-            this.txtTheme.ReadOnly = true;
-            this.txtTheme.Size = new System.Drawing.Size(217, 19);
-            this.txtTheme.TabIndex = 19;
-            // 
-            // txtName
-            // 
-            this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtName.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtName.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.txtName.Location = new System.Drawing.Point(33, 107);
-            this.txtName.Name = "txtName";
-            this.txtName.ReadOnly = true;
-            this.txtName.Size = new System.Drawing.Size(217, 19);
-            this.txtName.TabIndex = 18;
-            // 
             // frmAllNotifications
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1279, 402);
+            this.ClientSize = new System.Drawing.Size(1599, 502);
             this.Controls.Add(this.txtEndDate);
             this.Controls.Add(this.txtStartDate);
             this.Controls.Add(this.txtTheme);
@@ -235,6 +244,7 @@
             this.Controls.Add(this.btnNotification);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label3);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmAllNotifications";
             this.Text = "frmAllNotifications";
             this.Load += new System.EventHandler(this.frmAllNotifications_Load);
