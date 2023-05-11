@@ -15,31 +15,5 @@ namespace StraniVari.API.Controllers
         {
             _volunteerService = volunteerService;
         }
-
-        [HttpGet]
-        public override async Task<IActionResult> GetAll()
-        {
-            return Ok(await _volunteerService.GetAll());
-        }
-
-        [HttpGet("details")]
-        public override async Task<IActionResult> GetById(int id)
-        {
-            return Ok(await _volunteerService.GetById(id));
-        }
-
-        [HttpPost]
-        public override async Task<IActionResult> Insert(VolunteerUpSertRequest addVolunteerRequest)
-        {
-            await base.Insert(addVolunteerRequest);
-            return Ok(new ResponseResult { Message = "You succeeded" });
-        }
-
-        [HttpPut]
-        public override async Task<IActionResult> Update(int id, [FromBody]VolunteerUpSertRequest updateVolunteerRequest)
-        {
-            await base.Update(id, updateVolunteerRequest);
-            return Ok(new ResponseResult { Message = "You succeeded" });
-        }
     }
 }

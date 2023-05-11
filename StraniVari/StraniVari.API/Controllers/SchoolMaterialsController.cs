@@ -16,13 +16,6 @@ namespace StraniVari.API.Controllers
             _materialSchoolService = materialSchoolService;
         }
 
-        [HttpPost]
-        public override async Task<IActionResult> Insert(InsertMaterialToSchoolRequest insertMaterialToSchoolRequest)
-        {
-            await base.Insert(insertMaterialToSchoolRequest);
-            return Ok(new ResponseResult { Message = "You succeeded" });
-        }
-
         [HttpGet("{eventSchoolId}/recommend")]
         [Authorize(Roles = Role.Administrator)]
         public IActionResult RecommendSystem(int eventSchoolId)

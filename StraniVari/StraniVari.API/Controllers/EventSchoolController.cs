@@ -16,13 +16,6 @@ namespace StraniVari.API.Controllers
             _eventSchoolService = eventSchoolService;
         }
 
-        [HttpPost]
-        public override async Task<IActionResult> Insert([FromBody] EventSchoolInsertRequest addEventSchoolUpSertRequest)
-        {
-            await base.Insert(addEventSchoolUpSertRequest);
-            return Ok(new ResponseResult { Message = "You succeeded" });
-        }
-
         [HttpGet("details")]
         public override async Task<IActionResult> GetById(int id)
         {
