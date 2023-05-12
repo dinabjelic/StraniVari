@@ -8,7 +8,7 @@ namespace StraniVari.WinUI.SchoolDetails
     public partial class frmEditSchoolsDetails : Form
     {
         ApiService _apiServiceEventSchool = new ApiService("EventSchool");
-        ApiService _apiServiceEventSchoolDetails = new ApiService("EventSchool/details");
+        ApiService _apiServiceEventSchoolDetails = new ApiService("EventSchool/get");
 
         public GetSchoolsForEventResponse _selectedSchool { get; }
         public EventUpsertRequest _selectedEvent { get; }

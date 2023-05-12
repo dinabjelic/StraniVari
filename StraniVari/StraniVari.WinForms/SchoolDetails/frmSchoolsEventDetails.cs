@@ -9,7 +9,7 @@ namespace StraniVari.WinUI.SchoolDetails
     public partial class frmSchoolsEventDetails : Form
     {
         private readonly ApiService _apiService = new ApiService("EventSchool");
-        private readonly ApiService _apiServiceDetails = new ApiService("EventSchool/details");
+        private readonly ApiService _apiServiceDetails = new ApiService("EventSchool/get");
         ApiService _apiServiceEvent = new ApiService("EventSchool/school-details");
         public EventUpsertRequest _selectedEvent { get; }
 

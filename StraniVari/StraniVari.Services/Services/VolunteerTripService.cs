@@ -18,7 +18,7 @@ namespace StraniVari.Services.Services
         private readonly StraniVariDbContext _straniVariDbContext;
         private readonly IHttpContextAccessor _httpContextAccessor;
         private readonly UserManager<User> _userManager;
-        public VolunteerTripService(StraniVariDbContext straniVariDbContext, IHttpContextAccessor httpContextAccessor, UserManager<User> userManager, IMapper mapper):base(straniVariDbContext, mapper)
+        public VolunteerTripService(StraniVariDbContext straniVariDbContext, IHttpContextAccessor httpContextAccessor, UserManager<User> userManager, IMapper mapper) : base(straniVariDbContext, mapper)
         {
             _straniVariDbContext = straniVariDbContext;
             _httpContextAccessor = httpContextAccessor;
@@ -33,13 +33,13 @@ namespace StraniVari.Services.Services
 
             var tripFound = await _straniVariDbContext.Trips.FirstOrDefaultAsync(x => x.EventId == volunteerTripInsertRequest.EventId);
 
-            var volunteerExists = await _straniVariDbContext.VolunteerTrip
-                .AnyAsync(x => x.VolunteerId == int.Parse(userId) && 
+            if (tripFound is not null)
+            {
+                var volunteerExists = await _straniVariDbContext.VolunteerTrip
+                .AnyAsync(x => x.VolunteerId == int.Parse(userId) &&
                 x.TripId == tripFound.Id);
 
-            if (!volunteerExists)
-            {
-                if (tripFound is not null)
+                if (!volunteerExists)
                 {
                     if (!roles.Contains("Administrator"))
                     {
@@ -54,9 +54,10 @@ namespace StraniVari.Services.Services
                     }
                 }
             }
+
         }
 
-        public async Task<List<GetTripApplicationsResponse>> GetBGetTripApplicationsyId(int id)
+        public async Task<List<GetTripApplicationsResponse>> GetTripApplications(int id)
         {
             var tripsApplications = await _straniVariDbContext.VolunteerTrip
                 .Where(x => x.Trip.EventId == id)

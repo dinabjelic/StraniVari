@@ -16,7 +16,7 @@ namespace StraniVari.API.Controllers
             _schoolVolunteerService = schoolVolunteerService;
         }
 
-        [HttpGet("details")]
+        [HttpGet("get")]
         [Authorize(Roles = Role.Administrator + "," + Role.RegularUser)]
         public async Task<IActionResult> GetVolunteersForSchool(int id)
         {

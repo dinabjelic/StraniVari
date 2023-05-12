@@ -23,7 +23,7 @@ namespace StraniVari.API.Controllers
             return Ok(_materialSchoolService.Recommend(eventSchoolId));
         }
 
-        [HttpGet("details")]
+        [HttpGet("get")]
         [Authorize(Roles = Role.Administrator + "," + Role.RegularUser)]
         public async Task<IActionResult> GetMaterialsForSchool(int id)
         {

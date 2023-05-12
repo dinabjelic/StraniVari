@@ -8,8 +8,8 @@ namespace StraniVari.WinUI.Applications
 {
     public partial class frmAllApplications : Form
     {
-        ApiService _apiServiceDetails = new ApiService("Trip/details");
-        ApiService _apiService = new ApiService("VolunteerTrip/details");
+        ApiService _apiServiceDetails = new ApiService("Trip/get");
+        ApiService _apiService = new ApiService("VolunteerTrip/get");
 
         public EventUpsertRequest SelectedEvent { get; }
         public frmAllApplications(EventUpsertRequest selectedEvent)
