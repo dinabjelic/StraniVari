@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using StraniVari.Core.Entities;
+using StraniVari.Core.Helper;
 using StraniVari.Core.Requests;
 using StraniVari.Core.Responses;
 using StraniVari.Services.Interfaces;
@@ -17,6 +19,7 @@ namespace StraniVari.API.Controllers
         }
 
         [HttpGet("notifications")]
+        [Authorize(Roles = Role.Administrator + "," + Role.RegularUser)]
         public async Task<IActionResult> NotificationList(int id)
         {
             return Ok(await _notificationService.NotificationListAsync(id));

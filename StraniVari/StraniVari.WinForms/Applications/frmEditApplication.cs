@@ -7,7 +7,7 @@ namespace StraniVari.WinUI.Applications
 {
     public partial class frmEditApplication : Form
     {
-        ApiService _apiServiceDetails = new ApiService("Trip/details");
+        ApiService _apiServiceDetails = new ApiService("Trip/get");
         ApiService _apiService = new ApiService("TripStatus");
         ApiService _apiServiceVolunteerTrip = new ApiService("VolunteerTrip");
 

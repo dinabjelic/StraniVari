@@ -17,7 +17,7 @@ namespace StraniVari.Services.Services
             _straniVariDbContext = straniVariDbContext;
         }
 
-        public async Task<List<GetTripsDetailsForEventResponse>> GetById(int id)
+        public async Task<List<GetTripsDetailsForEventResponse>> GetTripDetailsForEvent(int id)
         {
             var tripDetails = await _straniVariDbContext.Trips
                 .Where(x => x.EventId == id)

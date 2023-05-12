@@ -16,10 +16,11 @@ namespace StraniVari.API.Controllers
             _schoolVolunteerService = schoolVolunteerService;
         }
 
-        [HttpGet("details")]
-        public override async Task<IActionResult> GetById(int id)
+        [HttpGet("get")]
+        [Authorize(Roles = Role.Administrator + "," + Role.RegularUser)]
+        public async Task<IActionResult> GetVolunteersForSchool(int id)
         {
-            return Ok(await _schoolVolunteerService.GetById(id));
+            return Ok(await _schoolVolunteerService.GetVolunteersForSchool(id));
         }
     }
 }

@@ -8,7 +8,7 @@ namespace StraniVari.WinUI.SchoolDetails
     {
         ApiService _apiService = new ApiService("Schools");
         ApiService _apiServiceEventSchool = new ApiService("EventSchool");
-        private readonly ApiService _apiServiceDetails = new ApiService("EventSchool/details");
+        private readonly ApiService _apiServiceDetails = new ApiService("EventSchool/get");
 
         public EventUpsertRequest _selectedEvent { get; }
         List<GetSchoolDetailsResponse> schools = new List<GetSchoolDetailsResponse>();

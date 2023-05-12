@@ -8,7 +8,7 @@ namespace StraniVari.WinUI.Volunteers
     {
         private readonly ApiService _apiService = new ApiService("Volunteers");
         private readonly ApiService _apiServiceVolunteersSchool = new ApiService("SchoolVolunteers");
-        private readonly ApiService _apiServiceVolunteersSchoolDetails = new ApiService("SchoolVolunteers/details");
+        private readonly ApiService _apiServiceVolunteersSchoolDetails = new ApiService("SchoolVolunteers/get");
 
         public GetSchoolsForEventResponse _selectedSchool { get; }
         public EventUpsertRequest _selectedEvent { get; }

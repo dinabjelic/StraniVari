@@ -8,7 +8,7 @@ namespace StraniVari.WinUI.Material
     public partial class frmMaterialDetails : Form
     {
         private readonly ApiService _apiService = new ApiService("SchoolMaterials");
-        private readonly ApiService _apiServiceDetails = new ApiService("SchoolMaterials/details");
+        private readonly ApiService _apiServiceDetails = new ApiService("SchoolMaterials/get");
 
         public EventUpsertRequest SelectedEvent { get; }
         public GetSchoolsForEventResponse SelectedElement { get; }

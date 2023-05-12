@@ -11,7 +11,7 @@ namespace StraniVari.WinUI.Material
     {
         ApiService _apiService = new ApiService("Materials");
         private readonly ApiService _apiServiceMaterial = new ApiService("SchoolMaterials");
-        private readonly ApiService _apiServiceMaterialDetails = new ApiService("SchoolMaterials/details");
+        private readonly ApiService _apiServiceMaterialDetails = new ApiService("SchoolMaterials/get");
 
         public GetSchoolsForEventResponse SelectedElement { get; }
         public EventUpsertRequest SelectedEvent { get; }

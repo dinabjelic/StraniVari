@@ -34,7 +34,7 @@ namespace StraniVari.Services.Services
             await _straniVariDbContext.SaveChangesAsync();
         }
 
-        public async Task<List<GetSchoolsForEventResponse>> GetById(int id)
+        public async Task<List<GetSchoolsForEventResponse>> GetSchoolsForEvent(int id)
         {
             var schoolForEvent = await _straniVariDbContext.EventSchools
                 .Include(x => x.Event)

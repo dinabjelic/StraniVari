@@ -16,10 +16,11 @@ namespace StraniVari.API.Controllers
             _volunteerTripService = volunteerTripService;
         }
 
-        [HttpGet("details")]
-        public override async Task<IActionResult> GetById(int id)
+        [HttpGet("get")]
+        [Authorize(Roles = Role.Administrator + "," + Role.RegularUser)]
+        public async Task<IActionResult> GetTripApplications(int id)
         {
-            return Ok(await _volunteerTripService.GetById(id));
+            return Ok(await _volunteerTripService.GetTripApplications(id));
         }
 
         [HttpGet("trip-status-for-event")]
