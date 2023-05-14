@@ -242,7 +242,7 @@ class _EventListScreenState extends State<EventListScreen> {
                         builder: (BuildContext context) => AlertDialog(
                           title: Text("Confirm"),
                           content: Text(
-                            "Are you sure you want to send an application for the trip?",
+                            "After you send request for trip, application status will be written in Trips screen.",
                           ),
                           actions: [
                             TextButton(
