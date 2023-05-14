@@ -30,8 +30,16 @@ class ApplicationProvider with ChangeNotifier {
     });
 
     if (response.statusCode < 400) {
+      var responseBody= response.body;
+
+      if(responseBody == null || responseBody.isEmpty)
+      {
+        return responseBody;
+      }
+      else{
       var data = jsonDecode(response.body);
       return data;
+      }
     } else {
       throw Exception("User not allowed");
     }
