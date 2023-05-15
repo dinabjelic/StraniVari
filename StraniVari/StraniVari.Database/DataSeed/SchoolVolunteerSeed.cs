@@ -26,7 +26,7 @@ namespace StraniVari.Database.DataSeed
                     Id=i, 
                     TransportNeeded = transportNeeded[i % 2],
                     EventSchoolId = random.Next(1, 10),
-                    VolunteerId = random.Next(2, 6)
+                    VolunteerId = random.Next(3, 6)
                 });
             }
 

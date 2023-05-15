@@ -48,6 +48,16 @@ namespace StraniVari.Database.DataSeed
                     MeetingDate = DateGenerator.GenerateRandomDate(startDate, endDate)
                 });
             }
+            notifications.Add(new Notification
+            {
+                Id = 6,
+                EventId = 6,
+                Address = "Roncadelle",
+                MeetingTheme = "dnos volontera i djece",
+                City = "Zavidovici",
+                MeetingPlace = "ALD",
+                MeetingDate = DateGenerator.GenerateRandomDate(startDate, endDate)
+            });
             builder.Entity<Notification>().HasData(notifications);
         }
     }

@@ -33,6 +33,15 @@ namespace StraniVari.Database.DataSeed
                     EndDate = DateGenerator.GenerateRandomDate(startDate, endDate)
                 });
             }
+
+            planAndProgramme.Add(new PlanAndProgramme
+            {
+                Id = 6,
+                EventId = 6,
+                Activity = "Bans",
+                StartDate = DateGenerator.GenerateRandomDate(startDate, endDate),
+                EndDate = DateGenerator.GenerateRandomDate(startDate, endDate)
+            });
             builder.Entity<PlanAndProgramme>().HasData(planAndProgramme);
         }
     }
