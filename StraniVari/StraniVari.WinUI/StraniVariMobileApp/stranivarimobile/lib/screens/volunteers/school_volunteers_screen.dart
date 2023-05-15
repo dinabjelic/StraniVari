@@ -69,16 +69,6 @@ class _SchoolVolunteersScreenState extends State<SchoolVolunteersScreen> {
                           DataColumn(
                               label: Container(
                                   alignment: Alignment.center,
-                                  child: Text("Adress",
-                                      style: TextStyle(fontSize: 14)))),
-                          DataColumn(
-                              label: Container(
-                                  alignment: Alignment.center,
-                                  child: Text("City",
-                                      style: TextStyle(fontSize: 14)))),
-                          DataColumn(
-                              label: Container(
-                                  alignment: Alignment.center,
                                   child: Text("Transport needed",
                                       style: TextStyle(fontSize: 14)))),
                         ],
@@ -97,8 +87,6 @@ class _SchoolVolunteersScreenState extends State<SchoolVolunteersScreen> {
           DataCell(Text("No data...")),
           DataCell(Text("No data...")),
           DataCell(Text("No data...")),
-          DataCell(Text("No data...")),
-          DataCell(Text("No data...")),
         ])
       ];
     }
@@ -111,9 +99,6 @@ class _SchoolVolunteersScreenState extends State<SchoolVolunteersScreen> {
                     Text(x["firstName"] ?? "", style: TextStyle(fontSize: 14))),
                 DataCell(
                     Text(x["lastName"] ?? "", style: TextStyle(fontSize: 14))),
-                DataCell(
-                    Text(x["address"] ?? "", style: TextStyle(fontSize: 14))),
-                DataCell(Text(x["city"] ?? "", style: TextStyle(fontSize: 14))),
                 DataCell(Text(
                     bool.fromEnvironment("transportNeeded",
                             defaultValue: x["transportNeeded"] ?? false)

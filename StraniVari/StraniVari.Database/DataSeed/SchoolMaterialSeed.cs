@@ -41,6 +41,13 @@ namespace StraniVari.Database.DataSeed
                 MaterialId = 20,
                 Quantity = 2
             });
+            schoolMaterials.Add(new SchoolMaterial
+            {
+                Id = 7,
+                EventSchoolId = 11,
+                MaterialId = 20,
+                Quantity = 2
+            });
 
 
             builder.Entity<SchoolMaterial>().HasData(schoolMaterials);
