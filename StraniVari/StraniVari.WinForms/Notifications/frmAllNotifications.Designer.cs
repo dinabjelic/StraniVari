@@ -28,231 +28,213 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label3 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dgvNotifications = new System.Windows.Forms.DataGridView();
-            this.btnNotification = new System.Windows.Forms.Button();
-            this.txtEndDate = new System.Windows.Forms.TextBox();
-            this.txtStartDate = new System.Windows.Forms.TextBox();
-            this.txtTheme = new System.Windows.Forms.TextBox();
-            this.txtName = new System.Windows.Forms.TextBox();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MeetingTheme = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MeetingPlace = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.City = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MeetingDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnEdit = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.btnDelete = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvNotifications)).BeginInit();
-            this.SuspendLayout();
+            label3 = new Label();
+            groupBox1 = new GroupBox();
+            dgvNotifications = new DataGridView();
+            Id = new DataGridViewTextBoxColumn();
+            MeetingTheme = new DataGridViewTextBoxColumn();
+            MeetingPlace = new DataGridViewTextBoxColumn();
+            Address = new DataGridViewTextBoxColumn();
+            City = new DataGridViewTextBoxColumn();
+            MeetingDate = new DataGridViewTextBoxColumn();
+            btnEdit = new DataGridViewButtonColumn();
+            btnDelete = new DataGridViewButtonColumn();
+            btnNotification = new Button();
+            txtEndDate = new TextBox();
+            txtStartDate = new TextBox();
+            txtTheme = new TextBox();
+            txtName = new TextBox();
+            groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvNotifications).BeginInit();
+            SuspendLayout();
             // 
             // label3
             // 
-            this.label3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label3.Location = new System.Drawing.Point(341, 48);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(1, 419);
-            this.label3.TabIndex = 15;
+            label3.BackColor = SystemColors.ActiveCaptionText;
+            label3.Location = new Point(353, 79);
+            label3.Name = "label3";
+            label3.Size = new Size(1, 644);
+            label3.TabIndex = 15;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dgvNotifications);
-            this.groupBox1.Location = new System.Drawing.Point(364, 80);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox1.Size = new System.Drawing.Size(1169, 328);
-            this.groupBox1.TabIndex = 16;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Notifications";
+            groupBox1.Controls.Add(dgvNotifications);
+            groupBox1.Location = new Point(377, 245);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(1081, 262);
+            groupBox1.TabIndex = 16;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Notifications";
             // 
             // dgvNotifications
             // 
-            this.dgvNotifications.AllowUserToAddRows = false;
-            this.dgvNotifications.AllowUserToDeleteRows = false;
-            this.dgvNotifications.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvNotifications.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Id,
-            this.MeetingTheme,
-            this.MeetingPlace,
-            this.Address,
-            this.City,
-            this.MeetingDate,
-            this.btnEdit,
-            this.btnDelete});
-            this.dgvNotifications.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dgvNotifications.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvNotifications.Location = new System.Drawing.Point(4, 28);
-            this.dgvNotifications.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dgvNotifications.Name = "dgvNotifications";
-            this.dgvNotifications.ReadOnly = true;
-            this.dgvNotifications.RowHeadersWidth = 51;
-            this.dgvNotifications.RowTemplate.Height = 29;
-            this.dgvNotifications.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvNotifications.Size = new System.Drawing.Size(1161, 296);
-            this.dgvNotifications.TabIndex = 0;
-            this.dgvNotifications.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNotifications_CellContentClick);
-            // 
-            // btnNotification
-            // 
-            this.btnNotification.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNotification.Location = new System.Drawing.Point(1335, 48);
-            this.btnNotification.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnNotification.Name = "btnNotification";
-            this.btnNotification.Size = new System.Drawing.Size(198, 36);
-            this.btnNotification.TabIndex = 17;
-            this.btnNotification.Text = "Add notification";
-            this.btnNotification.UseVisualStyleBackColor = true;
-            this.btnNotification.Click += new System.EventHandler(this.btnNotification_Click);
-            // 
-            // txtEndDate
-            // 
-            this.txtEndDate.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtEndDate.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtEndDate.Location = new System.Drawing.Point(41, 234);
-            this.txtEndDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtEndDate.Name = "txtEndDate";
-            this.txtEndDate.ReadOnly = true;
-            this.txtEndDate.Size = new System.Drawing.Size(271, 23);
-            this.txtEndDate.TabIndex = 21;
-            // 
-            // txtStartDate
-            // 
-            this.txtStartDate.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtStartDate.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtStartDate.Location = new System.Drawing.Point(41, 292);
-            this.txtStartDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtStartDate.Name = "txtStartDate";
-            this.txtStartDate.ReadOnly = true;
-            this.txtStartDate.Size = new System.Drawing.Size(271, 23);
-            this.txtStartDate.TabIndex = 20;
-            // 
-            // txtTheme
-            // 
-            this.txtTheme.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTheme.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtTheme.Location = new System.Drawing.Point(41, 178);
-            this.txtTheme.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtTheme.Name = "txtTheme";
-            this.txtTheme.ReadOnly = true;
-            this.txtTheme.Size = new System.Drawing.Size(271, 23);
-            this.txtTheme.TabIndex = 19;
-            // 
-            // txtName
-            // 
-            this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtName.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtName.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.txtName.Location = new System.Drawing.Point(41, 134);
-            this.txtName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtName.Name = "txtName";
-            this.txtName.ReadOnly = true;
-            this.txtName.Size = new System.Drawing.Size(271, 23);
-            this.txtName.TabIndex = 18;
+            dgvNotifications.AllowUserToAddRows = false;
+            dgvNotifications.AllowUserToDeleteRows = false;
+            dgvNotifications.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvNotifications.Columns.AddRange(new DataGridViewColumn[] { Id, MeetingTheme, MeetingPlace, Address, City, MeetingDate, btnEdit, btnDelete });
+            dgvNotifications.Cursor = Cursors.Hand;
+            dgvNotifications.Dock = DockStyle.Fill;
+            dgvNotifications.Location = new Point(3, 23);
+            dgvNotifications.Name = "dgvNotifications";
+            dgvNotifications.ReadOnly = true;
+            dgvNotifications.RowHeadersWidth = 51;
+            dgvNotifications.RowTemplate.Height = 29;
+            dgvNotifications.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvNotifications.Size = new Size(1075, 236);
+            dgvNotifications.TabIndex = 0;
+            dgvNotifications.CellContentClick += dgvNotifications_CellContentClick;
             // 
             // Id
             // 
-            this.Id.DataPropertyName = "Id";
-            this.Id.HeaderText = "Id";
-            this.Id.MinimumWidth = 6;
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            this.Id.Visible = false;
-            this.Id.Width = 125;
+            Id.DataPropertyName = "Id";
+            Id.HeaderText = "Id";
+            Id.MinimumWidth = 6;
+            Id.Name = "Id";
+            Id.ReadOnly = true;
+            Id.Visible = false;
+            Id.Width = 125;
             // 
             // MeetingTheme
             // 
-            this.MeetingTheme.DataPropertyName = "meetingTheme";
-            this.MeetingTheme.HeaderText = "MeetingTheme";
-            this.MeetingTheme.MinimumWidth = 6;
-            this.MeetingTheme.Name = "MeetingTheme";
-            this.MeetingTheme.ReadOnly = true;
-            this.MeetingTheme.Width = 125;
+            MeetingTheme.DataPropertyName = "meetingTheme";
+            MeetingTheme.HeaderText = "Meeting Theme";
+            MeetingTheme.MinimumWidth = 6;
+            MeetingTheme.Name = "MeetingTheme";
+            MeetingTheme.ReadOnly = true;
+            MeetingTheme.Width = 200;
             // 
             // MeetingPlace
             // 
-            this.MeetingPlace.DataPropertyName = "meetingPlace";
-            this.MeetingPlace.HeaderText = "MeetingPlace";
-            this.MeetingPlace.MinimumWidth = 6;
-            this.MeetingPlace.Name = "MeetingPlace";
-            this.MeetingPlace.ReadOnly = true;
-            this.MeetingPlace.Width = 125;
+            MeetingPlace.DataPropertyName = "meetingPlace";
+            MeetingPlace.HeaderText = "Meeting Place";
+            MeetingPlace.MinimumWidth = 6;
+            MeetingPlace.Name = "MeetingPlace";
+            MeetingPlace.ReadOnly = true;
+            MeetingPlace.Width = 250;
             // 
             // Address
             // 
-            this.Address.DataPropertyName = "address";
-            this.Address.HeaderText = "Address";
-            this.Address.MinimumWidth = 6;
-            this.Address.Name = "Address";
-            this.Address.ReadOnly = true;
-            this.Address.Width = 125;
+            Address.DataPropertyName = "address";
+            Address.HeaderText = "Address";
+            Address.MinimumWidth = 6;
+            Address.Name = "Address";
+            Address.ReadOnly = true;
+            Address.Width = 125;
             // 
             // City
             // 
-            this.City.DataPropertyName = "city";
-            this.City.HeaderText = "City";
-            this.City.MinimumWidth = 6;
-            this.City.Name = "City";
-            this.City.ReadOnly = true;
-            this.City.Width = 125;
+            City.DataPropertyName = "city";
+            City.HeaderText = "City";
+            City.MinimumWidth = 6;
+            City.Name = "City";
+            City.ReadOnly = true;
+            City.Width = 125;
             // 
             // MeetingDate
             // 
-            this.MeetingDate.DataPropertyName = "meetingDate";
-            this.MeetingDate.HeaderText = "MeetingDate";
-            this.MeetingDate.MinimumWidth = 6;
-            this.MeetingDate.Name = "MeetingDate";
-            this.MeetingDate.ReadOnly = true;
-            this.MeetingDate.Width = 125;
+            MeetingDate.DataPropertyName = "meetingDate";
+            MeetingDate.HeaderText = "Meeting Date";
+            MeetingDate.MinimumWidth = 6;
+            MeetingDate.Name = "MeetingDate";
+            MeetingDate.ReadOnly = true;
+            MeetingDate.Width = 135;
             // 
             // btnEdit
             // 
-            this.btnEdit.HeaderText = "Options";
-            this.btnEdit.MinimumWidth = 6;
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.ReadOnly = true;
-            this.btnEdit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.btnEdit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.btnEdit.Text = "Edit";
-            this.btnEdit.ToolTipText = "Edit";
-            this.btnEdit.UseColumnTextForButtonValue = true;
-            this.btnEdit.Width = 125;
+            btnEdit.HeaderText = "Options";
+            btnEdit.MinimumWidth = 6;
+            btnEdit.Name = "btnEdit";
+            btnEdit.ReadOnly = true;
+            btnEdit.Resizable = DataGridViewTriState.True;
+            btnEdit.SortMode = DataGridViewColumnSortMode.Automatic;
+            btnEdit.Text = "Edit";
+            btnEdit.ToolTipText = "Edit";
+            btnEdit.UseColumnTextForButtonValue = true;
+            btnEdit.Width = 90;
             // 
             // btnDelete
             // 
-            this.btnDelete.HeaderText = "Options";
-            this.btnDelete.MinimumWidth = 6;
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.ReadOnly = true;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.ToolTipText = "Delete";
-            this.btnDelete.UseColumnTextForButtonValue = true;
-            this.btnDelete.Width = 125;
+            btnDelete.HeaderText = "Options";
+            btnDelete.MinimumWidth = 6;
+            btnDelete.Name = "btnDelete";
+            btnDelete.ReadOnly = true;
+            btnDelete.Text = "Delete";
+            btnDelete.ToolTipText = "Delete";
+            btnDelete.UseColumnTextForButtonValue = true;
+            btnDelete.Width = 90;
+            // 
+            // btnNotification
+            // 
+            btnNotification.Cursor = Cursors.Hand;
+            btnNotification.Location = new Point(1300, 219);
+            btnNotification.Name = "btnNotification";
+            btnNotification.Size = new Size(158, 29);
+            btnNotification.TabIndex = 17;
+            btnNotification.Text = "Add notification";
+            btnNotification.UseVisualStyleBackColor = true;
+            btnNotification.Click += btnNotification_Click;
+            // 
+            // txtEndDate
+            // 
+            txtEndDate.BorderStyle = BorderStyle.None;
+            txtEndDate.Font = new Font("Showcard Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txtEndDate.Location = new Point(121, 385);
+            txtEndDate.Name = "txtEndDate";
+            txtEndDate.ReadOnly = true;
+            txtEndDate.Size = new Size(217, 19);
+            txtEndDate.TabIndex = 21;
+            // 
+            // txtStartDate
+            // 
+            txtStartDate.BorderStyle = BorderStyle.None;
+            txtStartDate.Font = new Font("Showcard Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txtStartDate.Location = new Point(121, 432);
+            txtStartDate.Name = "txtStartDate";
+            txtStartDate.ReadOnly = true;
+            txtStartDate.Size = new Size(217, 19);
+            txtStartDate.TabIndex = 20;
+            // 
+            // txtTheme
+            // 
+            txtTheme.BorderStyle = BorderStyle.None;
+            txtTheme.Font = new Font("Showcard Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txtTheme.Location = new Point(121, 340);
+            txtTheme.Name = "txtTheme";
+            txtTheme.ReadOnly = true;
+            txtTheme.Size = new Size(217, 19);
+            txtTheme.TabIndex = 19;
+            // 
+            // txtName
+            // 
+            txtName.BorderStyle = BorderStyle.None;
+            txtName.Font = new Font("Showcard Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txtName.ForeColor = SystemColors.InactiveBorder;
+            txtName.Location = new Point(121, 305);
+            txtName.Name = "txtName";
+            txtName.ReadOnly = true;
+            txtName.Size = new Size(217, 19);
+            txtName.TabIndex = 18;
             // 
             // frmAllNotifications
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1599, 502);
-            this.Controls.Add(this.txtEndDate);
-            this.Controls.Add(this.txtStartDate);
-            this.Controls.Add(this.txtTheme);
-            this.Controls.Add(this.txtName);
-            this.Controls.Add(this.btnNotification);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.label3);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Name = "frmAllNotifications";
-            this.Text = "frmAllNotifications";
-            this.Load += new System.EventHandler(this.frmAllNotifications_Load);
-            this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvNotifications)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1638, 777);
+            Controls.Add(txtEndDate);
+            Controls.Add(txtStartDate);
+            Controls.Add(txtTheme);
+            Controls.Add(txtName);
+            Controls.Add(btnNotification);
+            Controls.Add(groupBox1);
+            Controls.Add(label3);
+            Name = "frmAllNotifications";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "frmAllNotifications";
+            Load += frmAllNotifications_Load;
+            groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgvNotifications).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -261,6 +243,10 @@
         private GroupBox groupBox1;
         private DataGridView dgvNotifications;
         private Button btnNotification;
+        private TextBox txtEndDate;
+        private TextBox txtStartDate;
+        private TextBox txtTheme;
+        private TextBox txtName;
         private DataGridViewTextBoxColumn Id;
         private DataGridViewTextBoxColumn MeetingTheme;
         private DataGridViewTextBoxColumn MeetingPlace;
@@ -269,9 +255,5 @@
         private DataGridViewTextBoxColumn MeetingDate;
         private DataGridViewButtonColumn btnEdit;
         private DataGridViewButtonColumn btnDelete;
-        private TextBox txtEndDate;
-        private TextBox txtStartDate;
-        private TextBox txtTheme;
-        private TextBox txtName;
     }
 }

@@ -29,164 +29,158 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAllSchools));
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dgvSchools = new System.Windows.Forms.DataGridView();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SchoolName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.City = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Action = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.btnDelete = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnAddSchool = new System.Windows.Forms.Button();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSchools)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.SuspendLayout();
+            groupBox1 = new GroupBox();
+            dgvSchools = new DataGridView();
+            Id = new DataGridViewTextBoxColumn();
+            SchoolName = new DataGridViewTextBoxColumn();
+            Address = new DataGridViewTextBoxColumn();
+            City = new DataGridViewTextBoxColumn();
+            Action = new DataGridViewButtonColumn();
+            btnDelete = new DataGridViewButtonColumn();
+            btnAddSchool = new Button();
+            pictureBox2 = new PictureBox();
+            label4 = new Label();
+            groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvSchools).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dgvSchools);
-            this.groupBox1.Location = new System.Drawing.Point(219, 70);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(689, 269);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "EVENT DETAILS";
+            groupBox1.Controls.Add(dgvSchools);
+            groupBox1.Location = new Point(523, 180);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(968, 388);
+            groupBox1.TabIndex = 1;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "EVENT DETAILS";
             // 
             // dgvSchools
             // 
-            this.dgvSchools.AllowUserToAddRows = false;
-            this.dgvSchools.AllowUserToDeleteRows = false;
-            this.dgvSchools.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSchools.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Id,
-            this.SchoolName,
-            this.Address,
-            this.City,
-            this.Action,
-            this.btnDelete});
-            this.dgvSchools.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dgvSchools.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvSchools.Location = new System.Drawing.Point(3, 23);
-            this.dgvSchools.Name = "dgvSchools";
-            this.dgvSchools.ReadOnly = true;
-            this.dgvSchools.RowHeadersWidth = 51;
-            this.dgvSchools.RowTemplate.Height = 29;
-            this.dgvSchools.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSchools.Size = new System.Drawing.Size(683, 243);
-            this.dgvSchools.TabIndex = 0;
-            this.dgvSchools.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSchools_CellContentClick);
+            dgvSchools.AllowUserToAddRows = false;
+            dgvSchools.AllowUserToDeleteRows = false;
+            dgvSchools.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvSchools.Columns.AddRange(new DataGridViewColumn[] { Id, SchoolName, Address, City, Action, btnDelete });
+            dgvSchools.Cursor = Cursors.Hand;
+            dgvSchools.Dock = DockStyle.Fill;
+            dgvSchools.Location = new Point(3, 23);
+            dgvSchools.Name = "dgvSchools";
+            dgvSchools.ReadOnly = true;
+            dgvSchools.RowHeadersWidth = 51;
+            dgvSchools.RowTemplate.Height = 29;
+            dgvSchools.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvSchools.Size = new Size(962, 362);
+            dgvSchools.TabIndex = 0;
+            dgvSchools.CellContentClick += dgvSchools_CellContentClick;
             // 
             // Id
             // 
-            this.Id.DataPropertyName = "SchoolEventId";
-            this.Id.HeaderText = "Id";
-            this.Id.MinimumWidth = 6;
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            this.Id.Visible = false;
-            this.Id.Width = 125;
+            Id.DataPropertyName = "SchoolEventId";
+            Id.HeaderText = "Id";
+            Id.MinimumWidth = 6;
+            Id.Name = "Id";
+            Id.ReadOnly = true;
+            Id.Visible = false;
+            Id.Width = 125;
             // 
             // SchoolName
             // 
-            this.SchoolName.DataPropertyName = "Name";
-            this.SchoolName.HeaderText = "Name";
-            this.SchoolName.MinimumWidth = 6;
-            this.SchoolName.Name = "SchoolName";
-            this.SchoolName.ReadOnly = true;
-            this.SchoolName.Width = 125;
+            SchoolName.DataPropertyName = "Name";
+            SchoolName.HeaderText = "Name";
+            SchoolName.MinimumWidth = 6;
+            SchoolName.Name = "SchoolName";
+            SchoolName.ReadOnly = true;
+            SchoolName.Width = 240;
             // 
             // Address
             // 
-            this.Address.DataPropertyName = "Address";
-            this.Address.HeaderText = "Address";
-            this.Address.MinimumWidth = 6;
-            this.Address.Name = "Address";
-            this.Address.ReadOnly = true;
-            this.Address.Width = 125;
+            Address.DataPropertyName = "Address";
+            Address.HeaderText = "Address";
+            Address.MinimumWidth = 6;
+            Address.Name = "Address";
+            Address.ReadOnly = true;
+            Address.Width = 240;
             // 
             // City
             // 
-            this.City.DataPropertyName = "City";
-            this.City.HeaderText = "City";
-            this.City.MinimumWidth = 6;
-            this.City.Name = "City";
-            this.City.ReadOnly = true;
-            this.City.Width = 125;
+            City.DataPropertyName = "City";
+            City.HeaderText = "City";
+            City.MinimumWidth = 6;
+            City.Name = "City";
+            City.ReadOnly = true;
+            City.Width = 240;
             // 
             // Action
             // 
-            this.Action.HeaderText = "Action";
-            this.Action.MinimumWidth = 6;
-            this.Action.Name = "Action";
-            this.Action.ReadOnly = true;
-            this.Action.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Action.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Action.Text = "Edit";
-            this.Action.ToolTipText = "Edit";
-            this.Action.UseColumnTextForButtonValue = true;
-            this.Action.Width = 125;
+            Action.HeaderText = "Action";
+            Action.MinimumWidth = 6;
+            Action.Name = "Action";
+            Action.ReadOnly = true;
+            Action.Resizable = DataGridViewTriState.True;
+            Action.SortMode = DataGridViewColumnSortMode.Automatic;
+            Action.Text = "Edit";
+            Action.ToolTipText = "Edit";
+            Action.UseColumnTextForButtonValue = true;
+            Action.Width = 90;
             // 
             // btnDelete
             // 
-            this.btnDelete.HeaderText = "Action";
-            this.btnDelete.MinimumWidth = 6;
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.ReadOnly = true;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.ToolTipText = "Delete";
-            this.btnDelete.UseColumnTextForButtonValue = true;
-            this.btnDelete.Width = 125;
-            // 
-            // label3
-            // 
-            this.label3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label3.Location = new System.Drawing.Point(187, 34);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(1, 338);
-            this.label3.TabIndex = 21;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 108);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(147, 166);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 20;
-            this.pictureBox1.TabStop = false;
+            btnDelete.HeaderText = "Action";
+            btnDelete.MinimumWidth = 6;
+            btnDelete.Name = "btnDelete";
+            btnDelete.ReadOnly = true;
+            btnDelete.Text = "Delete";
+            btnDelete.ToolTipText = "Delete";
+            btnDelete.UseColumnTextForButtonValue = true;
+            btnDelete.Width = 90;
             // 
             // btnAddSchool
             // 
-            this.btnAddSchool.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddSchool.Location = new System.Drawing.Point(795, 48);
-            this.btnAddSchool.Name = "btnAddSchool";
-            this.btnAddSchool.Size = new System.Drawing.Size(110, 29);
-            this.btnAddSchool.TabIndex = 22;
-            this.btnAddSchool.Text = "Add school";
-            this.btnAddSchool.UseVisualStyleBackColor = true;
-            this.btnAddSchool.Click += new System.EventHandler(this.btnAddSchool_Click);
+            btnAddSchool.Cursor = Cursors.Hand;
+            btnAddSchool.Location = new Point(1378, 145);
+            btnAddSchool.Name = "btnAddSchool";
+            btnAddSchool.Size = new Size(110, 29);
+            btnAddSchool.TabIndex = 22;
+            btnAddSchool.Text = "Add school";
+            btnAddSchool.UseVisualStyleBackColor = true;
+            btnAddSchool.Click += btnAddSchool_Click;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(127, 203);
+            pictureBox2.Margin = new Padding(3, 4, 3, 4);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(261, 330);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 78;
+            pictureBox2.TabStop = false;
+            // 
+            // label4
+            // 
+            label4.BackColor = SystemColors.ActiveCaptionText;
+            label4.Location = new Point(446, 51);
+            label4.Name = "label4";
+            label4.Size = new Size(1, 644);
+            label4.TabIndex = 77;
             // 
             // frmAllSchools
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(933, 403);
-            this.Controls.Add(this.btnAddSchool);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.groupBox1);
-            this.Name = "frmAllSchools";
-            this.Text = "frmAllSchools";
-            this.Load += new System.EventHandler(this.frmAllSchools_Load);
-            this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSchools)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1638, 777);
+            Controls.Add(pictureBox2);
+            Controls.Add(label4);
+            Controls.Add(btnAddSchool);
+            Controls.Add(groupBox1);
+            Name = "frmAllSchools";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "frmAllSchools";
+            Load += frmAllSchools_Load;
+            groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgvSchools).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion
@@ -198,8 +192,6 @@
         private DataGridViewTextBoxColumn NumberOfChildren;
         private DataGridViewButtonColumn btnAddMaterial;
         private DataGridViewButtonColumn btnAddVolunteers;
-        private Label label3;
-        private PictureBox pictureBox1;
         private Button btnAddSchool;
         private DataGridViewTextBoxColumn Id;
         private DataGridViewTextBoxColumn SchoolName;
@@ -207,5 +199,7 @@
         private DataGridViewTextBoxColumn City;
         private DataGridViewButtonColumn Action;
         private DataGridViewButtonColumn btnDelete;
+        private PictureBox pictureBox2;
+        private Label label4;
     }
 }

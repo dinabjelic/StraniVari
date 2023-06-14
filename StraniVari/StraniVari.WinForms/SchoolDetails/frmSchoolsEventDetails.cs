@@ -13,7 +13,7 @@ namespace StraniVari.WinUI.SchoolDetails
         ApiService _apiServiceEvent = new ApiService("EventSchool/school-details");
         public EventUpsertRequest _selectedEvent { get; }
 
-        public frmSchoolsEventDetails(EventUpsertRequest selectedEvent=null)
+        public frmSchoolsEventDetails(EventUpsertRequest selectedEvent = null)
         {
             InitializeComponent();
             _selectedEvent = selectedEvent;
@@ -46,7 +46,7 @@ namespace StraniVari.WinUI.SchoolDetails
                     frmEditSchoolsDetails frmEditSchoolsDetails = new frmEditSchoolsDetails(selectedSchool, _selectedEvent);
                     frmEditSchoolsDetails.ShowDialog();
                 }
-                else if(e.ColumnIndex ==6)
+                else if (e.ColumnIndex == 6)
                 {
                     var confirmation = MessageBox.Show("You are about to delete this item!", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
@@ -60,12 +60,12 @@ namespace StraniVari.WinUI.SchoolDetails
                         frmSchoolsEventDetails_Load(sender, e);
                     }
                 }
-                else if(e.ColumnIndex == 7)
+                else if (e.ColumnIndex == 7)
                 {
                     frmAddMaterialToSchool frmAddMaterialToSchool = new frmAddMaterialToSchool(selectedSchool, _selectedEvent);
                     frmAddMaterialToSchool.ShowDialog();
                 }
-                else if(e.ColumnIndex == 8)
+                else if (e.ColumnIndex == 8)
                 {
                     frmAddVolunteersToSchool frmAddVolunteersToSchool = new frmAddVolunteersToSchool(selectedSchool, _selectedEvent);
                     frmAddVolunteersToSchool.ShowDialog();

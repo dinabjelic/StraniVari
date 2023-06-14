@@ -28,231 +28,223 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dgvVolunteers = new System.Windows.Forms.DataGridView();
-            this.SchoolVolunteerId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.VolunteerAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.VolunteerCity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TransportNeeded = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.btnEdit = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.btnDelete = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.txtSchool = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtEndDate = new System.Windows.Forms.TextBox();
-            this.txtStartDate = new System.Windows.Forms.TextBox();
-            this.txtTheme = new System.Windows.Forms.TextBox();
-            this.txtName = new System.Windows.Forms.TextBox();
-            this.btnReport = new System.Windows.Forms.Button();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvVolunteers)).BeginInit();
-            this.SuspendLayout();
+            groupBox1 = new GroupBox();
+            dgvVolunteers = new DataGridView();
+            SchoolVolunteerId = new DataGridViewTextBoxColumn();
+            FirstName = new DataGridViewTextBoxColumn();
+            LastName = new DataGridViewTextBoxColumn();
+            VolunteerAddress = new DataGridViewTextBoxColumn();
+            VolunteerCity = new DataGridViewTextBoxColumn();
+            TransportNeeded = new DataGridViewCheckBoxColumn();
+            btnEdit = new DataGridViewButtonColumn();
+            btnDelete = new DataGridViewButtonColumn();
+            txtSchool = new TextBox();
+            label4 = new Label();
+            txtEndDate = new TextBox();
+            txtStartDate = new TextBox();
+            txtTheme = new TextBox();
+            txtName = new TextBox();
+            btnReport = new Button();
+            groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvVolunteers).BeginInit();
+            SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dgvVolunteers);
-            this.groupBox1.Location = new System.Drawing.Point(276, 110);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(946, 269);
-            this.groupBox1.TabIndex = 33;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "EVENT DETAILS";
+            groupBox1.Controls.Add(dgvVolunteers);
+            groupBox1.Location = new Point(391, 198);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(1159, 379);
+            groupBox1.TabIndex = 33;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "EVENT DETAILS";
             // 
             // dgvVolunteers
             // 
-            this.dgvVolunteers.AllowUserToAddRows = false;
-            this.dgvVolunteers.AllowUserToDeleteRows = false;
-            this.dgvVolunteers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvVolunteers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.SchoolVolunteerId,
-            this.FirstName,
-            this.LastName,
-            this.VolunteerAddress,
-            this.VolunteerCity,
-            this.TransportNeeded,
-            this.btnEdit,
-            this.btnDelete});
-            this.dgvVolunteers.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dgvVolunteers.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvVolunteers.Location = new System.Drawing.Point(3, 23);
-            this.dgvVolunteers.Name = "dgvVolunteers";
-            this.dgvVolunteers.ReadOnly = true;
-            this.dgvVolunteers.RowHeadersWidth = 51;
-            this.dgvVolunteers.RowTemplate.Height = 29;
-            this.dgvVolunteers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvVolunteers.Size = new System.Drawing.Size(940, 243);
-            this.dgvVolunteers.TabIndex = 0;
-            this.dgvVolunteers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMaterialForSchool_CellContentClick);
+            dgvVolunteers.AllowUserToAddRows = false;
+            dgvVolunteers.AllowUserToDeleteRows = false;
+            dgvVolunteers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvVolunteers.Columns.AddRange(new DataGridViewColumn[] { SchoolVolunteerId, FirstName, LastName, VolunteerAddress, VolunteerCity, TransportNeeded, btnEdit, btnDelete });
+            dgvVolunteers.Cursor = Cursors.Hand;
+            dgvVolunteers.Dock = DockStyle.Fill;
+            dgvVolunteers.Location = new Point(3, 23);
+            dgvVolunteers.Name = "dgvVolunteers";
+            dgvVolunteers.ReadOnly = true;
+            dgvVolunteers.RowHeadersWidth = 51;
+            dgvVolunteers.RowTemplate.Height = 29;
+            dgvVolunteers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvVolunteers.Size = new Size(1153, 353);
+            dgvVolunteers.TabIndex = 0;
+            dgvVolunteers.CellContentClick += dgvMaterialForSchool_CellContentClick;
             // 
             // SchoolVolunteerId
             // 
-            this.SchoolVolunteerId.DataPropertyName = "SchoolVolunteerId";
-            this.SchoolVolunteerId.HeaderText = "SchoolVolunteerId";
-            this.SchoolVolunteerId.MinimumWidth = 6;
-            this.SchoolVolunteerId.Name = "SchoolVolunteerId";
-            this.SchoolVolunteerId.ReadOnly = true;
-            this.SchoolVolunteerId.Visible = false;
-            this.SchoolVolunteerId.Width = 125;
+            SchoolVolunteerId.DataPropertyName = "SchoolVolunteerId";
+            SchoolVolunteerId.HeaderText = "SchoolVolunteerId";
+            SchoolVolunteerId.MinimumWidth = 6;
+            SchoolVolunteerId.Name = "SchoolVolunteerId";
+            SchoolVolunteerId.ReadOnly = true;
+            SchoolVolunteerId.Visible = false;
+            SchoolVolunteerId.Width = 125;
             // 
             // FirstName
             // 
-            this.FirstName.DataPropertyName = "FirstName";
-            this.FirstName.HeaderText = "FirstName";
-            this.FirstName.MinimumWidth = 6;
-            this.FirstName.Name = "FirstName";
-            this.FirstName.ReadOnly = true;
-            this.FirstName.Width = 125;
+            FirstName.DataPropertyName = "FirstName";
+            FirstName.HeaderText = "First Name";
+            FirstName.MinimumWidth = 6;
+            FirstName.Name = "FirstName";
+            FirstName.ReadOnly = true;
+            FirstName.Width = 190;
             // 
             // LastName
             // 
-            this.LastName.DataPropertyName = "LastName";
-            this.LastName.HeaderText = "LastName";
-            this.LastName.MinimumWidth = 6;
-            this.LastName.Name = "LastName";
-            this.LastName.ReadOnly = true;
-            this.LastName.Width = 125;
+            LastName.DataPropertyName = "LastName";
+            LastName.HeaderText = "Last Name";
+            LastName.MinimumWidth = 6;
+            LastName.Name = "LastName";
+            LastName.ReadOnly = true;
+            LastName.Width = 190;
             // 
             // VolunteerAddress
             // 
-            this.VolunteerAddress.DataPropertyName = "VolunteerAddress";
-            this.VolunteerAddress.HeaderText = "VolunteerAddress";
-            this.VolunteerAddress.MinimumWidth = 6;
-            this.VolunteerAddress.Name = "VolunteerAddress";
-            this.VolunteerAddress.ReadOnly = true;
-            this.VolunteerAddress.Width = 130;
+            VolunteerAddress.DataPropertyName = "VolunteerAddress";
+            VolunteerAddress.HeaderText = "Address";
+            VolunteerAddress.MinimumWidth = 6;
+            VolunteerAddress.Name = "VolunteerAddress";
+            VolunteerAddress.ReadOnly = true;
+            VolunteerAddress.Width = 220;
             // 
             // VolunteerCity
             // 
-            this.VolunteerCity.DataPropertyName = "VolunteerCity";
-            this.VolunteerCity.HeaderText = "VolunteerCity";
-            this.VolunteerCity.MinimumWidth = 6;
-            this.VolunteerCity.Name = "VolunteerCity";
-            this.VolunteerCity.ReadOnly = true;
-            this.VolunteerCity.Width = 125;
+            VolunteerCity.DataPropertyName = "VolunteerCity";
+            VolunteerCity.HeaderText = "City";
+            VolunteerCity.MinimumWidth = 6;
+            VolunteerCity.Name = "VolunteerCity";
+            VolunteerCity.ReadOnly = true;
+            VolunteerCity.Width = 190;
             // 
             // TransportNeeded
             // 
-            this.TransportNeeded.DataPropertyName = "TransportNeeded";
-            this.TransportNeeded.HeaderText = "TransportNeeded";
-            this.TransportNeeded.MinimumWidth = 6;
-            this.TransportNeeded.Name = "TransportNeeded";
-            this.TransportNeeded.ReadOnly = true;
-            this.TransportNeeded.Width = 130;
+            TransportNeeded.DataPropertyName = "TransportNeeded";
+            TransportNeeded.HeaderText = "TransportNeeded";
+            TransportNeeded.MinimumWidth = 6;
+            TransportNeeded.Name = "TransportNeeded";
+            TransportNeeded.ReadOnly = true;
+            TransportNeeded.Width = 125;
             // 
             // btnEdit
             // 
-            this.btnEdit.HeaderText = "Action";
-            this.btnEdit.MinimumWidth = 6;
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.ReadOnly = true;
-            this.btnEdit.Text = "Edit";
-            this.btnEdit.ToolTipText = "Edit";
-            this.btnEdit.UseColumnTextForButtonValue = true;
-            this.btnEdit.Width = 125;
+            btnEdit.HeaderText = "Action";
+            btnEdit.MinimumWidth = 6;
+            btnEdit.Name = "btnEdit";
+            btnEdit.ReadOnly = true;
+            btnEdit.Text = "Edit";
+            btnEdit.ToolTipText = "Edit";
+            btnEdit.UseColumnTextForButtonValue = true;
+            btnEdit.Width = 90;
             // 
             // btnDelete
             // 
-            this.btnDelete.HeaderText = "Action";
-            this.btnDelete.MinimumWidth = 6;
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.ReadOnly = true;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.ToolTipText = "Delete";
-            this.btnDelete.UseColumnTextForButtonValue = true;
-            this.btnDelete.Width = 125;
+            btnDelete.HeaderText = "Action";
+            btnDelete.MinimumWidth = 6;
+            btnDelete.Name = "btnDelete";
+            btnDelete.ReadOnly = true;
+            btnDelete.Text = "Delete";
+            btnDelete.ToolTipText = "Delete";
+            btnDelete.UseColumnTextForButtonValue = true;
+            btnDelete.Width = 90;
             // 
             // txtSchool
             // 
-            this.txtSchool.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtSchool.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtSchool.Location = new System.Drawing.Point(26, 296);
-            this.txtSchool.Name = "txtSchool";
-            this.txtSchool.ReadOnly = true;
-            this.txtSchool.Size = new System.Drawing.Size(225, 19);
-            this.txtSchool.TabIndex = 32;
+            txtSchool.BorderStyle = BorderStyle.None;
+            txtSchool.Font = new Font("Showcard Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txtSchool.Location = new Point(133, 438);
+            txtSchool.Name = "txtSchool";
+            txtSchool.ReadOnly = true;
+            txtSchool.Size = new Size(225, 19);
+            txtSchool.TabIndex = 32;
             // 
             // label4
             // 
-            this.label4.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label4.Location = new System.Drawing.Point(257, 28);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(1, 408);
-            this.label4.TabIndex = 31;
+            label4.BackColor = SystemColors.ActiveCaptionText;
+            label4.Location = new Point(374, 61);
+            label4.Name = "label4";
+            label4.Size = new Size(1, 644);
+            label4.TabIndex = 31;
             // 
             // txtEndDate
             // 
-            this.txtEndDate.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtEndDate.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtEndDate.Location = new System.Drawing.Point(26, 213);
-            this.txtEndDate.Name = "txtEndDate";
-            this.txtEndDate.ReadOnly = true;
-            this.txtEndDate.Size = new System.Drawing.Size(225, 19);
-            this.txtEndDate.TabIndex = 30;
+            txtEndDate.BorderStyle = BorderStyle.None;
+            txtEndDate.Font = new Font("Showcard Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txtEndDate.Location = new Point(133, 355);
+            txtEndDate.Name = "txtEndDate";
+            txtEndDate.ReadOnly = true;
+            txtEndDate.Size = new Size(225, 19);
+            txtEndDate.TabIndex = 30;
             // 
             // txtStartDate
             // 
-            this.txtStartDate.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtStartDate.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtStartDate.Location = new System.Drawing.Point(26, 260);
-            this.txtStartDate.Name = "txtStartDate";
-            this.txtStartDate.ReadOnly = true;
-            this.txtStartDate.Size = new System.Drawing.Size(225, 19);
-            this.txtStartDate.TabIndex = 29;
+            txtStartDate.BorderStyle = BorderStyle.None;
+            txtStartDate.Font = new Font("Showcard Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txtStartDate.Location = new Point(133, 402);
+            txtStartDate.Name = "txtStartDate";
+            txtStartDate.ReadOnly = true;
+            txtStartDate.Size = new Size(225, 19);
+            txtStartDate.TabIndex = 29;
             // 
             // txtTheme
             // 
-            this.txtTheme.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTheme.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtTheme.Location = new System.Drawing.Point(26, 168);
-            this.txtTheme.Name = "txtTheme";
-            this.txtTheme.ReadOnly = true;
-            this.txtTheme.Size = new System.Drawing.Size(225, 19);
-            this.txtTheme.TabIndex = 28;
+            txtTheme.BorderStyle = BorderStyle.None;
+            txtTheme.Font = new Font("Showcard Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txtTheme.Location = new Point(133, 310);
+            txtTheme.Name = "txtTheme";
+            txtTheme.ReadOnly = true;
+            txtTheme.Size = new Size(225, 19);
+            txtTheme.TabIndex = 28;
             // 
             // txtName
             // 
-            this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtName.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtName.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.txtName.Location = new System.Drawing.Point(26, 133);
-            this.txtName.Name = "txtName";
-            this.txtName.ReadOnly = true;
-            this.txtName.Size = new System.Drawing.Size(225, 19);
-            this.txtName.TabIndex = 27;
+            txtName.BorderStyle = BorderStyle.None;
+            txtName.Font = new Font("Showcard Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txtName.ForeColor = SystemColors.InactiveBorder;
+            txtName.Location = new Point(133, 275);
+            txtName.Name = "txtName";
+            txtName.ReadOnly = true;
+            txtName.Size = new Size(225, 19);
+            txtName.TabIndex = 27;
             // 
             // btnReport
             // 
-            this.btnReport.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnReport.Location = new System.Drawing.Point(1125, 75);
-            this.btnReport.Name = "btnReport";
-            this.btnReport.Size = new System.Drawing.Size(94, 29);
-            this.btnReport.TabIndex = 34;
-            this.btnReport.Text = "Report";
-            this.btnReport.UseVisualStyleBackColor = true;
-            this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
+            btnReport.Cursor = Cursors.Hand;
+            btnReport.Location = new Point(1456, 165);
+            btnReport.Name = "btnReport";
+            btnReport.Size = new Size(94, 29);
+            btnReport.TabIndex = 34;
+            btnReport.Text = "Report";
+            btnReport.UseVisualStyleBackColor = true;
+            btnReport.Click += btnReport_Click;
             // 
             // frmVolunteerDetails
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1240, 450);
-            this.Controls.Add(this.btnReport);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.txtSchool);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtEndDate);
-            this.Controls.Add(this.txtStartDate);
-            this.Controls.Add(this.txtTheme);
-            this.Controls.Add(this.txtName);
-            this.Name = "frmVolunteerDetails";
-            this.Text = "frmVolunteerDetails";
-            this.Load += new System.EventHandler(this.frmVolunteerDetails_Load);
-            this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvVolunteers)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1638, 777);
+            Controls.Add(btnReport);
+            Controls.Add(groupBox1);
+            Controls.Add(txtSchool);
+            Controls.Add(label4);
+            Controls.Add(txtEndDate);
+            Controls.Add(txtStartDate);
+            Controls.Add(txtTheme);
+            Controls.Add(txtName);
+            Name = "frmVolunteerDetails";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "frmVolunteerDetails";
+            Load += frmVolunteerDetails_Load;
+            groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgvVolunteers).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -265,14 +257,14 @@
         private TextBox txtStartDate;
         private TextBox txtTheme;
         private TextBox txtName;
+        private Button btnReport;
         private DataGridViewTextBoxColumn SchoolVolunteerId;
-        private DataGridViewCheckBoxColumn TransportNeeded;
         private DataGridViewTextBoxColumn FirstName;
         private DataGridViewTextBoxColumn LastName;
         private DataGridViewTextBoxColumn VolunteerAddress;
         private DataGridViewTextBoxColumn VolunteerCity;
+        private DataGridViewCheckBoxColumn TransportNeeded;
         private DataGridViewButtonColumn btnEdit;
         private DataGridViewButtonColumn btnDelete;
-        private Button btnReport;
     }
 }

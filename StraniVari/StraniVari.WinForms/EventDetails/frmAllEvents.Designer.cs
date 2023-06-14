@@ -28,277 +28,261 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnAddEvent = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dgvEvents = new System.Windows.Forms.DataGridView();
-            this.btnMaterials = new System.Windows.Forms.Button();
-            this.btnVolunteers = new System.Windows.Forms.Button();
-            this.btnSchools = new System.Windows.Forms.Button();
-            this.btnGames = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EventName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StraniVariTheme = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.startDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.endDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnDelete = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.btnEdit = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.btnAddSchool = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.btnNotification = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.dataGridViewButtonColumn1 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Applications = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEvents)).BeginInit();
-            this.SuspendLayout();
+            btnAddEvent = new Button();
+            groupBox1 = new GroupBox();
+            dgvEvents = new DataGridView();
+            Id = new DataGridViewTextBoxColumn();
+            EventName = new DataGridViewTextBoxColumn();
+            StraniVariTheme = new DataGridViewTextBoxColumn();
+            startDate = new DataGridViewTextBoxColumn();
+            endDate = new DataGridViewTextBoxColumn();
+            btnDelete = new DataGridViewButtonColumn();
+            btnEdit = new DataGridViewButtonColumn();
+            btnAddSchool = new DataGridViewButtonColumn();
+            btnNotification = new DataGridViewButtonColumn();
+            dataGridViewButtonColumn1 = new DataGridViewButtonColumn();
+            Applications = new DataGridViewButtonColumn();
+            btnMaterials = new Button();
+            btnVolunteers = new Button();
+            btnSchools = new Button();
+            btnGames = new Button();
+            button1 = new Button();
+            groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvEvents).BeginInit();
+            SuspendLayout();
             // 
             // btnAddEvent
             // 
-            this.btnAddEvent.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddEvent.Location = new System.Drawing.Point(1319, 99);
-            this.btnAddEvent.Margin = new System.Windows.Forms.Padding(4);
-            this.btnAddEvent.Name = "btnAddEvent";
-            this.btnAddEvent.Size = new System.Drawing.Size(226, 36);
-            this.btnAddEvent.TabIndex = 3;
-            this.btnAddEvent.Text = "Add new event";
-            this.btnAddEvent.UseVisualStyleBackColor = true;
-            this.btnAddEvent.Click += new System.EventHandler(this.btnAddEvent_Click);
+            btnAddEvent.Cursor = Cursors.Hand;
+            btnAddEvent.Location = new Point(1528, 297);
+            btnAddEvent.Name = "btnAddEvent";
+            btnAddEvent.Size = new Size(181, 29);
+            btnAddEvent.TabIndex = 3;
+            btnAddEvent.Text = "Add new event";
+            btnAddEvent.UseVisualStyleBackColor = true;
+            btnAddEvent.Click += btnAddEvent_Click;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dgvEvents);
-            this.groupBox1.Location = new System.Drawing.Point(15, 131);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox1.Size = new System.Drawing.Size(1538, 411);
-            this.groupBox1.TabIndex = 2;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "EVENTS";
+            groupBox1.Controls.Add(dgvEvents);
+            groupBox1.Location = new Point(147, 333);
+            groupBox1.Margin = new Padding(3, 4, 3, 4);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Padding = new Padding(3, 4, 3, 4);
+            groupBox1.Size = new Size(1565, 329);
+            groupBox1.TabIndex = 2;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "EVENTS";
             // 
             // dgvEvents
             // 
-            this.dgvEvents.AllowUserToAddRows = false;
-            this.dgvEvents.AllowUserToDeleteRows = false;
-            this.dgvEvents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEvents.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Id,
-            this.EventName,
-            this.StraniVariTheme,
-            this.startDate,
-            this.endDate,
-            this.btnDelete,
-            this.btnEdit,
-            this.btnAddSchool,
-            this.btnNotification,
-            this.dataGridViewButtonColumn1,
-            this.Applications});
-            this.dgvEvents.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dgvEvents.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvEvents.Location = new System.Drawing.Point(4, 29);
-            this.dgvEvents.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.dgvEvents.Name = "dgvEvents";
-            this.dgvEvents.ReadOnly = true;
-            this.dgvEvents.RowHeadersWidth = 51;
-            this.dgvEvents.RowTemplate.Height = 24;
-            this.dgvEvents.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEvents.Size = new System.Drawing.Size(1530, 377);
-            this.dgvEvents.TabIndex = 0;
-            this.dgvEvents.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEvents_CellContentClick);
-            // 
-            // btnMaterials
-            // 
-            this.btnMaterials.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMaterials.Location = new System.Drawing.Point(19, 15);
-            this.btnMaterials.Margin = new System.Windows.Forms.Padding(4);
-            this.btnMaterials.Name = "btnMaterials";
-            this.btnMaterials.Size = new System.Drawing.Size(131, 36);
-            this.btnMaterials.TabIndex = 4;
-            this.btnMaterials.Text = "Materials";
-            this.btnMaterials.UseVisualStyleBackColor = true;
-            this.btnMaterials.Click += new System.EventHandler(this.btnMaterials_Click);
-            // 
-            // btnVolunteers
-            // 
-            this.btnVolunteers.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnVolunteers.Location = new System.Drawing.Point(145, 15);
-            this.btnVolunteers.Margin = new System.Windows.Forms.Padding(4);
-            this.btnVolunteers.Name = "btnVolunteers";
-            this.btnVolunteers.Size = new System.Drawing.Size(130, 36);
-            this.btnVolunteers.TabIndex = 5;
-            this.btnVolunteers.Text = "Volunteers";
-            this.btnVolunteers.UseVisualStyleBackColor = true;
-            this.btnVolunteers.Click += new System.EventHandler(this.btnVolunteers_Click);
-            // 
-            // btnSchools
-            // 
-            this.btnSchools.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSchools.Location = new System.Drawing.Point(268, 15);
-            this.btnSchools.Margin = new System.Windows.Forms.Padding(4);
-            this.btnSchools.Name = "btnSchools";
-            this.btnSchools.Size = new System.Drawing.Size(124, 36);
-            this.btnSchools.TabIndex = 6;
-            this.btnSchools.Text = "Schools";
-            this.btnSchools.UseVisualStyleBackColor = true;
-            this.btnSchools.Click += new System.EventHandler(this.btnSchools_Click);
-            // 
-            // btnGames
-            // 
-            this.btnGames.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGames.Location = new System.Drawing.Point(386, 15);
-            this.btnGames.Margin = new System.Windows.Forms.Padding(4);
-            this.btnGames.Name = "btnGames";
-            this.btnGames.Size = new System.Drawing.Size(130, 36);
-            this.btnGames.TabIndex = 7;
-            this.btnGames.Text = "Games";
-            this.btnGames.UseVisualStyleBackColor = true;
-            this.btnGames.Click += new System.EventHandler(this.btnGames_Click);
-            // 
-            // button1
-            // 
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.Location = new System.Drawing.Point(514, 15);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(130, 36);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Trips";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            dgvEvents.AllowUserToAddRows = false;
+            dgvEvents.AllowUserToDeleteRows = false;
+            dgvEvents.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvEvents.Columns.AddRange(new DataGridViewColumn[] { Id, EventName, StraniVariTheme, startDate, endDate, btnDelete, btnEdit, btnAddSchool, btnNotification, dataGridViewButtonColumn1, Applications });
+            dgvEvents.Cursor = Cursors.Hand;
+            dgvEvents.Dock = DockStyle.Fill;
+            dgvEvents.GridColor = SystemColors.ControlDarkDark;
+            dgvEvents.Location = new Point(3, 24);
+            dgvEvents.Margin = new Padding(3, 4, 3, 4);
+            dgvEvents.Name = "dgvEvents";
+            dgvEvents.ReadOnly = true;
+            dgvEvents.RowHeadersWidth = 51;
+            dgvEvents.RowTemplate.Height = 24;
+            dgvEvents.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvEvents.Size = new Size(1559, 301);
+            dgvEvents.TabIndex = 0;
+            dgvEvents.CellContentClick += dgvEvents_CellContentClick;
             // 
             // Id
             // 
-            this.Id.DataPropertyName = "Id";
-            this.Id.HeaderText = "Id";
-            this.Id.MinimumWidth = 6;
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            this.Id.Visible = false;
-            this.Id.Width = 125;
+            Id.DataPropertyName = "Id";
+            Id.HeaderText = "Id";
+            Id.MinimumWidth = 6;
+            Id.Name = "Id";
+            Id.ReadOnly = true;
+            Id.Visible = false;
+            Id.Width = 125;
             // 
             // EventName
             // 
-            this.EventName.DataPropertyName = "name";
-            this.EventName.HeaderText = "Name";
-            this.EventName.MinimumWidth = 6;
-            this.EventName.Name = "EventName";
-            this.EventName.ReadOnly = true;
-            this.EventName.Width = 125;
+            EventName.DataPropertyName = "name";
+            EventName.HeaderText = "Name";
+            EventName.MinimumWidth = 6;
+            EventName.Name = "EventName";
+            EventName.ReadOnly = true;
+            EventName.Width = 160;
             // 
             // StraniVariTheme
             // 
-            this.StraniVariTheme.DataPropertyName = "straniVariTheme";
-            this.StraniVariTheme.HeaderText = "StraniVariTheme";
-            this.StraniVariTheme.MinimumWidth = 6;
-            this.StraniVariTheme.Name = "StraniVariTheme";
-            this.StraniVariTheme.ReadOnly = true;
-            this.StraniVariTheme.Width = 125;
+            StraniVariTheme.DataPropertyName = "straniVariTheme";
+            StraniVariTheme.HeaderText = "Theme";
+            StraniVariTheme.MinimumWidth = 6;
+            StraniVariTheme.Name = "StraniVariTheme";
+            StraniVariTheme.ReadOnly = true;
+            StraniVariTheme.Width = 160;
             // 
             // startDate
             // 
-            this.startDate.DataPropertyName = "startDate";
-            this.startDate.HeaderText = "startDate";
-            this.startDate.MinimumWidth = 6;
-            this.startDate.Name = "startDate";
-            this.startDate.ReadOnly = true;
-            this.startDate.Width = 125;
+            startDate.DataPropertyName = "startDate";
+            startDate.HeaderText = "Start Date";
+            startDate.MinimumWidth = 6;
+            startDate.Name = "startDate";
+            startDate.ReadOnly = true;
+            startDate.Width = 180;
             // 
             // endDate
             // 
-            this.endDate.DataPropertyName = "endDate";
-            this.endDate.HeaderText = "endDate";
-            this.endDate.MinimumWidth = 6;
-            this.endDate.Name = "endDate";
-            this.endDate.ReadOnly = true;
-            this.endDate.Width = 125;
+            endDate.DataPropertyName = "endDate";
+            endDate.HeaderText = "End Date";
+            endDate.MinimumWidth = 6;
+            endDate.Name = "endDate";
+            endDate.ReadOnly = true;
+            endDate.Width = 180;
             // 
             // btnDelete
             // 
-            this.btnDelete.HeaderText = "Action";
-            this.btnDelete.MinimumWidth = 6;
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.ReadOnly = true;
-            this.btnDelete.Text = "Edit";
-            this.btnDelete.ToolTipText = "Edit";
-            this.btnDelete.UseColumnTextForButtonValue = true;
-            this.btnDelete.Width = 126;
+            btnDelete.HeaderText = "Action";
+            btnDelete.MinimumWidth = 6;
+            btnDelete.Name = "btnDelete";
+            btnDelete.ReadOnly = true;
+            btnDelete.Text = "Edit";
+            btnDelete.ToolTipText = "Edit";
+            btnDelete.UseColumnTextForButtonValue = true;
+            btnDelete.Width = 126;
             // 
             // btnEdit
             // 
-            this.btnEdit.HeaderText = "Action";
-            this.btnEdit.MinimumWidth = 6;
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.ReadOnly = true;
-            this.btnEdit.Text = "Delete";
-            this.btnEdit.ToolTipText = "Delete";
-            this.btnEdit.UseColumnTextForButtonValue = true;
-            this.btnEdit.Width = 125;
+            btnEdit.HeaderText = "Action";
+            btnEdit.MinimumWidth = 6;
+            btnEdit.Name = "btnEdit";
+            btnEdit.ReadOnly = true;
+            btnEdit.Text = "Delete";
+            btnEdit.ToolTipText = "Delete";
+            btnEdit.UseColumnTextForButtonValue = true;
+            btnEdit.Width = 125;
             // 
             // btnAddSchool
             // 
-            this.btnAddSchool.HeaderText = "Action";
-            this.btnAddSchool.MinimumWidth = 6;
-            this.btnAddSchool.Name = "btnAddSchool";
-            this.btnAddSchool.ReadOnly = true;
-            this.btnAddSchool.Text = "Add school";
-            this.btnAddSchool.ToolTipText = "Add school";
-            this.btnAddSchool.UseColumnTextForButtonValue = true;
-            this.btnAddSchool.Width = 125;
+            btnAddSchool.HeaderText = "Action";
+            btnAddSchool.MinimumWidth = 6;
+            btnAddSchool.Name = "btnAddSchool";
+            btnAddSchool.ReadOnly = true;
+            btnAddSchool.Text = "Add school";
+            btnAddSchool.ToolTipText = "Add school";
+            btnAddSchool.UseColumnTextForButtonValue = true;
+            btnAddSchool.Width = 125;
             // 
             // btnNotification
             // 
-            this.btnNotification.HeaderText = "Option";
-            this.btnNotification.MinimumWidth = 6;
-            this.btnNotification.Name = "btnNotification";
-            this.btnNotification.ReadOnly = true;
-            this.btnNotification.Text = "Notification";
-            this.btnNotification.ToolTipText = "Notification";
-            this.btnNotification.UseColumnTextForButtonValue = true;
-            this.btnNotification.Width = 125;
+            btnNotification.HeaderText = "Option";
+            btnNotification.MinimumWidth = 6;
+            btnNotification.Name = "btnNotification";
+            btnNotification.ReadOnly = true;
+            btnNotification.Text = "Notification";
+            btnNotification.ToolTipText = "Notification";
+            btnNotification.UseColumnTextForButtonValue = true;
+            btnNotification.Width = 125;
             // 
             // dataGridViewButtonColumn1
             // 
-            this.dataGridViewButtonColumn1.HeaderText = "Option";
-            this.dataGridViewButtonColumn1.MinimumWidth = 6;
-            this.dataGridViewButtonColumn1.Name = "dataGridViewButtonColumn1";
-            this.dataGridViewButtonColumn1.ReadOnly = true;
-            this.dataGridViewButtonColumn1.Text = "Plan and Programme";
-            this.dataGridViewButtonColumn1.ToolTipText = "Plan and Programme";
-            this.dataGridViewButtonColumn1.UseColumnTextForButtonValue = true;
-            this.dataGridViewButtonColumn1.Width = 170;
+            dataGridViewButtonColumn1.HeaderText = "Option";
+            dataGridViewButtonColumn1.MinimumWidth = 6;
+            dataGridViewButtonColumn1.Name = "dataGridViewButtonColumn1";
+            dataGridViewButtonColumn1.ReadOnly = true;
+            dataGridViewButtonColumn1.Text = "Plan and Programme";
+            dataGridViewButtonColumn1.ToolTipText = "Plan and Programme";
+            dataGridViewButtonColumn1.UseColumnTextForButtonValue = true;
+            dataGridViewButtonColumn1.Width = 170;
             // 
             // Applications
             // 
-            this.Applications.HeaderText = "Action";
-            this.Applications.MinimumWidth = 8;
-            this.Applications.Name = "Applications";
-            this.Applications.ReadOnly = true;
-            this.Applications.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Applications.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Applications.Text = "Applications";
-            this.Applications.ToolTipText = "Applications";
-            this.Applications.UseColumnTextForButtonValue = true;
-            this.Applications.Width = 150;
+            Applications.HeaderText = "Action";
+            Applications.MinimumWidth = 8;
+            Applications.Name = "Applications";
+            Applications.ReadOnly = true;
+            Applications.Resizable = DataGridViewTriState.True;
+            Applications.SortMode = DataGridViewColumnSortMode.Automatic;
+            Applications.Text = "Applications";
+            Applications.ToolTipText = "Applications";
+            Applications.UseColumnTextForButtonValue = true;
+            Applications.Width = 150;
+            // 
+            // btnMaterials
+            // 
+            btnMaterials.Cursor = Cursors.Hand;
+            btnMaterials.Location = new Point(153, 266);
+            btnMaterials.Name = "btnMaterials";
+            btnMaterials.Size = new Size(105, 29);
+            btnMaterials.TabIndex = 4;
+            btnMaterials.Text = "Materials";
+            btnMaterials.UseVisualStyleBackColor = true;
+            btnMaterials.Click += btnMaterials_Click;
+            // 
+            // btnVolunteers
+            // 
+            btnVolunteers.Cursor = Cursors.Hand;
+            btnVolunteers.Location = new Point(254, 266);
+            btnVolunteers.Name = "btnVolunteers";
+            btnVolunteers.Size = new Size(104, 29);
+            btnVolunteers.TabIndex = 5;
+            btnVolunteers.Text = "Volunteers";
+            btnVolunteers.UseVisualStyleBackColor = true;
+            btnVolunteers.Click += btnVolunteers_Click;
+            // 
+            // btnSchools
+            // 
+            btnSchools.Cursor = Cursors.Hand;
+            btnSchools.Location = new Point(352, 266);
+            btnSchools.Name = "btnSchools";
+            btnSchools.Size = new Size(99, 29);
+            btnSchools.TabIndex = 6;
+            btnSchools.Text = "Schools";
+            btnSchools.UseVisualStyleBackColor = true;
+            btnSchools.Click += btnSchools_Click;
+            // 
+            // btnGames
+            // 
+            btnGames.Cursor = Cursors.Hand;
+            btnGames.Location = new Point(447, 266);
+            btnGames.Name = "btnGames";
+            btnGames.Size = new Size(104, 29);
+            btnGames.TabIndex = 7;
+            btnGames.Text = "Games";
+            btnGames.UseVisualStyleBackColor = true;
+            btnGames.Click += btnGames_Click;
+            // 
+            // button1
+            // 
+            button1.Cursor = Cursors.Hand;
+            button1.Location = new Point(549, 266);
+            button1.Name = "button1";
+            button1.Size = new Size(104, 29);
+            button1.TabIndex = 8;
+            button1.Text = "Trips";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // frmAllEvents
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1574, 559);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.btnGames);
-            this.Controls.Add(this.btnSchools);
-            this.Controls.Add(this.btnVolunteers);
-            this.Controls.Add(this.btnMaterials);
-            this.Controls.Add(this.btnAddEvent);
-            this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "frmAllEvents";
-            this.Text = "frmAllEvents";
-            this.Load += new System.EventHandler(this.frmAllEvents_Load);
-            this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEvents)).EndInit();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.Control;
+            ClientSize = new Size(1817, 952);
+            Controls.Add(button1);
+            Controls.Add(btnGames);
+            Controls.Add(btnSchools);
+            Controls.Add(btnVolunteers);
+            Controls.Add(btnMaterials);
+            Controls.Add(btnAddEvent);
+            Controls.Add(groupBox1);
+            Name = "frmAllEvents";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "frmAllEvents";
+            Load += frmAllEvents_Load;
+            groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgvEvents).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion

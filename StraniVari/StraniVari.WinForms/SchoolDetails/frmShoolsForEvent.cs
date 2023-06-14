@@ -54,18 +54,18 @@ namespace StraniVari.WinUI.SchoolDetails
             };
 
             bool added = false;
-            foreach(var item in schoolsForEvent)
+            foreach (var item in schoolsForEvent)
             {
-                foreach(var i in straniVariEvent.Schools)
+                foreach (var i in straniVariEvent.Schools)
                 {
-                    if(item.SchoolId == i)
+                    if (item.SchoolId == i)
                     {
                         added = true;
                         break;
                     }
                 }
             }
-            if(!added)
+            if (!added)
             {
                 if (straniVariEvent != null)
                 {

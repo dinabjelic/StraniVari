@@ -28,247 +28,232 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtSchool = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtEndDate = new System.Windows.Forms.TextBox();
-            this.txtStartDate = new System.Windows.Forms.TextBox();
-            this.txtName = new System.Windows.Forms.TextBox();
-            this.txtTheme = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtTripPlace = new System.Windows.Forms.TextBox();
-            this.txtTripDatTime = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dgvApplications = new System.Windows.Forms.DataGridView();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.VolunteerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnEdit = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvApplications)).BeginInit();
-            this.SuspendLayout();
+            txtSchool = new TextBox();
+            label3 = new Label();
+            txtEndDate = new TextBox();
+            txtStartDate = new TextBox();
+            txtName = new TextBox();
+            txtTheme = new TextBox();
+            label1 = new Label();
+            txtTripPlace = new TextBox();
+            txtTripDatTime = new TextBox();
+            groupBox1 = new GroupBox();
+            dgvApplications = new DataGridView();
+            Id = new DataGridViewTextBoxColumn();
+            VolunteerName = new DataGridViewTextBoxColumn();
+            LastName = new DataGridViewTextBoxColumn();
+            Status = new DataGridViewTextBoxColumn();
+            btnEdit = new DataGridViewButtonColumn();
+            label4 = new Label();
+            groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvApplications).BeginInit();
+            SuspendLayout();
             // 
             // txtSchool
             // 
-            this.txtSchool.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtSchool.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtSchool.Location = new System.Drawing.Point(32, 253);
-            this.txtSchool.Margin = new System.Windows.Forms.Padding(4);
-            this.txtSchool.Name = "txtSchool";
-            this.txtSchool.ReadOnly = true;
-            this.txtSchool.Size = new System.Drawing.Size(310, 23);
-            this.txtSchool.TabIndex = 32;
-            // 
-            // label4
-            // 
-            this.label4.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label4.Location = new System.Drawing.Point(343, 51);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(1, 366);
-            this.label4.TabIndex = 31;
+            txtSchool.BorderStyle = BorderStyle.None;
+            txtSchool.Font = new Font("Showcard Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txtSchool.Location = new Point(278, 388);
+            txtSchool.Name = "txtSchool";
+            txtSchool.ReadOnly = true;
+            txtSchool.Size = new Size(268, 19);
+            txtSchool.TabIndex = 32;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.SystemColors.MenuText;
-            this.label3.Location = new System.Drawing.Point(356, 125);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(0, 25);
-            this.label3.TabIndex = 30;
+            label3.AutoSize = true;
+            label3.BackColor = SystemColors.MenuText;
+            label3.Location = new Point(600, 275);
+            label3.Name = "label3";
+            label3.Size = new Size(0, 20);
+            label3.TabIndex = 30;
             // 
             // txtEndDate
             // 
-            this.txtEndDate.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtEndDate.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtEndDate.Location = new System.Drawing.Point(32, 215);
-            this.txtEndDate.Margin = new System.Windows.Forms.Padding(4);
-            this.txtEndDate.Name = "txtEndDate";
-            this.txtEndDate.ReadOnly = true;
-            this.txtEndDate.Size = new System.Drawing.Size(310, 23);
-            this.txtEndDate.TabIndex = 29;
+            txtEndDate.BorderStyle = BorderStyle.None;
+            txtEndDate.Font = new Font("Showcard Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txtEndDate.Location = new Point(278, 358);
+            txtEndDate.Name = "txtEndDate";
+            txtEndDate.ReadOnly = true;
+            txtEndDate.Size = new Size(268, 19);
+            txtEndDate.TabIndex = 29;
             // 
             // txtStartDate
             // 
-            this.txtStartDate.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtStartDate.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtStartDate.Location = new System.Drawing.Point(32, 173);
-            this.txtStartDate.Margin = new System.Windows.Forms.Padding(4);
-            this.txtStartDate.Name = "txtStartDate";
-            this.txtStartDate.ReadOnly = true;
-            this.txtStartDate.Size = new System.Drawing.Size(310, 23);
-            this.txtStartDate.TabIndex = 27;
+            txtStartDate.BorderStyle = BorderStyle.None;
+            txtStartDate.Font = new Font("Showcard Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txtStartDate.Location = new Point(278, 324);
+            txtStartDate.Name = "txtStartDate";
+            txtStartDate.ReadOnly = true;
+            txtStartDate.Size = new Size(268, 19);
+            txtStartDate.TabIndex = 27;
             // 
             // txtName
             // 
-            this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtName.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtName.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.txtName.Location = new System.Drawing.Point(32, 91);
-            this.txtName.Margin = new System.Windows.Forms.Padding(4);
-            this.txtName.Name = "txtName";
-            this.txtName.ReadOnly = true;
-            this.txtName.Size = new System.Drawing.Size(310, 23);
-            this.txtName.TabIndex = 25;
+            txtName.BorderStyle = BorderStyle.None;
+            txtName.Font = new Font("Showcard Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txtName.ForeColor = SystemColors.InactiveBorder;
+            txtName.Location = new Point(278, 259);
+            txtName.Name = "txtName";
+            txtName.ReadOnly = true;
+            txtName.Size = new Size(268, 19);
+            txtName.TabIndex = 25;
             // 
             // txtTheme
             // 
-            this.txtTheme.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTheme.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtTheme.Location = new System.Drawing.Point(32, 132);
-            this.txtTheme.Margin = new System.Windows.Forms.Padding(4);
-            this.txtTheme.Name = "txtTheme";
-            this.txtTheme.ReadOnly = true;
-            this.txtTheme.Size = new System.Drawing.Size(310, 23);
-            this.txtTheme.TabIndex = 26;
+            txtTheme.BorderStyle = BorderStyle.None;
+            txtTheme.Font = new Font("Showcard Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txtTheme.Location = new Point(278, 292);
+            txtTheme.Name = "txtTheme";
+            txtTheme.ReadOnly = true;
+            txtTheme.Size = new Size(268, 19);
+            txtTheme.TabIndex = 26;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(73, 22);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 25);
-            this.label1.TabIndex = 28;
+            label1.AutoSize = true;
+            label1.Location = new Point(310, 204);
+            label1.Name = "label1";
+            label1.Size = new Size(0, 20);
+            label1.TabIndex = 28;
             // 
             // txtTripPlace
             // 
-            this.txtTripPlace.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTripPlace.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtTripPlace.Location = new System.Drawing.Point(32, 284);
-            this.txtTripPlace.Margin = new System.Windows.Forms.Padding(4);
-            this.txtTripPlace.Name = "txtTripPlace";
-            this.txtTripPlace.ReadOnly = true;
-            this.txtTripPlace.Size = new System.Drawing.Size(310, 23);
-            this.txtTripPlace.TabIndex = 33;
+            txtTripPlace.BorderStyle = BorderStyle.None;
+            txtTripPlace.Font = new Font("Showcard Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txtTripPlace.Location = new Point(278, 413);
+            txtTripPlace.Name = "txtTripPlace";
+            txtTripPlace.ReadOnly = true;
+            txtTripPlace.Size = new Size(268, 19);
+            txtTripPlace.TabIndex = 33;
             // 
             // txtTripDatTime
             // 
-            this.txtTripDatTime.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTripDatTime.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtTripDatTime.Location = new System.Drawing.Point(32, 315);
-            this.txtTripDatTime.Margin = new System.Windows.Forms.Padding(4);
-            this.txtTripDatTime.Name = "txtTripDatTime";
-            this.txtTripDatTime.ReadOnly = true;
-            this.txtTripDatTime.Size = new System.Drawing.Size(310, 23);
-            this.txtTripDatTime.TabIndex = 34;
+            txtTripDatTime.BorderStyle = BorderStyle.None;
+            txtTripDatTime.Font = new Font("Showcard Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txtTripDatTime.Location = new Point(278, 438);
+            txtTripDatTime.Name = "txtTripDatTime";
+            txtTripDatTime.ReadOnly = true;
+            txtTripDatTime.Size = new Size(268, 19);
+            txtTripDatTime.TabIndex = 34;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dgvApplications);
-            this.groupBox1.Location = new System.Drawing.Point(364, 125);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox1.Size = new System.Drawing.Size(615, 200);
-            this.groupBox1.TabIndex = 35;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "APPLICATIONS";
+            groupBox1.Controls.Add(dgvApplications);
+            groupBox1.Location = new Point(600, 171);
+            groupBox1.Margin = new Padding(3, 4, 3, 4);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Padding = new Padding(3, 4, 3, 4);
+            groupBox1.Size = new Size(815, 376);
+            groupBox1.TabIndex = 35;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "APPLICATIONS";
             // 
             // dgvApplications
             // 
-            this.dgvApplications.AllowUserToAddRows = false;
-            this.dgvApplications.AllowUserToDeleteRows = false;
-            this.dgvApplications.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvApplications.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Id,
-            this.VolunteerName,
-            this.LastName,
-            this.Status,
-            this.btnEdit});
-            this.dgvApplications.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dgvApplications.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvApplications.Location = new System.Drawing.Point(4, 29);
-            this.dgvApplications.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.dgvApplications.Name = "dgvApplications";
-            this.dgvApplications.ReadOnly = true;
-            this.dgvApplications.RowHeadersWidth = 51;
-            this.dgvApplications.RowTemplate.Height = 24;
-            this.dgvApplications.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvApplications.Size = new System.Drawing.Size(607, 166);
-            this.dgvApplications.TabIndex = 0;
-            this.dgvApplications.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvApplications_CellContentClick);
+            dgvApplications.AllowUserToAddRows = false;
+            dgvApplications.AllowUserToDeleteRows = false;
+            dgvApplications.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvApplications.Columns.AddRange(new DataGridViewColumn[] { Id, VolunteerName, LastName, Status, btnEdit });
+            dgvApplications.Cursor = Cursors.Hand;
+            dgvApplications.Dock = DockStyle.Fill;
+            dgvApplications.Location = new Point(3, 24);
+            dgvApplications.Margin = new Padding(3, 4, 3, 4);
+            dgvApplications.Name = "dgvApplications";
+            dgvApplications.ReadOnly = true;
+            dgvApplications.RowHeadersWidth = 51;
+            dgvApplications.RowTemplate.Height = 24;
+            dgvApplications.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvApplications.Size = new Size(809, 348);
+            dgvApplications.TabIndex = 0;
+            dgvApplications.CellContentClick += dgvApplications_CellContentClick;
             // 
             // Id
             // 
-            this.Id.DataPropertyName = "id";
-            this.Id.HeaderText = "Id";
-            this.Id.MinimumWidth = 6;
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            this.Id.Visible = false;
-            this.Id.Width = 125;
+            Id.DataPropertyName = "id";
+            Id.HeaderText = "Id";
+            Id.MinimumWidth = 6;
+            Id.Name = "Id";
+            Id.ReadOnly = true;
+            Id.Visible = false;
+            Id.Width = 125;
             // 
             // VolunteerName
             // 
-            this.VolunteerName.DataPropertyName = "VolunteerName";
-            this.VolunteerName.HeaderText = "First name";
-            this.VolunteerName.MinimumWidth = 6;
-            this.VolunteerName.Name = "VolunteerName";
-            this.VolunteerName.ReadOnly = true;
-            this.VolunteerName.Width = 125;
+            VolunteerName.DataPropertyName = "VolunteerName";
+            VolunteerName.HeaderText = "First name";
+            VolunteerName.MinimumWidth = 6;
+            VolunteerName.Name = "VolunteerName";
+            VolunteerName.ReadOnly = true;
+            VolunteerName.Width = 220;
             // 
             // LastName
             // 
-            this.LastName.DataPropertyName = "VolunteerLastName";
-            this.LastName.HeaderText = "Last name";
-            this.LastName.MinimumWidth = 8;
-            this.LastName.Name = "LastName";
-            this.LastName.ReadOnly = true;
-            this.LastName.Width = 150;
+            LastName.DataPropertyName = "VolunteerLastName";
+            LastName.HeaderText = "Last name";
+            LastName.MinimumWidth = 8;
+            LastName.Name = "LastName";
+            LastName.ReadOnly = true;
+            LastName.Width = 220;
             // 
             // Status
             // 
-            this.Status.DataPropertyName = "status";
-            this.Status.HeaderText = "Status";
-            this.Status.MinimumWidth = 8;
-            this.Status.Name = "Status";
-            this.Status.ReadOnly = true;
-            this.Status.Width = 150;
+            Status.DataPropertyName = "status";
+            Status.HeaderText = "Status";
+            Status.MinimumWidth = 8;
+            Status.Name = "Status";
+            Status.ReadOnly = true;
+            Status.Width = 220;
             // 
             // btnEdit
             // 
-            this.btnEdit.HeaderText = "Action";
-            this.btnEdit.MinimumWidth = 6;
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.ReadOnly = true;
-            this.btnEdit.Text = "Edit";
-            this.btnEdit.ToolTipText = "Edit";
-            this.btnEdit.UseColumnTextForButtonValue = true;
-            this.btnEdit.Width = 125;
+            btnEdit.HeaderText = "Action";
+            btnEdit.MinimumWidth = 6;
+            btnEdit.Name = "btnEdit";
+            btnEdit.ReadOnly = true;
+            btnEdit.Text = "Edit";
+            btnEdit.ToolTipText = "Edit";
+            btnEdit.UseColumnTextForButtonValue = true;
+            btnEdit.Width = 90;
+            // 
+            // label4
+            // 
+            label4.BackColor = SystemColors.ActiveCaptionText;
+            label4.Location = new Point(573, 47);
+            label4.Name = "label4";
+            label4.Size = new Size(1, 644);
+            label4.TabIndex = 31;
             // 
             // frmAllApplications
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1015, 450);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.txtTripDatTime);
-            this.Controls.Add(this.txtTripPlace);
-            this.Controls.Add(this.txtSchool);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtEndDate);
-            this.Controls.Add(this.txtStartDate);
-            this.Controls.Add(this.txtName);
-            this.Controls.Add(this.txtTheme);
-            this.Controls.Add(this.label1);
-            this.Name = "frmAllApplications";
-            this.Text = "frmAllApplications";
-            this.Load += new System.EventHandler(this.frmAllApplications_Load);
-            this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvApplications)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1638, 777);
+            Controls.Add(groupBox1);
+            Controls.Add(txtTripDatTime);
+            Controls.Add(txtTripPlace);
+            Controls.Add(txtSchool);
+            Controls.Add(label4);
+            Controls.Add(label3);
+            Controls.Add(txtEndDate);
+            Controls.Add(txtStartDate);
+            Controls.Add(txtName);
+            Controls.Add(txtTheme);
+            Controls.Add(label1);
+            Margin = new Padding(2);
+            Name = "frmAllApplications";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "frmAllApplications";
+            Load += frmAllApplications_Load;
+            groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgvApplications).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private TextBox txtSchool;
-        private Label label4;
         private Label label3;
         private TextBox txtEndDate;
         private TextBox txtStartDate;
@@ -284,5 +269,6 @@
         private DataGridViewTextBoxColumn LastName;
         private DataGridViewTextBoxColumn Status;
         private DataGridViewButtonColumn btnEdit;
+        private Label label4;
     }
 }

@@ -63,21 +63,21 @@ namespace StraniVari.WinUI.EventDetails
                     }
                     else
                     {
-                       await _apiService.Delete<ResponseResult>(selectedEvent.Id);
-                       frmAllEvents_Load(sender, e);
+                        await _apiService.Delete<ResponseResult>(selectedEvent.Id);
+                        frmAllEvents_Load(sender, e);
                     }
                 }
-                else if(e.ColumnIndex == 7)
+                else if (e.ColumnIndex == 7)
                 {
                     var eventSchools = new frmShoolsForEvent(selectedEvent);
                     eventSchools.ShowDialog();
                 }
-                else if(e.ColumnIndex == 8)
+                else if (e.ColumnIndex == 8)
                 {
                     frmAllNotifications frmAllNotifications = new frmAllNotifications(selectedEvent);
                     frmAllNotifications.ShowDialog();
                 }
-                else if(e.ColumnIndex == 9)
+                else if (e.ColumnIndex == 9)
                 {
                     frmAllPlanAndProgramme frmAllPlanAndProgramme = new frmAllPlanAndProgramme(selectedEvent);
                     frmAllPlanAndProgramme.ShowDialog();

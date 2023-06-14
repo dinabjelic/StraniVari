@@ -10,7 +10,7 @@ namespace StraniVari.WinUI.PlanAndProgramme
         private readonly ApiService _apiService = new ApiService("PlanAndProgramme");
         public GetPlanAndProgrameResposnse SelectedPlan { get; }
         public EventUpsertRequest SelectedEvent { get; }
-        public frmAddEditProgramme(EventUpsertRequest selectedEvent = null,GetPlanAndProgrameResposnse selectedPlan=null)
+        public frmAddEditProgramme(EventUpsertRequest selectedEvent = null, GetPlanAndProgrameResposnse selectedPlan = null)
         {
             InitializeComponent();
             SelectedPlan = selectedPlan;
@@ -30,7 +30,7 @@ namespace StraniVari.WinUI.PlanAndProgramme
                 dtpEndDatePP.Value = SelectedPlan.EndDate;
                 dtpStartDatePP.Value = SelectedPlan.StartDate;
                 rtbRules.Text = SelectedPlan.Activity;
-            }    
+            }
         }
 
         private async void btnSave_Click(object sender, EventArgs e)

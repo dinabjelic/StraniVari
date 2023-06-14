@@ -62,7 +62,7 @@ namespace StraniVari.WinUI.Material
                     }
                 }
             }
-           
+
         }
     }
 }

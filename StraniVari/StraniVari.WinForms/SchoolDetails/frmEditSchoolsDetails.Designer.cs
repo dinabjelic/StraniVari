@@ -28,185 +28,185 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtEndDate = new System.Windows.Forms.TextBox();
-            this.txtStartDate = new System.Windows.Forms.TextBox();
-            this.txtTheme = new System.Windows.Forms.TextBox();
-            this.txtName = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lblNumberofChildren = new System.Windows.Forms.Label();
-            this.txtSchoolName = new System.Windows.Forms.TextBox();
-            this.txtSchoolAddress = new System.Windows.Forms.TextBox();
-            this.txtSchoolCity = new System.Windows.Forms.TextBox();
-            this.txtNumberOfChildren = new System.Windows.Forms.TextBox();
-            this.btnEditSchoolDetails = new System.Windows.Forms.Button();
-            this.err = new System.Windows.Forms.ErrorProvider(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.err)).BeginInit();
-            this.SuspendLayout();
+            components = new System.ComponentModel.Container();
+            label4 = new Label();
+            txtEndDate = new TextBox();
+            txtStartDate = new TextBox();
+            txtTheme = new TextBox();
+            txtName = new TextBox();
+            label1 = new Label();
+            label2 = new Label();
+            label3 = new Label();
+            lblNumberofChildren = new Label();
+            txtSchoolName = new TextBox();
+            txtSchoolAddress = new TextBox();
+            txtSchoolCity = new TextBox();
+            txtNumberOfChildren = new TextBox();
+            btnEditSchoolDetails = new Button();
+            err = new ErrorProvider(components);
+            ((System.ComponentModel.ISupportInitialize)err).BeginInit();
+            SuspendLayout();
             // 
             // label4
             // 
-            this.label4.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label4.Location = new System.Drawing.Point(277, 21);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(1, 282);
-            this.label4.TabIndex = 13;
+            label4.BackColor = SystemColors.ActiveCaptionText;
+            label4.Location = new Point(752, 40);
+            label4.Name = "label4";
+            label4.Size = new Size(1, 644);
+            label4.TabIndex = 13;
             // 
             // txtEndDate
             // 
-            this.txtEndDate.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtEndDate.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtEndDate.Location = new System.Drawing.Point(41, 163);
-            this.txtEndDate.Name = "txtEndDate";
-            this.txtEndDate.ReadOnly = true;
-            this.txtEndDate.Size = new System.Drawing.Size(217, 19);
-            this.txtEndDate.TabIndex = 12;
+            txtEndDate.BorderStyle = BorderStyle.None;
+            txtEndDate.Font = new Font("Showcard Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txtEndDate.Location = new Point(536, 358);
+            txtEndDate.Name = "txtEndDate";
+            txtEndDate.ReadOnly = true;
+            txtEndDate.Size = new Size(217, 19);
+            txtEndDate.TabIndex = 12;
             // 
             // txtStartDate
             // 
-            this.txtStartDate.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtStartDate.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtStartDate.Location = new System.Drawing.Point(41, 210);
-            this.txtStartDate.Name = "txtStartDate";
-            this.txtStartDate.ReadOnly = true;
-            this.txtStartDate.Size = new System.Drawing.Size(217, 19);
-            this.txtStartDate.TabIndex = 11;
+            txtStartDate.BorderStyle = BorderStyle.None;
+            txtStartDate.Font = new Font("Showcard Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txtStartDate.Location = new Point(536, 405);
+            txtStartDate.Name = "txtStartDate";
+            txtStartDate.ReadOnly = true;
+            txtStartDate.Size = new Size(217, 19);
+            txtStartDate.TabIndex = 11;
             // 
             // txtTheme
             // 
-            this.txtTheme.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTheme.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtTheme.Location = new System.Drawing.Point(41, 118);
-            this.txtTheme.Name = "txtTheme";
-            this.txtTheme.ReadOnly = true;
-            this.txtTheme.Size = new System.Drawing.Size(217, 19);
-            this.txtTheme.TabIndex = 10;
+            txtTheme.BorderStyle = BorderStyle.None;
+            txtTheme.Font = new Font("Showcard Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txtTheme.Location = new Point(536, 313);
+            txtTheme.Name = "txtTheme";
+            txtTheme.ReadOnly = true;
+            txtTheme.Size = new Size(217, 19);
+            txtTheme.TabIndex = 10;
             // 
             // txtName
             // 
-            this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtName.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtName.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.txtName.Location = new System.Drawing.Point(41, 83);
-            this.txtName.Name = "txtName";
-            this.txtName.ReadOnly = true;
-            this.txtName.Size = new System.Drawing.Size(217, 19);
-            this.txtName.TabIndex = 9;
+            txtName.BorderStyle = BorderStyle.None;
+            txtName.Font = new Font("Showcard Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txtName.ForeColor = SystemColors.InactiveBorder;
+            txtName.Location = new Point(536, 278);
+            txtName.Name = "txtName";
+            txtName.ReadOnly = true;
+            txtName.Size = new Size(217, 19);
+            txtName.TabIndex = 9;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(296, 83);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 20);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "School name";
+            label1.AutoSize = true;
+            label1.Location = new Point(778, 274);
+            label1.Name = "label1";
+            label1.Size = new Size(95, 20);
+            label1.TabIndex = 14;
+            label1.Text = "School name";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(296, 131);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(109, 20);
-            this.label2.TabIndex = 15;
-            this.label2.Text = "School address";
+            label2.AutoSize = true;
+            label2.Location = new Point(778, 322);
+            label2.Name = "label2";
+            label2.Size = new Size(109, 20);
+            label2.TabIndex = 15;
+            label2.Text = "School address";
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(296, 172);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(81, 20);
-            this.label3.TabIndex = 16;
-            this.label3.Text = "School city";
+            label3.AutoSize = true;
+            label3.Location = new Point(778, 363);
+            label3.Name = "label3";
+            label3.Size = new Size(81, 20);
+            label3.TabIndex = 16;
+            label3.Text = "School city";
             // 
             // lblNumberofChildren
             // 
-            this.lblNumberofChildren.AutoSize = true;
-            this.lblNumberofChildren.Location = new System.Drawing.Point(296, 220);
-            this.lblNumberofChildren.Name = "lblNumberofChildren";
-            this.lblNumberofChildren.Size = new System.Drawing.Size(138, 20);
-            this.lblNumberofChildren.TabIndex = 17;
-            this.lblNumberofChildren.Text = "Number of children";
+            lblNumberofChildren.AutoSize = true;
+            lblNumberofChildren.Location = new Point(778, 411);
+            lblNumberofChildren.Name = "lblNumberofChildren";
+            lblNumberofChildren.Size = new Size(138, 20);
+            lblNumberofChildren.TabIndex = 17;
+            lblNumberofChildren.Text = "Number of children";
             // 
             // txtSchoolName
             // 
-            this.txtSchoolName.Location = new System.Drawing.Point(440, 83);
-            this.txtSchoolName.Name = "txtSchoolName";
-            this.txtSchoolName.ReadOnly = true;
-            this.txtSchoolName.Size = new System.Drawing.Size(197, 27);
-            this.txtSchoolName.TabIndex = 18;
+            txtSchoolName.Location = new Point(922, 274);
+            txtSchoolName.Name = "txtSchoolName";
+            txtSchoolName.ReadOnly = true;
+            txtSchoolName.Size = new Size(247, 27);
+            txtSchoolName.TabIndex = 18;
             // 
             // txtSchoolAddress
             // 
-            this.txtSchoolAddress.Location = new System.Drawing.Point(440, 131);
-            this.txtSchoolAddress.Name = "txtSchoolAddress";
-            this.txtSchoolAddress.ReadOnly = true;
-            this.txtSchoolAddress.Size = new System.Drawing.Size(197, 27);
-            this.txtSchoolAddress.TabIndex = 19;
+            txtSchoolAddress.Location = new Point(922, 322);
+            txtSchoolAddress.Name = "txtSchoolAddress";
+            txtSchoolAddress.ReadOnly = true;
+            txtSchoolAddress.Size = new Size(247, 27);
+            txtSchoolAddress.TabIndex = 19;
             // 
             // txtSchoolCity
             // 
-            this.txtSchoolCity.Location = new System.Drawing.Point(440, 172);
-            this.txtSchoolCity.Name = "txtSchoolCity";
-            this.txtSchoolCity.ReadOnly = true;
-            this.txtSchoolCity.Size = new System.Drawing.Size(197, 27);
-            this.txtSchoolCity.TabIndex = 20;
+            txtSchoolCity.Location = new Point(922, 363);
+            txtSchoolCity.Name = "txtSchoolCity";
+            txtSchoolCity.ReadOnly = true;
+            txtSchoolCity.Size = new Size(247, 27);
+            txtSchoolCity.TabIndex = 20;
             // 
             // txtNumberOfChildren
             // 
-            this.txtNumberOfChildren.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.txtNumberOfChildren.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.txtNumberOfChildren.Location = new System.Drawing.Point(440, 220);
-            this.txtNumberOfChildren.Name = "txtNumberOfChildren";
-            this.txtNumberOfChildren.Size = new System.Drawing.Size(197, 27);
-            this.txtNumberOfChildren.TabIndex = 21;
-            this.txtNumberOfChildren.Text = "numbers only";
-            this.txtNumberOfChildren.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            txtNumberOfChildren.Cursor = Cursors.Hand;
+            txtNumberOfChildren.ForeColor = SystemColors.InfoText;
+            txtNumberOfChildren.Location = new Point(922, 411);
+            txtNumberOfChildren.Name = "txtNumberOfChildren";
+            txtNumberOfChildren.Size = new Size(247, 27);
+            txtNumberOfChildren.TabIndex = 21;
+            txtNumberOfChildren.Text = "numbers only";
+            txtNumberOfChildren.TextAlign = HorizontalAlignment.Center;
             // 
             // btnEditSchoolDetails
             // 
-            this.btnEditSchoolDetails.Location = new System.Drawing.Point(543, 262);
-            this.btnEditSchoolDetails.Name = "btnEditSchoolDetails";
-            this.btnEditSchoolDetails.Size = new System.Drawing.Size(94, 29);
-            this.btnEditSchoolDetails.TabIndex = 22;
-            this.btnEditSchoolDetails.Text = "Save";
-            this.btnEditSchoolDetails.UseVisualStyleBackColor = true;
-            this.btnEditSchoolDetails.Click += new System.EventHandler(this.btnEditSchoolDetails_Click);
+            btnEditSchoolDetails.Location = new Point(1075, 453);
+            btnEditSchoolDetails.Name = "btnEditSchoolDetails";
+            btnEditSchoolDetails.Size = new Size(94, 29);
+            btnEditSchoolDetails.TabIndex = 22;
+            btnEditSchoolDetails.Text = "Save";
+            btnEditSchoolDetails.UseVisualStyleBackColor = true;
+            btnEditSchoolDetails.Click += btnEditSchoolDetails_Click;
             // 
             // err
             // 
-            this.err.ContainerControl = this;
+            err.ContainerControl = this;
             // 
             // frmEditSchoolsDetails
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(695, 355);
-            this.Controls.Add(this.btnEditSchoolDetails);
-            this.Controls.Add(this.txtNumberOfChildren);
-            this.Controls.Add(this.txtSchoolCity);
-            this.Controls.Add(this.txtSchoolAddress);
-            this.Controls.Add(this.txtSchoolName);
-            this.Controls.Add(this.lblNumberofChildren);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtEndDate);
-            this.Controls.Add(this.txtStartDate);
-            this.Controls.Add(this.txtTheme);
-            this.Controls.Add(this.txtName);
-            this.Name = "frmEditSchoolsDetails";
-            this.Text = "frmEditSchoolsDetails";
-            this.Load += new System.EventHandler(this.frmEditSchoolsDetails_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.err)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1638, 777);
+            Controls.Add(btnEditSchoolDetails);
+            Controls.Add(txtNumberOfChildren);
+            Controls.Add(txtSchoolCity);
+            Controls.Add(txtSchoolAddress);
+            Controls.Add(txtSchoolName);
+            Controls.Add(lblNumberofChildren);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(label4);
+            Controls.Add(txtEndDate);
+            Controls.Add(txtStartDate);
+            Controls.Add(txtTheme);
+            Controls.Add(txtName);
+            Name = "frmEditSchoolsDetails";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "frmEditSchoolsDetails";
+            Load += frmEditSchoolsDetails_Load;
+            ((System.ComponentModel.ISupportInitialize)err).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

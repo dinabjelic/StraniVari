@@ -27,16 +27,16 @@ namespace StraniVari.WinUI.PlanAndProgramme
 
         private void dgvPlanAndProgramme_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            var selectedPlan = dgvPlanAndProgramme.SelectedRows[0].DataBoundItem as GetPlanAndProgrameResposnse; 
+            var selectedPlan = dgvPlanAndProgramme.SelectedRows[0].DataBoundItem as GetPlanAndProgrameResposnse;
 
-            if(selectedPlan != null)
+            if (selectedPlan != null)
             {
-                if(e.ColumnIndex == 3)
+                if (e.ColumnIndex == 3)
                 {
                     frmActivities frmActivities = new frmActivities(selectedPlan, SelectedEvent);
                     frmActivities.ShowDialog();
                 }
-                else if(e.ColumnIndex == 4)
+                else if (e.ColumnIndex == 4)
                 {
                     frmAddEditProgramme frmAddEditProgramme = new frmAddEditProgramme(SelectedEvent, selectedPlan);
                     frmAddEditProgramme.ShowDialog();

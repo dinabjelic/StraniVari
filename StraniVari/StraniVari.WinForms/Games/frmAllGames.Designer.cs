@@ -29,103 +29,103 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAllGames));
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnAddGame = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.SuspendLayout();
+            listBox1 = new ListBox();
+            btnAddGame = new Button();
+            btnEdit = new Button();
+            btnDelete = new Button();
+            pictureBox2 = new PictureBox();
+            label4 = new Label();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            SuspendLayout();
             // 
             // listBox1
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 20;
-            this.listBox1.Location = new System.Drawing.Point(227, 77);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(517, 304);
-            this.listBox1.TabIndex = 1;
-            // 
-            // label3
-            // 
-            this.label3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label3.Location = new System.Drawing.Point(195, 22);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(1, 386);
-            this.label3.TabIndex = 15;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(31, 125);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(147, 166);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 14;
-            this.pictureBox1.TabStop = false;
+            listBox1.FormattingEnabled = true;
+            listBox1.ItemHeight = 20;
+            listBox1.Location = new Point(439, 253);
+            listBox1.Name = "listBox1";
+            listBox1.Size = new Size(1076, 304);
+            listBox1.TabIndex = 1;
             // 
             // btnAddGame
             // 
-            this.btnAddGame.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddGame.Location = new System.Drawing.Point(227, 41);
-            this.btnAddGame.Name = "btnAddGame";
-            this.btnAddGame.Size = new System.Drawing.Size(149, 29);
-            this.btnAddGame.TabIndex = 16;
-            this.btnAddGame.Text = "Add game";
-            this.btnAddGame.UseVisualStyleBackColor = true;
-            this.btnAddGame.Click += new System.EventHandler(this.btnAddGame_Click);
+            btnAddGame.Cursor = Cursors.Hand;
+            btnAddGame.Location = new Point(439, 206);
+            btnAddGame.Name = "btnAddGame";
+            btnAddGame.Size = new Size(149, 29);
+            btnAddGame.TabIndex = 16;
+            btnAddGame.Text = "Add game";
+            btnAddGame.UseVisualStyleBackColor = true;
+            btnAddGame.Click += btnAddGame_Click;
             // 
             // btnEdit
             // 
-            this.btnEdit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEdit.Location = new System.Drawing.Point(477, 41);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(132, 29);
-            this.btnEdit.TabIndex = 17;
-            this.btnEdit.Text = "Edit game";
-            this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            btnEdit.Cursor = Cursors.Hand;
+            btnEdit.Location = new Point(1237, 206);
+            btnEdit.Name = "btnEdit";
+            btnEdit.Size = new Size(132, 29);
+            btnEdit.TabIndex = 17;
+            btnEdit.Text = "Edit game";
+            btnEdit.UseVisualStyleBackColor = true;
+            btnEdit.Click += btnEdit_Click;
             // 
             // btnDelete
             // 
-            this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDelete.Location = new System.Drawing.Point(615, 43);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(129, 28);
-            this.btnDelete.TabIndex = 18;
-            this.btnDelete.Text = "Delete game";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            btnDelete.Cursor = Cursors.Hand;
+            btnDelete.Location = new Point(1386, 206);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(129, 28);
+            btnDelete.TabIndex = 18;
+            btnDelete.Text = "Delete game";
+            btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(45, 216);
+            pictureBox2.Margin = new Padding(3, 4, 3, 4);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(261, 330);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 78;
+            pictureBox2.TabStop = false;
+            // 
+            // label4
+            // 
+            label4.BackColor = SystemColors.ActiveCaptionText;
+            label4.Location = new Point(364, 64);
+            label4.Name = "label4";
+            label4.Size = new Size(1, 644);
+            label4.TabIndex = 77;
             // 
             // frmAllGames
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(797, 425);
-            this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.btnEdit);
-            this.Controls.Add(this.btnAddGame);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.listBox1);
-            this.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Name = "frmAllGames";
-            this.Text = "frmAllGames";
-            this.Load += new System.EventHandler(this.frmAllGames_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1638, 777);
+            Controls.Add(pictureBox2);
+            Controls.Add(label4);
+            Controls.Add(btnDelete);
+            Controls.Add(btnEdit);
+            Controls.Add(btnAddGame);
+            Controls.Add(listBox1);
+            Cursor = Cursors.Hand;
+            Name = "frmAllGames";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "frmAllGames";
+            Load += frmAllGames_Load;
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion
         private ListBox listBox1;
         private DataGridView dataGridView1;
-        private Label label3;
-        private PictureBox pictureBox1;
         private Button btnAddGame;
         private Button btnEdit;
         private Button btnDelete;
+        private PictureBox pictureBox2;
+        private Label label4;
     }
 }

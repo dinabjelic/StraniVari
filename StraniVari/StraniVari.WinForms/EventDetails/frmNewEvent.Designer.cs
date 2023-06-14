@@ -28,152 +28,151 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNewEvent));
-            this.btnAddNewEvent = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtStraniVariTheme = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.dtpStarDate = new System.Windows.Forms.DateTimePicker();
-            this.dtpEndDate = new System.Windows.Forms.DateTimePicker();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtEventName = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.err = new System.Windows.Forms.ErrorProvider(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.err)).BeginInit();
-            this.SuspendLayout();
+            btnAddNewEvent = new Button();
+            txtStraniVariTheme = new TextBox();
+            label4 = new Label();
+            dtpStarDate = new DateTimePicker();
+            dtpEndDate = new DateTimePicker();
+            label3 = new Label();
+            label1 = new Label();
+            txtEventName = new TextBox();
+            label2 = new Label();
+            err = new ErrorProvider(components);
+            pictureBox2 = new PictureBox();
+            label5 = new Label();
+            ((System.ComponentModel.ISupportInitialize)err).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            SuspendLayout();
             // 
             // btnAddNewEvent
             // 
-            this.btnAddNewEvent.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddNewEvent.Location = new System.Drawing.Point(643, 326);
-            this.btnAddNewEvent.Name = "btnAddNewEvent";
-            this.btnAddNewEvent.Size = new System.Drawing.Size(94, 29);
-            this.btnAddNewEvent.TabIndex = 20;
-            this.btnAddNewEvent.Text = "Save";
-            this.btnAddNewEvent.UseVisualStyleBackColor = true;
-            this.btnAddNewEvent.Click += new System.EventHandler(this.btnAddNewEvent_Click);
-            // 
-            // label5
-            // 
-            this.label5.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label5.Location = new System.Drawing.Point(316, 84);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(1, 283);
-            this.label5.TabIndex = 23;
-            this.label5.Text = "label5";
+            btnAddNewEvent.Cursor = Cursors.Hand;
+            btnAddNewEvent.Location = new Point(1083, 448);
+            btnAddNewEvent.Name = "btnAddNewEvent";
+            btnAddNewEvent.Size = new Size(94, 29);
+            btnAddNewEvent.TabIndex = 20;
+            btnAddNewEvent.Text = "Save";
+            btnAddNewEvent.UseVisualStyleBackColor = true;
+            btnAddNewEvent.Click += btnAddNewEvent_Click;
             // 
             // txtStraniVariTheme
             // 
-            this.txtStraniVariTheme.Location = new System.Drawing.Point(483, 178);
-            this.txtStraniVariTheme.Name = "txtStraniVariTheme";
-            this.txtStraniVariTheme.Size = new System.Drawing.Size(254, 27);
-            this.txtStraniVariTheme.TabIndex = 15;
+            txtStraniVariTheme.Location = new Point(877, 307);
+            txtStraniVariTheme.Name = "txtStraniVariTheme";
+            txtStraniVariTheme.Size = new Size(300, 27);
+            txtStraniVariTheme.TabIndex = 15;
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(356, 185);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(121, 20);
-            this.label4.TabIndex = 22;
-            this.label4.Text = "Strani vari theme";
+            label4.AutoSize = true;
+            label4.Location = new Point(750, 314);
+            label4.Name = "label4";
+            label4.Size = new Size(121, 20);
+            label4.TabIndex = 22;
+            label4.Text = "Strani vari theme";
             // 
             // dtpStarDate
             // 
-            this.dtpStarDate.Location = new System.Drawing.Point(483, 226);
-            this.dtpStarDate.Name = "dtpStarDate";
-            this.dtpStarDate.Size = new System.Drawing.Size(254, 27);
-            this.dtpStarDate.TabIndex = 17;
+            dtpStarDate.Location = new Point(877, 355);
+            dtpStarDate.Name = "dtpStarDate";
+            dtpStarDate.Size = new Size(300, 27);
+            dtpStarDate.TabIndex = 17;
             // 
             // dtpEndDate
             // 
-            this.dtpEndDate.Location = new System.Drawing.Point(483, 272);
-            this.dtpEndDate.Name = "dtpEndDate";
-            this.dtpEndDate.Size = new System.Drawing.Size(254, 27);
-            this.dtpEndDate.TabIndex = 18;
+            dtpEndDate.Location = new Point(877, 401);
+            dtpEndDate.Name = "dtpEndDate";
+            dtpEndDate.Size = new Size(300, 27);
+            dtpEndDate.TabIndex = 18;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(356, 279);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(68, 20);
-            this.label3.TabIndex = 21;
-            this.label3.Text = "End date";
+            label3.AutoSize = true;
+            label3.Location = new Point(750, 408);
+            label3.Name = "label3";
+            label3.Size = new Size(68, 20);
+            label3.TabIndex = 21;
+            label3.Text = "End date";
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(356, 233);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 20);
-            this.label1.TabIndex = 19;
-            this.label1.Text = "Start date";
+            label1.AutoSize = true;
+            label1.Location = new Point(750, 362);
+            label1.Name = "label1";
+            label1.Size = new Size(74, 20);
+            label1.TabIndex = 19;
+            label1.Text = "Start date";
             // 
             // txtEventName
             // 
-            this.txtEventName.Location = new System.Drawing.Point(483, 129);
-            this.txtEventName.Name = "txtEventName";
-            this.txtEventName.Size = new System.Drawing.Size(254, 27);
-            this.txtEventName.TabIndex = 14;
+            txtEventName.Location = new Point(877, 258);
+            txtEventName.Name = "txtEventName";
+            txtEventName.Size = new Size(300, 27);
+            txtEventName.TabIndex = 14;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(356, 136);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(86, 20);
-            this.label2.TabIndex = 16;
-            this.label2.Text = "Event name";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(64, 105);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(232, 211);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 13;
-            this.pictureBox1.TabStop = false;
+            label2.AutoSize = true;
+            label2.Location = new Point(750, 265);
+            label2.Name = "label2";
+            label2.Size = new Size(86, 20);
+            label2.TabIndex = 16;
+            label2.Text = "Event name";
             // 
             // err
             // 
-            this.err.ContainerControl = this;
+            err.ContainerControl = this;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(336, 188);
+            pictureBox2.Margin = new Padding(3, 4, 3, 4);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(261, 330);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 78;
+            pictureBox2.TabStop = false;
+            // 
+            // label5
+            // 
+            label5.BackColor = SystemColors.ActiveCaptionText;
+            label5.Location = new Point(655, 36);
+            label5.Name = "label5";
+            label5.Size = new Size(1, 644);
+            label5.TabIndex = 77;
             // 
             // frmNewEvent
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnAddNewEvent);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.txtStraniVariTheme);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.dtpStarDate);
-            this.Controls.Add(this.dtpEndDate);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtEventName);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.pictureBox1);
-            this.Name = "frmNewEvent";
-            this.Text = "frmNewEvent";
-            this.Load += new System.EventHandler(this.frmNewEvent_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.err)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1638, 777);
+            Controls.Add(pictureBox2);
+            Controls.Add(label5);
+            Controls.Add(btnAddNewEvent);
+            Controls.Add(txtStraniVariTheme);
+            Controls.Add(label4);
+            Controls.Add(dtpStarDate);
+            Controls.Add(dtpEndDate);
+            Controls.Add(label3);
+            Controls.Add(label1);
+            Controls.Add(txtEventName);
+            Controls.Add(label2);
+            Name = "frmNewEvent";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "frmNewEvent";
+            Load += frmNewEvent_Load;
+            ((System.ComponentModel.ISupportInitialize)err).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private Button btnAddNewEvent;
-        private Label label5;
         private TextBox txtStraniVariTheme;
         private Label label4;
         private DateTimePicker dtpStarDate;
@@ -182,7 +181,8 @@
         private Label label1;
         private TextBox txtEventName;
         private Label label2;
-        private PictureBox pictureBox1;
         private ErrorProvider err;
+        private PictureBox pictureBox2;
+        private Label label5;
     }
 }

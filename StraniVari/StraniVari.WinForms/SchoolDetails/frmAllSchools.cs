@@ -15,21 +15,21 @@ namespace StraniVari.WinUI.SchoolDetails
         public async void frmAllSchools_Load(object sender, EventArgs e)
         {
             dgvSchools.AutoGenerateColumns = false;
-            var result =await _apiService.Get<List<GetSchoolDetailsResponse>>();
+            var result = await _apiService.Get<List<GetSchoolDetailsResponse>>();
             dgvSchools.DataSource = result;
         }
 
         private async void dgvSchools_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             var selectedSchool = dgvSchools.SelectedRows[0].DataBoundItem as GetSchoolDetailsResponse;
-            if(selectedSchool != null)
+            if (selectedSchool != null)
             {
-                if(e.ColumnIndex == 4)
+                if (e.ColumnIndex == 4)
                 {
                     frmAddEditSchool frmAddEditSchool = new frmAddEditSchool(selectedSchool);
                     frmAddEditSchool.ShowDialog();
                 }
-                else if(e.ColumnIndex == 5)
+                else if (e.ColumnIndex == 5)
                 {
                     var confirmation = MessageBox.Show("You are about to delete this item!", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 

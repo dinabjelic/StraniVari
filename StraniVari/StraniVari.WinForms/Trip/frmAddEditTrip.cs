@@ -10,7 +10,7 @@ namespace StraniVari.WinUI.Trip
         private readonly ApiService _apiService = new ApiService("Trip");
         private readonly ApiService _apiServiceDetails = new ApiService("Event/last-added-event");
         private GetTripResponse selectedTrip;
-        public frmAddEditTrip(GetTripResponse selectedTrip=null)
+        public frmAddEditTrip(GetTripResponse selectedTrip = null)
         {
             InitializeComponent();
             this.selectedTrip = selectedTrip;
@@ -22,9 +22,9 @@ namespace StraniVari.WinUI.Trip
             {
                 var trip = new UpSertTripRequest
                 {
-                   Place = txtPlace.Text,
-                   TripDateTime = dateTimePicker1.Value, 
-                   EventId = Convert.ToInt32(comboBox1.SelectedValue)
+                    Place = txtPlace.Text,
+                    TripDateTime = dateTimePicker1.Value,
+                    EventId = Convert.ToInt32(comboBox1.SelectedValue)
                 };
 
                 if (selectedTrip == null)

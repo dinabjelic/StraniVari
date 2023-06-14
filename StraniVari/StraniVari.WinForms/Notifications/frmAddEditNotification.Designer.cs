@@ -28,174 +28,171 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAddEditNotification));
-            this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.txtAddress = new System.Windows.Forms.TextBox();
-            this.txtCity = new System.Windows.Forms.TextBox();
-            this.txtMeetingPlace = new System.Windows.Forms.TextBox();
-            this.txtMeetingTheme = new System.Windows.Forms.TextBox();
-            this.lblNumberofChildren = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.err = new System.Windows.Forms.ErrorProvider(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.err)).BeginInit();
-            this.SuspendLayout();
-            // 
-            // label3
-            // 
-            this.label3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label3.Location = new System.Drawing.Point(174, 42);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(1, 335);
-            this.label3.TabIndex = 17;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(21, 112);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(147, 166);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 16;
-            this.pictureBox1.TabStop = false;
+            txtAddress = new TextBox();
+            txtCity = new TextBox();
+            txtMeetingPlace = new TextBox();
+            txtMeetingTheme = new TextBox();
+            lblNumberofChildren = new Label();
+            label1 = new Label();
+            label2 = new Label();
+            label4 = new Label();
+            label5 = new Label();
+            btnSave = new Button();
+            dateTimePicker1 = new DateTimePicker();
+            err = new ErrorProvider(components);
+            pictureBox2 = new PictureBox();
+            label3 = new Label();
+            ((System.ComponentModel.ISupportInitialize)err).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            SuspendLayout();
             // 
             // txtAddress
             // 
-            this.txtAddress.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.txtAddress.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.txtAddress.Location = new System.Drawing.Point(343, 232);
-            this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(250, 27);
-            this.txtAddress.TabIndex = 29;
+            txtAddress.Cursor = Cursors.Hand;
+            txtAddress.ForeColor = SystemColors.InfoText;
+            txtAddress.Location = new Point(907, 387);
+            txtAddress.Name = "txtAddress";
+            txtAddress.Size = new Size(278, 27);
+            txtAddress.TabIndex = 29;
             // 
             // txtCity
             // 
-            this.txtCity.Location = new System.Drawing.Point(343, 184);
-            this.txtCity.Name = "txtCity";
-            this.txtCity.Size = new System.Drawing.Size(250, 27);
-            this.txtCity.TabIndex = 28;
+            txtCity.Location = new Point(907, 339);
+            txtCity.Name = "txtCity";
+            txtCity.Size = new Size(278, 27);
+            txtCity.TabIndex = 28;
             // 
             // txtMeetingPlace
             // 
-            this.txtMeetingPlace.Location = new System.Drawing.Point(343, 143);
-            this.txtMeetingPlace.Name = "txtMeetingPlace";
-            this.txtMeetingPlace.Size = new System.Drawing.Size(250, 27);
-            this.txtMeetingPlace.TabIndex = 27;
+            txtMeetingPlace.Location = new Point(907, 298);
+            txtMeetingPlace.Name = "txtMeetingPlace";
+            txtMeetingPlace.Size = new Size(278, 27);
+            txtMeetingPlace.TabIndex = 27;
             // 
             // txtMeetingTheme
             // 
-            this.txtMeetingTheme.Location = new System.Drawing.Point(343, 95);
-            this.txtMeetingTheme.Name = "txtMeetingTheme";
-            this.txtMeetingTheme.Size = new System.Drawing.Size(250, 27);
-            this.txtMeetingTheme.TabIndex = 26;
+            txtMeetingTheme.Location = new Point(907, 250);
+            txtMeetingTheme.Name = "txtMeetingTheme";
+            txtMeetingTheme.Size = new Size(278, 27);
+            txtMeetingTheme.TabIndex = 26;
             // 
             // lblNumberofChildren
             // 
-            this.lblNumberofChildren.AutoSize = true;
-            this.lblNumberofChildren.Location = new System.Drawing.Point(199, 232);
-            this.lblNumberofChildren.Name = "lblNumberofChildren";
-            this.lblNumberofChildren.Size = new System.Drawing.Size(62, 20);
-            this.lblNumberofChildren.TabIndex = 25;
-            this.lblNumberofChildren.Text = "Address";
+            lblNumberofChildren.AutoSize = true;
+            lblNumberofChildren.Location = new Point(763, 387);
+            lblNumberofChildren.Name = "lblNumberofChildren";
+            lblNumberofChildren.Size = new Size(62, 20);
+            lblNumberofChildren.TabIndex = 25;
+            lblNumberofChildren.Text = "Address";
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(199, 184);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(34, 20);
-            this.label1.TabIndex = 24;
-            this.label1.Text = "City";
+            label1.AutoSize = true;
+            label1.Location = new Point(763, 339);
+            label1.Name = "label1";
+            label1.Size = new Size(34, 20);
+            label1.TabIndex = 24;
+            label1.Text = "City";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(199, 143);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(104, 20);
-            this.label2.TabIndex = 23;
-            this.label2.Text = "Meeting place";
+            label2.AutoSize = true;
+            label2.Location = new Point(763, 298);
+            label2.Name = "label2";
+            label2.Size = new Size(104, 20);
+            label2.TabIndex = 23;
+            label2.Text = "Meeting place";
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(199, 95);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(110, 20);
-            this.label4.TabIndex = 22;
-            this.label4.Text = "Meeting theme";
+            label4.AutoSize = true;
+            label4.Location = new Point(763, 250);
+            label4.Name = "label4";
+            label4.Size = new Size(110, 20);
+            label4.TabIndex = 22;
+            label4.Text = "Meeting theme";
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(199, 277);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(41, 20);
-            this.label5.TabIndex = 30;
-            this.label5.Text = "Date";
+            label5.AutoSize = true;
+            label5.Location = new Point(763, 432);
+            label5.Name = "label5";
+            label5.Size = new Size(41, 20);
+            label5.TabIndex = 30;
+            label5.Text = "Date";
             // 
             // btnSave
             // 
-            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSave.Location = new System.Drawing.Point(499, 335);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(94, 29);
-            this.btnSave.TabIndex = 34;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            btnSave.Cursor = Cursors.Hand;
+            btnSave.Location = new Point(1091, 474);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(94, 29);
+            btnSave.TabIndex = 34;
+            btnSave.Text = "Save";
+            btnSave.UseVisualStyleBackColor = true;
+            btnSave.Click += btnSave_Click;
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(343, 277);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(250, 27);
-            this.dateTimePicker1.TabIndex = 35;
+            dateTimePicker1.Location = new Point(907, 432);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(278, 27);
+            dateTimePicker1.TabIndex = 35;
             // 
             // err
             // 
-            this.err.ContainerControl = this;
+            err.ContainerControl = this;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(365, 223);
+            pictureBox2.Margin = new Padding(3, 4, 3, 4);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(261, 330);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 78;
+            pictureBox2.TabStop = false;
+            // 
+            // label3
+            // 
+            label3.BackColor = SystemColors.ActiveCaptionText;
+            label3.Location = new Point(684, 71);
+            label3.Name = "label3";
+            label3.Size = new Size(1, 644);
+            label3.TabIndex = 77;
             // 
             // frmAddEditNotification
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(631, 410);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.txtAddress);
-            this.Controls.Add(this.txtCity);
-            this.Controls.Add(this.txtMeetingPlace);
-            this.Controls.Add(this.txtMeetingTheme);
-            this.Controls.Add(this.lblNumberofChildren);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.pictureBox1);
-            this.Name = "frmAddEditNotification";
-            this.Text = "frmAddEditNotification";
-            this.Load += new System.EventHandler(this.frmAddEditNotification_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.err)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1638, 777);
+            Controls.Add(pictureBox2);
+            Controls.Add(label3);
+            Controls.Add(dateTimePicker1);
+            Controls.Add(btnSave);
+            Controls.Add(label5);
+            Controls.Add(txtAddress);
+            Controls.Add(txtCity);
+            Controls.Add(txtMeetingPlace);
+            Controls.Add(txtMeetingTheme);
+            Controls.Add(lblNumberofChildren);
+            Controls.Add(label1);
+            Controls.Add(label2);
+            Controls.Add(label4);
+            Name = "frmAddEditNotification";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "frmAddEditNotification";
+            Load += frmAddEditNotification_Load;
+            ((System.ComponentModel.ISupportInitialize)err).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
-
-        private Label label3;
-        private PictureBox pictureBox1;
         private TextBox txtAddress;
         private TextBox txtCity;
         private TextBox txtMeetingPlace;
@@ -208,5 +205,7 @@
         private Button btnSave;
         private DateTimePicker dateTimePicker1;
         private ErrorProvider err;
+        private PictureBox pictureBox2;
+        private Label label3;
     }
 }

@@ -11,8 +11,8 @@ namespace StraniVari.WinUI.EventDetails
         ApiService _apiService = new ApiService("Event");
         private EventUpsertRequest selectedEvent;
         EventUpsertRequest request = new EventUpsertRequest();
-       
-        public frmNewEvent(EventUpsertRequest selectedEvent=null)
+
+        public frmNewEvent(EventUpsertRequest selectedEvent = null)
         {
             InitializeComponent();
             this.selectedEvent = selectedEvent;
@@ -35,7 +35,7 @@ namespace StraniVari.WinUI.EventDetails
                     await _apiService.Insert<ResponseResult>(straniVariEvent);
                     //if(result is not null)
                     //{
-                        MessageBox.Show("Event successfully added.", "Infomation", MessageBoxButtons.OK);
+                    MessageBox.Show("Event successfully added.", "Infomation", MessageBoxButtons.OK);
                     //}
                 }
                 else
@@ -43,12 +43,12 @@ namespace StraniVari.WinUI.EventDetails
                     await _apiService.Update<ResponseResult>(straniVariEvent, selectedEvent.Id);
                     //if(result is not null)
                     //{
-                        MessageBox.Show("Event successfully updated.", "Infomation", MessageBoxButtons.OK);
+                    MessageBox.Show("Event successfully updated.", "Infomation", MessageBoxButtons.OK);
                     //}
                 }
 
-            this.DialogResult = DialogResult.OK;
-            Close();
+                this.DialogResult = DialogResult.OK;
+                Close();
             }
         }
 

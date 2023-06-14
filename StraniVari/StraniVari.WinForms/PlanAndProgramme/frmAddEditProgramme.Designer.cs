@@ -28,160 +28,160 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.txtEndDate = new System.Windows.Forms.TextBox();
-            this.txtStartDate = new System.Windows.Forms.TextBox();
-            this.txtTheme = new System.Windows.Forms.TextBox();
-            this.txtName = new System.Windows.Forms.TextBox();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.dtpEndDatePP = new System.Windows.Forms.DateTimePicker();
-            this.dtpStartDatePP = new System.Windows.Forms.DateTimePicker();
-            this.label3 = new System.Windows.Forms.Label();
-            this.rtbRules = new System.Windows.Forms.RichTextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.err = new System.Windows.Forms.ErrorProvider(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.err)).BeginInit();
-            this.SuspendLayout();
+            components = new System.ComponentModel.Container();
+            txtEndDate = new TextBox();
+            txtStartDate = new TextBox();
+            txtTheme = new TextBox();
+            txtName = new TextBox();
+            btnSave = new Button();
+            label5 = new Label();
+            label4 = new Label();
+            dtpEndDatePP = new DateTimePicker();
+            dtpStartDatePP = new DateTimePicker();
+            label3 = new Label();
+            rtbRules = new RichTextBox();
+            label2 = new Label();
+            err = new ErrorProvider(components);
+            ((System.ComponentModel.ISupportInitialize)err).BeginInit();
+            SuspendLayout();
             // 
             // txtEndDate
             // 
-            this.txtEndDate.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtEndDate.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtEndDate.Location = new System.Drawing.Point(38, 209);
-            this.txtEndDate.Name = "txtEndDate";
-            this.txtEndDate.ReadOnly = true;
-            this.txtEndDate.Size = new System.Drawing.Size(217, 19);
-            this.txtEndDate.TabIndex = 47;
+            txtEndDate.BorderStyle = BorderStyle.None;
+            txtEndDate.Font = new Font("Showcard Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txtEndDate.Location = new Point(365, 381);
+            txtEndDate.Name = "txtEndDate";
+            txtEndDate.ReadOnly = true;
+            txtEndDate.Size = new Size(217, 19);
+            txtEndDate.TabIndex = 47;
             // 
             // txtStartDate
             // 
-            this.txtStartDate.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtStartDate.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtStartDate.Location = new System.Drawing.Point(38, 256);
-            this.txtStartDate.Name = "txtStartDate";
-            this.txtStartDate.ReadOnly = true;
-            this.txtStartDate.Size = new System.Drawing.Size(217, 19);
-            this.txtStartDate.TabIndex = 46;
+            txtStartDate.BorderStyle = BorderStyle.None;
+            txtStartDate.Font = new Font("Showcard Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txtStartDate.Location = new Point(365, 428);
+            txtStartDate.Name = "txtStartDate";
+            txtStartDate.ReadOnly = true;
+            txtStartDate.Size = new Size(217, 19);
+            txtStartDate.TabIndex = 46;
             // 
             // txtTheme
             // 
-            this.txtTheme.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTheme.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtTheme.Location = new System.Drawing.Point(38, 164);
-            this.txtTheme.Name = "txtTheme";
-            this.txtTheme.ReadOnly = true;
-            this.txtTheme.Size = new System.Drawing.Size(217, 19);
-            this.txtTheme.TabIndex = 45;
+            txtTheme.BorderStyle = BorderStyle.None;
+            txtTheme.Font = new Font("Showcard Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txtTheme.Location = new Point(365, 336);
+            txtTheme.Name = "txtTheme";
+            txtTheme.ReadOnly = true;
+            txtTheme.Size = new Size(217, 19);
+            txtTheme.TabIndex = 45;
             // 
             // txtName
             // 
-            this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtName.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtName.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.txtName.Location = new System.Drawing.Point(38, 129);
-            this.txtName.Name = "txtName";
-            this.txtName.ReadOnly = true;
-            this.txtName.Size = new System.Drawing.Size(217, 19);
-            this.txtName.TabIndex = 44;
+            txtName.BorderStyle = BorderStyle.None;
+            txtName.Font = new Font("Showcard Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txtName.ForeColor = SystemColors.InactiveBorder;
+            txtName.Location = new Point(365, 301);
+            txtName.Name = "txtName";
+            txtName.ReadOnly = true;
+            txtName.Size = new Size(217, 19);
+            txtName.TabIndex = 44;
             // 
             // btnSave
             // 
-            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSave.Location = new System.Drawing.Point(559, 367);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(94, 29);
-            this.btnSave.TabIndex = 43;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            btnSave.Cursor = Cursors.Hand;
+            btnSave.Location = new Point(1131, 547);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(94, 29);
+            btnSave.TabIndex = 43;
+            btnSave.Text = "Save";
+            btnSave.UseVisualStyleBackColor = true;
+            btnSave.Click += btnSave_Click;
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(312, 152);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(68, 20);
-            this.label5.TabIndex = 42;
-            this.label5.Text = "End date";
+            label5.AutoSize = true;
+            label5.Location = new Point(642, 308);
+            label5.Name = "label5";
+            label5.Size = new Size(68, 20);
+            label5.TabIndex = 42;
+            label5.Text = "End date";
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(312, 96);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(74, 20);
-            this.label4.TabIndex = 41;
-            this.label4.Text = "Start date";
+            label4.AutoSize = true;
+            label4.Location = new Point(642, 252);
+            label4.Name = "label4";
+            label4.Size = new Size(74, 20);
+            label4.TabIndex = 41;
+            label4.Text = "Start date";
             // 
             // dtpEndDatePP
             // 
-            this.dtpEndDatePP.Location = new System.Drawing.Point(403, 145);
-            this.dtpEndDatePP.Name = "dtpEndDatePP";
-            this.dtpEndDatePP.Size = new System.Drawing.Size(250, 27);
-            this.dtpEndDatePP.TabIndex = 40;
+            dtpEndDatePP.Location = new Point(733, 301);
+            dtpEndDatePP.Name = "dtpEndDatePP";
+            dtpEndDatePP.Size = new Size(566, 27);
+            dtpEndDatePP.TabIndex = 40;
             // 
             // dtpStartDatePP
             // 
-            this.dtpStartDatePP.Location = new System.Drawing.Point(403, 89);
-            this.dtpStartDatePP.Name = "dtpStartDatePP";
-            this.dtpStartDatePP.Size = new System.Drawing.Size(250, 27);
-            this.dtpStartDatePP.TabIndex = 39;
+            dtpStartDatePP.Location = new Point(733, 245);
+            dtpStartDatePP.Name = "dtpStartDatePP";
+            dtpStartDatePP.Size = new Size(566, 27);
+            dtpStartDatePP.TabIndex = 39;
             // 
             // label3
             // 
-            this.label3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label3.Location = new System.Drawing.Point(276, 34);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(1, 386);
-            this.label3.TabIndex = 38;
+            label3.BackColor = SystemColors.ActiveCaptionText;
+            label3.Location = new Point(604, 56);
+            label3.Name = "label3";
+            label3.Size = new Size(1, 644);
+            label3.TabIndex = 38;
             // 
             // rtbRules
             // 
-            this.rtbRules.Location = new System.Drawing.Point(403, 218);
-            this.rtbRules.Name = "rtbRules";
-            this.rtbRules.Size = new System.Drawing.Size(250, 120);
-            this.rtbRules.TabIndex = 36;
-            this.rtbRules.Text = "";
+            rtbRules.Location = new Point(733, 374);
+            rtbRules.Name = "rtbRules";
+            rtbRules.Size = new Size(566, 155);
+            rtbRules.TabIndex = 36;
+            rtbRules.Text = "";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(312, 267);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 20);
-            this.label2.TabIndex = 37;
-            this.label2.Text = "Activities";
+            label2.AutoSize = true;
+            label2.Location = new Point(642, 423);
+            label2.Name = "label2";
+            label2.Size = new Size(69, 20);
+            label2.TabIndex = 37;
+            label2.Text = "Activities";
             // 
             // err
             // 
-            this.err.ContainerControl = this;
+            err.ContainerControl = this;
             // 
             // frmAddEditProgramme
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(717, 450);
-            this.Controls.Add(this.txtEndDate);
-            this.Controls.Add(this.txtStartDate);
-            this.Controls.Add(this.txtTheme);
-            this.Controls.Add(this.txtName);
-            this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.dtpEndDatePP);
-            this.Controls.Add(this.dtpStartDatePP);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.rtbRules);
-            this.Controls.Add(this.label2);
-            this.Name = "frmAddEditProgramme";
-            this.Text = "frmAddEditProgramme";
-            this.Load += new System.EventHandler(this.frmAddEditProgramme_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.err)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1638, 777);
+            Controls.Add(txtEndDate);
+            Controls.Add(txtStartDate);
+            Controls.Add(txtTheme);
+            Controls.Add(txtName);
+            Controls.Add(btnSave);
+            Controls.Add(label5);
+            Controls.Add(label4);
+            Controls.Add(dtpEndDatePP);
+            Controls.Add(dtpStartDatePP);
+            Controls.Add(label3);
+            Controls.Add(rtbRules);
+            Controls.Add(label2);
+            Name = "frmAddEditProgramme";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "frmAddEditProgramme";
+            Load += frmAddEditProgramme_Load;
+            ((System.ComponentModel.ISupportInitialize)err).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

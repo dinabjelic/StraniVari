@@ -28,199 +28,209 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtTripDatTime = new System.Windows.Forms.TextBox();
-            this.txtTripPlace = new System.Windows.Forms.TextBox();
-            this.txtSchool = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtEndDate = new System.Windows.Forms.TextBox();
-            this.txtStartDate = new System.Windows.Forms.TextBox();
-            this.txtName = new System.Windows.Forms.TextBox();
-            this.txtTheme = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtFristName = new System.Windows.Forms.TextBox();
-            this.txtLastName = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.SuspendLayout();
+            txtTripDatTime = new TextBox();
+            txtTripPlace = new TextBox();
+            txtSchool = new TextBox();
+            label4 = new Label();
+            txtEndDate = new TextBox();
+            txtStartDate = new TextBox();
+            txtName = new TextBox();
+            txtTheme = new TextBox();
+            label1 = new Label();
+            label2 = new Label();
+            txtFristName = new TextBox();
+            txtLastName = new TextBox();
+            label3 = new Label();
+            btnSave = new Button();
+            comboBox1 = new ComboBox();
+            label5 = new Label();
+            SuspendLayout();
             // 
             // txtTripDatTime
             // 
-            this.txtTripDatTime.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTripDatTime.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtTripDatTime.Location = new System.Drawing.Point(22, 307);
-            this.txtTripDatTime.Margin = new System.Windows.Forms.Padding(4);
-            this.txtTripDatTime.Name = "txtTripDatTime";
-            this.txtTripDatTime.ReadOnly = true;
-            this.txtTripDatTime.Size = new System.Drawing.Size(310, 23);
-            this.txtTripDatTime.TabIndex = 43;
+            txtTripDatTime.BorderStyle = BorderStyle.None;
+            txtTripDatTime.Font = new Font("Showcard Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txtTripDatTime.Location = new Point(512, 447);
+            txtTripDatTime.Name = "txtTripDatTime";
+            txtTripDatTime.ReadOnly = true;
+            txtTripDatTime.Size = new Size(248, 19);
+            txtTripDatTime.TabIndex = 43;
             // 
             // txtTripPlace
             // 
-            this.txtTripPlace.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTripPlace.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtTripPlace.Location = new System.Drawing.Point(22, 276);
-            this.txtTripPlace.Margin = new System.Windows.Forms.Padding(4);
-            this.txtTripPlace.Name = "txtTripPlace";
-            this.txtTripPlace.ReadOnly = true;
-            this.txtTripPlace.Size = new System.Drawing.Size(310, 23);
-            this.txtTripPlace.TabIndex = 42;
+            txtTripPlace.BorderStyle = BorderStyle.None;
+            txtTripPlace.Font = new Font("Showcard Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txtTripPlace.Location = new Point(512, 422);
+            txtTripPlace.Name = "txtTripPlace";
+            txtTripPlace.ReadOnly = true;
+            txtTripPlace.Size = new Size(248, 19);
+            txtTripPlace.TabIndex = 42;
             // 
             // txtSchool
             // 
-            this.txtSchool.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtSchool.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtSchool.Location = new System.Drawing.Point(22, 245);
-            this.txtSchool.Margin = new System.Windows.Forms.Padding(4);
-            this.txtSchool.Name = "txtSchool";
-            this.txtSchool.ReadOnly = true;
-            this.txtSchool.Size = new System.Drawing.Size(310, 23);
-            this.txtSchool.TabIndex = 41;
+            txtSchool.BorderStyle = BorderStyle.None;
+            txtSchool.Font = new Font("Showcard Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txtSchool.Location = new Point(512, 397);
+            txtSchool.Name = "txtSchool";
+            txtSchool.ReadOnly = true;
+            txtSchool.Size = new Size(248, 19);
+            txtSchool.TabIndex = 41;
             // 
             // label4
             // 
-            this.label4.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label4.Location = new System.Drawing.Point(333, 43);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(1, 366);
-            this.label4.TabIndex = 40;
+            label4.BackColor = SystemColors.ActiveCaptionText;
+            label4.Location = new Point(782, 221);
+            label4.Name = "label4";
+            label4.Size = new Size(1, 293);
+            label4.TabIndex = 40;
             // 
             // txtEndDate
             // 
-            this.txtEndDate.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtEndDate.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtEndDate.Location = new System.Drawing.Point(22, 207);
-            this.txtEndDate.Margin = new System.Windows.Forms.Padding(4);
-            this.txtEndDate.Name = "txtEndDate";
-            this.txtEndDate.ReadOnly = true;
-            this.txtEndDate.Size = new System.Drawing.Size(310, 23);
-            this.txtEndDate.TabIndex = 39;
+            txtEndDate.BorderStyle = BorderStyle.None;
+            txtEndDate.Font = new Font("Showcard Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txtEndDate.Location = new Point(512, 367);
+            txtEndDate.Name = "txtEndDate";
+            txtEndDate.ReadOnly = true;
+            txtEndDate.Size = new Size(248, 19);
+            txtEndDate.TabIndex = 39;
             // 
             // txtStartDate
             // 
-            this.txtStartDate.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtStartDate.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtStartDate.Location = new System.Drawing.Point(22, 165);
-            this.txtStartDate.Margin = new System.Windows.Forms.Padding(4);
-            this.txtStartDate.Name = "txtStartDate";
-            this.txtStartDate.ReadOnly = true;
-            this.txtStartDate.Size = new System.Drawing.Size(310, 23);
-            this.txtStartDate.TabIndex = 37;
+            txtStartDate.BorderStyle = BorderStyle.None;
+            txtStartDate.Font = new Font("Showcard Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txtStartDate.Location = new Point(512, 333);
+            txtStartDate.Name = "txtStartDate";
+            txtStartDate.ReadOnly = true;
+            txtStartDate.Size = new Size(248, 19);
+            txtStartDate.TabIndex = 37;
             // 
             // txtName
             // 
-            this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtName.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtName.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.txtName.Location = new System.Drawing.Point(22, 83);
-            this.txtName.Margin = new System.Windows.Forms.Padding(4);
-            this.txtName.Name = "txtName";
-            this.txtName.ReadOnly = true;
-            this.txtName.Size = new System.Drawing.Size(310, 23);
-            this.txtName.TabIndex = 35;
+            txtName.BorderStyle = BorderStyle.None;
+            txtName.Font = new Font("Showcard Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txtName.ForeColor = SystemColors.InactiveBorder;
+            txtName.Location = new Point(512, 267);
+            txtName.Name = "txtName";
+            txtName.ReadOnly = true;
+            txtName.Size = new Size(248, 19);
+            txtName.TabIndex = 35;
             // 
             // txtTheme
             // 
-            this.txtTheme.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTheme.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtTheme.Location = new System.Drawing.Point(22, 124);
-            this.txtTheme.Margin = new System.Windows.Forms.Padding(4);
-            this.txtTheme.Name = "txtTheme";
-            this.txtTheme.ReadOnly = true;
-            this.txtTheme.Size = new System.Drawing.Size(310, 23);
-            this.txtTheme.TabIndex = 36;
+            txtTheme.BorderStyle = BorderStyle.None;
+            txtTheme.Font = new Font("Showcard Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txtTheme.Location = new Point(512, 300);
+            txtTheme.Name = "txtTheme";
+            txtTheme.ReadOnly = true;
+            txtTheme.Size = new Size(248, 19);
+            txtTheme.TabIndex = 36;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(63, 14);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 25);
-            this.label1.TabIndex = 38;
+            label1.AutoSize = true;
+            label1.Location = new Point(544, 212);
+            label1.Name = "label1";
+            label1.Size = new Size(0, 20);
+            label1.TabIndex = 38;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(371, 81);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(94, 25);
-            this.label2.TabIndex = 44;
-            this.label2.Text = "First name";
+            label2.AutoSize = true;
+            label2.Location = new Point(812, 266);
+            label2.Margin = new Padding(2, 0, 2, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(77, 20);
+            label2.TabIndex = 44;
+            label2.Text = "First name";
             // 
             // txtFristName
             // 
-            this.txtFristName.Location = new System.Drawing.Point(371, 120);
-            this.txtFristName.Name = "txtFristName";
-            this.txtFristName.ReadOnly = true;
-            this.txtFristName.Size = new System.Drawing.Size(250, 31);
-            this.txtFristName.TabIndex = 45;
+            txtFristName.Location = new Point(912, 267);
+            txtFristName.Margin = new Padding(2);
+            txtFristName.Name = "txtFristName";
+            txtFristName.ReadOnly = true;
+            txtFristName.Size = new Size(335, 27);
+            txtFristName.TabIndex = 45;
             // 
             // txtLastName
             // 
-            this.txtLastName.Location = new System.Drawing.Point(370, 207);
-            this.txtLastName.Name = "txtLastName";
-            this.txtLastName.ReadOnly = true;
-            this.txtLastName.Size = new System.Drawing.Size(250, 31);
-            this.txtLastName.TabIndex = 47;
+            txtLastName.Location = new Point(912, 321);
+            txtLastName.Margin = new Padding(2);
+            txtLastName.Name = "txtLastName";
+            txtLastName.ReadOnly = true;
+            txtLastName.Size = new Size(336, 27);
+            txtLastName.TabIndex = 47;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(370, 168);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(92, 25);
-            this.label3.TabIndex = 46;
-            this.label3.Text = "Last name";
+            label3.AutoSize = true;
+            label3.Location = new Point(812, 328);
+            label3.Margin = new Padding(2, 0, 2, 0);
+            label3.Name = "label3";
+            label3.Size = new Size(76, 20);
+            label3.TabIndex = 46;
+            label3.Text = "Last name";
             // 
             // btnSave
             // 
-            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSave.Location = new System.Drawing.Point(509, 375);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(112, 34);
-            this.btnSave.TabIndex = 48;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            btnSave.Cursor = Cursors.Hand;
+            btnSave.Location = new Point(1157, 439);
+            btnSave.Margin = new Padding(2);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(90, 27);
+            btnSave.TabIndex = 48;
+            btnSave.Text = "Save";
+            btnSave.UseVisualStyleBackColor = true;
+            btnSave.Click += btnSave_Click;
             // 
             // comboBox1
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(370, 289);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(251, 33);
-            this.comboBox1.TabIndex = 49;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(912, 379);
+            comboBox1.Margin = new Padding(2);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(335, 28);
+            comboBox1.TabIndex = 49;
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(812, 387);
+            label5.Margin = new Padding(2, 0, 2, 0);
+            label5.Name = "label5";
+            label5.Size = new Size(49, 20);
+            label5.TabIndex = 50;
+            label5.Text = "Status";
             // 
             // frmEditApplication
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(713, 450);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.txtLastName);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtFristName);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtTripDatTime);
-            this.Controls.Add(this.txtTripPlace);
-            this.Controls.Add(this.txtSchool);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtEndDate);
-            this.Controls.Add(this.txtStartDate);
-            this.Controls.Add(this.txtName);
-            this.Controls.Add(this.txtTheme);
-            this.Controls.Add(this.label1);
-            this.Name = "frmEditApplication";
-            this.Text = "frmEditApplication";
-            this.Load += new System.EventHandler(this.frmEditApplication_Load);
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1638, 777);
+            Controls.Add(label5);
+            Controls.Add(comboBox1);
+            Controls.Add(btnSave);
+            Controls.Add(txtLastName);
+            Controls.Add(label3);
+            Controls.Add(txtFristName);
+            Controls.Add(label2);
+            Controls.Add(txtTripDatTime);
+            Controls.Add(txtTripPlace);
+            Controls.Add(txtSchool);
+            Controls.Add(label4);
+            Controls.Add(txtEndDate);
+            Controls.Add(txtStartDate);
+            Controls.Add(txtName);
+            Controls.Add(txtTheme);
+            Controls.Add(label1);
+            Margin = new Padding(2);
+            Name = "frmEditApplication";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "frmEditApplication";
+            Load += frmEditApplication_Load;
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -240,5 +250,6 @@
         private Label label3;
         private Button btnSave;
         private ComboBox comboBox1;
+        private Label label5;
     }
 }

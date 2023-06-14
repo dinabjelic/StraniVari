@@ -9,7 +9,7 @@ namespace StraniVari.WinUI.Volunteers
     {
         ApiService _apiService = new ApiService("Volunteers");
         public GetVolunteerDetailsResposne SelectedVolunteer { get; }
-        public frmAddEditVolunteer(GetVolunteerDetailsResposne selectedVolunteers=null)
+        public frmAddEditVolunteer(GetVolunteerDetailsResposne selectedVolunteers = null)
         {
             InitializeComponent();
             SelectedVolunteer = selectedVolunteers;
@@ -38,7 +38,7 @@ namespace StraniVari.WinUI.Volunteers
                     LastName = txtLastName.Text,
                     Address = txtVolunteerAddress.Text,
                     City = txtVolunteerCity.Text,
-                    DateOfBirth = dtpBirth.Value, 
+                    DateOfBirth = dtpBirth.Value,
                     Username = txtUsername.Text,
                     Password = txtPassword.Text
                 };
@@ -83,10 +83,10 @@ namespace StraniVari.WinUI.Volunteers
             err.Clear();
             return true;
         }
-        
+
         private bool ValidateConfirmPassword()
         {
-            if((!string.IsNullOrWhiteSpace(txtPassword.Text) || !string.IsNullOrWhiteSpace(txtConfirmPassword.Text)) && txtPassword.Text != txtConfirmPassword.Text)
+            if ((!string.IsNullOrWhiteSpace(txtPassword.Text) || !string.IsNullOrWhiteSpace(txtConfirmPassword.Text)) && txtPassword.Text != txtConfirmPassword.Text)
             {
                 err.SetError(txtConfirmPassword, Constants.ConfirmPassword);
                 return false;

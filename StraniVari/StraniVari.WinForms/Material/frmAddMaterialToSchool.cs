@@ -48,7 +48,7 @@ namespace StraniVari.WinUI.Material
 
         private async void btnAddMaterialToSchool_Click(object sender, EventArgs e)
         {
-            var materialForSchool =await _apiServiceMaterialDetails.GetById<List<GetMaterialsForSchoolRequest>>(SelectedElement.SchoolEventId);
+            var materialForSchool = await _apiServiceMaterialDetails.GetById<List<GetMaterialsForSchoolRequest>>(SelectedElement.SchoolEventId);
             var materials = new InsertMaterialToSchoolRequest
             {
                 EventSchoolId = SelectedElement.SchoolEventId,
@@ -58,11 +58,11 @@ namespace StraniVari.WinUI.Material
             };
 
             bool added = false;
-            foreach(var item in materialForSchool)
+            foreach (var item in materialForSchool)
             {
-                foreach(var i in materials.Materials)
+                foreach (var i in materials.Materials)
                 {
-                    if(item.MaterialId == i)
+                    if (item.MaterialId == i)
                     {
                         added = true;
                         break;

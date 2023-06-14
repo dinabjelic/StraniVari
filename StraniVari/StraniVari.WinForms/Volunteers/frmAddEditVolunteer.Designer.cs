@@ -28,228 +28,228 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAddEditVolunteer));
-            this.txtVolunteerAddress = new System.Windows.Forms.TextBox();
-            this.btnEditVolunteerDetails = new System.Windows.Forms.Button();
-            this.txtVolunteerCity = new System.Windows.Forms.TextBox();
-            this.txtLastName = new System.Windows.Forms.TextBox();
-            this.txtFirstName = new System.Windows.Forms.TextBox();
-            this.lblNumberofChildren = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.dtpBirth = new System.Windows.Forms.DateTimePicker();
-            this.err = new System.Windows.Forms.ErrorProvider(this.components);
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label = new System.Windows.Forms.Label();
-            this.txtUsername = new System.Windows.Forms.TextBox();
-            this.txtPassword = new System.Windows.Forms.TextBox();
-            this.txtConfirmPassword = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.err)).BeginInit();
-            this.SuspendLayout();
+            txtVolunteerAddress = new TextBox();
+            btnEditVolunteerDetails = new Button();
+            txtVolunteerCity = new TextBox();
+            txtLastName = new TextBox();
+            txtFirstName = new TextBox();
+            lblNumberofChildren = new Label();
+            label3 = new Label();
+            label2 = new Label();
+            label1 = new Label();
+            label5 = new Label();
+            dtpBirth = new DateTimePicker();
+            err = new ErrorProvider(components);
+            label6 = new Label();
+            label7 = new Label();
+            label = new Label();
+            txtUsername = new TextBox();
+            txtPassword = new TextBox();
+            txtConfirmPassword = new TextBox();
+            pictureBox2 = new PictureBox();
+            label4 = new Label();
+            ((System.ComponentModel.ISupportInitialize)err).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            SuspendLayout();
             // 
             // txtVolunteerAddress
             // 
-            this.txtVolunteerAddress.Location = new System.Drawing.Point(391, 227);
-            this.txtVolunteerAddress.Name = "txtVolunteerAddress";
-            this.txtVolunteerAddress.Size = new System.Drawing.Size(250, 27);
-            this.txtVolunteerAddress.TabIndex = 4;
+            txtVolunteerAddress.Location = new Point(862, 309);
+            txtVolunteerAddress.Name = "txtVolunteerAddress";
+            txtVolunteerAddress.Size = new Size(250, 27);
+            txtVolunteerAddress.TabIndex = 4;
             // 
             // btnEditVolunteerDetails
             // 
-            this.btnEditVolunteerDetails.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEditVolunteerDetails.Location = new System.Drawing.Point(547, 481);
-            this.btnEditVolunteerDetails.Name = "btnEditVolunteerDetails";
-            this.btnEditVolunteerDetails.Size = new System.Drawing.Size(94, 29);
-            this.btnEditVolunteerDetails.TabIndex = 6;
-            this.btnEditVolunteerDetails.Text = "Save";
-            this.btnEditVolunteerDetails.UseVisualStyleBackColor = true;
-            this.btnEditVolunteerDetails.Click += new System.EventHandler(this.btnEditVolunteerDetails_Click);
+            btnEditVolunteerDetails.Cursor = Cursors.Hand;
+            btnEditVolunteerDetails.Location = new Point(1018, 563);
+            btnEditVolunteerDetails.Name = "btnEditVolunteerDetails";
+            btnEditVolunteerDetails.Size = new Size(94, 29);
+            btnEditVolunteerDetails.TabIndex = 6;
+            btnEditVolunteerDetails.Text = "Save";
+            btnEditVolunteerDetails.UseVisualStyleBackColor = true;
+            btnEditVolunteerDetails.Click += btnEditVolunteerDetails_Click;
             // 
             // txtVolunteerCity
             // 
-            this.txtVolunteerCity.Location = new System.Drawing.Point(391, 179);
-            this.txtVolunteerCity.Name = "txtVolunteerCity";
-            this.txtVolunteerCity.Size = new System.Drawing.Size(250, 27);
-            this.txtVolunteerCity.TabIndex = 3;
+            txtVolunteerCity.Location = new Point(862, 261);
+            txtVolunteerCity.Name = "txtVolunteerCity";
+            txtVolunteerCity.Size = new Size(250, 27);
+            txtVolunteerCity.TabIndex = 3;
             // 
             // txtLastName
             // 
-            this.txtLastName.Location = new System.Drawing.Point(391, 138);
-            this.txtLastName.Name = "txtLastName";
-            this.txtLastName.Size = new System.Drawing.Size(250, 27);
-            this.txtLastName.TabIndex = 2;
+            txtLastName.Location = new Point(862, 220);
+            txtLastName.Name = "txtLastName";
+            txtLastName.Size = new Size(250, 27);
+            txtLastName.TabIndex = 2;
             // 
             // txtFirstName
             // 
-            this.txtFirstName.Location = new System.Drawing.Point(391, 90);
-            this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.Size = new System.Drawing.Size(250, 27);
-            this.txtFirstName.TabIndex = 1;
+            txtFirstName.Location = new Point(862, 172);
+            txtFirstName.Name = "txtFirstName";
+            txtFirstName.Size = new Size(250, 27);
+            txtFirstName.TabIndex = 1;
             // 
             // lblNumberofChildren
             // 
-            this.lblNumberofChildren.AutoSize = true;
-            this.lblNumberofChildren.Location = new System.Drawing.Point(247, 227);
-            this.lblNumberofChildren.Name = "lblNumberofChildren";
-            this.lblNumberofChildren.Size = new System.Drawing.Size(62, 20);
-            this.lblNumberofChildren.TabIndex = 66;
-            this.lblNumberofChildren.Text = "Address";
+            lblNumberofChildren.AutoSize = true;
+            lblNumberofChildren.Location = new Point(718, 309);
+            lblNumberofChildren.Name = "lblNumberofChildren";
+            lblNumberofChildren.Size = new Size(62, 20);
+            lblNumberofChildren.TabIndex = 66;
+            lblNumberofChildren.Text = "Address";
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(247, 179);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(34, 20);
-            this.label3.TabIndex = 65;
-            this.label3.Text = "City";
+            label3.AutoSize = true;
+            label3.Location = new Point(718, 261);
+            label3.Name = "label3";
+            label3.Size = new Size(34, 20);
+            label3.TabIndex = 65;
+            label3.Text = "City";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(247, 138);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(76, 20);
-            this.label2.TabIndex = 64;
-            this.label2.Text = "Last name";
+            label2.AutoSize = true;
+            label2.Location = new Point(718, 220);
+            label2.Name = "label2";
+            label2.Size = new Size(76, 20);
+            label2.TabIndex = 64;
+            label2.Text = "Last name";
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(247, 90);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 20);
-            this.label1.TabIndex = 63;
-            this.label1.Text = "First name";
-            // 
-            // label4
-            // 
-            this.label4.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label4.Location = new System.Drawing.Point(213, 53);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(1, 438);
-            this.label4.TabIndex = 62;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(28, 160);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(147, 166);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 73;
-            this.pictureBox1.TabStop = false;
+            label1.AutoSize = true;
+            label1.Location = new Point(718, 172);
+            label1.Name = "label1";
+            label1.Size = new Size(77, 20);
+            label1.TabIndex = 63;
+            label1.Text = "First name";
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(247, 278);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(94, 20);
-            this.label5.TabIndex = 74;
-            this.label5.Text = "Date of birth";
+            label5.AutoSize = true;
+            label5.Location = new Point(718, 360);
+            label5.Name = "label5";
+            label5.Size = new Size(94, 20);
+            label5.TabIndex = 74;
+            label5.Text = "Date of birth";
             // 
             // dtpBirth
             // 
-            this.dtpBirth.Location = new System.Drawing.Point(391, 273);
-            this.dtpBirth.Name = "dtpBirth";
-            this.dtpBirth.Size = new System.Drawing.Size(250, 27);
-            this.dtpBirth.TabIndex = 5;
+            dtpBirth.Location = new Point(862, 355);
+            dtpBirth.Name = "dtpBirth";
+            dtpBirth.Size = new Size(250, 27);
+            dtpBirth.TabIndex = 5;
             // 
             // err
             // 
-            this.err.ContainerControl = this;
+            err.ContainerControl = this;
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(247, 429);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(129, 20);
-            this.label6.TabIndex = 75;
-            this.label6.Text = "Confirm password";
+            label6.AutoSize = true;
+            label6.Location = new Point(718, 511);
+            label6.Name = "label6";
+            label6.Size = new Size(129, 20);
+            label6.TabIndex = 75;
+            label6.Text = "Confirm password";
             // 
             // label7
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(247, 380);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(70, 20);
-            this.label7.TabIndex = 76;
-            this.label7.Text = "Password";
+            label7.AutoSize = true;
+            label7.Location = new Point(718, 462);
+            label7.Name = "label7";
+            label7.Size = new Size(70, 20);
+            label7.TabIndex = 76;
+            label7.Text = "Password";
             // 
             // label
             // 
-            this.label.AutoSize = true;
-            this.label.Location = new System.Drawing.Point(247, 337);
-            this.label.Name = "label";
-            this.label.Size = new System.Drawing.Size(75, 20);
-            this.label.TabIndex = 77;
-            this.label.Text = "Username";
+            label.AutoSize = true;
+            label.Location = new Point(718, 419);
+            label.Name = "label";
+            label.Size = new Size(75, 20);
+            label.TabIndex = 77;
+            label.Text = "Username";
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(392, 334);
-            this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(249, 27);
-            this.txtUsername.TabIndex = 78;
+            txtUsername.Location = new Point(863, 416);
+            txtUsername.Name = "txtUsername";
+            txtUsername.Size = new Size(249, 27);
+            txtUsername.TabIndex = 78;
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(391, 382);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(250, 27);
-            this.txtPassword.TabIndex = 79;
+            txtPassword.Location = new Point(862, 464);
+            txtPassword.Name = "txtPassword";
+            txtPassword.PasswordChar = '*';
+            txtPassword.Size = new Size(250, 27);
+            txtPassword.TabIndex = 79;
             // 
             // txtConfirmPassword
             // 
-            this.txtConfirmPassword.Location = new System.Drawing.Point(390, 430);
-            this.txtConfirmPassword.Name = "txtConfirmPassword";
-            this.txtConfirmPassword.PasswordChar = '*';
-            this.txtConfirmPassword.Size = new System.Drawing.Size(251, 27);
-            this.txtConfirmPassword.TabIndex = 80;
+            txtConfirmPassword.Location = new Point(861, 512);
+            txtConfirmPassword.Name = "txtConfirmPassword";
+            txtConfirmPassword.PasswordChar = '*';
+            txtConfirmPassword.Size = new Size(251, 27);
+            txtConfirmPassword.TabIndex = 80;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(328, 201);
+            pictureBox2.Margin = new Padding(3, 4, 3, 4);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(261, 330);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 82;
+            pictureBox2.TabStop = false;
+            // 
+            // label4
+            // 
+            label4.BackColor = SystemColors.ActiveCaptionText;
+            label4.Location = new Point(647, 49);
+            label4.Name = "label4";
+            label4.Size = new Size(1, 644);
+            label4.TabIndex = 81;
             // 
             // frmAddEditVolunteer
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(681, 544);
-            this.Controls.Add(this.txtConfirmPassword);
-            this.Controls.Add(this.txtPassword);
-            this.Controls.Add(this.txtUsername);
-            this.Controls.Add(this.label);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.dtpBirth);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.txtVolunteerAddress);
-            this.Controls.Add(this.btnEditVolunteerDetails);
-            this.Controls.Add(this.txtVolunteerCity);
-            this.Controls.Add(this.txtLastName);
-            this.Controls.Add(this.txtFirstName);
-            this.Controls.Add(this.lblNumberofChildren);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.label4);
-            this.Name = "frmAddEditVolunteer";
-            this.Text = "frmAddEditVolunteer";
-            this.Load += new System.EventHandler(this.frmAddEditVolunteer_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.err)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1638, 777);
+            Controls.Add(pictureBox2);
+            Controls.Add(label4);
+            Controls.Add(txtConfirmPassword);
+            Controls.Add(txtPassword);
+            Controls.Add(txtUsername);
+            Controls.Add(label);
+            Controls.Add(label7);
+            Controls.Add(label6);
+            Controls.Add(dtpBirth);
+            Controls.Add(label5);
+            Controls.Add(txtVolunteerAddress);
+            Controls.Add(btnEditVolunteerDetails);
+            Controls.Add(txtVolunteerCity);
+            Controls.Add(txtLastName);
+            Controls.Add(txtFirstName);
+            Controls.Add(lblNumberofChildren);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Name = "frmAddEditVolunteer";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "frmAddEditVolunteer";
+            Load += frmAddEditVolunteer_Load;
+            ((System.ComponentModel.ISupportInitialize)err).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -262,8 +262,6 @@
         private Label label3;
         private Label label2;
         private Label label1;
-        private Label label4;
-        private PictureBox pictureBox1;
         private Label label5;
         private DateTimePicker dtpBirth;
         private ErrorProvider err;
@@ -273,5 +271,7 @@
         private TextBox txtConfirmPassword;
         private TextBox txtPassword;
         private TextBox txtUsername;
+        private PictureBox pictureBox2;
+        private Label label4;
     }
 }

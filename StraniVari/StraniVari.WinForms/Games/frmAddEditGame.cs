@@ -12,7 +12,7 @@ namespace StraniVari.WinUI.Games
         public string GameName { get; }
         public string Rule { get; }
         public GetGamesResponse SelectedItem { get; }
-        public frmAddEditGame(string gameName = null, string rule = null, GetGamesResponse selectedItem=null)
+        public frmAddEditGame(string gameName = null, string rule = null, GetGamesResponse selectedItem = null)
         {
             InitializeComponent();
             GameName = gameName;

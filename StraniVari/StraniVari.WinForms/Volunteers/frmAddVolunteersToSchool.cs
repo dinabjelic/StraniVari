@@ -12,7 +12,7 @@ namespace StraniVari.WinUI.Volunteers
 
         public GetSchoolsForEventResponse _selectedSchool { get; }
         public EventUpsertRequest _selectedEvent { get; }
-       
+
         public frmAddVolunteersToSchool(GetSchoolsForEventResponse selectedSchool, EventUpsertRequest selectedEvent)
         {
             InitializeComponent();
@@ -55,9 +55,9 @@ namespace StraniVari.WinUI.Volunteers
 
 
             bool added = false;
-            foreach(var item in volunteersForSchool)
+            foreach (var item in volunteersForSchool)
             {
-                foreach(var i in volunteers.Volunteers)
+                foreach (var i in volunteers.Volunteers)
                 {
                     if (item.VolunteerId == i)
                     {
@@ -67,7 +67,8 @@ namespace StraniVari.WinUI.Volunteers
                 }
             }
 
-            if (!added) {
+            if (!added)
+            {
                 await _apiServiceVolunteersSchool.Insert<ResponseResult>(volunteers);
                 MessageBox.Show("Volunteers successfully added.", "Infomation", MessageBoxButtons.OK);
             }

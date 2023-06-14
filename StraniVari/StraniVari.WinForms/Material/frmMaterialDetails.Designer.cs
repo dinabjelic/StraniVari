@@ -28,187 +28,182 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtEndDate = new System.Windows.Forms.TextBox();
-            this.txtStartDate = new System.Windows.Forms.TextBox();
-            this.txtTheme = new System.Windows.Forms.TextBox();
-            this.txtName = new System.Windows.Forms.TextBox();
-            this.txtSchool = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dgvMaterialForSchool = new System.Windows.Forms.DataGridView();
-            this.SchoolMaterialId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaterialName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Action = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.btnDelete = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMaterialForSchool)).BeginInit();
-            this.SuspendLayout();
+            label4 = new Label();
+            txtEndDate = new TextBox();
+            txtStartDate = new TextBox();
+            txtTheme = new TextBox();
+            txtName = new TextBox();
+            txtSchool = new TextBox();
+            groupBox1 = new GroupBox();
+            dgvMaterialForSchool = new DataGridView();
+            SchoolMaterialId = new DataGridViewTextBoxColumn();
+            MaterialName = new DataGridViewTextBoxColumn();
+            Quantity = new DataGridViewTextBoxColumn();
+            Action = new DataGridViewButtonColumn();
+            btnDelete = new DataGridViewButtonColumn();
+            groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvMaterialForSchool).BeginInit();
+            SuspendLayout();
             // 
             // label4
             // 
-            this.label4.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label4.Location = new System.Drawing.Point(272, 14);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(1, 408);
-            this.label4.TabIndex = 13;
+            label4.BackColor = SystemColors.ActiveCaptionText;
+            label4.Location = new Point(649, 59);
+            label4.Name = "label4";
+            label4.Size = new Size(1, 644);
+            label4.TabIndex = 13;
             // 
             // txtEndDate
             // 
-            this.txtEndDate.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtEndDate.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtEndDate.Location = new System.Drawing.Point(41, 199);
-            this.txtEndDate.Name = "txtEndDate";
-            this.txtEndDate.ReadOnly = true;
-            this.txtEndDate.Size = new System.Drawing.Size(225, 19);
-            this.txtEndDate.TabIndex = 12;
+            txtEndDate.BorderStyle = BorderStyle.None;
+            txtEndDate.Font = new Font("Showcard Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txtEndDate.Location = new Point(409, 377);
+            txtEndDate.Name = "txtEndDate";
+            txtEndDate.ReadOnly = true;
+            txtEndDate.Size = new Size(225, 19);
+            txtEndDate.TabIndex = 12;
             // 
             // txtStartDate
             // 
-            this.txtStartDate.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtStartDate.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtStartDate.Location = new System.Drawing.Point(41, 246);
-            this.txtStartDate.Name = "txtStartDate";
-            this.txtStartDate.ReadOnly = true;
-            this.txtStartDate.Size = new System.Drawing.Size(225, 19);
-            this.txtStartDate.TabIndex = 11;
+            txtStartDate.BorderStyle = BorderStyle.None;
+            txtStartDate.Font = new Font("Showcard Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txtStartDate.Location = new Point(409, 424);
+            txtStartDate.Name = "txtStartDate";
+            txtStartDate.ReadOnly = true;
+            txtStartDate.Size = new Size(225, 19);
+            txtStartDate.TabIndex = 11;
             // 
             // txtTheme
             // 
-            this.txtTheme.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTheme.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtTheme.Location = new System.Drawing.Point(41, 154);
-            this.txtTheme.Name = "txtTheme";
-            this.txtTheme.ReadOnly = true;
-            this.txtTheme.Size = new System.Drawing.Size(225, 19);
-            this.txtTheme.TabIndex = 10;
+            txtTheme.BorderStyle = BorderStyle.None;
+            txtTheme.Font = new Font("Showcard Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txtTheme.Location = new Point(409, 332);
+            txtTheme.Name = "txtTheme";
+            txtTheme.ReadOnly = true;
+            txtTheme.Size = new Size(225, 19);
+            txtTheme.TabIndex = 10;
             // 
             // txtName
             // 
-            this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtName.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtName.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.txtName.Location = new System.Drawing.Point(41, 119);
-            this.txtName.Name = "txtName";
-            this.txtName.ReadOnly = true;
-            this.txtName.Size = new System.Drawing.Size(225, 19);
-            this.txtName.TabIndex = 9;
+            txtName.BorderStyle = BorderStyle.None;
+            txtName.Font = new Font("Showcard Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txtName.ForeColor = SystemColors.InactiveBorder;
+            txtName.Location = new Point(409, 297);
+            txtName.Name = "txtName";
+            txtName.ReadOnly = true;
+            txtName.Size = new Size(225, 19);
+            txtName.TabIndex = 9;
             // 
             // txtSchool
             // 
-            this.txtSchool.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtSchool.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtSchool.Location = new System.Drawing.Point(41, 282);
-            this.txtSchool.Name = "txtSchool";
-            this.txtSchool.ReadOnly = true;
-            this.txtSchool.Size = new System.Drawing.Size(225, 19);
-            this.txtSchool.TabIndex = 25;
+            txtSchool.BorderStyle = BorderStyle.None;
+            txtSchool.Font = new Font("Showcard Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txtSchool.Location = new Point(409, 460);
+            txtSchool.Name = "txtSchool";
+            txtSchool.ReadOnly = true;
+            txtSchool.Size = new Size(225, 19);
+            txtSchool.TabIndex = 25;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dgvMaterialForSchool);
-            this.groupBox1.Location = new System.Drawing.Point(279, 104);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(562, 269);
-            this.groupBox1.TabIndex = 26;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "EVENT DETAILS";
+            groupBox1.Controls.Add(dgvMaterialForSchool);
+            groupBox1.Location = new Point(670, 183);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(621, 379);
+            groupBox1.TabIndex = 26;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "EVENT DETAILS";
             // 
             // dgvMaterialForSchool
             // 
-            this.dgvMaterialForSchool.AllowUserToAddRows = false;
-            this.dgvMaterialForSchool.AllowUserToDeleteRows = false;
-            this.dgvMaterialForSchool.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMaterialForSchool.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.SchoolMaterialId,
-            this.MaterialName,
-            this.Quantity,
-            this.Action,
-            this.btnDelete});
-            this.dgvMaterialForSchool.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dgvMaterialForSchool.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvMaterialForSchool.Location = new System.Drawing.Point(3, 23);
-            this.dgvMaterialForSchool.Name = "dgvMaterialForSchool";
-            this.dgvMaterialForSchool.ReadOnly = true;
-            this.dgvMaterialForSchool.RowHeadersWidth = 51;
-            this.dgvMaterialForSchool.RowTemplate.Height = 29;
-            this.dgvMaterialForSchool.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMaterialForSchool.Size = new System.Drawing.Size(556, 243);
-            this.dgvMaterialForSchool.TabIndex = 0;
-            this.dgvMaterialForSchool.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMaterialForSchool_CellContentClick);
+            dgvMaterialForSchool.AllowUserToAddRows = false;
+            dgvMaterialForSchool.AllowUserToDeleteRows = false;
+            dgvMaterialForSchool.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvMaterialForSchool.Columns.AddRange(new DataGridViewColumn[] { SchoolMaterialId, MaterialName, Quantity, Action, btnDelete });
+            dgvMaterialForSchool.Cursor = Cursors.Hand;
+            dgvMaterialForSchool.Dock = DockStyle.Fill;
+            dgvMaterialForSchool.Location = new Point(3, 23);
+            dgvMaterialForSchool.Name = "dgvMaterialForSchool";
+            dgvMaterialForSchool.ReadOnly = true;
+            dgvMaterialForSchool.RowHeadersWidth = 51;
+            dgvMaterialForSchool.RowTemplate.Height = 29;
+            dgvMaterialForSchool.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvMaterialForSchool.Size = new Size(615, 353);
+            dgvMaterialForSchool.TabIndex = 0;
+            dgvMaterialForSchool.CellContentClick += dgvMaterialForSchool_CellContentClick;
             // 
             // SchoolMaterialId
             // 
-            this.SchoolMaterialId.DataPropertyName = "SchoolMaterialId";
-            this.SchoolMaterialId.HeaderText = "SchoolMaterialId";
-            this.SchoolMaterialId.MinimumWidth = 6;
-            this.SchoolMaterialId.Name = "SchoolMaterialId";
-            this.SchoolMaterialId.ReadOnly = true;
-            this.SchoolMaterialId.Visible = false;
-            this.SchoolMaterialId.Width = 125;
+            SchoolMaterialId.DataPropertyName = "SchoolMaterialId";
+            SchoolMaterialId.HeaderText = "SchoolMaterialId";
+            SchoolMaterialId.MinimumWidth = 6;
+            SchoolMaterialId.Name = "SchoolMaterialId";
+            SchoolMaterialId.ReadOnly = true;
+            SchoolMaterialId.Visible = false;
+            SchoolMaterialId.Width = 125;
             // 
             // MaterialName
             // 
-            this.MaterialName.DataPropertyName = "MaterialName";
-            this.MaterialName.HeaderText = "MaterialName";
-            this.MaterialName.MinimumWidth = 6;
-            this.MaterialName.Name = "MaterialName";
-            this.MaterialName.ReadOnly = true;
-            this.MaterialName.Width = 125;
+            MaterialName.DataPropertyName = "MaterialName";
+            MaterialName.HeaderText = "Material Name";
+            MaterialName.MinimumWidth = 6;
+            MaterialName.Name = "MaterialName";
+            MaterialName.ReadOnly = true;
+            MaterialName.Width = 250;
             // 
             // Quantity
             // 
-            this.Quantity.DataPropertyName = "Quantity";
-            this.Quantity.HeaderText = "Quantity";
-            this.Quantity.MinimumWidth = 6;
-            this.Quantity.Name = "Quantity";
-            this.Quantity.ReadOnly = true;
-            this.Quantity.Width = 125;
+            Quantity.DataPropertyName = "Quantity";
+            Quantity.HeaderText = "Quantity";
+            Quantity.MinimumWidth = 6;
+            Quantity.Name = "Quantity";
+            Quantity.ReadOnly = true;
+            Quantity.Width = 125;
             // 
             // Action
             // 
-            this.Action.HeaderText = "Action";
-            this.Action.MinimumWidth = 6;
-            this.Action.Name = "Action";
-            this.Action.ReadOnly = true;
-            this.Action.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Action.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Action.Text = "Edit";
-            this.Action.ToolTipText = "Edit";
-            this.Action.UseColumnTextForButtonValue = true;
-            this.Action.Width = 125;
+            Action.HeaderText = "Action";
+            Action.MinimumWidth = 6;
+            Action.Name = "Action";
+            Action.ReadOnly = true;
+            Action.Resizable = DataGridViewTriState.True;
+            Action.SortMode = DataGridViewColumnSortMode.Automatic;
+            Action.Text = "Edit";
+            Action.ToolTipText = "Edit";
+            Action.UseColumnTextForButtonValue = true;
+            Action.Width = 90;
             // 
             // btnDelete
             // 
-            this.btnDelete.HeaderText = "Action";
-            this.btnDelete.MinimumWidth = 6;
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.ReadOnly = true;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.ToolTipText = "Delete";
-            this.btnDelete.UseColumnTextForButtonValue = true;
-            this.btnDelete.Width = 125;
+            btnDelete.HeaderText = "Action";
+            btnDelete.MinimumWidth = 6;
+            btnDelete.Name = "btnDelete";
+            btnDelete.ReadOnly = true;
+            btnDelete.Text = "Delete";
+            btnDelete.ToolTipText = "Delete";
+            btnDelete.UseColumnTextForButtonValue = true;
+            btnDelete.Width = 90;
             // 
             // frmMaterialDetails
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(849, 450);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.txtSchool);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtEndDate);
-            this.Controls.Add(this.txtStartDate);
-            this.Controls.Add(this.txtTheme);
-            this.Controls.Add(this.txtName);
-            this.Name = "frmMaterialDetails";
-            this.Text = "frmMaterialDetails";
-            this.Load += new System.EventHandler(this.frmMaterialDetails_Load);
-            this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMaterialForSchool)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1638, 777);
+            Controls.Add(groupBox1);
+            Controls.Add(txtSchool);
+            Controls.Add(label4);
+            Controls.Add(txtEndDate);
+            Controls.Add(txtStartDate);
+            Controls.Add(txtTheme);
+            Controls.Add(txtName);
+            Name = "frmMaterialDetails";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "frmMaterialDetails";
+            Load += frmMaterialDetails_Load;
+            groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgvMaterialForSchool).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

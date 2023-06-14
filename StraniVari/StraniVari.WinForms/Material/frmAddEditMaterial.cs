@@ -8,7 +8,7 @@ namespace StraniVari.WinUI.Material
     public partial class frmAddEditMaterial : Form
     {
         ApiService _apiService = new ApiService("Materials");
-        public frmAddEditMaterial(GetMaterialDetailsResponse selectedMaterial=null)
+        public frmAddEditMaterial(GetMaterialDetailsResponse selectedMaterial = null)
         {
             InitializeComponent();
             SelectedMaterial = selectedMaterial;

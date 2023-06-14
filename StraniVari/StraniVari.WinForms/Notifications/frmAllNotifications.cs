@@ -1,4 +1,4 @@
-﻿ using StraniVari.Core.Requests;
+﻿using StraniVari.Core.Requests;
 using StraniVari.Core.Responses;
 using StraniVari.WinUI.Service;
 
@@ -10,7 +10,7 @@ namespace StraniVari.WinUI.Notifications
         private readonly ApiService _apiServiceGet = new ApiService("Notifications/notifications");
 
         public EventUpsertRequest SelectedEvent { get; }
-        public frmAllNotifications(EventUpsertRequest selectedEvent=null)
+        public frmAllNotifications(EventUpsertRequest selectedEvent = null)
         {
             InitializeComponent();
             SelectedEvent = selectedEvent;
@@ -23,8 +23,8 @@ namespace StraniVari.WinUI.Notifications
 
             txtName.Text = SelectedEvent.Name;
             txtTheme.Text = SelectedEvent.StraniVariTheme;
-            txtStartDate.Text = SelectedEvent.StartDate.ToString("D"); 
-            txtEndDate.Text = SelectedEvent.EndDate.ToString("D"); 
+            txtStartDate.Text = SelectedEvent.StartDate.ToString("D");
+            txtEndDate.Text = SelectedEvent.EndDate.ToString("D");
 
         }
 
@@ -39,12 +39,12 @@ namespace StraniVari.WinUI.Notifications
             var selectedNotification = dgvNotifications.SelectedRows[0].DataBoundItem as GetMeetingsResponse;
             if (selectedNotification != null)
             {
-                if(e.ColumnIndex == 6)
+                if (e.ColumnIndex == 6)
                 {
-                    frmAddEditNotification frmAddEditNotification = new frmAddEditNotification(SelectedEvent,selectedNotification);
+                    frmAddEditNotification frmAddEditNotification = new frmAddEditNotification(SelectedEvent, selectedNotification);
                     frmAddEditNotification.ShowDialog();
                 }
-                else if(e.ColumnIndex == 7)
+                else if (e.ColumnIndex == 7)
                 {
                     var confirmation = MessageBox.Show("You are about to delete this item!", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 

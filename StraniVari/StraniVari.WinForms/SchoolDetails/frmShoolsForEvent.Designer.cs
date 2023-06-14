@@ -28,179 +28,179 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lbxSchools = new System.Windows.Forms.ListBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtEndDate = new System.Windows.Forms.TextBox();
-            this.txtName = new System.Windows.Forms.TextBox();
-            this.txtStartDate = new System.Windows.Forms.TextBox();
-            this.txtTheme = new System.Windows.Forms.TextBox();
-            this.btnAddSchoolToEvent = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.btnView = new System.Windows.Forms.Button();
-            this.SuspendLayout();
+            lbxSchools = new ListBox();
+            label1 = new Label();
+            label2 = new Label();
+            txtEndDate = new TextBox();
+            txtName = new TextBox();
+            txtStartDate = new TextBox();
+            txtTheme = new TextBox();
+            btnAddSchoolToEvent = new Button();
+            label3 = new Label();
+            label4 = new Label();
+            label5 = new Label();
+            label6 = new Label();
+            btnView = new Button();
+            SuspendLayout();
             // 
             // lbxSchools
             // 
-            this.lbxSchools.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lbxSchools.Font = new System.Drawing.Font("Yu Gothic UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbxSchools.FormattingEnabled = true;
-            this.lbxSchools.ItemHeight = 20;
-            this.lbxSchools.Location = new System.Drawing.Point(346, 81);
-            this.lbxSchools.Name = "lbxSchools";
-            this.lbxSchools.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.lbxSchools.Size = new System.Drawing.Size(357, 144);
-            this.lbxSchools.TabIndex = 2;
-            this.lbxSchools.SelectedIndexChanged += new System.EventHandler(this.lbxSchools_SelectedIndexChanged);
+            lbxSchools.Cursor = Cursors.Hand;
+            lbxSchools.Font = new Font("Yu Gothic UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lbxSchools.FormattingEnabled = true;
+            lbxSchools.ItemHeight = 20;
+            lbxSchools.Location = new Point(602, 259);
+            lbxSchools.Name = "lbxSchools";
+            lbxSchools.SelectionMode = SelectionMode.MultiSimple;
+            lbxSchools.Size = new Size(664, 244);
+            lbxSchools.TabIndex = 2;
+            lbxSchools.SelectedIndexChanged += lbxSchools_SelectedIndexChanged;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(91, 26);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 20);
-            this.label1.TabIndex = 3;
+            label1.AutoSize = true;
+            label1.Location = new Point(342, 264);
+            label1.Name = "label1";
+            label1.Size = new Size(0, 20);
+            label1.TabIndex = 3;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(346, 53);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(174, 20);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Choose schools for event";
+            label2.AutoSize = true;
+            label2.ForeColor = SystemColors.ActiveCaptionText;
+            label2.Location = new Point(602, 219);
+            label2.Name = "label2";
+            label2.Size = new Size(174, 20);
+            label2.TabIndex = 4;
+            label2.Text = "Choose schools for event";
             // 
             // txtEndDate
             // 
-            this.txtEndDate.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtEndDate.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtEndDate.Location = new System.Drawing.Point(58, 180);
-            this.txtEndDate.Name = "txtEndDate";
-            this.txtEndDate.ReadOnly = true;
-            this.txtEndDate.Size = new System.Drawing.Size(248, 19);
-            this.txtEndDate.TabIndex = 4;
+            txtEndDate.BorderStyle = BorderStyle.None;
+            txtEndDate.Font = new Font("Showcard Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txtEndDate.Location = new Point(309, 418);
+            txtEndDate.Name = "txtEndDate";
+            txtEndDate.ReadOnly = true;
+            txtEndDate.Size = new Size(248, 19);
+            txtEndDate.TabIndex = 4;
             // 
             // txtName
             // 
-            this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtName.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtName.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.txtName.Location = new System.Drawing.Point(58, 81);
-            this.txtName.Name = "txtName";
-            this.txtName.ReadOnly = true;
-            this.txtName.Size = new System.Drawing.Size(248, 19);
-            this.txtName.TabIndex = 1;
+            txtName.BorderStyle = BorderStyle.None;
+            txtName.Font = new Font("Showcard Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txtName.ForeColor = SystemColors.InactiveBorder;
+            txtName.Location = new Point(309, 319);
+            txtName.Name = "txtName";
+            txtName.ReadOnly = true;
+            txtName.Size = new Size(248, 19);
+            txtName.TabIndex = 1;
             // 
             // txtStartDate
             // 
-            this.txtStartDate.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtStartDate.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtStartDate.Location = new System.Drawing.Point(58, 147);
-            this.txtStartDate.Name = "txtStartDate";
-            this.txtStartDate.ReadOnly = true;
-            this.txtStartDate.Size = new System.Drawing.Size(248, 19);
-            this.txtStartDate.TabIndex = 3;
+            txtStartDate.BorderStyle = BorderStyle.None;
+            txtStartDate.Font = new Font("Showcard Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txtStartDate.Location = new Point(309, 385);
+            txtStartDate.Name = "txtStartDate";
+            txtStartDate.ReadOnly = true;
+            txtStartDate.Size = new Size(248, 19);
+            txtStartDate.TabIndex = 3;
             // 
             // txtTheme
             // 
-            this.txtTheme.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTheme.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtTheme.Location = new System.Drawing.Point(58, 114);
-            this.txtTheme.Name = "txtTheme";
-            this.txtTheme.ReadOnly = true;
-            this.txtTheme.Size = new System.Drawing.Size(248, 19);
-            this.txtTheme.TabIndex = 2;
+            txtTheme.BorderStyle = BorderStyle.None;
+            txtTheme.Font = new Font("Showcard Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            txtTheme.Location = new Point(309, 352);
+            txtTheme.Name = "txtTheme";
+            txtTheme.ReadOnly = true;
+            txtTheme.Size = new Size(248, 19);
+            txtTheme.TabIndex = 2;
             // 
             // btnAddSchoolToEvent
             // 
-            this.btnAddSchoolToEvent.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddSchoolToEvent.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnAddSchoolToEvent.Location = new System.Drawing.Point(545, 239);
-            this.btnAddSchoolToEvent.Name = "btnAddSchoolToEvent";
-            this.btnAddSchoolToEvent.Size = new System.Drawing.Size(158, 29);
-            this.btnAddSchoolToEvent.TabIndex = 5;
-            this.btnAddSchoolToEvent.Text = "Add to event";
-            this.btnAddSchoolToEvent.UseVisualStyleBackColor = true;
-            this.btnAddSchoolToEvent.Click += new System.EventHandler(this.btnAddSchoolToEvent_Click);
+            btnAddSchoolToEvent.Cursor = Cursors.Hand;
+            btnAddSchoolToEvent.ForeColor = SystemColors.ActiveCaptionText;
+            btnAddSchoolToEvent.Location = new Point(1108, 527);
+            btnAddSchoolToEvent.Name = "btnAddSchoolToEvent";
+            btnAddSchoolToEvent.Size = new Size(158, 29);
+            btnAddSchoolToEvent.TabIndex = 5;
+            btnAddSchoolToEvent.Text = "Add to event";
+            btnAddSchoolToEvent.UseVisualStyleBackColor = true;
+            btnAddSchoolToEvent.Click += btnAddSchoolToEvent_Click;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.SystemColors.MenuText;
-            this.label3.Location = new System.Drawing.Point(317, 108);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(0, 20);
-            this.label3.TabIndex = 6;
+            label3.AutoSize = true;
+            label3.BackColor = SystemColors.MenuText;
+            label3.Location = new Point(573, 274);
+            label3.Name = "label3";
+            label3.Size = new Size(0, 20);
+            label3.TabIndex = 6;
             // 
             // label4
             // 
-            this.label4.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label4.Location = new System.Drawing.Point(307, 49);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(1, 219);
-            this.label4.TabIndex = 7;
+            label4.BackColor = SystemColors.ActiveCaptionText;
+            label4.Location = new Point(566, 74);
+            label4.Name = "label4";
+            label4.Size = new Size(1, 644);
+            label4.TabIndex = 7;
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label5.Location = new System.Drawing.Point(666, 53);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(17, 20);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "0";
+            label5.AutoSize = true;
+            label5.ForeColor = SystemColors.ActiveCaptionText;
+            label5.Location = new Point(1252, 219);
+            label5.Name = "label5";
+            label5.Size = new Size(17, 20);
+            label5.TabIndex = 8;
+            label5.Text = "0";
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label6.Location = new System.Drawing.Point(554, 53);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(113, 20);
-            this.label6.TabIndex = 9;
-            this.label6.Text = "Selected items: ";
+            label6.AutoSize = true;
+            label6.ForeColor = SystemColors.ActiveCaptionText;
+            label6.Location = new Point(1140, 219);
+            label6.Name = "label6";
+            label6.Size = new Size(113, 20);
+            label6.TabIndex = 9;
+            label6.Text = "Selected items: ";
             // 
             // btnView
             // 
-            this.btnView.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnView.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnView.Location = new System.Drawing.Point(346, 239);
-            this.btnView.Name = "btnView";
-            this.btnView.Size = new System.Drawing.Size(193, 29);
-            this.btnView.TabIndex = 10;
-            this.btnView.Text = "View added schools";
-            this.btnView.UseVisualStyleBackColor = true;
-            this.btnView.Click += new System.EventHandler(this.btnView_Click);
+            btnView.Cursor = Cursors.Hand;
+            btnView.ForeColor = SystemColors.ActiveCaptionText;
+            btnView.Location = new Point(602, 527);
+            btnView.Name = "btnView";
+            btnView.Size = new Size(193, 29);
+            btnView.TabIndex = 10;
+            btnView.Text = "View added schools";
+            btnView.UseVisualStyleBackColor = true;
+            btnView.Click += btnView_Click;
             // 
             // frmShoolsForEvent
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(728, 339);
-            this.Controls.Add(this.btnView);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.btnAddSchoolToEvent);
-            this.Controls.Add(this.txtEndDate);
-            this.Controls.Add(this.txtStartDate);
-            this.Controls.Add(this.txtName);
-            this.Controls.Add(this.txtTheme);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.lbxSchools);
-            this.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Name = "frmShoolsForEvent";
-            this.Text = "frmShoolsForEvent";
-            this.Load += new System.EventHandler(this.frmShoolsForEvent_Load);
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1638, 777);
+            Controls.Add(btnView);
+            Controls.Add(label6);
+            Controls.Add(label5);
+            Controls.Add(label4);
+            Controls.Add(label3);
+            Controls.Add(btnAddSchoolToEvent);
+            Controls.Add(txtEndDate);
+            Controls.Add(txtStartDate);
+            Controls.Add(txtName);
+            Controls.Add(txtTheme);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(lbxSchools);
+            ForeColor = SystemColors.ControlLightLight;
+            Name = "frmShoolsForEvent";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "frmShoolsForEvent";
+            Load += frmShoolsForEvent_Load;
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

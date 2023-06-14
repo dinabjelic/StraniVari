@@ -13,7 +13,7 @@ namespace StraniVari.WinUI.SchoolDetails
         public GetSchoolsForEventResponse _selectedSchool { get; }
         public EventUpsertRequest _selectedEvent { get; }
 
-        public frmEditSchoolsDetails(GetSchoolsForEventResponse selectedSchool = null, EventUpsertRequest selectedEvent=null) 
+        public frmEditSchoolsDetails(GetSchoolsForEventResponse selectedSchool = null, EventUpsertRequest selectedEvent = null)
         {
             InitializeComponent();
             _selectedEvent = selectedEvent;
@@ -60,7 +60,7 @@ namespace StraniVari.WinUI.SchoolDetails
             }
 
             var principalForm = Application.OpenForms.OfType<frmSchoolsEventDetails>().FirstOrDefault();
-            principalForm.frmSchoolsEventDetails_Load(sender,e);
+            principalForm.frmSchoolsEventDetails_Load(sender, e);
         }
 
         private bool ValidateEntry()

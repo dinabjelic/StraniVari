@@ -9,7 +9,7 @@ namespace StraniVari.WinUI.SchoolDetails
     {
         ApiService _apiService = new ApiService("Schools");
         public GetSchoolDetailsResponse SelectedSchool { get; }
-        public frmAddEditSchool(GetSchoolDetailsResponse selectedSchool=null)
+        public frmAddEditSchool(GetSchoolDetailsResponse selectedSchool = null)
         {
             InitializeComponent();
             SelectedSchool = selectedSchool;
@@ -18,7 +18,7 @@ namespace StraniVari.WinUI.SchoolDetails
 
         private void frmAddEditSchool_Load(object sender, EventArgs e)
         {
-            if(SelectedSchool != null)
+            if (SelectedSchool != null)
             {
                 txtSchoolName.Text = SelectedSchool.Name;
                 txtSchoolCity.Text = SelectedSchool.City;

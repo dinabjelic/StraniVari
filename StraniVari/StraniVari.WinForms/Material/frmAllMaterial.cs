@@ -27,15 +27,15 @@ namespace StraniVari.WinUI.Material
 
         private async void dgvMaterial_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            var selectedMaterial =JsonConvert.DeserializeObject<GetMaterialDetailsResponse>(dgvMaterial.SelectedRows[0].DataBoundItem.ToString());
-            if(selectedMaterial != null)
+            var selectedMaterial = JsonConvert.DeserializeObject<GetMaterialDetailsResponse>(dgvMaterial.SelectedRows[0].DataBoundItem.ToString());
+            if (selectedMaterial != null)
             {
                 if (e.ColumnIndex == 2)
                 {
                     frmAddEditMaterial frmAddEditMaterial = new frmAddEditMaterial(selectedMaterial);
                     frmAddEditMaterial.ShowDialog();
                 }
-                else if(e.ColumnIndex ==3)
+                else if (e.ColumnIndex == 3)
                 {
 
                     var confirmation = MessageBox.Show("You are about to delete this item!", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);

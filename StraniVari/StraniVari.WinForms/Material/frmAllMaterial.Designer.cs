@@ -29,155 +29,151 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAllMaterial));
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dgvMaterial = new System.Windows.Forms.DataGridView();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaterialName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnEdit = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.btnDelete = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnAddMaterial = new System.Windows.Forms.Button();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMaterial)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.SuspendLayout();
+            groupBox1 = new GroupBox();
+            dgvMaterial = new DataGridView();
+            Id = new DataGridViewTextBoxColumn();
+            MaterialName = new DataGridViewTextBoxColumn();
+            btnEdit = new DataGridViewButtonColumn();
+            btnDelete = new DataGridViewButtonColumn();
+            btnAddMaterial = new Button();
+            pictureBox2 = new PictureBox();
+            label4 = new Label();
+            groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvMaterial).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dgvMaterial);
-            this.groupBox1.Location = new System.Drawing.Point(216, 74);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox1.Size = new System.Drawing.Size(466, 150);
-            this.groupBox1.TabIndex = 3;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "MATERIAL";
+            groupBox1.Controls.Add(dgvMaterial);
+            groupBox1.Location = new Point(624, 179);
+            groupBox1.Margin = new Padding(3, 4, 3, 4);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Padding = new Padding(3, 4, 3, 4);
+            groupBox1.Size = new Size(663, 366);
+            groupBox1.TabIndex = 3;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "MATERIAL";
             // 
             // dgvMaterial
             // 
-            this.dgvMaterial.AllowUserToAddRows = false;
-            this.dgvMaterial.AllowUserToDeleteRows = false;
-            this.dgvMaterial.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMaterial.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Id,
-            this.MaterialName,
-            this.btnEdit,
-            this.btnDelete});
-            this.dgvMaterial.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dgvMaterial.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvMaterial.Location = new System.Drawing.Point(3, 24);
-            this.dgvMaterial.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dgvMaterial.Name = "dgvMaterial";
-            this.dgvMaterial.ReadOnly = true;
-            this.dgvMaterial.RowHeadersWidth = 51;
-            this.dgvMaterial.RowTemplate.Height = 24;
-            this.dgvMaterial.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMaterial.Size = new System.Drawing.Size(460, 122);
-            this.dgvMaterial.TabIndex = 0;
-            this.dgvMaterial.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMaterial_CellContentClick);
+            dgvMaterial.AllowUserToAddRows = false;
+            dgvMaterial.AllowUserToDeleteRows = false;
+            dgvMaterial.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvMaterial.Columns.AddRange(new DataGridViewColumn[] { Id, MaterialName, btnEdit, btnDelete });
+            dgvMaterial.Cursor = Cursors.Hand;
+            dgvMaterial.Dock = DockStyle.Fill;
+            dgvMaterial.Location = new Point(3, 24);
+            dgvMaterial.Margin = new Padding(3, 4, 3, 4);
+            dgvMaterial.Name = "dgvMaterial";
+            dgvMaterial.ReadOnly = true;
+            dgvMaterial.RowHeadersWidth = 51;
+            dgvMaterial.RowTemplate.Height = 24;
+            dgvMaterial.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvMaterial.Size = new Size(657, 338);
+            dgvMaterial.TabIndex = 0;
+            dgvMaterial.CellContentClick += dgvMaterial_CellContentClick;
             // 
             // Id
             // 
-            this.Id.DataPropertyName = "Id";
-            this.Id.HeaderText = "Id";
-            this.Id.MinimumWidth = 6;
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            this.Id.Visible = false;
-            this.Id.Width = 125;
+            Id.DataPropertyName = "Id";
+            Id.HeaderText = "Id";
+            Id.MinimumWidth = 6;
+            Id.Name = "Id";
+            Id.ReadOnly = true;
+            Id.Visible = false;
+            Id.Width = 125;
             // 
             // MaterialName
             // 
-            this.MaterialName.DataPropertyName = "name";
-            this.MaterialName.HeaderText = "Name";
-            this.MaterialName.MinimumWidth = 6;
-            this.MaterialName.Name = "MaterialName";
-            this.MaterialName.ReadOnly = true;
-            this.MaterialName.Width = 125;
+            MaterialName.DataPropertyName = "name";
+            MaterialName.HeaderText = "Name";
+            MaterialName.MinimumWidth = 6;
+            MaterialName.Name = "MaterialName";
+            MaterialName.ReadOnly = true;
+            MaterialName.Width = 400;
             // 
             // btnEdit
             // 
-            this.btnEdit.HeaderText = "Action";
-            this.btnEdit.MinimumWidth = 6;
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.ReadOnly = true;
-            this.btnEdit.Text = "Edit";
-            this.btnEdit.ToolTipText = "Edit";
-            this.btnEdit.UseColumnTextForButtonValue = true;
-            this.btnEdit.Width = 125;
+            btnEdit.HeaderText = "Action";
+            btnEdit.MinimumWidth = 6;
+            btnEdit.Name = "btnEdit";
+            btnEdit.ReadOnly = true;
+            btnEdit.Text = "Edit";
+            btnEdit.ToolTipText = "Edit";
+            btnEdit.UseColumnTextForButtonValue = true;
+            btnEdit.Width = 90;
             // 
             // btnDelete
             // 
-            this.btnDelete.HeaderText = "Action";
-            this.btnDelete.MinimumWidth = 6;
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.ReadOnly = true;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.ToolTipText = "Delete";
-            this.btnDelete.UseColumnTextForButtonValue = true;
-            this.btnDelete.Width = 125;
-            // 
-            // label3
-            // 
-            this.label3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label3.Location = new System.Drawing.Point(182, 23);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(1, 243);
-            this.label3.TabIndex = 15;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(23, 58);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(147, 166);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 14;
-            this.pictureBox1.TabStop = false;
+            btnDelete.HeaderText = "Action";
+            btnDelete.MinimumWidth = 6;
+            btnDelete.Name = "btnDelete";
+            btnDelete.ReadOnly = true;
+            btnDelete.Text = "Delete";
+            btnDelete.ToolTipText = "Delete";
+            btnDelete.UseColumnTextForButtonValue = true;
+            btnDelete.Width = 90;
             // 
             // btnAddMaterial
             // 
-            this.btnAddMaterial.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddMaterial.Location = new System.Drawing.Point(547, 58);
-            this.btnAddMaterial.Name = "btnAddMaterial";
-            this.btnAddMaterial.Size = new System.Drawing.Size(135, 29);
-            this.btnAddMaterial.TabIndex = 16;
-            this.btnAddMaterial.Text = "Add material";
-            this.btnAddMaterial.UseVisualStyleBackColor = true;
-            this.btnAddMaterial.Click += new System.EventHandler(this.btnAddMaterial_Click);
+            btnAddMaterial.Cursor = Cursors.Hand;
+            btnAddMaterial.Location = new Point(1149, 156);
+            btnAddMaterial.Name = "btnAddMaterial";
+            btnAddMaterial.Size = new Size(135, 29);
+            btnAddMaterial.TabIndex = 16;
+            btnAddMaterial.Text = "Add material";
+            btnAddMaterial.UseVisualStyleBackColor = true;
+            btnAddMaterial.Click += btnAddMaterial_Click;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(251, 203);
+            pictureBox2.Margin = new Padding(3, 4, 3, 4);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(261, 330);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 78;
+            pictureBox2.TabStop = false;
+            // 
+            // label4
+            // 
+            label4.BackColor = SystemColors.ActiveCaptionText;
+            label4.Location = new Point(570, 51);
+            label4.Name = "label4";
+            label4.Size = new Size(1, 644);
+            label4.TabIndex = 77;
             // 
             // frmAllMaterial
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(708, 296);
-            this.Controls.Add(this.btnAddMaterial);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.groupBox1);
-            this.Name = "frmAllMaterial";
-            this.Text = "frmAllMaterial";
-            this.Load += new System.EventHandler(this.frmAllMaterial_Load);
-            this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMaterial)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1638, 777);
+            Controls.Add(pictureBox2);
+            Controls.Add(label4);
+            Controls.Add(btnAddMaterial);
+            Controls.Add(groupBox1);
+            Name = "frmAllMaterial";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "frmAllMaterial";
+            Load += frmAllMaterial_Load;
+            groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgvMaterial).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion
 
         private GroupBox groupBox1;
         private DataGridView dgvMaterial;
+        private Button btnAddMaterial;
         private DataGridViewTextBoxColumn Id;
         private DataGridViewTextBoxColumn MaterialName;
         private DataGridViewButtonColumn btnEdit;
         private DataGridViewButtonColumn btnDelete;
-        private Label label3;
-        private PictureBox pictureBox1;
-        private Button btnAddMaterial;
+        private PictureBox pictureBox2;
+        private Label label4;
     }
 }
