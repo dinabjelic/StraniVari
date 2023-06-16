@@ -54,7 +54,7 @@
             // btnAddEvent
             // 
             btnAddEvent.Cursor = Cursors.Hand;
-            btnAddEvent.Location = new Point(1528, 297);
+            btnAddEvent.Location = new Point(1418, 223);
             btnAddEvent.Name = "btnAddEvent";
             btnAddEvent.Size = new Size(181, 29);
             btnAddEvent.TabIndex = 3;
@@ -65,7 +65,7 @@
             // groupBox1
             // 
             groupBox1.Controls.Add(dgvEvents);
-            groupBox1.Location = new Point(147, 333);
+            groupBox1.Location = new Point(37, 259);
             groupBox1.Margin = new Padding(3, 4, 3, 4);
             groupBox1.Name = "groupBox1";
             groupBox1.Padding = new Padding(3, 4, 3, 4);
@@ -211,7 +211,7 @@
             // btnMaterials
             // 
             btnMaterials.Cursor = Cursors.Hand;
-            btnMaterials.Location = new Point(153, 266);
+            btnMaterials.Location = new Point(43, 192);
             btnMaterials.Name = "btnMaterials";
             btnMaterials.Size = new Size(105, 29);
             btnMaterials.TabIndex = 4;
@@ -222,7 +222,7 @@
             // btnVolunteers
             // 
             btnVolunteers.Cursor = Cursors.Hand;
-            btnVolunteers.Location = new Point(254, 266);
+            btnVolunteers.Location = new Point(144, 192);
             btnVolunteers.Name = "btnVolunteers";
             btnVolunteers.Size = new Size(104, 29);
             btnVolunteers.TabIndex = 5;
@@ -233,7 +233,7 @@
             // btnSchools
             // 
             btnSchools.Cursor = Cursors.Hand;
-            btnSchools.Location = new Point(352, 266);
+            btnSchools.Location = new Point(242, 192);
             btnSchools.Name = "btnSchools";
             btnSchools.Size = new Size(99, 29);
             btnSchools.TabIndex = 6;
@@ -244,7 +244,7 @@
             // btnGames
             // 
             btnGames.Cursor = Cursors.Hand;
-            btnGames.Location = new Point(447, 266);
+            btnGames.Location = new Point(337, 192);
             btnGames.Name = "btnGames";
             btnGames.Size = new Size(104, 29);
             btnGames.TabIndex = 7;
@@ -255,7 +255,7 @@
             // button1
             // 
             button1.Cursor = Cursors.Hand;
-            button1.Location = new Point(549, 266);
+            button1.Location = new Point(439, 192);
             button1.Name = "button1";
             button1.Size = new Size(104, 29);
             button1.TabIndex = 8;
@@ -268,7 +268,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
-            ClientSize = new Size(1817, 952);
+            ClientSize = new Size(1638, 777);
             Controls.Add(button1);
             Controls.Add(btnGames);
             Controls.Add(btnSchools);

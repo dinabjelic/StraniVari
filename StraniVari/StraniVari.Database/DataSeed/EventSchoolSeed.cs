@@ -18,16 +18,22 @@ namespace StraniVari.Database.DataSeed
 
             List<EventSchool> eventSchools = new();
 
-            for(int i =1; i<= 10; i++)
+            for (int i = 2; i <= 10; i++)
             {
-                eventSchools.Add(new EventSchool
+                var eventId = random.Next(1, 5);
+                var schoolId = random.Next(1, 4);
+                if (!eventSchools.Any(x => x.EventId == eventId && x.SchoolId == schoolId))
                 {
-                    Id =i,
-                    EventId = random.Next(1, 5), 
-                    NumberOfChildren = numberOfChilder[i%4], 
-                    SchoolId = random.Next(1,4)
-                });
+                    eventSchools.Add(new EventSchool
+                    {
+                        Id = i,
+                        EventId = eventId,
+                        NumberOfChildren = numberOfChilder[i % 4],
+                        SchoolId = schoolId
+                    });
+                }
             }
+
 
             eventSchools.Add(new EventSchool
             {

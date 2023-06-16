@@ -27,7 +27,7 @@ namespace StraniVari.Database.DataSeed
                 schoolMaterials.Add(new SchoolMaterial
                 {
                     Id= i, 
-                    EventSchoolId = random.Next(1, 10),
+                    EventSchoolId = random.Next(2, 6),
                     MaterialId = random.Next(1, 19),
                     Quantity = quantity[i % 7]
                 });

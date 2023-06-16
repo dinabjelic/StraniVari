@@ -134,7 +134,7 @@ namespace StraniVari.Services.Services
                 predictionResult.Add(new Tuple<StraniVari.Core.Entities.SchoolMaterial, float>(item, prediction.Score));
             }
             var finalResult = predictionResult.OrderByDescending(x => x.Item2)
-               .Select(x => x.Item1).Take(5).ToList();
+               .Select(x => x.Item1).Take(3).ToList();
 
             return finalResult;
         }
