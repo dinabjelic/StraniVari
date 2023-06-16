@@ -131,9 +131,9 @@
             label3.Location = new Point(752, 376);
             label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new Size(49, 20);
+            label3.Size = new Size(45, 20);
             label3.TabIndex = 79;
-            label3.Text = "Status";
+            label3.Text = "Event";
             // 
             // frmAddEditTrip
             // 
