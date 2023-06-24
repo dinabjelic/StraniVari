@@ -49,12 +49,11 @@ namespace StraniVari.WinUI.Trip
 
         private async void dgvTrip_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            //var selectedTrip = JsonConvert.DeserializeObject<GetTripResponse>(dgvTrip.SelectedRows[0].Cells[0].ToString());
-            var id = dgvTrip.SelectedRows[0].Cells[0].Value;
-            var selectedTrip = await _apiService.GetById<List<GetTripResponse>>(id);
+            var selectedTrip = JsonConvert.DeserializeObject<GetTripResponse>(dgvTrip.SelectedRows[0].DataBoundItem.ToString());
+         
             if (selectedTrip != null)
             {
-                frmAddEditTrip frmAddEditTrip = new frmAddEditTrip(selectedTrip[0]);
+                frmAddEditTrip frmAddEditTrip = new frmAddEditTrip(selectedTrip);
                 frmAddEditTrip.ShowDialog();
                 //frmAddEditTrip frmAddEditTrip = new frmAddEditTrip();
                 //frmAddEditTrip.ShowDialog();

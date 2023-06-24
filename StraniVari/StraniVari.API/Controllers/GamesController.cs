@@ -23,5 +23,12 @@ namespace StraniVari.API.Controllers
         {
             return Ok(await _gameService.GetAll());
         }
+
+        [HttpGet("games")]
+        [Authorize(Roles = Role.Administrator + "," + Role.RegularUser)]
+        public async Task<IActionResult> GetAllGames()
+        {
+            return Ok(await _gameService.GetAllGames());
+        }
     }
 }

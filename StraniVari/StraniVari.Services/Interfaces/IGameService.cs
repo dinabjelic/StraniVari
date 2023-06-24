@@ -6,5 +6,6 @@ namespace StraniVari.Services.Interfaces
 {
     public interface IGameService: ICrudService<Game, UpSertGameRequest, UpSertGameRequest, GetGamesResponse>
     {
+        Task<List<GetGamesResponse>> GetAllGames();
     }
 }

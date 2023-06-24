@@ -35,26 +35,25 @@
             err = new ErrorProvider(components);
             label4 = new Label();
             lblName = new Label();
-            sideBar1 = new SideBar();
-            label2 = new Label();
             ((System.ComponentModel.ISupportInitialize)err).BeginInit();
             SuspendLayout();
             // 
             // btnSave
             // 
+            btnSave.BackColor = SystemColors.Window;
             btnSave.Cursor = Cursors.Hand;
-            btnSave.Location = new Point(820, 356);
+            btnSave.Location = new Point(305, 121);
             btnSave.Margin = new Padding(3, 4, 3, 4);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(75, 38);
             btnSave.TabIndex = 11;
             btnSave.Text = "Save";
-            btnSave.UseVisualStyleBackColor = true;
+            btnSave.UseVisualStyleBackColor = false;
             btnSave.Click += btnSave_Click;
             // 
             // txtMaterialName
             // 
-            txtMaterialName.Location = new Point(627, 311);
+            txtMaterialName.Location = new Point(112, 76);
             txtMaterialName.Margin = new Padding(3, 4, 3, 4);
             txtMaterialName.Name = "txtMaterialName";
             txtMaterialName.Size = new Size(268, 27);
@@ -63,7 +62,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(551, 314);
+            label1.Location = new Point(36, 79);
             label1.Name = "label1";
             label1.Size = new Size(64, 20);
             label1.TabIndex = 7;
@@ -92,31 +91,12 @@
             lblName.TabIndex = 85;
             lblName.Text = "label1";
             // 
-            // sideBar1
-            // 
-            sideBar1.Dock = DockStyle.Left;
-            sideBar1.Location = new Point(0, 0);
-            sideBar1.Name = "sideBar1";
-            sideBar1.Size = new Size(391, 677);
-            sideBar1.TabIndex = 87;
-            // 
-            // label2
-            // 
-            label2.Font = new Font("Segoe Script", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(475, 93);
-            label2.Name = "label2";
-            label2.Size = new Size(179, 50);
-            label2.TabIndex = 88;
-            label2.Text = "Materials";
-            // 
             // frmAddEditMaterial
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonHighlight;
-            ClientSize = new Size(1146, 677);
-            Controls.Add(label2);
-            Controls.Add(sideBar1);
+            ClientSize = new Size(433, 223);
             Controls.Add(label4);
             Controls.Add(lblName);
             Controls.Add(btnSave);
@@ -124,7 +104,6 @@
             Controls.Add(label1);
             Name = "frmAddEditMaterial";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "frmMaterial";
             Load += frmAddEditMaterial_Load;
             ((System.ComponentModel.ISupportInitialize)err).EndInit();
             ResumeLayout(false);
@@ -138,7 +117,5 @@
         private ErrorProvider err;
         private Label label4;
         private Label lblName;
-        private SideBar sideBar1;
-        private Label label2;
     }
 }

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAddEditSchool));
             btnEditSchoolDetails = new Button();
             txtSchoolCity = new TextBox();
             txtSchoolAddress = new TextBox();
@@ -38,40 +37,38 @@
             label2 = new Label();
             label1 = new Label();
             err = new ErrorProvider(components);
-            pictureBox2 = new PictureBox();
-            label4 = new Label();
             ((System.ComponentModel.ISupportInitialize)err).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // btnEditSchoolDetails
             // 
+            btnEditSchoolDetails.BackColor = SystemColors.Window;
             btnEditSchoolDetails.Cursor = Cursors.Hand;
-            btnEditSchoolDetails.Location = new Point(1139, 422);
+            btnEditSchoolDetails.Location = new Point(372, 186);
             btnEditSchoolDetails.Name = "btnEditSchoolDetails";
             btnEditSchoolDetails.Size = new Size(94, 29);
             btnEditSchoolDetails.TabIndex = 32;
             btnEditSchoolDetails.Text = "Save";
-            btnEditSchoolDetails.UseVisualStyleBackColor = true;
+            btnEditSchoolDetails.UseVisualStyleBackColor = false;
             btnEditSchoolDetails.Click += btnEditSchoolDetails_Click;
             // 
             // txtSchoolCity
             // 
-            txtSchoolCity.Location = new Point(937, 376);
+            txtSchoolCity.Location = new Point(170, 140);
             txtSchoolCity.Name = "txtSchoolCity";
             txtSchoolCity.Size = new Size(296, 27);
             txtSchoolCity.TabIndex = 30;
             // 
             // txtSchoolAddress
             // 
-            txtSchoolAddress.Location = new Point(937, 335);
+            txtSchoolAddress.Location = new Point(170, 99);
             txtSchoolAddress.Name = "txtSchoolAddress";
             txtSchoolAddress.Size = new Size(296, 27);
             txtSchoolAddress.TabIndex = 29;
             // 
             // txtSchoolName
             // 
-            txtSchoolName.Location = new Point(937, 287);
+            txtSchoolName.Location = new Point(170, 51);
             txtSchoolName.Name = "txtSchoolName";
             txtSchoolName.Size = new Size(296, 27);
             txtSchoolName.TabIndex = 28;
@@ -79,7 +76,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(793, 376);
+            label3.Location = new Point(26, 140);
             label3.Name = "label3";
             label3.Size = new Size(81, 20);
             label3.TabIndex = 26;
@@ -88,7 +85,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(793, 335);
+            label2.Location = new Point(26, 99);
             label2.Name = "label2";
             label2.Size = new Size(109, 20);
             label2.TabIndex = 25;
@@ -97,7 +94,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(793, 287);
+            label1.Location = new Point(26, 51);
             label1.Name = "label1";
             label1.Size = new Size(95, 20);
             label1.TabIndex = 24;
@@ -107,32 +104,12 @@
             // 
             err.ContainerControl = this;
             // 
-            // pictureBox2
-            // 
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(419, 205);
-            pictureBox2.Margin = new Padding(3, 4, 3, 4);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(261, 330);
-            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox2.TabIndex = 78;
-            pictureBox2.TabStop = false;
-            // 
-            // label4
-            // 
-            label4.BackColor = SystemColors.ActiveCaptionText;
-            label4.Location = new Point(738, 53);
-            label4.Name = "label4";
-            label4.Size = new Size(1, 644);
-            label4.TabIndex = 77;
-            // 
             // frmAddEditSchool
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1638, 777);
-            Controls.Add(pictureBox2);
-            Controls.Add(label4);
+            BackColor = SystemColors.ButtonHighlight;
+            ClientSize = new Size(519, 278);
             Controls.Add(btnEditSchoolDetails);
             Controls.Add(txtSchoolCity);
             Controls.Add(txtSchoolAddress);
@@ -142,10 +119,8 @@
             Controls.Add(label1);
             Name = "frmAddEditSchool";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "frmAddEditSchool";
             Load += frmAddEditSchool_Load;
             ((System.ComponentModel.ISupportInitialize)err).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -160,7 +135,5 @@
         private Label label2;
         private Label label1;
         private ErrorProvider err;
-        private PictureBox pictureBox2;
-        private Label label4;
     }
 }

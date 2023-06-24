@@ -1,4 +1,6 @@
-﻿using StraniVari.WinUI.Trip;
+﻿using StraniVari.WinUI.Games;
+using StraniVari.WinUI.SchoolDetails;
+using StraniVari.WinUI.Trip;
 
 namespace StraniVari.WinUI.Material
 {
@@ -21,14 +23,21 @@ namespace StraniVari.WinUI.Material
             frmAllMaterial.Show();
         }
 
-        private void lblName_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void SideBar_Load(object sender, EventArgs e)
         {
             Helpers.JWTDecoder.ShowEmail(lblName);
+        }
+
+        private void btnSchool_Click(object sender, EventArgs e)
+        {
+            frmAllSchools frmAllSchools = new frmAllSchools();
+            frmAllSchools.Show();
+        }
+
+        private void btnGames_Click(object sender, EventArgs e)
+        {
+            frmGames frmGames = new frmGames();
+            frmGames.Show();
         }
     }
 }

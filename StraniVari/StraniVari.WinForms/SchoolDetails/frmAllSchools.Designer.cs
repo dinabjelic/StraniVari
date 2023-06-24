@@ -28,39 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAllSchools));
             groupBox1 = new GroupBox();
             dgvSchools = new DataGridView();
             Id = new DataGridViewTextBoxColumn();
             SchoolName = new DataGridViewTextBoxColumn();
             Address = new DataGridViewTextBoxColumn();
             City = new DataGridViewTextBoxColumn();
-            Action = new DataGridViewButtonColumn();
             btnDelete = new DataGridViewButtonColumn();
             btnAddSchool = new Button();
-            pictureBox2 = new PictureBox();
-            label4 = new Label();
+            sideBar1 = new Material.SideBar();
+            label1 = new Label();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvSchools).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // groupBox1
             // 
             groupBox1.Controls.Add(dgvSchools);
-            groupBox1.Location = new Point(523, 180);
+            groupBox1.Location = new Point(461, 180);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(968, 388);
+            groupBox1.Size = new Size(875, 388);
             groupBox1.TabIndex = 1;
             groupBox1.TabStop = false;
-            groupBox1.Text = "EVENT DETAILS";
             // 
             // dgvSchools
             // 
             dgvSchools.AllowUserToAddRows = false;
             dgvSchools.AllowUserToDeleteRows = false;
+            dgvSchools.BackgroundColor = SystemColors.ButtonHighlight;
             dgvSchools.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvSchools.Columns.AddRange(new DataGridViewColumn[] { Id, SchoolName, Address, City, Action, btnDelete });
+            dgvSchools.Columns.AddRange(new DataGridViewColumn[] { Id, SchoolName, Address, City, btnDelete });
             dgvSchools.Cursor = Cursors.Hand;
             dgvSchools.Dock = DockStyle.Fill;
             dgvSchools.Location = new Point(3, 23);
@@ -69,9 +66,10 @@
             dgvSchools.RowHeadersWidth = 51;
             dgvSchools.RowTemplate.Height = 29;
             dgvSchools.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvSchools.Size = new Size(962, 362);
+            dgvSchools.Size = new Size(869, 362);
             dgvSchools.TabIndex = 0;
             dgvSchools.CellContentClick += dgvSchools_CellContentClick;
+            dgvSchools.CellMouseDoubleClick += dgvSchools_CellMouseDoubleClick;
             // 
             // Id
             // 
@@ -110,19 +108,6 @@
             City.ReadOnly = true;
             City.Width = 240;
             // 
-            // Action
-            // 
-            Action.HeaderText = "Action";
-            Action.MinimumWidth = 6;
-            Action.Name = "Action";
-            Action.ReadOnly = true;
-            Action.Resizable = DataGridViewTriState.True;
-            Action.SortMode = DataGridViewColumnSortMode.Automatic;
-            Action.Text = "Edit";
-            Action.ToolTipText = "Edit";
-            Action.UseColumnTextForButtonValue = true;
-            Action.Width = 90;
-            // 
             // btnDelete
             // 
             btnDelete.HeaderText = "Action";
@@ -136,50 +121,48 @@
             // 
             // btnAddSchool
             // 
+            btnAddSchool.BackColor = SystemColors.Window;
             btnAddSchool.Cursor = Cursors.Hand;
-            btnAddSchool.Location = new Point(1378, 145);
+            btnAddSchool.Location = new Point(1209, 157);
             btnAddSchool.Name = "btnAddSchool";
-            btnAddSchool.Size = new Size(110, 29);
+            btnAddSchool.Size = new Size(127, 29);
             btnAddSchool.TabIndex = 22;
             btnAddSchool.Text = "Add school";
-            btnAddSchool.UseVisualStyleBackColor = true;
+            btnAddSchool.UseVisualStyleBackColor = false;
             btnAddSchool.Click += btnAddSchool_Click;
             // 
-            // pictureBox2
+            // sideBar1
             // 
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(127, 203);
-            pictureBox2.Margin = new Padding(3, 4, 3, 4);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(261, 330);
-            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox2.TabIndex = 78;
-            pictureBox2.TabStop = false;
+            sideBar1.Dock = DockStyle.Left;
+            sideBar1.Location = new Point(0, 0);
+            sideBar1.Name = "sideBar1";
+            sideBar1.Size = new Size(391, 647);
+            sideBar1.TabIndex = 23;
             // 
-            // label4
+            // label1
             // 
-            label4.BackColor = SystemColors.ActiveCaptionText;
-            label4.Location = new Point(446, 51);
-            label4.Name = "label4";
-            label4.Size = new Size(1, 644);
-            label4.TabIndex = 77;
+            label1.Font = new Font("Segoe Script", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(461, 71);
+            label1.Name = "label1";
+            label1.Size = new Size(179, 50);
+            label1.TabIndex = 88;
+            label1.Text = "Schools";
             // 
             // frmAllSchools
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1638, 777);
-            Controls.Add(pictureBox2);
-            Controls.Add(label4);
+            BackColor = SystemColors.ButtonHighlight;
+            ClientSize = new Size(1381, 647);
+            Controls.Add(label1);
+            Controls.Add(sideBar1);
             Controls.Add(btnAddSchool);
             Controls.Add(groupBox1);
             Name = "frmAllSchools";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "frmAllSchools";
             Load += frmAllSchools_Load;
             groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvSchools).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
         }
 
@@ -193,13 +176,12 @@
         private DataGridViewButtonColumn btnAddMaterial;
         private DataGridViewButtonColumn btnAddVolunteers;
         private Button btnAddSchool;
+        private Material.SideBar sideBar1;
+        private Label label1;
         private DataGridViewTextBoxColumn Id;
         private DataGridViewTextBoxColumn SchoolName;
         private DataGridViewTextBoxColumn Address;
         private DataGridViewTextBoxColumn City;
-        private DataGridViewButtonColumn Action;
         private DataGridViewButtonColumn btnDelete;
-        private PictureBox pictureBox2;
-        private Label label4;
     }
 }

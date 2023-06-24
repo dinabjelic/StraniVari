@@ -55,11 +55,12 @@ namespace StraniVari.WinUI.Material
 
         private async void dgvMaterial_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            var id = dgvMaterial.SelectedRows[0].Cells[0].Value;
-            var selectedTrip = await _apiService.GetById<List<GetMaterialDetailsResponse>>(id);
-            if (selectedTrip != null)
+            //var id = dgvMaterial.SelectedRows[0].Cells[0].Value;
+            var selectedRecord = JsonConvert.DeserializeObject<GetMaterialDetailsResponse>(dgvMaterial.SelectedRows[0].DataBoundItem.ToString());
+            
+            if (selectedRecord != null)
             {
-                frmAddEditMaterial frmAddEditTrip = new frmAddEditMaterial(selectedTrip[0]);
+                frmAddEditMaterial frmAddEditTrip = new frmAddEditMaterial(selectedRecord);
                 frmAddEditTrip.ShowDialog();
             }
         }

@@ -109,6 +109,7 @@
             btnSchool.TabIndex = 84;
             btnSchool.Text = "Schools";
             btnSchool.UseVisualStyleBackColor = false;
+            btnSchool.Click += btnSchool_Click;
             // 
             // btnUser
             // 
@@ -164,6 +165,7 @@
             btnGames.TabIndex = 86;
             btnGames.Text = "Games";
             btnGames.UseVisualStyleBackColor = false;
+            btnGames.Click += btnGames_Click;
             // 
             // btnReports
             // 
@@ -219,7 +221,6 @@
             panel4.Name = "panel4";
             panel4.Size = new Size(385, 49);
             panel4.TabIndex = 96;
-            panel4.Paint += panel4_Paint;
             // 
             // panel5
             // 

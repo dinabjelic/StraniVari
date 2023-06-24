@@ -1,4 +1,6 @@
-﻿using StraniVari.Core.Responses;
+﻿using Newtonsoft.Json;
+using StraniVari.Core.Responses;
+using StraniVari.WinUI.Material;
 using StraniVari.WinUI.Service;
 
 namespace StraniVari.WinUI.SchoolDetails
@@ -24,12 +26,12 @@ namespace StraniVari.WinUI.SchoolDetails
             var selectedSchool = dgvSchools.SelectedRows[0].DataBoundItem as GetSchoolDetailsResponse;
             if (selectedSchool != null)
             {
+                //if (e.ColumnIndex == 4)
+                //{
+                //    frmAddEditSchool frmAddEditSchool = new frmAddEditSchool(selectedSchool);
+                //    frmAddEditSchool.ShowDialog();
+                //}
                 if (e.ColumnIndex == 4)
-                {
-                    frmAddEditSchool frmAddEditSchool = new frmAddEditSchool(selectedSchool);
-                    frmAddEditSchool.ShowDialog();
-                }
-                else if (e.ColumnIndex == 5)
                 {
                     var confirmation = MessageBox.Show("You are about to delete this item!", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
@@ -50,6 +52,17 @@ namespace StraniVari.WinUI.SchoolDetails
         {
             frmAddEditSchool frmAddEditSchool = new frmAddEditSchool();
             frmAddEditSchool.ShowDialog();
+        }
+
+        private void dgvSchools_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            var selectedRecord = dgvSchools.SelectedRows[0].DataBoundItem as GetSchoolDetailsResponse;
+
+            if (selectedRecord != null)
+            {
+                frmAddEditSchool frmAddEditSchool = new frmAddEditSchool(selectedRecord);
+                frmAddEditSchool.ShowDialog();
+            }
         }
     }
 }

@@ -30,7 +30,7 @@ namespace StraniVari.WinUI.Games
                     Rules = rtbRules.Text
                 };
 
-                if (GameName == null)
+                if (SelectedItem.Id == 0)
                 {
                     await _apiService.Insert<ResponseResult>(game);
                     MessageBox.Show("Game successfully added.", "Infomation", MessageBoxButtons.OK);
@@ -49,16 +49,16 @@ namespace StraniVari.WinUI.Games
                 Close();
             }
 
-            var principalForm = Application.OpenForms.OfType<frmAllGames>().FirstOrDefault();
-            principalForm.frmAllGames_Load(sender, e);
+            var principalForm = Application.OpenForms.OfType<frmGames>().FirstOrDefault();
+            principalForm.frmGames_Load(sender, e);
         }
 
         private void frmAddEditGame_Load(object sender, EventArgs e)
         {
-            if (GameName != null)
+            if (SelectedItem != null)
             {
-                txtGameName.Text = GameName;
-                rtbRules.Text = Rule.Substring(Rule.IndexOf("Rules: ") + "Rules: ".Length);
+                txtGameName.Text = SelectedItem.Name;
+                rtbRules.Text = SelectedItem.Rules;
             }
         }
 

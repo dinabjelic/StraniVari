@@ -105,7 +105,6 @@
             lblName.TabIndex = 4;
             lblName.Text = "name.lastname@gmail.com";
             lblName.TextAlign = ContentAlignment.MiddleCenter;
-            lblName.Click += lblName_Click;
             // 
             // btnEvents
             // 
@@ -132,6 +131,7 @@
             btnSchool.TabIndex = 84;
             btnSchool.Text = "Schools";
             btnSchool.UseVisualStyleBackColor = false;
+            btnSchool.Click += btnSchool_Click;
             // 
             // btnUser
             // 
@@ -187,6 +187,7 @@
             btnGames.TabIndex = 86;
             btnGames.Text = "Games";
             btnGames.UseVisualStyleBackColor = false;
+            btnGames.Click += btnGames_Click;
             // 
             // btnReports
             // 

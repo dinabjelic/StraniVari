@@ -28,5 +28,17 @@ namespace StraniVari.Services.Services
 
             return gameList;
         }
+
+        public async Task<List<GetGamesResponse>> GetAllGames()
+        {
+            var gameList = await _straniVariDbContext.Games.Select(x => new GetGamesResponse
+            {
+                Id = x.Id,
+                Name = x.Name, 
+                Rules = x.Rules
+            }).ToListAsync();
+
+            return gameList;
+        }
     }
 }

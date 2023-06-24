@@ -1,4 +1,6 @@
-﻿using StraniVari.WinUI.Material;
+﻿using StraniVari.WinUI.Games;
+using StraniVari.WinUI.Material;
+using StraniVari.WinUI.SchoolDetails;
 using StraniVari.WinUI.Service;
 using StraniVari.WinUI.Trip;
 using System.IdentityModel.Tokens.Jwt;
@@ -39,9 +41,16 @@ namespace StraniVari.WinUI.StartPage
             frmAllMaterial.Show();
         }
 
-        private void panel4_Paint(object sender, PaintEventArgs e)
+        private void btnSchool_Click(object sender, EventArgs e)
         {
+            frmAllSchools frmAllSchools = new frmAllSchools();
+            frmAllSchools.Show();
+        }
 
+        private void btnGames_Click(object sender, EventArgs e)
+        {
+            frmGames frmGames = new frmGames();
+            frmGames.Show();
         }
     }
 }
