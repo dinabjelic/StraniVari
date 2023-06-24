@@ -49,6 +49,9 @@ namespace StraniVari.API.Controllers
             User user = new User
             {
                 Id = _user.Id, 
+                FirstName = _user.FirstName, 
+                LastName = _user.LastName, 
+                Email = _user.Email
             };
 
             return new GetUserResponse

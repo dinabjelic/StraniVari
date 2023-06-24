@@ -41,8 +41,8 @@ namespace StraniVari.WinUI.Trip
                 Close();
             }
 
-            var principalForm = Application.OpenForms.OfType<frmAllTrips>().FirstOrDefault();
-            principalForm.frmAllTrips_Load(sender, e);
+            var principalForm = Application.OpenForms.OfType<frmTripTabs>().FirstOrDefault();
+            principalForm.frmTripTabs_Load(sender, e);
         }
         private bool ValidateEntry()
         {
@@ -62,6 +62,7 @@ namespace StraniVari.WinUI.Trip
 
         private async void frmAddEditTrip_Load(object sender, EventArgs e)
         {
+            _apiService.ShowEmail(lblName);
             if (selectedTrip != null)
             {
                 txtPlace.Text = selectedTrip.Place;
@@ -78,6 +79,11 @@ namespace StraniVari.WinUI.Trip
             comboBox1.ValueMember = "Id";
         }
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnTrips_Click(object sender, EventArgs e)
         {
 
         }

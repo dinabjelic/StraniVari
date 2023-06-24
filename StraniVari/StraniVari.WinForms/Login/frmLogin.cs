@@ -4,6 +4,7 @@ using StraniVari.Core.Requests;
 using StraniVari.Core.Responses;
 using StraniVari.WinUI.EventDetails;
 using StraniVari.WinUI.Service;
+using StraniVari.WinUI.StartPage;
 
 namespace StraniVari.WinUI.Login
 {
@@ -45,7 +46,9 @@ namespace StraniVari.WinUI.Login
                         throw new Exception();
                     }
                     ApiService.Token = result.Token;
-                    frmAllEvents frm = new frmAllEvents();
+                    frmStartPage frm = new frmStartPage();
+                    //frmAllEvents frm = new frmAllEvents();
+
                     frm.ShowDialog();
                     this.Hide();
                 }

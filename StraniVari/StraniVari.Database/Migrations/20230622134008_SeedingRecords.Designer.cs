@@ -12,8 +12,8 @@ using StraniVari.Database;
 namespace StraniVari.Database.Migrations
 {
     [DbContext(typeof(StraniVariDbContext))]
-    [Migration("20230228213938_AddSeedData")]
-    partial class AddSeedData
+    [Migration("20230622134008_SeedingRecords")]
+    partial class SeedingRecords
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -210,6 +210,50 @@ namespace StraniVari.Database.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("StraniVari.Core.Entities.Administrator", b =>
+                {
+                    b.Property<int>("Id")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("City")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateOfBirth")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Administrators");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Address = "Ulica zlatnih ljiljana",
+                            City = "Zavidovici",
+                            CreatedDate = new DateTime(2023, 6, 22, 15, 40, 7, 679, DateTimeKind.Local).AddTicks(3118),
+                            DateOfBirth = new DateTime(2022, 10, 30, 18, 40, 0, 0, DateTimeKind.Unspecified),
+                            FirstName = "Admin",
+                            LastName = "Admin"
+                        });
+                });
+
             modelBuilder.Entity("StraniVari.Core.Entities.Event", b =>
                 {
                     b.Property<int>("Id")
@@ -243,55 +287,55 @@ namespace StraniVari.Database.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2023, 2, 28, 22, 39, 38, 386, DateTimeKind.Local).AddTicks(1756),
-                            EndDate = new DateTime(2020, 5, 15, 21, 38, 0, 0, DateTimeKind.Unspecified),
+                            CreatedDate = new DateTime(2023, 6, 22, 15, 40, 7, 679, DateTimeKind.Local).AddTicks(2533),
+                            EndDate = new DateTime(2020, 5, 13, 3, 32, 0, 0, DateTimeKind.Unspecified),
                             Name = "Strani Vari 2019",
-                            StartDate = new DateTime(2020, 8, 10, 21, 29, 0, 0, DateTimeKind.Unspecified),
+                            StartDate = new DateTime(2022, 9, 2, 17, 45, 0, 0, DateTimeKind.Unspecified),
                             StraniVariTheme = "Cartoon characters"
                         },
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTime(2023, 2, 28, 22, 39, 38, 386, DateTimeKind.Local).AddTicks(1776),
-                            EndDate = new DateTime(2021, 5, 17, 10, 30, 0, 0, DateTimeKind.Unspecified),
+                            CreatedDate = new DateTime(2023, 6, 22, 15, 40, 7, 679, DateTimeKind.Local).AddTicks(2548),
+                            EndDate = new DateTime(2020, 10, 2, 17, 6, 0, 0, DateTimeKind.Unspecified),
                             Name = "Strani Vari 2020",
-                            StartDate = new DateTime(2020, 5, 28, 23, 38, 0, 0, DateTimeKind.Unspecified),
+                            StartDate = new DateTime(2021, 12, 10, 12, 38, 0, 0, DateTimeKind.Unspecified),
                             StraniVariTheme = "Favourite activity"
                         },
                         new
                         {
                             Id = 3,
-                            CreatedDate = new DateTime(2023, 2, 28, 22, 39, 38, 386, DateTimeKind.Local).AddTicks(1779),
-                            EndDate = new DateTime(2021, 4, 1, 22, 1, 0, 0, DateTimeKind.Unspecified),
+                            CreatedDate = new DateTime(2023, 6, 22, 15, 40, 7, 679, DateTimeKind.Local).AddTicks(2550),
+                            EndDate = new DateTime(2020, 2, 28, 17, 13, 0, 0, DateTimeKind.Unspecified),
                             Name = "Strani Vari 2021",
-                            StartDate = new DateTime(2021, 7, 15, 4, 47, 0, 0, DateTimeKind.Unspecified),
+                            StartDate = new DateTime(2022, 10, 7, 7, 21, 0, 0, DateTimeKind.Unspecified),
                             StraniVariTheme = "Circus"
                         },
                         new
                         {
                             Id = 4,
-                            CreatedDate = new DateTime(2023, 2, 28, 22, 39, 38, 386, DateTimeKind.Local).AddTicks(1781),
-                            EndDate = new DateTime(2020, 8, 19, 22, 55, 0, 0, DateTimeKind.Unspecified),
+                            CreatedDate = new DateTime(2023, 6, 22, 15, 40, 7, 679, DateTimeKind.Local).AddTicks(2552),
+                            EndDate = new DateTime(2022, 9, 26, 17, 48, 0, 0, DateTimeKind.Unspecified),
                             Name = "Strani Vari 2022",
-                            StartDate = new DateTime(2020, 10, 6, 11, 55, 0, 0, DateTimeKind.Unspecified),
+                            StartDate = new DateTime(2020, 12, 29, 14, 34, 0, 0, DateTimeKind.Unspecified),
                             StraniVariTheme = "Favourite cartoon"
                         },
                         new
                         {
                             Id = 5,
-                            CreatedDate = new DateTime(2023, 2, 28, 22, 39, 38, 386, DateTimeKind.Local).AddTicks(1784),
-                            EndDate = new DateTime(2021, 10, 3, 1, 4, 0, 0, DateTimeKind.Unspecified),
+                            CreatedDate = new DateTime(2023, 6, 22, 15, 40, 7, 679, DateTimeKind.Local).AddTicks(2553),
+                            EndDate = new DateTime(2020, 12, 25, 22, 35, 0, 0, DateTimeKind.Unspecified),
                             Name = "Strani Vari 2018",
-                            StartDate = new DateTime(2020, 1, 17, 18, 6, 0, 0, DateTimeKind.Unspecified),
+                            StartDate = new DateTime(2020, 10, 9, 15, 37, 0, 0, DateTimeKind.Unspecified),
                             StraniVariTheme = "Health"
                         },
                         new
                         {
                             Id = 6,
-                            CreatedDate = new DateTime(2023, 2, 28, 22, 39, 38, 386, DateTimeKind.Local).AddTicks(1788),
-                            EndDate = new DateTime(2023, 8, 3, 22, 29, 0, 0, DateTimeKind.Unspecified),
+                            CreatedDate = new DateTime(2023, 6, 22, 15, 40, 7, 679, DateTimeKind.Local).AddTicks(2556),
+                            EndDate = new DateTime(2023, 10, 24, 19, 36, 0, 0, DateTimeKind.Unspecified),
                             Name = "Strani Vari 2023",
-                            StartDate = new DateTime(2023, 10, 30, 10, 22, 0, 0, DateTimeKind.Unspecified),
+                            StartDate = new DateTime(2023, 9, 8, 9, 13, 0, 0, DateTimeKind.Unspecified),
                             StraniVariTheme = "Elements"
                         });
                 });
@@ -327,83 +371,43 @@ namespace StraniVari.Database.Migrations
                     b.HasData(
                         new
                         {
-                            Id = 1,
-                            CreatedDate = new DateTime(2023, 2, 28, 22, 39, 38, 386, DateTimeKind.Local).AddTicks(1932),
-                            EventId = 1,
-                            NumberOfChildren = 90,
-                            SchoolId = 1
-                        },
-                        new
-                        {
                             Id = 2,
-                            CreatedDate = new DateTime(2023, 2, 28, 22, 39, 38, 386, DateTimeKind.Local).AddTicks(1941),
-                            EventId = 1,
+                            CreatedDate = new DateTime(2023, 6, 22, 15, 40, 7, 679, DateTimeKind.Local).AddTicks(2665),
+                            EventId = 4,
                             NumberOfChildren = 80,
-                            SchoolId = 1
+                            SchoolId = 2
                         },
                         new
                         {
                             Id = 3,
-                            CreatedDate = new DateTime(2023, 2, 28, 22, 39, 38, 386, DateTimeKind.Local).AddTicks(1944),
-                            EventId = 4,
+                            CreatedDate = new DateTime(2023, 6, 22, 15, 40, 7, 679, DateTimeKind.Local).AddTicks(2672),
+                            EventId = 3,
                             NumberOfChildren = 50,
                             SchoolId = 1
                         },
                         new
                         {
                             Id = 4,
-                            CreatedDate = new DateTime(2023, 2, 28, 22, 39, 38, 386, DateTimeKind.Local).AddTicks(1947),
-                            EventId = 3,
+                            CreatedDate = new DateTime(2023, 6, 22, 15, 40, 7, 679, DateTimeKind.Local).AddTicks(2674),
+                            EventId = 1,
                             NumberOfChildren = 123,
-                            SchoolId = 1
-                        },
-                        new
-                        {
-                            Id = 5,
-                            CreatedDate = new DateTime(2023, 2, 28, 22, 39, 38, 386, DateTimeKind.Local).AddTicks(1949),
-                            EventId = 4,
-                            NumberOfChildren = 90,
                             SchoolId = 2
                         },
                         new
                         {
                             Id = 6,
-                            CreatedDate = new DateTime(2023, 2, 28, 22, 39, 38, 386, DateTimeKind.Local).AddTicks(1952),
+                            CreatedDate = new DateTime(2023, 6, 22, 15, 40, 7, 679, DateTimeKind.Local).AddTicks(2678),
                             EventId = 4,
                             NumberOfChildren = 80,
-                            SchoolId = 2
+                            SchoolId = 1
                         },
                         new
                         {
-                            Id = 7,
-                            CreatedDate = new DateTime(2023, 2, 28, 22, 39, 38, 386, DateTimeKind.Local).AddTicks(1955),
-                            EventId = 1,
+                            Id = 11,
+                            CreatedDate = new DateTime(2023, 6, 22, 15, 40, 7, 679, DateTimeKind.Local).AddTicks(2684),
+                            EventId = 6,
                             NumberOfChildren = 50,
-                            SchoolId = 3
-                        },
-                        new
-                        {
-                            Id = 8,
-                            CreatedDate = new DateTime(2023, 2, 28, 22, 39, 38, 386, DateTimeKind.Local).AddTicks(1958),
-                            EventId = 2,
-                            NumberOfChildren = 123,
-                            SchoolId = 1
-                        },
-                        new
-                        {
-                            Id = 9,
-                            CreatedDate = new DateTime(2023, 2, 28, 22, 39, 38, 386, DateTimeKind.Local).AddTicks(1960),
-                            EventId = 4,
-                            NumberOfChildren = 90,
-                            SchoolId = 1
-                        },
-                        new
-                        {
-                            Id = 10,
-                            CreatedDate = new DateTime(2023, 2, 28, 22, 39, 38, 386, DateTimeKind.Local).AddTicks(1963),
-                            EventId = 1,
-                            NumberOfChildren = 80,
-                            SchoolId = 1
+                            SchoolId = 2
                         });
                 });
 
@@ -434,35 +438,35 @@ namespace StraniVari.Database.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2023, 2, 28, 22, 39, 38, 386, DateTimeKind.Local).AddTicks(1549),
+                            CreatedDate = new DateTime(2023, 6, 22, 15, 40, 7, 679, DateTimeKind.Local).AddTicks(2410),
                             Name = "Fudbal",
                             Rules = "Svaka se ekipa sastoji od najviše 11 igrača (ne zamjena tj. rezervi), od kojih jedan mora biti golman. Pravila takmičenja određuju minimalan broj igrača koji je potreban za stvaranje ekipe, što je najčešće sedam."
                         },
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTime(2023, 2, 28, 22, 39, 38, 386, DateTimeKind.Local).AddTicks(1605),
+                            CreatedDate = new DateTime(2023, 6, 22, 15, 40, 7, 679, DateTimeKind.Local).AddTicks(2453),
                             Name = "Pitalice s loptom",
                             Rules = "Uzmite loptu i preko nje zalijepite bijeli papir sa selotejpom. Napišite djeci. Neka djeca sjednu u krug i bacaju loptu. Kad uhvate loptu, moraju odgovoriti na pitanje najbliže desnom kažiprstu. Nakon odgovora, opet bacaju loptu. Možete na lopti napisati brojeve, a pitanja posebno na papiru ako vam je tako lakše."
                         },
                         new
                         {
                             Id = 3,
-                            CreatedDate = new DateTime(2023, 2, 28, 22, 39, 38, 386, DateTimeKind.Local).AddTicks(1608),
+                            CreatedDate = new DateTime(2023, 6, 22, 15, 40, 7, 679, DateTimeKind.Local).AddTicks(2455),
                             Name = "Pogodi tko sam – igra imitacije i pogađanja",
                             Rules = "Riječ je o pantomimi gdje jedna osoba glumi neku drugu osobu koju ostali igrači znaju. Sve je dozvoljeno osim razgovora."
                         },
                         new
                         {
                             Id = 4,
-                            CreatedDate = new DateTime(2023, 2, 28, 22, 39, 38, 386, DateTimeKind.Local).AddTicks(1610),
+                            CreatedDate = new DateTime(2023, 6, 22, 15, 40, 7, 679, DateTimeKind.Local).AddTicks(2457),
                             Name = "Crtanje zavezanih očiju",
                             Rules = "Na dječjoj ploči ili većem komadu papira organizirajte igru u kojoj ćete se izmjenjivati u crtanju. Preostali igrači neke redom zadaju zadatke. U igri nema bodova i pobjednika, cilj je dobra zabava."
                         },
                         new
                         {
                             Id = 5,
-                            CreatedDate = new DateTime(2023, 2, 28, 22, 39, 38, 386, DateTimeKind.Local).AddTicks(1612),
+                            CreatedDate = new DateTime(2023, 6, 22, 15, 40, 7, 679, DateTimeKind.Local).AddTicks(2458),
                             Name = "Izmedju dvije vatre",
                             Rules = "U igri učestvuje osam (8) igrača, sedam (7) u svojoj polovici terena za igru i jedan graničar. Graničar se nalazi iza linije terena za igre na suprotnoj strani od polovice terena za igru gdje se nalazi njegova ekipa. Suparnička ekipa nalazi se između graničara i njegove ekipe.Cilj igre je da svaka ekipa rukom bačenu loptu neobranjivo pogađa igrače suparničke ekipe u njihovom polju,a da izbjegnu iste namjere suparničke ekipe.Meč se igra na ispadanje,tačnije kada protivnička ekipa pogodi igrača,igrač ispada i meč se igra sve dok se ne pogodi i posljedni igrač u polju."
                         });
@@ -491,121 +495,121 @@ namespace StraniVari.Database.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2023, 2, 28, 22, 39, 38, 386, DateTimeKind.Local).AddTicks(2008),
+                            CreatedDate = new DateTime(2023, 6, 22, 15, 40, 7, 679, DateTimeKind.Local).AddTicks(2708),
                             Name = "Vodene bojice"
                         },
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTime(2023, 2, 28, 22, 39, 38, 386, DateTimeKind.Local).AddTicks(2011),
+                            CreatedDate = new DateTime(2023, 6, 22, 15, 40, 7, 679, DateTimeKind.Local).AddTicks(2711),
                             Name = "Papir u boji"
                         },
                         new
                         {
                             Id = 3,
-                            CreatedDate = new DateTime(2023, 2, 28, 22, 39, 38, 386, DateTimeKind.Local).AddTicks(2014),
+                            CreatedDate = new DateTime(2023, 6, 22, 15, 40, 7, 679, DateTimeKind.Local).AddTicks(2712),
                             Name = "Lopte"
                         },
                         new
                         {
                             Id = 4,
-                            CreatedDate = new DateTime(2023, 2, 28, 22, 39, 38, 386, DateTimeKind.Local).AddTicks(2016),
+                            CreatedDate = new DateTime(2023, 6, 22, 15, 40, 7, 679, DateTimeKind.Local).AddTicks(2713),
                             Name = "Reketi"
                         },
                         new
                         {
                             Id = 5,
-                            CreatedDate = new DateTime(2023, 2, 28, 22, 39, 38, 386, DateTimeKind.Local).AddTicks(2018),
+                            CreatedDate = new DateTime(2023, 6, 22, 15, 40, 7, 679, DateTimeKind.Local).AddTicks(2715),
                             Name = "Flomasteri"
                         },
                         new
                         {
                             Id = 6,
-                            CreatedDate = new DateTime(2023, 2, 28, 22, 39, 38, 386, DateTimeKind.Local).AddTicks(2021),
+                            CreatedDate = new DateTime(2023, 6, 22, 15, 40, 7, 679, DateTimeKind.Local).AddTicks(2717),
                             Name = "Bojice"
                         },
                         new
                         {
                             Id = 7,
-                            CreatedDate = new DateTime(2023, 2, 28, 22, 39, 38, 386, DateTimeKind.Local).AddTicks(2023),
+                            CreatedDate = new DateTime(2023, 6, 22, 15, 40, 7, 679, DateTimeKind.Local).AddTicks(2718),
                             Name = "Hamer papir"
                         },
                         new
                         {
                             Id = 8,
-                            CreatedDate = new DateTime(2023, 2, 28, 22, 39, 38, 386, DateTimeKind.Local).AddTicks(2026),
+                            CreatedDate = new DateTime(2023, 6, 22, 15, 40, 7, 679, DateTimeKind.Local).AddTicks(2719),
                             Name = "Face paint"
                         },
                         new
                         {
                             Id = 9,
-                            CreatedDate = new DateTime(2023, 2, 28, 22, 39, 38, 386, DateTimeKind.Local).AddTicks(2027),
+                            CreatedDate = new DateTime(2023, 6, 22, 15, 40, 7, 679, DateTimeKind.Local).AddTicks(2720),
                             Name = "Glina"
                         },
                         new
                         {
                             Id = 10,
-                            CreatedDate = new DateTime(2023, 2, 28, 22, 39, 38, 386, DateTimeKind.Local).AddTicks(2031),
+                            CreatedDate = new DateTime(2023, 6, 22, 15, 40, 7, 679, DateTimeKind.Local).AddTicks(2722),
                             Name = "Plastelin"
                         },
                         new
                         {
                             Id = 11,
-                            CreatedDate = new DateTime(2023, 2, 28, 22, 39, 38, 386, DateTimeKind.Local).AddTicks(2033),
+                            CreatedDate = new DateTime(2023, 6, 22, 15, 40, 7, 679, DateTimeKind.Local).AddTicks(2724),
                             Name = "Siljalo"
                         },
                         new
                         {
                             Id = 12,
-                            CreatedDate = new DateTime(2023, 2, 28, 22, 39, 38, 386, DateTimeKind.Local).AddTicks(2035),
+                            CreatedDate = new DateTime(2023, 6, 22, 15, 40, 7, 679, DateTimeKind.Local).AddTicks(2725),
                             Name = "Makaze"
                         },
                         new
                         {
                             Id = 13,
-                            CreatedDate = new DateTime(2023, 2, 28, 22, 39, 38, 386, DateTimeKind.Local).AddTicks(2037),
+                            CreatedDate = new DateTime(2023, 6, 22, 15, 40, 7, 679, DateTimeKind.Local).AddTicks(2726),
                             Name = "Kolaz papir"
                         },
                         new
                         {
                             Id = 14,
-                            CreatedDate = new DateTime(2023, 2, 28, 22, 39, 38, 386, DateTimeKind.Local).AddTicks(2039),
+                            CreatedDate = new DateTime(2023, 6, 22, 15, 40, 7, 679, DateTimeKind.Local).AddTicks(2727),
                             Name = "Platno"
                         },
                         new
                         {
                             Id = 15,
-                            CreatedDate = new DateTime(2023, 2, 28, 22, 39, 38, 386, DateTimeKind.Local).AddTicks(2042),
+                            CreatedDate = new DateTime(2023, 6, 22, 15, 40, 7, 679, DateTimeKind.Local).AddTicks(2728),
                             Name = "Bijeli papir"
                         },
                         new
                         {
                             Id = 16,
-                            CreatedDate = new DateTime(2023, 2, 28, 22, 39, 38, 386, DateTimeKind.Local).AddTicks(2044),
+                            CreatedDate = new DateTime(2023, 6, 22, 15, 40, 7, 679, DateTimeKind.Local).AddTicks(2729),
                             Name = "Krede"
                         },
                         new
                         {
                             Id = 17,
-                            CreatedDate = new DateTime(2023, 2, 28, 22, 39, 38, 386, DateTimeKind.Local).AddTicks(2046),
+                            CreatedDate = new DateTime(2023, 6, 22, 15, 40, 7, 679, DateTimeKind.Local).AddTicks(2731),
                             Name = "Heftarica"
                         },
                         new
                         {
                             Id = 18,
-                            CreatedDate = new DateTime(2023, 2, 28, 22, 39, 38, 386, DateTimeKind.Local).AddTicks(2049),
+                            CreatedDate = new DateTime(2023, 6, 22, 15, 40, 7, 679, DateTimeKind.Local).AddTicks(2733),
                             Name = "Bijeli papir"
                         },
                         new
                         {
                             Id = 19,
-                            CreatedDate = new DateTime(2023, 2, 28, 22, 39, 38, 386, DateTimeKind.Local).AddTicks(2051),
+                            CreatedDate = new DateTime(2023, 6, 22, 15, 40, 7, 679, DateTimeKind.Local).AddTicks(2734),
                             Name = "Baloni"
                         },
                         new
                         {
                             Id = 20,
-                            CreatedDate = new DateTime(2023, 2, 28, 22, 39, 38, 386, DateTimeKind.Local).AddTicks(2053),
+                            CreatedDate = new DateTime(2023, 6, 22, 15, 40, 7, 679, DateTimeKind.Local).AddTicks(2735),
                             Name = "Tempere"
                         });
                 });
@@ -658,9 +662,9 @@ namespace StraniVari.Database.Migrations
                             Id = 1,
                             Address = "Roncadelle",
                             City = "Zavidovici",
-                            CreatedDate = new DateTime(2023, 2, 28, 22, 39, 38, 386, DateTimeKind.Local).AddTicks(2176),
-                            EventId = 3,
-                            MeetingDate = new DateTime(2022, 2, 4, 5, 11, 0, 0, DateTimeKind.Unspecified),
+                            CreatedDate = new DateTime(2023, 6, 22, 15, 40, 7, 679, DateTimeKind.Local).AddTicks(2804),
+                            EventId = 2,
+                            MeetingDate = new DateTime(2022, 3, 11, 19, 42, 0, 0, DateTimeKind.Unspecified),
                             MeetingPlace = "Ambasada lokalne demokaratije",
                             MeetingTheme = "Odnos volontera i djece"
                         },
@@ -669,9 +673,9 @@ namespace StraniVari.Database.Migrations
                             Id = 2,
                             Address = "Roncadelle",
                             City = "Zavidovici",
-                            CreatedDate = new DateTime(2023, 2, 28, 22, 39, 38, 386, DateTimeKind.Local).AddTicks(2183),
-                            EventId = 4,
-                            MeetingDate = new DateTime(2022, 3, 22, 9, 46, 0, 0, DateTimeKind.Unspecified),
+                            CreatedDate = new DateTime(2023, 6, 22, 15, 40, 7, 679, DateTimeKind.Local).AddTicks(2809),
+                            EventId = 3,
+                            MeetingDate = new DateTime(2022, 9, 17, 4, 27, 0, 0, DateTimeKind.Unspecified),
                             MeetingPlace = "Ambasada lokalne demokaratije",
                             MeetingTheme = "Organizacija radionice u sali Prve osnovne skole"
                         },
@@ -680,9 +684,9 @@ namespace StraniVari.Database.Migrations
                             Id = 3,
                             Address = "Roncadelle",
                             City = "Zavidovici",
-                            CreatedDate = new DateTime(2023, 2, 28, 22, 39, 38, 386, DateTimeKind.Local).AddTicks(2186),
-                            EventId = 2,
-                            MeetingDate = new DateTime(2022, 3, 21, 5, 57, 0, 0, DateTimeKind.Unspecified),
+                            CreatedDate = new DateTime(2023, 6, 22, 15, 40, 7, 679, DateTimeKind.Local).AddTicks(2811),
+                            EventId = 4,
+                            MeetingDate = new DateTime(2022, 9, 5, 23, 33, 0, 0, DateTimeKind.Unspecified),
                             MeetingPlace = "Ambasada lokalne demokaratije",
                             MeetingTheme = "Odnos volontera i djece"
                         },
@@ -691,9 +695,9 @@ namespace StraniVari.Database.Migrations
                             Id = 4,
                             Address = "Roncadelle",
                             City = "Zavidovici",
-                            CreatedDate = new DateTime(2023, 2, 28, 22, 39, 38, 386, DateTimeKind.Local).AddTicks(2189),
-                            EventId = 3,
-                            MeetingDate = new DateTime(2022, 3, 15, 4, 41, 0, 0, DateTimeKind.Unspecified),
+                            CreatedDate = new DateTime(2023, 6, 22, 15, 40, 7, 679, DateTimeKind.Local).AddTicks(2813),
+                            EventId = 4,
+                            MeetingDate = new DateTime(2022, 5, 22, 2, 10, 0, 0, DateTimeKind.Unspecified),
                             MeetingPlace = "Ambasada lokalne demokaratije",
                             MeetingTheme = "Organizacija radionice u sali Prve osnovne skole"
                         },
@@ -702,11 +706,22 @@ namespace StraniVari.Database.Migrations
                             Id = 5,
                             Address = "Roncadelle",
                             City = "Zavidovici",
-                            CreatedDate = new DateTime(2023, 2, 28, 22, 39, 38, 386, DateTimeKind.Local).AddTicks(2192),
-                            EventId = 2,
-                            MeetingDate = new DateTime(2022, 5, 29, 14, 51, 0, 0, DateTimeKind.Unspecified),
+                            CreatedDate = new DateTime(2023, 6, 22, 15, 40, 7, 679, DateTimeKind.Local).AddTicks(2814),
+                            EventId = 1,
+                            MeetingDate = new DateTime(2022, 2, 27, 8, 16, 0, 0, DateTimeKind.Unspecified),
                             MeetingPlace = "Ambasada lokalne demokaratije",
                             MeetingTheme = "Odnos volontera i djece"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Address = "Roncadelle",
+                            City = "Zavidovici",
+                            CreatedDate = new DateTime(2023, 6, 22, 15, 40, 7, 679, DateTimeKind.Local).AddTicks(2817),
+                            EventId = 6,
+                            MeetingDate = new DateTime(2022, 3, 12, 21, 29, 0, 0, DateTimeKind.Unspecified),
+                            MeetingPlace = "ALD",
+                            MeetingTheme = "dnos volontera i djece"
                         });
                 });
 
@@ -748,46 +763,55 @@ namespace StraniVari.Database.Migrations
                         {
                             Id = 1,
                             Activity = "Radionice",
-                            CreatedDate = new DateTime(2023, 2, 28, 22, 39, 38, 386, DateTimeKind.Local).AddTicks(2249),
-                            EndDate = new DateTime(2021, 5, 3, 23, 37, 0, 0, DateTimeKind.Unspecified),
-                            EventId = 3,
-                            StartDate = new DateTime(2021, 11, 16, 5, 11, 0, 0, DateTimeKind.Unspecified)
+                            CreatedDate = new DateTime(2023, 6, 22, 15, 40, 7, 679, DateTimeKind.Local).AddTicks(2840),
+                            EndDate = new DateTime(2021, 9, 25, 19, 1, 0, 0, DateTimeKind.Unspecified),
+                            EventId = 2,
+                            StartDate = new DateTime(2021, 2, 2, 21, 44, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 2,
                             Activity = "Pauza",
-                            CreatedDate = new DateTime(2023, 2, 28, 22, 39, 38, 386, DateTimeKind.Local).AddTicks(2254),
-                            EndDate = new DateTime(2021, 5, 24, 20, 36, 0, 0, DateTimeKind.Unspecified),
-                            EventId = 4,
-                            StartDate = new DateTime(2021, 8, 3, 23, 8, 0, 0, DateTimeKind.Unspecified)
+                            CreatedDate = new DateTime(2023, 6, 22, 15, 40, 7, 679, DateTimeKind.Local).AddTicks(2844),
+                            EndDate = new DateTime(2021, 11, 9, 22, 36, 0, 0, DateTimeKind.Unspecified),
+                            EventId = 2,
+                            StartDate = new DateTime(2021, 3, 30, 15, 43, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 3,
                             Activity = "Sekcije",
-                            CreatedDate = new DateTime(2023, 2, 28, 22, 39, 38, 386, DateTimeKind.Local).AddTicks(2257),
-                            EndDate = new DateTime(2021, 10, 20, 7, 26, 0, 0, DateTimeKind.Unspecified),
-                            EventId = 2,
-                            StartDate = new DateTime(2021, 8, 6, 18, 27, 0, 0, DateTimeKind.Unspecified)
+                            CreatedDate = new DateTime(2023, 6, 22, 15, 40, 7, 679, DateTimeKind.Local).AddTicks(2846),
+                            EndDate = new DateTime(2021, 6, 14, 2, 0, 0, 0, DateTimeKind.Unspecified),
+                            EventId = 1,
+                            StartDate = new DateTime(2021, 3, 14, 16, 38, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 4,
                             Activity = "Bans",
-                            CreatedDate = new DateTime(2023, 2, 28, 22, 39, 38, 386, DateTimeKind.Local).AddTicks(2260),
-                            EndDate = new DateTime(2021, 9, 12, 12, 27, 0, 0, DateTimeKind.Unspecified),
+                            CreatedDate = new DateTime(2023, 6, 22, 15, 40, 7, 679, DateTimeKind.Local).AddTicks(2848),
+                            EndDate = new DateTime(2021, 10, 1, 19, 2, 0, 0, DateTimeKind.Unspecified),
                             EventId = 3,
-                            StartDate = new DateTime(2021, 10, 16, 13, 42, 0, 0, DateTimeKind.Unspecified)
+                            StartDate = new DateTime(2021, 7, 1, 23, 59, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 5,
                             Activity = "Radionice",
-                            CreatedDate = new DateTime(2023, 2, 28, 22, 39, 38, 386, DateTimeKind.Local).AddTicks(2264),
-                            EndDate = new DateTime(2021, 4, 18, 19, 5, 0, 0, DateTimeKind.Unspecified),
-                            EventId = 4,
-                            StartDate = new DateTime(2021, 8, 25, 0, 5, 0, 0, DateTimeKind.Unspecified)
+                            CreatedDate = new DateTime(2023, 6, 22, 15, 40, 7, 679, DateTimeKind.Local).AddTicks(2849),
+                            EndDate = new DateTime(2021, 6, 6, 11, 14, 0, 0, DateTimeKind.Unspecified),
+                            EventId = 1,
+                            StartDate = new DateTime(2021, 11, 8, 22, 2, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Activity = "Bans",
+                            CreatedDate = new DateTime(2023, 6, 22, 15, 40, 7, 679, DateTimeKind.Local).AddTicks(2852),
+                            EndDate = new DateTime(2021, 4, 17, 23, 13, 0, 0, DateTimeKind.Unspecified),
+                            EventId = 6,
+                            StartDate = new DateTime(2021, 1, 21, 2, 1, 0, 0, DateTimeKind.Unspecified)
                         });
                 });
 
@@ -824,7 +848,7 @@ namespace StraniVari.Database.Migrations
                             Id = 1,
                             Address = "Sutjeska",
                             City = "Zavidovici",
-                            CreatedDate = new DateTime(2023, 2, 28, 22, 39, 38, 386, DateTimeKind.Local).AddTicks(2502),
+                            CreatedDate = new DateTime(2023, 6, 22, 15, 40, 7, 679, DateTimeKind.Local).AddTicks(2951),
                             Name = "Druga osnovna skola"
                         },
                         new
@@ -832,7 +856,7 @@ namespace StraniVari.Database.Migrations
                             Id = 2,
                             Address = "Gostovic",
                             City = "Zavidovici",
-                            CreatedDate = new DateTime(2023, 2, 28, 22, 39, 38, 386, DateTimeKind.Local).AddTicks(2507),
+                            CreatedDate = new DateTime(2023, 6, 22, 15, 40, 7, 679, DateTimeKind.Local).AddTicks(2956),
                             Name = "Osnovna skola Gostovic"
                         },
                         new
@@ -840,7 +864,7 @@ namespace StraniVari.Database.Migrations
                             Id = 3,
                             Address = "Poljice",
                             City = "Zavidovici",
-                            CreatedDate = new DateTime(2023, 2, 28, 22, 39, 38, 386, DateTimeKind.Local).AddTicks(2509),
+                            CreatedDate = new DateTime(2023, 6, 22, 15, 40, 7, 679, DateTimeKind.Local).AddTicks(2957),
                             Name = "Osnovna skola Poljice"
                         },
                         new
@@ -848,7 +872,7 @@ namespace StraniVari.Database.Migrations
                             Id = 4,
                             Address = "Safvet-bega Bašagića bb",
                             City = "Zavidovici",
-                            CreatedDate = new DateTime(2023, 2, 28, 22, 39, 38, 386, DateTimeKind.Local).AddTicks(2511),
+                            CreatedDate = new DateTime(2023, 6, 22, 15, 40, 7, 679, DateTimeKind.Local).AddTicks(2959),
                             Name = "Prva osnovna skola"
                         });
                 });
@@ -885,48 +909,56 @@ namespace StraniVari.Database.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2023, 2, 28, 22, 39, 38, 386, DateTimeKind.Local).AddTicks(2291),
-                            EventSchoolId = 5,
+                            CreatedDate = new DateTime(2023, 6, 22, 15, 40, 7, 679, DateTimeKind.Local).AddTicks(2908),
+                            EventSchoolId = 4,
                             MaterialId = 2,
                             Quantity = 20
                         },
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTime(2023, 2, 28, 22, 39, 38, 386, DateTimeKind.Local).AddTicks(2297),
-                            EventSchoolId = 7,
-                            MaterialId = 9,
+                            CreatedDate = new DateTime(2023, 6, 22, 15, 40, 7, 679, DateTimeKind.Local).AddTicks(2916),
+                            EventSchoolId = 4,
+                            MaterialId = 8,
                             Quantity = 30
                         },
                         new
                         {
                             Id = 3,
-                            CreatedDate = new DateTime(2023, 2, 28, 22, 39, 38, 386, DateTimeKind.Local).AddTicks(2299),
-                            EventSchoolId = 5,
-                            MaterialId = 11,
+                            CreatedDate = new DateTime(2023, 6, 22, 15, 40, 7, 679, DateTimeKind.Local).AddTicks(2917),
+                            EventSchoolId = 4,
+                            MaterialId = 9,
                             Quantity = 10
                         },
                         new
                         {
                             Id = 4,
-                            CreatedDate = new DateTime(2023, 2, 28, 22, 39, 38, 386, DateTimeKind.Local).AddTicks(2301),
+                            CreatedDate = new DateTime(2023, 6, 22, 15, 40, 7, 679, DateTimeKind.Local).AddTicks(2919),
                             EventSchoolId = 5,
-                            MaterialId = 12,
+                            MaterialId = 11,
                             Quantity = 2
                         },
                         new
                         {
                             Id = 5,
-                            CreatedDate = new DateTime(2023, 2, 28, 22, 39, 38, 386, DateTimeKind.Local).AddTicks(2304),
-                            EventSchoolId = 9,
-                            MaterialId = 5,
+                            CreatedDate = new DateTime(2023, 6, 22, 15, 40, 7, 679, DateTimeKind.Local).AddTicks(2920),
+                            EventSchoolId = 4,
+                            MaterialId = 18,
                             Quantity = 6
                         },
                         new
                         {
                             Id = 6,
-                            CreatedDate = new DateTime(2023, 2, 28, 22, 39, 38, 386, DateTimeKind.Local).AddTicks(2316),
-                            EventSchoolId = 5,
+                            CreatedDate = new DateTime(2023, 6, 22, 15, 40, 7, 679, DateTimeKind.Local).AddTicks(2929),
+                            EventSchoolId = 4,
+                            MaterialId = 20,
+                            Quantity = 2
+                        },
+                        new
+                        {
+                            Id = 7,
+                            CreatedDate = new DateTime(2023, 6, 22, 15, 40, 7, 679, DateTimeKind.Local).AddTicks(2931),
+                            EventSchoolId = 11,
                             MaterialId = 20,
                             Quantity = 2
                         });
@@ -964,42 +996,128 @@ namespace StraniVari.Database.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2023, 2, 28, 22, 39, 38, 386, DateTimeKind.Local).AddTicks(2546),
-                            EventSchoolId = 5,
+                            CreatedDate = new DateTime(2023, 6, 22, 15, 40, 7, 679, DateTimeKind.Local).AddTicks(2983),
+                            EventSchoolId = 3,
                             TransportNeeded = false,
                             VolunteerId = 5
                         },
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTime(2023, 2, 28, 22, 39, 38, 386, DateTimeKind.Local).AddTicks(2551),
-                            EventSchoolId = 9,
+                            CreatedDate = new DateTime(2023, 6, 22, 15, 40, 7, 679, DateTimeKind.Local).AddTicks(2986),
+                            EventSchoolId = 2,
                             TransportNeeded = true,
-                            VolunteerId = 5
+                            VolunteerId = 3
                         },
                         new
                         {
                             Id = 3,
-                            CreatedDate = new DateTime(2023, 2, 28, 22, 39, 38, 386, DateTimeKind.Local).AddTicks(2554),
-                            EventSchoolId = 6,
+                            CreatedDate = new DateTime(2023, 6, 22, 15, 40, 7, 679, DateTimeKind.Local).AddTicks(2987),
+                            EventSchoolId = 5,
                             TransportNeeded = false,
-                            VolunteerId = 2
+                            VolunteerId = 3
                         },
                         new
                         {
                             Id = 4,
-                            CreatedDate = new DateTime(2023, 2, 28, 22, 39, 38, 386, DateTimeKind.Local).AddTicks(2557),
-                            EventSchoolId = 5,
+                            CreatedDate = new DateTime(2023, 6, 22, 15, 40, 7, 679, DateTimeKind.Local).AddTicks(2989),
+                            EventSchoolId = 2,
                             TransportNeeded = true,
-                            VolunteerId = 5
+                            VolunteerId = 3
                         },
                         new
                         {
                             Id = 5,
-                            CreatedDate = new DateTime(2023, 2, 28, 22, 39, 38, 386, DateTimeKind.Local).AddTicks(2559),
-                            EventSchoolId = 3,
+                            CreatedDate = new DateTime(2023, 6, 22, 15, 40, 7, 679, DateTimeKind.Local).AddTicks(2990),
+                            EventSchoolId = 5,
                             TransportNeeded = false,
                             VolunteerId = 4
+                        },
+                        new
+                        {
+                            Id = 6,
+                            CreatedDate = new DateTime(2023, 6, 22, 15, 40, 7, 679, DateTimeKind.Local).AddTicks(2993),
+                            EventSchoolId = 11,
+                            TransportNeeded = false,
+                            VolunteerId = 2
+                        });
+                });
+
+            modelBuilder.Entity("StraniVari.Core.Entities.Trip", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("EventId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Place")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("TripDateTime")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EventId");
+
+                    b.ToTable("Trips");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CreatedDate = new DateTime(2023, 6, 22, 15, 40, 7, 679, DateTimeKind.Local).AddTicks(3208),
+                            EventId = 6,
+                            Place = "Sarajevo",
+                            TripDateTime = new DateTime(2021, 3, 3, 1, 19, 0, 0, DateTimeKind.Unspecified)
+                        });
+                });
+
+            modelBuilder.Entity("StraniVari.Core.Entities.TripStatus", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("TripStatuses");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CreatedDate = new DateTime(2023, 6, 22, 15, 40, 7, 679, DateTimeKind.Local).AddTicks(3233),
+                            Status = "Accepted"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CreatedDate = new DateTime(2023, 6, 22, 15, 40, 7, 679, DateTimeKind.Local).AddTicks(3237),
+                            Status = "Declined"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CreatedDate = new DateTime(2023, 6, 22, 15, 40, 7, 679, DateTimeKind.Local).AddTicks(3238),
+                            Status = "InProgress"
                         });
                 });
 
@@ -1083,7 +1201,7 @@ namespace StraniVari.Database.Migrations
                         {
                             Id = 1,
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "c7d0683e-c568-4bac-8bda-160b7547c01d",
+                            ConcurrencyStamp = "16dbd390-db41-47de-b726-f5f9d90bbcd9",
                             Email = "admin@gmail.com",
                             EmailConfirmed = true,
                             FirstName = "admin",
@@ -1101,7 +1219,7 @@ namespace StraniVari.Database.Migrations
                         {
                             Id = 2,
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "bb6a1e6e-b601-4fec-8b25-46da27810dd6",
+                            ConcurrencyStamp = "935e9433-329a-440e-adb8-25be834c0d81",
                             Email = "una2@gmail.com",
                             EmailConfirmed = true,
                             FirstName = "una",
@@ -1119,7 +1237,7 @@ namespace StraniVari.Database.Migrations
                         {
                             Id = 3,
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "47e6f05b-4b22-4d16-87d8-62d8f27856a0",
+                            ConcurrencyStamp = "0268e47e-9988-470a-905e-a2117e60e34c",
                             Email = "una3@gmail.com",
                             EmailConfirmed = true,
                             FirstName = "una",
@@ -1137,7 +1255,7 @@ namespace StraniVari.Database.Migrations
                         {
                             Id = 4,
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "92daa7cc-14cd-4a77-b2be-579cefea465e",
+                            ConcurrencyStamp = "44b3e484-71c1-4a1c-a1c2-f8c5b0867a7c",
                             Email = "una4@gmail.com",
                             EmailConfirmed = true,
                             FirstName = "una",
@@ -1155,7 +1273,7 @@ namespace StraniVari.Database.Migrations
                         {
                             Id = 5,
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "a3e5d3bc-2cea-4dd6-a548-e74be65b110e",
+                            ConcurrencyStamp = "d6d4d636-cfb3-4f5b-92e0-4da1c4f56860",
                             Email = "una5@gmail.com",
                             EmailConfirmed = true,
                             FirstName = "una",
@@ -1173,7 +1291,7 @@ namespace StraniVari.Database.Migrations
                         {
                             Id = 6,
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "b1a941a9-b5f6-4bad-80d6-f9d0b7b7a12f",
+                            ConcurrencyStamp = "39b020d2-9a83-4d20-a12b-b74fcdad6ac4",
                             Email = "una6@gmail.com",
                             EmailConfirmed = true,
                             FirstName = "una",
@@ -1229,55 +1347,104 @@ namespace StraniVari.Database.Migrations
                             Id = 2,
                             Address = "Ulica zlatnih ljiljana",
                             City = "Zavidovici",
-                            CreatedDate = new DateTime(2023, 2, 28, 22, 39, 38, 386, DateTimeKind.Local).AddTicks(2683),
-                            DateOfBirth = new DateTime(2022, 4, 4, 17, 22, 0, 0, DateTimeKind.Unspecified),
+                            CreatedDate = new DateTime(2023, 6, 22, 15, 40, 7, 679, DateTimeKind.Local).AddTicks(3088),
+                            DateOfBirth = new DateTime(2022, 4, 20, 14, 20, 0, 0, DateTimeKind.Unspecified),
                             FirstName = "Semina",
                             LastName = "Sinanovic",
-                            StartDateOfVolunteering = new DateTime(2022, 11, 3, 13, 24, 0, 0, DateTimeKind.Unspecified)
+                            StartDateOfVolunteering = new DateTime(2022, 2, 8, 16, 28, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 3,
                             Address = "Ulica 4.manevarskog bataljona",
                             City = "Zavidovici",
-                            CreatedDate = new DateTime(2023, 2, 28, 22, 39, 38, 386, DateTimeKind.Local).AddTicks(2690),
-                            DateOfBirth = new DateTime(2022, 2, 13, 14, 27, 0, 0, DateTimeKind.Unspecified),
+                            CreatedDate = new DateTime(2023, 6, 22, 15, 40, 7, 679, DateTimeKind.Local).AddTicks(3093),
+                            DateOfBirth = new DateTime(2022, 2, 26, 8, 45, 0, 0, DateTimeKind.Unspecified),
                             FirstName = "Ajna",
                             LastName = "Tanovic",
-                            StartDateOfVolunteering = new DateTime(2022, 8, 14, 21, 37, 0, 0, DateTimeKind.Unspecified)
+                            StartDateOfVolunteering = new DateTime(2022, 4, 4, 11, 27, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 4,
                             Address = "Ulica zlatnih ljiljana",
                             City = "Zavidovici",
-                            CreatedDate = new DateTime(2023, 2, 28, 22, 39, 38, 386, DateTimeKind.Local).AddTicks(2693),
-                            DateOfBirth = new DateTime(2022, 9, 17, 3, 58, 0, 0, DateTimeKind.Unspecified),
+                            CreatedDate = new DateTime(2023, 6, 22, 15, 40, 7, 679, DateTimeKind.Local).AddTicks(3095),
+                            DateOfBirth = new DateTime(2022, 2, 13, 5, 29, 0, 0, DateTimeKind.Unspecified),
                             FirstName = "Elda",
                             LastName = "Bratanovic",
-                            StartDateOfVolunteering = new DateTime(2022, 7, 8, 16, 55, 0, 0, DateTimeKind.Unspecified)
+                            StartDateOfVolunteering = new DateTime(2022, 10, 19, 10, 56, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 5,
                             Address = "Ulica 4.manevarskog bataljona",
                             City = "Zavidovici",
-                            CreatedDate = new DateTime(2023, 2, 28, 22, 39, 38, 386, DateTimeKind.Local).AddTicks(2696),
-                            DateOfBirth = new DateTime(2022, 2, 28, 14, 21, 0, 0, DateTimeKind.Unspecified),
+                            CreatedDate = new DateTime(2023, 6, 22, 15, 40, 7, 679, DateTimeKind.Local).AddTicks(3097),
+                            DateOfBirth = new DateTime(2022, 9, 11, 23, 6, 0, 0, DateTimeKind.Unspecified),
                             FirstName = "Una",
                             LastName = "Milicevic",
-                            StartDateOfVolunteering = new DateTime(2022, 4, 14, 0, 3, 0, 0, DateTimeKind.Unspecified)
+                            StartDateOfVolunteering = new DateTime(2022, 9, 6, 7, 47, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 6,
                             Address = "Ulica zlatnih ljiljana",
                             City = "Zavidovici",
-                            CreatedDate = new DateTime(2023, 2, 28, 22, 39, 38, 386, DateTimeKind.Local).AddTicks(2699),
-                            DateOfBirth = new DateTime(2022, 3, 24, 13, 6, 0, 0, DateTimeKind.Unspecified),
+                            CreatedDate = new DateTime(2023, 6, 22, 15, 40, 7, 679, DateTimeKind.Local).AddTicks(3098),
+                            DateOfBirth = new DateTime(2022, 9, 3, 1, 1, 0, 0, DateTimeKind.Unspecified),
                             FirstName = "Edvin",
                             LastName = "Joldic",
-                            StartDateOfVolunteering = new DateTime(2022, 6, 25, 16, 42, 0, 0, DateTimeKind.Unspecified)
+                            StartDateOfVolunteering = new DateTime(2022, 2, 6, 17, 13, 0, 0, DateTimeKind.Unspecified)
+                        });
+                });
+
+            modelBuilder.Entity("StraniVari.Core.Entities.VolunteerTrip", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("StatusId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TripId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("VolunteerId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("StatusId");
+
+                    b.HasIndex("TripId");
+
+                    b.HasIndex("VolunteerId");
+
+                    b.ToTable("VolunteerTrip");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CreatedDate = new DateTime(2023, 6, 22, 15, 40, 7, 679, DateTimeKind.Local).AddTicks(3253),
+                            StatusId = 3,
+                            TripId = 1,
+                            VolunteerId = 5
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CreatedDate = new DateTime(2023, 6, 22, 15, 40, 7, 679, DateTimeKind.Local).AddTicks(3257),
+                            StatusId = 3,
+                            TripId = 1,
+                            VolunteerId = 4
                         });
                 });
 
@@ -1330,6 +1497,17 @@ namespace StraniVari.Database.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("StraniVari.Core.Entities.Administrator", b =>
+                {
+                    b.HasOne("StraniVari.Core.Entities.User", "User")
+                        .WithOne("Administrator")
+                        .HasForeignKey("StraniVari.Core.Entities.Administrator", "Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("StraniVari.Core.Entities.EventSchool", b =>
@@ -1411,6 +1589,17 @@ namespace StraniVari.Database.Migrations
                     b.Navigation("Volunteer");
                 });
 
+            modelBuilder.Entity("StraniVari.Core.Entities.Trip", b =>
+                {
+                    b.HasOne("StraniVari.Core.Entities.Event", "Event")
+                        .WithMany()
+                        .HasForeignKey("EventId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Event");
+                });
+
             modelBuilder.Entity("StraniVari.Core.Entities.Volunteer", b =>
                 {
                     b.HasOne("StraniVari.Core.Entities.User", "User")
@@ -1420,6 +1609,33 @@ namespace StraniVari.Database.Migrations
                         .IsRequired();
 
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("StraniVari.Core.Entities.VolunteerTrip", b =>
+                {
+                    b.HasOne("StraniVari.Core.Entities.TripStatus", "Status")
+                        .WithMany()
+                        .HasForeignKey("StatusId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("StraniVari.Core.Entities.Trip", "Trip")
+                        .WithMany()
+                        .HasForeignKey("TripId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("StraniVari.Core.Entities.Volunteer", "Volunteer")
+                        .WithMany()
+                        .HasForeignKey("VolunteerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Status");
+
+                    b.Navigation("Trip");
+
+                    b.Navigation("Volunteer");
                 });
 
             modelBuilder.Entity("StraniVari.Core.Entities.Event", b =>
@@ -1434,6 +1650,9 @@ namespace StraniVari.Database.Migrations
 
             modelBuilder.Entity("StraniVari.Core.Entities.User", b =>
                 {
+                    b.Navigation("Administrator")
+                        .IsRequired();
+
                     b.Navigation("Volunteer")
                         .IsRequired();
                 });

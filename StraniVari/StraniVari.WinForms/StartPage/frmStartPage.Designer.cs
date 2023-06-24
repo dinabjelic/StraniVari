@@ -1,6 +1,6 @@
-﻿namespace StraniVari.WinUI.Trip
+﻿namespace StraniVari.WinUI.StartPage
 {
-    partial class frmAddEditTrip
+    partial class frmStartPage
     {
         /// <summary>
         /// Required designer variable.
@@ -28,15 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            err = new ErrorProvider(components);
-            label1 = new Label();
-            txtPlace = new TextBox();
-            label2 = new Label();
-            dateTimePicker1 = new DateTimePicker();
-            btnTrip = new Button();
-            comboBox1 = new ComboBox();
-            label3 = new Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmStartPage));
             flowLayoutPanel1 = new FlowLayoutPanel();
             panel3 = new Panel();
             btnEvents = new Button();
@@ -46,84 +38,12 @@
             btnTrips = new Button();
             btnGames = new Button();
             btnReports = new Button();
-            btnLogout = new Button();
-            label4 = new Label();
+            pictureBox2 = new PictureBox();
+            label1 = new Label();
             lblName = new Label();
-            ((System.ComponentModel.ISupportInitialize)err).BeginInit();
             flowLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
-            // 
-            // err
-            // 
-            err.ContainerControl = this;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(722, 231);
-            label1.Margin = new Padding(2, 0, 2, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(44, 20);
-            label1.TabIndex = 16;
-            label1.Text = "Place";
-            // 
-            // txtPlace
-            // 
-            txtPlace.Location = new Point(823, 231);
-            txtPlace.Margin = new Padding(2);
-            txtPlace.Name = "txtPlace";
-            txtPlace.Size = new Size(285, 27);
-            txtPlace.TabIndex = 17;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(722, 298);
-            label2.Margin = new Padding(2, 0, 2, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(78, 20);
-            label2.TabIndex = 18;
-            label2.Text = "Date Time";
-            // 
-            // dateTimePicker1
-            // 
-            dateTimePicker1.Location = new Point(823, 291);
-            dateTimePicker1.Margin = new Padding(2);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(285, 27);
-            dateTimePicker1.TabIndex = 19;
-            // 
-            // btnTrip
-            // 
-            btnTrip.Cursor = Cursors.Hand;
-            btnTrip.Location = new Point(1018, 399);
-            btnTrip.Margin = new Padding(2);
-            btnTrip.Name = "btnTrip";
-            btnTrip.Size = new Size(90, 27);
-            btnTrip.TabIndex = 20;
-            btnTrip.Text = "Save";
-            btnTrip.UseVisualStyleBackColor = true;
-            btnTrip.Click += btnTrip_Click;
-            // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(823, 347);
-            comboBox1.Margin = new Padding(2);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(285, 28);
-            comboBox1.TabIndex = 21;
-            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(722, 355);
-            label3.Margin = new Padding(2, 0, 2, 0);
-            label3.Name = "label3";
-            label3.Size = new Size(45, 20);
-            label3.TabIndex = 79;
-            label3.Text = "Event";
             // 
             // flowLayoutPanel1
             // 
@@ -136,19 +56,18 @@
             flowLayoutPanel1.Controls.Add(btnTrips);
             flowLayoutPanel1.Controls.Add(btnGames);
             flowLayoutPanel1.Controls.Add(btnReports);
-            flowLayoutPanel1.Controls.Add(btnLogout);
             flowLayoutPanel1.Dock = DockStyle.Left;
             flowLayoutPanel1.Location = new Point(0, 0);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(389, 731);
-            flowLayoutPanel1.TabIndex = 80;
+            flowLayoutPanel1.Size = new Size(441, 731);
+            flowLayoutPanel1.TabIndex = 0;
             // 
             // panel3
             // 
             panel3.BackColor = SystemColors.GradientActiveCaption;
             panel3.Location = new Point(3, 3);
             panel3.Name = "panel3";
-            panel3.Size = new Size(428, 63);
+            panel3.Size = new Size(428, 111);
             panel3.TabIndex = 93;
             // 
             // btnEvents
@@ -157,9 +76,9 @@
             btnEvents.Cursor = Cursors.Hand;
             btnEvents.Font = new Font("Segoe Script", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnEvents.ForeColor = SystemColors.MenuText;
-            btnEvents.Location = new Point(3, 72);
+            btnEvents.Location = new Point(3, 120);
             btnEvents.Name = "btnEvents";
-            btnEvents.Size = new Size(386, 57);
+            btnEvents.Size = new Size(438, 76);
             btnEvents.TabIndex = 88;
             btnEvents.Text = "Events";
             btnEvents.UseVisualStyleBackColor = false;
@@ -170,9 +89,9 @@
             btnSchool.Cursor = Cursors.Hand;
             btnSchool.Font = new Font("Segoe Script", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnSchool.ForeColor = SystemColors.WindowText;
-            btnSchool.Location = new Point(3, 135);
+            btnSchool.Location = new Point(3, 202);
             btnSchool.Name = "btnSchool";
-            btnSchool.Size = new Size(386, 55);
+            btnSchool.Size = new Size(438, 75);
             btnSchool.TabIndex = 84;
             btnSchool.Text = "Schools";
             btnSchool.UseVisualStyleBackColor = false;
@@ -183,9 +102,9 @@
             btnUser.Cursor = Cursors.Hand;
             btnUser.Font = new Font("Segoe Script", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnUser.ForeColor = SystemColors.WindowText;
-            btnUser.Location = new Point(3, 196);
+            btnUser.Location = new Point(3, 283);
             btnUser.Name = "btnUser";
-            btnUser.Size = new Size(386, 53);
+            btnUser.Size = new Size(438, 75);
             btnUser.TabIndex = 85;
             btnUser.Text = "Users";
             btnUser.UseVisualStyleBackColor = false;
@@ -196,9 +115,9 @@
             btnMaterial.Cursor = Cursors.Hand;
             btnMaterial.Font = new Font("Segoe Script", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnMaterial.ForeColor = SystemColors.WindowText;
-            btnMaterial.Location = new Point(3, 255);
+            btnMaterial.Location = new Point(3, 364);
             btnMaterial.Name = "btnMaterial";
-            btnMaterial.Size = new Size(386, 48);
+            btnMaterial.Size = new Size(438, 75);
             btnMaterial.TabIndex = 87;
             btnMaterial.Text = "Materials";
             btnMaterial.UseVisualStyleBackColor = false;
@@ -209,13 +128,14 @@
             btnTrips.Cursor = Cursors.Hand;
             btnTrips.Font = new Font("Segoe Script", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnTrips.ForeColor = SystemColors.WindowText;
-            btnTrips.Location = new Point(0, 306);
+            btnTrips.Location = new Point(0, 442);
             btnTrips.Margin = new Padding(0);
             btnTrips.Name = "btnTrips";
-            btnTrips.Size = new Size(389, 58);
+            btnTrips.Size = new Size(441, 81);
             btnTrips.TabIndex = 91;
             btnTrips.Text = "Trips";
             btnTrips.UseVisualStyleBackColor = false;
+            btnTrips.Click += btnTrips_Click_1;
             // 
             // btnGames
             // 
@@ -223,9 +143,9 @@
             btnGames.Cursor = Cursors.Hand;
             btnGames.Font = new Font("Segoe Script", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnGames.ForeColor = SystemColors.WindowText;
-            btnGames.Location = new Point(3, 367);
+            btnGames.Location = new Point(3, 526);
             btnGames.Name = "btnGames";
-            btnGames.Size = new Size(386, 56);
+            btnGames.Size = new Size(438, 75);
             btnGames.TabIndex = 86;
             btnGames.Text = "Games";
             btnGames.UseVisualStyleBackColor = false;
@@ -236,91 +156,75 @@
             btnReports.Cursor = Cursors.Hand;
             btnReports.Font = new Font("Segoe Script", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             btnReports.ForeColor = SystemColors.WindowText;
-            btnReports.Location = new Point(3, 429);
+            btnReports.Location = new Point(3, 607);
             btnReports.Name = "btnReports";
-            btnReports.Size = new Size(386, 58);
+            btnReports.Size = new Size(438, 75);
             btnReports.TabIndex = 89;
             btnReports.Text = "Reports";
             btnReports.UseVisualStyleBackColor = false;
             // 
-            // btnLogout
+            // pictureBox2
             // 
-            btnLogout.BackColor = SystemColors.GradientActiveCaption;
-            btnLogout.Cursor = Cursors.Hand;
-            btnLogout.Font = new Font("Segoe Script", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnLogout.Location = new Point(3, 493);
-            btnLogout.Name = "btnLogout";
-            btnLogout.Size = new Size(386, 38);
-            btnLogout.TabIndex = 94;
-            btnLogout.Text = "Logout";
-            btnLogout.UseVisualStyleBackColor = false;
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(784, 168);
+            pictureBox2.Margin = new Padding(3, 4, 3, 4);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(515, 448);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 79;
+            pictureBox2.TabStop = false;
             // 
-            // label4
+            // label1
             // 
-            label4.BackColor = SystemColors.ActiveCaptionText;
-            label4.Location = new Point(1459, 7);
-            label4.Name = "label4";
-            label4.Size = new Size(1, 25);
-            label4.TabIndex = 82;
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe Script", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(504, 124);
+            label1.Name = "label1";
+            label1.Size = new Size(125, 50);
+            label1.TabIndex = 82;
+            label1.Text = "Hello, ";
             // 
             // lblName
             // 
             lblName.AutoSize = true;
-            lblName.BackColor = SystemColors.ButtonHighlight;
-            lblName.Font = new Font("Segoe UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
-            lblName.Location = new Point(1466, 9);
+            lblName.Font = new Font("Segoe Script", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            lblName.Location = new Point(618, 124);
             lblName.Name = "lblName";
-            lblName.Size = new Size(43, 17);
-            lblName.TabIndex = 81;
-            lblName.Text = "label1";
+            lblName.Size = new Size(120, 50);
+            lblName.TabIndex = 83;
+            lblName.Text = "label2";
             // 
-            // frmAddEditTrip
+            // frmStartPage
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ButtonHighlight;
             ClientSize = new Size(1638, 731);
-            Controls.Add(label4);
             Controls.Add(lblName);
-            Controls.Add(flowLayoutPanel1);
-            Controls.Add(label3);
-            Controls.Add(comboBox1);
-            Controls.Add(btnTrip);
-            Controls.Add(dateTimePicker1);
-            Controls.Add(label2);
-            Controls.Add(txtPlace);
             Controls.Add(label1);
-            Margin = new Padding(2);
-            Name = "frmAddEditTrip";
+            Controls.Add(pictureBox2);
+            Controls.Add(flowLayoutPanel1);
+            Name = "frmStartPage";
             StartPosition = FormStartPosition.CenterScreen;
-            Load += frmAddEditTrip_Load;
-            ((System.ComponentModel.ISupportInitialize)err).EndInit();
+            Load += frmStartPage_Load;
             flowLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-        private ErrorProvider err;
-        private TextBox txtPlace;
-        private Label label1;
-        private Button btnTrip;
-        private DateTimePicker dateTimePicker1;
-        private Label label2;
-        private ComboBox comboBox1;
-        private PictureBox pictureBox2;
-        private Label label3;
+
         private FlowLayoutPanel flowLayoutPanel1;
-        private Panel panel3;
-        private Button btnEvents;
+        private PictureBox pictureBox2;
+        private Label label1;
+        private Label lblName;
         private Button btnSchool;
         private Button btnUser;
-        private Button btnMaterial;
-        private Button btnTrips;
         private Button btnGames;
+        private Button btnMaterial;
+        private Button btnEvents;
+        private Button btnTrips;
         private Button btnReports;
-        private Button btnLogout;
-        private Label label4;
-        private Label lblName;
+        private Panel panel3;
     }
 }

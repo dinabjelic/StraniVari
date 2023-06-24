@@ -21,6 +21,7 @@ namespace StraniVari.API.StartupExtensions
             services.AddScoped<ITripService, TripService>();
             services.AddScoped<IVolunteerTripService, VolunteerTripService>();
             services.AddScoped<ITripStatusService, TripStatusService>();
+            services.AddScoped<IAdministratorService, AdministratorService>();
 
             return services;
         }

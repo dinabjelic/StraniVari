@@ -26,6 +26,8 @@ namespace StraniVari.Database
         public DbSet<VolunteerTrip> VolunteerTrip { get; set; }
         public DbSet<TripStatus> TripStatuses { get; set; }
         public DbSet<Trip> Trips { get; set; }
+        public DbSet<Administrator> Administrators { get; set; }
+
 
 
 
@@ -38,6 +40,11 @@ namespace StraniVari.Database
                 .WithOne(u => u.User)
                 .HasForeignKey<Volunteer>(u => u.Id);
 
+            modelBuilder.Entity<User>()
+               .HasOne(v => v.Administrator)
+               .WithOne(u => u.User)
+               .HasForeignKey<Administrator>(u => u.Id);
+
             modelBuilder.SeedGames();
             modelBuilder.SeedEvent();
             modelBuilder.SeedEventSchool();
@@ -49,6 +56,7 @@ namespace StraniVari.Database
             modelBuilder.SeedSchoolVolunteers();
             modelBuilder.SeedUserInformation();
             modelBuilder.SeedVolunteers();
+            modelBuilder.SeedAdministrators();
             modelBuilder.SeedRoles();
             modelBuilder.SeedUserRoles();
             modelBuilder.SeedTrips();

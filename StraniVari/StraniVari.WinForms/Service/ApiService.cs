@@ -1,4 +1,5 @@
 ﻿using Flurl.Http;
+using System.IdentityModel.Tokens.Jwt;
 
 namespace StraniVari.WinUI.Service
 {
@@ -138,6 +139,20 @@ namespace StraniVari.WinUI.Service
             {
                 HandleError(ex);
                 return default(T);
+            }
+        }
+
+        public async void ShowEmail(Label lblName)
+        {
+            var stream = ApiService.Token;
+            var handler = new JwtSecurityTokenHandler();
+            var jsonToken = handler.ReadJwtToken(stream);
+
+            string email = jsonToken.Claims.First(claim => claim.Type == "email").Value;
+            if (!string.IsNullOrEmpty(email))
+            {
+                email = email.Substring(0, 1).ToLower() + email.Substring(1);
+                lblName.Text = email; // Set the email value to the label's Text property
             }
         }
     }

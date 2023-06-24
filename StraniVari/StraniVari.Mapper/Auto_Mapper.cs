@@ -54,6 +54,9 @@ namespace StraniVari.Mapper
             CreateMap<TripStatus, GetStatusResponse>().ReverseMap();
 
             CreateMap<VolunteerTrip, VolunteerTripUpdateRequest>().ReverseMap();
+
+            CreateMap<Administrator, AdministratorUpSertRequest>().ReverseMap();
+            CreateMap<Administrator, GetAdministratorDetailsResponse>().ReverseMap();
         }
     }
 }
