@@ -62,7 +62,6 @@ namespace StraniVari.WinUI.Trip
 
         private async void frmAddEditTrip_Load(object sender, EventArgs e)
         {
-            _apiService.ShowEmail(lblName);
             if (selectedTrip != null)
             {
                 txtPlace.Text = selectedTrip.Place;

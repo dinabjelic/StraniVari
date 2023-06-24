@@ -1,4 +1,5 @@
-﻿using StraniVari.WinUI.Service;
+﻿using StraniVari.WinUI.Material;
+using StraniVari.WinUI.Service;
 using StraniVari.WinUI.Trip;
 using System.IdentityModel.Tokens.Jwt;
 
@@ -30,6 +31,17 @@ namespace StraniVari.WinUI.StartPage
         {
             frmTripTabs frmTripTabs = new frmTripTabs();
             frmTripTabs.Show();
+        }
+
+        private void btnMaterial_Click(object sender, EventArgs e)
+        {
+            frmAllMaterial frmAllMaterial = new frmAllMaterial();
+            frmAllMaterial.Show();
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

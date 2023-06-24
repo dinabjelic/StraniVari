@@ -15,7 +15,7 @@ namespace StraniVari.WinUI.Trip
 
         public async void frmTripTabs_Load(object sender, EventArgs e)
         {
-            _apiService.ShowEmail(lblName);
+
 
             dgvTrip.AutoGenerateColumns = false;
             var result = await _apiService.Get<dynamic>();
@@ -65,6 +65,16 @@ namespace StraniVari.WinUI.Trip
         {
             frmAddEditTrip frmAddEditTrip = new frmAddEditTrip();
             frmAddEditTrip.ShowDialog();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnMaterial_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

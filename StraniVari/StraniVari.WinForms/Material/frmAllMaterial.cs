@@ -30,12 +30,12 @@ namespace StraniVari.WinUI.Material
             var selectedMaterial = JsonConvert.DeserializeObject<GetMaterialDetailsResponse>(dgvMaterial.SelectedRows[0].DataBoundItem.ToString());
             if (selectedMaterial != null)
             {
+                //if (e.ColumnIndex == 2)
+                //{
+                //    frmAddEditMaterial frmAddEditMaterial = new frmAddEditMaterial(selectedMaterial);
+                //    frmAddEditMaterial.ShowDialog();
+                //}
                 if (e.ColumnIndex == 2)
-                {
-                    frmAddEditMaterial frmAddEditMaterial = new frmAddEditMaterial(selectedMaterial);
-                    frmAddEditMaterial.ShowDialog();
-                }
-                else if (e.ColumnIndex == 3)
                 {
 
                     var confirmation = MessageBox.Show("You are about to delete this item!", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
@@ -51,6 +51,23 @@ namespace StraniVari.WinUI.Material
                     }
                 }
             }
+        }
+
+        private async void dgvMaterial_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            var id = dgvMaterial.SelectedRows[0].Cells[0].Value;
+            var selectedTrip = await _apiService.GetById<List<GetMaterialDetailsResponse>>(id);
+            if (selectedTrip != null)
+            {
+                frmAddEditMaterial frmAddEditTrip = new frmAddEditMaterial(selectedTrip[0]);
+                frmAddEditTrip.ShowDialog();
+            }
+        }
+
+        private void btnAddMat_Click(object sender, EventArgs e)
+        {
+            frmAddEditMaterial frmAddEditMaterial = new frmAddEditMaterial();
+            frmAddEditMaterial.ShowDialog();
         }
     }
 }

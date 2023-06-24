@@ -1,13 +1,13 @@
-﻿namespace StraniVari.WinUI.StartPage
+﻿namespace StraniVari.WinUI.Material
 {
-    partial class frmStartPage
+    partial class SideBar
     {
-        /// <summary>
+        /// <summary> 
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
+        /// <summary> 
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
@@ -20,17 +20,19 @@
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
+        #region Component Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
+        /// <summary> 
+        /// Required method for Designer support - do not modify 
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmStartPage));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SideBar));
             flowLayoutPanel1 = new FlowLayoutPanel();
             panel3 = new Panel();
+            pictureBox1 = new PictureBox();
+            lblName = new Label();
             btnEvents = new Button();
             btnSchool = new Button();
             btnUser = new Button();
@@ -45,21 +47,17 @@
             panel5 = new Panel();
             button3 = new Button();
             button4 = new Button();
-            btnLogout = new Button();
-            pictureBox2 = new PictureBox();
-            label1 = new Label();
-            lblName = new Label();
             flowLayoutPanel1.SuspendLayout();
+            panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel4.SuspendLayout();
             panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // flowLayoutPanel1
             // 
-            flowLayoutPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             flowLayoutPanel1.BackColor = SystemColors.GradientActiveCaption;
             flowLayoutPanel1.Controls.Add(panel3);
             flowLayoutPanel1.Controls.Add(btnEvents);
@@ -71,18 +69,43 @@
             flowLayoutPanel1.Controls.Add(btnReports);
             flowLayoutPanel1.Controls.Add(panel1);
             flowLayoutPanel1.Controls.Add(panel4);
+            flowLayoutPanel1.Dock = DockStyle.Left;
             flowLayoutPanel1.Location = new Point(0, 0);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(388, 677);
-            flowLayoutPanel1.TabIndex = 0;
+            flowLayoutPanel1.Size = new Size(388, 914);
+            flowLayoutPanel1.TabIndex = 48;
             // 
             // panel3
             // 
             panel3.BackColor = SystemColors.GradientActiveCaption;
+            panel3.Controls.Add(pictureBox1);
+            panel3.Controls.Add(lblName);
             panel3.Location = new Point(3, 3);
             panel3.Name = "panel3";
             panel3.Size = new Size(385, 106);
             panel3.TabIndex = 93;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(139, 9);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(106, 65);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
+            // 
+            // lblName
+            // 
+            lblName.BackColor = SystemColors.GradientActiveCaption;
+            lblName.Font = new Font("Segoe UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
+            lblName.Location = new Point(9, 77);
+            lblName.Name = "lblName";
+            lblName.Size = new Size(376, 17);
+            lblName.TabIndex = 4;
+            lblName.Text = "name.lastname@gmail.com";
+            lblName.TextAlign = ContentAlignment.MiddleCenter;
+            lblName.Click += lblName_Click;
             // 
             // btnEvents
             // 
@@ -150,7 +173,7 @@
             btnTrips.TabIndex = 91;
             btnTrips.Text = "Trips";
             btnTrips.UseVisualStyleBackColor = false;
-            btnTrips.Click += btnTrips_Click_1;
+            btnTrips.Click += btnTrips_Click;
             // 
             // btnGames
             // 
@@ -219,7 +242,6 @@
             panel4.Name = "panel4";
             panel4.Size = new Size(385, 49);
             panel4.TabIndex = 96;
-            panel4.Paint += panel4_Paint;
             // 
             // panel5
             // 
@@ -258,91 +280,40 @@
             button4.Text = "Logout";
             button4.UseVisualStyleBackColor = false;
             // 
-            // btnLogout
-            // 
-            btnLogout.BackColor = Color.FromArgb(255, 192, 192);
-            btnLogout.Cursor = Cursors.Hand;
-            btnLogout.Font = new Font("Segoe Script", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-            btnLogout.ForeColor = SystemColors.WindowText;
-            btnLogout.Location = new Point(3, 500);
-            btnLogout.Name = "btnLogout";
-            btnLogout.Size = new Size(385, 54);
-            btnLogout.TabIndex = 94;
-            btnLogout.Text = "Logout";
-            btnLogout.UseVisualStyleBackColor = false;
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(539, 62);
-            pictureBox2.Margin = new Padding(3, 4, 3, 4);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(515, 448);
-            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox2.TabIndex = 79;
-            pictureBox2.TabStop = false;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe Script", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(437, 90);
-            label1.Name = "label1";
-            label1.Size = new Size(125, 50);
-            label1.TabIndex = 82;
-            label1.Text = "Hello, ";
-            // 
-            // lblName
-            // 
-            lblName.AutoSize = true;
-            lblName.Font = new Font("Segoe Script", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            lblName.Location = new Point(539, 90);
-            lblName.Name = "lblName";
-            lblName.Size = new Size(120, 50);
-            lblName.TabIndex = 83;
-            lblName.Text = "label2";
-            // 
-            // frmStartPage
+            // SideBar
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1146, 677);
-            Controls.Add(lblName);
-            Controls.Add(label1);
-            Controls.Add(pictureBox2);
             Controls.Add(flowLayoutPanel1);
-            Controls.Add(btnLogout);
-            Name = "frmStartPage";
-            StartPosition = FormStartPosition.CenterScreen;
-            Load += frmStartPage_Load;
+            Name = "SideBar";
+            Size = new Size(389, 914);
+            Load += SideBar_Load;
             flowLayoutPanel1.ResumeLayout(false);
+            panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel4.ResumeLayout(false);
             panel5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
         private FlowLayoutPanel flowLayoutPanel1;
-        private PictureBox pictureBox2;
-        private Label label1;
+        private Panel panel3;
+        private PictureBox pictureBox1;
         private Label lblName;
+        private Button btnEvents;
         private Button btnSchool;
         private Button btnUser;
-        private Button btnGames;
         private Button btnMaterial;
-        private Button btnEvents;
         private Button btnTrips;
-        private Panel panel3;
-        private Button button1;
-        private Button btnLogout;
-        private Panel panel1;
+        private Button btnGames;
         private Button btnReports;
+        private Panel panel1;
         private Panel panel2;
+        private Button button1;
         private Panel panel4;
         private Panel panel5;
         private Button button3;
