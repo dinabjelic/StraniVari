@@ -51,6 +51,7 @@
             StartDate = new DataGridViewTextBoxColumn();
             EndDate = new DataGridViewTextBoxColumn();
             Option = new DataGridViewButtonColumn();
+            Action = new DataGridViewButtonColumn();
             tabControl1.SuspendLayout();
             tabPage2.SuspendLayout();
             groupBox2.SuspendLayout();
@@ -88,7 +89,7 @@
             // 
             btnAdd.BackColor = Color.Snow;
             btnAdd.Cursor = Cursors.Hand;
-            btnAdd.Location = new Point(766, 38);
+            btnAdd.Location = new Point(887, 37);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(122, 29);
             btnAdd.TabIndex = 44;
@@ -101,7 +102,7 @@
             groupBox2.Controls.Add(dgvPlanAndProgramme);
             groupBox2.Location = new Point(122, 59);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(766, 334);
+            groupBox2.Size = new Size(887, 334);
             groupBox2.TabIndex = 43;
             groupBox2.TabStop = false;
             // 
@@ -111,7 +112,7 @@
             dgvPlanAndProgramme.AllowUserToDeleteRows = false;
             dgvPlanAndProgramme.BackgroundColor = SystemColors.ButtonHighlight;
             dgvPlanAndProgramme.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvPlanAndProgramme.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, StartDate, EndDate, Option });
+            dgvPlanAndProgramme.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, StartDate, EndDate, Option, Action });
             dgvPlanAndProgramme.Cursor = Cursors.Hand;
             dgvPlanAndProgramme.Dock = DockStyle.Fill;
             dgvPlanAndProgramme.Location = new Point(3, 23);
@@ -120,7 +121,7 @@
             dgvPlanAndProgramme.RowHeadersWidth = 51;
             dgvPlanAndProgramme.RowTemplate.Height = 29;
             dgvPlanAndProgramme.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvPlanAndProgramme.Size = new Size(760, 308);
+            dgvPlanAndProgramme.Size = new Size(881, 308);
             dgvPlanAndProgramme.TabIndex = 0;
             dgvPlanAndProgramme.CellContentClick += dgvPlanAndProgramme_CellContentClick;
             dgvPlanAndProgramme.CellMouseDoubleClick += dgvPlanAndProgramme_CellMouseDoubleClick;
@@ -315,6 +316,19 @@
             Option.UseColumnTextForButtonValue = true;
             Option.Width = 220;
             // 
+            // Action
+            // 
+            Action.HeaderText = "Action";
+            Action.MinimumWidth = 6;
+            Action.Name = "Action";
+            Action.ReadOnly = true;
+            Action.Resizable = DataGridViewTriState.True;
+            Action.SortMode = DataGridViewColumnSortMode.Automatic;
+            Action.Text = "Delete";
+            Action.ToolTipText = "Delete";
+            Action.UseColumnTextForButtonValue = true;
+            Action.Width = 125;
+            // 
             // frmEventTabs
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -360,5 +374,6 @@
         private DataGridViewTextBoxColumn StartDate;
         private DataGridViewTextBoxColumn EndDate;
         private DataGridViewButtonColumn Option;
+        private DataGridViewButtonColumn Action;
     }
 }

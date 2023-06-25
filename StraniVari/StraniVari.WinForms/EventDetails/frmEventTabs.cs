@@ -9,6 +9,7 @@ namespace StraniVari.WinUI.EventDetails
     public partial class frmEventTabs : Form
     {
         ApiService _apiService = new ApiService("PlanAndProgramme/planAndProgramme");
+        ApiService _apiServiceDelete = new ApiService("PlanAndProgramme");
         private EventUpsertRequest selectedEvent;
 
         public frmEventTabs(EventUpsertRequest selectedEvent)
@@ -29,7 +30,7 @@ namespace StraniVari.WinUI.EventDetails
             dgvPlanAndProgramme.DataSource = result;
         }
 
-        private void dgvPlanAndProgramme_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private async void dgvPlanAndProgramme_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             var selectedPlan = dgvPlanAndProgramme.SelectedRows[0].DataBoundItem as GetPlanAndProgrameResposnse;
 
@@ -42,6 +43,20 @@ namespace StraniVari.WinUI.EventDetails
 
                     frmActivities frmActivities = new frmActivities(selectedPlan, selectedEvent);
                     frmActivities.ShowDialog();
+                }
+                else if (e.ColumnIndex == 4)
+                {
+                    var confirmation = MessageBox.Show("You are about to delete this item!", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                    if (confirmation == DialogResult.No)
+                    {
+                        frmAllPlanAndProgramme_Load(sender, e);
+                    }
+                    else
+                    {
+                        await _apiServiceDelete.Delete<ResponseResult>(selectedPlan.Id);
+                        frmAllPlanAndProgramme_Load(sender, e);
+                    }
                 }
                 //else if (e.ColumnIndex == 4)
                 //{
