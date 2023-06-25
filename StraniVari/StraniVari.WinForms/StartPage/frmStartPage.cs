@@ -1,4 +1,5 @@
-﻿using StraniVari.WinUI.Games;
+﻿using StraniVari.WinUI.Admin;
+using StraniVari.WinUI.Games;
 using StraniVari.WinUI.Material;
 using StraniVari.WinUI.SchoolDetails;
 using StraniVari.WinUI.Service;
@@ -51,6 +52,12 @@ namespace StraniVari.WinUI.StartPage
         {
             frmGames frmGames = new frmGames();
             frmGames.Show();
+        }
+
+        private void btnUser_Click(object sender, EventArgs e)
+        {
+            frmUsersTab frmUsersTab = new frmUsersTab();
+            frmUsersTab.Show();
         }
     }
 }

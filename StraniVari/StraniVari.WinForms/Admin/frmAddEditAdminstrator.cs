@@ -1,39 +1,38 @@
 ﻿using StraniVari.Common.Constants;
 using StraniVari.Core.Requests;
 using StraniVari.Core.Responses;
-using StraniVari.WinUI.Admin;
 using StraniVari.WinUI.Service;
 
-namespace StraniVari.WinUI.Volunteers
+namespace StraniVari.WinUI.Admin
 {
-    public partial class frmAddEditVolunteer : Form
+    public partial class frmAddEditAdminstrator : Form
     {
-        ApiService _apiService = new ApiService("Volunteers");
-        public GetVolunteerDetailsResposne SelectedVolunteer { get; }
-        public frmAddEditVolunteer(GetVolunteerDetailsResposne selectedVolunteers = null)
+        ApiService _apiService = new ApiService("Administrator");
+        private GetAdministratorDetailsResponse selectedAdmin;
+        public frmAddEditAdminstrator(GetAdministratorDetailsResponse selectedAdmin=null)
         {
             InitializeComponent();
-            SelectedVolunteer = selectedVolunteers;
+            this.selectedAdmin = selectedAdmin;
         }
 
-        private void frmAddEditVolunteer_Load(object sender, EventArgs e)
+        private void frmAddEditAdminstrator_Load(object sender, EventArgs e)
         {
-            if (SelectedVolunteer != null)
+            if (selectedAdmin != null)
             {
-                txtFirstName.Text = SelectedVolunteer.FirstName;
-                txtLastName.Text = SelectedVolunteer.LastName;
-                txtVolunteerCity.Text = SelectedVolunteer.City;
-                txtVolunteerAddress.Text = SelectedVolunteer.Address;
-                dtpBirth.Value = SelectedVolunteer.DateOfBirth;
-                txtUsername.Text = SelectedVolunteer.Username;
+                txtFirstName.Text = selectedAdmin.FirstName;
+                txtLastName.Text = selectedAdmin.LastName;
+                txtVolunteerCity.Text = selectedAdmin.City;
+                txtVolunteerAddress.Text = selectedAdmin.Address;
+                dtpBirth.Value = selectedAdmin.DateOfBirth;
+                txtUsername.Text = selectedAdmin.Username;
             }
         }
 
-        private async void btnEditVolunteerDetails_Click(object sender, EventArgs e)
+        private async void btnEditAdministratorDetails_Click(object sender, EventArgs e)
         {
             if (ValidateEntry())
             {
-                var volunteer = new VolunteerUpSertRequest
+                var administrator = new AdministratorUpSertRequest
                 {
                     FirstName = txtFirstName.Text,
                     LastName = txtLastName.Text,
@@ -44,14 +43,14 @@ namespace StraniVari.WinUI.Volunteers
                     Password = txtPassword.Text
                 };
 
-                if (SelectedVolunteer == null)
+                if (selectedAdmin == null)
                 {
-                    await _apiService.Insert<ResponseResult>(volunteer);
-                    MessageBox.Show("Volunteer successfully added.", "Infomation", MessageBoxButtons.OK);
+                    await _apiService.Insert<ResponseResult>(administrator);
+                    MessageBox.Show("Administrator successfully added.", "Infomation", MessageBoxButtons.OK);
                 }
                 else
                 {
-                    await _apiService.Update<ResponseResult>(volunteer, SelectedVolunteer.Id);
+                    await _apiService.Update<ResponseResult>(administrator, selectedAdmin.Id);
                     MessageBox.Show("Details successfully updated.", "Infomation", MessageBoxButtons.OK);
                 }
                 this.DialogResult = DialogResult.OK;
@@ -59,8 +58,7 @@ namespace StraniVari.WinUI.Volunteers
             }
 
             var principalForm = Application.OpenForms.OfType<frmUsersTab>().FirstOrDefault();
-            principalForm.frmAllVolunteers_Load(sender, e);
-
+            principalForm.frmAllAdmins_Load(sender, e);
         }
 
         private bool ValidateEntry()

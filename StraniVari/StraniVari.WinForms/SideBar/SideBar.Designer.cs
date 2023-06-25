@@ -145,6 +145,7 @@
             btnUser.TabIndex = 85;
             btnUser.Text = "Users";
             btnUser.UseVisualStyleBackColor = false;
+            btnUser.Click += btnUser_Click;
             // 
             // btnMaterial
             // 
