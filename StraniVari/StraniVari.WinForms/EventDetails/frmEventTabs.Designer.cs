@@ -33,6 +33,11 @@
             btnAdd = new Button();
             groupBox2 = new GroupBox();
             dgvPlanAndProgramme = new DataGridView();
+            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
+            StartDate = new DataGridViewTextBoxColumn();
+            EndDate = new DataGridViewTextBoxColumn();
+            Option = new DataGridViewButtonColumn();
+            Action = new DataGridViewButtonColumn();
             tabPage1 = new TabPage();
             btnNotification = new Button();
             groupBox1 = new GroupBox();
@@ -43,15 +48,16 @@
             Address = new DataGridViewTextBoxColumn();
             City = new DataGridViewTextBoxColumn();
             MeetingDate = new DataGridViewTextBoxColumn();
-            btnEdit = new DataGridViewButtonColumn();
             btnDelete = new DataGridViewButtonColumn();
             tabPage3 = new TabPage();
+            groupBox3 = new GroupBox();
+            dgvApplications = new DataGridView();
+            dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
+            VolunteerName = new DataGridViewTextBoxColumn();
+            LastName = new DataGridViewTextBoxColumn();
+            Status = new DataGridViewTextBoxColumn();
+            label3 = new Label();
             tabPage4 = new TabPage();
-            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
-            StartDate = new DataGridViewTextBoxColumn();
-            EndDate = new DataGridViewTextBoxColumn();
-            Option = new DataGridViewButtonColumn();
-            Action = new DataGridViewButtonColumn();
             tabControl1.SuspendLayout();
             tabPage2.SuspendLayout();
             groupBox2.SuspendLayout();
@@ -59,6 +65,9 @@
             tabPage1.SuspendLayout();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvNotifications).BeginInit();
+            tabPage3.SuspendLayout();
+            groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvApplications).BeginInit();
             SuspendLayout();
             // 
             // tabControl1
@@ -126,6 +135,60 @@
             dgvPlanAndProgramme.CellContentClick += dgvPlanAndProgramme_CellContentClick;
             dgvPlanAndProgramme.CellMouseDoubleClick += dgvPlanAndProgramme_CellMouseDoubleClick;
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            dataGridViewTextBoxColumn1.DataPropertyName = "Id";
+            dataGridViewTextBoxColumn1.HeaderText = "Id";
+            dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            dataGridViewTextBoxColumn1.ReadOnly = true;
+            dataGridViewTextBoxColumn1.Visible = false;
+            dataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // StartDate
+            // 
+            StartDate.DataPropertyName = "StartDate";
+            StartDate.HeaderText = "Start Date";
+            StartDate.MinimumWidth = 6;
+            StartDate.Name = "StartDate";
+            StartDate.ReadOnly = true;
+            StartDate.Width = 240;
+            // 
+            // EndDate
+            // 
+            EndDate.DataPropertyName = "EndDate";
+            EndDate.HeaderText = "End Date";
+            EndDate.MinimumWidth = 6;
+            EndDate.Name = "EndDate";
+            EndDate.ReadOnly = true;
+            EndDate.Width = 240;
+            // 
+            // Option
+            // 
+            Option.HeaderText = "Activities";
+            Option.MinimumWidth = 6;
+            Option.Name = "Option";
+            Option.ReadOnly = true;
+            Option.Resizable = DataGridViewTriState.True;
+            Option.SortMode = DataGridViewColumnSortMode.Automatic;
+            Option.Text = "Activities";
+            Option.ToolTipText = "Activities";
+            Option.UseColumnTextForButtonValue = true;
+            Option.Width = 220;
+            // 
+            // Action
+            // 
+            Action.HeaderText = "Action";
+            Action.MinimumWidth = 6;
+            Action.Name = "Action";
+            Action.ReadOnly = true;
+            Action.Resizable = DataGridViewTriState.True;
+            Action.SortMode = DataGridViewColumnSortMode.Automatic;
+            Action.Text = "Delete";
+            Action.ToolTipText = "Delete";
+            Action.UseColumnTextForButtonValue = true;
+            Action.Width = 125;
+            // 
             // tabPage1
             // 
             tabPage1.Controls.Add(btnNotification);
@@ -142,19 +205,20 @@
             // 
             btnNotification.BackColor = Color.White;
             btnNotification.Cursor = Cursors.Hand;
-            btnNotification.Location = new Point(926, 64);
+            btnNotification.Location = new Point(879, 74);
             btnNotification.Name = "btnNotification";
             btnNotification.Size = new Size(158, 29);
             btnNotification.TabIndex = 19;
             btnNotification.Text = "Add notification";
             btnNotification.UseVisualStyleBackColor = false;
+            btnNotification.Click += btnNotification_Click;
             // 
             // groupBox1
             // 
             groupBox1.Controls.Add(dgvNotifications);
-            groupBox1.Location = new Point(6, 99);
+            groupBox1.Location = new Point(46, 98);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(1081, 262);
+            groupBox1.Size = new Size(991, 262);
             groupBox1.TabIndex = 18;
             groupBox1.TabStop = false;
             // 
@@ -164,7 +228,7 @@
             dgvNotifications.AllowUserToDeleteRows = false;
             dgvNotifications.BackgroundColor = SystemColors.ButtonHighlight;
             dgvNotifications.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvNotifications.Columns.AddRange(new DataGridViewColumn[] { Id, MeetingTheme, MeetingPlace, Address, City, MeetingDate, btnEdit, btnDelete });
+            dgvNotifications.Columns.AddRange(new DataGridViewColumn[] { Id, MeetingTheme, MeetingPlace, Address, City, MeetingDate, btnDelete });
             dgvNotifications.Cursor = Cursors.Hand;
             dgvNotifications.Dock = DockStyle.Fill;
             dgvNotifications.Location = new Point(3, 23);
@@ -173,8 +237,10 @@
             dgvNotifications.RowHeadersWidth = 51;
             dgvNotifications.RowTemplate.Height = 29;
             dgvNotifications.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvNotifications.Size = new Size(1075, 236);
+            dgvNotifications.Size = new Size(985, 236);
             dgvNotifications.TabIndex = 0;
+            dgvNotifications.CellContentClick += dgvNotifications_CellContentClick;
+            dgvNotifications.CellMouseDoubleClick += dgvNotifications_CellMouseDoubleClick;
             // 
             // Id
             // 
@@ -231,19 +297,6 @@
             MeetingDate.ReadOnly = true;
             MeetingDate.Width = 135;
             // 
-            // btnEdit
-            // 
-            btnEdit.HeaderText = "Options";
-            btnEdit.MinimumWidth = 6;
-            btnEdit.Name = "btnEdit";
-            btnEdit.ReadOnly = true;
-            btnEdit.Resizable = DataGridViewTriState.True;
-            btnEdit.SortMode = DataGridViewColumnSortMode.Automatic;
-            btnEdit.Text = "Edit";
-            btnEdit.ToolTipText = "Edit";
-            btnEdit.UseColumnTextForButtonValue = true;
-            btnEdit.Width = 90;
-            // 
             // btnDelete
             // 
             btnDelete.HeaderText = "Options";
@@ -257,6 +310,8 @@
             // 
             // tabPage3
             // 
+            tabPage3.Controls.Add(groupBox3);
+            tabPage3.Controls.Add(label3);
             tabPage3.Location = new Point(4, 29);
             tabPage3.Name = "tabPage3";
             tabPage3.Padding = new Padding(3);
@@ -264,6 +319,83 @@
             tabPage3.TabIndex = 2;
             tabPage3.Text = "Applications";
             tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // groupBox3
+            // 
+            groupBox3.Controls.Add(dgvApplications);
+            groupBox3.Location = new Point(194, 20);
+            groupBox3.Margin = new Padding(3, 4, 3, 4);
+            groupBox3.Name = "groupBox3";
+            groupBox3.Padding = new Padding(3, 4, 3, 4);
+            groupBox3.Size = new Size(725, 376);
+            groupBox3.TabIndex = 37;
+            groupBox3.TabStop = false;
+            // 
+            // dgvApplications
+            // 
+            dgvApplications.AllowUserToAddRows = false;
+            dgvApplications.AllowUserToDeleteRows = false;
+            dgvApplications.BackgroundColor = SystemColors.ButtonHighlight;
+            dgvApplications.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvApplications.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn2, VolunteerName, LastName, Status });
+            dgvApplications.Cursor = Cursors.Hand;
+            dgvApplications.Dock = DockStyle.Fill;
+            dgvApplications.Location = new Point(3, 24);
+            dgvApplications.Margin = new Padding(3, 4, 3, 4);
+            dgvApplications.Name = "dgvApplications";
+            dgvApplications.ReadOnly = true;
+            dgvApplications.RowHeadersWidth = 51;
+            dgvApplications.RowTemplate.Height = 24;
+            dgvApplications.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvApplications.Size = new Size(719, 348);
+            dgvApplications.TabIndex = 0;
+            dgvApplications.CellMouseDoubleClick += dgvApplications_CellMouseDoubleClick;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            dataGridViewTextBoxColumn2.DataPropertyName = "id";
+            dataGridViewTextBoxColumn2.HeaderText = "Id";
+            dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            dataGridViewTextBoxColumn2.ReadOnly = true;
+            dataGridViewTextBoxColumn2.Visible = false;
+            dataGridViewTextBoxColumn2.Width = 125;
+            // 
+            // VolunteerName
+            // 
+            VolunteerName.DataPropertyName = "VolunteerName";
+            VolunteerName.HeaderText = "First name";
+            VolunteerName.MinimumWidth = 6;
+            VolunteerName.Name = "VolunteerName";
+            VolunteerName.ReadOnly = true;
+            VolunteerName.Width = 220;
+            // 
+            // LastName
+            // 
+            LastName.DataPropertyName = "VolunteerLastName";
+            LastName.HeaderText = "Last name";
+            LastName.MinimumWidth = 8;
+            LastName.Name = "LastName";
+            LastName.ReadOnly = true;
+            LastName.Width = 220;
+            // 
+            // Status
+            // 
+            Status.DataPropertyName = "status";
+            Status.HeaderText = "Status";
+            Status.MinimumWidth = 8;
+            Status.Name = "Status";
+            Status.ReadOnly = true;
+            Status.Width = 220;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.BackColor = SystemColors.MenuText;
+            label3.Location = new Point(194, 124);
+            label3.Name = "label3";
+            label3.Size = new Size(0, 20);
+            label3.TabIndex = 36;
             // 
             // tabPage4
             // 
@@ -274,60 +406,6 @@
             tabPage4.TabIndex = 3;
             tabPage4.Text = "EventSchools";
             tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            dataGridViewTextBoxColumn1.DataPropertyName = "Id";
-            dataGridViewTextBoxColumn1.HeaderText = "Id";
-            dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            dataGridViewTextBoxColumn1.ReadOnly = true;
-            dataGridViewTextBoxColumn1.Visible = false;
-            dataGridViewTextBoxColumn1.Width = 125;
-            // 
-            // StartDate
-            // 
-            StartDate.DataPropertyName = "StartDate";
-            StartDate.HeaderText = "Start Date";
-            StartDate.MinimumWidth = 6;
-            StartDate.Name = "StartDate";
-            StartDate.ReadOnly = true;
-            StartDate.Width = 240;
-            // 
-            // EndDate
-            // 
-            EndDate.DataPropertyName = "EndDate";
-            EndDate.HeaderText = "End Date";
-            EndDate.MinimumWidth = 6;
-            EndDate.Name = "EndDate";
-            EndDate.ReadOnly = true;
-            EndDate.Width = 240;
-            // 
-            // Option
-            // 
-            Option.HeaderText = "Activities";
-            Option.MinimumWidth = 6;
-            Option.Name = "Option";
-            Option.ReadOnly = true;
-            Option.Resizable = DataGridViewTriState.True;
-            Option.SortMode = DataGridViewColumnSortMode.Automatic;
-            Option.Text = "Activities";
-            Option.ToolTipText = "Activities";
-            Option.UseColumnTextForButtonValue = true;
-            Option.Width = 220;
-            // 
-            // Action
-            // 
-            Action.HeaderText = "Action";
-            Action.MinimumWidth = 6;
-            Action.Name = "Action";
-            Action.ReadOnly = true;
-            Action.Resizable = DataGridViewTriState.True;
-            Action.SortMode = DataGridViewColumnSortMode.Automatic;
-            Action.Text = "Delete";
-            Action.ToolTipText = "Delete";
-            Action.UseColumnTextForButtonValue = true;
-            Action.Width = 125;
             // 
             // frmEventTabs
             // 
@@ -346,6 +424,10 @@
             tabPage1.ResumeLayout(false);
             groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvNotifications).EndInit();
+            tabPage3.ResumeLayout(false);
+            tabPage3.PerformLayout();
+            groupBox3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgvApplications).EndInit();
             ResumeLayout(false);
         }
 
@@ -357,14 +439,6 @@
         private Button btnNotification;
         private GroupBox groupBox1;
         private DataGridView dgvNotifications;
-        private DataGridViewTextBoxColumn Id;
-        private DataGridViewTextBoxColumn MeetingTheme;
-        private DataGridViewTextBoxColumn MeetingPlace;
-        private DataGridViewTextBoxColumn Address;
-        private DataGridViewTextBoxColumn City;
-        private DataGridViewTextBoxColumn MeetingDate;
-        private DataGridViewButtonColumn btnEdit;
-        private DataGridViewButtonColumn btnDelete;
         private Button btnAdd;
         private GroupBox groupBox2;
         private DataGridView dgvPlanAndProgramme;
@@ -375,5 +449,19 @@
         private DataGridViewTextBoxColumn EndDate;
         private DataGridViewButtonColumn Option;
         private DataGridViewButtonColumn Action;
+        private DataGridViewTextBoxColumn Id;
+        private DataGridViewTextBoxColumn MeetingTheme;
+        private DataGridViewTextBoxColumn MeetingPlace;
+        private DataGridViewTextBoxColumn Address;
+        private DataGridViewTextBoxColumn City;
+        private DataGridViewTextBoxColumn MeetingDate;
+        private DataGridViewButtonColumn btnDelete;
+        private GroupBox groupBox3;
+        private DataGridView dgvApplications;
+        private Label label3;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private DataGridViewTextBoxColumn VolunteerName;
+        private DataGridViewTextBoxColumn LastName;
+        private DataGridViewTextBoxColumn Status;
     }
 }

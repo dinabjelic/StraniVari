@@ -1,6 +1,7 @@
 ﻿using StraniVari.Common.Constants;
 using StraniVari.Core.Requests;
 using StraniVari.Core.Responses;
+using StraniVari.WinUI.EventDetails;
 using StraniVari.WinUI.Service;
 
 namespace StraniVari.WinUI.Notifications
@@ -45,7 +46,7 @@ namespace StraniVari.WinUI.Notifications
                 Close();
             }
 
-            var principalForm = Application.OpenForms.OfType<frmAllNotifications>().FirstOrDefault();
+            var principalForm = Application.OpenForms.OfType<frmEventTabs>().FirstOrDefault();
             principalForm.frmAllNotifications_Load(sender, e);
         }
 

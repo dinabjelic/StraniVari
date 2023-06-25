@@ -1,5 +1,6 @@
 ﻿using StraniVari.Core.Requests;
 using StraniVari.Core.Responses;
+using StraniVari.WinUI.EventDetails;
 using StraniVari.WinUI.Games;
 using StraniVari.WinUI.Service;
 
@@ -30,19 +31,8 @@ namespace StraniVari.WinUI.Applications
             comboBox1.SelectedValue = SelectedVolunteer.StatusId;
             var tripDetails = await _apiServiceDetails.GetById<List<GetTripsDetailsForEventResponse>>(SelectedEvent.Id);
 
-            txtName.Text = SelectedEvent.Name;
-            txtTheme.Text = SelectedEvent.StraniVariTheme;
-            txtStartDate.Text = SelectedEvent.StartDate.ToString("D");
-            txtEndDate.Text = SelectedEvent.EndDate.ToString("D");
             txtFristName.Text = SelectedVolunteer.VolunteerName;
             txtLastName.Text = SelectedVolunteer.VolunteerLastName;
-
-
-            if (tripDetails.Count > 0)
-            {
-                txtTripPlace.Text = tripDetails[0].Place;
-                txtTripDatTime.Text = tripDetails[0].TripDateTime.ToString("D");
-            }
         }
 
         private async void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -62,7 +52,7 @@ namespace StraniVari.WinUI.Applications
             this.DialogResult = DialogResult.OK;
             Close();
 
-            var principalForm = Application.OpenForms.OfType<frmAllApplications>().FirstOrDefault();
+            var principalForm = Application.OpenForms.OfType<frmEventTabs>().FirstOrDefault();
             principalForm.frmAllApplications_Load(sender, e);
         }
     }

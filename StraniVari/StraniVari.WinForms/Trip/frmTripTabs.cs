@@ -50,7 +50,7 @@ namespace StraniVari.WinUI.Trip
         private async void dgvTrip_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             var selectedTrip = JsonConvert.DeserializeObject<GetTripResponse>(dgvTrip.SelectedRows[0].DataBoundItem.ToString());
-         
+
             if (selectedTrip != null)
             {
                 frmAddEditTrip frmAddEditTrip = new frmAddEditTrip(selectedTrip);
