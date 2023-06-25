@@ -65,10 +65,10 @@ namespace StraniVari.WinUI.Volunteers
             }
         }
 
-        private async void btnReport_Click(object sender, EventArgs e)
-        {
-            frmReports frmReports = new frmReports(_selectedEvent, _selectedSchool);
-            frmReports.ShowDialog();
-        }
+        //private async void btnReport_Click(object sender, EventArgs e)
+        //{
+        //    frmReports frmReports = new frmReports(_selectedSchool, _selectedEvent);
+        //    frmReports.ShowDialog();
+        //}
     }
 }

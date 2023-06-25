@@ -9,14 +9,14 @@ namespace StraniVari.WinUI.Reports
     {
         private readonly ApiService _apiServiceVolunteers = new ApiService("SchoolVolunteers/get");
         private readonly ApiService _apiServiceMaterial = new ApiService("SchoolMaterials/get");
-        public frmReports(EventUpsertRequest selectedEvent, GetSchoolsForEventResponse selectedSchool)
+        public frmReports(GetEventDetailsResponse selectedEvent, GetSchoolsForEventResponse selectedSchool)
         {
             InitializeComponent();
             SelectedEvent = selectedEvent;
             SelectedSchool = selectedSchool;
         }
 
-        public EventUpsertRequest SelectedEvent { get; }
+        public GetEventDetailsResponse SelectedEvent { get; }
         public GetSchoolsForEventResponse SelectedSchool { get; }
 
         private async void frmReports_Load(object sender, EventArgs e)

@@ -222,7 +222,6 @@
             btnReport.TabIndex = 34;
             btnReport.Text = "Report";
             btnReport.UseVisualStyleBackColor = true;
-            btnReport.Click += btnReport_Click;
             // 
             // frmVolunteerDetails
             // 

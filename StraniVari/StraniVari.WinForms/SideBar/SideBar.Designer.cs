@@ -203,6 +203,7 @@
             btnReports.TabIndex = 89;
             btnReports.Text = "Reports";
             btnReports.UseVisualStyleBackColor = false;
+            btnReports.Click += btnReports_Click;
             // 
             // panel1
             // 
@@ -282,6 +283,7 @@
             button4.TabIndex = 94;
             button4.Text = "Logout";
             button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
             // 
             // SideBar
             // 

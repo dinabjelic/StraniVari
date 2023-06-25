@@ -1,7 +1,9 @@
 ﻿using StraniVari.WinUI.Admin;
 using StraniVari.WinUI.EventDetails;
 using StraniVari.WinUI.Games;
+using StraniVari.WinUI.Login;
 using StraniVari.WinUI.Material;
+using StraniVari.WinUI.Reports;
 using StraniVari.WinUI.SchoolDetails;
 using StraniVari.WinUI.Service;
 using StraniVari.WinUI.Trip;
@@ -71,6 +73,20 @@ namespace StraniVari.WinUI.StartPage
             this.Close();
             frmAllEvents frmAllEvents = new frmAllEvents();
             frmAllEvents.Show();
+        }
+
+        private void btnReports_Click(object sender, EventArgs e)
+        {
+            frmReport frmReport = new frmReport();
+            frmReport.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            ApiService.Token = null;
+            frmLogin frmLogin = new frmLogin();
+            frmLogin.Show();
+            this.Close();
         }
     }
 }

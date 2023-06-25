@@ -317,7 +317,7 @@
             tabPage3.Padding = new Padding(3);
             tabPage3.Size = new Size(1100, 416);
             tabPage3.TabIndex = 2;
-            tabPage3.Text = "Applications";
+            tabPage3.Text = "Trip applications";
             tabPage3.UseVisualStyleBackColor = true;
             // 
             // groupBox3
@@ -404,7 +404,7 @@
             tabPage4.Padding = new Padding(3);
             tabPage4.Size = new Size(1100, 416);
             tabPage4.TabIndex = 3;
-            tabPage4.Text = "EventSchools";
+            tabPage4.Text = "Event schools";
             tabPage4.UseVisualStyleBackColor = true;
             // 
             // frmEventTabs
