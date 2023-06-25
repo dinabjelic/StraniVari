@@ -1,4 +1,5 @@
 ﻿using StraniVari.WinUI.Admin;
+using StraniVari.WinUI.EventDetails;
 using StraniVari.WinUI.Games;
 using StraniVari.WinUI.Material;
 using StraniVari.WinUI.SchoolDetails;
@@ -32,32 +33,44 @@ namespace StraniVari.WinUI.StartPage
 
         private void btnTrips_Click_1(object sender, EventArgs e)
         {
+            this.Close();
             frmTripTabs frmTripTabs = new frmTripTabs();
             frmTripTabs.Show();
         }
 
         private void btnMaterial_Click(object sender, EventArgs e)
         {
+            this.Close();
             frmAllMaterial frmAllMaterial = new frmAllMaterial();
             frmAllMaterial.Show();
         }
 
         private void btnSchool_Click(object sender, EventArgs e)
         {
+            this.Close();
             frmAllSchools frmAllSchools = new frmAllSchools();
             frmAllSchools.Show();
         }
 
         private void btnGames_Click(object sender, EventArgs e)
         {
+            this.Close();
             frmGames frmGames = new frmGames();
             frmGames.Show();
         }
 
         private void btnUser_Click(object sender, EventArgs e)
         {
+            this.Close();
             frmUsersTab frmUsersTab = new frmUsersTab();
             frmUsersTab.Show();
+        }
+
+        private void btnEvents_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            frmAllEvents frmAllEvents = new frmAllEvents();
+            frmAllEvents.Show();
         }
     }
 }

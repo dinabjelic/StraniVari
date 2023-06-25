@@ -1,16 +1,7 @@
 ﻿using Newtonsoft.Json;
 using StraniVari.Core.Requests;
 using StraniVari.Core.Responses;
-using StraniVari.WinUI.Applications;
-using StraniVari.WinUI.Games;
-using StraniVari.WinUI.Material;
-using StraniVari.WinUI.Notifications;
-using StraniVari.WinUI.PlanAndProgramme;
-using StraniVari.WinUI.Reports;
-using StraniVari.WinUI.SchoolDetails;
 using StraniVari.WinUI.Service;
-using StraniVari.WinUI.Trip;
-using StraniVari.WinUI.Volunteers;
 
 namespace StraniVari.WinUI.EventDetails
 {
@@ -45,13 +36,18 @@ namespace StraniVari.WinUI.EventDetails
             var selectedEvent = JsonConvert.DeserializeObject<EventUpsertRequest>(dgvEvents.SelectedRows[0].DataBoundItem.ToString());
             if (selectedEvent != null)
             {
+                //if (e.ColumnIndex == 5)
+                //{
+                //    var editForm = new frmNewEvent(selectedEvent);
+                //    if (editForm.ShowDialog() == DialogResult.OK)
+                //    {
+                //        frmAllEvents_Load(sender, e);
+                //    }
+                //}
                 if (e.ColumnIndex == 5)
                 {
-                    var editForm = new frmNewEvent(selectedEvent);
-                    if (editForm.ShowDialog() == DialogResult.OK)
-                    {
-                        frmAllEvents_Load(sender, e);
-                    }
+                    frmEventTabs frmEventTabs = new frmEventTabs(selectedEvent);
+                    frmEventTabs.ShowDialog();
                 }
                 else if (e.ColumnIndex == 6)
                 {
@@ -67,57 +63,40 @@ namespace StraniVari.WinUI.EventDetails
                         frmAllEvents_Load(sender, e);
                     }
                 }
-                else if (e.ColumnIndex == 7)
-                {
-                    var eventSchools = new frmShoolsForEvent(selectedEvent);
-                    eventSchools.ShowDialog();
-                }
-                else if (e.ColumnIndex == 8)
-                {
-                    frmAllNotifications frmAllNotifications = new frmAllNotifications(selectedEvent);
-                    frmAllNotifications.ShowDialog();
-                }
-                else if (e.ColumnIndex == 9)
-                {
-                    frmAllPlanAndProgramme frmAllPlanAndProgramme = new frmAllPlanAndProgramme(selectedEvent);
-                    frmAllPlanAndProgramme.ShowDialog();
-                }
-                else if (e.ColumnIndex == 10)
-                {
-                    frmAllApplications frmAllApplications = new frmAllApplications(selectedEvent);
-                    frmAllApplications.ShowDialog();
-                }
+                //else if (e.ColumnIndex == 7)
+                //{
+                //    var eventSchools = new frmShoolsForEvent(selectedEvent);
+                //    eventSchools.ShowDialog();
+                //}
+                //else if (e.ColumnIndex == 8)
+                //{
+                //    frmAllNotifications frmAllNotifications = new frmAllNotifications(selectedEvent);
+                //    frmAllNotifications.ShowDialog();
+                //}
+                //else if (e.ColumnIndex == 9)
+                //{
+                //    frmAllPlanAndProgramme frmAllPlanAndProgramme = new frmAllPlanAndProgramme(selectedEvent);
+                //    frmAllPlanAndProgramme.ShowDialog();
+                //}
+                //else if (e.ColumnIndex == 10)
+                //{
+                //    frmAllApplications frmAllApplications = new frmAllApplications(selectedEvent);
+                //    frmAllApplications.ShowDialog();
+                //}
             }
         }
 
-        private void btnMaterials_Click(object sender, EventArgs e)
+        private void dgvEvents_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            frmAllMaterial frmAllMaterial = new frmAllMaterial();
-            frmAllMaterial.ShowDialog();
-        }
-
-        private void btnVolunteers_Click(object sender, EventArgs e)
-        {
-            frmAllVolunteers frmAllVolunteers = new frmAllVolunteers();
-            frmAllVolunteers.ShowDialog();
-        }
-
-        private void btnSchools_Click(object sender, EventArgs e)
-        {
-            frmAllSchools frmAllSchools = new frmAllSchools();
-            frmAllSchools.ShowDialog();
-        }
-
-        private void btnGames_Click(object sender, EventArgs e)
-        {
-            frmAllGames frmAllGames = new frmAllGames();
-            frmAllGames.ShowDialog();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            frmAllTrips frmAllTrips = new frmAllTrips();
-            frmAllTrips.ShowDialog();
+            var selectedEvent = JsonConvert.DeserializeObject<EventUpsertRequest>(dgvEvents.SelectedRows[0].DataBoundItem.ToString());
+            if (selectedEvent != null)
+            {
+                var editForm = new frmNewEvent(selectedEvent);
+                if (editForm.ShowDialog() == DialogResult.OK)
+                {
+                    frmAllEvents_Load(sender, e);
+                }
+            }
         }
     }
 }

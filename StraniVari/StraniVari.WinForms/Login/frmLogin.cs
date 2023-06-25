@@ -17,6 +17,12 @@ namespace StraniVari.WinUI.Login
             InitializeComponent();
         }
 
+        private void CloseCurrentForm()
+        {
+            var openedForm = this.FindForm();
+            openedForm.Hide();
+        }
+
         private async void btnLogin_Click(object sender, EventArgs e)
         {
             btnLogin.Enabled = false;
@@ -46,11 +52,10 @@ namespace StraniVari.WinUI.Login
                         throw new Exception();
                     }
                     ApiService.Token = result.Token;
-                    frmStartPage frm = new frmStartPage();
-                    //frmAllEvents frm = new frmAllEvents();
 
-                    frm.ShowDialog();
-                    this.Hide();
+                    CloseCurrentForm();
+                    frmStartPage frm = new frmStartPage();
+                    frm.Show();
                 }
                 catch (Exception ex)
                 {

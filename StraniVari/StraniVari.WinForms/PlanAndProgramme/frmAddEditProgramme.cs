@@ -1,6 +1,7 @@
 ﻿using StraniVari.Common.Constants;
 using StraniVari.Core.Requests;
 using StraniVari.Core.Responses;
+using StraniVari.WinUI.EventDetails;
 using StraniVari.WinUI.Service;
 
 namespace StraniVari.WinUI.PlanAndProgramme
@@ -19,12 +20,6 @@ namespace StraniVari.WinUI.PlanAndProgramme
 
         private void frmAddEditProgramme_Load(object sender, EventArgs e)
         {
-            txtName.Text = SelectedEvent.Name;
-            txtTheme.Text = SelectedEvent.StraniVariTheme;
-            txtStartDate.Text = SelectedEvent.StartDate.ToString("D");
-            txtEndDate.Text = SelectedEvent.EndDate.ToString("D");
-
-
             if (SelectedPlan != null)
             {
                 dtpEndDatePP.Value = SelectedPlan.EndDate;
@@ -59,7 +54,7 @@ namespace StraniVari.WinUI.PlanAndProgramme
                 Close();
             }
 
-            var principalForm = Application.OpenForms.OfType<frmAllPlanAndProgramme>().FirstOrDefault();
+            var principalForm = Application.OpenForms.OfType<frmEventTabs>().FirstOrDefault();
             principalForm.frmAllPlanAndProgramme_Load(sender, e);
         }
 

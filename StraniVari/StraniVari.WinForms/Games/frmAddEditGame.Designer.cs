@@ -101,7 +101,6 @@
             Controls.Add(label1);
             Name = "frmAddEditGame";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "frmAddEditGame";
             Load += frmAddEditGame_Load;
             ((System.ComponentModel.ISupportInitialize)err).EndInit();
             ResumeLayout(false);

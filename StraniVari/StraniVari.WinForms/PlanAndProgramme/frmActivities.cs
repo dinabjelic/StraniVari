@@ -19,10 +19,6 @@ namespace StraniVari.WinUI.PlanAndProgramme
             rtbActivities.Text = SelectedPlan.Activity;
             txtStartDatePP.Text = SelectedPlan.StartDate.ToString("t");
             txtEndDatePP.Text = SelectedPlan.EndDate.ToString("t");
-            txtName.Text = SelectedEvent.Name;
-            txtTheme.Text = SelectedEvent.StraniVariTheme;
-            txtStartDate.Text = SelectedEvent.StartDate.ToString("D");
-            txtEndDate.Text = SelectedEvent.EndDate.ToString("D");
         }
 
         private void btnSave_Click(object sender, EventArgs e)

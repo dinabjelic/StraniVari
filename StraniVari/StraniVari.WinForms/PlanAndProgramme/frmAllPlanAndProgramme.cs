@@ -34,12 +34,12 @@ namespace StraniVari.WinUI.PlanAndProgramme
                 if (e.ColumnIndex == 3)
                 {
                     frmActivities frmActivities = new frmActivities(selectedPlan, SelectedEvent);
-                    frmActivities.ShowDialog();
+                    frmActivities.Show();
                 }
                 else if (e.ColumnIndex == 4)
                 {
                     frmAddEditProgramme frmAddEditProgramme = new frmAddEditProgramme(SelectedEvent, selectedPlan);
-                    frmAddEditProgramme.ShowDialog();
+                    frmAddEditProgramme.Show();
                 }
             }
         }
@@ -47,7 +47,7 @@ namespace StraniVari.WinUI.PlanAndProgramme
         private void btnAdd_Click(object sender, EventArgs e)
         {
             frmAddEditProgramme frmAddEditProgramme = new frmAddEditProgramme(SelectedEvent);
-            frmAddEditProgramme.ShowDialog();
+            frmAddEditProgramme.Show();
         }
     }
 }

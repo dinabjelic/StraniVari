@@ -118,6 +118,7 @@
             btnEvents.TabIndex = 88;
             btnEvents.Text = "Events";
             btnEvents.UseVisualStyleBackColor = false;
+            btnEvents.Click += btnEvents_Click;
             // 
             // btnSchool
             // 
