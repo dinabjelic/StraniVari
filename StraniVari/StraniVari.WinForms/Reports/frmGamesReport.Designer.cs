@@ -1,6 +1,6 @@
 ﻿namespace StraniVari.WinUI.Reports
 {
-    partial class frmReports
+    partial class frmGamesReport
     {
         /// <summary>
         /// Required designer variable.
@@ -28,32 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            reportViewer2 = new Microsoft.Reporting.WinForms.ReportViewer();
             SuspendLayout();
             // 
-            // reportViewer1
+            // reportViewer2
             // 
-            reportViewer1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            reportViewer1.Location = new Point(0, 0);
-            reportViewer1.Name = "ReportViewer";
-            reportViewer1.ServerReport.BearerToken = null;
-            reportViewer1.Size = new Size(1011, 825);
-            reportViewer1.TabIndex = 0;
+            reportViewer2.Location = new Point(0, 0);
+            reportViewer2.Name = "ReportViewer";
+            reportViewer2.ServerReport.BearerToken = null;
+            reportViewer2.Size = new Size(1095, 791);
+            reportViewer2.TabIndex = 0;
             // 
-            // frmReports
+            // frmGamesReport
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(993, 778);
-            Controls.Add(reportViewer1);
-            Name = "frmReports";
+            ClientSize = new Size(837, 744);
+            Controls.Add(reportViewer2);
+            Name = "frmGamesReport";
             StartPosition = FormStartPosition.CenterScreen;
-            Load += frmReports_Load;
+            Load += frmGamesReport_Load;
             ResumeLayout(false);
         }
 
         #endregion
 
-        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        //private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer2;
     }
 }

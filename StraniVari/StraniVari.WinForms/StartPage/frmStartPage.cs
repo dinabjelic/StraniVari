@@ -77,8 +77,8 @@ namespace StraniVari.WinUI.StartPage
 
         private void btnReports_Click(object sender, EventArgs e)
         {
-            frmReport frmReport = new frmReport();
-            frmReport.ShowDialog();
+            frmReport frmGamesSchoolsReportscs = new frmReport();
+            frmGamesSchoolsReportscs.ShowDialog();
         }
 
         private void button4_Click(object sender, EventArgs e)

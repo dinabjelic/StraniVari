@@ -129,7 +129,7 @@
             btnSchool.Location = new Point(3, 171);
             btnSchool.Name = "btnSchool";
             btnSchool.Size = new Size(385, 45);
-            btnSchool.TabIndex = 84;
+            btnSchool.TabIndex = 89;
             btnSchool.Text = "Schools";
             btnSchool.UseVisualStyleBackColor = false;
             btnSchool.Click += btnSchool_Click;
@@ -143,7 +143,7 @@
             btnUser.Location = new Point(3, 222);
             btnUser.Name = "btnUser";
             btnUser.Size = new Size(385, 51);
-            btnUser.TabIndex = 85;
+            btnUser.TabIndex = 90;
             btnUser.Text = "Users";
             btnUser.UseVisualStyleBackColor = false;
             btnUser.Click += btnUser_Click;
@@ -157,7 +157,7 @@
             btnMaterial.Location = new Point(3, 279);
             btnMaterial.Name = "btnMaterial";
             btnMaterial.Size = new Size(385, 52);
-            btnMaterial.TabIndex = 87;
+            btnMaterial.TabIndex = 91;
             btnMaterial.Text = "Materials";
             btnMaterial.UseVisualStyleBackColor = false;
             btnMaterial.Click += btnMaterial_Click;
@@ -172,7 +172,7 @@
             btnTrips.Margin = new Padding(0);
             btnTrips.Name = "btnTrips";
             btnTrips.Size = new Size(388, 50);
-            btnTrips.TabIndex = 91;
+            btnTrips.TabIndex = 92;
             btnTrips.Text = "Trips";
             btnTrips.UseVisualStyleBackColor = false;
             btnTrips.Click += btnTrips_Click;
@@ -186,7 +186,7 @@
             btnGames.Location = new Point(3, 387);
             btnGames.Name = "btnGames";
             btnGames.Size = new Size(385, 47);
-            btnGames.TabIndex = 86;
+            btnGames.TabIndex = 93;
             btnGames.Text = "Games";
             btnGames.UseVisualStyleBackColor = false;
             btnGames.Click += btnGames_Click;
@@ -200,7 +200,7 @@
             btnReports.Location = new Point(3, 440);
             btnReports.Name = "btnReports";
             btnReports.Size = new Size(385, 54);
-            btnReports.TabIndex = 89;
+            btnReports.TabIndex = 94;
             btnReports.Text = "Reports";
             btnReports.UseVisualStyleBackColor = false;
             btnReports.Click += btnReports_Click;

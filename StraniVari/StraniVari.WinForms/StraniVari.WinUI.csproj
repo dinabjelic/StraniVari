@@ -10,10 +10,12 @@
 
   <ItemGroup>
     <None Remove="Reports\Report1.rdlc" />
+    <None Remove="Reports\Report2.rdlc" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Reports\Report1.rdlc" />
+    <EmbeddedResource Include="Reports\Report2.rdlc" />
   </ItemGroup>
 
   <ItemGroup>
@@ -46,6 +48,16 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>dsEventDetails.xsd</DependentUpon>
     </Compile>
+    <Compile Update="Reports\dsGames.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>dsGames.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\Games.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Games.xsd</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -63,6 +75,14 @@
     <None Update="Reports\dsEventDetails.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>dsEventDetails.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="Reports\dsGames.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsGames.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="Reports\Games.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Games.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
 
