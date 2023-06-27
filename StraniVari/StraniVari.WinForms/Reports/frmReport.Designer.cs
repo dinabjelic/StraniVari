@@ -42,7 +42,6 @@
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(208, 28);
             comboBox1.TabIndex = 0;
-            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // comboBox2
             // 
@@ -95,7 +94,7 @@
             Controls.Add(comboBox1);
             Name = "frmReport";
             StartPosition = FormStartPosition.CenterScreen;
-            Load += frmReport_Load;
+            Load += frmReport_Load_1;
             ResumeLayout(false);
             PerformLayout();
         }
