@@ -154,7 +154,6 @@
             Controls.Add(sideBar1);
             Name = "frmGames";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "frmGames";
             Load += frmGames_Load;
             groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvGames).EndInit();

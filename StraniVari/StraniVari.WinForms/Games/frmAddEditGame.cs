@@ -30,7 +30,7 @@ namespace StraniVari.WinUI.Games
                     Rules = rtbRules.Text
                 };
 
-                if (SelectedItem.Id == 0)
+                if (SelectedItem == null)
                 {
                     await _apiService.Insert<ResponseResult>(game);
                     MessageBox.Show("Game successfully added.", "Infomation", MessageBoxButtons.OK);

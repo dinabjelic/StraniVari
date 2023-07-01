@@ -43,13 +43,13 @@
             tabPage2 = new TabPage();
             groupBox2 = new GroupBox();
             dgvAdmins = new DataGridView();
+            btnAddAdmin = new Button();
             dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn5 = new DataGridViewTextBoxColumn();
-            dataGridViewButtonColumn1 = new DataGridViewButtonColumn();
-            btnAddAdmin = new Button();
+            dataGridViewButtonColumn2 = new DataGridViewButtonColumn();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             groupBox1.SuspendLayout();
@@ -213,7 +213,7 @@
             dgvAdmins.AllowUserToDeleteRows = false;
             dgvAdmins.BackgroundColor = SystemColors.ButtonHighlight;
             dgvAdmins.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvAdmins.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn4, dataGridViewTextBoxColumn5, dataGridViewButtonColumn1 });
+            dgvAdmins.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn4, dataGridViewTextBoxColumn5, dataGridViewButtonColumn2 });
             dgvAdmins.Cursor = Cursors.Hand;
             dgvAdmins.Dock = DockStyle.Fill;
             dgvAdmins.Location = new Point(3, 23);
@@ -226,6 +226,18 @@
             dgvAdmins.TabIndex = 0;
             dgvAdmins.CellContentClick += dgvAdmins_CellContentClick;
             dgvAdmins.CellMouseDoubleClick += dgvAdmins_CellMouseDoubleClick;
+            // 
+            // btnAddAdmin
+            // 
+            btnAddAdmin.BackColor = Color.White;
+            btnAddAdmin.Cursor = Cursors.Hand;
+            btnAddAdmin.Location = new Point(840, 20);
+            btnAddAdmin.Name = "btnAddAdmin";
+            btnAddAdmin.Size = new Size(160, 29);
+            btnAddAdmin.TabIndex = 81;
+            btnAddAdmin.Text = "Add administrator";
+            btnAddAdmin.UseVisualStyleBackColor = false;
+            btnAddAdmin.Click += btnAddAdmin_Click;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -273,28 +285,16 @@
             dataGridViewTextBoxColumn5.ReadOnly = true;
             dataGridViewTextBoxColumn5.Width = 190;
             // 
-            // dataGridViewButtonColumn1
+            // dataGridViewButtonColumn2
             // 
-            dataGridViewButtonColumn1.HeaderText = "Action";
-            dataGridViewButtonColumn1.MinimumWidth = 6;
-            dataGridViewButtonColumn1.Name = "dataGridViewButtonColumn1";
-            dataGridViewButtonColumn1.ReadOnly = true;
-            dataGridViewButtonColumn1.Text = "Delete";
-            dataGridViewButtonColumn1.ToolTipText = "Delete";
-            dataGridViewButtonColumn1.UseColumnTextForButtonValue = true;
-            dataGridViewButtonColumn1.Width = 90;
-            // 
-            // btnAddAdmin
-            // 
-            btnAddAdmin.BackColor = Color.White;
-            btnAddAdmin.Cursor = Cursors.Hand;
-            btnAddAdmin.Location = new Point(840, 20);
-            btnAddAdmin.Name = "btnAddAdmin";
-            btnAddAdmin.Size = new Size(160, 29);
-            btnAddAdmin.TabIndex = 81;
-            btnAddAdmin.Text = "Add administrator";
-            btnAddAdmin.UseVisualStyleBackColor = false;
-            btnAddAdmin.Click += btnAddAdmin_Click;
+            dataGridViewButtonColumn2.HeaderText = "Action";
+            dataGridViewButtonColumn2.MinimumWidth = 6;
+            dataGridViewButtonColumn2.Name = "dataGridViewButtonColumn2";
+            dataGridViewButtonColumn2.ReadOnly = true;
+            dataGridViewButtonColumn2.Text = "Delete";
+            dataGridViewButtonColumn2.ToolTipText = "Delete";
+            dataGridViewButtonColumn2.UseColumnTextForButtonValue = true;
+            dataGridViewButtonColumn2.Width = 90;
             // 
             // frmUsersTab
             // 
@@ -326,12 +326,6 @@
         private Button btnAddVolunteer;
         private GroupBox groupBox2;
         private DataGridView dgvAdmins;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private DataGridViewButtonColumn dataGridViewButtonColumn1;
         private Button btnAddAdmin;
         private GroupBox groupBox1;
         private DataGridView dgvVolunteers;
@@ -341,5 +335,11 @@
         private DataGridViewTextBoxColumn VolunteerAddress;
         private DataGridViewTextBoxColumn VolunteerCity;
         private DataGridViewButtonColumn btnDelete;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private DataGridViewButtonColumn dataGridViewButtonColumn2;
     }
 }

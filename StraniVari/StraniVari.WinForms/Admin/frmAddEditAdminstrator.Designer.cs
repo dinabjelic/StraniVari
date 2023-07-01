@@ -56,7 +56,7 @@
             txtConfirmPassword.Name = "txtConfirmPassword";
             txtConfirmPassword.PasswordChar = '*';
             txtConfirmPassword.Size = new Size(251, 27);
-            txtConfirmPassword.TabIndex = 97;
+            txtConfirmPassword.TabIndex = 8;
             // 
             // txtPassword
             // 
@@ -64,14 +64,14 @@
             txtPassword.Name = "txtPassword";
             txtPassword.PasswordChar = '*';
             txtPassword.Size = new Size(250, 27);
-            txtPassword.TabIndex = 96;
+            txtPassword.TabIndex = 7;
             // 
             // txtUsername
             // 
             txtUsername.Location = new Point(229, 302);
             txtUsername.Name = "txtUsername";
             txtUsername.Size = new Size(249, 27);
-            txtUsername.TabIndex = 95;
+            txtUsername.TabIndex = 6;
             // 
             // label
             // 
@@ -105,7 +105,7 @@
             dtpBirth.Location = new Point(228, 241);
             dtpBirth.Name = "dtpBirth";
             dtpBirth.Size = new Size(250, 27);
-            dtpBirth.TabIndex = 85;
+            dtpBirth.TabIndex = 5;
             // 
             // label5
             // 
@@ -121,7 +121,7 @@
             txtVolunteerAddress.Location = new Point(228, 195);
             txtVolunteerAddress.Name = "txtVolunteerAddress";
             txtVolunteerAddress.Size = new Size(250, 27);
-            txtVolunteerAddress.TabIndex = 84;
+            txtVolunteerAddress.TabIndex = 4;
             // 
             // btnEditAdministratorDetails
             // 
@@ -130,7 +130,7 @@
             btnEditAdministratorDetails.Location = new Point(384, 449);
             btnEditAdministratorDetails.Name = "btnEditAdministratorDetails";
             btnEditAdministratorDetails.Size = new Size(94, 29);
-            btnEditAdministratorDetails.TabIndex = 86;
+            btnEditAdministratorDetails.TabIndex = 9;
             btnEditAdministratorDetails.Text = "Save";
             btnEditAdministratorDetails.UseVisualStyleBackColor = false;
             btnEditAdministratorDetails.Click += btnEditAdministratorDetails_Click;
@@ -140,21 +140,21 @@
             txtVolunteerCity.Location = new Point(228, 147);
             txtVolunteerCity.Name = "txtVolunteerCity";
             txtVolunteerCity.Size = new Size(250, 27);
-            txtVolunteerCity.TabIndex = 83;
+            txtVolunteerCity.TabIndex = 3;
             // 
             // txtLastName
             // 
             txtLastName.Location = new Point(228, 106);
             txtLastName.Name = "txtLastName";
             txtLastName.Size = new Size(250, 27);
-            txtLastName.TabIndex = 82;
+            txtLastName.TabIndex = 2;
             // 
             // txtFirstName
             // 
             txtFirstName.Location = new Point(228, 58);
             txtFirstName.Name = "txtFirstName";
             txtFirstName.Size = new Size(250, 27);
-            txtFirstName.TabIndex = 81;
+            txtFirstName.TabIndex = 1;
             // 
             // lblNumberofChildren
             // 
@@ -200,6 +200,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ButtonHighlight;
             ClientSize = new Size(580, 530);
             Controls.Add(txtConfirmPassword);
             Controls.Add(txtPassword);

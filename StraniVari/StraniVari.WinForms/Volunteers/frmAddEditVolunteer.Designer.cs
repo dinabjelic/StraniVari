@@ -64,7 +64,7 @@
             btnEditVolunteerDetails.Location = new Point(378, 448);
             btnEditVolunteerDetails.Name = "btnEditVolunteerDetails";
             btnEditVolunteerDetails.Size = new Size(94, 29);
-            btnEditVolunteerDetails.TabIndex = 6;
+            btnEditVolunteerDetails.TabIndex = 9;
             btnEditVolunteerDetails.Text = "Save";
             btnEditVolunteerDetails.UseVisualStyleBackColor = false;
             btnEditVolunteerDetails.Click += btnEditVolunteerDetails_Click;
@@ -178,7 +178,7 @@
             txtUsername.Location = new Point(223, 301);
             txtUsername.Name = "txtUsername";
             txtUsername.Size = new Size(249, 27);
-            txtUsername.TabIndex = 78;
+            txtUsername.TabIndex = 6;
             // 
             // txtPassword
             // 
@@ -186,7 +186,7 @@
             txtPassword.Name = "txtPassword";
             txtPassword.PasswordChar = '*';
             txtPassword.Size = new Size(250, 27);
-            txtPassword.TabIndex = 79;
+            txtPassword.TabIndex = 7;
             // 
             // txtConfirmPassword
             // 
@@ -194,7 +194,7 @@
             txtConfirmPassword.Name = "txtConfirmPassword";
             txtConfirmPassword.PasswordChar = '*';
             txtConfirmPassword.Size = new Size(251, 27);
-            txtConfirmPassword.TabIndex = 80;
+            txtConfirmPassword.TabIndex = 8;
             // 
             // frmAddEditVolunteer
             // 

@@ -1,7 +1,11 @@
-﻿using Newtonsoft.Json;
+﻿using Microsoft.ReportingServices.RdlExpressions.ExpressionHostObjectModel;
+using Newtonsoft.Json;
 using StraniVari.Core.Responses;
+using StraniVari.WinUI.Helpers;
 using StraniVari.WinUI.Service;
 using StraniVari.WinUI.Volunteers;
+using System.IdentityModel.Tokens.Jwt;
+using System.Windows.Forms;
 
 namespace StraniVari.WinUI.Admin
 {
@@ -18,8 +22,10 @@ namespace StraniVari.WinUI.Admin
 
         private async void frmUsersTab_Load(object sender, EventArgs e)
         {
-            frmAllVolunteers_Load(sender, e);
             frmAllAdmins_Load(sender, e);
+            frmAllVolunteers_Load(sender, e);
+
+
         }
 
         public async void frmAllVolunteers_Load(object sender, EventArgs e)
@@ -34,6 +40,20 @@ namespace StraniVari.WinUI.Admin
             dgvAdmins.AutoGenerateColumns = false;
             var result = await _apiServiceAdmin.Get<List<GetAdministratorDetailsResponse>>();
             dgvAdmins.DataSource = result;
+          
+
+            //foreach (DataGridViewRow row in dgvAdmins.Rows)
+            //{
+            //    var item = (GetAdministratorDetailsResponse)row.DataBoundItem;
+            //    if (item.Id.ToString() == userId)
+            //    {
+            //        var deleteButtonCell = row.Cells["dataGridViewButtonColumn2"];
+            //        var deleteButtonColumn = deleteButtonCell.OwningColumn;
+            //        deleteButtonColumn.Visible = false;
+            //    }
+            //}
+
+            
         }
 
         private void btnAddVolunteer_Click(object sender, EventArgs e)
@@ -49,19 +69,29 @@ namespace StraniVari.WinUI.Admin
             {
                 if (e.ColumnIndex == 5)
                 {
-                    var confirmation = MessageBox.Show("You are about to delete this item!", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-
-                    if (confirmation == DialogResult.No)
+                    if (selectedAdmin.Id.ToString() == JWTIdDecoder.ShowId())
                     {
-                        frmAllVolunteers_Load(sender, e);
+                        MessageBox.Show("You cannot delete yourself!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                     else
                     {
-                        await _apiServiceAdmin.Delete<ResponseResult>(selectedAdmin.Id);
-                        frmAllAdmins_Load(sender, e);
+                        var confirmation = MessageBox.Show("You are about to delete this item!", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                        if (confirmation == DialogResult.No)
+                        {
+                            frmAllVolunteers_Load(sender, e);
+                        }
+                        else
+                        {
+                            await _apiServiceAdmin.Delete<ResponseResult>(selectedAdmin.Id);
+                            frmAllAdmins_Load(sender, e);
+                        }
                     }
+                   
                 }
+               
             }
+
         }
 
         private void dgvAdmins_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)

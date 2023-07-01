@@ -42,6 +42,12 @@ namespace StraniVari.Services.Services
             };
 
             volunteerInfo.PasswordHash = _passwordHasher.HashPassword(volunteerInfo, addVolunteerRequest.Password);
+            var existst =await _straniVariDbContext.Users.AnyAsync(x => x.UserName == volunteerInfo.UserName);
+
+            if (existst)
+            {
+                throw new InvalidOperationException("Username taken!");
+            }
 
             await _straniVariDbContext.Users.AddAsync(volunteerInfo);
 
@@ -108,6 +114,17 @@ namespace StraniVari.Services.Services
             if(user == null)
             {
                 throw new ArgumentException("Invalid id");
+            }
+
+            if (volunteerFound.User.UserName != updateVolunteerRequest.Username)
+            {
+                var usernameExists = await _straniVariDbContext.Users
+                    .AnyAsync(x => x.Id != id && x.UserName == updateVolunteerRequest.Username);
+
+                if (usernameExists)
+                {
+                    throw new InvalidOperationException("Username taken!");
+                }
             }
 
             volunteerFound.FirstName = updateVolunteerRequest.FirstName;

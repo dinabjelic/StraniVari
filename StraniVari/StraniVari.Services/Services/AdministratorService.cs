@@ -18,7 +18,7 @@ namespace StraniVari.Services.Services
         public AdministratorService(StraniVariDbContext dbContext, IMapper mapper, IPasswordHasher<User> passwordHasher) : base(dbContext, mapper)
         {
             _straniVariDbContext = dbContext;
-            _passwordHasher = passwordHasher; 
+            _passwordHasher = passwordHasher;
         }
 
         public override async Task Insert(AdministratorUpSertRequest addAdministratorRequest)
@@ -37,6 +37,12 @@ namespace StraniVari.Services.Services
 
             administratorInfo.PasswordHash = _passwordHasher.HashPassword(administratorInfo, addAdministratorRequest.Password);
 
+            var existst = await _straniVariDbContext.Users.AnyAsync(x => x.UserName == administratorInfo.UserName);
+
+            if (existst)
+            {
+                throw new InvalidOperationException("Username taken!");
+            }
             await _straniVariDbContext.Users.AddAsync(administratorInfo);
 
             await _straniVariDbContext.SaveChangesAsync();
@@ -100,6 +106,16 @@ namespace StraniVari.Services.Services
             if (user == null)
             {
                 throw new ArgumentException("Invalid id");
+            }
+
+            if(adminFound.User.UserName != updateAdministratorRequest.Username)
+            {
+                var exists = await _straniVariDbContext.Users.AnyAsync(x => x.Id != id && x.UserName == updateAdministratorRequest.Username);
+
+                if (exists)
+                {
+                    throw new InvalidOperationException("Username taken!");
+                }
             }
 
             adminFound.FirstName = updateAdministratorRequest.FirstName;

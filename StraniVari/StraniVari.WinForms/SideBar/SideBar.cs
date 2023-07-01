@@ -5,6 +5,7 @@ using StraniVari.WinUI.Login;
 using StraniVari.WinUI.Reports;
 using StraniVari.WinUI.SchoolDetails;
 using StraniVari.WinUI.Service;
+using StraniVari.WinUI.StartPage;
 using StraniVari.WinUI.Trip;
 
 namespace StraniVari.WinUI.Material
@@ -80,6 +81,13 @@ namespace StraniVari.WinUI.Material
             ApiService.Token = null;
             frmLogin frmLogin = new frmLogin();
             frmLogin.Show();
+            CloseCurrentForm();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            frmStartPage frmStartPage = new frmStartPage();
+            frmStartPage.Show();
             CloseCurrentForm();
         }
     }

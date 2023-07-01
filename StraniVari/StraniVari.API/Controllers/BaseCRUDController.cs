@@ -22,16 +22,30 @@ namespace StraniVari.API.Controllers
         [Authorize(Roles = Role.Administrator)]
         public virtual async Task<IActionResult> Insert([FromBody] TInsert request)
         {
-            await _crudService.Insert(request);
-            return Ok(new ResponseResult { Message = "You succeeded" });
+            try
+            {
+                await _crudService.Insert(request);
+                return Ok(new ResponseResult { Message = "You succeeded" });
+            }
+            catch (InvalidOperationException ex)
+            {
+                return BadRequest(new ResponseResult { Message = "Insert failed: " + ex.Message });
+            }
         }
 
         [HttpPut]
         [Authorize(Roles = Role.Administrator)]
         public virtual async Task<IActionResult> Update(int id, [FromBody] TUpdate request)
         {
-            await _crudService.Update(id, request);
-            return Ok(new ResponseResult { Message = "You succeeded" });
+            try
+            {
+                await _crudService.Update(id, request);
+                return Ok(new ResponseResult { Message = "You succeeded" });
+            }
+            catch (InvalidOperationException ex)
+            {
+                return BadRequest(new ResponseResult { Message = "Insert failed: " + ex.Message });
+            }
         }
 
         [HttpDelete]

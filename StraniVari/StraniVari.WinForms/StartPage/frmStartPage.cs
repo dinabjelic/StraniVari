@@ -1,6 +1,7 @@
 ﻿using StraniVari.WinUI.Admin;
 using StraniVari.WinUI.EventDetails;
 using StraniVari.WinUI.Games;
+using StraniVari.WinUI.Helpers;
 using StraniVari.WinUI.Login;
 using StraniVari.WinUI.Material;
 using StraniVari.WinUI.Reports;
@@ -20,17 +21,7 @@ namespace StraniVari.WinUI.StartPage
 
         private void frmStartPage_Load(object sender, EventArgs e)
         {
-            var stream = ApiService.Token;
-            var handler = new JwtSecurityTokenHandler();
-            var jsonToken = handler.ReadJwtToken(stream);
-
-            string firstName = jsonToken.Claims.First(claim => claim.Type == "given_name").Value;
-            if (!string.IsNullOrEmpty(firstName))
-            {
-                firstName = firstName.Substring(0, 1).ToUpper() + firstName.Substring(1);
-            }
-
-            lblName.Text = firstName;
+            lblName.Text = JWTNameDecoder.ShowName();
         }
 
         private void btnTrips_Click_1(object sender, EventArgs e)

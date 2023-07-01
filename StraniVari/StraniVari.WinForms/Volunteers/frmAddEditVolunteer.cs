@@ -1,4 +1,6 @@
-﻿using StraniVari.Common.Constants;
+﻿using Microsoft.Reporting.Map.WebForms.BingMaps;
+using Newtonsoft.Json;
+using StraniVari.Common.Constants;
 using StraniVari.Core.Requests;
 using StraniVari.Core.Responses;
 using StraniVari.WinUI.Admin;
@@ -46,13 +48,29 @@ namespace StraniVari.WinUI.Volunteers
 
                 if (SelectedVolunteer == null)
                 {
-                    await _apiService.Insert<ResponseResult>(volunteer);
-                    MessageBox.Show("Volunteer successfully added.", "Infomation", MessageBoxButtons.OK);
+
+                    var response = await _apiService.Insert<ResponseResult>(volunteer);
+                    if (response is not null)
+                    {
+                        MessageBox.Show("Volunteer successfully added.", "Infomation", MessageBoxButtons.OK);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Insert failed!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
-                    await _apiService.Update<ResponseResult>(volunteer, SelectedVolunteer.Id);
-                    MessageBox.Show("Details successfully updated.", "Infomation", MessageBoxButtons.OK);
+                    var response = await _apiService.Update<ResponseResult>(volunteer, SelectedVolunteer.Id);
+                    if (response is not null)
+                    {
+                        MessageBox.Show("Details successfully updated.", "Infomation", MessageBoxButtons.OK);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Update failed!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                   
                 }
                 this.DialogResult = DialogResult.OK;
                 Close();

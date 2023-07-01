@@ -9,7 +9,7 @@ namespace StraniVari.WinUI.Admin
     {
         ApiService _apiService = new ApiService("Administrator");
         private GetAdministratorDetailsResponse selectedAdmin;
-        public frmAddEditAdminstrator(GetAdministratorDetailsResponse selectedAdmin=null)
+        public frmAddEditAdminstrator(GetAdministratorDetailsResponse selectedAdmin = null)
         {
             InitializeComponent();
             this.selectedAdmin = selectedAdmin;
@@ -45,13 +45,28 @@ namespace StraniVari.WinUI.Admin
 
                 if (selectedAdmin == null)
                 {
-                    await _apiService.Insert<ResponseResult>(administrator);
-                    MessageBox.Show("Administrator successfully added.", "Infomation", MessageBoxButtons.OK);
+                    var response = await _apiService.Insert<ResponseResult>(administrator);
+                    if (response is not null)
+                    {
+                        MessageBox.Show("Administrator successfully added.", "Infomation", MessageBoxButtons.OK);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Insert failed!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
-                    await _apiService.Update<ResponseResult>(administrator, selectedAdmin.Id);
-                    MessageBox.Show("Details successfully updated.", "Infomation", MessageBoxButtons.OK);
+                    var response = await _apiService.Update<ResponseResult>(administrator, selectedAdmin.Id);
+                    if (response is not null)
+                    {
+                        MessageBox.Show("Details successfully updated.", "Infomation", MessageBoxButtons.OK);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Update failed!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
                 }
                 this.DialogResult = DialogResult.OK;
                 Close();
