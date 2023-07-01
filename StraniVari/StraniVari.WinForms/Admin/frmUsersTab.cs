@@ -24,8 +24,6 @@ namespace StraniVari.WinUI.Admin
         {
             frmAllAdmins_Load(sender, e);
             frmAllVolunteers_Load(sender, e);
-
-
         }
 
         public async void frmAllVolunteers_Load(object sender, EventArgs e)
@@ -40,22 +38,7 @@ namespace StraniVari.WinUI.Admin
             dgvAdmins.AutoGenerateColumns = false;
             var result = await _apiServiceAdmin.Get<List<GetAdministratorDetailsResponse>>();
             dgvAdmins.DataSource = result;
-          
-
-            //foreach (DataGridViewRow row in dgvAdmins.Rows)
-            //{
-            //    var item = (GetAdministratorDetailsResponse)row.DataBoundItem;
-            //    if (item.Id.ToString() == userId)
-            //    {
-            //        var deleteButtonCell = row.Cells["dataGridViewButtonColumn2"];
-            //        var deleteButtonColumn = deleteButtonCell.OwningColumn;
-            //        deleteButtonColumn.Visible = false;
-            //    }
-            //}
-
-            
         }
-
         private void btnAddVolunteer_Click(object sender, EventArgs e)
         {
             frmAddEditVolunteer frmAddEditVolunteer = new frmAddEditVolunteer();
