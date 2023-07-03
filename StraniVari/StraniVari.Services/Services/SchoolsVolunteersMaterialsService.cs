@@ -21,12 +21,13 @@ namespace StraniVari.Services.Services
         {
             var eventFound = await _straniVariDbContext.Events.FirstOrDefaultAsync(x => x.Id == schoolVolunteerMaterialRequest.EventId);
 
-            await _straniVariDbContext.EventSchools.AddAsync(new EventSchool
+            var schoolEvent = new EventSchool
             {
                 EventId = eventFound.Id,
                 SchoolId = schoolVolunteerMaterialRequest.SchoolId
-            });
+            };
 
+            await _straniVariDbContext.EventSchools.AddAsync(schoolEvent);
             await _straniVariDbContext.SaveChangesAsync();
         }
     }
