@@ -39,7 +39,9 @@
             groupBox2 = new GroupBox();
             dgvVolunteers = new DataGridView();
             label3 = new Label();
+            button1 = new Button();
             SchoolVolunteerId = new DataGridViewTextBoxColumn();
+            dataGridViewCheckBoxColumn1 = new DataGridViewCheckBoxColumn();
             FirstName = new DataGridViewTextBoxColumn();
             LastName = new DataGridViewTextBoxColumn();
             VolunteerAddress = new DataGridViewTextBoxColumn();
@@ -53,7 +55,7 @@
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(53, 116);
+            comboBox1.Location = new Point(15, 115);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(418, 28);
             comboBox1.TabIndex = 0;
@@ -62,7 +64,7 @@
             // label1
             // 
             label1.Font = new Font("Segoe Script", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(50, 63);
+            label1.Location = new Point(12, 62);
             label1.Name = "label1";
             label1.Size = new Size(461, 50);
             label1.TabIndex = 88;
@@ -71,7 +73,7 @@
             // groupBox1
             // 
             groupBox1.Controls.Add(dgvMaterialForSchool);
-            groupBox1.Location = new Point(50, 224);
+            groupBox1.Location = new Point(12, 223);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(424, 259);
             groupBox1.TabIndex = 89;
@@ -123,7 +125,7 @@
             // label2
             // 
             label2.Font = new Font("Segoe Script", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(50, 194);
+            label2.Location = new Point(12, 193);
             label2.Name = "label2";
             label2.Size = new Size(461, 50);
             label2.TabIndex = 90;
@@ -132,9 +134,9 @@
             // groupBox2
             // 
             groupBox2.Controls.Add(dgvVolunteers);
-            groupBox2.Location = new Point(50, 561);
+            groupBox2.Location = new Point(12, 560);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(893, 375);
+            groupBox2.Size = new Size(938, 375);
             groupBox2.TabIndex = 91;
             groupBox2.TabStop = false;
             // 
@@ -144,26 +146,36 @@
             dgvVolunteers.AllowUserToDeleteRows = false;
             dgvVolunteers.BackgroundColor = SystemColors.ButtonHighlight;
             dgvVolunteers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvVolunteers.Columns.AddRange(new DataGridViewColumn[] { SchoolVolunteerId, FirstName, LastName, VolunteerAddress, VolunteerCity });
+            dgvVolunteers.Columns.AddRange(new DataGridViewColumn[] { SchoolVolunteerId, dataGridViewCheckBoxColumn1, FirstName, LastName, VolunteerAddress, VolunteerCity });
             dgvVolunteers.Cursor = Cursors.Hand;
             dgvVolunteers.Dock = DockStyle.Fill;
             dgvVolunteers.Location = new Point(3, 23);
             dgvVolunteers.Name = "dgvVolunteers";
-            dgvVolunteers.ReadOnly = true;
             dgvVolunteers.RowHeadersWidth = 51;
             dgvVolunteers.RowTemplate.Height = 29;
             dgvVolunteers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvVolunteers.Size = new Size(887, 349);
+            dgvVolunteers.Size = new Size(932, 349);
             dgvVolunteers.TabIndex = 0;
             // 
             // label3
             // 
             label3.Font = new Font("Segoe Script", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(53, 508);
+            label3.Location = new Point(15, 507);
             label3.Name = "label3";
             label3.Size = new Size(461, 50);
             label3.TabIndex = 92;
             label3.Text = "Volunteers";
+            // 
+            // button1
+            // 
+            button1.BackColor = SystemColors.Window;
+            button1.Cursor = Cursors.Hand;
+            button1.Location = new Point(770, 950);
+            button1.Name = "button1";
+            button1.Size = new Size(177, 40);
+            button1.TabIndex = 93;
+            button1.Text = "Save";
+            button1.UseVisualStyleBackColor = false;
             // 
             // SchoolVolunteerId
             // 
@@ -171,9 +183,16 @@
             SchoolVolunteerId.HeaderText = "SchoolVolunteerId";
             SchoolVolunteerId.MinimumWidth = 6;
             SchoolVolunteerId.Name = "SchoolVolunteerId";
-            SchoolVolunteerId.ReadOnly = true;
             SchoolVolunteerId.Visible = false;
             SchoolVolunteerId.Width = 125;
+            // 
+            // dataGridViewCheckBoxColumn1
+            // 
+            dataGridViewCheckBoxColumn1.DataPropertyName = "IsChecked";
+            dataGridViewCheckBoxColumn1.HeaderText = "";
+            dataGridViewCheckBoxColumn1.MinimumWidth = 6;
+            dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
+            dataGridViewCheckBoxColumn1.Width = 50;
             // 
             // FirstName
             // 
@@ -216,7 +235,8 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonHighlight;
-            ClientSize = new Size(1144, 948);
+            ClientSize = new Size(981, 1035);
+            Controls.Add(button1);
             Controls.Add(label3);
             Controls.Add(groupBox2);
             Controls.Add(label2);
@@ -246,7 +266,9 @@
         private GroupBox groupBox2;
         private DataGridView dgvVolunteers;
         private Label label3;
+        private Button button1;
         private DataGridViewTextBoxColumn SchoolVolunteerId;
+        private DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
         private DataGridViewTextBoxColumn FirstName;
         private DataGridViewTextBoxColumn LastName;
         private DataGridViewTextBoxColumn VolunteerAddress;
