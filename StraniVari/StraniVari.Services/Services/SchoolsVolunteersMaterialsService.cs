@@ -29,6 +29,27 @@ namespace StraniVari.Services.Services
 
             await _straniVariDbContext.EventSchools.AddAsync(schoolEvent);
             await _straniVariDbContext.SaveChangesAsync();
+
+            foreach (var item in schoolVolunteerMaterialRequest.Materials)
+            {
+                await _straniVariDbContext.SchoolMaterials.AddAsync(new SchoolMaterial
+                {
+                    EventSchoolId = schoolEvent.Id,
+                    MaterialId = item
+                });
+            }
+
+            await _straniVariDbContext.SaveChangesAsync();
+
+            foreach (var item in schoolVolunteerMaterialRequest.Volunteers)
+            {
+                await _straniVariDbContext.SchoolVolunteers.AddAsync(new SchoolVolunteer
+                {
+                    EventSchoolId = schoolEvent.Id,
+                    VolunteerId = item
+                });
+            }
+            await _straniVariDbContext.SaveChangesAsync();
         }
     }
 }
