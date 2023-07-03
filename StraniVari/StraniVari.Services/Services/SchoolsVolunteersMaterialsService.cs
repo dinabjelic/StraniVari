@@ -1,0 +1,33 @@
+﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
+using StraniVari.Core.Entities;
+using StraniVari.Core.Requests;
+using StraniVari.Database;
+using StraniVari.Services.Base;
+using StraniVari.Services.Interfaces;
+
+namespace StraniVari.Services.Services
+{
+    public class SchoolsVolunteersMaterialsService : BaseCrudService<EventSchool, SchoolVolunteerMaterialRequest, SchoolVolunteerMaterialRequest, SchoolVolunteerMaterialRequest>, ISchoolsVolunteersMaterialsService
+    {
+        private readonly StraniVariDbContext _straniVariDbContext;
+
+        public SchoolsVolunteersMaterialsService(StraniVariDbContext dbContext, IMapper mapper) : base(dbContext, mapper)
+        {
+            _straniVariDbContext = dbContext;
+        }
+
+        public override async Task Insert(SchoolVolunteerMaterialRequest schoolVolunteerMaterialRequest)
+        {
+            var eventFound = await _straniVariDbContext.Events.FirstOrDefaultAsync(x => x.Id == schoolVolunteerMaterialRequest.EventId);
+
+            await _straniVariDbContext.EventSchools.AddAsync(new EventSchool
+            {
+                EventId = eventFound.Id,
+                SchoolId = schoolVolunteerMaterialRequest.SchoolId
+            });
+
+            await _straniVariDbContext.SaveChangesAsync();
+        }
+    }
+}

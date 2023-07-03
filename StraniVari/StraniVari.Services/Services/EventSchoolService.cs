@@ -1,5 +1,4 @@
-﻿
-using AutoMapper;
+﻿using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using StraniVari.Core.Entities;
 using StraniVari.Core.Requests;
@@ -7,8 +6,6 @@ using StraniVari.Core.Responses;
 using StraniVari.Database;
 using StraniVari.Services.Base;
 using StraniVari.Services.Interfaces;
-using System.Runtime.CompilerServices;
-using System.Security.Cryptography.X509Certificates;
 
 namespace StraniVari.Services.Services
 {
