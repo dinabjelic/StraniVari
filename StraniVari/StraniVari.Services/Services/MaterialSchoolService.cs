@@ -112,10 +112,10 @@ namespace StraniVari.Services.Services
                 model = trainer.Fit(trainData);
             }
 
-            var elements = _straniVariDbContext.SchoolMaterials.Where(x=>x.EventSchoolId != eventSchoolId).ToList();
+            var elements = _straniVariDbContext.SchoolMaterials.Where(x => x.EventSchoolId != eventSchoolId).ToList();
             var allItems = elements.GroupBy(x => x.MaterialId).Select(y => y.First()).ToList();
 
-            if(model == null)
+            if (model == null)
             {
                 return Enumerable.Empty<SchoolMaterial>().ToList();
             }
@@ -138,5 +138,19 @@ namespace StraniVari.Services.Services
 
             return finalResult;
         }
-    } 
+
+        public async Task<List<GetMaterialsForSchoolRequest>> GetAvailableMaterial(int id)
+        {
+
+            var availableMaterial = await _straniVariDbContext.Materials
+                .Where(x => !_straniVariDbContext.SchoolMaterials.Any(y => y.MaterialId == x.Id && y.EventSchoolId == id))
+                .Select(e => new GetMaterialsForSchoolRequest
+                {
+                    MaterialId = e.Id,
+                    MaterialName = e.Name,
+                }).ToListAsync();
+
+            return availableMaterial;
+        }
+    }
 }

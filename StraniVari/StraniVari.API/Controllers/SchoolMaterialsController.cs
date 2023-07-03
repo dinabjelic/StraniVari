@@ -5,6 +5,7 @@ using StraniVari.Core.Helper;
 using StraniVari.Core.Requests;
 using StraniVari.Core.Responses;
 using StraniVari.Services.Interfaces;
+using StraniVari.Services.Services;
 
 namespace StraniVari.API.Controllers
 {
@@ -28,6 +29,13 @@ namespace StraniVari.API.Controllers
         public async Task<IActionResult> GetMaterialsForSchool(int id)
         {
             return Ok(await _materialSchoolService.GetMaterialsForSchool(id));
+        }
+
+        [HttpGet("getActiveMaterial")]
+        [Authorize(Roles = Role.Administrator)]
+        public async Task<IActionResult> GetAvailableMaterial(int id)
+        {
+            return Ok(await _materialSchoolService.GetAvailableMaterial(id));
         }
     }
 }

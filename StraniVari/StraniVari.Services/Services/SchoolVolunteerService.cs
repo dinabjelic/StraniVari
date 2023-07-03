@@ -50,5 +50,22 @@ namespace StraniVari.Services.Services
 
             return schoolVolunteers;
         }
+
+        public async Task<List<GetVolunteersForEventResponse>> GetVolunteersForEvent(int id)
+        {
+            var availableVolunteersForEvent = await _straniVariDbContext.Volunteers
+                .Where(x => !_straniVariDbContext.SchoolVolunteers.Any(y => y.VolunteerId == x.Id && y.EventSchool.EventId == id))
+                .Select(v => new GetVolunteersForEventResponse
+                {
+                    VolunteerId = v.Id,
+                    VolunteerAddress = v.Address,
+                    VolunteerCity = v.City,
+                    FirstName = v.FirstName,
+                    LastName = v.LastName,
+                    VolunteerBirthDate = v.DateOfBirth
+                }).ToListAsync(); 
+
+            return availableVolunteersForEvent;
+        }
     }
 }

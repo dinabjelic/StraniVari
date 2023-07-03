@@ -22,6 +22,7 @@ namespace StraniVari.Mapper
 
             CreateMap<Material, MaterialUpsertRequest>().ReverseMap();
             CreateMap<Material, GetMaterialDetailsResponse>().ReverseMap();
+            CreateMap<Material, GetMaterialResponse>().ReverseMap();
 
             CreateMap<Notification, UpSertMeetingRequest>().ReverseMap();
             CreateMap<Notification, GetMeetingsResponse>().ReverseMap();

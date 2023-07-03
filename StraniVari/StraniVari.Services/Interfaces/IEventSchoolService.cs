@@ -12,5 +12,12 @@ namespace StraniVari.Services.Interfaces
         /// <param name="id"></param>
         /// <returns></returns>
         Task<List<GetSchoolsForEventResponse>> GetSchoolsForEvent(int id);
+
+        /// <summary>
+        /// getting schools that are not added on event
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        Task<List<GetAvailableSchoolsForEventResponse>> GetAvailableSchools(int id);
     }
 }

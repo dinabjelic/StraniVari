@@ -195,5 +195,11 @@ namespace StraniVari.WinUI.EventDetails
                 frmEditSchoolsDetails.ShowDialog();
             }
         }
+
+        private void buttonAdd_Click(object sender, EventArgs e)
+        {
+            frmSchoolsMaterialVolunteerscs frmSchoolsMaterialVolunteerscs = new frmSchoolsMaterialVolunteerscs(selectedEvent);
+            frmSchoolsMaterialVolunteerscs.ShowDialog();
+        }
     }
 }

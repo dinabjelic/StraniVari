@@ -103,7 +103,7 @@
             Controls.Add(txtMaterialName);
             Controls.Add(label1);
             Name = "frmAddEditMaterial";
-            StartPosition = FormStartPosition.CenterScreen;
+            StartPosition = FormStartPosition.CenterParent;
             Load += frmAddEditMaterial_Load;
             ((System.ComponentModel.ISupportInitialize)err).EndInit();
             ResumeLayout(false);

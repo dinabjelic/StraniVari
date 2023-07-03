@@ -58,6 +58,7 @@
             Status = new DataGridViewTextBoxColumn();
             label3 = new Label();
             tabPage4 = new TabPage();
+            buttonAdd = new Button();
             groupBox4 = new GroupBox();
             dgvSchoolsEventDetails = new DataGridView();
             dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
@@ -411,6 +412,7 @@
             // 
             // tabPage4
             // 
+            tabPage4.Controls.Add(buttonAdd);
             tabPage4.Controls.Add(groupBox4);
             tabPage4.Location = new Point(4, 29);
             tabPage4.Name = "tabPage4";
@@ -419,6 +421,18 @@
             tabPage4.TabIndex = 3;
             tabPage4.Text = "Schools";
             tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // buttonAdd
+            // 
+            buttonAdd.BackColor = Color.White;
+            buttonAdd.Cursor = Cursors.Hand;
+            buttonAdd.Location = new Point(820, 41);
+            buttonAdd.Name = "buttonAdd";
+            buttonAdd.Size = new Size(192, 29);
+            buttonAdd.TabIndex = 2;
+            buttonAdd.Text = "Add event details";
+            buttonAdd.UseVisualStyleBackColor = false;
+            buttonAdd.Click += buttonAdd_Click;
             // 
             // groupBox4
             // 
@@ -585,5 +599,6 @@
         private DataGridViewTextBoxColumn NumberOfChildren;
         private DataGridViewButtonColumn Details;
         private DataGridViewButtonColumn dataGridViewButtonColumn2;
+        private Button buttonAdd;
     }
 }

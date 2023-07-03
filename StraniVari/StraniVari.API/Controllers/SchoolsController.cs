@@ -5,7 +5,6 @@ using StraniVari.Core.Helper;
 using StraniVari.Core.Requests;
 using StraniVari.Core.Responses;
 using StraniVari.Services.Interfaces;
-using StraniVari.Services.Services;
 
 namespace StraniVari.API.Controllers
 {
@@ -18,7 +17,7 @@ namespace StraniVari.API.Controllers
         }
 
         [HttpGet("filtered-data")]
-        [Authorize(Roles = Role.Administrator + "," + Role.RegularUser)]
+        [Authorize(Roles = Role.Administrator)]
         public async Task<IActionResult> GetFilteredSchools(string? searchTerm)
         {
             return Ok(await _schoolService.GetFilteredSchools(searchTerm));

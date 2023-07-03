@@ -22,5 +22,12 @@ namespace StraniVari.API.Controllers
         {
             return Ok(await _eventSchoolService.GetSchoolsForEvent(id));
         }
+
+        [HttpGet("getActiveSchools")]
+        [Authorize(Roles = Role.Administrator)]
+        public async Task<IActionResult> GetAvailableSchools(int id)
+        {
+            return Ok(await _eventSchoolService.GetAvailableSchools(id));
+        }
     }
 }

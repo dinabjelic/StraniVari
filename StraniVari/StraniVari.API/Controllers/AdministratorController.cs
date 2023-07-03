@@ -17,7 +17,7 @@ namespace StraniVari.API.Controllers
         }
 
         [HttpGet("filtered-data")]
-        [Authorize(Roles = Role.Administrator + "," + Role.RegularUser)]
+        [Authorize(Roles = Role.Administrator)]
         public async Task<IActionResult> GetFilteredEvents(string? searchTerm)
         {
             return Ok(await _administratorService.GetFilteredUsers(searchTerm));
