@@ -38,12 +38,12 @@
             label2 = new Label();
             groupBox2 = new GroupBox();
             dgvVolunteers = new DataGridView();
+            label3 = new Label();
             SchoolVolunteerId = new DataGridViewTextBoxColumn();
             FirstName = new DataGridViewTextBoxColumn();
             LastName = new DataGridViewTextBoxColumn();
             VolunteerAddress = new DataGridViewTextBoxColumn();
             VolunteerCity = new DataGridViewTextBoxColumn();
-            label3 = new Label();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvMaterialForSchool).BeginInit();
             groupBox2.SuspendLayout();
@@ -156,6 +156,15 @@
             dgvVolunteers.Size = new Size(887, 349);
             dgvVolunteers.TabIndex = 0;
             // 
+            // label3
+            // 
+            label3.Font = new Font("Segoe Script", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.Location = new Point(53, 508);
+            label3.Name = "label3";
+            label3.Size = new Size(461, 50);
+            label3.TabIndex = 92;
+            label3.Text = "Volunteers";
+            // 
             // SchoolVolunteerId
             // 
             SchoolVolunteerId.DataPropertyName = "SchoolVolunteerId";
@@ -186,7 +195,7 @@
             // 
             // VolunteerAddress
             // 
-            VolunteerAddress.DataPropertyName = "Address";
+            VolunteerAddress.DataPropertyName = "VolunteerAddress";
             VolunteerAddress.HeaderText = "Address";
             VolunteerAddress.MinimumWidth = 6;
             VolunteerAddress.Name = "VolunteerAddress";
@@ -195,21 +204,12 @@
             // 
             // VolunteerCity
             // 
-            VolunteerCity.DataPropertyName = "City";
+            VolunteerCity.DataPropertyName = "VolunteerCity";
             VolunteerCity.HeaderText = "City";
             VolunteerCity.MinimumWidth = 6;
             VolunteerCity.Name = "VolunteerCity";
             VolunteerCity.ReadOnly = true;
             VolunteerCity.Width = 190;
-            // 
-            // label3
-            // 
-            label3.Font = new Font("Segoe Script", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(53, 508);
-            label3.Name = "label3";
-            label3.Size = new Size(461, 50);
-            label3.TabIndex = 92;
-            label3.Text = "Volunteers";
             // 
             // frmSchoolsMaterialVolunteerscs
             // 
@@ -245,11 +245,11 @@
         private DataGridViewTextBoxColumn MaterialName;
         private GroupBox groupBox2;
         private DataGridView dgvVolunteers;
+        private Label label3;
         private DataGridViewTextBoxColumn SchoolVolunteerId;
         private DataGridViewTextBoxColumn FirstName;
         private DataGridViewTextBoxColumn LastName;
         private DataGridViewTextBoxColumn VolunteerAddress;
         private DataGridViewTextBoxColumn VolunteerCity;
-        private Label label3;
     }
 }
