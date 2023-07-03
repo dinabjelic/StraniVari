@@ -3,6 +3,7 @@ using StraniVari.Core.Responses;
 using StraniVari.WinUI.Applications;
 using StraniVari.WinUI.Notifications;
 using StraniVari.WinUI.PlanAndProgramme;
+using StraniVari.WinUI.SchoolDetails;
 using StraniVari.WinUI.Service;
 using System.Xml.Linq;
 
@@ -16,6 +17,9 @@ namespace StraniVari.WinUI.EventDetails
         ApiService _apiServiceNotification = new ApiService("Notifications");
         ApiService _apiServiceApplicationsDetails = new ApiService("Trip/get");
         ApiService _apiServiceVolunteerTrips = new ApiService("VolunteerTrip/get");
+        ApiService _apiServiceEventSchoolGet = new ApiService("EventSchool/get");
+        ApiService _apiServiceEventSchools = new ApiService("EventSchool");
+
 
         private EventUpsertRequest selectedEvent;
 
@@ -30,6 +34,7 @@ namespace StraniVari.WinUI.EventDetails
             frmAllPlanAndProgramme_Load(sender, e);
             frmAllNotifications_Load(sender, e);
             frmAllApplications_Load(sender, e);
+            frmSchoolsEventDetails_Load(sender, e);
         }
 
         public async void frmAllPlanAndProgramme_Load(object sender, EventArgs e)
@@ -52,6 +57,13 @@ namespace StraniVari.WinUI.EventDetails
             dgvApplications.DataSource = result;
 
             var tripDetails = await _apiServiceApplicationsDetails.GetById<List<GetTripsDetailsForEventResponse>>(selectedEvent.Id);
+        }
+
+        public async void frmSchoolsEventDetails_Load(object sender, EventArgs e)
+        {
+            dgvSchoolsEventDetails.AutoGenerateColumns = false;
+            var result = await _apiServiceEventSchoolGet.GetById<List<GetSchoolsForEventResponse>>(selectedEvent.Id);
+            dgvSchoolsEventDetails.DataSource = result;
         }
 
         private async void dgvPlanAndProgramme_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -110,11 +122,6 @@ namespace StraniVari.WinUI.EventDetails
             var selectedNotification = dgvNotifications.SelectedRows[0].DataBoundItem as GetMeetingsResponse;
             if (selectedNotification != null)
             {
-                //if (e.ColumnIndex == 6)
-                //{
-                //    frmAddEditNotification frmAddEditNotification = new frmAddEditNotification(SelectedEvent, selectedNotification);
-                //    frmAddEditNotification.ShowDialog();
-                //}
                 if (e.ColumnIndex == 6)
                 {
                     var confirmation = MessageBox.Show("You are about to delete this item!", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
@@ -149,6 +156,43 @@ namespace StraniVari.WinUI.EventDetails
             {
                 var editForm = new frmEditApplication(selectedEvent, selectedVolunteer);
                 editForm.ShowDialog();
+            }
+        }
+
+        private async void dgvSchoolsEventDetails_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var selectedSchool = dgvSchoolsEventDetails.SelectedRows[0].DataBoundItem as GetSchoolsForEventResponse;
+            if (selectedSchool != null)
+            {
+                if (e.ColumnIndex == 5)
+                {
+                    frmSchoolTabs frmSchoolTabs = new frmSchoolTabs(selectedSchool);
+                    frmSchoolTabs.ShowDialog();
+                }
+                else if (e.ColumnIndex == 6)
+                {
+                    var confirmation = MessageBox.Show("You are about to delete this item!", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                    if (confirmation == DialogResult.No)
+                    {
+                        frmSchoolsEventDetails_Load(sender, e);
+                    }
+                    else
+                    {
+                        await _apiServiceEventSchools.Delete<ResponseResult>(selectedSchool.SchoolEventId);
+                        frmSchoolsEventDetails_Load(sender, e);
+                    }
+                }
+            }
+        }
+
+        private void dgvSchoolsEventDetails_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            var selectedSchool = dgvSchoolsEventDetails.SelectedRows[0].DataBoundItem as GetSchoolsForEventResponse;
+            if (selectedSchool != null)
+            {
+                frmEditSchoolsDetails frmEditSchoolsDetails = new frmEditSchoolsDetails(selectedSchool);
+                frmEditSchoolsDetails.ShowDialog();
             }
         }
     }

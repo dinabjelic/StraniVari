@@ -31,6 +31,7 @@
             sideBar1 = new Material.SideBar();
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
+            volunteersSearch = new TextBox();
             groupBox1 = new GroupBox();
             dgvVolunteers = new DataGridView();
             SchoolVolunteerId = new DataGridViewTextBoxColumn();
@@ -41,15 +42,16 @@
             btnDelete = new DataGridViewButtonColumn();
             btnAddVolunteer = new Button();
             tabPage2 = new TabPage();
+            txtSearch = new TextBox();
             groupBox2 = new GroupBox();
             dgvAdmins = new DataGridView();
-            btnAddAdmin = new Button();
             dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn5 = new DataGridViewTextBoxColumn();
             dataGridViewButtonColumn2 = new DataGridViewButtonColumn();
+            btnAddAdmin = new Button();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             groupBox1.SuspendLayout();
@@ -70,28 +72,38 @@
             // 
             tabControl1.Controls.Add(tabPage1);
             tabControl1.Controls.Add(tabPage2);
-            tabControl1.Location = new Point(406, 83);
+            tabControl1.Location = new Point(406, 45);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(1031, 485);
+            tabControl1.Size = new Size(1031, 523);
             tabControl1.TabIndex = 1;
             // 
             // tabPage1
             // 
+            tabPage1.Controls.Add(volunteersSearch);
             tabPage1.Controls.Add(groupBox1);
             tabPage1.Controls.Add(btnAddVolunteer);
             tabPage1.Location = new Point(4, 29);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(1023, 452);
+            tabPage1.Size = new Size(1023, 490);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Volunteers";
             tabPage1.UseVisualStyleBackColor = true;
             // 
+            // volunteersSearch
+            // 
+            volunteersSearch.Location = new Point(722, 23);
+            volunteersSearch.Name = "volunteersSearch";
+            volunteersSearch.PlaceholderText = "  FirstName / LastName";
+            volunteersSearch.Size = new Size(285, 27);
+            volunteersSearch.TabIndex = 91;
+            volunteersSearch.TextChanged += volunteersSearch_TextChanged;
+            // 
             // groupBox1
             // 
             groupBox1.Controls.Add(dgvVolunteers);
-            groupBox1.Location = new Point(15, 55);
+            groupBox1.Location = new Point(17, 109);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(990, 375);
             groupBox1.TabIndex = 37;
@@ -178,7 +190,7 @@
             // 
             btnAddVolunteer.BackColor = SystemColors.Window;
             btnAddVolunteer.Cursor = Cursors.Hand;
-            btnAddVolunteer.Location = new Point(858, 20);
+            btnAddVolunteer.Location = new Point(869, 74);
             btnAddVolunteer.Name = "btnAddVolunteer";
             btnAddVolunteer.Size = new Size(135, 29);
             btnAddVolunteer.TabIndex = 36;
@@ -188,20 +200,30 @@
             // 
             // tabPage2
             // 
+            tabPage2.Controls.Add(txtSearch);
             tabPage2.Controls.Add(groupBox2);
             tabPage2.Controls.Add(btnAddAdmin);
             tabPage2.Location = new Point(4, 29);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(1023, 452);
+            tabPage2.Size = new Size(1023, 490);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Administrators";
             tabPage2.UseVisualStyleBackColor = true;
             // 
+            // txtSearch
+            // 
+            txtSearch.Location = new Point(716, 24);
+            txtSearch.Name = "txtSearch";
+            txtSearch.PlaceholderText = "  FirstName / LastName";
+            txtSearch.Size = new Size(285, 27);
+            txtSearch.TabIndex = 90;
+            txtSearch.TextChanged += txtSearch_TextChanged;
+            // 
             // groupBox2
             // 
             groupBox2.Controls.Add(dgvAdmins);
-            groupBox2.Location = new Point(17, 55);
+            groupBox2.Location = new Point(18, 109);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(983, 375);
             groupBox2.TabIndex = 82;
@@ -226,18 +248,6 @@
             dgvAdmins.TabIndex = 0;
             dgvAdmins.CellContentClick += dgvAdmins_CellContentClick;
             dgvAdmins.CellMouseDoubleClick += dgvAdmins_CellMouseDoubleClick;
-            // 
-            // btnAddAdmin
-            // 
-            btnAddAdmin.BackColor = Color.White;
-            btnAddAdmin.Cursor = Cursors.Hand;
-            btnAddAdmin.Location = new Point(840, 20);
-            btnAddAdmin.Name = "btnAddAdmin";
-            btnAddAdmin.Size = new Size(160, 29);
-            btnAddAdmin.TabIndex = 81;
-            btnAddAdmin.Text = "Add administrator";
-            btnAddAdmin.UseVisualStyleBackColor = false;
-            btnAddAdmin.Click += btnAddAdmin_Click;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -296,6 +306,18 @@
             dataGridViewButtonColumn2.UseColumnTextForButtonValue = true;
             dataGridViewButtonColumn2.Width = 90;
             // 
+            // btnAddAdmin
+            // 
+            btnAddAdmin.BackColor = Color.White;
+            btnAddAdmin.Cursor = Cursors.Hand;
+            btnAddAdmin.Location = new Point(841, 74);
+            btnAddAdmin.Name = "btnAddAdmin";
+            btnAddAdmin.Size = new Size(160, 29);
+            btnAddAdmin.TabIndex = 81;
+            btnAddAdmin.Text = "Add administrator";
+            btnAddAdmin.UseVisualStyleBackColor = false;
+            btnAddAdmin.Click += btnAddAdmin_Click;
+            // 
             // frmUsersTab
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -309,9 +331,11 @@
             Load += frmUsersTab_Load;
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
+            tabPage1.PerformLayout();
             groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvVolunteers).EndInit();
             tabPage2.ResumeLayout(false);
+            tabPage2.PerformLayout();
             groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvAdmins).EndInit();
             ResumeLayout(false);
@@ -341,5 +365,7 @@
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private DataGridViewButtonColumn dataGridViewButtonColumn2;
+        private TextBox txtSearch;
+        private TextBox volunteersSearch;
     }
 }

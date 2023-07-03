@@ -1,6 +1,7 @@
 ﻿using StraniVari.Common.Constants;
 using StraniVari.Core.Requests;
 using StraniVari.Core.Responses;
+using StraniVari.WinUI.SchoolDetails;
 using StraniVari.WinUI.Service;
 
 namespace StraniVari.WinUI.Material
@@ -19,14 +20,14 @@ namespace StraniVari.WinUI.Material
             SelectedElement = selectedElement;
         }
 
+        public frmEditMaterialDetails(GetMaterialsForSchoolRequest selectedMaterial)
+        {
+            InitializeComponent();
+            SelectedMaterial = selectedMaterial;
+        }
+
         private void frmEditMaterialDetails_Load(object sender, EventArgs e)
         {
-            txtName.Text = SelectedEvent.Name;
-            txtTheme.Text = SelectedEvent.StraniVariTheme;
-            txtStartDate.Text = SelectedEvent.StartDate.ToString("D");
-            txtEndDate.Text = SelectedEvent.EndDate.ToString("D");
-            txtSchool.Text = SelectedElement.SchoolName;
-
             txtQuantity.Text = SelectedMaterial.Quantity.ToString();
             txtMaterailName.Text = SelectedMaterial.MaterialName;
         }
@@ -49,7 +50,7 @@ namespace StraniVari.WinUI.Material
                 this.DialogResult = DialogResult.OK;
                 Close();
 
-                var principalForm = Application.OpenForms.OfType<frmMaterialDetails>().FirstOrDefault();
+                var principalForm = Application.OpenForms.OfType<frmSchoolTabs>().FirstOrDefault();
                 principalForm.frmMaterialDetails_Load(sender, e);
             }
         }

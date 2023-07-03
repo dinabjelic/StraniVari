@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using StraniVari.Core.Dtos;
 using StraniVari.Core.Responses;
 using StraniVari.WinUI.Service;
 
@@ -7,6 +8,8 @@ namespace StraniVari.WinUI.Material
     public partial class frmAllMaterial : Form
     {
         ApiService _apiService = new ApiService("Materials");
+        private readonly ApiService _apiServiceFiltered = new ApiService("Materials/filtered-data");
+
         public frmAllMaterial()
         {
             InitializeComponent();
@@ -30,11 +33,6 @@ namespace StraniVari.WinUI.Material
             var selectedMaterial = JsonConvert.DeserializeObject<GetMaterialDetailsResponse>(dgvMaterial.SelectedRows[0].DataBoundItem.ToString());
             if (selectedMaterial != null)
             {
-                //if (e.ColumnIndex == 2)
-                //{
-                //    frmAddEditMaterial frmAddEditMaterial = new frmAddEditMaterial(selectedMaterial);
-                //    frmAddEditMaterial.ShowDialog();
-                //}
                 if (e.ColumnIndex == 2)
                 {
 
@@ -57,7 +55,7 @@ namespace StraniVari.WinUI.Material
         {
             //var id = dgvMaterial.SelectedRows[0].Cells[0].Value;
             var selectedRecord = JsonConvert.DeserializeObject<GetMaterialDetailsResponse>(dgvMaterial.SelectedRows[0].DataBoundItem.ToString());
-            
+
             if (selectedRecord != null)
             {
                 frmAddEditMaterial frmAddEditTrip = new frmAddEditMaterial(selectedRecord);
@@ -69,6 +67,14 @@ namespace StraniVari.WinUI.Material
         {
             frmAddEditMaterial frmAddEditMaterial = new frmAddEditMaterial();
             frmAddEditMaterial.ShowDialog();
+        }
+
+        private async void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            string query = txtSearch.Text;
+            var result = await _apiServiceFiltered.GetSearch<List<MaterialDto>>(query);
+
+            dgvMaterial.DataSource = result;
         }
     }
 }

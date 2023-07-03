@@ -31,8 +31,6 @@
             btnAddEvent = new Button();
             groupBox1 = new GroupBox();
             dgvEvents = new DataGridView();
-            sideBar1 = new Material.SideBar();
-            label1 = new Label();
             Id = new DataGridViewTextBoxColumn();
             EventName = new DataGridViewTextBoxColumn();
             StraniVariTheme = new DataGridViewTextBoxColumn();
@@ -40,6 +38,9 @@
             endDate = new DataGridViewTextBoxColumn();
             btnShowMore = new DataGridViewButtonColumn();
             btnDelete = new DataGridViewButtonColumn();
+            sideBar1 = new Material.SideBar();
+            label1 = new Label();
+            txtSearch = new TextBox();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvEvents).BeginInit();
             SuspendLayout();
@@ -88,23 +89,6 @@
             dgvEvents.TabIndex = 0;
             dgvEvents.CellContentClick += dgvEvents_CellContentClick;
             dgvEvents.CellMouseDoubleClick += dgvEvents_CellMouseDoubleClick;
-            // 
-            // sideBar1
-            // 
-            sideBar1.Dock = DockStyle.Left;
-            sideBar1.Location = new Point(0, 0);
-            sideBar1.Name = "sideBar1";
-            sideBar1.Size = new Size(392, 606);
-            sideBar1.TabIndex = 4;
-            // 
-            // label1
-            // 
-            label1.Font = new Font("Segoe Script", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(424, 56);
-            label1.Name = "label1";
-            label1.Size = new Size(179, 50);
-            label1.TabIndex = 88;
-            label1.Text = "Events";
             // 
             // Id
             // 
@@ -176,12 +160,39 @@
             btnDelete.UseColumnTextForButtonValue = true;
             btnDelete.Width = 126;
             // 
+            // sideBar1
+            // 
+            sideBar1.Dock = DockStyle.Left;
+            sideBar1.Location = new Point(0, 0);
+            sideBar1.Name = "sideBar1";
+            sideBar1.Size = new Size(392, 606);
+            sideBar1.TabIndex = 4;
+            // 
+            // label1
+            // 
+            label1.Font = new Font("Segoe Script", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(424, 56);
+            label1.Name = "label1";
+            label1.Size = new Size(179, 50);
+            label1.TabIndex = 88;
+            label1.Text = "Events";
+            // 
+            // txtSearch
+            // 
+            txtSearch.Location = new Point(1175, 12);
+            txtSearch.Name = "txtSearch";
+            txtSearch.PlaceholderText = "  Event name / Theme";
+            txtSearch.Size = new Size(285, 27);
+            txtSearch.TabIndex = 89;
+            txtSearch.TextChanged += textBox1_TextChanged;
+            // 
             // frmAllEvents
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonHighlight;
             ClientSize = new Size(1472, 606);
+            Controls.Add(txtSearch);
             Controls.Add(label1);
             Controls.Add(sideBar1);
             Controls.Add(btnAddEvent);
@@ -192,6 +203,7 @@
             groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvEvents).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -208,5 +220,6 @@
         private DataGridViewTextBoxColumn endDate;
         private DataGridViewButtonColumn btnShowMore;
         private DataGridViewButtonColumn btnDelete;
+        private TextBox txtSearch;
     }
 }

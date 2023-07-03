@@ -6,5 +6,11 @@ namespace StraniVari.Services.Interfaces
 {
     public interface ISchoolService : ICrudService<School, SchoolUpsertRequest, SchoolUpsertRequest, GetSchoolDetailsResponse>
     {
+        /// <summary>
+        /// returns filtered schools
+        /// </summary>
+        /// <param name="searchTerm"></param>
+        /// <returns></returns>
+        Task<List<School>> GetFilteredSchools(string searchTerm);
     }
 }

@@ -39,6 +39,7 @@
             sideBar1 = new SideBar();
             btnAddMat = new Button();
             label1 = new Label();
+            txtSearch = new TextBox();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvMaterial).BeginInit();
             SuspendLayout();
@@ -165,12 +166,22 @@
             label1.TabIndex = 87;
             label1.Text = "Materials";
             // 
+            // txtSearch
+            // 
+            txtSearch.Location = new Point(771, 28);
+            txtSearch.Name = "txtSearch";
+            txtSearch.PlaceholderText = "  Material name";
+            txtSearch.Size = new Size(285, 27);
+            txtSearch.TabIndex = 90;
+            txtSearch.TextChanged += txtSearch_TextChanged;
+            // 
             // frmAllMaterial
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonHighlight;
             ClientSize = new Size(1146, 677);
+            Controls.Add(txtSearch);
             Controls.Add(label1);
             Controls.Add(btnAddMat);
             Controls.Add(sideBar1);
@@ -200,5 +211,6 @@
         private SideBar sideBar1;
         private Button btnAddMat;
         private Label label1;
+        private TextBox txtSearch;
     }
 }

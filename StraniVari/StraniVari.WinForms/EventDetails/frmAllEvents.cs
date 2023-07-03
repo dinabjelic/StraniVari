@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using StraniVari.Core.Entities;
 using StraniVari.Core.Requests;
 using StraniVari.Core.Responses;
 using StraniVari.WinUI.Service;
@@ -8,6 +9,8 @@ namespace StraniVari.WinUI.EventDetails
     public partial class frmAllEvents : Form
     {
         private readonly ApiService _apiService = new ApiService("Event");
+        private readonly ApiService _apiServiceFiltered = new ApiService("Event/filtered-data");
+
         public frmAllEvents()
         {
             InitializeComponent();
@@ -31,19 +34,9 @@ namespace StraniVari.WinUI.EventDetails
 
         private async void dgvEvents_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            //var selectedEvent = dgvEvents.SelectedRows[0].DataBoundItem;
-
             var selectedEvent = JsonConvert.DeserializeObject<EventUpsertRequest>(dgvEvents.SelectedRows[0].DataBoundItem.ToString());
             if (selectedEvent != null)
             {
-                //if (e.ColumnIndex == 5)
-                //{
-                //    var editForm = new frmNewEvent(selectedEvent);
-                //    if (editForm.ShowDialog() == DialogResult.OK)
-                //    {
-                //        frmAllEvents_Load(sender, e);
-                //    }
-                //}
                 if (e.ColumnIndex == 5)
                 {
                     frmEventTabs frmEventTabs = new frmEventTabs(selectedEvent);
@@ -63,26 +56,6 @@ namespace StraniVari.WinUI.EventDetails
                         frmAllEvents_Load(sender, e);
                     }
                 }
-                //else if (e.ColumnIndex == 7)
-                //{
-                //    var eventSchools = new frmShoolsForEvent(selectedEvent);
-                //    eventSchools.ShowDialog();
-                //}
-                //else if (e.ColumnIndex == 8)
-                //{
-                //    frmAllNotifications frmAllNotifications = new frmAllNotifications(selectedEvent);
-                //    frmAllNotifications.ShowDialog();
-                //}
-                //else if (e.ColumnIndex == 9)
-                //{
-                //    frmAllPlanAndProgramme frmAllPlanAndProgramme = new frmAllPlanAndProgramme(selectedEvent);
-                //    frmAllPlanAndProgramme.ShowDialog();
-                //}
-                //else if (e.ColumnIndex == 10)
-                //{
-                //    frmAllApplications frmAllApplications = new frmAllApplications(selectedEvent);
-                //    frmAllApplications.ShowDialog();
-                //}
             }
         }
 
@@ -97,6 +70,15 @@ namespace StraniVari.WinUI.EventDetails
                     frmAllEvents_Load(sender, e);
                 }
             }
+        }
+
+        private async void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            string query = txtSearch.Text;
+            var result = await _apiServiceFiltered.GetSearch<List<Event>>(query);
+           
+            dgvEvents.DataSource = result;
+           
         }
     }
 }

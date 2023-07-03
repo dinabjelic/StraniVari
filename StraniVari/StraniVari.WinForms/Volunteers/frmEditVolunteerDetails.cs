@@ -1,5 +1,6 @@
 ﻿using StraniVari.Core.Requests;
 using StraniVari.Core.Responses;
+using StraniVari.WinUI.SchoolDetails;
 using StraniVari.WinUI.Service;
 
 namespace StraniVari.WinUI.Volunteers
@@ -18,14 +19,14 @@ namespace StraniVari.WinUI.Volunteers
             SelectedSchool = selectedSchool;
         }
 
+        public frmEditVolunteerDetails(GetVolunteersForSchoolResponse selectedVolunteer)
+        {
+            InitializeComponent();
+            SelectedVolunteer = selectedVolunteer;
+        }
+
         private void frmEditVolunteerDetails_Load(object sender, EventArgs e)
         {
-            txtName.Text = SelectedEvent.Name;
-            txtTheme.Text = SelectedEvent.StraniVariTheme;
-            txtStartDate.Text = SelectedEvent.StartDate.ToString("D");
-            txtEndDate.Text = SelectedEvent.EndDate.ToString("D");
-            txtSchool.Text = SelectedSchool.SchoolName;
-
             txtSFirstName.Text = SelectedVolunteer.FirstName;
             txtLastName.Text = SelectedVolunteer.LastName;
             txtVolunteerCity.Text = SelectedVolunteer.VolunteerCity;
@@ -49,7 +50,7 @@ namespace StraniVari.WinUI.Volunteers
             this.DialogResult = DialogResult.OK;
             Close();
 
-            var principalForm = Application.OpenForms.OfType<frmVolunteerDetails>().FirstOrDefault();
+            var principalForm = Application.OpenForms.OfType<frmSchoolTabs>().FirstOrDefault();
             principalForm.frmVolunteerDetails_Load(sender, e);
         }
     }

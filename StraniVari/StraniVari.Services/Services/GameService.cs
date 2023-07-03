@@ -40,5 +40,17 @@ namespace StraniVari.Services.Services
 
             return gameList;
         }
+
+        public async Task<List<Game>> GetFilteredGames(string searchTerm)
+        {
+            var filteredData = await _straniVariDbContext.Games.ToListAsync();   
+
+            if(!string.IsNullOrWhiteSpace(searchTerm))
+            {
+                filteredData = filteredData.Where(x => x.Name.ToLower().Contains(searchTerm.ToLower())).ToList();
+            }
+
+            return filteredData;
+        }
     }
 }

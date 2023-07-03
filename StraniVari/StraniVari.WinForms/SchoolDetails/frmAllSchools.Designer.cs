@@ -38,6 +38,7 @@
             btnAddSchool = new Button();
             sideBar1 = new Material.SideBar();
             label1 = new Label();
+            txtSearch = new TextBox();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvSchools).BeginInit();
             SuspendLayout();
@@ -148,12 +149,22 @@
             label1.TabIndex = 88;
             label1.Text = "Schools";
             // 
+            // txtSearch
+            // 
+            txtSearch.Location = new Point(1084, 12);
+            txtSearch.Name = "txtSearch";
+            txtSearch.PlaceholderText = "  School name / Address / City";
+            txtSearch.Size = new Size(285, 27);
+            txtSearch.TabIndex = 90;
+            txtSearch.TextChanged += txtSearch_TextChanged;
+            // 
             // frmAllSchools
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonHighlight;
             ClientSize = new Size(1381, 647);
+            Controls.Add(txtSearch);
             Controls.Add(label1);
             Controls.Add(sideBar1);
             Controls.Add(btnAddSchool);
@@ -164,6 +175,7 @@
             groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvSchools).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -183,5 +195,6 @@
         private DataGridViewTextBoxColumn Address;
         private DataGridViewTextBoxColumn City;
         private DataGridViewButtonColumn btnDelete;
+        private TextBox txtSearch;
     }
 }

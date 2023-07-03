@@ -1,6 +1,7 @@
 ﻿using StraniVari.Common.Constants;
 using StraniVari.Core.Requests;
 using StraniVari.Core.Responses;
+using StraniVari.WinUI.EventDetails;
 using StraniVari.WinUI.Service;
 
 namespace StraniVari.WinUI.SchoolDetails
@@ -22,11 +23,6 @@ namespace StraniVari.WinUI.SchoolDetails
 
         private void frmEditSchoolsDetails_Load(object sender, EventArgs e)
         {
-            txtName.Text = _selectedEvent.Name;
-            txtTheme.Text = _selectedEvent.StraniVariTheme;
-            txtStartDate.Text = _selectedEvent.StartDate.ToString("D");
-            txtEndDate.Text = _selectedEvent.EndDate.ToString("D");
-
             txtNumberOfChildren.Text = _selectedSchool.NumberOfChildren.ToString();
             txtSchoolAddress.Text = _selectedSchool.SchoolAddress;
             txtSchoolCity.Text = _selectedSchool.SchoolCity;
@@ -59,7 +55,7 @@ namespace StraniVari.WinUI.SchoolDetails
                 Close();
             }
 
-            var principalForm = Application.OpenForms.OfType<frmSchoolsEventDetails>().FirstOrDefault();
+            var principalForm = Application.OpenForms.OfType<frmEventTabs>().FirstOrDefault();
             principalForm.frmSchoolsEventDetails_Load(sender, e);
         }
 

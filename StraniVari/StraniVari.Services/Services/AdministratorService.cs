@@ -155,5 +155,17 @@ namespace StraniVari.Services.Services
 
             return volunteerList;
         }
+
+        public async Task<List<Administrator>> GetFilteredUsers(string searchTerm)
+        {
+            var filteredData = await _straniVariDbContext.Administrators.ToListAsync();
+
+            if(!string.IsNullOrWhiteSpace(searchTerm))
+            {
+                filteredData = filteredData.Where(x => (x.FirstName + " " + x.LastName).ToLower().Contains(searchTerm.ToLower())).ToList();
+            }
+
+            return filteredData;
+        }
     }
 }

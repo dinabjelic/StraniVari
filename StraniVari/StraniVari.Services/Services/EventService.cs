@@ -65,5 +65,16 @@ namespace StraniVari.Services.Services
 
             return lastAdded;
         }
+        public async Task<List<Event>> GetFilteredEvents(string searchTerm)
+        {
+            var filteredData = await _straniVariDbContext.Events.ToListAsync();
+
+            if (!string.IsNullOrEmpty(searchTerm))
+            {
+                filteredData = filteredData.Where(x => (x.Name + " " + x.StraniVariTheme).ToLower().Contains(searchTerm.ToLower())).ToList();
+            }
+
+            return filteredData;
+        }
     }
 }

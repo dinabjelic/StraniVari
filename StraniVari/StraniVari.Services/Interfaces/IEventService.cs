@@ -16,5 +16,11 @@ namespace StraniVari.Services.Interfaces
         /// </summary>
         /// <returns></returns>
         Task<GetEventDetailsResponse> GetLastAddedEvent();
+        /// <summary>
+        /// returns filtered events
+        /// </summary>
+        /// <param name="searchTerm"></param>
+        /// <returns></returns>
+        Task<List<Event>> GetFilteredEvents(string searchTerm);
     }
 }

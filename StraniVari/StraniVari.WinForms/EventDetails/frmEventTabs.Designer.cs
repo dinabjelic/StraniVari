@@ -58,6 +58,15 @@
             Status = new DataGridViewTextBoxColumn();
             label3 = new Label();
             tabPage4 = new TabPage();
+            groupBox4 = new GroupBox();
+            dgvSchoolsEventDetails = new DataGridView();
+            dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
+            SchoolName = new DataGridViewTextBoxColumn();
+            SchoolAddress = new DataGridViewTextBoxColumn();
+            SchoolCity = new DataGridViewTextBoxColumn();
+            NumberOfChildren = new DataGridViewTextBoxColumn();
+            Details = new DataGridViewButtonColumn();
+            dataGridViewButtonColumn2 = new DataGridViewButtonColumn();
             tabControl1.SuspendLayout();
             tabPage2.SuspendLayout();
             groupBox2.SuspendLayout();
@@ -68,6 +77,9 @@
             tabPage3.SuspendLayout();
             groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvApplications).BeginInit();
+            tabPage4.SuspendLayout();
+            groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvSchoolsEventDetails).BeginInit();
             SuspendLayout();
             // 
             // tabControl1
@@ -399,13 +411,111 @@
             // 
             // tabPage4
             // 
+            tabPage4.Controls.Add(groupBox4);
             tabPage4.Location = new Point(4, 29);
             tabPage4.Name = "tabPage4";
             tabPage4.Padding = new Padding(3);
             tabPage4.Size = new Size(1100, 416);
             tabPage4.TabIndex = 3;
-            tabPage4.Text = "Event schools";
+            tabPage4.Text = "Schools";
             tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // groupBox4
+            // 
+            groupBox4.Controls.Add(dgvSchoolsEventDetails);
+            groupBox4.Location = new Point(85, 76);
+            groupBox4.Name = "groupBox4";
+            groupBox4.Size = new Size(930, 269);
+            groupBox4.TabIndex = 1;
+            groupBox4.TabStop = false;
+            // 
+            // dgvSchoolsEventDetails
+            // 
+            dgvSchoolsEventDetails.AllowUserToAddRows = false;
+            dgvSchoolsEventDetails.AllowUserToDeleteRows = false;
+            dgvSchoolsEventDetails.BackgroundColor = SystemColors.ButtonHighlight;
+            dgvSchoolsEventDetails.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvSchoolsEventDetails.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn3, SchoolName, SchoolAddress, SchoolCity, NumberOfChildren, Details, dataGridViewButtonColumn2 });
+            dgvSchoolsEventDetails.Cursor = Cursors.Hand;
+            dgvSchoolsEventDetails.Dock = DockStyle.Fill;
+            dgvSchoolsEventDetails.Location = new Point(3, 23);
+            dgvSchoolsEventDetails.Name = "dgvSchoolsEventDetails";
+            dgvSchoolsEventDetails.ReadOnly = true;
+            dgvSchoolsEventDetails.RowHeadersWidth = 51;
+            dgvSchoolsEventDetails.RowTemplate.Height = 29;
+            dgvSchoolsEventDetails.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvSchoolsEventDetails.Size = new Size(924, 243);
+            dgvSchoolsEventDetails.TabIndex = 0;
+            dgvSchoolsEventDetails.CellContentClick += dgvSchoolsEventDetails_CellContentClick;
+            dgvSchoolsEventDetails.CellMouseDoubleClick += dgvSchoolsEventDetails_CellMouseDoubleClick;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            dataGridViewTextBoxColumn3.DataPropertyName = "SchoolEventId";
+            dataGridViewTextBoxColumn3.HeaderText = "Id";
+            dataGridViewTextBoxColumn3.MinimumWidth = 6;
+            dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            dataGridViewTextBoxColumn3.ReadOnly = true;
+            dataGridViewTextBoxColumn3.Visible = false;
+            dataGridViewTextBoxColumn3.Width = 125;
+            // 
+            // SchoolName
+            // 
+            SchoolName.DataPropertyName = "SchoolName";
+            SchoolName.HeaderText = "School Name";
+            SchoolName.MinimumWidth = 6;
+            SchoolName.Name = "SchoolName";
+            SchoolName.ReadOnly = true;
+            SchoolName.Width = 180;
+            // 
+            // SchoolAddress
+            // 
+            SchoolAddress.DataPropertyName = "SchoolAddress";
+            SchoolAddress.HeaderText = "School Address";
+            SchoolAddress.MinimumWidth = 6;
+            SchoolAddress.Name = "SchoolAddress";
+            SchoolAddress.ReadOnly = true;
+            SchoolAddress.Width = 180;
+            // 
+            // SchoolCity
+            // 
+            SchoolCity.DataPropertyName = "SchoolCity";
+            SchoolCity.HeaderText = "School City";
+            SchoolCity.MinimumWidth = 6;
+            SchoolCity.Name = "SchoolCity";
+            SchoolCity.ReadOnly = true;
+            SchoolCity.Width = 125;
+            // 
+            // NumberOfChildren
+            // 
+            NumberOfChildren.DataPropertyName = "NumberOfChildren";
+            NumberOfChildren.HeaderText = "Children Number";
+            NumberOfChildren.MinimumWidth = 10;
+            NumberOfChildren.Name = "NumberOfChildren";
+            NumberOfChildren.ReadOnly = true;
+            NumberOfChildren.Width = 160;
+            // 
+            // Details
+            // 
+            Details.HeaderText = "Action";
+            Details.MinimumWidth = 6;
+            Details.Name = "Details";
+            Details.ReadOnly = true;
+            Details.Text = "Details";
+            Details.ToolTipText = "Details";
+            Details.UseColumnTextForButtonValue = true;
+            Details.Width = 125;
+            // 
+            // dataGridViewButtonColumn2
+            // 
+            dataGridViewButtonColumn2.HeaderText = "Action";
+            dataGridViewButtonColumn2.MinimumWidth = 6;
+            dataGridViewButtonColumn2.Name = "dataGridViewButtonColumn2";
+            dataGridViewButtonColumn2.ReadOnly = true;
+            dataGridViewButtonColumn2.Text = "Delete";
+            dataGridViewButtonColumn2.ToolTipText = "Delete";
+            dataGridViewButtonColumn2.UseColumnTextForButtonValue = true;
+            dataGridViewButtonColumn2.Width = 90;
             // 
             // frmEventTabs
             // 
@@ -428,6 +538,9 @@
             tabPage3.PerformLayout();
             groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvApplications).EndInit();
+            tabPage4.ResumeLayout(false);
+            groupBox4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgvSchoolsEventDetails).EndInit();
             ResumeLayout(false);
         }
 
@@ -444,11 +557,6 @@
         private DataGridView dgvPlanAndProgramme;
         private TabPage tabPage3;
         private TabPage tabPage4;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private DataGridViewTextBoxColumn StartDate;
-        private DataGridViewTextBoxColumn EndDate;
-        private DataGridViewButtonColumn Option;
-        private DataGridViewButtonColumn Action;
         private DataGridViewTextBoxColumn Id;
         private DataGridViewTextBoxColumn MeetingTheme;
         private DataGridViewTextBoxColumn MeetingPlace;
@@ -463,5 +571,19 @@
         private DataGridViewTextBoxColumn VolunteerName;
         private DataGridViewTextBoxColumn LastName;
         private DataGridViewTextBoxColumn Status;
+        private GroupBox groupBox4;
+        private DataGridView dgvSchoolsEventDetails;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn StartDate;
+        private DataGridViewTextBoxColumn EndDate;
+        private DataGridViewButtonColumn Option;
+        private DataGridViewButtonColumn Action;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private DataGridViewTextBoxColumn SchoolName;
+        private DataGridViewTextBoxColumn SchoolAddress;
+        private DataGridViewTextBoxColumn SchoolCity;
+        private DataGridViewTextBoxColumn NumberOfChildren;
+        private DataGridViewButtonColumn Details;
+        private DataGridViewButtonColumn dataGridViewButtonColumn2;
     }
 }

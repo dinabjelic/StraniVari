@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using StraniVari.Core.Entities;
 using StraniVari.Core.Responses;
 using StraniVari.WinUI.Material;
 using StraniVari.WinUI.Service;
@@ -8,7 +9,8 @@ namespace StraniVari.WinUI.SchoolDetails
     public partial class frmAllSchools : Form
     {
         private readonly ApiService _apiService = new ApiService("Schools");
-        private readonly ApiService _apiServiceDelete = new ApiService("Schools");
+        private readonly ApiService _apiServiceFiltered = new ApiService("Schools/filtered-data");
+
         public frmAllSchools()
         {
             InitializeComponent();
@@ -63,6 +65,14 @@ namespace StraniVari.WinUI.SchoolDetails
                 frmAddEditSchool frmAddEditSchool = new frmAddEditSchool(selectedRecord);
                 frmAddEditSchool.ShowDialog();
             }
+        }
+
+        private async void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            var query = txtSearch.Text;
+            var result = await _apiServiceFiltered.GetSearch<List<School>>(query);
+
+            dgvSchools.DataSource = result;
         }
     }
 }

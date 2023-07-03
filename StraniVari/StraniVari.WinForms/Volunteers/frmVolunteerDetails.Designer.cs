@@ -54,7 +54,7 @@
             groupBox1.Controls.Add(dgvVolunteers);
             groupBox1.Location = new Point(391, 198);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(1159, 379);
+            groupBox1.Size = new Size(1093, 282);
             groupBox1.TabIndex = 33;
             groupBox1.TabStop = false;
             groupBox1.Text = "EVENT DETAILS";
@@ -73,7 +73,7 @@
             dgvVolunteers.RowHeadersWidth = 51;
             dgvVolunteers.RowTemplate.Height = 29;
             dgvVolunteers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvVolunteers.Size = new Size(1153, 353);
+            dgvVolunteers.Size = new Size(1087, 256);
             dgvVolunteers.TabIndex = 0;
             dgvVolunteers.CellContentClick += dgvMaterialForSchool_CellContentClick;
             // 

@@ -1,6 +1,5 @@
 ﻿using StraniVari.Core.Requests;
 using StraniVari.Core.Responses;
-using StraniVari.WinUI.Reports;
 using StraniVari.WinUI.Service;
 
 namespace StraniVari.WinUI.Volunteers

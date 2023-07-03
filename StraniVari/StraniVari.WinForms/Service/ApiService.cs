@@ -1,5 +1,7 @@
-﻿using Flurl.Http;
+﻿using Flurl;
+using Flurl.Http;
 using System.IdentityModel.Tokens.Jwt;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace StraniVari.WinUI.Service
 {
@@ -48,6 +50,24 @@ namespace StraniVari.WinUI.Service
                 return default(T);
             }
         }
+
+        public async Task<T> GetSearch<T>(string? filter) where T : class
+        {
+            try
+            {
+                var result = await $"{Properties.Settings.Default.APIUrl}/{_route}?searchTerm={filter}"
+                    .SetQueryParam(filter)
+                    .WithOAuthBearerToken(Token)
+                    .GetJsonAsync<T>();
+                return result;
+            }
+            catch (FlurlHttpException ex)
+            {
+                HandleError(ex);
+                return default(T);
+            }
+        }
+
 
         public async Task<T> Get<T>(string url) where T : class
         {

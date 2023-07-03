@@ -1,11 +1,8 @@
-﻿using Microsoft.ReportingServices.RdlExpressions.ExpressionHostObjectModel;
-using Newtonsoft.Json;
+﻿using StraniVari.Core.Entities;
 using StraniVari.Core.Responses;
 using StraniVari.WinUI.Helpers;
 using StraniVari.WinUI.Service;
 using StraniVari.WinUI.Volunteers;
-using System.IdentityModel.Tokens.Jwt;
-using System.Windows.Forms;
 
 namespace StraniVari.WinUI.Admin
 {
@@ -13,6 +10,8 @@ namespace StraniVari.WinUI.Admin
     {
         private readonly ApiService _apiServiceVolunters = new ApiService("Volunteers");
         private readonly ApiService _apiServiceAdmin = new ApiService("Administrator");
+        private readonly ApiService _apiServiceFilteredAdmin = new ApiService("Administrator/filtered-data");
+        private readonly ApiService _apiServiceFilteredVolunteer = new ApiService("Volunteers/filtered-data");
 
 
         public frmUsersTab()
@@ -70,9 +69,9 @@ namespace StraniVari.WinUI.Admin
                             frmAllAdmins_Load(sender, e);
                         }
                     }
-                   
+
                 }
-               
+
             }
 
         }
@@ -123,6 +122,22 @@ namespace StraniVari.WinUI.Admin
         {
             frmAddEditAdminstrator frmAddEditAdminstrator = new frmAddEditAdminstrator();
             frmAddEditAdminstrator.Show();
+        }
+
+        private async void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            var query = txtSearch.Text;
+            var result = await _apiServiceFilteredAdmin.GetSearch<List<Administrator>>(query);
+           
+            dgvAdmins.DataSource = result;
+        }
+
+        private async void volunteersSearch_TextChanged(object sender, EventArgs e)
+        {
+            var query = volunteersSearch.Text;
+            var result = await _apiServiceFilteredVolunteer.GetSearch<List<Volunteer>>(query);
+           
+             dgvVolunteers.DataSource = result;
         }
     }
 }

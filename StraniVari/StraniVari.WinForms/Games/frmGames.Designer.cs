@@ -37,6 +37,7 @@
             btnDetails = new DataGridViewButtonColumn();
             btnDelete = new DataGridViewButtonColumn();
             btnAddGame = new Button();
+            gameSearch = new TextBox();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvGames).BeginInit();
             SuspendLayout();
@@ -142,12 +143,22 @@
             btnAddGame.UseVisualStyleBackColor = false;
             btnAddGame.Click += btnAddGame_Click;
             // 
+            // gameSearch
+            // 
+            gameSearch.Location = new Point(800, 55);
+            gameSearch.Name = "gameSearch";
+            gameSearch.PlaceholderText = "  Game name";
+            gameSearch.Size = new Size(285, 27);
+            gameSearch.TabIndex = 92;
+            gameSearch.TextChanged += gameSearch_TextChanged;
+            // 
             // frmGames
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonHighlight;
             ClientSize = new Size(1195, 626);
+            Controls.Add(gameSearch);
             Controls.Add(btnAddGame);
             Controls.Add(groupBox1);
             Controls.Add(label1);
@@ -158,6 +169,7 @@
             groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvGames).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -173,5 +185,6 @@
         private DataGridViewButtonColumn btnDetails;
         private DataGridViewButtonColumn btnDelete;
         private Button btnAddGame;
+        private TextBox gameSearch;
     }
 }

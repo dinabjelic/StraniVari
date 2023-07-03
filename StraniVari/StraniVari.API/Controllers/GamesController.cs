@@ -30,5 +30,12 @@ namespace StraniVari.API.Controllers
         {
             return Ok(await _gameService.GetAllGames());
         }
+
+        [HttpGet("filtered-data")]
+        [Authorize(Roles = Role.Administrator + "," + Role.RegularUser)]
+        public async Task<IActionResult> GetFilteredEvents(string? searchTerm)
+        {
+            return Ok(await _gameService.GetFilteredGames(searchTerm));
+        }
     }
 }
