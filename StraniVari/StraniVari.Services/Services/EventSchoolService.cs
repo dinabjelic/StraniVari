@@ -19,41 +19,6 @@ namespace StraniVari.Services.Services
 
         public override async Task Insert(SchoolVolunteerMaterialRequest schoolVolunteerMaterialRequest)
         {
-            //var eventFound = await _straniVariDbContext.Events.FirstOrDefaultAsync(x => x.Id == schoolVolunteerMaterialRequest.EventId);
-
-            //var schoolEvent = new EventSchool
-            //{
-            //    EventId = eventFound.Id,
-            //    SchoolId = schoolVolunteerMaterialRequest.SchoolId,
-            //    NumberOfChildren = schoolVolunteerMaterialRequest.NumberOfChildren
-            //};
-
-            //await _straniVariDbContext.EventSchools.AddAsync(schoolEvent);
-            //await _straniVariDbContext.SaveChangesAsync();
-
-            //foreach (var item in schoolVolunteerMaterialRequest.Material)
-            //{
-            //    await _straniVariDbContext.SchoolMaterials.AddAsync(new SchoolMaterial
-            //    {
-            //        EventSchoolId = schoolEvent.Id,
-            //        MaterialId = item.Id,
-            //        Quantity = item.NumberOfMaterial
-            //    });
-            //}
-            //await _straniVariDbContext.SaveChangesAsync();
-
-            //foreach (var item in schoolVolunteerMaterialRequest.Volunteers)
-            //{
-            //    await _straniVariDbContext.SchoolVolunteers.AddAsync(new SchoolVolunteer
-            //    {
-            //        EventSchoolId = schoolEvent.Id,
-            //        VolunteerId = item.VolunteerId,
-            //        TransportNeeded = item.TransportNeeded
-            //    });
-            //}
-            //await _straniVariDbContext.SaveChangesAsync();
-
-
             await using var transaction = await _straniVariDbContext.Database.BeginTransactionAsync();
             try
             {
