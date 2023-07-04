@@ -75,12 +75,12 @@ namespace StraniVari.Services.Services
                  .Where(x => x.EventSchoolId == id)
                  .Select(v => new GetVolunteersForEventResponse
                  {
-                     VolunteerId = v.Id,
+                     VolunteerId = v.VolunteerId,
                      VolunteerAddress = v.Volunteer.Address,
                      VolunteerCity = v.Volunteer.City,
                      FirstName = v.Volunteer.FirstName,
                      LastName = v.Volunteer.LastName,
-                     IsChecked = true, 
+                     IsChecked = true,
                      TransportNeeded = v.TransportNeeded
                  })
                  .ToListAsync();

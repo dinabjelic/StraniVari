@@ -159,9 +159,9 @@ namespace StraniVari.Services.Services
                  .Where(x => x.EventSchoolId == id)
                  .Select(e => new GetMaterialResponse
                  {
-                     Id = e.Id,
+                     Id = e.MaterialId,
                      Name = e.Material.Name,
-                     NumberOfMaterial = e.Quantity, 
+                     NumberOfMaterial = e.Quantity,
                      IsChecked = true
                  })
                  .ToListAsync();
