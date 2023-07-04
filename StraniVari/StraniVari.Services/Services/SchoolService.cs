@@ -17,9 +17,15 @@ namespace StraniVari.Services.Services
             _straniVariDbContext = dbContext;
         }
 
-        public async Task<List<School>> GetFilteredSchools(string searchTerm)
+        public async Task<List<GetSchoolDetailsResponse>> GetFilteredSchools(string searchTerm)
         {
-            var filteredData = await _straniVariDbContext.Schools.ToListAsync();
+            var filteredData = await _straniVariDbContext.Schools.Select(x=> new GetSchoolDetailsResponse
+            {
+                Id = x.Id, 
+                Address = x.Address, 
+                City = x.City, 
+                Name = x.Name
+            }).ToListAsync();
 
             if(!string.IsNullOrWhiteSpace(searchTerm))
             {

@@ -65,9 +65,16 @@ namespace StraniVari.Services.Services
 
             return lastAdded;
         }
-        public async Task<List<Event>> GetFilteredEvents(string searchTerm)
+        public async Task<List<EventUpsertRequest>> GetFilteredEvents(string searchTerm)
         {
-            var filteredData = await _straniVariDbContext.Events.ToListAsync();
+            var filteredData = await _straniVariDbContext.Events.Select(x=> new EventUpsertRequest
+            {
+                Id= x.Id, 
+                Name = x.Name, 
+                EndDate = x.EndDate, 
+                StartDate = x.StartDate, 
+                StraniVariTheme = x.StraniVariTheme
+            }).ToListAsync();
 
             if (!string.IsNullOrEmpty(searchTerm))
             {

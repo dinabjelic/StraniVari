@@ -21,6 +21,6 @@ namespace StraniVari.Services.Interfaces
         /// </summary>
         /// <param name="searchTerm"></param>
         /// <returns></returns>
-        Task<List<Event>> GetFilteredEvents(string searchTerm);
+        Task<List<EventUpsertRequest>> GetFilteredEvents(string searchTerm);
     }
 }

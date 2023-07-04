@@ -17,9 +17,13 @@ namespace StraniVari.Services.Services
             _straniVariDbContext = straniVariDbContext;
         }
 
-        public async Task<List<Material>> GetFilteredMaterials(string searchTerm)
+        public async Task<List<GetMaterialDetailsResponse>> GetFilteredMaterials(string searchTerm)
         {
-            var filteredData = await _straniVariDbContext.Materials.ToListAsync();
+            var filteredData = await _straniVariDbContext.Materials.Select(x=> new GetMaterialDetailsResponse
+            {
+                Id = x.Id, 
+                Name = x.Name
+            }).ToListAsync();
 
             if (!string.IsNullOrWhiteSpace(searchTerm))
             {

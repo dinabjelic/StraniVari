@@ -11,6 +11,6 @@ namespace StraniVari.Services.Interfaces
         /// </summary>
         /// <param name="searchTerm"></param>
         /// <returns></returns>
-        Task<List<School>> GetFilteredSchools(string searchTerm);
+        Task<List<GetSchoolDetailsResponse>> GetFilteredSchools(string searchTerm);
     }
 }

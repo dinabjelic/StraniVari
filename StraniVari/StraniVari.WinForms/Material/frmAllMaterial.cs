@@ -24,13 +24,14 @@ namespace StraniVari.WinUI.Material
         public async void frmAllMaterial_Load(object sender, EventArgs e)
         {
             dgvMaterial.AutoGenerateColumns = false;
-            var result = await _apiService.Get<dynamic>();
+            var result = await _apiService.Get<List<GetMaterialDetailsResponse>>();
             dgvMaterial.DataSource = result;
         }
 
         private async void dgvMaterial_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            var selectedMaterial = JsonConvert.DeserializeObject<GetMaterialDetailsResponse>(dgvMaterial.SelectedRows[0].DataBoundItem.ToString());
+            //var selectedMaterial = JsonConvert.DeserializeObject<GetMaterialDetailsResponse>(dgvMaterial.SelectedRows[0].DataBoundItem.ToString());
+            var selectedMaterial = dgvMaterial.SelectedRows[0].DataBoundItem as GetMaterialDetailsResponse;
             if (selectedMaterial != null)
             {
                 if (e.ColumnIndex == 2)
@@ -53,8 +54,7 @@ namespace StraniVari.WinUI.Material
 
         private async void dgvMaterial_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            //var id = dgvMaterial.SelectedRows[0].Cells[0].Value;
-            var selectedRecord = JsonConvert.DeserializeObject<GetMaterialDetailsResponse>(dgvMaterial.SelectedRows[0].DataBoundItem.ToString());
+            var selectedRecord = dgvMaterial.SelectedRows[0].DataBoundItem as GetMaterialDetailsResponse;
 
             if (selectedRecord != null)
             {
@@ -72,7 +72,7 @@ namespace StraniVari.WinUI.Material
         private async void txtSearch_TextChanged(object sender, EventArgs e)
         {
             string query = txtSearch.Text;
-            var result = await _apiServiceFiltered.GetSearch<List<MaterialDto>>(query);
+            var result = await _apiServiceFiltered.GetSearch<List<GetMaterialDetailsResponse>>(query);
 
             dgvMaterial.DataSource = result;
         }

@@ -19,7 +19,7 @@ namespace StraniVari.WinUI.EventDetails
         private async void frmAllEvents_Load(object sender, EventArgs e)
         {
             dgvEvents.AutoGenerateColumns = false;
-            var result = await _apiService.Get<dynamic>();
+            var result = await _apiService.Get<List<EventUpsertRequest>>();
             dgvEvents.DataSource = result;
         }
 
@@ -34,7 +34,8 @@ namespace StraniVari.WinUI.EventDetails
 
         private async void dgvEvents_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            var selectedEvent = JsonConvert.DeserializeObject<EventUpsertRequest>(dgvEvents.SelectedRows[0].DataBoundItem.ToString());
+            //var selectedEvent = JsonConvert.DeserializeObject<EventUpsertRequest>(dgvEvents.SelectedRows[0].DataBoundItem.ToString());
+            var selectedEvent = dgvEvents.SelectedRows[0].DataBoundItem as EventUpsertRequest;
             if (selectedEvent != null)
             {
                 if (e.ColumnIndex == 5)
@@ -61,7 +62,8 @@ namespace StraniVari.WinUI.EventDetails
 
         private void dgvEvents_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            var selectedEvent = JsonConvert.DeserializeObject<EventUpsertRequest>(dgvEvents.SelectedRows[0].DataBoundItem.ToString());
+            //var selectedEvent = JsonConvert.DeserializeObject<EventUpsertRequest>(dgvEvents.SelectedRows[0].DataBoundItem.ToString());
+            var selectedEvent = dgvEvents.SelectedRows[0].DataBoundItem as EventUpsertRequest;
             if (selectedEvent != null)
             {
                 var editForm = new frmNewEvent(selectedEvent);
@@ -75,7 +77,7 @@ namespace StraniVari.WinUI.EventDetails
         private async void textBox1_TextChanged(object sender, EventArgs e)
         {
             string query = txtSearch.Text;
-            var result = await _apiServiceFiltered.GetSearch<List<Event>>(query);
+            var result = await _apiServiceFiltered.GetSearch<List<EventUpsertRequest>>(query);
            
             dgvEvents.DataSource = result;
            

@@ -127,7 +127,7 @@ namespace StraniVari.WinUI.Admin
         private async void txtSearch_TextChanged(object sender, EventArgs e)
         {
             var query = txtSearch.Text;
-            var result = await _apiServiceFilteredAdmin.GetSearch<List<Administrator>>(query);
+            var result = await _apiServiceFilteredAdmin.GetSearch<List<GetAdministratorDetailsResponse>>(query);
            
             dgvAdmins.DataSource = result;
         }
@@ -135,7 +135,7 @@ namespace StraniVari.WinUI.Admin
         private async void volunteersSearch_TextChanged(object sender, EventArgs e)
         {
             var query = volunteersSearch.Text;
-            var result = await _apiServiceFilteredVolunteer.GetSearch<List<Volunteer>>(query);
+            var result = await _apiServiceFilteredVolunteer.GetSearch<List<GetVolunteerDetailsResposne>>(query);
            
              dgvVolunteers.DataSource = result;
         }

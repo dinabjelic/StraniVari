@@ -156,9 +156,17 @@ namespace StraniVari.Services.Services
             return volunteerList;
         }
 
-        public async Task<List<Administrator>> GetFilteredUsers(string searchTerm)
+        public async Task<List<GetAdministratorDetailsResponse>> GetFilteredUsers(string searchTerm)
         {
-            var filteredData = await _straniVariDbContext.Administrators.ToListAsync();
+            var filteredData = await _straniVariDbContext.Administrators.Select(x => new GetAdministratorDetailsResponse
+            {
+                Id = x.Id,
+                City = x.City,
+                Address = x.Address,
+                DateOfBirth = x.DateOfBirth,
+                FirstName = x.FirstName,
+                LastName = x.LastName
+            }).ToListAsync();
 
             if(!string.IsNullOrWhiteSpace(searchTerm))
             {

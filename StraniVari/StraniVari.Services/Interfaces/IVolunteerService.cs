@@ -11,7 +11,7 @@ namespace StraniVari.Services.Interfaces
         /// </summary>
         /// <param name="searchTerm"></param>
         /// <returns></returns>
-        Task<List<Volunteer>> GetFilteredUsers(string searchTerm);
+        Task<List<GetVolunteerDetailsResposne>> GetFilteredUsers(string searchTerm);
     }
 }
 

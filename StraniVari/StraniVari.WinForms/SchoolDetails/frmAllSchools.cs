@@ -65,7 +65,7 @@ namespace StraniVari.WinUI.SchoolDetails
         private async void txtSearch_TextChanged(object sender, EventArgs e)
         {
             var query = txtSearch.Text;
-            var result = await _apiServiceFiltered.GetSearch<List<School>>(query);
+            var result = await _apiServiceFiltered.GetSearch<List<GetSchoolDetailsResponse>>(query);
 
             dgvSchools.DataSource = result;
         }
