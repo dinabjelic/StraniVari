@@ -27,19 +27,14 @@ namespace StraniVari.WinUI.SchoolDetails
             txtSchoolAddress.Text = _selectedSchool.SchoolAddress;
             txtSchoolCity.Text = _selectedSchool.SchoolCity;
             txtSchoolName.Text = _selectedSchool.SchoolName;
+
+            
         }
 
         private async void btnEditSchoolDetails_Click(object sender, EventArgs e)
         {
             if (ValidateEntry())
             {
-                //int numberOfChildren;
-                //if (!int.TryParse(txtNumberOfChildren.Text, out numberOfChildren))
-                //{
-                //    MessageBox.Show("Please enter a valid integer value for the number of children.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //    return;
-                //}
-
                 var editedDetails = new EventSchoolUpdateRequest
                 {
                     EventSchoolId = _selectedSchool.SchoolEventId,

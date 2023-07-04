@@ -28,11 +28,6 @@ namespace StraniVari.WinUI.SchoolDetails
             var selectedSchool = dgvSchools.SelectedRows[0].DataBoundItem as GetSchoolDetailsResponse;
             if (selectedSchool != null)
             {
-                //if (e.ColumnIndex == 4)
-                //{
-                //    frmAddEditSchool frmAddEditSchool = new frmAddEditSchool(selectedSchool);
-                //    frmAddEditSchool.ShowDialog();
-                //}
                 if (e.ColumnIndex == 4)
                 {
                     var confirmation = MessageBox.Show("You are about to delete this item!", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);

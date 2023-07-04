@@ -5,7 +5,7 @@ namespace StraniVari.WinUI.Helpers
 {
     public static class JWTDecoder
     {
-        public static void ShowEmail(Label lblName)
+        public static void ShowUsername(Label lblName)
         {
             if (ApiService.Token != null)
             {
@@ -13,11 +13,11 @@ namespace StraniVari.WinUI.Helpers
                 var handler = new JwtSecurityTokenHandler();
                 var jsonToken = handler.ReadJwtToken(stream);
 
-                string email = jsonToken.Claims.First(claim => claim.Type == "email").Value;
-                if (!string.IsNullOrEmpty(email))
+                string username = jsonToken.Claims.First(claim => claim.Type == "unique_name").Value;
+                if (!string.IsNullOrEmpty(username))
                 {
-                    email = email.Substring(0, 1).ToLower() + email.Substring(1);
-                    lblName.Text = email;
+                    username = username.Substring(0, 1).ToLower() + username.Substring(1);
+                    lblName.Text = username;
                 }
             }
         }

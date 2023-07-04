@@ -6,6 +6,7 @@ using StraniVari.Core.Responses;
 using StraniVari.Database;
 using StraniVari.Services.Base;
 using StraniVari.Services.Interfaces;
+using System.Security.Cryptography.X509Certificates;
 
 namespace StraniVari.Services.Services
 {
@@ -62,7 +63,7 @@ namespace StraniVari.Services.Services
                     VolunteerCity = v.City,
                     FirstName = v.FirstName,
                     LastName = v.LastName,
-                    VolunteerBirthDate = v.DateOfBirth
+                    VolunteerBirthDate = v.DateOfBirth, 
                 }).ToListAsync(); 
 
             return availableVolunteersForEvent;

@@ -51,7 +51,8 @@ namespace StraniVari.API.Controllers
                 Id = _user.Id, 
                 FirstName = _user.FirstName, 
                 LastName = _user.LastName, 
-                Email = _user.Email
+                Email = _user.Email, 
+                UserName = _user.UserName
             };
 
             return new GetUserResponse

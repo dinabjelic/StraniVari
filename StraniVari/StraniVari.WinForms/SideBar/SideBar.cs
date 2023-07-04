@@ -39,7 +39,7 @@ namespace StraniVari.WinUI.Material
 
         private void SideBar_Load(object sender, EventArgs e)
         {
-            Helpers.JWTDecoder.ShowEmail(lblName);
+            Helpers.JWTDecoder.ShowUsername(lblName);
         }
 
         private void btnSchool_Click(object sender, EventArgs e)

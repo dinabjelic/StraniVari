@@ -9,7 +9,7 @@ using StraniVari.Services.Interfaces;
 
 namespace StraniVari.Services.Services
 {
-    public class EventSchoolService : BaseCrudService<EventSchool, EventSchoolInsertRequest, EventSchoolUpdateRequest, GetSchoolsForEventResponse>, IEventSchoolService
+    public class EventSchoolService : BaseCrudService<EventSchool, SchoolVolunteerMaterialRequest, EventSchoolUpdateRequest, GetSchoolsForEventResponse>, IEventSchoolService
     {
         private readonly StraniVariDbContext _straniVariDbContext;
         public EventSchoolService(StraniVariDbContext straniVariDbContext, IMapper mapper) : base(straniVariDbContext, mapper)
@@ -17,19 +17,40 @@ namespace StraniVari.Services.Services
             _straniVariDbContext = straniVariDbContext;
         }
 
-        public override async Task Insert(EventSchoolInsertRequest addEventSchoolInsertRequest)
+        public override async Task Insert(SchoolVolunteerMaterialRequest schoolVolunteerMaterialRequest)
         {
-            var eventFound = await _straniVariDbContext.Events.FirstOrDefaultAsync(x => x.Id == addEventSchoolInsertRequest.EventId);
+            var eventFound = await _straniVariDbContext.Events.FirstOrDefaultAsync(x => x.Id == schoolVolunteerMaterialRequest.EventId);
 
-            foreach (var item in addEventSchoolInsertRequest.Schools)
+            var schoolEvent = new EventSchool
             {
-                await _straniVariDbContext.EventSchools.AddAsync(new EventSchool
+                EventId = eventFound.Id,
+                SchoolId = schoolVolunteerMaterialRequest.SchoolId, 
+                NumberOfChildren = schoolVolunteerMaterialRequest.NumberOfChildren
+            };
+
+            await _straniVariDbContext.EventSchools.AddAsync(schoolEvent);
+            await _straniVariDbContext.SaveChangesAsync();
+
+            foreach (var item in schoolVolunteerMaterialRequest.Material)
+            {
+                await _straniVariDbContext.SchoolMaterials.AddAsync(new SchoolMaterial
                 {
-                    EventId = eventFound.Id,
-                    SchoolId = item
+                    EventSchoolId = schoolEvent.Id,
+                    MaterialId = item.Id, 
+                    Quantity = item.NumberOfMaterial
                 });
             }
+            await _straniVariDbContext.SaveChangesAsync();
 
+            foreach (var item in schoolVolunteerMaterialRequest.Volunteers)
+            {
+                await _straniVariDbContext.SchoolVolunteers.AddAsync(new SchoolVolunteer
+                {
+                    EventSchoolId = schoolEvent.Id,
+                    VolunteerId = item.VolunteerId, 
+                    TransportNeeded = item.TransportNeeded
+                });
+            }
             await _straniVariDbContext.SaveChangesAsync();
         }
 
