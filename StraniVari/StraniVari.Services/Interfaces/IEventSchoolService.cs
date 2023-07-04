@@ -4,7 +4,7 @@ using StraniVari.Core.Responses;
 
 namespace StraniVari.Services.Interfaces
 {
-    public interface IEventSchoolService: ICrudService<EventSchool, SchoolVolunteerMaterialRequest, EventSchoolUpdateRequest, GetSchoolsForEventResponse>
+    public interface IEventSchoolService: ICrudService<EventSchool, SchoolVolunteerMaterialRequest, SchoolVolunteerMaterialRequest, GetSchoolsForEventResponse>
     {
         /// <summary>
         /// getting 

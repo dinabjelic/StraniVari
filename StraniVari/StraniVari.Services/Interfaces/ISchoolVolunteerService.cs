@@ -18,5 +18,12 @@ namespace StraniVari.Services.Interfaces
         /// <param name="id"></param>
         /// <returns></returns>
         Task<List<GetVolunteersForEventResponse>> GetVolunteersForEvent(int id);
+
+        /// <summary>
+        /// getting volunteers that are on event
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        Task<List<GetVolunteersForEventResponse>> GetEventSchoolsVolunteers(int id);
     }
 }

@@ -191,7 +191,7 @@ namespace StraniVari.WinUI.EventDetails
             var selectedSchool = dgvSchoolsEventDetails.SelectedRows[0].DataBoundItem as GetSchoolsForEventResponse;
             if (selectedSchool != null)
             {
-                frmEditSchoolsDetails frmEditSchoolsDetails = new frmEditSchoolsDetails(selectedSchool);
+                frmEditSchoolsDetails frmEditSchoolsDetails = new frmEditSchoolsDetails(selectedEvent,selectedSchool);
                 frmEditSchoolsDetails.ShowDialog();
             }
         }

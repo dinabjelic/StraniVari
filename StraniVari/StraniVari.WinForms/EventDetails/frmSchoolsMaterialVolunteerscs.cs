@@ -94,7 +94,7 @@ namespace StraniVari.WinUI.EventDetails
             {
                 var schoolVolunteerMaterialRequest = new SchoolVolunteerMaterialRequest
                 {
-                    NumberOfChildren = Int32.TryParse(txtNumberOfChildren.Text, out var result) ? result : 0, 
+                    NumberOfChildren = Int32.TryParse(txtNumberOfChildren.Text, out var result) ? result : 0,
                     EventId = selectedEvent.Id,
                     SchoolId = (int)comboBox1.SelectedValue,
                     Material = checkedMaterialItems,
@@ -108,6 +108,11 @@ namespace StraniVari.WinUI.EventDetails
                 var principalForm = Application.OpenForms.OfType<frmEventTabs>().FirstOrDefault();
                 principalForm.frmSchoolsEventDetails_Load(sender, e);
             }
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
 
         }
     }

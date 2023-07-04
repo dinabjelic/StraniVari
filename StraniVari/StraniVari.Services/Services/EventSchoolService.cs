@@ -9,7 +9,7 @@ using StraniVari.Services.Interfaces;
 
 namespace StraniVari.Services.Services
 {
-    public class EventSchoolService : BaseCrudService<EventSchool, SchoolVolunteerMaterialRequest, EventSchoolUpdateRequest, GetSchoolsForEventResponse>, IEventSchoolService
+    public class EventSchoolService : BaseCrudService<EventSchool, SchoolVolunteerMaterialRequest, SchoolVolunteerMaterialRequest, GetSchoolsForEventResponse>, IEventSchoolService
     {
         private readonly StraniVariDbContext _straniVariDbContext;
         public EventSchoolService(StraniVariDbContext straniVariDbContext, IMapper mapper) : base(straniVariDbContext, mapper)
@@ -24,7 +24,7 @@ namespace StraniVari.Services.Services
             var schoolEvent = new EventSchool
             {
                 EventId = eventFound.Id,
-                SchoolId = schoolVolunteerMaterialRequest.SchoolId, 
+                SchoolId = schoolVolunteerMaterialRequest.SchoolId,
                 NumberOfChildren = schoolVolunteerMaterialRequest.NumberOfChildren
             };
 
@@ -36,7 +36,7 @@ namespace StraniVari.Services.Services
                 await _straniVariDbContext.SchoolMaterials.AddAsync(new SchoolMaterial
                 {
                     EventSchoolId = schoolEvent.Id,
-                    MaterialId = item.Id, 
+                    MaterialId = item.Id,
                     Quantity = item.NumberOfMaterial
                 });
             }
@@ -47,7 +47,57 @@ namespace StraniVari.Services.Services
                 await _straniVariDbContext.SchoolVolunteers.AddAsync(new SchoolVolunteer
                 {
                     EventSchoolId = schoolEvent.Id,
-                    VolunteerId = item.VolunteerId, 
+                    VolunteerId = item.VolunteerId,
+                    TransportNeeded = item.TransportNeeded
+                });
+            }
+            await _straniVariDbContext.SaveChangesAsync();
+        }
+
+        public override async Task Update(int id, SchoolVolunteerMaterialRequest schoolVolunteerMaterialRequest)
+        {
+            var schoolsForEvent = await _straniVariDbContext.EventSchools.FirstOrDefaultAsync(x => x.Id == id);
+             _straniVariDbContext.EventSchools.Remove(schoolsForEvent);
+            _straniVariDbContext.SaveChanges();
+
+
+            var materialForEvent = await _straniVariDbContext.SchoolMaterials.Where(x => x.EventSchoolId == id).ToListAsync();
+            _straniVariDbContext.SchoolMaterials.RemoveRange(materialForEvent);
+            _straniVariDbContext.SaveChanges();
+
+            var volunteersForEvent = await _straniVariDbContext.SchoolVolunteers.Where(x => x.EventSchoolId == id).ToListAsync();
+            _straniVariDbContext.SchoolVolunteers.RemoveRange(volunteersForEvent);
+            _straniVariDbContext.SaveChanges();
+
+
+            var eventFound = await _straniVariDbContext.Events.FirstOrDefaultAsync(x => x.Id == schoolVolunteerMaterialRequest.EventId);
+            var schoolEvent = new EventSchool
+            {
+                EventId = eventFound.Id,
+                SchoolId = schoolVolunteerMaterialRequest.SchoolId,
+                NumberOfChildren = schoolVolunteerMaterialRequest.NumberOfChildren
+            };
+
+            await _straniVariDbContext.EventSchools.AddAsync(schoolEvent);
+            await _straniVariDbContext.SaveChangesAsync();
+
+            foreach (var item in schoolVolunteerMaterialRequest.Material)
+            {
+                await _straniVariDbContext.SchoolMaterials.AddAsync(new SchoolMaterial
+                {
+                    EventSchoolId = schoolEvent.Id,
+                    MaterialId = item.Id,
+                    Quantity = item.NumberOfMaterial
+                });
+            }
+            await _straniVariDbContext.SaveChangesAsync();
+
+            foreach (var item in schoolVolunteerMaterialRequest.Volunteers)
+            {
+                await _straniVariDbContext.SchoolVolunteers.AddAsync(new SchoolVolunteer
+                {
+                    EventSchoolId = schoolEvent.Id,
+                    VolunteerId = item.VolunteerId,
                     TransportNeeded = item.TransportNeeded
                 });
             }

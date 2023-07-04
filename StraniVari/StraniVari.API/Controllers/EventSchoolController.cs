@@ -8,7 +8,7 @@ using StraniVari.Services.Interfaces;
 
 namespace StraniVari.API.Controllers
 {
-    public class EventSchoolController : BaseCRUDController<EventSchool, SchoolVolunteerMaterialRequest, EventSchoolUpdateRequest, GetSchoolsForEventResponse>
+    public class EventSchoolController : BaseCRUDController<EventSchool, SchoolVolunteerMaterialRequest, SchoolVolunteerMaterialRequest, GetSchoolsForEventResponse>
     {
         private readonly IEventSchoolService _eventSchoolService;
         public EventSchoolController(IEventSchoolService eventSchoolService):base(eventSchoolService)

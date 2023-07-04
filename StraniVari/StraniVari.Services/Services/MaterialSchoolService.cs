@@ -152,5 +152,31 @@ namespace StraniVari.Services.Services
 
             return availableMaterial;
         }
+
+        public async Task<List<GetMaterialResponse>> GetEventSchoolsMaterial(int id)
+        {
+            var materialsList = await _straniVariDbContext.SchoolMaterials
+                 .Where(x => x.EventSchoolId == id)
+                 .Select(e => new GetMaterialResponse
+                 {
+                     Id = e.Id,
+                     Name = e.Material.Name,
+                     NumberOfMaterial = e.Quantity, 
+                     IsChecked = true
+                 })
+                 .ToListAsync();
+
+            var availableMaterials = await _straniVariDbContext.Materials
+                .Where(x => !_straniVariDbContext.SchoolMaterials.Any(y => y.MaterialId == x.Id && y.EventSchoolId == id))
+                .Select(e => new GetMaterialResponse
+                {
+                    Id = e.Id,
+                    Name = e.Name,
+                    NumberOfMaterial = 0 
+                })
+                .ToListAsync();
+
+           return materialsList.Concat(availableMaterials).ToList();
+        }
     }
 }

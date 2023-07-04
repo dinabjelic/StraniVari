@@ -26,5 +26,12 @@ namespace StraniVari.Services.Interfaces
         /// <param name="id"></param>
         /// <returns></returns>
         Task<List<GetMaterialsForSchoolRequest>> GetAvailableMaterial(int id);
+
+        /// <summary>
+        /// getting material that is on event
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        Task<List<GetMaterialResponse>> GetEventSchoolsMaterial(int id);
     }
 }

@@ -37,5 +37,12 @@ namespace StraniVari.API.Controllers
         {
             return Ok(await _materialSchoolService.GetAvailableMaterial(id));
         }
+
+        [HttpGet("getEventSchoolsMaterial")]
+        [Authorize(Roles = Role.Administrator)]
+        public async Task<IActionResult> GetEventSchoolsMaterial(int id)
+        {
+            return Ok(await _materialSchoolService.GetEventSchoolsMaterial(id));
+        }
     }
 }

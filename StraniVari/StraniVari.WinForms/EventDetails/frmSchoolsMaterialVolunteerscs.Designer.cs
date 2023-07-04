@@ -52,6 +52,7 @@
             label4 = new Label();
             txtNumberOfChildren = new TextBox();
             label5 = new Label();
+            button2 = new Button();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvMaterialForSchool).BeginInit();
             groupBox2.SuspendLayout();
@@ -268,7 +269,7 @@
             label4.Font = new Font("Segoe Script", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             label4.Location = new Point(18, 194);
             label4.Name = "label4";
-            label4.Size = new Size(461, 50);
+            label4.Size = new Size(261, 50);
             label4.TabIndex = 94;
             label4.Text = "Materials";
             // 
@@ -288,12 +289,24 @@
             label5.TabIndex = 96;
             label5.Text = "Number of children";
             // 
+            // button2
+            // 
+            button2.BackColor = SystemColors.Window;
+            button2.Location = new Point(339, 201);
+            button2.Name = "button2";
+            button2.Size = new Size(214, 29);
+            button2.TabIndex = 97;
+            button2.Text = "Recommend material";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
+            // 
             // frmSchoolsMaterialVolunteerscs
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonHighlight;
             ClientSize = new Size(1097, 1035);
+            Controls.Add(button2);
             Controls.Add(label5);
             Controls.Add(txtNumberOfChildren);
             Controls.Add(label4);
@@ -341,5 +354,6 @@
         private DataGridViewTextBoxColumn NumberOfMaterial;
         private TextBox txtNumberOfChildren;
         private Label label5;
+        private Button button2;
     }
 }

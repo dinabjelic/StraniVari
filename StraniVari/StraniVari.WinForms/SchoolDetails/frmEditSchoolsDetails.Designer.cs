@@ -39,13 +39,6 @@
             txtNumberOfChildren = new TextBox();
             btnEditSchoolDetails = new Button();
             err = new ErrorProvider(components);
-            groupBox1 = new GroupBox();
-            dgvMaterialForSchool = new DataGridView();
-            IsChecked = new DataGridViewCheckBoxColumn();
-            SchoolMaterialId = new DataGridViewTextBoxColumn();
-            MaterialName = new DataGridViewTextBoxColumn();
-            NumberOfMaterial = new DataGridViewTextBoxColumn();
-            label4 = new Label();
             groupBox2 = new GroupBox();
             dgvVolunteers = new DataGridView();
             SchoolVolunteerId = new DataGridViewTextBoxColumn();
@@ -55,17 +48,25 @@
             VolunteerAddress = new DataGridViewTextBoxColumn();
             VolunteerCity = new DataGridViewTextBoxColumn();
             Transport = new DataGridViewCheckBoxColumn();
+            label5 = new Label();
+            groupBox1 = new GroupBox();
+            dgvMaterialForSchool = new DataGridView();
+            IsChecked = new DataGridViewCheckBoxColumn();
+            SchoolMaterialId = new DataGridViewTextBoxColumn();
+            MaterialName = new DataGridViewTextBoxColumn();
+            NumberOfMaterial = new DataGridViewTextBoxColumn();
+            label4 = new Label();
             ((System.ComponentModel.ISupportInitialize)err).BeginInit();
-            groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvMaterialForSchool).BeginInit();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvVolunteers).BeginInit();
+            groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvMaterialForSchool).BeginInit();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(24, 36);
+            label1.Location = new Point(30, 152);
             label1.Name = "label1";
             label1.Size = new Size(95, 20);
             label1.TabIndex = 14;
@@ -74,7 +75,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(24, 84);
+            label2.Location = new Point(30, 200);
             label2.Name = "label2";
             label2.Size = new Size(109, 20);
             label2.TabIndex = 15;
@@ -83,7 +84,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(24, 125);
+            label3.Location = new Point(30, 241);
             label3.Name = "label3";
             label3.Size = new Size(81, 20);
             label3.TabIndex = 16;
@@ -92,7 +93,7 @@
             // lblNumberofChildren
             // 
             lblNumberofChildren.AutoSize = true;
-            lblNumberofChildren.Location = new Point(24, 173);
+            lblNumberofChildren.Location = new Point(30, 289);
             lblNumberofChildren.Name = "lblNumberofChildren";
             lblNumberofChildren.Size = new Size(138, 20);
             lblNumberofChildren.TabIndex = 17;
@@ -100,7 +101,8 @@
             // 
             // txtSchoolName
             // 
-            txtSchoolName.Location = new Point(168, 36);
+            txtSchoolName.BackColor = SystemColors.ButtonHighlight;
+            txtSchoolName.Location = new Point(174, 152);
             txtSchoolName.Name = "txtSchoolName";
             txtSchoolName.ReadOnly = true;
             txtSchoolName.Size = new Size(247, 27);
@@ -108,7 +110,8 @@
             // 
             // txtSchoolAddress
             // 
-            txtSchoolAddress.Location = new Point(168, 84);
+            txtSchoolAddress.BackColor = SystemColors.ButtonHighlight;
+            txtSchoolAddress.Location = new Point(174, 200);
             txtSchoolAddress.Name = "txtSchoolAddress";
             txtSchoolAddress.ReadOnly = true;
             txtSchoolAddress.Size = new Size(247, 27);
@@ -116,7 +119,8 @@
             // 
             // txtSchoolCity
             // 
-            txtSchoolCity.Location = new Point(168, 125);
+            txtSchoolCity.BackColor = SystemColors.ButtonHighlight;
+            txtSchoolCity.Location = new Point(174, 241);
             txtSchoolCity.Name = "txtSchoolCity";
             txtSchoolCity.ReadOnly = true;
             txtSchoolCity.Size = new Size(247, 27);
@@ -126,7 +130,7 @@
             // 
             txtNumberOfChildren.Cursor = Cursors.Hand;
             txtNumberOfChildren.ForeColor = SystemColors.InfoText;
-            txtNumberOfChildren.Location = new Point(168, 173);
+            txtNumberOfChildren.Location = new Point(174, 289);
             txtNumberOfChildren.Name = "txtNumberOfChildren";
             txtNumberOfChildren.Size = new Size(247, 27);
             txtNumberOfChildren.TabIndex = 21;
@@ -136,7 +140,7 @@
             // btnEditSchoolDetails
             // 
             btnEditSchoolDetails.BackColor = SystemColors.ButtonHighlight;
-            btnEditSchoolDetails.Location = new Point(931, 983);
+            btnEditSchoolDetails.Location = new Point(928, 1057);
             btnEditSchoolDetails.Name = "btnEditSchoolDetails";
             btnEditSchoolDetails.Size = new Size(148, 50);
             btnEditSchoolDetails.TabIndex = 22;
@@ -148,80 +152,10 @@
             // 
             err.ContainerControl = this;
             // 
-            // groupBox1
-            // 
-            groupBox1.Controls.Add(dgvMaterialForSchool);
-            groupBox1.Controls.Add(label4);
-            groupBox1.Location = new Point(27, 252);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(538, 259);
-            groupBox1.TabIndex = 90;
-            groupBox1.TabStop = false;
-            // 
-            // dgvMaterialForSchool
-            // 
-            dgvMaterialForSchool.AllowUserToAddRows = false;
-            dgvMaterialForSchool.AllowUserToDeleteRows = false;
-            dgvMaterialForSchool.BackgroundColor = SystemColors.ButtonHighlight;
-            dgvMaterialForSchool.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvMaterialForSchool.Columns.AddRange(new DataGridViewColumn[] { IsChecked, SchoolMaterialId, MaterialName, NumberOfMaterial });
-            dgvMaterialForSchool.Cursor = Cursors.Hand;
-            dgvMaterialForSchool.Dock = DockStyle.Fill;
-            dgvMaterialForSchool.Location = new Point(3, 23);
-            dgvMaterialForSchool.Name = "dgvMaterialForSchool";
-            dgvMaterialForSchool.RowHeadersWidth = 51;
-            dgvMaterialForSchool.RowTemplate.Height = 29;
-            dgvMaterialForSchool.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvMaterialForSchool.Size = new Size(532, 233);
-            dgvMaterialForSchool.TabIndex = 0;
-            // 
-            // IsChecked
-            // 
-            IsChecked.DataPropertyName = "IsChecked";
-            IsChecked.HeaderText = "";
-            IsChecked.MinimumWidth = 6;
-            IsChecked.Name = "IsChecked";
-            IsChecked.Width = 50;
-            // 
-            // SchoolMaterialId
-            // 
-            SchoolMaterialId.DataPropertyName = "Id";
-            SchoolMaterialId.HeaderText = "SchoolMaterialId";
-            SchoolMaterialId.MinimumWidth = 6;
-            SchoolMaterialId.Name = "SchoolMaterialId";
-            SchoolMaterialId.Visible = false;
-            SchoolMaterialId.Width = 125;
-            // 
-            // MaterialName
-            // 
-            MaterialName.DataPropertyName = "Name";
-            MaterialName.HeaderText = "Name";
-            MaterialName.MinimumWidth = 6;
-            MaterialName.Name = "MaterialName";
-            MaterialName.ReadOnly = true;
-            MaterialName.Width = 280;
-            // 
-            // NumberOfMaterial
-            // 
-            NumberOfMaterial.DataPropertyName = "NumberOfMaterial";
-            NumberOfMaterial.HeaderText = "Material number";
-            NumberOfMaterial.MinimumWidth = 6;
-            NumberOfMaterial.Name = "NumberOfMaterial";
-            NumberOfMaterial.Width = 125;
-            // 
-            // label4
-            // 
-            label4.Font = new Font("Segoe Script", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(0, -53);
-            label4.Name = "label4";
-            label4.Size = new Size(461, 50);
-            label4.TabIndex = 90;
-            label4.Text = "Material";
-            // 
             // groupBox2
             // 
             groupBox2.Controls.Add(dgvVolunteers);
-            groupBox2.Location = new Point(24, 554);
+            groupBox2.Location = new Point(24, 676);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(1055, 375);
             groupBox2.TabIndex = 92;
@@ -307,14 +241,94 @@
             Transport.SortMode = DataGridViewColumnSortMode.Automatic;
             Transport.Width = 125;
             // 
+            // label5
+            // 
+            label5.Font = new Font("Segoe Script", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            label5.Location = new Point(423, 34);
+            label5.Name = "label5";
+            label5.Size = new Size(179, 50);
+            label5.TabIndex = 93;
+            label5.Text = "Edit details";
+            // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(dgvMaterialForSchool);
+            groupBox1.Controls.Add(label4);
+            groupBox1.Location = new Point(27, 365);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(538, 259);
+            groupBox1.TabIndex = 94;
+            groupBox1.TabStop = false;
+            // 
+            // dgvMaterialForSchool
+            // 
+            dgvMaterialForSchool.AllowUserToAddRows = false;
+            dgvMaterialForSchool.AllowUserToDeleteRows = false;
+            dgvMaterialForSchool.BackgroundColor = SystemColors.ButtonHighlight;
+            dgvMaterialForSchool.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvMaterialForSchool.Columns.AddRange(new DataGridViewColumn[] { IsChecked, SchoolMaterialId, MaterialName, NumberOfMaterial });
+            dgvMaterialForSchool.Cursor = Cursors.Hand;
+            dgvMaterialForSchool.Dock = DockStyle.Fill;
+            dgvMaterialForSchool.Location = new Point(3, 23);
+            dgvMaterialForSchool.Name = "dgvMaterialForSchool";
+            dgvMaterialForSchool.RowHeadersWidth = 51;
+            dgvMaterialForSchool.RowTemplate.Height = 29;
+            dgvMaterialForSchool.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvMaterialForSchool.Size = new Size(532, 233);
+            dgvMaterialForSchool.TabIndex = 0;
+            // 
+            // IsChecked
+            // 
+            IsChecked.DataPropertyName = "IsChecked";
+            IsChecked.HeaderText = "";
+            IsChecked.MinimumWidth = 6;
+            IsChecked.Name = "IsChecked";
+            IsChecked.Width = 50;
+            // 
+            // SchoolMaterialId
+            // 
+            SchoolMaterialId.DataPropertyName = "Id";
+            SchoolMaterialId.HeaderText = "SchoolMaterialId";
+            SchoolMaterialId.MinimumWidth = 6;
+            SchoolMaterialId.Name = "SchoolMaterialId";
+            SchoolMaterialId.Visible = false;
+            SchoolMaterialId.Width = 125;
+            // 
+            // MaterialName
+            // 
+            MaterialName.DataPropertyName = "Name";
+            MaterialName.HeaderText = "Name";
+            MaterialName.MinimumWidth = 6;
+            MaterialName.Name = "MaterialName";
+            MaterialName.ReadOnly = true;
+            MaterialName.Width = 280;
+            // 
+            // NumberOfMaterial
+            // 
+            NumberOfMaterial.DataPropertyName = "NumberOfMaterial";
+            NumberOfMaterial.HeaderText = "Material number";
+            NumberOfMaterial.MinimumWidth = 6;
+            NumberOfMaterial.Name = "NumberOfMaterial";
+            NumberOfMaterial.Width = 125;
+            // 
+            // label4
+            // 
+            label4.Font = new Font("Segoe Script", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.Location = new Point(0, -53);
+            label4.Name = "label4";
+            label4.Size = new Size(461, 50);
+            label4.TabIndex = 90;
+            label4.Text = "Material";
+            // 
             // frmEditSchoolsDetails
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonHighlight;
-            ClientSize = new Size(1109, 1071);
-            Controls.Add(groupBox2);
+            ClientSize = new Size(1094, 1135);
             Controls.Add(groupBox1);
+            Controls.Add(label5);
+            Controls.Add(groupBox2);
             Controls.Add(btnEditSchoolDetails);
             Controls.Add(txtNumberOfChildren);
             Controls.Add(txtSchoolCity);
@@ -328,10 +342,10 @@
             StartPosition = FormStartPosition.CenterParent;
             Load += frmEditSchoolsDetails_Load;
             ((System.ComponentModel.ISupportInitialize)err).EndInit();
-            groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dgvMaterialForSchool).EndInit();
             groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvVolunteers).EndInit();
+            groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgvMaterialForSchool).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -347,13 +361,6 @@
         private TextBox txtNumberOfChildren;
         private Button btnEditSchoolDetails;
         private ErrorProvider err;
-        private GroupBox groupBox1;
-        private DataGridView dgvMaterialForSchool;
-        private DataGridViewCheckBoxColumn IsChecked;
-        private DataGridViewTextBoxColumn SchoolMaterialId;
-        private DataGridViewTextBoxColumn MaterialName;
-        private DataGridViewTextBoxColumn NumberOfMaterial;
-        private Label label4;
         private GroupBox groupBox2;
         private DataGridView dgvVolunteers;
         private DataGridViewTextBoxColumn SchoolVolunteerId;
@@ -363,5 +370,13 @@
         private DataGridViewTextBoxColumn VolunteerAddress;
         private DataGridViewTextBoxColumn VolunteerCity;
         private DataGridViewCheckBoxColumn Transport;
+        private Label label5;
+        private GroupBox groupBox1;
+        private DataGridView dgvMaterialForSchool;
+        private DataGridViewCheckBoxColumn IsChecked;
+        private DataGridViewTextBoxColumn SchoolMaterialId;
+        private DataGridViewTextBoxColumn MaterialName;
+        private DataGridViewTextBoxColumn NumberOfMaterial;
+        private Label label4;
     }
 }
