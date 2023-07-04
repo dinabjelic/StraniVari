@@ -19,13 +19,13 @@ namespace StraniVari.WinUI.Games
         public async void frmGames_Load(object sender, EventArgs e)
         {
             dgvGames.AutoGenerateColumns = false;
-            var result = await _apiService.Get<dynamic>();
+            var result = await _apiService.Get<List<GetGamesResponse>>();
             dgvGames.DataSource = result;
         }
 
         private async void dgvGames_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            var selectedRecord = JsonConvert.DeserializeObject<GetGamesResponse>(dgvGames.SelectedRows[0].DataBoundItem.ToString());
+            var selectedRecord = dgvGames.SelectedRows[0].DataBoundItem as GetGamesResponse;
             if (e.ColumnIndex == 2 && selectedRecord != null)
             {
                 frmGameDetails frmGameDetails = new frmGameDetails(selectedRecord);
@@ -49,7 +49,7 @@ namespace StraniVari.WinUI.Games
 
         private void dgvGames_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            var selectedRecord = JsonConvert.DeserializeObject<GetGamesResponse>(dgvGames.SelectedRows[0].DataBoundItem.ToString());
+            var selectedRecord = dgvGames.SelectedRows[0].DataBoundItem as GetGamesResponse;
             if (selectedRecord != null)
             {
                 frmAddEditGame frmGameDetails = new frmAddEditGame(null, null, selectedRecord);
@@ -66,7 +66,7 @@ namespace StraniVari.WinUI.Games
         private async void gameSearch_TextChanged(object sender, EventArgs e)
         {
             var query = gameSearch.Text;
-            var result = await _apiServiceFiltered.GetSearch<List<Game>>(query);
+            var result = await _apiServiceFiltered.GetSearch<List<GetGamesResponse>>(query);
 
             dgvGames.DataSource = result;
         }

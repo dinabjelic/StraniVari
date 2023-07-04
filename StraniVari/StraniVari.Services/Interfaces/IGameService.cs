@@ -17,6 +17,6 @@ namespace StraniVari.Services.Interfaces
         /// </summary>
         /// <param name="searchTerm"></param>
         /// <returns></returns>
-        Task<List<Game>> GetFilteredGames(string searchTerm);
+        Task<List<GetGamesResponse>> GetFilteredGames(string searchTerm);
     }
 }

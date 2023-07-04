@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using StraniVari.Core.Entities;
 using StraniVari.Core.Requests;
 using StraniVari.Core.Responses;
@@ -41,16 +42,23 @@ namespace StraniVari.Services.Services
             return gameList;
         }
 
-        public async Task<List<Game>> GetFilteredGames(string searchTerm)
+        public async Task<List<GetGamesResponse>> GetFilteredGames(string searchTerm)
         {
-            var filteredData = await _straniVariDbContext.Games.ToListAsync();   
+            var filteredData = await _straniVariDbContext.Games.Select(x=>new GetGamesResponse
+            {
+                Id = x.Id, 
+                Rules = x.Rules, 
+                Name = x.Name
+            }).ToListAsync();   
 
             if(!string.IsNullOrWhiteSpace(searchTerm))
             {
                 filteredData = filteredData.Where(x => x.Name.ToLower().Contains(searchTerm.ToLower())).ToList();
             }
-
             return filteredData;
+            //var resultJson = JsonConvert.SerializeObject(filteredData);
+            //return resultJson;
+            //return filteredData;
         }
     }
 }
