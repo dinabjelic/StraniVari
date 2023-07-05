@@ -62,7 +62,7 @@
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(15, 115);
+            comboBox1.Location = new Point(15, 72);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(418, 28);
             comboBox1.TabIndex = 0;
@@ -72,7 +72,7 @@
             // label1
             // 
             label1.Font = new Font("Segoe Script", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(12, 62);
+            label1.Location = new Point(12, 19);
             label1.Name = "label1";
             label1.Size = new Size(461, 50);
             label1.TabIndex = 88;
@@ -82,7 +82,7 @@
             // 
             groupBox1.Controls.Add(dgvMaterialForSchool);
             groupBox1.Controls.Add(label2);
-            groupBox1.Location = new Point(15, 236);
+            groupBox1.Location = new Point(12, 158);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(538, 259);
             groupBox1.TabIndex = 89;
@@ -153,9 +153,9 @@
             // groupBox2
             // 
             groupBox2.Controls.Add(dgvVolunteers);
-            groupBox2.Location = new Point(18, 584);
+            groupBox2.Location = new Point(15, 464);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(1055, 375);
+            groupBox2.Size = new Size(1055, 335);
             groupBox2.TabIndex = 91;
             groupBox2.TabStop = false;
             // 
@@ -173,7 +173,7 @@
             dgvVolunteers.RowHeadersWidth = 51;
             dgvVolunteers.RowTemplate.Height = 29;
             dgvVolunteers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvVolunteers.Size = new Size(1049, 349);
+            dgvVolunteers.Size = new Size(1049, 309);
             dgvVolunteers.TabIndex = 0;
             dgvVolunteers.DataError += dgvVolunteers_DataError;
             // 
@@ -243,7 +243,7 @@
             // label3
             // 
             label3.Font = new Font("Segoe Script", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(15, 531);
+            label3.Location = new Point(15, 420);
             label3.Name = "label3";
             label3.Size = new Size(461, 50);
             label3.TabIndex = 92;
@@ -253,7 +253,7 @@
             // 
             button1.BackColor = SystemColors.Window;
             button1.Cursor = Cursors.Hand;
-            button1.Location = new Point(893, 983);
+            button1.Location = new Point(890, 805);
             button1.Name = "button1";
             button1.Size = new Size(177, 40);
             button1.TabIndex = 93;
@@ -270,7 +270,7 @@
             // label4
             // 
             label4.Font = new Font("Segoe Script", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(18, 194);
+            label4.Location = new Point(15, 116);
             label4.Name = "label4";
             label4.Size = new Size(261, 50);
             label4.TabIndex = 94;
@@ -278,7 +278,7 @@
             // 
             // txtNumberOfChildren
             // 
-            txtNumberOfChildren.Location = new Point(479, 116);
+            txtNumberOfChildren.Location = new Point(479, 73);
             txtNumberOfChildren.Name = "txtNumberOfChildren";
             txtNumberOfChildren.Size = new Size(125, 27);
             txtNumberOfChildren.TabIndex = 95;
@@ -287,7 +287,7 @@
             // label5
             // 
             label5.Font = new Font("Segoe Script", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.Location = new Point(479, 69);
+            label5.Location = new Point(479, 26);
             label5.Name = "label5";
             label5.Size = new Size(203, 37);
             label5.TabIndex = 96;
@@ -298,7 +298,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonHighlight;
-            ClientSize = new Size(1097, 1035);
+            ClientSize = new Size(1097, 852);
             Controls.Add(label5);
             Controls.Add(txtNumberOfChildren);
             Controls.Add(label4);

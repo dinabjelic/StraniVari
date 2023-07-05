@@ -67,7 +67,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(30, 152);
+            label1.Location = new Point(24, 98);
             label1.Name = "label1";
             label1.Size = new Size(95, 20);
             label1.TabIndex = 14;
@@ -76,7 +76,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(30, 200);
+            label2.Location = new Point(24, 146);
             label2.Name = "label2";
             label2.Size = new Size(109, 20);
             label2.TabIndex = 15;
@@ -85,7 +85,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(30, 241);
+            label3.Location = new Point(24, 187);
             label3.Name = "label3";
             label3.Size = new Size(81, 20);
             label3.TabIndex = 16;
@@ -94,7 +94,7 @@
             // lblNumberofChildren
             // 
             lblNumberofChildren.AutoSize = true;
-            lblNumberofChildren.Location = new Point(30, 289);
+            lblNumberofChildren.Location = new Point(24, 235);
             lblNumberofChildren.Name = "lblNumberofChildren";
             lblNumberofChildren.Size = new Size(138, 20);
             lblNumberofChildren.TabIndex = 17;
@@ -103,7 +103,7 @@
             // txtSchoolName
             // 
             txtSchoolName.BackColor = SystemColors.ButtonHighlight;
-            txtSchoolName.Location = new Point(174, 152);
+            txtSchoolName.Location = new Point(168, 98);
             txtSchoolName.Name = "txtSchoolName";
             txtSchoolName.ReadOnly = true;
             txtSchoolName.Size = new Size(247, 27);
@@ -112,7 +112,7 @@
             // txtSchoolAddress
             // 
             txtSchoolAddress.BackColor = SystemColors.ButtonHighlight;
-            txtSchoolAddress.Location = new Point(174, 200);
+            txtSchoolAddress.Location = new Point(168, 146);
             txtSchoolAddress.Name = "txtSchoolAddress";
             txtSchoolAddress.ReadOnly = true;
             txtSchoolAddress.Size = new Size(247, 27);
@@ -121,7 +121,7 @@
             // txtSchoolCity
             // 
             txtSchoolCity.BackColor = SystemColors.ButtonHighlight;
-            txtSchoolCity.Location = new Point(174, 241);
+            txtSchoolCity.Location = new Point(168, 187);
             txtSchoolCity.Name = "txtSchoolCity";
             txtSchoolCity.ReadOnly = true;
             txtSchoolCity.Size = new Size(247, 27);
@@ -131,7 +131,7 @@
             // 
             txtNumberOfChildren.Cursor = Cursors.Hand;
             txtNumberOfChildren.ForeColor = SystemColors.InfoText;
-            txtNumberOfChildren.Location = new Point(174, 289);
+            txtNumberOfChildren.Location = new Point(168, 235);
             txtNumberOfChildren.Name = "txtNumberOfChildren";
             txtNumberOfChildren.Size = new Size(247, 27);
             txtNumberOfChildren.TabIndex = 21;
@@ -142,7 +142,7 @@
             // btnEditSchoolDetails
             // 
             btnEditSchoolDetails.BackColor = SystemColors.ButtonHighlight;
-            btnEditSchoolDetails.Location = new Point(928, 1057);
+            btnEditSchoolDetails.Location = new Point(925, 944);
             btnEditSchoolDetails.Name = "btnEditSchoolDetails";
             btnEditSchoolDetails.Size = new Size(148, 50);
             btnEditSchoolDetails.TabIndex = 22;
@@ -157,9 +157,9 @@
             // groupBox2
             // 
             groupBox2.Controls.Add(dgvVolunteers);
-            groupBox2.Location = new Point(24, 676);
+            groupBox2.Location = new Point(21, 612);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(1055, 375);
+            groupBox2.Size = new Size(1055, 326);
             groupBox2.TabIndex = 92;
             groupBox2.TabStop = false;
             // 
@@ -177,7 +177,7 @@
             dgvVolunteers.RowHeadersWidth = 51;
             dgvVolunteers.RowTemplate.Height = 29;
             dgvVolunteers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvVolunteers.Size = new Size(1049, 349);
+            dgvVolunteers.Size = new Size(1049, 300);
             dgvVolunteers.TabIndex = 0;
             dgvVolunteers.DataError += dgvVolunteers_DataError;
             // 
@@ -257,7 +257,7 @@
             // 
             groupBox1.Controls.Add(dgvMaterialForSchool);
             groupBox1.Controls.Add(label4);
-            groupBox1.Location = new Point(24, 411);
+            groupBox1.Location = new Point(24, 347);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(538, 259);
             groupBox1.TabIndex = 94;
@@ -328,7 +328,7 @@
             // 
             btnRecMaterial.BackColor = SystemColors.Window;
             btnRecMaterial.Cursor = Cursors.Hand;
-            btnRecMaterial.Location = new Point(24, 370);
+            btnRecMaterial.Location = new Point(27, 297);
             btnRecMaterial.Name = "btnRecMaterial";
             btnRecMaterial.Size = new Size(238, 44);
             btnRecMaterial.TabIndex = 95;
@@ -341,7 +341,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonHighlight;
-            ClientSize = new Size(1094, 1135);
+            ClientSize = new Size(1094, 1006);
             Controls.Add(btnRecMaterial);
             Controls.Add(groupBox1);
             Controls.Add(label5);

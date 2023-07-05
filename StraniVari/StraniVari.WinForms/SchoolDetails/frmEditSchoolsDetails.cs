@@ -143,19 +143,19 @@ namespace StraniVari.WinUI.SchoolDetails
 
         private async void btnRecMaterial_Click(object sender, EventArgs e)
         {
-                var materialForSchool = await _apiServiceMaterialGet.GetById<List<GetMaterialsForSchoolRequest>>(_selectedSchool.SchoolEventId);
+            var materialForSchool = await _apiServiceMaterialGet.GetById<List<GetMaterialsForSchoolRequest>>(_selectedSchool.SchoolEventId);
 
-                var materialList = await _apiServiceMaterial.Get<List<SchoolMaterial>>($"{_selectedSchool.SchoolEventId}/recommend");
+            var materialList = await _apiServiceMaterial.Get<List<SchoolMaterial>>($"{_selectedSchool.SchoolEventId}/recommend");
 
-                if (materialList.Count() > 0)
-                {
-                    frmRecommendationSystem frmRecommendationSystem = new frmRecommendationSystem(materialList, _selectedSchool, materialForSchool);
-                    frmRecommendationSystem.Show();
-                }
-                else
-                {
-                    MessageBox.Show("There are no recommended materials.");
-                }
+            if (materialList.Count() > 0)
+            {
+                frmRecommendationSystem frmRecommendationSystem = new frmRecommendationSystem(materialList, _selectedSchool, materialForSchool);
+                frmRecommendationSystem.Show();
+            }
+            else
+            {
+                MessageBox.Show("There are no recommended materials.");
+            }
         }
     }
 }
