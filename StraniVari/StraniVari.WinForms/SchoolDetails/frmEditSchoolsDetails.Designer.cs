@@ -142,6 +142,7 @@
             // btnEditSchoolDetails
             // 
             btnEditSchoolDetails.BackColor = SystemColors.ButtonHighlight;
+            btnEditSchoolDetails.Cursor = Cursors.Hand;
             btnEditSchoolDetails.Location = new Point(925, 944);
             btnEditSchoolDetails.Name = "btnEditSchoolDetails";
             btnEditSchoolDetails.Size = new Size(148, 50);

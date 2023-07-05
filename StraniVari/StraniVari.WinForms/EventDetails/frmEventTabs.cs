@@ -208,5 +208,10 @@ namespace StraniVari.WinUI.EventDetails
             frmSchoolsMaterialVolunteerscs frmSchoolsMaterialVolunteerscs = new frmSchoolsMaterialVolunteerscs(selectedEvent);
             frmSchoolsMaterialVolunteerscs.ShowDialog();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            frmAllApplications_Load(sender, e);
+        }
     }
 }

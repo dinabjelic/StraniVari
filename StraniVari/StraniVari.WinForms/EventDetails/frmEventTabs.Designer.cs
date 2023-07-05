@@ -70,6 +70,7 @@
             Details = new DataGridViewButtonColumn();
             dataGridViewButtonColumn2 = new DataGridViewButtonColumn();
             lblEventName = new Label();
+            button1 = new Button();
             tabControl1.SuspendLayout();
             tabPage2.SuspendLayout();
             groupBox2.SuspendLayout();
@@ -325,6 +326,7 @@
             // 
             // tabPage3
             // 
+            tabPage3.Controls.Add(button1);
             tabPage3.Controls.Add(groupBox3);
             tabPage3.Controls.Add(label3);
             tabPage3.Location = new Point(4, 29);
@@ -339,11 +341,11 @@
             // 
             groupBox3.Controls.Add(lblTripApplications);
             groupBox3.Controls.Add(dgvApplications);
-            groupBox3.Location = new Point(194, 20);
+            groupBox3.Location = new Point(194, 43);
             groupBox3.Margin = new Padding(3, 4, 3, 4);
             groupBox3.Name = "groupBox3";
             groupBox3.Padding = new Padding(3, 4, 3, 4);
-            groupBox3.Size = new Size(725, 376);
+            groupBox3.Size = new Size(725, 353);
             groupBox3.TabIndex = 37;
             groupBox3.TabStop = false;
             // 
@@ -372,7 +374,7 @@
             dgvApplications.RowHeadersWidth = 51;
             dgvApplications.RowTemplate.Height = 24;
             dgvApplications.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvApplications.Size = new Size(719, 348);
+            dgvApplications.Size = new Size(719, 325);
             dgvApplications.TabIndex = 0;
             dgvApplications.CellMouseDoubleClick += dgvApplications_CellMouseDoubleClick;
             // 
@@ -552,6 +554,18 @@
             lblEventName.TabIndex = 89;
             lblEventName.Text = "Strani Vari 1999";
             // 
+            // button1
+            // 
+            button1.BackColor = Color.White;
+            button1.Cursor = Cursors.Hand;
+            button1.Location = new Point(197, 20);
+            button1.Name = "button1";
+            button1.Size = new Size(94, 29);
+            button1.TabIndex = 38;
+            button1.Text = "Refresh";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
             // frmEventTabs
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -624,5 +638,6 @@
         private Button buttonAdd;
         private Label lblEventName;
         private Label lblTripApplications;
+        private Button button1;
     }
 }

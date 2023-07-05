@@ -29,8 +29,8 @@ namespace StraniVari.Database.DataSeed
 
             List<Event> events = new();
 
-            var startDate1 = new DateTime(2018, 7, 24);
-            var endDate1 = new DateTime(2018, 8, 6);
+            var startDate1 = new DateTime(2018, 7, 24, 08, 30, 0);
+            var endDate1 = new DateTime(2018, 8, 6, 13,30,0);
 
             events.Add(new Event
             {
@@ -41,8 +41,8 @@ namespace StraniVari.Database.DataSeed
                 EndDate = endDate1
             });
 
-            var startDate2 = new DateTime(2019, 7, 24);
-            var endDate2 = new DateTime(2019, 8, 6);
+            var startDate2 = new DateTime(2019, 7, 24, 08, 30, 0);
+            var endDate2 = new DateTime(2019, 8, 6, 13, 30, 0);
 
             events.Add(new Event
             {
@@ -53,8 +53,8 @@ namespace StraniVari.Database.DataSeed
                 EndDate = endDate2
             });
 
-            var startDate3 = new DateTime(2020, 7, 24);
-            var endDate3 = new DateTime(2020, 8, 6);
+            var startDate3 = new DateTime(2020, 7, 24, 08, 30, 0);
+            var endDate3 = new DateTime(2020, 8, 6, 13, 30, 0);
 
             events.Add(new Event
             {
@@ -65,8 +65,8 @@ namespace StraniVari.Database.DataSeed
                 EndDate = endDate3
             });
 
-            var startDate4 = new DateTime(2021, 7, 24);
-            var endDate4 = new DateTime(2021, 8, 6);
+            var startDate4 = new DateTime(2021, 7, 24, 08, 30, 0);
+            var endDate4 = new DateTime(2021, 8, 6, 13, 30, 0);
 
             events.Add(new Event
             {
@@ -78,8 +78,8 @@ namespace StraniVari.Database.DataSeed
             });
 
 
-            var startDate5 = new DateTime(2022, 7, 24);
-            var endDate5 = new DateTime(2022, 8, 6);
+            var startDate5 = new DateTime(2022, 7, 24, 08, 30, 0);
+            var endDate5 = new DateTime(2022, 8, 6, 13, 30, 0);
 
             events.Add(new Event
             {
@@ -90,8 +90,8 @@ namespace StraniVari.Database.DataSeed
                 EndDate = endDate5
             });
 
-            var startDate6 = new DateTime(2023, 7, 24);
-            var endDate6 = new DateTime(2023, 8, 6);
+            var startDate6 = new DateTime(2023, 7, 24, 08, 30, 0);
+            var endDate6 = new DateTime(2023, 8, 6, 13, 30, 0);
             events.Add(new Event
             {
                 Id = 1,
