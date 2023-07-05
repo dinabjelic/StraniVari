@@ -22,6 +22,7 @@ namespace StraniVari.WinUI.SchoolDetails
 
         private void frmSchoolTabs_Load(object sender, EventArgs e)
         {
+            lblSchoolName.Text = selectedSchool.SchoolName;
             frmVolunteerDetails_Load(sender, e);
             frmMaterialDetails_Load(sender, e);
         }

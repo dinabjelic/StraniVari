@@ -56,6 +56,7 @@
             MaterialName = new DataGridViewTextBoxColumn();
             NumberOfMaterial = new DataGridViewTextBoxColumn();
             label4 = new Label();
+            btnRecMaterial = new Button();
             ((System.ComponentModel.ISupportInitialize)err).BeginInit();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvVolunteers).BeginInit();
@@ -136,6 +137,7 @@
             txtNumberOfChildren.TabIndex = 21;
             txtNumberOfChildren.Text = "numbers only";
             txtNumberOfChildren.TextAlign = HorizontalAlignment.Center;
+            txtNumberOfChildren.KeyPress += txtNumberOfChildren_KeyPress;
             // 
             // btnEditSchoolDetails
             // 
@@ -177,6 +179,7 @@
             dgvVolunteers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvVolunteers.Size = new Size(1049, 349);
             dgvVolunteers.TabIndex = 0;
+            dgvVolunteers.DataError += dgvVolunteers_DataError;
             // 
             // SchoolVolunteerId
             // 
@@ -254,7 +257,7 @@
             // 
             groupBox1.Controls.Add(dgvMaterialForSchool);
             groupBox1.Controls.Add(label4);
-            groupBox1.Location = new Point(27, 365);
+            groupBox1.Location = new Point(24, 411);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(538, 259);
             groupBox1.TabIndex = 94;
@@ -276,6 +279,7 @@
             dgvMaterialForSchool.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvMaterialForSchool.Size = new Size(532, 233);
             dgvMaterialForSchool.TabIndex = 0;
+            dgvMaterialForSchool.DataError += dgvMaterialForSchool_DataError;
             // 
             // IsChecked
             // 
@@ -320,12 +324,25 @@
             label4.TabIndex = 90;
             label4.Text = "Material";
             // 
+            // btnRecMaterial
+            // 
+            btnRecMaterial.BackColor = SystemColors.Window;
+            btnRecMaterial.Cursor = Cursors.Hand;
+            btnRecMaterial.Location = new Point(24, 370);
+            btnRecMaterial.Name = "btnRecMaterial";
+            btnRecMaterial.Size = new Size(238, 44);
+            btnRecMaterial.TabIndex = 95;
+            btnRecMaterial.Text = "Recommend material";
+            btnRecMaterial.UseVisualStyleBackColor = false;
+            btnRecMaterial.Click += btnRecMaterial_Click;
+            // 
             // frmEditSchoolsDetails
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonHighlight;
             ClientSize = new Size(1094, 1135);
+            Controls.Add(btnRecMaterial);
             Controls.Add(groupBox1);
             Controls.Add(label5);
             Controls.Add(groupBox2);
@@ -378,5 +395,6 @@
         private DataGridViewTextBoxColumn MaterialName;
         private DataGridViewTextBoxColumn NumberOfMaterial;
         private Label label4;
+        private Button btnRecMaterial;
     }
 }

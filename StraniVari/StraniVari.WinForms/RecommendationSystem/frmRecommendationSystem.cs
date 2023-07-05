@@ -22,35 +22,7 @@ namespace StraniVari.WinUI.RecommendationSystem
 
         private async void frmRecommendationSystem_Load(object sender, EventArgs e)
         {
-            //bool duplicate = false;
             var result = await _apiService.Get<List<GetMaterialDetailsResponse>>();
-            //var duplicateList = new List<int>();
-            //foreach (var x in MaterialForSchool)
-            //{
-            //    foreach (var y in MaterialList)
-            //    {
-            //        if (x.MaterialId == y.MaterialId)
-            //        {
-            //            //duplicate = true;
-            //            duplicateList.Add(y.MaterialId);
-            //            //break;
-            //        }
-            //    }
-            //}
-            //if(duplicateList.Count > 1)
-            //{
-            //    duplicateList = null;
-            //}
-
-            //if (duplicateList != null)
-            //{
-
-            //}
-            //else
-            //{
-            //    MessageBox.Show("There are no recommended materials for this school");
-            //    this.Close();
-            //}
 
             foreach (var x in result)
             {

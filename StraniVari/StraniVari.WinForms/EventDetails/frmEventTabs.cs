@@ -31,6 +31,7 @@ namespace StraniVari.WinUI.EventDetails
 
         private void frmEventTabs_Load(object sender, EventArgs e)
         {
+            lblEventName.Text = selectedEvent.Name;
             frmAllPlanAndProgramme_Load(sender, e);
             frmAllNotifications_Load(sender, e);
             frmAllApplications_Load(sender, e);
@@ -191,7 +192,7 @@ namespace StraniVari.WinUI.EventDetails
             var selectedSchool = dgvSchoolsEventDetails.SelectedRows[0].DataBoundItem as GetSchoolsForEventResponse;
             if (selectedSchool != null)
             {
-                frmEditSchoolsDetails frmEditSchoolsDetails = new frmEditSchoolsDetails(selectedEvent,selectedSchool);
+                frmEditSchoolsDetails frmEditSchoolsDetails = new frmEditSchoolsDetails(selectedEvent, selectedSchool);
                 frmEditSchoolsDetails.ShowDialog();
             }
         }

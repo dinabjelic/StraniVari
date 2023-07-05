@@ -46,6 +46,7 @@
             MaterialName = new DataGridViewTextBoxColumn();
             Quantity = new DataGridViewTextBoxColumn();
             dataGridViewButtonColumn1 = new DataGridViewButtonColumn();
+            lblSchoolName = new Label();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             groupBox1.SuspendLayout();
@@ -252,12 +253,23 @@
             dataGridViewButtonColumn1.UseColumnTextForButtonValue = true;
             dataGridViewButtonColumn1.Width = 90;
             // 
+            // lblSchoolName
+            // 
+            lblSchoolName.Font = new Font("Sitka Small", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            lblSchoolName.ForeColor = SystemColors.ControlText;
+            lblSchoolName.Location = new Point(42, 14);
+            lblSchoolName.Name = "lblSchoolName";
+            lblSchoolName.Size = new Size(443, 50);
+            lblSchoolName.TabIndex = 90;
+            lblSchoolName.Text = "Prva osnovna skola";
+            // 
             // frmSchoolTabs
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonHighlight;
             ClientSize = new Size(1212, 541);
+            Controls.Add(lblSchoolName);
             Controls.Add(tabControl1);
             ForeColor = SystemColors.ButtonHighlight;
             Name = "frmSchoolTabs";
@@ -294,5 +306,6 @@
         private DataGridViewTextBoxColumn MaterialName;
         private DataGridViewTextBoxColumn Quantity;
         private DataGridViewButtonColumn dataGridViewButtonColumn1;
+        private Label lblSchoolName;
     }
 }

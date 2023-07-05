@@ -1,7 +1,9 @@
 ﻿using StraniVari.Common.Constants;
+using StraniVari.Core.Entities;
 using StraniVari.Core.Requests;
 using StraniVari.Core.Responses;
 using StraniVari.WinUI.EventDetails;
+using StraniVari.WinUI.RecommendationSystem;
 using StraniVari.WinUI.Service;
 
 namespace StraniVari.WinUI.SchoolDetails
@@ -12,6 +14,9 @@ namespace StraniVari.WinUI.SchoolDetails
         ApiService _apiServiceEventSchoolDetails = new ApiService("EventSchool/get");
         ApiService _apiServiceSchoolMaterial = new ApiService("SchoolMaterials/getEventSchoolsMaterial");
         ApiService _apiServiceSchoolVolunteers = new ApiService("SchoolVolunteers/getEventSchoolsVolunteers");
+        ApiService _apiServiceMaterialGet = new ApiService("SchoolMaterials/get");
+        ApiService _apiServiceMaterial = new ApiService("SchoolMaterials");
+
 
         public GetSchoolsForEventResponse _selectedSchool { get; }
         public EventUpsertRequest _selectedEvent { get; }
@@ -89,7 +94,7 @@ namespace StraniVari.WinUI.SchoolDetails
             {
                 NumberOfChildren = Int32.TryParse(txtNumberOfChildren.Text, out var result) ? result : 0,
                 EventId = _selectedEvent.Id,
-                SchoolId = _selectedSchool.SchoolId, 
+                SchoolId = _selectedSchool.SchoolId,
                 Material = checkedMaterialItems,
                 Volunteers = checkedVolunteerItems
             };
@@ -116,6 +121,41 @@ namespace StraniVari.WinUI.SchoolDetails
             }
             err.Clear();
             return true;
+        }
+
+        private void dgvVolunteers_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            e.Cancel = true;
+        }
+
+        private void dgvMaterialForSchool_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            e.Cancel = true;
+        }
+
+        private void txtNumberOfChildren_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private async void btnRecMaterial_Click(object sender, EventArgs e)
+        {
+                var materialForSchool = await _apiServiceMaterialGet.GetById<List<GetMaterialsForSchoolRequest>>(_selectedSchool.SchoolEventId);
+
+                var materialList = await _apiServiceMaterial.Get<List<SchoolMaterial>>($"{_selectedSchool.SchoolEventId}/recommend");
+
+                if (materialList.Count() > 0)
+                {
+                    frmRecommendationSystem frmRecommendationSystem = new frmRecommendationSystem(materialList, _selectedSchool, materialForSchool);
+                    frmRecommendationSystem.Show();
+                }
+                else
+                {
+                    MessageBox.Show("There are no recommended materials.");
+                }
         }
     }
 }

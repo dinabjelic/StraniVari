@@ -52,7 +52,6 @@
             label4 = new Label();
             txtNumberOfChildren = new TextBox();
             label5 = new Label();
-            button2 = new Button();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvMaterialForSchool).BeginInit();
             groupBox2.SuspendLayout();
@@ -68,6 +67,7 @@
             comboBox1.Size = new Size(418, 28);
             comboBox1.TabIndex = 0;
             comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
+            comboBox1.KeyPress += comboBox1_KeyPress;
             // 
             // label1
             // 
@@ -104,6 +104,8 @@
             dgvMaterialForSchool.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvMaterialForSchool.Size = new Size(532, 233);
             dgvMaterialForSchool.TabIndex = 0;
+            dgvMaterialForSchool.CellValidating += dgvMaterialForSchool_CellValidating;
+            dgvMaterialForSchool.DataError += dgvMaterialForSchool_DataError;
             // 
             // IsChecked
             // 
@@ -173,6 +175,7 @@
             dgvVolunteers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvVolunteers.Size = new Size(1049, 349);
             dgvVolunteers.TabIndex = 0;
+            dgvVolunteers.DataError += dgvVolunteers_DataError;
             // 
             // SchoolVolunteerId
             // 
@@ -279,6 +282,7 @@
             txtNumberOfChildren.Name = "txtNumberOfChildren";
             txtNumberOfChildren.Size = new Size(125, 27);
             txtNumberOfChildren.TabIndex = 95;
+            txtNumberOfChildren.KeyPress += txtNumberOfChildren_KeyPress;
             // 
             // label5
             // 
@@ -289,24 +293,12 @@
             label5.TabIndex = 96;
             label5.Text = "Number of children";
             // 
-            // button2
-            // 
-            button2.BackColor = SystemColors.Window;
-            button2.Location = new Point(339, 201);
-            button2.Name = "button2";
-            button2.Size = new Size(214, 29);
-            button2.TabIndex = 97;
-            button2.Text = "Recommend material";
-            button2.UseVisualStyleBackColor = false;
-            button2.Click += button2_Click;
-            // 
             // frmSchoolsMaterialVolunteerscs
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonHighlight;
             ClientSize = new Size(1097, 1035);
-            Controls.Add(button2);
             Controls.Add(label5);
             Controls.Add(txtNumberOfChildren);
             Controls.Add(label4);
@@ -354,6 +346,5 @@
         private DataGridViewTextBoxColumn NumberOfMaterial;
         private TextBox txtNumberOfChildren;
         private Label label5;
-        private Button button2;
     }
 }

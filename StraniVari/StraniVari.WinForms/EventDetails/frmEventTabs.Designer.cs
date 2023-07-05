@@ -68,6 +68,7 @@
             NumberOfChildren = new DataGridViewTextBoxColumn();
             Details = new DataGridViewButtonColumn();
             dataGridViewButtonColumn2 = new DataGridViewButtonColumn();
+            lblEventName = new Label();
             tabControl1.SuspendLayout();
             tabPage2.SuspendLayout();
             groupBox2.SuspendLayout();
@@ -89,7 +90,7 @@
             tabControl1.Controls.Add(tabPage1);
             tabControl1.Controls.Add(tabPage3);
             tabControl1.Controls.Add(tabPage4);
-            tabControl1.Location = new Point(48, 48);
+            tabControl1.Location = new Point(42, 77);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
             tabControl1.Size = new Size(1108, 449);
@@ -531,12 +532,22 @@
             dataGridViewButtonColumn2.UseColumnTextForButtonValue = true;
             dataGridViewButtonColumn2.Width = 90;
             // 
+            // lblEventName
+            // 
+            lblEventName.Font = new Font("Sitka Small", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            lblEventName.Location = new Point(42, 24);
+            lblEventName.Name = "lblEventName";
+            lblEventName.Size = new Size(271, 50);
+            lblEventName.TabIndex = 89;
+            lblEventName.Text = "Strani Vari 1999";
+            // 
             // frmEventTabs
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonHighlight;
-            ClientSize = new Size(1196, 537);
+            ClientSize = new Size(1188, 563);
+            Controls.Add(lblEventName);
             Controls.Add(tabControl1);
             Name = "frmEventTabs";
             StartPosition = FormStartPosition.CenterScreen;
@@ -600,5 +611,6 @@
         private DataGridViewButtonColumn Details;
         private DataGridViewButtonColumn dataGridViewButtonColumn2;
         private Button buttonAdd;
+        private Label lblEventName;
     }
 }

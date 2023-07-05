@@ -77,14 +77,10 @@ namespace StraniVari.WinUI.Trip
             comboBox1.DisplayMember = "Name";
             comboBox1.ValueMember = "Id";
         }
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+
+        private void comboBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
-
-        }
-
-        private void btnTrips_Click(object sender, EventArgs e)
-        {
-
+            e.Handled = true;
         }
     }
 }

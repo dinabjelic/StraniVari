@@ -1,6 +1,7 @@
 ﻿using StraniVari.Core.Entities;
 using StraniVari.Core.Requests;
 using StraniVari.Core.Responses;
+using StraniVari.WinUI.Reports;
 using StraniVari.WinUI.SchoolDetails;
 using StraniVari.WinUI.Service;
 
@@ -27,6 +28,7 @@ namespace StraniVari.WinUI.EventDetails
             await LoadSchoolComboBoxValues();
             await LoadMaterials();
             await LoadVolunteers();
+            dgvMaterialForSchool.CellValidating += dgvMaterialForSchool_CellValidating;
         }
 
         private async void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -114,6 +116,41 @@ namespace StraniVari.WinUI.EventDetails
         private void button2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void dgvMaterialForSchool_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
+        {
+            if (e.ColumnIndex == 3) // Replace `yourNumericColumnIndex` with the actual index of your numeric column
+            {
+                if (!int.TryParse(e.FormattedValue.ToString(), out int numericValue))
+                {
+                    // If the user enters a non-numeric value, convert it to zero
+                    dgvMaterialForSchool.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = 0;
+                }
+            }
+        }
+
+        private void dgvMaterialForSchool_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            e.Cancel = true;
+        }
+
+        private void dgvVolunteers_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            e.Cancel = true;
+        }
+
+        private void comboBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private void txtNumberOfChildren_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

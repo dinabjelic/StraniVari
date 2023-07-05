@@ -103,7 +103,7 @@
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(285, 28);
             comboBox1.TabIndex = 21;
-            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
+            comboBox1.KeyPress += comboBox1_KeyPress;
             // 
             // label3
             // 

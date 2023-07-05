@@ -70,5 +70,13 @@ namespace StraniVari.WinUI.Material
             err.Clear();
             return true;
         }
+
+        private void txtQuantity_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

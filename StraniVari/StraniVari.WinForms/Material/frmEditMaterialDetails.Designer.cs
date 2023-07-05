@@ -60,6 +60,7 @@
             txtQuantity.TabIndex = 35;
             txtQuantity.Text = "numbers only";
             txtQuantity.TextAlign = HorizontalAlignment.Center;
+            txtQuantity.KeyPress += txtQuantity_KeyPress;
             // 
             // txtMaterailName
             // 

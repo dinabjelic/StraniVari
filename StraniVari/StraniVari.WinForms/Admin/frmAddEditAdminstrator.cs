@@ -52,7 +52,7 @@ namespace StraniVari.WinUI.Admin
                     }
                     else
                     {
-                        MessageBox.Show("Insert failed!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Username already in use!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
@@ -64,7 +64,7 @@ namespace StraniVari.WinUI.Admin
                     }
                     else
                     {
-                        MessageBox.Show("Update failed!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Username already in use.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
 
                 }
