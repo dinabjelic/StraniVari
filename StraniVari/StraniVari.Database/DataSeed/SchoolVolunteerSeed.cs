@@ -1,7 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
 using StraniVari.Core.Entities;
-using StraniVari.Core.Helper;
 
 namespace StraniVari.Database.DataSeed
 {
@@ -19,23 +17,89 @@ namespace StraniVari.Database.DataSeed
 
             List<SchoolVolunteer> schoolVolunteers = new();
 
-            for (int i = 1; i <= 5; i++)
+            schoolVolunteers.Add(new SchoolVolunteer
             {
-                schoolVolunteers.Add(new SchoolVolunteer
-                {
-                    Id=i, 
-                    TransportNeeded = transportNeeded[i % 2],
-                    EventSchoolId = random.Next(2, 6),
-                    VolunteerId = random.Next(3, 6)
-                });
-            }
+                Id = 1,
+                VolunteerId = 2,
+                EventSchoolId = 1,
+                TransportNeeded = false
+            });
+            schoolVolunteers.Add(new SchoolVolunteer
+            {
+                Id = 2,
+                VolunteerId = 3,
+                EventSchoolId = 2,
+                TransportNeeded = false
+            });
 
             schoolVolunteers.Add(new SchoolVolunteer
             {
+                Id = 3,
+                VolunteerId = 4,
+                EventSchoolId = 3,
+                TransportNeeded = false
+            });
+            schoolVolunteers.Add(new SchoolVolunteer
+            {
+                Id = 4,
+                VolunteerId = 5,
+                EventSchoolId = 4,
+                TransportNeeded = false
+            });
+
+            schoolVolunteers.Add(new SchoolVolunteer
+            {
+                Id = 5,
+                VolunteerId = 6,
+                EventSchoolId = 5,
+                TransportNeeded = false
+            });
+            schoolVolunteers.Add(new SchoolVolunteer
+            {
                 Id = 6,
-                VolunteerId=2, 
-                EventSchoolId=11, 
-                TransportNeeded= false
+                VolunteerId = 3,
+                EventSchoolId = 6,
+                TransportNeeded = false
+            });
+
+
+            schoolVolunteers.Add(new SchoolVolunteer
+            {
+                Id = 7,
+                VolunteerId = 4,
+                EventSchoolId = 7,
+                TransportNeeded = false
+            });
+            schoolVolunteers.Add(new SchoolVolunteer
+            {
+                Id = 8,
+                VolunteerId = 3,
+                EventSchoolId = 8,
+                TransportNeeded = false
+            });
+
+            schoolVolunteers.Add(new SchoolVolunteer
+            {
+                Id = 9,
+                VolunteerId = 6,
+                EventSchoolId = 9,
+                TransportNeeded = false
+            });
+            schoolVolunteers.Add(new SchoolVolunteer
+            {
+                Id = 10,
+                VolunteerId = 3,
+                EventSchoolId = 10,
+                TransportNeeded = false
+            });
+
+
+            schoolVolunteers.Add(new SchoolVolunteer
+            {
+                Id = 11,
+                VolunteerId = 3,
+                EventSchoolId = 11,
+                TransportNeeded = false
             });
 
             builder.Entity<SchoolVolunteer>().HasData(schoolVolunteers);

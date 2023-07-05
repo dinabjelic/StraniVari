@@ -55,9 +55,15 @@ namespace StraniVari.WinUI.EventDetails
         {
             dgvApplications.AutoGenerateColumns = false;
             var result = await _apiServiceVolunteerTrips.GetById<List<GetTripApplicationsResponse>>(selectedEvent.Id);
-            dgvApplications.DataSource = result;
-
-            var tripDetails = await _apiServiceApplicationsDetails.GetById<List<GetTripsDetailsForEventResponse>>(selectedEvent.Id);
+            if (result.Count == 0)
+            {
+                lblTripApplications.Visible = true;
+            }
+            else
+            {
+                lblTripApplications.Visible = false;
+                dgvApplications.DataSource = result;
+            }
         }
 
         public async void frmSchoolsEventDetails_Load(object sender, EventArgs e)

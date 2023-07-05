@@ -21,34 +21,95 @@ namespace StraniVari.Database.DataSeed
             };
 
             List<SchoolMaterial> schoolMaterials = new();
-
-            for (int i = 1; i <= 5; i++)
+            schoolMaterials.Add(new SchoolMaterial
             {
-                schoolMaterials.Add(new SchoolMaterial
-                {
-                    Id= i, 
-                    EventSchoolId = random.Next(2, 6),
-                    MaterialId = random.Next(1, 19),
-                    Quantity = quantity[i % 7]
-                });
-            }
+                Id = 1,
+                EventSchoolId = 1,
+                MaterialId = 20,
+                Quantity = 20
+            });
+            schoolMaterials.Add(new SchoolMaterial
+            {
+                Id = 2,
+                EventSchoolId = 2,
+                MaterialId = 19,
+                Quantity = 30
+            });
 
-            var schoolMaterial = schoolMaterials.First();
+            schoolMaterials.Add(new SchoolMaterial
+            {
+                Id = 3,
+                EventSchoolId = 3,
+                MaterialId = 20,
+                Quantity = 20
+            });
+            schoolMaterials.Add(new SchoolMaterial
+            {
+                Id = 4,
+                EventSchoolId = 4,
+                MaterialId = 17,
+                Quantity = 20
+            });
+
+            schoolMaterials.Add(new SchoolMaterial
+            {
+                Id = 5,
+                EventSchoolId = 5,
+                MaterialId = 16,
+                Quantity = 20
+            });
             schoolMaterials.Add(new SchoolMaterial
             {
                 Id = 6,
-                EventSchoolId = schoolMaterial.EventSchoolId,
-                MaterialId = 20,
-                Quantity = 2
+                EventSchoolId = 6,
+                MaterialId = 15,
+                Quantity = 20
             });
+
             schoolMaterials.Add(new SchoolMaterial
             {
                 Id = 7,
-                EventSchoolId = 11,
-                MaterialId = 20,
-                Quantity = 2
+                EventSchoolId = 7,
+                MaterialId = 15,
+                Quantity = 20
+            });
+            schoolMaterials.Add(new SchoolMaterial
+            {
+                Id = 8,
+                EventSchoolId = 8,
+                MaterialId = 12,
+                Quantity = 31
             });
 
+            schoolMaterials.Add(new SchoolMaterial
+            {
+                Id = 9,
+                EventSchoolId = 9,
+                MaterialId = 10,
+                Quantity = 31
+            });
+            schoolMaterials.Add(new SchoolMaterial
+            {
+                Id = 10,
+                EventSchoolId = 10,
+                MaterialId = 7,
+                Quantity = 31
+            });
+
+            schoolMaterials.Add(new SchoolMaterial
+            {
+                Id = 11,
+                EventSchoolId = 11,
+                MaterialId = 6,
+                Quantity = 31
+            });
+            schoolMaterials.Add(new SchoolMaterial
+            {
+                Id = 12,
+                EventSchoolId = 12,
+                MaterialId = 8,
+                Quantity = 31
+            });
 
             builder.Entity<SchoolMaterial>().HasData(schoolMaterials);
         }

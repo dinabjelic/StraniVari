@@ -51,6 +51,7 @@
             btnDelete = new DataGridViewButtonColumn();
             tabPage3 = new TabPage();
             groupBox3 = new GroupBox();
+            lblTripApplications = new Label();
             dgvApplications = new DataGridView();
             dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
             VolunteerName = new DataGridViewTextBoxColumn();
@@ -336,6 +337,7 @@
             // 
             // groupBox3
             // 
+            groupBox3.Controls.Add(lblTripApplications);
             groupBox3.Controls.Add(dgvApplications);
             groupBox3.Location = new Point(194, 20);
             groupBox3.Margin = new Padding(3, 4, 3, 4);
@@ -344,6 +346,15 @@
             groupBox3.Size = new Size(725, 376);
             groupBox3.TabIndex = 37;
             groupBox3.TabStop = false;
+            // 
+            // lblTripApplications
+            // 
+            lblTripApplications.Font = new Font("Sitka Small", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lblTripApplications.Location = new Point(46, 173);
+            lblTripApplications.Name = "lblTripApplications";
+            lblTripApplications.Size = new Size(660, 31);
+            lblTripApplications.TabIndex = 90;
+            lblTripApplications.Text = "No applications have been submitted for the selected event.";
             // 
             // dgvApplications
             // 
@@ -612,5 +623,6 @@
         private DataGridViewButtonColumn dataGridViewButtonColumn2;
         private Button buttonAdd;
         private Label lblEventName;
+        private Label lblTripApplications;
     }
 }

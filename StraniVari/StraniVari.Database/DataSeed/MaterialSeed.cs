@@ -27,8 +27,8 @@ namespace StraniVari.Database.DataSeed
                 "Bijeli papir",
                 "Krede",
                 "Heftarica",
-                "Bijeli papir", 
-                "Baloni"
+                "Baloni",
+                "Hemijske olovke"
             };
 
             List<Material> materials = new();

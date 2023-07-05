@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace StraniVari.Core.Entities
+﻿namespace StraniVari.Core.Entities
 {
     public class School:BaseEntity
     {

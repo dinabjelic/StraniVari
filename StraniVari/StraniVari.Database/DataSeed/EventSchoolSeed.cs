@@ -15,25 +15,84 @@ namespace StraniVari.Database.DataSeed
                 80,
                 50, 
             };
+           
 
-            List<EventSchool> eventSchools = new();
-
-            for (int i = 2; i <= 10; i++)
+            List<EventSchool> eventSchools = new List<EventSchool>();
+            eventSchools.Add(new EventSchool
             {
-                var eventId = random.Next(1, 5);
-                var schoolId = random.Next(1, 4);
-                if (!eventSchools.Any(x => x.EventId == eventId && x.SchoolId == schoolId))
-                {
-                    eventSchools.Add(new EventSchool
-                    {
-                        Id = i,
-                        EventId = eventId,
-                        NumberOfChildren = numberOfChilder[i % 4],
-                        SchoolId = schoolId
-                    });
-                }
-            }
+                Id = 1,
+                SchoolId = 2,
+                EventId = 1,
+                NumberOfChildren = 50
+            });
+            eventSchools.Add(new EventSchool
+            {
+                Id = 2,
+                SchoolId = 1,
+                EventId = 1,
+                NumberOfChildren = 70
+            });
 
+            eventSchools.Add(new EventSchool
+            {
+                Id = 3,
+                SchoolId = 2,
+                EventId = 2,
+                NumberOfChildren = 50
+            });
+            eventSchools.Add(new EventSchool
+            {
+                Id = 4,
+                SchoolId = 1,
+                EventId = 2,
+                NumberOfChildren = 70
+            });
+
+            eventSchools.Add(new EventSchool
+            {
+                Id = 5,
+                SchoolId = 2,
+                EventId = 3,
+                NumberOfChildren = 50
+            });
+            eventSchools.Add(new EventSchool
+            {
+                Id = 6,
+                SchoolId = 1,
+                EventId = 3,
+                NumberOfChildren = 70
+            });
+
+
+            eventSchools.Add(new EventSchool
+            {
+                Id = 7,
+                SchoolId = 2,
+                EventId = 4,
+                NumberOfChildren = 50
+            });
+            eventSchools.Add(new EventSchool
+            {
+                Id = 8,
+                SchoolId = 1,
+                EventId = 4,
+                NumberOfChildren = 70
+            });
+
+            eventSchools.Add(new EventSchool
+            {
+                Id = 9,
+                SchoolId = 2,
+                EventId = 5,
+                NumberOfChildren = 50
+            });
+            eventSchools.Add(new EventSchool
+            {
+                Id = 10,
+                SchoolId = 1,
+                EventId = 5,
+                NumberOfChildren = 70
+            });
 
             eventSchools.Add(new EventSchool
             {
@@ -42,7 +101,13 @@ namespace StraniVari.Database.DataSeed
                 EventId=6, 
                 NumberOfChildren=50
             });
-            //eventSchools = eventSchools.DistinctBy(x => new { x.EventId, x.SchoolId }).ToList();
+            eventSchools.Add(new EventSchool
+            {
+                Id = 12,
+                SchoolId = 1,
+                EventId = 6,
+                NumberOfChildren = 70
+            });
             builder.Entity<EventSchool>().HasData(eventSchools);
         }
     }

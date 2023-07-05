@@ -10,16 +10,29 @@ namespace StraniVari.Database.DataSeed
             Random random = new Random();
             List<VolunteerTrip> volunteerTrip = new();
 
-            for (int i = 1; i <= 2; i++)
+            volunteerTrip.Add(new VolunteerTrip
             {
-                volunteerTrip.Add(new VolunteerTrip
-                {
-                    Id = i,
-                    VolunteerId = random.Next(3, 6), 
-                    TripId= 1, 
-                    StatusId = 3
-                });
-            }
+                Id = 1,
+                VolunteerId = 2,
+                TripId = 1,
+                StatusId = 1
+            });
+            volunteerTrip.Add(new VolunteerTrip
+            {
+                Id = 2,
+                VolunteerId = 3,
+                TripId = 1,
+                StatusId = 1
+            });
+            volunteerTrip.Add(new VolunteerTrip
+            {
+                Id = 3,
+                VolunteerId = 4,
+                TripId = 1,
+                StatusId = 1
+            });
+
+
             builder.Entity<VolunteerTrip>().HasData(volunteerTrip);
         }
     }

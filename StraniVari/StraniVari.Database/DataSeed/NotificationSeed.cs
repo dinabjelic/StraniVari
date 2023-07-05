@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using StraniVari.Core.Entities;
-using StraniVari.Core.Helper;
 
 namespace StraniVari.Database.DataSeed
 {
@@ -30,33 +29,81 @@ namespace StraniVari.Database.DataSeed
             {
                 "Roncadelle"
             };
-
-            var startDate = new DateTime(2022, 1, 1);
-            var endDate = new DateTime(2022, 11, 29);
+           
             List<Notification> notifications = new();
 
-            for (int i = 1; i <= 5 ; i++)
+            var startDate1 = new DateTime(2018, 7, 24, 17, 30, 0);
+            notifications.Add(new Notification
             {
-                notifications.Add(new Notification
-                {
-                    Id =i,
-                    EventId = random.Next(1,5),
-                    Address = address[i % 1] ,
-                    MeetingTheme = meetingTheme[i % 2],
-                    City = city[i % 1],
-                    MeetingPlace = meetingPlace[i%1], 
-                    MeetingDate = DateGenerator.GenerateRandomDate(startDate, endDate)
-                });
-            }
+                Id = 1,
+                EventId = 1,
+                Address = "Roncadelle",
+                MeetingTheme = "Odnos volontera i djece",
+                City = "Zavidovici",
+                MeetingPlace = "ALD",
+                MeetingDate = startDate1
+            });
+
+            var startDate2 = new DateTime(2018, 7, 24, 17, 30, 0);
+            notifications.Add(new Notification
+            {
+                Id = 2,
+                EventId = 2,
+                Address = "Roncadelle",
+                MeetingTheme = "Odnos volontera i djece",
+                City = "Zavidovici",
+                MeetingPlace = "ALD",
+                MeetingDate = startDate2
+            });
+
+
+            var startDate3 = new DateTime(2018, 7, 24, 17, 30, 0);
+            notifications.Add(new Notification
+            {
+                Id = 3,
+                EventId = 3,
+                Address = "Roncadelle",
+                MeetingTheme = "Odnos volontera i djece",
+                City = "Zavidovici",
+                MeetingPlace = "ALD",
+                MeetingDate = startDate3
+            });
+
+            var startDate4 = new DateTime(2018, 7, 24, 17, 30, 0);
+            notifications.Add(new Notification
+            {
+                Id = 4,
+                EventId = 4,
+                Address = "Roncadelle",
+                MeetingTheme = "Odnos volontera i djece",
+                City = "Zavidovici",
+                MeetingPlace = "ALD",
+                MeetingDate = startDate4
+            });
+
+
+            var startDate5 = new DateTime(2018, 7, 24, 17, 30, 0);
+            notifications.Add(new Notification
+            {
+                Id = 5,
+                EventId = 5,
+                Address = "Roncadelle",
+                MeetingTheme = "Odnos volontera i djece",
+                City = "Zavidovici",
+                MeetingPlace = "ALD",
+                MeetingDate = startDate5
+            });
+
+            var startDate6 = new DateTime(2018, 7, 24, 17, 30, 0);
             notifications.Add(new Notification
             {
                 Id = 6,
                 EventId = 6,
                 Address = "Roncadelle",
-                MeetingTheme = "dnos volontera i djece",
+                MeetingTheme = "Odnos volontera i djece",
                 City = "Zavidovici",
                 MeetingPlace = "ALD",
-                MeetingDate = DateGenerator.GenerateRandomDate(startDate, endDate)
+                MeetingDate = startDate6
             });
             builder.Entity<Notification>().HasData(notifications);
         }
