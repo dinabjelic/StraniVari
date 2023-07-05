@@ -35,6 +35,13 @@ namespace StraniVari.Database.DataSeed
                 MaterialId = 19,
                 Quantity = 30
             });
+            schoolMaterials.Add(new SchoolMaterial
+            {
+                Id = 14,
+                EventSchoolId = 1,
+                MaterialId = 10,
+                Quantity = 20
+            });
 
             schoolMaterials.Add(new SchoolMaterial
             {
@@ -65,6 +72,13 @@ namespace StraniVari.Database.DataSeed
                 MaterialId = 15,
                 Quantity = 20
             });
+            schoolMaterials.Add(new SchoolMaterial
+            {
+                Id = 15,
+                EventSchoolId = 6,
+                MaterialId = 5,
+                Quantity = 20
+            });
 
             schoolMaterials.Add(new SchoolMaterial
             {
@@ -78,6 +92,13 @@ namespace StraniVari.Database.DataSeed
                 Id = 8,
                 EventSchoolId = 8,
                 MaterialId = 12,
+                Quantity = 31
+            });
+            schoolMaterials.Add(new SchoolMaterial
+            {
+                Id = 16,
+                EventSchoolId = 8,
+                MaterialId = 2,
                 Quantity = 31
             });
 
@@ -106,6 +127,13 @@ namespace StraniVari.Database.DataSeed
             schoolMaterials.Add(new SchoolMaterial
             {
                 Id = 12,
+                EventSchoolId = 12,
+                MaterialId = 8,
+                Quantity = 31
+            });
+            schoolMaterials.Add(new SchoolMaterial
+            {
+                Id = 13,
                 EventSchoolId = 12,
                 MaterialId = 8,
                 Quantity = 31

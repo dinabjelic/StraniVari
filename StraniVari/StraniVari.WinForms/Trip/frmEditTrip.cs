@@ -15,16 +15,6 @@ namespace StraniVari.WinUI.Trip
             SelectedTrip = selectedTrip;
         }
 
-
-        private async void frmEditTrip_Load(object sender, EventArgs e)
-        {
-            if (SelectedTrip != null)
-            {
-                txtPlace.Text = SelectedTrip.Place;
-                dateTimePicker1.Value = SelectedTrip.TripDateTime;
-            }
-        }
-
         private bool ValidateEntry()
         {
             return ValidateControl(txtPlace, Constants.RequiredValue);
@@ -41,12 +31,13 @@ namespace StraniVari.WinUI.Trip
             return true;
         }
 
-        private async void btnTrip_Click(object sender, EventArgs e)
+        private async void btnTrip_Click_1(object sender, EventArgs e)
         {
             if (ValidateEntry())
             {
                 var trip = new UpdateTripRequest
                 {
+                    Id = SelectedTrip.Id,
                     Place = txtPlace.Text,
                     TripDateTime = dateTimePicker1.Value,
                 };
@@ -59,6 +50,15 @@ namespace StraniVari.WinUI.Trip
 
             var principalForm = Application.OpenForms.OfType<frmTripTabs>().FirstOrDefault();
             principalForm.frmTripTabs_Load(sender, e);
+        }
+
+        private void frmEditTrip_Load_1(object sender, EventArgs e)
+        {
+            if (SelectedTrip != null)
+            {
+                txtPlace.Text = SelectedTrip.Place;
+                dateTimePicker1.Value = SelectedTrip.TripDateTime;
+            }
         }
     }
 }

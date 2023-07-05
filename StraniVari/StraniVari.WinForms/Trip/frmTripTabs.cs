@@ -22,7 +22,6 @@ namespace StraniVari.WinUI.Trip
             dgvTrip.DataSource = result;
         }
 
-
         private async void dgvTrip_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             var selectedTrip = JsonConvert.DeserializeObject<GetTripResponse>(dgvTrip.SelectedRows[0].DataBoundItem.ToString());
@@ -53,13 +52,8 @@ namespace StraniVari.WinUI.Trip
 
             if (selectedTrip != null)
             {
-                //frmAddEditTrip frmAddEditTrip = new frmAddEditTrip(selectedTrip);
-                //frmAddEditTrip.ShowDialog();
-
                 frmEditTrip frmEditTrip = new frmEditTrip(selectedTrip);
                 frmEditTrip.ShowDialog();
-                //frmAddEditTrip frmAddEditTrip = new frmAddEditTrip();
-                //frmAddEditTrip.ShowDialog();
             }
         }
 
@@ -67,16 +61,6 @@ namespace StraniVari.WinUI.Trip
         {
             frmAddEditTrip frmAddEditTrip = new frmAddEditTrip();
             frmAddEditTrip.ShowDialog();
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnMaterial_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

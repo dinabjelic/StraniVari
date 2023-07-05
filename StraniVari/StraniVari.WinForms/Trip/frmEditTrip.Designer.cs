@@ -28,86 +28,87 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            btnTrip = new Button();
-            dateTimePicker1 = new DateTimePicker();
-            label2 = new Label();
-            txtPlace = new TextBox();
-            label1 = new Label();
-            err = new ErrorProvider(components);
-            ((System.ComponentModel.ISupportInitialize)err).BeginInit();
-            SuspendLayout();
+            this.components = new System.ComponentModel.Container();
+            this.btnTrip = new System.Windows.Forms.Button();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtPlace = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.err = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.err)).BeginInit();
+            this.SuspendLayout();
             // 
             // btnTrip
             // 
-            btnTrip.BackColor = SystemColors.Window;
-            btnTrip.Cursor = Cursors.Hand;
-            btnTrip.Location = new Point(316, 130);
-            btnTrip.Margin = new Padding(2);
-            btnTrip.Name = "btnTrip";
-            btnTrip.Size = new Size(90, 27);
-            btnTrip.TabIndex = 84;
-            btnTrip.Text = "Save";
-            btnTrip.UseVisualStyleBackColor = false;
-            btnTrip.Click += btnTrip_Click;
+            this.btnTrip.BackColor = System.Drawing.SystemColors.Window;
+            this.btnTrip.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTrip.Location = new System.Drawing.Point(316, 130);
+            this.btnTrip.Margin = new System.Windows.Forms.Padding(2);
+            this.btnTrip.Name = "btnTrip";
+            this.btnTrip.Size = new System.Drawing.Size(90, 27);
+            this.btnTrip.TabIndex = 84;
+            this.btnTrip.Text = "Save";
+            this.btnTrip.UseVisualStyleBackColor = false;
+            this.btnTrip.Click += new System.EventHandler(this.btnTrip_Click_1);
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Location = new Point(121, 83);
-            dateTimePicker1.Margin = new Padding(2);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(285, 27);
-            dateTimePicker1.TabIndex = 83;
+            this.dateTimePicker1.Location = new System.Drawing.Point(121, 83);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(285, 27);
+            this.dateTimePicker1.TabIndex = 83;
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(20, 90);
-            label2.Margin = new Padding(2, 0, 2, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(78, 20);
-            label2.TabIndex = 82;
-            label2.Text = "Date Time";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(20, 90);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(78, 20);
+            this.label2.TabIndex = 82;
+            this.label2.Text = "Date Time";
             // 
             // txtPlace
             // 
-            txtPlace.Location = new Point(121, 23);
-            txtPlace.Margin = new Padding(2);
-            txtPlace.Name = "txtPlace";
-            txtPlace.Size = new Size(285, 27);
-            txtPlace.TabIndex = 81;
+            this.txtPlace.Location = new System.Drawing.Point(121, 23);
+            this.txtPlace.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPlace.Name = "txtPlace";
+            this.txtPlace.Size = new System.Drawing.Size(285, 27);
+            this.txtPlace.TabIndex = 81;
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(20, 23);
-            label1.Margin = new Padding(2, 0, 2, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(44, 20);
-            label1.TabIndex = 80;
-            label1.Text = "Place";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(20, 23);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(44, 20);
+            this.label1.TabIndex = 80;
+            this.label1.Text = "Place";
             // 
             // err
             // 
-            err.ContainerControl = this;
+            this.err.ContainerControl = this;
             // 
             // frmEditTrip
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ButtonHighlight;
-            ClientSize = new Size(435, 184);
-            Controls.Add(btnTrip);
-            Controls.Add(dateTimePicker1);
-            Controls.Add(label2);
-            Controls.Add(txtPlace);
-            Controls.Add(label1);
-            Name = "frmEditTrip";
-            StartPosition = FormStartPosition.CenterParent;
-            Load += frmEditTrip_Load;
-            ((System.ComponentModel.ISupportInitialize)err).EndInit();
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ClientSize = new System.Drawing.Size(435, 184);
+            this.Controls.Add(this.btnTrip);
+            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.txtPlace);
+            this.Controls.Add(this.label1);
+            this.Name = "frmEditTrip";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Load += new System.EventHandler(this.frmEditTrip_Load_1);
+            ((System.ComponentModel.ISupportInitialize)(this.err)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
