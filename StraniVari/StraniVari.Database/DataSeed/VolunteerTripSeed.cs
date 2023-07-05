@@ -10,25 +10,25 @@ namespace StraniVari.Database.DataSeed
             Random random = new Random();
             List<VolunteerTrip> volunteerTrip = new();
 
-            volunteerTrip.Add(new VolunteerTrip
-            {
-                Id = 1,
-                VolunteerId = 2,
-                TripId = 1,
-                StatusId = 1
-            });
+            //volunteerTrip.Add(new VolunteerTrip
+            //{
+            //    Id = 1,
+            //    VolunteerId = 2,
+            //    TripId = 1,
+            //    StatusId = 1
+            //});
             volunteerTrip.Add(new VolunteerTrip
             {
                 Id = 2,
                 VolunteerId = 3,
-                TripId = 1,
+                TripId = 2,
                 StatusId = 1
             });
             volunteerTrip.Add(new VolunteerTrip
             {
                 Id = 3,
                 VolunteerId = 4,
-                TripId = 1,
+                TripId = 2,
                 StatusId = 1
             });
 

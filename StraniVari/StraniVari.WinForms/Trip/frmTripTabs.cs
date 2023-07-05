@@ -53,8 +53,11 @@ namespace StraniVari.WinUI.Trip
 
             if (selectedTrip != null)
             {
-                frmAddEditTrip frmAddEditTrip = new frmAddEditTrip(selectedTrip);
-                frmAddEditTrip.ShowDialog();
+                //frmAddEditTrip frmAddEditTrip = new frmAddEditTrip(selectedTrip);
+                //frmAddEditTrip.ShowDialog();
+
+                frmEditTrip frmEditTrip = new frmEditTrip(selectedTrip);
+                frmEditTrip.ShowDialog();
                 //frmAddEditTrip frmAddEditTrip = new frmAddEditTrip();
                 //frmAddEditTrip.ShowDialog();
             }

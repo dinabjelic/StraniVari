@@ -9,7 +9,7 @@ using StraniVari.Services.Interfaces;
 
 namespace StraniVari.Services.Services
 {
-    public class TripService : BaseCrudService<Trip, UpSertTripRequest, UpSertTripRequest,GetTripResponse>, ITripService
+    public class TripService : BaseCrudService<Trip, UpSertTripRequest, UpdateTripRequest,GetTripResponse>, ITripService
     {
         private readonly StraniVariDbContext _straniVariDbContext;
         public TripService(StraniVariDbContext straniVariDbContext, IMapper mapper) : base(straniVariDbContext, mapper)

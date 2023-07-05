@@ -4,7 +4,7 @@ using StraniVari.Core.Responses;
 
 namespace StraniVari.Services.Interfaces
 {
-    public interface ITripService: ICrudService<Trip, UpSertTripRequest, UpSertTripRequest,GetTripResponse>
+    public interface ITripService: ICrudService<Trip, UpSertTripRequest, UpdateTripRequest, GetTripResponse>
     {
         /// <summary>
         /// getting trips details for choosen event

@@ -8,7 +8,7 @@ using StraniVari.Services.Interfaces;
 
 namespace StraniVari.API.Controllers
 {
-    public class TripController : BaseCRUDController<Trip, UpSertTripRequest, UpSertTripRequest, GetTripResponse>
+    public class TripController : BaseCRUDController<Trip, UpSertTripRequest, UpdateTripRequest, GetTripResponse>
     {
         private readonly ITripService _tripService;
         public TripController(ITripService tripService) : base(tripService)

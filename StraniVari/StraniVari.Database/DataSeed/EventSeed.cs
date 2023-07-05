@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using StraniVari.Core.Entities;
-using StraniVari.Core.Helper;
 
 namespace StraniVari.Database.DataSeed
 {
